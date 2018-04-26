@@ -1,0 +1,9 @@
+/Users/sining/Projects/JuAnChessGame/Bin/Model.deps.json
+/Users/sining/Projects/JuAnChessGame/Bin/Model.dll
+/Users/sining/Projects/JuAnChessGame/Bin/Model.pdb
+/Users/sining/Projects/JuAnChessGame/Server/Model/obj/Debug/Server.Model.csprojResolveAssemblyReference.cache
+/Users/sining/Projects/JuAnChessGame/Server/Model/obj/Debug/Server.Model.csproj.CoreCompileInputs.cache
+/Users/sining/Projects/JuAnChessGame/Server/Model/obj/Debug/Server.Model.AssemblyInfoInputs.cache
+/Users/sining/Projects/JuAnChessGame/Server/Model/obj/Debug/Server.Model.AssemblyInfo.cs
+/Users/sining/Projects/JuAnChessGame/Server/Model/obj/Debug/Model.dll
+/Users/sining/Projects/JuAnChessGame/Server/Model/obj/Debug/Model.pdb
