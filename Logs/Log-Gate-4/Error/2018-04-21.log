@@ -1,0 +1,234 @@
+2018-04-21 14:39:11.4419 Gate     004 System.NullReferenceException: Object reference not set to an instance of an object.
+   at ETHotfix.C2G_LoginGateHandler.<Run>d__0.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/Hotfix/Module/FrameSync/C2G_LoginGateHandler.cs:line 23 
+ Start<TStateMachine> at offset 86 in file:line:column <filename unknown>:0:0
+MoveNext at offset 2475 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Hotfix/Module/Message/OuterMessageDispatcher.cs:57:5
+Handle at offset 501 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Module/Message/MessageDispatherComponent.cs:94:6
+Handle at offset 1035 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Module/Message/AMRpcHandler.cs:28:5
+Run at offset 311 in file:line:column <filename unknown>:0:0
+Start<TStateMachine> at offset 86 in file:line:column <filename unknown>:0:0
+MoveNext at offset 492 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Hotfix/Module/FrameSync/C2G_LoginGateHandler.cs:23:5
+ReplyError at offset 85 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Module/Message/AMRpcHandler.cs:9:4
+Error at offset 106 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Base/Log.cs:31:4
+Error at offset 102 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Base/Logger/NLogAdapter.cs:35:4
+
+2018-04-21 14:39:20.7461 Gate     004 System.NullReferenceException: Object reference not set to an instance of an object.
+   at ETHotfix.C2G_LoginGateHandler.<Run>d__0.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/Hotfix/Module/FrameSync/C2G_LoginGateHandler.cs:line 23 
+ Start<TStateMachine> at offset 86 in file:line:column <filename unknown>:0:0
+MoveNext at offset 2475 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Hotfix/Module/Message/OuterMessageDispatcher.cs:57:5
+Handle at offset 501 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Module/Message/MessageDispatherComponent.cs:94:6
+Handle at offset 1035 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Module/Message/AMRpcHandler.cs:28:5
+Run at offset 311 in file:line:column <filename unknown>:0:0
+Start<TStateMachine> at offset 86 in file:line:column <filename unknown>:0:0
+MoveNext at offset 492 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Hotfix/Module/FrameSync/C2G_LoginGateHandler.cs:23:5
+ReplyError at offset 85 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Module/Message/AMRpcHandler.cs:9:4
+Error at offset 106 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Base/Log.cs:31:4
+Error at offset 102 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Base/Logger/NLogAdapter.cs:35:4
+
+2018-04-21 17:05:10.3926 Gate     004 消息没有处理: 1033 { "_t" : "JionPlayerByGateRequest", "AccountId" : NumberLong("662846029037691"), "RpcId" : 2 } 
+ Start at offset 50 in file:line:column /Users/sining/Projects/JuAnChessGame/Unity/Assets/Scripts/Module/Message/Session.cs:24:4
+Start at offset 44 in file:line:column /Users/sining/Projects/JuAnChessGame/Unity/Assets/Scripts/Module/Message/Session.cs:52:4
+StartRecv at offset 225 in file:line:column <filename unknown>:0:0
+Start<TStateMachine> at offset 86 in file:line:column <filename unknown>:0:0
+MoveNext at offset 566 in file:line:column /Users/sining/Projects/JuAnChessGame/Unity/Assets/Scripts/Module/Message/Session.cs:119:6
+Run at offset 513 in file:line:column /Users/sining/Projects/JuAnChessGame/Unity/Assets/Scripts/Module/Message/Session.cs:151:5
+Dispatch at offset 1143 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Hotfix/Module/Message/InnerMessageDispatcher.cs:34:4
+Handle at offset 336 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Module/Message/MessageDispatherComponent.cs:86:5
+Error at offset 67 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Base/Log.cs:36:4
+Error at offset 102 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Base/Logger/NLogAdapter.cs:35:4
+
+2018-04-21 17:07:32.8493 Gate     004 消息没有处理: 1033 { "_t" : "JionPlayerByGateRequest", "AccountId" : NumberLong("662846029037691"), "RpcId" : 2 } 
+ Start at offset 50 in file:line:column /Users/sining/Projects/JuAnChessGame/Unity/Assets/Scripts/Module/Message/Session.cs:24:4
+Start at offset 44 in file:line:column /Users/sining/Projects/JuAnChessGame/Unity/Assets/Scripts/Module/Message/Session.cs:52:4
+StartRecv at offset 225 in file:line:column <filename unknown>:0:0
+Start<TStateMachine> at offset 86 in file:line:column <filename unknown>:0:0
+MoveNext at offset 566 in file:line:column /Users/sining/Projects/JuAnChessGame/Unity/Assets/Scripts/Module/Message/Session.cs:119:6
+Run at offset 513 in file:line:column /Users/sining/Projects/JuAnChessGame/Unity/Assets/Scripts/Module/Message/Session.cs:151:5
+Dispatch at offset 1143 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Hotfix/Module/Message/InnerMessageDispatcher.cs:34:4
+Handle at offset 336 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Module/Message/MessageDispatherComponent.cs:86:5
+Error at offset 67 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Base/Log.cs:36:4
+Error at offset 102 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Base/Logger/NLogAdapter.cs:35:4
+
+2018-04-21 17:51:36.0853 Gate     004 System.ArgumentException: An item with the same key has already been added. Key: 1225796699095084
+   at System.ThrowHelper.ThrowAddingDuplicateWithKeyArgumentException(Object key)
+   at System.Collections.Generic.Dictionary`2.TryInsert(TKey key, TValue value, InsertionBehavior behavior)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at ETModel.PlayerManageComponent.Add(SPlayer player) in /Users/sining/Projects/JuAnChessGame/Server/Model/ExtensionCode/Module/Player/PlayerManageComponent.cs:line 37
+   at ETModel.PlayerManageComponent.Add(Session session) in /Users/sining/Projects/JuAnChessGame/Server/Model/ExtensionCode/Module/Player/PlayerManageComponent.cs:line 32
+   at ETHotfix.JionPlayerByGateHandler.Run(Session session, JionPlayerByGateRequest message, Action`1 reply) in /Users/sining/Projects/JuAnChessGame/Server/Hotfix/ExtensionCode/Handler/LoginScene/Gate/JionPlayerByGateHandler.cs:line 32 
+ Run at offset 113 in file:line:column <filename unknown>:0:0
+MoveNext at offset 566 in file:line:column /Users/sining/Projects/JuAnChessGame/Unity/Assets/Scripts/Module/Message/Session.cs:119:6
+Run at offset 513 in file:line:column /Users/sining/Projects/JuAnChessGame/Unity/Assets/Scripts/Module/Message/Session.cs:151:5
+Dispatch at offset 1143 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Hotfix/Module/Message/InnerMessageDispatcher.cs:34:4
+Handle at offset 501 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Module/Message/MessageDispatherComponent.cs:94:6
+Handle at offset 1035 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Module/Message/AMRpcHandler.cs:28:5
+Run at offset 669 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Hotfix/ExtensionCode/Handler/LoginScene/Gate/JionPlayerByGateHandler.cs:32:17
+ReplyError at offset 85 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Module/Message/AMRpcHandler.cs:9:4
+Error at offset 106 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Base/Log.cs:31:4
+Error at offset 102 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Base/Logger/NLogAdapter.cs:35:4
+
+2018-04-21 17:52:56.5416 Gate     004 System.NullReferenceException: Object reference not set to an instance of an object.
+   at ETHotfix.GetAccountInfoHandler.<Run>d__0.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/Hotfix/ExtensionCode/Handler/LoginScene/Gate/GetAccountInfoHandler.cs:line 19 
+ Start<TStateMachine> at offset 86 in file:line:column <filename unknown>:0:0
+MoveNext at offset 2475 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Hotfix/Module/Message/OuterMessageDispatcher.cs:57:5
+Handle at offset 501 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Module/Message/MessageDispatherComponent.cs:94:6
+Handle at offset 1035 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Module/Message/AMRpcHandler.cs:28:5
+Run at offset 311 in file:line:column <filename unknown>:0:0
+Start<TStateMachine> at offset 86 in file:line:column <filename unknown>:0:0
+MoveNext at offset 304 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Hotfix/ExtensionCode/Handler/LoginScene/Gate/GetAccountInfoHandler.cs:19:17
+ReplyError at offset 85 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Module/Message/AMRpcHandler.cs:9:4
+Error at offset 106 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Base/Log.cs:31:4
+Error at offset 102 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Base/Logger/NLogAdapter.cs:35:4
+
+2018-04-21 17:54:55.6335 Gate     004 System.NullReferenceException: Object reference not set to an instance of an object.
+   at ETHotfix.GetAccountInfoHandler.<Run>d__0.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/Hotfix/ExtensionCode/Handler/LoginScene/Gate/GetAccountInfoHandler.cs:line 19 
+ Start<TStateMachine> at offset 86 in file:line:column <filename unknown>:0:0
+MoveNext at offset 2475 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Hotfix/Module/Message/OuterMessageDispatcher.cs:57:5
+Handle at offset 501 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Module/Message/MessageDispatherComponent.cs:94:6
+Handle at offset 1035 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Module/Message/AMRpcHandler.cs:28:5
+Run at offset 311 in file:line:column <filename unknown>:0:0
+Start<TStateMachine> at offset 86 in file:line:column <filename unknown>:0:0
+MoveNext at offset 304 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Hotfix/ExtensionCode/Handler/LoginScene/Gate/GetAccountInfoHandler.cs:19:17
+ReplyError at offset 85 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Module/Message/AMRpcHandler.cs:9:4
+Error at offset 106 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Base/Log.cs:31:4
+Error at offset 102 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Base/Logger/NLogAdapter.cs:35:4
+
+2018-04-21 18:28:48.6384 Gate     004 System.NullReferenceException: Object reference not set to an instance of an object.
+   at ETHotfix.GetAccountInfoHandler.<Run>d__0.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/Hotfix/ExtensionCode/Handler/LoginScene/Gate/GetAccountInfoHandler.cs:line 21 
+ Start<TStateMachine> at offset 86 in file:line:column <filename unknown>:0:0
+MoveNext at offset 2475 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Hotfix/Module/Message/OuterMessageDispatcher.cs:57:5
+Handle at offset 501 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Module/Message/MessageDispatherComponent.cs:94:6
+Handle at offset 1035 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Module/Message/AMRpcHandler.cs:28:5
+Run at offset 311 in file:line:column <filename unknown>:0:0
+Start<TStateMachine> at offset 86 in file:line:column <filename unknown>:0:0
+MoveNext at offset 372 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Hotfix/ExtensionCode/Handler/LoginScene/Gate/GetAccountInfoHandler.cs:21:17
+ReplyError at offset 85 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Module/Message/AMRpcHandler.cs:9:4
+Error at offset 106 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Base/Log.cs:31:4
+Error at offset 102 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Base/Logger/NLogAdapter.cs:35:4
+
+2018-04-21 18:31:11.9821 Gate     004 System.NullReferenceException: Object reference not set to an instance of an object.
+   at ETHotfix.GetAccountInfoHandler.<Run>d__0.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/Hotfix/ExtensionCode/Handler/LoginScene/Gate/GetAccountInfoHandler.cs:line 23 
+ Start<TStateMachine> at offset 86 in file:line:column <filename unknown>:0:0
+MoveNext at offset 2475 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Hotfix/Module/Message/OuterMessageDispatcher.cs:57:5
+Handle at offset 501 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Module/Message/MessageDispatherComponent.cs:94:6
+Handle at offset 1035 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Module/Message/AMRpcHandler.cs:28:5
+Run at offset 311 in file:line:column <filename unknown>:0:0
+Start<TStateMachine> at offset 86 in file:line:column <filename unknown>:0:0
+MoveNext at offset 434 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Hotfix/ExtensionCode/Handler/LoginScene/Gate/GetAccountInfoHandler.cs:23:17
+ReplyError at offset 85 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Module/Message/AMRpcHandler.cs:9:4
+Error at offset 106 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Base/Log.cs:31:4
+Error at offset 102 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Base/Logger/NLogAdapter.cs:35:4
+
+2018-04-21 18:37:15.3833 Gate     004 System.NullReferenceException: Object reference not set to an instance of an object.
+   at ETHotfix.GetAccountInfoHandler.<Run>d__0.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/Hotfix/ExtensionCode/Handler/LoginScene/Gate/GetAccountInfoHandler.cs:line 23 
+ Start<TStateMachine> at offset 86 in file:line:column <filename unknown>:0:0
+MoveNext at offset 2475 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Hotfix/Module/Message/OuterMessageDispatcher.cs:57:5
+Handle at offset 501 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Module/Message/MessageDispatherComponent.cs:94:6
+Handle at offset 1035 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Module/Message/AMRpcHandler.cs:28:5
+Run at offset 311 in file:line:column <filename unknown>:0:0
+Start<TStateMachine> at offset 86 in file:line:column <filename unknown>:0:0
+MoveNext at offset 446 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Hotfix/ExtensionCode/Handler/LoginScene/Gate/GetAccountInfoHandler.cs:23:17
+ReplyError at offset 85 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Module/Message/AMRpcHandler.cs:9:4
+Error at offset 106 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Base/Log.cs:31:4
+Error at offset 102 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Base/Logger/NLogAdapter.cs:35:4
+
+2018-04-21 18:39:12.5206 Gate     004 System.NullReferenceException: Object reference not set to an instance of an object.
+   at ETHotfix.GetAccountInfoHandler.<Run>d__0.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/Hotfix/ExtensionCode/Handler/LoginScene/Gate/GetAccountInfoHandler.cs:line 23 
+ Start<TStateMachine> at offset 86 in file:line:column <filename unknown>:0:0
+MoveNext at offset 2475 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Hotfix/Module/Message/OuterMessageDispatcher.cs:57:5
+Handle at offset 501 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Module/Message/MessageDispatherComponent.cs:94:6
+Handle at offset 1035 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Module/Message/AMRpcHandler.cs:28:5
+Run at offset 311 in file:line:column <filename unknown>:0:0
+Start<TStateMachine> at offset 86 in file:line:column <filename unknown>:0:0
+MoveNext at offset 446 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Hotfix/ExtensionCode/Handler/LoginScene/Gate/GetAccountInfoHandler.cs:23:17
+ReplyError at offset 85 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Module/Message/AMRpcHandler.cs:9:4
+Error at offset 106 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Base/Log.cs:31:4
+Error at offset 102 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Base/Logger/NLogAdapter.cs:35:4
+
+2018-04-21 18:40:43.6949 Gate     004 System.NullReferenceException: Object reference not set to an instance of an object.
+   at ETHotfix.GetAccountInfoHandler.<Run>d__0.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/Hotfix/ExtensionCode/Handler/LoginScene/Gate/GetAccountInfoHandler.cs:line 32 
+ Start<TStateMachine> at offset 86 in file:line:column <filename unknown>:0:0
+MoveNext at offset 2475 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Hotfix/Module/Message/OuterMessageDispatcher.cs:57:5
+Handle at offset 501 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Module/Message/MessageDispatherComponent.cs:94:6
+Handle at offset 1035 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Module/Message/AMRpcHandler.cs:28:5
+Run at offset 311 in file:line:column <filename unknown>:0:0
+Start<TStateMachine> at offset 86 in file:line:column <filename unknown>:0:0
+MoveNext at offset 562 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Hotfix/ExtensionCode/Handler/LoginScene/Gate/GetAccountInfoHandler.cs:32:17
+ReplyError at offset 85 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Module/Message/AMRpcHandler.cs:9:4
+Error at offset 106 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Base/Log.cs:31:4
+Error at offset 102 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Base/Logger/NLogAdapter.cs:35:4
+
+2018-04-21 18:42:37.1015 Gate     004 System.NullReferenceException: Object reference not set to an instance of an object.
+   at ETModel.DBComponent.Awake() in /Users/sining/Projects/JuAnChessGame/Server/Model/Module/DB/DBComponent.cs:line 25
+   at ETModel.DbComponentSystem.Awake(DBComponent self) in /Users/sining/Projects/JuAnChessGame/Server/Model/Module/DB/DBComponent.cs:line 10
+   at ETModel.AwakeSystem`1.Run(Object o) in /Users/sining/Projects/JuAnChessGame/Unity/Assets/Scripts/Base/Object/IAwakeSystem.cs:line 39
+   at ETModel.EventSystem.Awake(Component component) in /Users/sining/Projects/JuAnChessGame/Unity/Assets/Scripts/Base/Object/EventSystem.cs:line 216 
+ Main at offset 2791 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/App/Program.cs:75:7
+AddComponent<K> at offset 612 in file:line:column /Users/sining/Projects/JuAnChessGame/Unity/Assets/Scripts/Base/Object/Entity.cs:79:4
+CreateWithParent<T> at offset 188 in file:line:column /Users/sining/Projects/JuAnChessGame/Unity/Assets/Scripts/Base/Object/ComponentFactory.cs:19:4
+Awake at offset 357 in file:line:column /Users/sining/Projects/JuAnChessGame/Unity/Assets/Scripts/Base/Object/EventSystem.cs:216:6
+Error at offset 106 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Base/Log.cs:31:4
+Error at offset 102 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Base/Logger/NLogAdapter.cs:35:4
+
+2018-04-21 18:43:18.5827 Gate     004 System.NullReferenceException: Object reference not set to an instance of an object.
+   at ETModel.DBComponent.Awake() in /Users/sining/Projects/JuAnChessGame/Server/Model/Module/DB/DBComponent.cs:line 25
+   at ETModel.DbComponentSystem.Awake(DBComponent self) in /Users/sining/Projects/JuAnChessGame/Server/Model/Module/DB/DBComponent.cs:line 10
+   at ETModel.AwakeSystem`1.Run(Object o) in /Users/sining/Projects/JuAnChessGame/Unity/Assets/Scripts/Base/Object/IAwakeSystem.cs:line 39
+   at ETModel.EventSystem.Awake(Component component) in /Users/sining/Projects/JuAnChessGame/Unity/Assets/Scripts/Base/Object/EventSystem.cs:line 216 
+ Main at offset 2791 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/App/Program.cs:75:7
+AddComponent<K> at offset 612 in file:line:column /Users/sining/Projects/JuAnChessGame/Unity/Assets/Scripts/Base/Object/Entity.cs:79:4
+CreateWithParent<T> at offset 188 in file:line:column /Users/sining/Projects/JuAnChessGame/Unity/Assets/Scripts/Base/Object/ComponentFactory.cs:19:4
+Awake at offset 357 in file:line:column /Users/sining/Projects/JuAnChessGame/Unity/Assets/Scripts/Base/Object/EventSystem.cs:216:6
+Error at offset 106 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Base/Log.cs:31:4
+Error at offset 102 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Base/Logger/NLogAdapter.cs:35:4
+
+2018-04-21 18:44:58.1636 Gate     004 System.NullReferenceException: Object reference not set to an instance of an object.
+   at ETModel.DBComponent.Awake() in /Users/sining/Projects/JuAnChessGame/Server/Model/Module/DB/DBComponent.cs:line 25
+   at ETModel.DbComponentSystem.Awake(DBComponent self) in /Users/sining/Projects/JuAnChessGame/Server/Model/Module/DB/DBComponent.cs:line 10
+   at ETModel.AwakeSystem`1.Run(Object o) in /Users/sining/Projects/JuAnChessGame/Unity/Assets/Scripts/Base/Object/IAwakeSystem.cs:line 39
+   at ETModel.EventSystem.Awake(Component component) in /Users/sining/Projects/JuAnChessGame/Unity/Assets/Scripts/Base/Object/EventSystem.cs:line 216 
+ Main at offset 2791 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/App/Program.cs:75:7
+AddComponent<K> at offset 612 in file:line:column /Users/sining/Projects/JuAnChessGame/Unity/Assets/Scripts/Base/Object/Entity.cs:79:4
+CreateWithParent<T> at offset 188 in file:line:column /Users/sining/Projects/JuAnChessGame/Unity/Assets/Scripts/Base/Object/ComponentFactory.cs:19:4
+Awake at offset 357 in file:line:column /Users/sining/Projects/JuAnChessGame/Unity/Assets/Scripts/Base/Object/EventSystem.cs:216:6
+Error at offset 106 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Base/Log.cs:31:4
+Error at offset 102 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Base/Logger/NLogAdapter.cs:35:4
+
+2018-04-21 18:46:49.6171 Gate     004 System.NullReferenceException: Object reference not set to an instance of an object.
+   at ETHotfix.GetAccountInfoHandler.<Run>d__0.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/Hotfix/ExtensionCode/Handler/LoginScene/Gate/GetAccountInfoHandler.cs:line 19 
+ Start<TStateMachine> at offset 86 in file:line:column <filename unknown>:0:0
+MoveNext at offset 2475 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Hotfix/Module/Message/OuterMessageDispatcher.cs:57:5
+Handle at offset 501 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Module/Message/MessageDispatherComponent.cs:94:6
+Handle at offset 1035 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Module/Message/AMRpcHandler.cs:28:5
+Run at offset 311 in file:line:column <filename unknown>:0:0
+Start<TStateMachine> at offset 86 in file:line:column <filename unknown>:0:0
+MoveNext at offset 322 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Hotfix/ExtensionCode/Handler/LoginScene/Gate/GetAccountInfoHandler.cs:19:17
+ReplyError at offset 85 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Module/Message/AMRpcHandler.cs:9:4
+Error at offset 106 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Base/Log.cs:31:4
+Error at offset 102 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Base/Logger/NLogAdapter.cs:35:4
+
+2018-04-21 18:47:59.4745 Gate     004 System.NullReferenceException: Object reference not set to an instance of an object.
+   at ETHotfix.GetAccountInfoHandler.<Run>d__0.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/Hotfix/ExtensionCode/Handler/LoginScene/Gate/GetAccountInfoHandler.cs:line 19 
+ Start<TStateMachine> at offset 86 in file:line:column <filename unknown>:0:0
+MoveNext at offset 2475 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Hotfix/Module/Message/OuterMessageDispatcher.cs:57:5
+Handle at offset 501 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Module/Message/MessageDispatherComponent.cs:94:6
+Handle at offset 1035 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Module/Message/AMRpcHandler.cs:28:5
+Run at offset 311 in file:line:column <filename unknown>:0:0
+Start<TStateMachine> at offset 86 in file:line:column <filename unknown>:0:0
+MoveNext at offset 322 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Hotfix/ExtensionCode/Handler/LoginScene/Gate/GetAccountInfoHandler.cs:19:17
+ReplyError at offset 85 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Module/Message/AMRpcHandler.cs:9:4
+Error at offset 106 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Base/Log.cs:31:4
+Error at offset 102 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Base/Logger/NLogAdapter.cs:35:4
+
+2018-04-21 18:51:36.6524 Gate     004 System.NullReferenceException: Object reference not set to an instance of an object.
+   at ETHotfix.GetAccountInfoHandler.<Run>d__0.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/Hotfix/ExtensionCode/Handler/LoginScene/Gate/GetAccountInfoHandler.cs:line 19 
+ Start<TStateMachine> at offset 86 in file:line:column <filename unknown>:0:0
+MoveNext at offset 2475 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Hotfix/Module/Message/OuterMessageDispatcher.cs:57:5
+Handle at offset 501 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Module/Message/MessageDispatherComponent.cs:94:6
+Handle at offset 1035 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Module/Message/AMRpcHandler.cs:28:5
+Run at offset 311 in file:line:column <filename unknown>:0:0
+Start<TStateMachine> at offset 86 in file:line:column <filename unknown>:0:0
+MoveNext at offset 322 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Hotfix/ExtensionCode/Handler/LoginScene/Gate/GetAccountInfoHandler.cs:19:17
+ReplyError at offset 85 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Module/Message/AMRpcHandler.cs:9:4
+Error at offset 106 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Base/Log.cs:31:4
+Error at offset 102 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Base/Logger/NLogAdapter.cs:35:4
+
