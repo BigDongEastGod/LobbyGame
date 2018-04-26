@@ -17,7 +17,7 @@ namespace ETHotfix
 				ETModel.Game.Hotfix.LateUpdate = LateUpdate;
 				
 				ETModel.Game.Hotfix.OnApplicationQuit = OnApplicationQuit;
-				
+			
 				Game.Scene.AddComponent<UIComponent>();
 
 				Game.Scene.AddComponent<OpcodeTypeComponent>();
