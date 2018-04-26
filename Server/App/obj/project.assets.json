@@ -3286,11 +3286,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/sining/Projects/JuAnChessGame/Server/App/Server.App.csproj",
+      "projectUniqueName": "/Users/sining/Projects/JuAnChess/LobbyGame/Server/App/Server.App.csproj",
       "projectName": "Server.App",
-      "projectPath": "/Users/sining/Projects/JuAnChessGame/Server/App/Server.App.csproj",
+      "projectPath": "/Users/sining/Projects/JuAnChess/LobbyGame/Server/App/Server.App.csproj",
       "packagesPath": "/Users/sining/.nuget/packages/",
-      "outputPath": "/Users/sining/Projects/JuAnChessGame/Server/App/obj/",
+      "outputPath": "/Users/sining/Projects/JuAnChess/LobbyGame/Server/App/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
@@ -3307,8 +3307,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "/Users/sining/Projects/JuAnChessGame/Server/Model/Server.Model.csproj": {
-              "projectPath": "/Users/sining/Projects/JuAnChessGame/Server/Model/Server.Model.csproj"
+            "/Users/sining/Projects/JuAnChess/LobbyGame/Server/Model/Server.Model.csproj": {
+              "projectPath": "/Users/sining/Projects/JuAnChess/LobbyGame/Server/Model/Server.Model.csproj"
             }
           }
         }
