@@ -7,3 +7,12 @@
 /Users/sining/Projects/JuAnChessGame/Server/Hotfix/obj/Debug/Hotfix.dll
 /Users/sining/Projects/JuAnChessGame/Server/Hotfix/obj/Debug/Hotfix.pdb
 /Users/sining/Projects/JuAnChessGame/Server/Hotfix/obj/Debug/Server.Hotfix.csprojResolveAssemblyReference.cache
+/Users/sining/Projects/JuAnChess/LobbyGame/Bin/Hotfix.deps.json
+/Users/sining/Projects/JuAnChess/LobbyGame/Bin/Hotfix.dll
+/Users/sining/Projects/JuAnChess/LobbyGame/Bin/Hotfix.pdb
+/Users/sining/Projects/JuAnChess/LobbyGame/Server/Hotfix/obj/Debug/Server.Hotfix.csprojResolveAssemblyReference.cache
+/Users/sining/Projects/JuAnChess/LobbyGame/Server/Hotfix/obj/Debug/Server.Hotfix.csproj.CoreCompileInputs.cache
+/Users/sining/Projects/JuAnChess/LobbyGame/Server/Hotfix/obj/Debug/Server.Hotfix.AssemblyInfoInputs.cache
+/Users/sining/Projects/JuAnChess/LobbyGame/Server/Hotfix/obj/Debug/Server.Hotfix.AssemblyInfo.cs
+/Users/sining/Projects/JuAnChess/LobbyGame/Server/Hotfix/obj/Debug/Hotfix.dll
+/Users/sining/Projects/JuAnChess/LobbyGame/Server/Hotfix/obj/Debug/Hotfix.pdb

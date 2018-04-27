@@ -4,6 +4,8 @@
     {
         public virtual void AddRules(byte[] rules){}  // 添加规则
         
+        public virtual void Prepare(SPlayer player){}  // 准备游戏
+        
         public virtual void JionRoom(SPlayer player){}  // 加入房间
 
         public virtual void QuitRoom(SPlayer player){}  // 退出房间
