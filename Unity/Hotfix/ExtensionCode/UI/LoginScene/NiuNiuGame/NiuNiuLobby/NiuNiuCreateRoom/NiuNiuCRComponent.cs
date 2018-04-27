@@ -24,14 +24,14 @@ namespace ETHotfix
         }
     }
 
-//    enum NNPaiJuType
-//    {
-//        NNSZ,
-//        GDZJ,
-//        ZYQZ,
-//        MPQZ,
-//        TBNN
-//    }
+    enum NNPaiJuType
+    {
+        NNSZ,
+        GDZJ,
+        ZYQZ,
+        MPQZ,
+        TBNN
+    }
 
     public class NNDpType
     {
@@ -58,29 +58,7 @@ namespace ETHotfix
         public List<string> ListTeShuPaiXing { get; }
         public List<string> ListGaoJiXuanXiang { get; }
 
-
-        public List<string> Score; //底分
-        public List<int> Dish; //局数
-        public List<int> RoomRate; //局费
-        public List<int> AutoGame; //自动开桌
-        public List<int> PlayerPush; //闲家推注
-
-        public List<List<string>> DoubleRules; //翻倍规则
-//        bool ShunZiRules; //顺子牛
-//        bool TonghuaRules; //同花牛
-//        bool HuLuRules; //葫芦牛
-//        bool WuHuaRules; //五花牛
-//        bool ZhaDanRules; //炸弹牛
-//        bool WuXiaoRules; //五小牛
-//        bool ZhongTuJinRuRules; //中途禁入
-//        bool CuoPaiRules; //禁止搓牌
-//        bool WangLaiRules; //王癞玩法
-//        bool MaiMaRules; //闲家买码
-
-        public NiuNiuRule(List<string> listDiFen, List<string> listjuShu, List<string> listFangFei,
-            List<string> listZiDongKaiZhuo, List<string> listXianJiaTuiZhu, List<string> listShangZhuangFenShu,
-            List<string> listZuiDaQiangZhuang, List<string> listFanBeiGuiZe, List<string> listTeShuPaiXing,
-            List<string> listGaoJiXuanXiang)
+        public NiuNiuRule(List<string> listDiFen, List<string> listjuShu, List<string> listFangFei, List<string> listZiDongKaiZhuo, List<string> listXianJiaTuiZhu, List<string> listShangZhuangFenShu, List<string> listZuiDaQiangZhuang, List<string> listFanBeiGuiZe, List<string> listTeShuPaiXing, List<string> listGaoJiXuanXiang)
         {
             ListDiFen = listDiFen;
             ListjuShu = listjuShu;
@@ -93,19 +71,7 @@ namespace ETHotfix
             ListTeShuPaiXing = listTeShuPaiXing;
             ListGaoJiXuanXiang = listGaoJiXuanXiang;
         }
-
-        public void SetRuleValue(List<string> score, List<int> dish, List<int> roomRate, List<int> autoGame,
-            List<int> playerPush, List<List<string>> doubleRules)
-        {
-            Score = score;
-            Dish = dish;
-            RoomRate = roomRate;
-            AutoGame = autoGame;
-            PlayerPush = playerPush;
-            DoubleRules = doubleRules;
-        }
     }
-
 
     public class NiuNiuCRComponent : Component
     {
@@ -116,12 +82,12 @@ namespace ETHotfix
         private NiuNiuRule TongBiNiuNiu;
 
         private UI _nnLobby;
-        private UI _nnOptions;
+        private UI _nnosb;
 
         private GameObject _roomPeople6;
         private GameObject _roomPeople8;
         private GameObject _optionsLayout;
-        private NiuNiuRule _curretNiuNiuRule;
+        private NNPaiJuType _curretNnPaiJuType;
 
         public void Awake()
         {
@@ -140,12 +106,15 @@ namespace ETHotfix
             _roomPeople8 = rc.Get<GameObject>("roomPeople_8");
             _optionsLayout = rc.Get<GameObject>("OptionsLayout");
             var toggleBtn = rc.Get<GameObject>("ToggleBtn");
+            var nnOptionItem = rc.Get<GameObject>("NN_OptionItem");
             var createRoomBtn = rc.Get<GameObject>("CreateRoomBtn");
+            var gaojixuanxiangDp = rc.Get<GameObject>("GaoJiXuanXiangDp");
+            var teshupaixingDp = rc.Get<GameObject>("TeShuPaiXingDp");
 
             #endregion
 
             InitRule();
-
+            
             // 返回牛牛大厅按钮
             SceneHelperComponent.Instance.MonoEvent.AddButtonClick(nncrCloseBtn.GetComponent<Button>(), () =>
             {
@@ -165,7 +134,7 @@ namespace ETHotfix
                             ChangeToggleMark(toggleBtn.transform, toggle);
                             // 切换规则内容显示
                             ShowRule(NiuNiuShangZhuang);
-                            _curretNiuNiuRule = NiuNiuShangZhuang;
+                            _curretNnPaiJuType = NNPaiJuType.NNSZ;
                         });
                         break;
                     case "GuDingZhuangJiaTg":
@@ -175,7 +144,7 @@ namespace ETHotfix
                             ChangeToggleMark(toggleBtn.transform, toggle);
                             // 切换规则内容显示
                             ShowRule(GuDingZhuangJia);
-                            _curretNiuNiuRule = GuDingZhuangJia;
+                            _curretNnPaiJuType = NNPaiJuType.GDZJ;
                         });
                         break;
                     case "ZiYouQiangZhuangTg":
@@ -185,7 +154,7 @@ namespace ETHotfix
                             ChangeToggleMark(toggleBtn.transform, toggle);
                             // 切换规则内容显示
                             ShowRule(ZiYouQiangZhuang);
-                            _curretNiuNiuRule = ZiYouQiangZhuang;
+                            _curretNnPaiJuType = NNPaiJuType.ZYQZ;
                         });
                         break;
                     case "MingPaiQiangZhuangTg":
@@ -195,7 +164,7 @@ namespace ETHotfix
                             ChangeToggleMark(toggleBtn.transform, toggle);
                             // 切换规则内容显示
                             ShowRule(MingPaiQiangZhuang);
-                            _curretNiuNiuRule = MingPaiQiangZhuang;
+                            _curretNnPaiJuType = NNPaiJuType.MPQZ;
                         });
                         break;
                     case "TongBiNiuNiuTg":
@@ -205,39 +174,39 @@ namespace ETHotfix
                             ChangeToggleMark(toggleBtn.transform, toggle);
                             // 切换规则内容显示
                             ShowRule(TongBiNiuNiu);
-                            _curretNiuNiuRule = TongBiNiuNiu;
+                            _curretNnPaiJuType = NNPaiJuType.TBNN;
                         });
                         break;
                 }
             }
 
             // 特殊牌型
-//            SceneHelperComponent.Instance.MonoEvent.AddButtonClick(teshupaixingDp.GetComponent<Button>(), () =>
-//            {
-////                Vector2 osbPos = teshupaixingDp.transform.Find("OptionsPos").GetComponent<RectTransform>().anchoredPosition;
-//////                switch (_curretNnPaiJuType)
-//////                {
-//////                    case NNPaiJuType.NNSZ:
-//////                        break;
-//////                    case NNPaiJuType.GDZJ:
-//////                        break;
-//////                    case NNPaiJuType.ZYQZ:
-//////                        break;
-//////                    case NNPaiJuType.MPQZ:
-//////                        break;
-//////                    case NNPaiJuType.TBNN:
-//////                        break;
-//////                }
-////                _nnosb.GetComponent<NiuNiuOptionsComponent>().InitPosAndSize(osbPos);
-////                _nnosb.GameObject.SetActive(true);
-//            });
+            SceneHelperComponent.Instance.MonoEvent.AddButtonClick(teshupaixingDp.GetComponent<Button>(), () =>
+            {
+                Vector2 osbPos = teshupaixingDp.transform.Find("OptionsPos").GetComponent<RectTransform>().anchoredPosition;
+//                switch (_curretNnPaiJuType)
+//                {
+//                    case NNPaiJuType.NNSZ:
+//                        break;
+//                    case NNPaiJuType.GDZJ:
+//                        break;
+//                    case NNPaiJuType.ZYQZ:
+//                        break;
+//                    case NNPaiJuType.MPQZ:
+//                        break;
+//                    case NNPaiJuType.TBNN:
+//                        break;
+//                }
+                _nnosb.GetComponent<NiuNiuOSBComponent>().InitPosAndSize(osbPos);
+                _nnosb.GameObject.SetActive(true);
+            });
             // 高级选项
-//            SceneHelperComponent.Instance.MonoEvent.AddButtonClick(gaojixuanxiangDp.GetComponent<Button>(), () =>
-//            {
-////                Vector2 osbPos = teshupaixingDp.transform.Find("OptionsPos").GetComponent<RectTransform>().anchoredPosition;
-////                _nnosb.GetComponent<NiuNiuOptionsComponent>().InitPosAndSize(osbPos);
-////                _nnosb.GameObject.SetActive(true);
-//            });
+            SceneHelperComponent.Instance.MonoEvent.AddButtonClick(gaojixuanxiangDp.GetComponent<Button>(), () =>
+            {
+                Vector2 osbPos = teshupaixingDp.transform.Find("OptionsPos").GetComponent<RectTransform>().anchoredPosition;
+                _nnosb.GetComponent<NiuNiuOSBComponent>().InitPosAndSize(osbPos);
+                _nnosb.GameObject.SetActive(true);
+            });
 
 
             SceneHelperComponent.Instance.MonoEvent.AddButtonClick(createRoomBtn.GetComponent<Button>(), CreatePaiJu);
@@ -246,7 +215,7 @@ namespace ETHotfix
         public void Start()
         {
             _nnLobby = Game.Scene.GetComponent<UIComponent>().Get(UIType.NiuNiuLobby);
-            _nnOptions = Game.Scene.GetComponent<UIComponent>().Get(UIType.NiuNiuOptions);
+            _nnosb = Game.Scene.GetComponent<UIComponent>().Get(UIType.NiuNiuOSB);
         }
 
         private void ChangeToggleMark(Transform parent, Transform self)
@@ -365,12 +334,10 @@ namespace ETHotfix
         }
 
         /// <summary>
-        /// 牛牛规则初始化
+        /// 牛牛规则
         /// </summary>
         private void InitRule()
         {
-            #region 牛牛上庄
-
             NiuNiuShangZhuang = new NiuNiuRule(new List<string>() {"1/2", "2/4", "4/8", "5/10"},
                 new List<string>() {"10局", "20局"},
                 new List<string>() {"房主支付(       4)  ", "AA支付(每人      1)  "},
@@ -382,25 +349,10 @@ namespace ETHotfix
                 new List<string>() {"顺子牛(5倍)", "同花牛(5倍)", "葫芦牛(6倍)", "五花牛(5倍)", "炸弹牛(6倍)", "五小牛(8倍)"},
                 new List<string>() {"中途禁入", "禁止搓牌", "王癞玩法"});
 
-            NiuNiuShangZhuang.SetRuleValue(new List<string>() {"1/2", "2/4", "4/8", "5/10"},
-                new List<int>() {10, 20},
-                new List<int>() {4, 1},
-                new List<int>() {0, 5, 6, 7, 8},
-                new List<int>() {0, 5, 10, 20},
-                new List<List<string>>()
-                {
-                    new List<string>() {"0/4", "9/3", "8/2", "7/2"},
-                    new List<string>() {"0/3", "9/2", "8/2"}
-                });
-
-            #endregion
-
-            #region 固定庄家
-
             GuDingZhuangJia = new NiuNiuRule(new List<string>() {"1/2", "2/4", "4/8", "5/10"},
                 new List<string>() {"10局", "20局"},
                 new List<string>() {"房主支付(       3)  ", "AA支付(每人      1)  "},
-                new List<string>() {"手动开桌", "满4人开", "满5人开", "满6人开"},
+                new List<string>() {"手动开桌", "满4人开", "满5人开", "满5人开"},
                 new List<string>() {"无", "5倍", "10倍", "20倍"},
                 new List<string>() {"无", "100", "150", "200"},
                 null,
@@ -408,25 +360,10 @@ namespace ETHotfix
                 new List<string>() {"顺子牛(5倍)", "同花牛(5倍)", "葫芦牛(6倍)", "五花牛(5倍)", "炸弹牛(6倍)", "五小牛(8倍)"},
                 new List<string>() {"中途禁入", "禁止搓牌", "王癞玩法", "闲家买码"});
 
-            GuDingZhuangJia.SetRuleValue(new List<string>() {"1/2", "2/4", "4/8", "5/10"},
-                new List<int>() {10, 20},
-                new List<int>() {3, 1},
-                new List<int>() {0, 4, 5, 6},
-                new List<int>() {0, 5, 10, 20},
-                new List<List<string>>()
-                {
-                    new List<string>() {"0/4", "9/3", "8/2", "7/2"},
-                    new List<string>() {"0/3", "9/2", "8/2"}
-                });
-
-            #endregion
-
-            #region 自由抢庄
-
             ZiYouQiangZhuang = new NiuNiuRule(new List<string>() {"1/2", "2/4", "4/8", "5/10"},
                 new List<string>() {"10局", "20局"},
                 new List<string>() {"房主支付(       3)  ", "AA支付(每人      1)  "},
-                new List<string>() {"手动开桌", "满4人开", "满5人开", "满6人开"},
+                new List<string>() {"手动开桌", "满4人开", "满5人开", "满5人开"},
                 new List<string>() {"无", "5倍", "10倍", "20倍"},
                 null,
                 null,
@@ -434,25 +371,10 @@ namespace ETHotfix
                 new List<string>() {"顺子牛(5倍)", "同花牛(5倍)", "葫芦牛(6倍)", "五花牛(5倍)", "炸弹牛(6倍)", "五小牛(8倍)"},
                 new List<string>() {"中途禁入", "禁止搓牌", "王癞玩法", "闲家买码", "下注限制", "暗抢庄家,下注加倍"});
 
-            ZiYouQiangZhuang.SetRuleValue(new List<string>() {"1/2", "2/4", "4/8", "5/10"},
-                new List<int>() {10, 20},
-                new List<int>() {3, 1},
-                new List<int>() {0, 4, 5, 6},
-                new List<int>() {0, 5, 10, 20},
-                new List<List<string>>()
-                {
-                    new List<string>() {"0/4", "9/3", "8/2", "7/2"},
-                    new List<string>() {"0/3", "9/2", "8/2"}
-                });
-
-            #endregion
-
-            #region 明牌抢庄
-
             MingPaiQiangZhuang = new NiuNiuRule(new List<string>() {"1/2", "2/4", "4/8", "5/10"},
                 new List<string>() {"10局", "20局"},
                 new List<string>() {"房主支付(       3)  ", "AA支付(每人      1)  "},
-                new List<string>() {"手动开桌", "满4人开", "满5人开", "满6人开"},
+                new List<string>() {"手动开桌", "满4人开", "满5人开", "满5人开"},
                 new List<string>() {"无", "5倍", "10倍", "20倍"},
                 null,
                 new List<string>() {"1倍", "2倍", "3倍"},
@@ -460,148 +382,45 @@ namespace ETHotfix
                 new List<string>() {"顺子牛(5倍)", "同花牛(5倍)", "葫芦牛(6倍)", "五花牛(5倍)", "炸弹牛(6倍)", "五小牛(8倍)"},
                 new List<string>() {"中途禁入", "禁止搓牌", "王癞玩法", "闲家买码", "下注限制", "暗抢庄家,下注加倍"});
 
-            MingPaiQiangZhuang.SetRuleValue(new List<string>() {"1/2", "2/4", "4/8", "5/10"},
-                new List<int>() {10, 20},
-                new List<int>() {3, 1},
-                new List<int>() {0, 4, 5, 6},
-                new List<int>() {0, 5, 10, 20},
-                new List<List<string>>()
-                {
-                    new List<string>() {"0/4", "9/3", "8/2", "7/2"},
-                    new List<string>() {"0/3", "9/2", "8/2"}
-                });
-
-            #endregion
-
-            #region 通比牛牛
-
-            TongBiNiuNiu = new NiuNiuRule(new List<string>() {"1", "2", "4", "5"},
+            TongBiNiuNiu = new NiuNiuRule(new List<string>() {"1/2", "2/4", "4/8", "5/10"},
                 new List<string>() {"10局", "20局"},
                 new List<string>() {"房主支付(       3)  ", "AA支付(每人      1)  "},
-                new List<string>() {"手动开桌", "满4人开", "满5人开", "满6人开"},
+                new List<string>() {"手动开桌", "满4人开", "满5人开", "满5人开"},
                 null,
                 null,
                 null,
                 new List<string>() {"牛牛x4 牛九x3 牛八x2 牛七x2", "牛牛x3 牛九x2 牛八x2"},
                 new List<string>() {"顺子牛(5倍)", "同花牛(5倍)", "葫芦牛(6倍)", "五花牛(5倍)", "炸弹牛(6倍)", "五小牛(8倍)"},
                 new List<string>() {"中途禁入", "禁止搓牌", "王癞玩法"});
-
-            TongBiNiuNiu.SetRuleValue(new List<string>() {"1/2", "2/4", "4/8", "5/10"},
-                new List<int>() {10, 20},
-                new List<int>() {3, 1},
-                new List<int>() {0, 4, 5, 6},
-                null,
-                new List<List<string>>()
-                {
-                    new List<string>() {"0/4", "9/3", "8/2", "7/2"},
-                    new List<string>() {"0/3", "9/2", "8/2"}
-                });
-
-            #endregion
-
-            _curretNiuNiuRule = NiuNiuShangZhuang;
         }
 
 
         private async void CreatePaiJu()
         {
-            // 创建房间
-            var creatRoomResponse = (CreateRoomResponse) await SceneHelperComponent.Instance.Session.Call(
-                new CreateRoomRequest() {RoomType = "NN"});
+            Debug.Log("CreatePaiJu");
 
-            if (creatRoomResponse.Error == 0)
+            var response =
+                (CreateRoomResponse) await SceneHelperComponent.Instance.Session.Call(
+                    new CreateRoomRequest() {RoomType = "NN"});
+
+
+            Debug.Log("123");
+
+            if (response.Error == 0)
             {
-                Debug.Log("创建房间成功,房间号: " + creatRoomResponse.RoomId);
+                Debug.Log(response.RoomId);
 
-                NNChess nnChess = GetMyNNChess();
-
-                // 发送规则
-                var roomResultResponse = (RoomRulesResponse) await SceneHelperComponent.Instance.Session.Call(
-                    new RoomRulesRequest() {RoomId = creatRoomResponse.RoomId, Rules = ProtobufHelper.ToBytes(nnChess)});
-
-                if (roomResultResponse.Error == 0)
-                {
-                    Debug.Log("发送规则成功");
-                    var joinRoomResponse = (JoinRoomResponse) await SceneHelperComponent.Instance.Session.Call(
-                        new JoinRoomRequest() {RoomId = creatRoomResponse.RoomId});
-                    if (joinRoomResponse.Error == 0)
-                    {
-                        Debug.Log("加入房间成功!");
-                    }
-                    else
-                    {
-                        Debug.Log(joinRoomResponse.Message);
-                    }
-                }
-                else
-                {
-                    Debug.Log(roomResultResponse.Message);
-                }
-
-                Game.Scene.GetComponent<UIComponent>().Remove(UIType.NiuNiuLobby);
-                Game.Scene.GetComponent<UIComponent>().Create(UIType.NiuNiuMain);
+//                Game.Scene.GetComponent<UIComponent>().Remove(UIType.NiuNiuLobby);
+//                Game.Scene.GetComponent<UIComponent>().Create("NiuNiuMain");
             }
-            else if (creatRoomResponse.Error == -1)
+            else if (response.Error == -1)
             {
-                Debug.Log(creatRoomResponse.Message);
+                Debug.Log(response.Message);
             }
-            else if (creatRoomResponse.Error == -2)
+            else if (response.Error == -2)
             {
-                Debug.Log(creatRoomResponse.Message);
+                Debug.Log(response.Message);
             }
-        }
-
-        private NNChess GetMyNNChess()
-        {
-            NNChess nnChess = new NNChess();
-
-            int score = 0, dish = 0, roomRate = 0, playerPush = 0, autoGame = 0, doubleRules = 0;
-
-            foreach (Transform row in _optionsLayout.transform)
-            {
-                switch (row.name)
-                {
-                    case "Row1":
-                        score = row.Find($"{NNDpType.DiFen}/{NNDpType.DiFen}Dp").GetComponent<Dropdown>().value;
-                        dish = row.Find($"{NNDpType.JuShu}/{NNDpType.JuShu}Dp").GetComponent<Dropdown>().value;
-                        break;
-                    case "Row2":
-                        roomRate = row.Find($"{NNDpType.FangFei}/{NNDpType.FangFei}Dp").GetComponent<Dropdown>().value;
-                        autoGame = row.Find($"{NNDpType.ZiDongKaiZhuo}/{NNDpType.ZiDongKaiZhuo}Dp").GetComponent<Dropdown>().value;
-                        break;
-                    case "Row3":
-                        if (row.Find(NNDpType.XianJiaTuiZhu).gameObject.activeInHierarchy)
-                        {
-                            playerPush = row.Find($"{NNDpType.XianJiaTuiZhu}/{NNDpType.XianJiaTuiZhu}Dp").GetComponent<Dropdown>().value;
-                        }
-
-                        break;
-                    case "Row4":
-                        doubleRules = row.Find($"{NNDpType.FanBeiGuiZe}/{NNDpType.FanBeiGuiZe}Dp").GetComponent<Dropdown>().value;
-                        break;
-                }
-            }
-            
-            nnChess.Score = _curretNiuNiuRule.Score[score];
-            nnChess.Dish = _curretNiuNiuRule.Dish[dish];
-            nnChess.RoomRate = _curretNiuNiuRule.RoomRate[roomRate];
-            nnChess.PlayerPush = _curretNiuNiuRule.PlayerPush[playerPush];
-            nnChess.AutoGame = _curretNiuNiuRule.AutoGame[autoGame];
-            nnChess.DoubleRules = _curretNiuNiuRule.DoubleRules[doubleRules];
-
-            nnChess.ShunZiRules = false;
-            nnChess.TongHuaRules = false;
-            nnChess.HuLuRules = false;
-            nnChess.WuHuaRules = false;
-            nnChess.ZhaDanRules = false;
-            nnChess.WuXiaoRules = false;
-            nnChess.ZhongTuJinRuRules = false;
-            nnChess.CuoPaiRules = false;
-            nnChess.WangLaiRules = false;
-            nnChess.MaiMaRules = false;
-            nnChess.PlayerCount = _roomPeople6.GetComponent<Toggle>().isOn ? 6 : 8;
-
-            return nnChess;
         }
     }
 }

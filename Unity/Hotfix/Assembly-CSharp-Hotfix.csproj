@@ -216,8 +216,8 @@
     <Compile Include="ExtensionCode\UI\LoginScene\LoginUI\Regist\RegistPanelFactory.cs" />
     <Compile Include="ExtensionCode\UI\LoginScene\NiuNiuGame\NiuNiuLobby\NiuNiuCreateRoom\NiuNiuCRComponent.cs" />
     <Compile Include="ExtensionCode\UI\LoginScene\NiuNiuGame\NiuNiuLobby\NiuNiuCreateRoom\NiuNiuCRFactory.cs" />
-    <Compile Include="ExtensionCode\UI\LoginScene\NiuNiuGame\NiuNiuLobby\NiuNiuCreateRoom\NiuNiuOptions\NiuNiuOptionsComponent.cs" />
-    <Compile Include="ExtensionCode\UI\LoginScene\NiuNiuGame\NiuNiuLobby\NiuNiuCreateRoom\NiuNiuOptions\NiuNiuOptionsFactory.cs" />
+    <Compile Include="ExtensionCode\UI\LoginScene\NiuNiuGame\NiuNiuLobby\NiuNiuCreateRoom\NiuNiuOptionShowBox\NiuNiuOSBComponent.cs" />
+    <Compile Include="ExtensionCode\UI\LoginScene\NiuNiuGame\NiuNiuLobby\NiuNiuCreateRoom\NiuNiuOptionShowBox\NiuNiuOSBFactory.cs" />
     <Compile Include="ExtensionCode\UI\LoginScene\NiuNiuGame\NiuNiuLobby\NiuNiuJoinRoom\NiuNiuJoinRoomComponent.cs" />
     <Compile Include="ExtensionCode\UI\LoginScene\NiuNiuGame\NiuNiuLobby\NiuNiuJoinRoom\NiuNiuJoinRoomFactory.cs" />
     <Compile Include="ExtensionCode\UI\LoginScene\NiuNiuGame\NiuNiuLobby\NiuNiuLobbyComponent.cs" />

@@ -13,7 +13,7 @@ namespace ETHotfix
             Game.Scene.GetComponent<UIComponent>().Create(UIType.NiuNiuCreateRoom, UiLayer.Medium).GameObject.SetActive(false);
             Game.Scene.GetComponent<UIComponent>().Create(UIType.NiuNiuJoinRoom, UiLayer.Top).GameObject.SetActive(false);
             Game.Scene.GetComponent<UIComponent>().Create(UIType.NiuNiuLobbyMenu, UiLayer.Top).GameObject.SetActive(false);
-            Game.Scene.GetComponent<UIComponent>().Create(UIType.NiuNiuOptions, UiLayer.Top).GameObject.SetActive(false);
+            Game.Scene.GetComponent<UIComponent>().Create(UIType.NiuNiuOSB, UiLayer.Top).GameObject.SetActive(false);
             
             ui.AddComponent<NiuNiuLobbyComponent>();
             
@@ -25,7 +25,7 @@ namespace ETHotfix
             Game.Scene.GetComponent<UIComponent>().Remove(UIType.NiuNiuCreateRoom);
             Game.Scene.GetComponent<UIComponent>().Remove(UIType.NiuNiuJoinRoom);
             Game.Scene.GetComponent<UIComponent>().Remove(UIType.NiuNiuLobbyMenu);
-            Game.Scene.GetComponent<UIComponent>().Remove(UIType.NiuNiuOptions);
+            Game.Scene.GetComponent<UIComponent>().Remove(UIType.NiuNiuOSB);
             
             base.Remove(type);
         }
