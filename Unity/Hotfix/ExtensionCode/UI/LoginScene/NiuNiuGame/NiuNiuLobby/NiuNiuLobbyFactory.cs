@@ -13,7 +13,6 @@ namespace ETHotfix
             Game.Scene.GetComponent<UIComponent>().Create(UIType.NiuNiuCreateRoom, UiLayer.Medium).GameObject.SetActive(false);
             Game.Scene.GetComponent<UIComponent>().Create(UIType.NiuNiuJoinRoom, UiLayer.Top).GameObject.SetActive(false);
             Game.Scene.GetComponent<UIComponent>().Create(UIType.NiuNiuLobbyMenu, UiLayer.Top).GameObject.SetActive(false);
-            Game.Scene.GetComponent<UIComponent>().Create(UIType.NiuNiuOptions, UiLayer.Top).GameObject.SetActive(false);
             
             ui.AddComponent<NiuNiuLobbyComponent>();
             
