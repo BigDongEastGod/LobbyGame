@@ -2824,6 +2824,8 @@
                     <e p="NiuNiuMainFactory.cs" t="Include" />
                     <e p="NNRoomOperationComponent.cs" t="Include" />
                     <e p="NNRoomOperationFactory.cs" t="Include" />
+                    <e p="NNRoomRuleInfoComponent.cs" t="Include" />
+                    <e p="NNRoomRuleInfoFactory.cs" t="Include" />
                     <e p="NNShowCardComponent.cs" t="Include" />
                     <e p="NNShowCardFactory.cs" t="Include" />
                   </e>

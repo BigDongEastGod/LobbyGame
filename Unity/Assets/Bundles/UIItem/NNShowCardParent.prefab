@@ -378,6 +378,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 224572769339113152}
+  - component: {fileID: 114387187704782472}
   - component: {fileID: 114569054234758752}
   m_Layer: 0
   m_Name: NNShowCardParent
@@ -879,6 +880,18 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114387187704782472
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1502322475580992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8347f75bbf20473292de676504ad7398, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CanvasName: GameCanvas
 --- !u!114 &114569054234758752
 MonoBehaviour:
   m_ObjectHideFlags: 1

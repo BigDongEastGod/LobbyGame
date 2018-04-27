@@ -1,4 +1,5 @@
 ﻿using ETModel;
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -73,7 +74,6 @@ namespace ETHotfix
             var timeTxt=rc.Get<GameObject>("TimeTxt");
             var batterySlider=rc.Get<GameObject>("BatterySlider");
             var wiFiImg=rc.Get<GameObject>("WiFiImg");
-            
             var AutomaticFlopToggle=rc.Get<GameObject>("AutomaticFlopToggle");
 
             
@@ -83,7 +83,7 @@ namespace ETHotfix
                 
                 Game.Scene.GetComponent<UIComponent>().Create(UIType.NNRoomRuleInfoUIForm,UiLayer.Top);
             });
-            
+       
             //房间信息窗口事件注册
             SceneHelperComponent.Instance.MonoEvent.AddButtonClick(selectButton.GetComponent<Button>(), () =>
             {
@@ -91,6 +91,14 @@ namespace ETHotfix
                 Game.Scene.GetComponent<UIComponent>().Create(UIType.NNRoomOperation,UiLayer.Top);
             });
             
+            
+            //房间信息窗口事件注册
+            SceneHelperComponent.Instance.MonoEvent.AddButtonClick(sitDownBt.GetComponent<Button>(), () =>
+            {
+                
+               
+            });
+
         }
     }
 }
