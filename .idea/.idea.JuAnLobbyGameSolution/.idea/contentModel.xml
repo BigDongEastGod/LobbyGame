@@ -2803,6 +2803,7 @@
                         <e p="NNOptionsComponent.cs" t="Include" />
                         <e p="NNOptionsFactory.cs" t="Include" />
                       </e>
+                      <e p="NiuNiuRule.cs" t="Include" />
                     </e>
                     <e p="NiuNiuJoinRoom" t="Include">
                       <e p="NiuNiuJoinRoomComponent.cs" t="Include" />

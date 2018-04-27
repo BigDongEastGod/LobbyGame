@@ -24,7 +24,7 @@ namespace ETHotfix
             var nnOptionShowBox = rc.Get<GameObject>("NiuNiuOptions");
             _osbPanel = rc.Get<GameObject>("OptionShowBoxPanel");
 
-            SceneHelperComponent.Instance.MonoEvent.AddButtonClick(nnOptionShowBox.GetComponent<Button>(), () => { nnOptionShowBox.SetActive(false); });
+            SceneHelperComponent.Instance.MonoEvent.AddButtonClick(nnOptionShowBox.GetComponent<Button>(), () => { _osbPanel.SetActive(false); });
         }
 
         public void InitPosAndSize(Vector2 pos)
