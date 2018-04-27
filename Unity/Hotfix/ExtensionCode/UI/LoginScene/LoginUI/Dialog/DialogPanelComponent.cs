@@ -45,6 +45,7 @@ namespace ETHotfix
         /// <param name="message"></param>
         public void ShowDialogBox(string message)
         {
+            _dialogPanel.SetActive(true);
             _dialogBoxText.GetComponent<Text>().text = message;
         }
     }
