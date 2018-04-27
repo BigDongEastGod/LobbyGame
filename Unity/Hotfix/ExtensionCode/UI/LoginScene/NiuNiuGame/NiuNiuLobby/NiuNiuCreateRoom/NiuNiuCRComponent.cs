@@ -513,7 +513,7 @@ namespace ETHotfix
                     {
                         Debug.Log("加入房间成功,跳转至游戏主场景");
                         Game.Scene.GetComponent<UIComponent>().Remove(UIType.NiuNiuLobby);
-                        Game.Scene.GetComponent<UIComponent>().Create(UIType.NiuNiuMain);
+                        Game.Scene.GetComponent<UIComponent>().Create(UIType.NiuNiuMain,UiLayer.Bottom);
                     }
                     else
                     {
@@ -539,6 +539,10 @@ namespace ETHotfix
             }
         }
 
+        /// <summary>
+        /// 得到当前选择的规则
+        /// </summary>
+        /// <returns></returns>
         private NNChess GetCurrentNnChess()
         {
             NNChess nnChess = new NNChess();
