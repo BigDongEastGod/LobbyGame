@@ -13,7 +13,7 @@ namespace ETHotfix
             self.Awake();
         }
     }
-    
+
     [ObjectSystem]
     public class LoginPanelComponentStartSystem : StartSystem<LoginPanelComponent>
     {
@@ -22,7 +22,7 @@ namespace ETHotfix
             self.Start();
         }
     }
-    
+
 
     public class LoginPanelComponent : Component
     {
@@ -83,7 +83,7 @@ namespace ETHotfix
                 {
                     session = SceneHelperComponent.Instance.CreateRealmSession();
                 }
-                
+
                 SceneHelperComponent.Instance.MonoEvent.RemoveButtonClick(loginSubmitBtn.GetComponent<Button>());
 
                 LoginResponse response = (LoginResponse) await session.Call(
@@ -92,7 +92,7 @@ namespace ETHotfix
                         UserName = loginNameText.GetComponent<InputField>().text,
                         Password = loginPwdText.GetComponent<InputField>().text
                     });
-               
+
                 if (response.Error == 0)
                 {
                     session.Dispose();
@@ -113,7 +113,6 @@ namespace ETHotfix
 
                 SceneHelperComponent.Instance.MonoEvent.AddButtonClick(loginSubmitBtn.GetComponent<Button>(),
                     () => OnLoginSubmitBtn(loginNameText, loginPwdText));
-
             }
             catch (Exception e)
             {
