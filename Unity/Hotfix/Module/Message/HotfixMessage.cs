@@ -479,12 +479,15 @@ namespace ETHotfix
 		[ProtoMember(92, IsRequired = true)]
 		public string Message { get; set; }
 
+		[ProtoMember(1, IsRequired = true)]
+		public int RoomId;
+
 	}
 
 // 加入房间消息通告
-	[Message(HotfixOpcode.JoinRoomAnnunciate)]
+	[Message(HotfixOpcode.RoomInfoAnnunciate)]
 	[ProtoContract]
-	public partial class JoinRoomAnnunciate: IActorMessage
+	public partial class RoomInfoAnnunciate: IActorMessage
 	{
 		[ProtoMember(90, IsRequired = true)]
 		public int RpcId { get; set; }
@@ -496,7 +499,7 @@ namespace ETHotfix
 		public long AccountId;
 
 		[ProtoMember(2, IsRequired = true)]
-		public int Error;
+		public int Message;
 
 	}
 
