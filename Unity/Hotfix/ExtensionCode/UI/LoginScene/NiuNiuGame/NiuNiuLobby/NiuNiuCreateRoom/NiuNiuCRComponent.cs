@@ -35,7 +35,6 @@ namespace ETHotfix
 
         public void Awake()
         {
-            
             ReferenceCollector rc = this.GetParent<UI>().GameObject.GetComponent<ReferenceCollector>();
 
             #region 得到游戏物体实例
@@ -121,15 +120,16 @@ namespace ETHotfix
                         break;
                 }
             }
+
             SceneHelperComponent.Instance.MonoEvent.AddButtonClick(createRoomBtn.GetComponent<Button>(), CreatePaiJu);
         }
 
         public void Start()
         {
             _nnLobby = Game.Scene.GetComponent<UIComponent>().Get(UIType.NiuNiuLobby);
-            
+
             Game.Scene.GetComponent<UIComponent>().Create(UIType.NiuNiuOptions, _optionsLayout.transform.Find("Row5/TeShuPaiXing/OptionsPos"));
-            
+
             _nnOptions = Game.Scene.GetComponent<UIComponent>().Get(UIType.NiuNiuOptions);
         }
 
@@ -316,19 +316,19 @@ namespace ETHotfix
             {
                 Debug.Log("发送规则成功");
 
-                var joinRoomResponse = (JoinRoomResponse) await SceneHelperComponent.Instance.Session.Call(
-                    new JoinRoomRequest() {RoomId = roomId});
+                var roomInfoResponse = (RoomInfoResponse) await SceneHelperComponent.Instance.Session.Call(
+                    new RoomInfoRequest() {RoomId = roomId, Message = 0});
 
-                if (joinRoomResponse.Error == 0)
+                if (roomInfoResponse.Error == 0)
                 {
                     Debug.Log("加入房间成功,跳转至游戏主场景");
 
-//                        Game.Scene.GetComponent<UIComponent>().Remove(UIType.NiuNiuLobby);
-//                        Game.Scene.GetComponent<UIComponent>().Create(UIType.NiuNiuMain,UiLayer.Bottom);
+                    Game.Scene.GetComponent<UIComponent>().Remove(UIType.NiuNiuLobby);
+                    Game.Scene.GetComponent<UIComponent>().Create(UIType.NiuNiuMain, UiLayer.Bottom);
                 }
                 else
                 {
-                    Debug.Log("加入房间失败: " + joinRoomResponse.Message);
+                    Debug.Log("加入房间失败: " + roomInfoResponse.Message);
                 }
             }
             else
