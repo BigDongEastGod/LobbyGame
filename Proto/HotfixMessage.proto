@@ -171,11 +171,13 @@ message RoomRulesResponse // IActorResponse
 	
 }
 // 加入游戏房间
-message JoinRoomRequest // IActorRequest
+message RoomInfoRequest // IActorRequest
 {
 	required int32 RoomId = 1;
+
+	required int16 Message = 2;  // 消息分类 0：加入房间 1：准备
 }
-message JoinRoomResponse // IActorResponse
+message RoomInfoResponse // IActorResponse
 {
 	
 }

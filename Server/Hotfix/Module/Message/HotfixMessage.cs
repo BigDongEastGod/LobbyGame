@@ -448,9 +448,9 @@ namespace ETHotfix
 	}
 
 // 加入游戏房间
-	[Message(HotfixOpcode.JoinRoomRequest)]
+	[Message(HotfixOpcode.RoomInfoRequest)]
 	[ProtoContract]
-	public partial class JoinRoomRequest: IActorRequest
+	public partial class RoomInfoRequest: IActorRequest
 	{
 		[ProtoMember(90, IsRequired = true)]
 		public int RpcId { get; set; }
@@ -461,11 +461,14 @@ namespace ETHotfix
 		[ProtoMember(1, IsRequired = true)]
 		public int RoomId;
 
+		[ProtoMember(2, IsRequired = true)]
+		public short Message;
+
 	}
 
-	[Message(HotfixOpcode.JoinRoomResponse)]
+	[Message(HotfixOpcode.RoomInfoResponse)]
 	[ProtoContract]
-	public partial class JoinRoomResponse: IActorResponse
+	public partial class RoomInfoResponse: IActorResponse
 	{
 		[ProtoMember(90, IsRequired = true)]
 		public int RpcId { get; set; }
