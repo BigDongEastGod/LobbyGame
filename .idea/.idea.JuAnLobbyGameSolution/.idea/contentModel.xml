@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="$USER_HOME$/Library/Caches/Rider2018.1/resharper-host/local/Transient/ReSharperHost/v12/SolutionCaches/_JuAnLobbyGameSolution.-628942961.00" t="ExcludeRecursive" />
     <e p="$PROJECT_DIR$" t="IncludeFlat">
       <e p="Bin" t="ExcludeRecursive" />
       <e p="Client" t="Include" />
@@ -2806,6 +2805,7 @@
                         <e p="NNOptionsComponent.cs" t="Include" />
                         <e p="NNOptionsFactory.cs" t="Include" />
                       </e>
+                      <e p="NiuNiuRule.cs" t="Include" />
                     </e>
                     <e p="NiuNiuJoinRoom" t="Include">
                       <e p="NiuNiuJoinRoomComponent.cs" t="Include" />
@@ -2898,5 +2898,6 @@
         <e p="Temp/UnityVS_bin/Debug" t="ExcludeRecursive" />
       </e>
     </e>
+    <e p="$USER_HOME$/Library/Caches/Rider2018.1/resharper-host/local/Transient/ReSharperHost/v12/SolutionCaches/_JuAnLobbyGameSolution.1661154428.00" t="ExcludeRecursive" />
   </component>
 </project>
