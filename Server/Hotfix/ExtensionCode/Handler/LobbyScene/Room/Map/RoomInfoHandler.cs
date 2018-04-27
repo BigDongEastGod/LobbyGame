@@ -53,6 +53,9 @@ namespace ETHotfix
                         room.Prepare(player);
                         break;
                 }
+
+                response.RoomId = RoomManageComponent.Instance.GetRoomId(room) ?? 0;
+
             }
             catch (Exception e)
             {

@@ -179,7 +179,7 @@ message RoomInfoRequest // IActorRequest
 }
 message RoomInfoResponse // IActorResponse
 {
-	
+	required int32 RoomId = 1;
 }
 // 加入房间消息通告
 message RoomInfoAnnunciate // IActorMessage
