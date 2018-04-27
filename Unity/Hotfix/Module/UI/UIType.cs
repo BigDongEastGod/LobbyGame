@@ -6,24 +6,43 @@ namespace ETHotfix
 {
     public static class UIType
     {
-	    public const string Root = "Root";
-	    public const string UILogin = "UILogin";
-	    public const string UILobby = "UILobby";
-	    
+        public const string Root = "Root";
+        public const string UILogin = "UILogin";
+        public const string UILobby = "UILobby";
+
+	    #region 注册UI
+
 	    public const string Login = "Login";
 	    public const string LoginPanel = "LoginPanel";
 	    public const string RegistPanel = "RegistPanel";
 	    public const string DialogPanel = "DialogPanel";
-	    
+
+	    #endregion
+
+	    #region 大厅UI
+
 	    public const string Lobby = "Lobby";
-	    
+
+	    #endregion
+
+	    #region 牛牛大厅UI
+
 	    public const string NiuNiuLobby = "NiuNiuLobby";
 	    public const string NiuNiuLobbyMenu = "NiuNiuLobbyMenu";
 	    public const string NiuNiuJoinRoom = "NiuNiuJoinRoom";
-	    
+
+	    #endregion
+
+	    #region 牛牛创建房间UI
+
 	    public const string NiuNiuCreateRoom = "NiuNiuCreateRoom";
-	    public const string NiuNiuOSB = "NiuNiuOptionShowBox";
-	    public const string NiuNiuMain = "NiuNiuMain";
+	    public const string NiuNiuOptions = "NiuNiuOptions";
+
+	    #endregion
+
+
+        public const string NiuNiuMain = "NiuNiuMain";
+	    
 	    public const string NNShowCard = "NNShowCardParent";
 	    public const string NNRoomOperation = "niuniuRoomOperation";
 	    public const string NNRoomRuleInfoUIForm = "NNRoomRuleInfoUIForm";

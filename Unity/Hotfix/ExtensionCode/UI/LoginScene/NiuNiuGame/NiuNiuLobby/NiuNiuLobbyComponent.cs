@@ -25,7 +25,6 @@ namespace ETHotfix
 
     public class NiuNiuLobbyComponent : Component
     {
-        private GameObject _currentShowUi;
 
         private UI _nnCreateRoom;
         private UI _nnLobbyMenu;
@@ -79,7 +78,6 @@ namespace ETHotfix
             // 加入房间按钮
             SceneHelperComponent.Instance.MonoEvent.AddButtonClick(lobbyJoinRoomButton.GetComponent<Button>(), () =>
             {
-                _currentShowUi = _nnJoinRoom.GameObject;
                 _nnJoinRoom.GameObject.SetActive(true);
             });
 
@@ -89,7 +87,6 @@ namespace ETHotfix
             // 菜单按钮
             SceneHelperComponent.Instance.MonoEvent.AddButtonClick(menuBtn.GetComponent<Button>(), () =>
             {
-                _currentShowUi = _nnLobbyMenu.GameObject;
                 _nnLobbyMenu.GameObject.SetActive(true);
             });
 

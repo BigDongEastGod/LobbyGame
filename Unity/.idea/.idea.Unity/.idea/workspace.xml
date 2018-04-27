@@ -2,12 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="43a2cc3c-b9a6-4da2-a947-693a35ac239f" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/.idea.JuAnChessGame/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/.idea.JuAnChessGame/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assembly-CSharp-Editor-firstpass.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp-Editor-firstpass.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assembly-CSharp-Editor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp-Editor.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assembly-CSharp-firstpass.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp-firstpass.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Res/Code/Hotfix.dll.bytes" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Res/Code/Hotfix.dll.bytes" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Res/Code/Hotfix.pdb.bytes" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Res/Code/Hotfix.pdb.bytes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Res/Config/GlobalProto.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Res/Config/GlobalProto.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ET.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ET/Module.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ET/Module/BehaviorTree.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ET/Module/Message.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ET/UI.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotfix/Assembly-CSharp-Hotfix.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Hotfix/Assembly-CSharp-Hotfix.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotfix/ExtensionCode/UI/LoginScene/LoginUI/Dialog/DialogPanelComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Hotfix/ExtensionCode/UI/LoginScene/LoginUI/Dialog/DialogPanelComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotfix/ExtensionCode/UI/LoginScene/LoginUI/Dialog/DialogPanelFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Hotfix/ExtensionCode/UI/LoginScene/LoginUI/Dialog/DialogPanelFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotfix/ExtensionCode/UI/LoginScene/LoginUI/Login/LoginPanelComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Hotfix/ExtensionCode/UI/LoginScene/LoginUI/Login/LoginPanelComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotfix/ExtensionCode/UI/LoginScene/LoginUI/LoginComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Hotfix/ExtensionCode/UI/LoginScene/LoginUI/LoginComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotfix/ExtensionCode/UI/LoginScene/NiuNiuGame/NiuNiuLobby/NiuNiuCreateRoom/NiuNiuCRComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Hotfix/ExtensionCode/UI/LoginScene/NiuNiuGame/NiuNiuLobby/NiuNiuCreateRoom/NiuNiuCRComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotfix/Module/UI/UIType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Hotfix/Module/UI/UIType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Unity.Editor.Plugins.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Unity.Editor.Plugins.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Unity.Editor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Unity.Editor.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Unity.Plugins.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Unity.Plugins.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Unity.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Unity.csproj" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -31,10 +50,10 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1680" />
-    <option name="height" value="947" />
+    <option name="height" value="942" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -42,6 +61,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="UnityExplorer">
+        <option name="show-hidden-items" value="false" />
+      </pane>
       <pane id="SolutionExplorer">
         <subPane>
           <expand>
@@ -54,10 +77,6 @@
         </subPane>
         <option name="show-file-system" value="false" />
         <option name="show-all-items" value="false" />
-      </pane>
-      <pane id="Scratches" />
-      <pane id="UnityExplorer">
-        <option name="show-hidden-items" value="false" />
       </pane>
     </panes>
   </component>
@@ -98,11 +117,12 @@
       <workItem from="1524622345562" duration="30000" />
       <workItem from="1524644943918" duration="23000" />
       <workItem from="1524716381421" duration="598000" />
+      <workItem from="1524736814981" duration="319000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="796000" />
+    <option name="totallyTimeSpent" value="1115000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -114,7 +134,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1680" height="947" extended-state="6" />
+    <frame x="0" y="23" width="1680" height="942" extended-state="6" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="right" id="Errors In Solution" order="3" />
@@ -124,8 +144,7 @@
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info anchor="right" id="JSON Viewer" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25579977" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25885227" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Unity" order="8" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -136,10 +155,11 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="right" id="JSON Viewer" order="4" />
       <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">

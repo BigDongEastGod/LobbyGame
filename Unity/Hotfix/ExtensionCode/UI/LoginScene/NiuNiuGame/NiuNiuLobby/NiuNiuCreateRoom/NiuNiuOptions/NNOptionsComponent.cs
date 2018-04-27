@@ -5,15 +5,15 @@ using UnityEngine.UI;
 namespace ETHotfix
 {
     [ObjectSystem]
-    public class NiuNiuOSBComponentAwakeSystem : AwakeSystem<NiuNiuOSBComponent>
+    public class NNOptionsComponentAwakeSystem : AwakeSystem<NNOptionsComponent>
     {
-        public override void Awake(NiuNiuOSBComponent self)
+        public override void Awake(NNOptionsComponent self)
         {
             self.Awake();
         }
     }
 
-    public class NiuNiuOSBComponent : Component
+    public class NNOptionsComponent : Component
     {
         private GameObject _osbPanel;
 
@@ -21,7 +21,7 @@ namespace ETHotfix
         {
             ReferenceCollector rc = this.GetParent<UI>().GameObject.GetComponent<ReferenceCollector>();
 
-            var nnOptionShowBox = rc.Get<GameObject>("NiuNiuOptionShowBox");
+            var nnOptionShowBox = rc.Get<GameObject>("NiuNiuOptions");
             _osbPanel = rc.Get<GameObject>("OptionShowBoxPanel");
 
             SceneHelperComponent.Instance.MonoEvent.AddButtonClick(nnOptionShowBox.GetComponent<Button>(), () => { nnOptionShowBox.SetActive(false); });

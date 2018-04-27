@@ -30,3 +30,7 @@ Unity/Unity1\.sln
 Unity/Hotfix/obj/
 
 Server/
+
+Unity/Assets/Res/Code/Hotfix\.dll\.bytes
+
+Unity/Assets/Res/Code/Hotfix\.pdb\.bytes
