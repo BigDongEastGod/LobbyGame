@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="43a2cc3c-b9a6-4da2-a947-693a35ac239f" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/Hotfix/ExtensionCode/Handler/NNGame/RoomInfoAnnunciateHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/.idea.JuAnLobbyGameSolution/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/.idea.JuAnLobbyGameSolution/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Proto/HotfixMessage.proto" beforeDir="false" afterPath="$PROJECT_DIR$/../Proto/HotfixMessage.proto" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Server/Hotfix/ExtensionCode/Entity/Game/NNRoom.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Hotfix/ExtensionCode/Entity/Game/NNRoom.cs" afterDir="false" />
@@ -9,7 +10,7 @@
       <change beforePath="$PROJECT_DIR$/../Server/Hotfix/Module/Message/HotfixOpcode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Hotfix/Module/Message/HotfixOpcode.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Hotfix/Assembly-CSharp-Hotfix.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Hotfix/Assembly-CSharp-Hotfix.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotfix/ExtensionCode/Handler/NNGame/JoinRoomAnnunciateHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Hotfix/ExtensionCode/Handler/NNGame/RoomInfoAnnunciateHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotfix/ExtensionCode/Handler/NNGame/JoinRoomAnnunciateHandler.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Hotfix/Module/Message/HotfixMessage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Hotfix/Module/Message/HotfixMessage.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Hotfix/Module/Message/HotfixOpcode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Hotfix/Module/Message/HotfixOpcode.cs" afterDir="false" />
     </list>
