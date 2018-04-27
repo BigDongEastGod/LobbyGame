@@ -56,7 +56,7 @@ namespace ETHotfix
         /// <param name="self"></param>
         /// <param name="room">房间</param>
         /// <returns></returns>
-        public static long? GetRoomId(this RoomManageComponent self,Room room)
+        public static int? GetRoomId(this RoomManageComponent self,Room room)
         {
             return self.Rooms.FirstOrDefault(d => d.Room == room)?.RoomId;
         }
