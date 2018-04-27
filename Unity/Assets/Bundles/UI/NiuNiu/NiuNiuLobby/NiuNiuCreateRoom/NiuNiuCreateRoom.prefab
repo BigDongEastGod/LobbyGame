@@ -5743,9 +5743,6 @@ MonoBehaviour:
     gameObject: {fileID: 1139720867350172}
   - key: OptionsLayout
     gameObject: {fileID: 1280355991181714}
-  - key: NN_OptionItem
-    gameObject: {fileID: 1257454125975406, guid: 52e5aa91ba11a47dd8699d33705c88ac,
-      type: 2}
   - key: CreateRoomBtn
     gameObject: {fileID: 1289955441135924}
   - key: NiuNiuCreateRoom

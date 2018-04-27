@@ -26,7 +26,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1202863167712876
 GameObject:
   m_ObjectHideFlags: 1
@@ -168,7 +168,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 0
+  m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -476,6 +476,11 @@ MonoBehaviour:
     gameObject: {fileID: 1202863167712876}
   - key: NiuNiuOptions
     gameObject: {fileID: 1387885936559030}
+  - key: NN_OptionItem
+    gameObject: {fileID: 1257454125975406, guid: 52e5aa91ba11a47dd8699d33705c88ac,
+      type: 2}
+  - key: TeShuPaiXingDp
+    gameObject: {fileID: 1782245665489994}
 --- !u!114 &114726848162029356
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -612,10 +617,10 @@ RectTransform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224418179615971042
 RectTransform:
@@ -692,7 +697,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 218.60938, y: -191.3923}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1111, y: 109.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224731995708352326
