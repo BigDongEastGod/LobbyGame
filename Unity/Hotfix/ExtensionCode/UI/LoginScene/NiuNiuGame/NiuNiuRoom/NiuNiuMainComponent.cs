@@ -19,6 +19,8 @@ namespace ETHotfix
     
     public class NiuNiuMainComponent:Component
     {
+        private Text roomNum;
+        
         
        public void Awake()
         {
@@ -27,7 +29,7 @@ namespace ETHotfix
             //房间分线图
             var bg = rc.Get<GameObject>("BgImg");
             //房间号码
-            var roomNum = rc.Get<GameObject>("roomNum");
+            roomNum = rc.Get<GameObject>("roomNum").GetComponent<Text>();
             //庄位信息
             var zhuangWeiTxt  = rc.Get<GameObject>("zhuangWei");
             //底分信息
@@ -103,6 +105,26 @@ namespace ETHotfix
             
             
 
+        }
+
+
+
+
+        private async void GetRoomInfo()
+        {
+
+//            var response =
+//                (RoomInfoResponse) await SceneHelperComponent.Instance.Session.Call(
+//                    new RoomInfoRequest() {RoomId = 0, Message = -1});
+//            
+//            response.r
+//            
+//            var creatRoomResponse = (CreateRoomResponse) await SceneHelperComponent.Instance.Session.Call(
+//                new CreateRoomRequest() {RoomType = "NN"});
+//            
+//            var roomInfoResponse = (RoomInfoResponse) await SceneHelperComponent.Instance.Session.Call(
+//                new RoomInfoRequest() {RoomId = creatRoomResponse.RoomId, Message = 1});
+//                roomNum=roomInfoResponse.
         }
 
         private void RoomInfo(JoinRoomAnnunciate obj)
