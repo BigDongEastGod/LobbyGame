@@ -1,0 +1,39 @@
+2018-04-26 12:20:09.9584 Map      006 (Program.cs:43) server start........................ 6 Map
+2018-04-26 12:21:17.9562 Map      006 (Program.cs:43) server start........................ 6 Map
+2018-04-26 12:23:09.7826 Map      006 (ActorManagerComponent.cs:14) add actor: 662864470409257 SPlayer
+2018-04-26 12:23:59.6870 Map      006 (Program.cs:43) server start........................ 6 Map
+2018-04-26 12:24:12.4250 Map      006 (ActorManagerComponent.cs:14) add actor: 662864470409257 SPlayer
+2018-04-26 12:26:06.8312 Map      006 (Program.cs:43) server start........................ 6 Map
+2018-04-26 12:26:12.4667 Map      006 (ActorManagerComponent.cs:14) add actor: 662864470409257 SPlayer
+2018-04-26 12:27:20.3917 Map      006 (Program.cs:43) server start........................ 6 Map
+2018-04-26 12:27:31.2426 Map      006 (ActorManagerComponent.cs:14) add actor: 662864470409257 SPlayer
+2018-04-26 12:28:21.6071 Map      006 (Program.cs:43) server start........................ 6 Map
+2018-04-26 12:28:30.8127 Map      006 (ActorManagerComponent.cs:14) add actor: 662864470409257 SPlayer
+2018-04-26 12:29:31.1887 Map      006 (Program.cs:43) server start........................ 6 Map
+2018-04-26 12:29:39.0704 Map      006 (ActorManagerComponent.cs:14) add actor: 662864470409257 SPlayer
+2018-04-26 12:31:05.6363 Map      006 (Program.cs:43) server start........................ 6 Map
+2018-04-26 12:31:13.5877 Map      006 (ActorManagerComponent.cs:14) add actor: 662864470409257 SPlayer
+2018-04-26 12:32:58.9219 Map      006 (Program.cs:43) server start........................ 6 Map
+2018-04-26 12:33:10.8574 Map      006 (ActorManagerComponent.cs:14) add actor: 662864470409257 SPlayer
+2018-04-26 14:19:42.1875 Map      006 (Program.cs:43) server start........................ 6 Map
+2018-04-26 14:19:50.8504 Map      006 (ActorManagerComponent.cs:14) add actor: 662864470409257 SPlayer
+2018-04-26 14:21:13.8231 Map      006 (Program.cs:43) server start........................ 6 Map
+2018-04-26 14:21:22.8506 Map      006 (ActorManagerComponent.cs:14) add actor: 662864470409257 SPlayer
+2018-04-26 14:22:18.6581 Map      006 (Program.cs:43) server start........................ 6 Map
+2018-04-26 14:22:22.1238 Map      006 (ActorManagerComponent.cs:14) add actor: 662864470409257 SPlayer
+2018-04-26 14:24:56.1864 Map      006 (Program.cs:43) server start........................ 6 Map
+2018-04-26 14:25:05.7121 Map      006 (ActorManagerComponent.cs:14) add actor: 662864470409257 SPlayer
+2018-04-26 14:26:31.7048 Map      006 (Program.cs:43) server start........................ 6 Map
+2018-04-26 14:26:40.9402 Map      006 (ActorManagerComponent.cs:14) add actor: 662864470409257 SPlayer
+2018-04-26 14:26:43.9519 Map      006 (CreateRoomHandler.cs:41) 用户：662864470409257创建房间号：-8478
+2018-04-26 14:28:10.8528 Map      006 (Program.cs:43) server start........................ 6 Map
+2018-04-26 14:28:17.7353 Map      006 (ActorManagerComponent.cs:14) add actor: 662864470409257 SPlayer
+2018-04-26 14:28:20.8790 Map      006 (CreateRoomHandler.cs:39) 用户：662864470409257创建房间号：-8725
+2018-04-26 14:29:29.3795 Map      006 (Program.cs:43) server start........................ 6 Map
+2018-04-26 14:29:37.3799 Map      006 (ActorManagerComponent.cs:14) add actor: 662864470409257 SPlayer
+2018-04-26 14:29:40.4472 Map      006 (CreateRoomHandler.cs:39) 用户：662864470409257创建房间号：43807
+2018-04-26 14:29:53.7871 Map      006 (ActorManagerComponent.cs:14) add actor: 662864470409257 SPlayer
+2018-04-26 14:29:56.9631 Map      006 (CreateRoomHandler.cs:39) 用户：662864470409257创建房间号：-8208
+2018-04-26 14:31:34.8059 Map      006 (Program.cs:43) server start........................ 6 Map
+2018-04-26 14:31:45.5178 Map      006 (ActorManagerComponent.cs:14) add actor: 662864470409257 SPlayer
+2018-04-26 14:31:48.6607 Map      006 (CreateRoomHandler.cs:39) 用户：662864470409257创建房间号：16864

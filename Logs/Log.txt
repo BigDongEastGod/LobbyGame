@@ -1,0 +1,783 @@
+2018-04-25 21:06:20.2627 Manager  001 (Program.cs:43) server start........................ 1 Manager
+2018-04-25 21:06:21.1766 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=2 --appType=Realm --config=../Config/StartConfig/JuAnServer
+2018-04-25 21:06:21.1921 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=3 --appType=DB --config=../Config/StartConfig/JuAnServer
+2018-04-25 21:06:21.1993 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=4 --appType=Gate --config=../Config/StartConfig/JuAnServer
+2018-04-25 21:06:21.2081 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=5 --appType=Location --config=../Config/StartConfig/JuAnServer
+2018-04-25 21:06:21.2169 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=6 --appType=Map --config=../Config/StartConfig/JuAnServer
+2018-04-25 21:06:22.5942 Realm    002 (Program.cs:43) server start........................ 2 Realm
+2018-04-25 21:06:22.6211 Location 005 (Program.cs:43) server start........................ 5 Location
+2018-04-25 21:06:22.6272 Map      006 (Program.cs:43) server start........................ 6 Map
+2018-04-25 21:06:22.6462 DB       003 (Program.cs:43) server start........................ 3 DB
+2018-04-25 21:06:22.6523 Gate     004 (Program.cs:43) server start........................ 4 Gate
+2018-04-25 21:06:22.8669 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-25 21:06:24.8786 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-25 21:06:26.8810 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-25 21:06:28.8853 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-25 21:06:30.8961 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-25 21:06:32.9011 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-25 21:06:34.9102 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-25 21:06:36.9180 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-25 21:06:38.9298 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-25 21:06:40.9386 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-25 21:06:42.9440 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-25 21:06:44.9530 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-25 21:06:46.9628 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-25 21:06:48.9716 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-25 21:06:50.9777 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:20:08.4249 Manager  001 (Program.cs:43) server start........................ 1 Manager
+2018-04-26 12:20:08.8494 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=2 --appType=Realm --config=../Config/StartConfig/JuAnServer
+2018-04-26 12:20:08.8670 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=3 --appType=DB --config=../Config/StartConfig/JuAnServer
+2018-04-26 12:20:08.8723 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=4 --appType=Gate --config=../Config/StartConfig/JuAnServer
+2018-04-26 12:20:08.8778 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=5 --appType=Location --config=../Config/StartConfig/JuAnServer
+2018-04-26 12:20:08.8842 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=6 --appType=Map --config=../Config/StartConfig/JuAnServer
+2018-04-26 12:20:09.9385 Gate     004 (Program.cs:43) server start........................ 4 Gate
+2018-04-26 12:20:09.9371 Realm    002 (Program.cs:43) server start........................ 2 Realm
+2018-04-26 12:20:09.9504 Location 005 (Program.cs:43) server start........................ 5 Location
+2018-04-26 12:20:09.9487 DB       003 (Program.cs:43) server start........................ 3 DB
+2018-04-26 12:20:09.9584 Map      006 (Program.cs:43) server start........................ 6 Map
+2018-04-26 12:20:10.1257 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:20:12.1551 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:20:14.1603 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:20:16.1636 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:20:18.1761 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:20:20.1851 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:20:22.1886 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:20:24.1960 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:20:26.2040 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:20:28.2133 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:20:30.2155 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:20:32.2191 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:20:34.2281 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:20:36.2344 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:20:38.2377 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:20:40.2458 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:21:16.6201 Manager  001 (Program.cs:43) server start........................ 1 Manager
+2018-04-26 12:21:16.8638 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=2 --appType=Realm --config=../Config/StartConfig/JuAnServer
+2018-04-26 12:21:16.8765 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=3 --appType=DB --config=../Config/StartConfig/JuAnServer
+2018-04-26 12:21:16.8821 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=4 --appType=Gate --config=../Config/StartConfig/JuAnServer
+2018-04-26 12:21:16.8877 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=5 --appType=Location --config=../Config/StartConfig/JuAnServer
+2018-04-26 12:21:16.8940 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=6 --appType=Map --config=../Config/StartConfig/JuAnServer
+2018-04-26 12:21:17.9211 Realm    002 (Program.cs:43) server start........................ 2 Realm
+2018-04-26 12:21:17.9344 Gate     004 (Program.cs:43) server start........................ 4 Gate
+2018-04-26 12:21:17.9383 Location 005 (Program.cs:43) server start........................ 5 Location
+2018-04-26 12:21:17.9388 DB       003 (Program.cs:43) server start........................ 3 DB
+2018-04-26 12:21:17.9562 Map      006 (Program.cs:43) server start........................ 6 Map
+2018-04-26 12:21:18.1141 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:21:20.1298 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:21:22.1322 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:21:24.1405 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:21:26.1480 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:21:28.1511 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:21:30.1597 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:21:32.1658 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:21:34.1695 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:21:36.1724 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:21:38.1815 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:21:40.1849 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:21:42.1898 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:21:44.1983 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:21:46.2067 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:21:48.2162 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:21:50.2259 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:21:52.2345 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:21:54.2453 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:21:56.2556 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:21:58.1171 DB       003 (AMRpcHandler.cs:9) System.Exception: 查询数据库异常! Account {'UserName':'1','Password':'1'} ---> System.AggregateException: One or more errors occurred. (A timeout occured after 30000ms selecting a server using CompositeServerSelector{ Selectors = ReadPreferenceServerSelector{ ReadPreference = { Mode : Primary } }, LatencyLimitingServerSelector{ AllowedLatencyRange = 00:00:00.0150000 } }. Client view of cluster state is { ClusterId : "1", ConnectionMode : "Automatic", Type : "Unknown", State : "Disconnected", Servers : [{ ServerId: "{ ClusterId : 1, EndPoint : "127.0.0.1:27017" }", EndPoint: "127.0.0.1:27017", State: "Disconnected", Type: "Unknown", HeartbeatException: "MongoDB.Driver.MongoConnectionException: An exception occurred while opening a connection to the server. ---> System.Net.Internals.SocketExceptionFactory+ExtendedSocketException: Connection refused 127.0.0.1:27017
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.Core.Connections.TcpStreamFactory.<ConnectAsync>d__7.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/ThirdParty/MongodbDriver/MongoDB.Driver.Core/Core/Connections/TcpStreamFactory.cs:line 204
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.Core.Connections.TcpStreamFactory.<CreateStreamAsync>d__4.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/ThirdParty/MongodbDriver/MongoDB.Driver.Core/Core/Connections/TcpStreamFactory.cs:line 110
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+   at MongoDB.Driver.Core.Connections.BinaryConnection.<OpenHelperAsync>d__48.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/ThirdParty/MongodbDriver/MongoDB.Driver.Core/Core/Connections/BinaryConnection.cs:line 296
+   --- End of inner exception stack trace ---
+   at MongoDB.Driver.Core.Connections.BinaryConnection.<OpenHelperAsync>d__48.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/ThirdParty/MongodbDriver/MongoDB.Driver.Core/Core/Connections/BinaryConnection.cs:line 305
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.Core.Servers.ServerMonitor.<HeartbeatAsync>d__27.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/ThirdParty/MongodbDriver/MongoDB.Driver.Core/Core/Servers/ServerMonitor.cs:line 147" }] }.) ---> System.TimeoutException: A timeout occured after 30000ms selecting a server using CompositeServerSelector{ Selectors = ReadPreferenceServerSelector{ ReadPreference = { Mode : Primary } }, LatencyLimitingServerSelector{ AllowedLatencyRange = 00:00:00.0150000 } }. Client view of cluster state is { ClusterId : "1", ConnectionMode : "Automatic", Type : "Unknown", State : "Disconnected", Servers : [{ ServerId: "{ ClusterId : 1, EndPoint : "127.0.0.1:27017" }", EndPoint: "127.0.0.1:27017", State: "Disconnected", Type: "Unknown", HeartbeatException: "MongoDB.Driver.MongoConnectionException: An exception occurred while opening a connection to the server. ---> System.Net.Internals.SocketExceptionFactory+ExtendedSocketException: Connection refused 127.0.0.1:27017
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.Core.Connections.TcpStreamFactory.<ConnectAsync>d__7.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/ThirdParty/MongodbDriver/MongoDB.Driver.Core/Core/Connections/TcpStreamFactory.cs:line 204
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.Core.Connections.TcpStreamFactory.<CreateStreamAsync>d__4.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/ThirdParty/MongodbDriver/MongoDB.Driver.Core/Core/Connections/TcpStreamFactory.cs:line 110
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+   at MongoDB.Driver.Core.Connections.BinaryConnection.<OpenHelperAsync>d__48.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/ThirdParty/MongodbDriver/MongoDB.Driver.Core/Core/Connections/BinaryConnection.cs:line 296
+   --- End of inner exception stack trace ---
+   at MongoDB.Driver.Core.Connections.BinaryConnection.<OpenHelperAsync>d__48.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/ThirdParty/MongodbDriver/MongoDB.Driver.Core/Core/Connections/BinaryConnection.cs:line 305
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.Core.Servers.ServerMonitor.<HeartbeatAsync>d__27.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/ThirdParty/MongodbDriver/MongoDB.Driver.Core/Core/Servers/ServerMonitor.cs:line 147" }] }.
+   at MongoDB.Driver.Core.Clusters.Cluster.ThrowTimeoutException(IServerSelector selector, ClusterDescription description) in /Users/sining/Projects/JuAnChessGame/Server/ThirdParty/MongodbDriver/MongoDB.Driver.Core/Core/Clusters/Cluster.cs:line 325
+   at MongoDB.Driver.Core.Clusters.Cluster.WaitForDescriptionChangedHelper.HandleCompletedTask(Task completedTask) in /Users/sining/Projects/JuAnChessGame/Server/ThirdParty/MongodbDriver/MongoDB.Driver.Core/Core/Clusters/Cluster.cs:line 541
+   at MongoDB.Driver.Core.Clusters.Cluster.<WaitForDescriptionChangedAsync>d__44.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/ThirdParty/MongodbDriver/MongoDB.Driver.Core/Core/Clusters/Cluster.cs:line 318
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.Core.Clusters.Cluster.<SelectServerAsync>d__37.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/ThirdParty/MongodbDriver/MongoDB.Driver.Core/Core/Clusters/Cluster.cs:line 252
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+   at MongoDB.Driver.Core.Bindings.ReadPreferenceBinding.<GetReadChannelSourceAsync>d__8.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/ThirdParty/MongodbDriver/MongoDB.Driver.Core/Core/Bindings/ReadPreferenceBinding.cs:line 70
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+   at MongoDB.Driver.Core.Operations.FindOperation`1.<ExecuteAsync>d__111.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/ThirdParty/MongodbDriver/MongoDB.Driver.Core/Core/Operations/FindOperation.cs:line 435
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+   at MongoDB.Driver.OperationExecutor.<ExecuteReadOperationAsync>d__1`1.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/ThirdParty/MongodbDriver/MongoDB.Driver/OperationExecutor.cs:line 36
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+   at MongoDB.Driver.MongoCollectionImpl`1.<ExecuteReadOperationAsync>d__60`1.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/ThirdParty/MongodbDriver/MongoDB.Driver/MongoCollectionImpl.cs:line 792
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at ETModel.DBQueryJsonTask.<Run>d__12.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/Model/Module/DB/DBQueryJsonTask.cs:line 34
+   --- End of inner exception stack trace ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at ETHotfix.DBQueryJsonRequestHandler.<Run>d__0.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/Hotfix/Module/DB/DBQueryJsonRequestHandler.cs:line 16
+2018-04-26 12:21:58.1699 Realm    002 (AMRpcHandler.cs:9) System.Exception: Rpc Error: ETHotfix.DBQueryJsonRequest ---> ETModel.RpcException: Error: 2001 Message: System.Exception: 查询数据库异常! Account {'UserName':'1','Password':'1'} ---> System.AggregateException: One or more errors occurred. (A timeout occured after 30000ms selecting a server using CompositeServerSelector{ Selectors = ReadPreferenceServerSelector{ ReadPreference = { Mode : Primary } }, LatencyLimitingServerSelector{ AllowedLatencyRange = 00:00:00.0150000 } }. Client view of cluster state is { ClusterId : "1", ConnectionMode : "Automatic", Type : "Unknown", State : "Disconnected", Servers : [{ ServerId: "{ ClusterId : 1, EndPoint : "127.0.0.1:27017" }", EndPoint: "127.0.0.1:27017", State: "Disconnected", Type: "Unknown", HeartbeatException: "MongoDB.Driver.MongoConnectionException: An exception occurred while opening a connection to the server. ---> System.Net.Internals.SocketExceptionFactory+ExtendedSocketException: Connection refused 127.0.0.1:27017
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.Core.Connections.TcpStreamFactory.<ConnectAsync>d__7.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/ThirdParty/MongodbDriver/MongoDB.Driver.Core/Core/Connections/TcpStreamFactory.cs:line 204
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.Core.Connections.TcpStreamFactory.<CreateStreamAsync>d__4.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/ThirdParty/MongodbDriver/MongoDB.Driver.Core/Core/Connections/TcpStreamFactory.cs:line 110
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+   at MongoDB.Driver.Core.Connections.BinaryConnection.<OpenHelperAsync>d__48.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/ThirdParty/MongodbDriver/MongoDB.Driver.Core/Core/Connections/BinaryConnection.cs:line 296
+   --- End of inner exception stack trace ---
+   at MongoDB.Driver.Core.Connections.BinaryConnection.<OpenHelperAsync>d__48.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/ThirdParty/MongodbDriver/MongoDB.Driver.Core/Core/Connections/BinaryConnection.cs:line 305
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.Core.Servers.ServerMonitor.<HeartbeatAsync>d__27.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/ThirdParty/MongodbDriver/MongoDB.Driver.Core/Core/Servers/ServerMonitor.cs:line 147" }] }.) ---> System.TimeoutException: A timeout occured after 30000ms selecting a server using CompositeServerSelector{ Selectors = ReadPreferenceServerSelector{ ReadPreference = { Mode : Primary } }, LatencyLimitingServerSelector{ AllowedLatencyRange = 00:00:00.0150000 } }. Client view of cluster state is { ClusterId : "1", ConnectionMode : "Automatic", Type : "Unknown", State : "Disconnected", Servers : [{ ServerId: "{ ClusterId : 1, EndPoint : "127.0.0.1:27017" }", EndPoint: "127.0.0.1:27017", State: "Disconnected", Type: "Unknown", HeartbeatException: "MongoDB.Driver.MongoConnectionException: An exception occurred while opening a connection to the server. ---> System.Net.Internals.SocketExceptionFactory+ExtendedSocketException: Connection refused 127.0.0.1:27017
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.Core.Connections.TcpStreamFactory.<ConnectAsync>d__7.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/ThirdParty/MongodbDriver/MongoDB.Driver.Core/Core/Connections/TcpStreamFactory.cs:line 204
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.Core.Connections.TcpStreamFactory.<CreateStreamAsync>d__4.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/ThirdParty/MongodbDriver/MongoDB.Driver.Core/Core/Connections/TcpStreamFactory.cs:line 110
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+   at MongoDB.Driver.Core.Connections.BinaryConnection.<OpenHelperAsync>d__48.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/ThirdParty/MongodbDriver/MongoDB.Driver.Core/Core/Connections/BinaryConnection.cs:line 296
+   --- End of inner exception stack trace ---
+   at MongoDB.Driver.Core.Connections.BinaryConnection.<OpenHelperAsync>d__48.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/ThirdParty/MongodbDriver/MongoDB.Driver.Core/Core/Connections/BinaryConnection.cs:line 305
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.Core.Servers.ServerMonitor.<HeartbeatAsync>d__27.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/ThirdParty/MongodbDriver/MongoDB.Driver.Core/Core/Servers/ServerMonitor.cs:line 147" }] }.
+   at MongoDB.Driver.Core.Clusters.Cluster.ThrowTimeoutException(IServerSelector selector, ClusterDescription description) in /Users/sining/Projects/JuAnChessGame/Server/ThirdParty/MongodbDriver/MongoDB.Driver.Core/Core/Clusters/Cluster.cs:line 325
+   at MongoDB.Driver.Core.Clusters.Cluster.WaitForDescriptionChangedHelper.HandleCompletedTask(Task completedTask) in /Users/sining/Projects/JuAnChessGame/Server/ThirdParty/MongodbDriver/MongoDB.Driver.Core/Core/Clusters/Cluster.cs:line 541
+   at MongoDB.Driver.Core.Clusters.Cluster.<WaitForDescriptionChangedAsync>d__44.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/ThirdParty/MongodbDriver/MongoDB.Driver.Core/Core/Clusters/Cluster.cs:line 318
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.Core.Clusters.Cluster.<SelectServerAsync>d__37.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/ThirdParty/MongodbDriver/MongoDB.Driver.Core/Core/Clusters/Cluster.cs:line 252
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+   at MongoDB.Driver.Core.Bindings.ReadPreferenceBinding.<GetReadChannelSourceAsync>d__8.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/ThirdParty/MongodbDriver/MongoDB.Driver.Core/Core/Bindings/ReadPreferenceBinding.cs:line 70
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+   at MongoDB.Driver.Core.Operations.FindOperation`1.<ExecuteAsync>d__111.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/ThirdParty/MongodbDriver/MongoDB.Driver.Core/Core/Operations/FindOperation.cs:line 435
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+   at MongoDB.Driver.OperationExecutor.<ExecuteReadOperationAsync>d__1`1.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/ThirdParty/MongodbDriver/MongoDB.Driver/OperationExecutor.cs:line 36
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+   at MongoDB.Driver.MongoCollectionImpl`1.<ExecuteReadOperationAsync>d__60`1.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/ThirdParty/MongodbDriver/MongoDB.Driver/MongoCollectionImpl.cs:line 792
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at ETModel.DBQueryJsonTask.<Run>d__12.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/Model/Module/DB/DBQueryJsonTask.cs:line 34
+   --- End of inner exception stack trace ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at ETHotfix.DBQueryJsonRequestHandler.<Run>d__0.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/Hotfix/Module/DB/DBQueryJsonRequestHandler.cs:line 16
+   at ETModel.Session.<>c__DisplayClass18_0.<Call>b__0(IResponse response) in /Users/sining/Projects/JuAnChessGame/Unity/Assets/Scripts/Module/Message/Session.cs:line 189
+   --- End of inner exception stack trace ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at ETHotfix.DBProxyComponentEx.<QueryJson>d__7`1.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/Hotfix/Module/DB/DBProxyComponentSystem.cs:line 75
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at ETHotfix.LoginHandler.<Run>d__0.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/Hotfix/ExtensionCode/Handler/LoginScene/Realm/LoginHandler.cs:line 29
+2018-04-26 12:21:58.2633 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:22:00.2675 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:22:02.2772 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:22:04.2839 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:22:06.2935 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:22:08.3043 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:22:10.3151 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:22:12.3419 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:22:14.3507 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:22:16.3613 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:22:18.3712 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:22:20.3811 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:22:22.3919 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:22:24.4020 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:22:26.4105 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:22:28.4200 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:22:30.4282 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:22:32.4371 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:22:34.4476 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:22:36.4583 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:22:38.4672 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:22:40.4768 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:22:42.4915 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:22:44.4961 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:22:46.5072 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:22:48.5133 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:22:50.5217 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:22:52.5302 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:22:54.5381 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:22:56.5429 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:22:58.5530 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:23:00.5581 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:23:02.5673 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:23:04.5770 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:23:06.5861 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:23:08.5882 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:23:09.7826 Map      006 (ActorManagerComponent.cs:14) add actor: 662864470409257 SPlayer
+2018-04-26 12:23:09.8658 Location 005 (LocationComponent.cs:100) location add key: 662864470409257 appid: 6
+2018-04-26 12:23:09.9183 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225823733219443 Session
+2018-04-26 12:23:09.9304 Location 005 (LocationComponent.cs:100) location add key: 1225823733219443 appid: 4
+2018-04-26 12:23:10.1620 Location 005 (LocationComponent.cs:207) location get key: 662864470409257 6
+2018-04-26 12:23:10.5951 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:23:12.6014 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:23:14.6094 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:23:16.6176 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:23:18.6268 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:23:20.6356 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:23:22.6402 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:23:24.6480 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:23:26.6566 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:23:28.6660 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:23:30.6747 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:23:32.6820 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:23:34.6902 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:23:58.2880 Manager  001 (Program.cs:43) server start........................ 1 Manager
+2018-04-26 12:23:58.7251 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=2 --appType=Realm --config=../Config/StartConfig/JuAnServer
+2018-04-26 12:23:58.7384 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=3 --appType=DB --config=../Config/StartConfig/JuAnServer
+2018-04-26 12:23:58.7438 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=4 --appType=Gate --config=../Config/StartConfig/JuAnServer
+2018-04-26 12:23:58.7500 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=5 --appType=Location --config=../Config/StartConfig/JuAnServer
+2018-04-26 12:23:58.7565 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=6 --appType=Map --config=../Config/StartConfig/JuAnServer
+2018-04-26 12:23:59.6723 Realm    002 (Program.cs:43) server start........................ 2 Realm
+2018-04-26 12:23:59.6835 Gate     004 (Program.cs:43) server start........................ 4 Gate
+2018-04-26 12:23:59.6835 DB       003 (Program.cs:43) server start........................ 3 DB
+2018-04-26 12:23:59.6829 Location 005 (Program.cs:43) server start........................ 5 Location
+2018-04-26 12:23:59.6870 Map      006 (Program.cs:43) server start........................ 6 Map
+2018-04-26 12:23:59.8242 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:24:01.8369 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:24:03.8413 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:24:05.8500 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:24:07.8616 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:24:09.8703 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:24:11.8756 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:24:12.4250 Map      006 (ActorManagerComponent.cs:14) add actor: 662864470409257 SPlayer
+2018-04-26 12:24:12.5099 Location 005 (LocationComponent.cs:100) location add key: 662864470409257 appid: 6
+2018-04-26 12:24:12.5643 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225823737348152 Session
+2018-04-26 12:24:12.5785 Location 005 (LocationComponent.cs:100) location add key: 1225823737348152 appid: 4
+2018-04-26 12:24:12.7006 Location 005 (LocationComponent.cs:207) location get key: 662864470409257 6
+2018-04-26 12:24:13.8866 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:24:15.8957 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:24:17.9070 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:24:19.9160 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:24:21.9246 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:24:23.9322 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:24:25.9401 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:24:27.9485 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:24:29.9569 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:24:31.9661 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:24:33.9745 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:24:35.9828 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:24:37.9909 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:24:39.9982 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:24:42.0063 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:24:44.0162 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:24:46.0241 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:26:05.5910 Manager  001 (Program.cs:43) server start........................ 1 Manager
+2018-04-26 12:26:05.9573 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=2 --appType=Realm --config=../Config/StartConfig/JuAnServer
+2018-04-26 12:26:05.9736 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=3 --appType=DB --config=../Config/StartConfig/JuAnServer
+2018-04-26 12:26:05.9783 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=4 --appType=Gate --config=../Config/StartConfig/JuAnServer
+2018-04-26 12:26:05.9833 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=5 --appType=Location --config=../Config/StartConfig/JuAnServer
+2018-04-26 12:26:05.9891 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=6 --appType=Map --config=../Config/StartConfig/JuAnServer
+2018-04-26 12:26:06.7710 Realm    002 (Program.cs:43) server start........................ 2 Realm
+2018-04-26 12:26:06.7997 Gate     004 (Program.cs:43) server start........................ 4 Gate
+2018-04-26 12:26:06.7997 DB       003 (Program.cs:43) server start........................ 3 DB
+2018-04-26 12:26:06.8234 Location 005 (Program.cs:43) server start........................ 5 Location
+2018-04-26 12:26:06.8312 Map      006 (Program.cs:43) server start........................ 6 Map
+2018-04-26 12:26:06.9260 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:26:08.9367 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:26:10.9444 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:26:12.4667 Map      006 (ActorManagerComponent.cs:14) add actor: 662864470409257 SPlayer
+2018-04-26 12:26:12.5470 Location 005 (LocationComponent.cs:100) location add key: 662864470409257 appid: 6
+2018-04-26 12:26:12.6035 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225823745212467 Session
+2018-04-26 12:26:12.6171 Location 005 (LocationComponent.cs:100) location add key: 1225823745212467 appid: 4
+2018-04-26 12:26:12.7380 Location 005 (LocationComponent.cs:207) location get key: 662864470409257 6
+2018-04-26 12:26:12.9499 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:26:14.9574 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:26:16.9615 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:26:18.9644 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:26:20.9685 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:26:22.9777 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:26:24.9862 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:26:26.9901 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:26:28.9990 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:26:31.0079 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:26:33.0164 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:26:35.0201 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:26:37.0281 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:26:39.0366 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:26:41.0396 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:27:19.1012 Manager  001 (Program.cs:43) server start........................ 1 Manager
+2018-04-26 12:27:19.2907 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=2 --appType=Realm --config=../Config/StartConfig/JuAnServer
+2018-04-26 12:27:19.3089 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=3 --appType=DB --config=../Config/StartConfig/JuAnServer
+2018-04-26 12:27:19.3136 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=4 --appType=Gate --config=../Config/StartConfig/JuAnServer
+2018-04-26 12:27:19.3195 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=5 --appType=Location --config=../Config/StartConfig/JuAnServer
+2018-04-26 12:27:19.3267 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=6 --appType=Map --config=../Config/StartConfig/JuAnServer
+2018-04-26 12:27:20.3445 Location 005 (Program.cs:43) server start........................ 5 Location
+2018-04-26 12:27:20.3772 Realm    002 (Program.cs:43) server start........................ 2 Realm
+2018-04-26 12:27:20.3805 Gate     004 (Program.cs:43) server start........................ 4 Gate
+2018-04-26 12:27:20.3917 Map      006 (Program.cs:43) server start........................ 6 Map
+2018-04-26 12:27:20.3824 DB       003 (Program.cs:43) server start........................ 3 DB
+2018-04-26 12:27:20.5885 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:27:22.6038 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:27:24.6080 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:27:26.6165 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:27:28.6291 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:27:30.6344 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:27:31.2426 Map      006 (ActorManagerComponent.cs:14) add actor: 662864470409257 SPlayer
+2018-04-26 12:27:31.3267 Location 005 (LocationComponent.cs:100) location add key: 662864470409257 appid: 6
+2018-04-26 12:27:31.3795 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225823750389815 Session
+2018-04-26 12:27:31.3922 Location 005 (LocationComponent.cs:100) location add key: 1225823750389815 appid: 4
+2018-04-26 12:27:31.5067 Location 005 (LocationComponent.cs:207) location get key: 662864470409257 6
+2018-04-26 12:27:31.5388 Map      006 (GetAccountInfoHandler.cs:14) 1111111111111111111
+2018-04-26 12:27:32.6455 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:27:34.6485 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:27:36.6580 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:27:38.6662 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:28:20.1608 Manager  001 (Program.cs:43) server start........................ 1 Manager
+2018-04-26 12:28:20.5173 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=2 --appType=Realm --config=../Config/StartConfig/JuAnServer
+2018-04-26 12:28:20.5315 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=3 --appType=DB --config=../Config/StartConfig/JuAnServer
+2018-04-26 12:28:20.5357 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=4 --appType=Gate --config=../Config/StartConfig/JuAnServer
+2018-04-26 12:28:20.5397 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=5 --appType=Location --config=../Config/StartConfig/JuAnServer
+2018-04-26 12:28:20.5443 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=6 --appType=Map --config=../Config/StartConfig/JuAnServer
+2018-04-26 12:28:21.5911 Location 005 (Program.cs:43) server start........................ 5 Location
+2018-04-26 12:28:21.6032 Gate     004 (Program.cs:43) server start........................ 4 Gate
+2018-04-26 12:28:21.6063 Realm    002 (Program.cs:43) server start........................ 2 Realm
+2018-04-26 12:28:21.6071 Map      006 (Program.cs:43) server start........................ 6 Map
+2018-04-26 12:28:21.7532 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:28:23.7666 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:28:25.7770 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:28:27.7799 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:28:29.7937 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:28:30.8127 Map      006 (ActorManagerComponent.cs:14) add actor: 662864470409257 SPlayer
+2018-04-26 12:28:30.8980 Location 005 (LocationComponent.cs:100) location add key: 662864470409257 appid: 6
+2018-04-26 12:28:30.9499 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225823754256437 Session
+2018-04-26 12:28:30.9627 Location 005 (LocationComponent.cs:100) location add key: 1225823754256437 appid: 4
+2018-04-26 12:28:31.0805 Location 005 (LocationComponent.cs:207) location get key: 662864470409257 6
+2018-04-26 12:28:31.1158 Map      006 (GetAccountInfoHandler.cs:14) 1111111111111111111
+2018-04-26 12:28:31.2327 Map      006 (GetAccountInfoHandler.cs:57) 2222222222222
+2018-04-26 12:28:31.8046 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:28:33.8132 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:28:35.8172 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:28:37.8239 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:29:29.9218 Manager  001 (Program.cs:43) server start........................ 1 Manager
+2018-04-26 12:29:30.0748 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=2 --appType=Realm --config=../Config/StartConfig/JuAnServer
+2018-04-26 12:29:30.0859 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=3 --appType=DB --config=../Config/StartConfig/JuAnServer
+2018-04-26 12:29:30.0906 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=4 --appType=Gate --config=../Config/StartConfig/JuAnServer
+2018-04-26 12:29:30.0951 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=5 --appType=Location --config=../Config/StartConfig/JuAnServer
+2018-04-26 12:29:30.1001 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=6 --appType=Map --config=../Config/StartConfig/JuAnServer
+2018-04-26 12:29:31.1640 Gate     004 (Program.cs:43) server start........................ 4 Gate
+2018-04-26 12:29:31.1886 DB       003 (Program.cs:43) server start........................ 3 DB
+2018-04-26 12:29:31.1887 Map      006 (Program.cs:43) server start........................ 6 Map
+2018-04-26 12:29:31.2092 Location 005 (Program.cs:43) server start........................ 5 Location
+2018-04-26 12:29:31.2170 Realm    002 (Program.cs:43) server start........................ 2 Realm
+2018-04-26 12:29:31.3492 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:29:33.3609 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:29:35.3682 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:29:37.3761 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:29:39.0704 Map      006 (ActorManagerComponent.cs:14) add actor: 662864470409257 SPlayer
+2018-04-26 12:29:39.1543 Location 005 (LocationComponent.cs:100) location add key: 662864470409257 appid: 6
+2018-04-26 12:29:39.2084 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225823758712884 Session
+2018-04-26 12:29:39.2201 Location 005 (LocationComponent.cs:100) location add key: 1225823758712884 appid: 4
+2018-04-26 12:29:39.3186 Location 005 (LocationComponent.cs:207) location get key: 662864470409257 6
+2018-04-26 12:29:39.3905 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:29:41.3954 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:29:43.4045 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:29:45.4136 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:29:47.4188 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:29:49.4266 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:29:51.4346 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:31:04.5105 Manager  001 (Program.cs:43) server start........................ 1 Manager
+2018-04-26 12:31:04.7994 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=2 --appType=Realm --config=../Config/StartConfig/JuAnServer
+2018-04-26 12:31:04.8138 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=3 --appType=DB --config=../Config/StartConfig/JuAnServer
+2018-04-26 12:31:04.8177 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=4 --appType=Gate --config=../Config/StartConfig/JuAnServer
+2018-04-26 12:31:04.8216 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=5 --appType=Location --config=../Config/StartConfig/JuAnServer
+2018-04-26 12:31:04.8262 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=6 --appType=Map --config=../Config/StartConfig/JuAnServer
+2018-04-26 12:31:05.6283 Realm    002 (Program.cs:43) server start........................ 2 Realm
+2018-04-26 12:31:05.6361 Gate     004 (Program.cs:43) server start........................ 4 Gate
+2018-04-26 12:31:05.6363 Map      006 (Program.cs:43) server start........................ 6 Map
+2018-04-26 12:31:05.6382 Location 005 (Program.cs:43) server start........................ 5 Location
+2018-04-26 12:31:05.6379 DB       003 (Program.cs:43) server start........................ 3 DB
+2018-04-26 12:31:05.7587 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:31:07.7697 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:31:09.7775 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:31:11.7855 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:31:13.5877 Map      006 (ActorManagerComponent.cs:14) add actor: 662864470409257 SPlayer
+2018-04-26 12:31:13.6739 Location 005 (LocationComponent.cs:100) location add key: 662864470409257 appid: 6
+2018-04-26 12:31:13.7281 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225823764938804 Session
+2018-04-26 12:31:13.7415 Location 005 (LocationComponent.cs:100) location add key: 1225823764938804 appid: 4
+2018-04-26 12:31:13.8002 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:31:13.8464 Location 005 (LocationComponent.cs:207) location get key: 662864470409257 6
+2018-04-26 12:31:15.8051 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:31:17.8101 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:31:19.8152 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:31:21.8230 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:31:23.8310 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:31:25.8398 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:31:27.8489 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:31:29.8579 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:32:57.8616 Manager  001 (Program.cs:43) server start........................ 1 Manager
+2018-04-26 12:32:57.9898 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=2 --appType=Realm --config=../Config/StartConfig/JuAnServer
+2018-04-26 12:32:58.0012 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=3 --appType=DB --config=../Config/StartConfig/JuAnServer
+2018-04-26 12:32:58.0057 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=4 --appType=Gate --config=../Config/StartConfig/JuAnServer
+2018-04-26 12:32:58.0105 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=5 --appType=Location --config=../Config/StartConfig/JuAnServer
+2018-04-26 12:32:58.0150 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=6 --appType=Map --config=../Config/StartConfig/JuAnServer
+2018-04-26 12:32:58.9045 Realm    002 (Program.cs:43) server start........................ 2 Realm
+2018-04-26 12:32:58.9169 DB       003 (Program.cs:43) server start........................ 3 DB
+2018-04-26 12:32:58.9181 Gate     004 (Program.cs:43) server start........................ 4 Gate
+2018-04-26 12:32:58.9231 Location 005 (Program.cs:43) server start........................ 5 Location
+2018-04-26 12:32:58.9219 Map      006 (Program.cs:43) server start........................ 6 Map
+2018-04-26 12:32:59.0611 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:33:01.0745 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:33:03.0826 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:33:05.0911 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:33:07.1016 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:33:09.1098 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 12:33:10.8574 Map      006 (ActorManagerComponent.cs:14) add actor: 662864470409257 SPlayer
+2018-04-26 12:33:10.9364 Location 005 (LocationComponent.cs:100) location add key: 662864470409257 appid: 6
+2018-04-26 12:33:10.9919 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225823772606519 Session
+2018-04-26 12:33:11.0049 Location 005 (LocationComponent.cs:100) location add key: 1225823772606519 appid: 4
+2018-04-26 12:33:11.1175 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:33:11.1396 Location 005 (LocationComponent.cs:207) location get key: 662864470409257 6
+2018-04-26 12:33:13.1259 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:33:15.1349 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:33:17.1466 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:33:19.1545 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:33:21.1624 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:33:23.1706 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:33:25.1787 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:33:27.1866 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:33:29.1944 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:33:31.2024 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:33:33.2116 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 12:33:35.2197 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 14:19:41.1176 Manager  001 (Program.cs:43) server start........................ 1 Manager
+2018-04-26 14:19:41.3583 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=2 --appType=Realm --config=../Config/StartConfig/JuAnServer
+2018-04-26 14:19:41.3671 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=3 --appType=DB --config=../Config/StartConfig/JuAnServer
+2018-04-26 14:19:41.3715 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=4 --appType=Gate --config=../Config/StartConfig/JuAnServer
+2018-04-26 14:19:41.3758 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=5 --appType=Location --config=../Config/StartConfig/JuAnServer
+2018-04-26 14:19:41.3797 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=6 --appType=Map --config=../Config/StartConfig/JuAnServer
+2018-04-26 14:19:42.1540 Gate     004 (Program.cs:43) server start........................ 4 Gate
+2018-04-26 14:19:42.1736 DB       003 (Program.cs:43) server start........................ 3 DB
+2018-04-26 14:19:42.1848 Realm    002 (Program.cs:43) server start........................ 2 Realm
+2018-04-26 14:19:42.1875 Map      006 (Program.cs:43) server start........................ 6 Map
+2018-04-26 14:19:42.1897 Location 005 (Program.cs:43) server start........................ 5 Location
+2018-04-26 14:19:42.2814 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 14:19:44.2925 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 14:19:46.3015 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 14:19:48.3101 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 14:19:50.3225 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 14:19:50.8504 Map      006 (ActorManagerComponent.cs:14) add actor: 662864470409257 SPlayer
+2018-04-26 14:19:50.9391 Location 005 (LocationComponent.cs:100) location add key: 662864470409257 appid: 6
+2018-04-26 14:19:50.9916 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225824192036917 Session
+2018-04-26 14:19:51.0033 Location 005 (LocationComponent.cs:100) location add key: 1225824192036917 appid: 4
+2018-04-26 14:19:51.1160 Location 005 (LocationComponent.cs:207) location get key: 662864470409257 6
+2018-04-26 14:19:51.2525 Map      006 (GetAccountInfoHandler.cs:52) 5555555555
+2018-04-26 14:19:51.2636 Map      006 (GetAccountInfoHandler.cs:54) 6666666666
+2018-04-26 14:19:52.3344 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 14:19:54.3375 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 14:19:56.3437 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 14:19:58.3527 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 14:20:00.3636 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 14:20:02.3687 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 14:20:04.3731 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 14:20:06.3810 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 14:20:08.3898 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 14:20:10.3972 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 14:20:12.4052 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 14:20:14.4140 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 14:20:16.4160 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 14:20:18.4230 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 14:20:18.7373 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225824192036917 Session
+2018-04-26 14:20:20.4313 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 14:21:12.8801 Manager  001 (Program.cs:43) server start........................ 1 Manager
+2018-04-26 14:21:12.9892 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=2 --appType=Realm --config=../Config/StartConfig/JuAnServer
+2018-04-26 14:21:12.9999 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=3 --appType=DB --config=../Config/StartConfig/JuAnServer
+2018-04-26 14:21:13.0037 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=4 --appType=Gate --config=../Config/StartConfig/JuAnServer
+2018-04-26 14:21:13.0079 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=5 --appType=Location --config=../Config/StartConfig/JuAnServer
+2018-04-26 14:21:13.0120 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=6 --appType=Map --config=../Config/StartConfig/JuAnServer
+2018-04-26 14:21:13.8021 DB       003 (Program.cs:43) server start........................ 3 DB
+2018-04-26 14:21:13.8159 Gate     004 (Program.cs:43) server start........................ 4 Gate
+2018-04-26 14:21:13.8163 Location 005 (Program.cs:43) server start........................ 5 Location
+2018-04-26 14:21:13.8177 Realm    002 (Program.cs:43) server start........................ 2 Realm
+2018-04-26 14:21:13.8231 Map      006 (Program.cs:43) server start........................ 6 Map
+2018-04-26 14:21:13.9399 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 14:21:15.9491 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 14:21:17.9580 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 14:21:19.9654 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 14:21:21.9787 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 14:21:22.8506 Map      006 (ActorManagerComponent.cs:14) add actor: 662864470409257 SPlayer
+2018-04-26 14:21:22.9360 Location 005 (LocationComponent.cs:100) location add key: 662864470409257 appid: 6
+2018-04-26 14:21:22.9882 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225824198066229 Session
+2018-04-26 14:21:23.0050 Location 005 (LocationComponent.cs:100) location add key: 1225824198066229 appid: 4
+2018-04-26 14:21:23.1244 Location 005 (LocationComponent.cs:207) location get key: 662864470409257 6
+2018-04-26 14:21:23.9859 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 14:21:25.9953 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 14:21:26.3892 Map      006 (CreateRoomHandler.cs:12) 5555555555
+2018-04-26 14:21:26.3962 Map      006 (CreateRoomHandler.cs:14) 6666666666
+2018-04-26 14:21:28.0048 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 14:21:30.0139 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 14:21:32.0160 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 14:21:34.0242 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 14:21:36.0329 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 14:22:17.5447 Manager  001 (Program.cs:43) server start........................ 1 Manager
+2018-04-26 14:22:17.6690 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=2 --appType=Realm --config=../Config/StartConfig/JuAnServer
+2018-04-26 14:22:17.6795 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=3 --appType=DB --config=../Config/StartConfig/JuAnServer
+2018-04-26 14:22:17.6841 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=4 --appType=Gate --config=../Config/StartConfig/JuAnServer
+2018-04-26 14:22:17.6912 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=5 --appType=Location --config=../Config/StartConfig/JuAnServer
+2018-04-26 14:22:17.6964 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=6 --appType=Map --config=../Config/StartConfig/JuAnServer
+2018-04-26 14:22:18.6491 DB       003 (Program.cs:43) server start........................ 3 DB
+2018-04-26 14:22:18.6583 Gate     004 (Program.cs:43) server start........................ 4 Gate
+2018-04-26 14:22:18.6598 Realm    002 (Program.cs:43) server start........................ 2 Realm
+2018-04-26 14:22:18.6581 Map      006 (Program.cs:43) server start........................ 6 Map
+2018-04-26 14:22:18.6620 Location 005 (Program.cs:43) server start........................ 5 Location
+2018-04-26 14:22:18.8140 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 14:22:20.8296 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 14:22:22.1238 Map      006 (ActorManagerComponent.cs:14) add actor: 662864470409257 SPlayer
+2018-04-26 14:22:22.2276 Location 005 (LocationComponent.cs:100) location add key: 662864470409257 appid: 6
+2018-04-26 14:22:22.2954 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225824201932850 Session
+2018-04-26 14:22:22.3093 Location 005 (LocationComponent.cs:100) location add key: 1225824201932850 appid: 4
+2018-04-26 14:22:22.4529 Location 005 (LocationComponent.cs:207) location get key: 662864470409257 6
+2018-04-26 14:22:22.8414 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 14:22:24.8445 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 14:22:25.5893 Map      006 (CreateRoomHandler.cs:12) 5555555555
+2018-04-26 14:22:25.6002 Map      006 (CreateRoomHandler.cs:14) 6666666666
+2018-04-26 14:22:26.8538 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 14:22:28.8622 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 14:22:30.8701 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 14:22:32.8781 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 14:22:34.8810 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 14:24:55.0013 Manager  001 (Program.cs:43) server start........................ 1 Manager
+2018-04-26 14:24:55.1302 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=2 --appType=Realm --config=../Config/StartConfig/JuAnServer
+2018-04-26 14:24:55.1411 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=3 --appType=DB --config=../Config/StartConfig/JuAnServer
+2018-04-26 14:24:55.1456 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=4 --appType=Gate --config=../Config/StartConfig/JuAnServer
+2018-04-26 14:24:55.1501 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=5 --appType=Location --config=../Config/StartConfig/JuAnServer
+2018-04-26 14:24:55.1555 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=6 --appType=Map --config=../Config/StartConfig/JuAnServer
+2018-04-26 14:24:56.1660 Gate     004 (Program.cs:43) server start........................ 4 Gate
+2018-04-26 14:24:56.1864 Map      006 (Program.cs:43) server start........................ 6 Map
+2018-04-26 14:24:56.1861 Location 005 (Program.cs:43) server start........................ 5 Location
+2018-04-26 14:24:56.1866 DB       003 (Program.cs:43) server start........................ 3 DB
+2018-04-26 14:24:56.1925 Realm    002 (Program.cs:43) server start........................ 2 Realm
+2018-04-26 14:24:56.3331 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 14:24:58.3475 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 14:25:00.3561 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 14:25:02.3651 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 14:25:04.3751 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 14:25:05.7121 Map      006 (ActorManagerComponent.cs:14) add actor: 662864470409257 SPlayer
+2018-04-26 14:25:05.8077 Location 005 (LocationComponent.cs:100) location add key: 662864470409257 appid: 6
+2018-04-26 14:25:05.8614 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225824212680757 Session
+2018-04-26 14:25:05.8744 Location 005 (LocationComponent.cs:100) location add key: 1225824212680757 appid: 4
+2018-04-26 14:25:05.9912 Location 005 (LocationComponent.cs:207) location get key: 662864470409257 6
+2018-04-26 14:25:06.3809 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 14:25:08.3899 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 14:25:08.6371 Map      006 (CreateRoomHandler.cs:12) 5555555555
+2018-04-26 14:25:08.6483 Map      006 (CreateRoomHandler.cs:14) 6666666666
+2018-04-26 14:25:10.3984 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 14:25:12.4067 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 14:26:30.4094 Manager  001 (Program.cs:43) server start........................ 1 Manager
+2018-04-26 14:26:30.7418 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=2 --appType=Realm --config=../Config/StartConfig/JuAnServer
+2018-04-26 14:26:30.7570 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=3 --appType=DB --config=../Config/StartConfig/JuAnServer
+2018-04-26 14:26:30.7613 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=4 --appType=Gate --config=../Config/StartConfig/JuAnServer
+2018-04-26 14:26:30.7674 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=5 --appType=Location --config=../Config/StartConfig/JuAnServer
+2018-04-26 14:26:30.7720 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=6 --appType=Map --config=../Config/StartConfig/JuAnServer
+2018-04-26 14:26:31.6643 DB       003 (Program.cs:43) server start........................ 3 DB
+2018-04-26 14:26:31.6980 Realm    002 (Program.cs:43) server start........................ 2 Realm
+2018-04-26 14:26:31.6983 Gate     004 (Program.cs:43) server start........................ 4 Gate
+2018-04-26 14:26:31.6986 Location 005 (Program.cs:43) server start........................ 5 Location
+2018-04-26 14:26:31.7048 Map      006 (Program.cs:43) server start........................ 6 Map
+2018-04-26 14:26:31.8435 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 14:26:33.8572 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 14:26:35.8668 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 14:26:37.8691 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 14:26:39.8819 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 14:26:40.9402 Map      006 (ActorManagerComponent.cs:14) add actor: 662864470409257 SPlayer
+2018-04-26 14:26:41.0273 Location 005 (LocationComponent.cs:100) location add key: 662864470409257 appid: 6
+2018-04-26 14:26:41.0800 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225824218906677 Session
+2018-04-26 14:26:41.0913 Location 005 (LocationComponent.cs:100) location add key: 1225824218906677 appid: 4
+2018-04-26 14:26:41.2232 Location 005 (LocationComponent.cs:207) location get key: 662864470409257 6
+2018-04-26 14:26:41.8919 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 14:26:43.8991 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 14:26:43.9407 Map      006 (CreateRoomHandler.cs:12) 5555555555
+2018-04-26 14:26:43.9461 Map      006 (CreateRoomHandler.cs:14) 6666666666
+2018-04-26 14:26:43.9519 Map      006 (CreateRoomHandler.cs:41) 用户：662864470409257创建房间号：-8478
+2018-04-26 14:26:43.9574 Map      006 (CreateRoomHandler.cs:57) 77777777777777
+2018-04-26 14:26:45.9034 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 14:26:47.9125 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 14:26:49.9221 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 14:26:51.9304 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 14:26:53.9400 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 14:28:09.7748 Manager  001 (Program.cs:43) server start........................ 1 Manager
+2018-04-26 14:28:09.8846 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=2 --appType=Realm --config=../Config/StartConfig/JuAnServer
+2018-04-26 14:28:09.8957 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=3 --appType=DB --config=../Config/StartConfig/JuAnServer
+2018-04-26 14:28:09.8992 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=4 --appType=Gate --config=../Config/StartConfig/JuAnServer
+2018-04-26 14:28:09.9031 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=5 --appType=Location --config=../Config/StartConfig/JuAnServer
+2018-04-26 14:28:09.9073 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=6 --appType=Map --config=../Config/StartConfig/JuAnServer
+2018-04-26 14:28:10.8234 Realm    002 (Program.cs:43) server start........................ 2 Realm
+2018-04-26 14:28:10.8404 Gate     004 (Program.cs:43) server start........................ 4 Gate
+2018-04-26 14:28:10.8419 DB       003 (Program.cs:43) server start........................ 3 DB
+2018-04-26 14:28:10.8412 Location 005 (Program.cs:43) server start........................ 5 Location
+2018-04-26 14:28:10.8528 Map      006 (Program.cs:43) server start........................ 6 Map
+2018-04-26 14:28:10.9860 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 14:28:12.9969 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 14:28:15.0042 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 14:28:17.0137 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 14:28:17.7353 Map      006 (ActorManagerComponent.cs:14) add actor: 662864470409257 SPlayer
+2018-04-26 14:28:17.8253 Location 005 (LocationComponent.cs:100) location add key: 662864470409257 appid: 6
+2018-04-26 14:28:17.8770 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225824225263668 Session
+2018-04-26 14:28:17.8908 Location 005 (LocationComponent.cs:100) location add key: 1225824225263668 appid: 4
+2018-04-26 14:28:18.0153 Location 005 (LocationComponent.cs:207) location get key: 662864470409257 6
+2018-04-26 14:28:19.0298 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 14:28:20.8790 Map      006 (CreateRoomHandler.cs:39) 用户：662864470409257创建房间号：-8725
+2018-04-26 14:28:21.0348 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 14:28:22.9183 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225824225263668 Session
+2018-04-26 14:28:23.0431 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 14:28:25.0510 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 14:29:28.2667 Manager  001 (Program.cs:43) server start........................ 1 Manager
+2018-04-26 14:29:28.5170 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=2 --appType=Realm --config=../Config/StartConfig/JuAnServer
+2018-04-26 14:29:28.5316 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=3 --appType=DB --config=../Config/StartConfig/JuAnServer
+2018-04-26 14:29:28.5357 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=4 --appType=Gate --config=../Config/StartConfig/JuAnServer
+2018-04-26 14:29:28.5399 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=5 --appType=Location --config=../Config/StartConfig/JuAnServer
+2018-04-26 14:29:28.5442 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=6 --appType=Map --config=../Config/StartConfig/JuAnServer
+2018-04-26 14:29:29.3427 Realm    002 (Program.cs:43) server start........................ 2 Realm
+2018-04-26 14:29:29.3592 DB       003 (Program.cs:43) server start........................ 3 DB
+2018-04-26 14:29:29.3598 Location 005 (Program.cs:43) server start........................ 5 Location
+2018-04-26 14:29:29.3726 Gate     004 (Program.cs:43) server start........................ 4 Gate
+2018-04-26 14:29:29.3795 Map      006 (Program.cs:43) server start........................ 6 Map
+2018-04-26 14:29:29.5075 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 14:29:31.5183 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 14:29:33.5262 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 14:29:35.5331 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 14:29:37.3799 Map      006 (ActorManagerComponent.cs:14) add actor: 662864470409257 SPlayer
+2018-04-26 14:29:37.4678 Location 005 (LocationComponent.cs:100) location add key: 662864470409257 appid: 6
+2018-04-26 14:29:37.5201 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225824230506548 Session
+2018-04-26 14:29:37.5356 Location 005 (LocationComponent.cs:100) location add key: 1225824230506548 appid: 4
+2018-04-26 14:29:37.5609 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 14:29:37.6535 Location 005 (LocationComponent.cs:207) location get key: 662864470409257 6
+2018-04-26 14:29:39.5649 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 14:29:40.4472 Map      006 (CreateRoomHandler.cs:39) 用户：662864470409257创建房间号：43807
+2018-04-26 14:29:41.5740 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 14:29:43.5828 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 14:29:45.5911 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 14:29:47.5993 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 14:29:47.6327 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225824230506548 Session
+2018-04-26 14:29:49.6047 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 14:29:51.6071 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 14:29:53.6143 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 14:29:53.7871 Map      006 (ActorManagerComponent.cs:14) add actor: 662864470409257 SPlayer
+2018-04-26 14:29:53.7975 Location 005 (LocationComponent.cs:100) location add key: 662864470409257 appid: 6
+2018-04-26 14:29:53.8068 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225824231555149 Session
+2018-04-26 14:29:53.8123 Location 005 (LocationComponent.cs:100) location add key: 1225824231555149 appid: 4
+2018-04-26 14:29:55.6184 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 14:29:56.9631 Map      006 (CreateRoomHandler.cs:39) 用户：662864470409257创建房间号：-8208
+2018-04-26 14:29:57.6279 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 14:29:59.6372 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 14:30:01.6460 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 14:30:03.6547 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 14:31:33.4905 Manager  001 (Program.cs:43) server start........................ 1 Manager
+2018-04-26 14:31:33.8215 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=2 --appType=Realm --config=../Config/StartConfig/JuAnServer
+2018-04-26 14:31:33.8359 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=3 --appType=DB --config=../Config/StartConfig/JuAnServer
+2018-04-26 14:31:33.8400 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=4 --appType=Gate --config=../Config/StartConfig/JuAnServer
+2018-04-26 14:31:33.8439 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=5 --appType=Location --config=../Config/StartConfig/JuAnServer
+2018-04-26 14:31:33.8488 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=6 --appType=Map --config=../Config/StartConfig/JuAnServer
+2018-04-26 14:31:34.7846 Realm    002 (Program.cs:43) server start........................ 2 Realm
+2018-04-26 14:31:34.7961 Location 005 (Program.cs:43) server start........................ 5 Location
+2018-04-26 14:31:34.7966 Gate     004 (Program.cs:43) server start........................ 4 Gate
+2018-04-26 14:31:34.8059 Map      006 (Program.cs:43) server start........................ 6 Map
+2018-04-26 14:31:34.8140 DB       003 (Program.cs:43) server start........................ 3 DB
+2018-04-26 14:31:34.9544 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 14:31:36.9668 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 14:31:38.9752 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 14:31:40.9802 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 14:31:42.9909 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 14:31:45.0000 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 14:31:45.5178 Map      006 (ActorManagerComponent.cs:14) add actor: 662864470409257 SPlayer
+2018-04-26 14:31:45.6112 Location 005 (LocationComponent.cs:100) location add key: 662864470409257 appid: 6
+2018-04-26 14:31:45.6743 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225824238895159 Session
+2018-04-26 14:31:45.6888 Location 005 (LocationComponent.cs:100) location add key: 1225824238895159 appid: 4
+2018-04-26 14:31:45.8154 Location 005 (LocationComponent.cs:207) location get key: 662864470409257 6
+2018-04-26 14:31:47.0108 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 14:31:48.6607 Map      006 (CreateRoomHandler.cs:39) 用户：662864470409257创建房间号：16864
+2018-04-26 14:31:49.0203 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 14:31:51.0285 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-26 14:31:51.3194 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225824238895159 Session
+2018-04-26 14:31:53.0371 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 14:31:55.0461 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 14:31:57.0568 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 14:31:59.0662 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 14:32:01.0758 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 14:32:03.0799 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-26 14:32:05.0901 Gate     004 (PingComponent.cs:29) 在线人数 ：0

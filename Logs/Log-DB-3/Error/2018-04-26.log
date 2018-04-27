@@ -1,0 +1,91 @@
+2018-04-26 12:21:58.1171 DB       003 System.Exception: 查询数据库异常! Account {'UserName':'1','Password':'1'} ---> System.AggregateException: One or more errors occurred. (A timeout occured after 30000ms selecting a server using CompositeServerSelector{ Selectors = ReadPreferenceServerSelector{ ReadPreference = { Mode : Primary } }, LatencyLimitingServerSelector{ AllowedLatencyRange = 00:00:00.0150000 } }. Client view of cluster state is { ClusterId : "1", ConnectionMode : "Automatic", Type : "Unknown", State : "Disconnected", Servers : [{ ServerId: "{ ClusterId : 1, EndPoint : "127.0.0.1:27017" }", EndPoint: "127.0.0.1:27017", State: "Disconnected", Type: "Unknown", HeartbeatException: "MongoDB.Driver.MongoConnectionException: An exception occurred while opening a connection to the server. ---> System.Net.Internals.SocketExceptionFactory+ExtendedSocketException: Connection refused 127.0.0.1:27017
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.Core.Connections.TcpStreamFactory.<ConnectAsync>d__7.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/ThirdParty/MongodbDriver/MongoDB.Driver.Core/Core/Connections/TcpStreamFactory.cs:line 204
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.Core.Connections.TcpStreamFactory.<CreateStreamAsync>d__4.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/ThirdParty/MongodbDriver/MongoDB.Driver.Core/Core/Connections/TcpStreamFactory.cs:line 110
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+   at MongoDB.Driver.Core.Connections.BinaryConnection.<OpenHelperAsync>d__48.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/ThirdParty/MongodbDriver/MongoDB.Driver.Core/Core/Connections/BinaryConnection.cs:line 296
+   --- End of inner exception stack trace ---
+   at MongoDB.Driver.Core.Connections.BinaryConnection.<OpenHelperAsync>d__48.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/ThirdParty/MongodbDriver/MongoDB.Driver.Core/Core/Connections/BinaryConnection.cs:line 305
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.Core.Servers.ServerMonitor.<HeartbeatAsync>d__27.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/ThirdParty/MongodbDriver/MongoDB.Driver.Core/Core/Servers/ServerMonitor.cs:line 147" }] }.) ---> System.TimeoutException: A timeout occured after 30000ms selecting a server using CompositeServerSelector{ Selectors = ReadPreferenceServerSelector{ ReadPreference = { Mode : Primary } }, LatencyLimitingServerSelector{ AllowedLatencyRange = 00:00:00.0150000 } }. Client view of cluster state is { ClusterId : "1", ConnectionMode : "Automatic", Type : "Unknown", State : "Disconnected", Servers : [{ ServerId: "{ ClusterId : 1, EndPoint : "127.0.0.1:27017" }", EndPoint: "127.0.0.1:27017", State: "Disconnected", Type: "Unknown", HeartbeatException: "MongoDB.Driver.MongoConnectionException: An exception occurred while opening a connection to the server. ---> System.Net.Internals.SocketExceptionFactory+ExtendedSocketException: Connection refused 127.0.0.1:27017
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.Core.Connections.TcpStreamFactory.<ConnectAsync>d__7.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/ThirdParty/MongodbDriver/MongoDB.Driver.Core/Core/Connections/TcpStreamFactory.cs:line 204
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.Core.Connections.TcpStreamFactory.<CreateStreamAsync>d__4.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/ThirdParty/MongodbDriver/MongoDB.Driver.Core/Core/Connections/TcpStreamFactory.cs:line 110
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+   at MongoDB.Driver.Core.Connections.BinaryConnection.<OpenHelperAsync>d__48.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/ThirdParty/MongodbDriver/MongoDB.Driver.Core/Core/Connections/BinaryConnection.cs:line 296
+   --- End of inner exception stack trace ---
+   at MongoDB.Driver.Core.Connections.BinaryConnection.<OpenHelperAsync>d__48.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/ThirdParty/MongodbDriver/MongoDB.Driver.Core/Core/Connections/BinaryConnection.cs:line 305
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.Core.Servers.ServerMonitor.<HeartbeatAsync>d__27.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/ThirdParty/MongodbDriver/MongoDB.Driver.Core/Core/Servers/ServerMonitor.cs:line 147" }] }.
+   at MongoDB.Driver.Core.Clusters.Cluster.ThrowTimeoutException(IServerSelector selector, ClusterDescription description) in /Users/sining/Projects/JuAnChessGame/Server/ThirdParty/MongodbDriver/MongoDB.Driver.Core/Core/Clusters/Cluster.cs:line 325
+   at MongoDB.Driver.Core.Clusters.Cluster.WaitForDescriptionChangedHelper.HandleCompletedTask(Task completedTask) in /Users/sining/Projects/JuAnChessGame/Server/ThirdParty/MongodbDriver/MongoDB.Driver.Core/Core/Clusters/Cluster.cs:line 541
+   at MongoDB.Driver.Core.Clusters.Cluster.<WaitForDescriptionChangedAsync>d__44.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/ThirdParty/MongodbDriver/MongoDB.Driver.Core/Core/Clusters/Cluster.cs:line 318
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MongoDB.Driver.Core.Clusters.Cluster.<SelectServerAsync>d__37.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/ThirdParty/MongodbDriver/MongoDB.Driver.Core/Core/Clusters/Cluster.cs:line 252
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+   at MongoDB.Driver.Core.Bindings.ReadPreferenceBinding.<GetReadChannelSourceAsync>d__8.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/ThirdParty/MongodbDriver/MongoDB.Driver.Core/Core/Bindings/ReadPreferenceBinding.cs:line 70
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+   at MongoDB.Driver.Core.Operations.FindOperation`1.<ExecuteAsync>d__111.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/ThirdParty/MongodbDriver/MongoDB.Driver.Core/Core/Operations/FindOperation.cs:line 435
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+   at MongoDB.Driver.OperationExecutor.<ExecuteReadOperationAsync>d__1`1.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/ThirdParty/MongodbDriver/MongoDB.Driver/OperationExecutor.cs:line 36
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+   at MongoDB.Driver.MongoCollectionImpl`1.<ExecuteReadOperationAsync>d__60`1.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/ThirdParty/MongodbDriver/MongoDB.Driver/MongoCollectionImpl.cs:line 792
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at ETModel.DBQueryJsonTask.<Run>d__12.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/Model/Module/DB/DBQueryJsonTask.cs:line 34
+   --- End of inner exception stack trace ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at ETHotfix.DBQueryJsonRequestHandler.<Run>d__0.MoveNext() in /Users/sining/Projects/JuAnChessGame/Server/Hotfix/Module/DB/DBQueryJsonRequestHandler.cs:line 16 
+ Run at offset 513 in file:line:column /Users/sining/Projects/JuAnChessGame/Unity/Assets/Scripts/Module/Message/Session.cs:151:5
+Dispatch at offset 1141 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Hotfix/Module/Message/InnerMessageDispatcher.cs:34:4
+Handle at offset 501 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Hotfix/Module/Message/MessageDispatherComponentSystem.cs:91:6
+Handle at offset 1035 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Module/Message/AMRpcHandler.cs:28:5
+Run at offset 311 in file:line:column <filename unknown>:0:0
+Start<TStateMachine> at offset 86 in file:line:column <filename unknown>:0:0
+MoveNext at offset 462 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Hotfix/Module/DB/DBQueryJsonRequestHandler.cs:16:5
+ReplyError at offset 85 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Module/Message/AMRpcHandler.cs:9:4
+Error at offset 106 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Base/Log.cs:31:4
+Error at offset 102 in file:line:column /Users/sining/Projects/JuAnChessGame/Server/Model/Base/Logger/NLogAdapter.cs:35:4
+
