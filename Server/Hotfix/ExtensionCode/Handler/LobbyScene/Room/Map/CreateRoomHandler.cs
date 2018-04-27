@@ -16,27 +16,16 @@ namespace ETHotfix
             
             try
             {
-                // 创建房间  
-                
-                var room = CreateRoom(message.RoomType, player.Id);
-                
-                // 随机生成房间号
-
-                var roomId = int.Parse(RandomHelper.RandomNumber(100000,999999).ToString().Substring(0, 6));
-
-                while (true)
-                {
-                    if (RoomManageComponent.Instance.GetRoom(roomId) == null) break;
-                    
-                    roomId = int.Parse(RandomHelper.RandomNumber(100000,999999).ToString().Substring(0, 6));
-                }
-
                 // 添加房间到房间管理组件
 
-                if (RoomManageComponent.Instance.Add(roomId, player.Id, room))
-                {
-                    response.RoomId = roomId;
+                var room = RoomManageComponent.Instance.Add(player.Id, message.RoomType);
 
+                var roomId = RoomManageComponent.Instance.GetRoomId(player.Id);
+                
+                response.RoomId = roomId ?? 0;
+
+                if (room)
+                {
                     Log.Info("用户：" + player.Id + "创建房间号：" + roomId);
                 }
                 else
@@ -56,22 +45,6 @@ namespace ETHotfix
             reply(response);
         }
 
-        public Room CreateRoom(string roomType,long playerId)
-        {
-            Room room = null;
-            
-            switch (roomType)
-            {
-                case "NN":
-                    room = ComponentFactory.CreateWithId<NNRoom>(playerId);
-                    break;
-                case "DDZ":
-                    break;
-                case "SXMZ":
-                    break;
-            }
-
-            return room;
-        }
+        
     }
 }

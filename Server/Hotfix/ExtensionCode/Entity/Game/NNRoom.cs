@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
+using CSharpx;
 using ETHotfix;
 
 namespace ETModel
@@ -8,35 +10,53 @@ namespace ETModel
     /// </summary>
     public class NNRoom : Room
     {
-        public readonly List<SPlayer> Players = new List<SPlayer>();
+        public readonly Dictionary<SPlayer, bool> Players = new Dictionary<SPlayer, bool>();
 
-        public int MaxPlayer = 2;
+        private int currentDish = 0;
 
-        public int MaxDish = 0;
-
-        private int _currentDish = 0;
-
-        public NNChess ChessRules;
+        private NNChess chessRules;
 
         public override void AddRules(byte[] rules)
         {
-            ChessRules = ProtobufHelper.FromBytes<NNChess>(rules);
+            chessRules = ProtobufHelper.FromBytes<NNChess>(rules);
         }
 
         public override void JionRoom(SPlayer player)
         {
-            if (Players.Count < MaxPlayer)
+            // 当玩家已经在这个房间里
+            
+            if (Players.Any(d => d.Key.Id == player.Id))
             {
-                Players.ForEach(d => d.GetActorProxy.Send(new JoinRoomAnnunciate() {AccountId = player.Id, Error = 0}));
-                
-                Players.Add(player);
-            }
-            else
-            {
-                // 发送房间人数满的消息
+                player.GetActorProxy.Send(new JoinRoomAnnunciate() {AccountId = player.Id, Error = -2});
 
-                player.GetActorProxy.Send(new JoinRoomAnnunciate() {AccountId = player.Id, Error = -1});
+                return;
             }
+            
+            // 如果房间小于指定人数，加入这个房间，并发送数据给房间里其他玩家
+            
+            if (Players.Count < chessRules.PlayerCount)
+            {
+                Players.Add(player, false);
+
+                return;
+            }
+            
+            // 发送房间人数满的消息
+
+            player.GetActorProxy.Send(new JoinRoomAnnunciate() {AccountId = player.Id, Error = -1});
+        }
+
+        /// <summary>
+        /// 准备游戏
+        /// </summary>
+        /// <param name="player"></param>
+        public override void Prepare(SPlayer player)
+        {
+            if (!Players.ContainsKey(player)) return;
+            
+            Players[player] = true;
+                
+            Players.Keys.ForEach(d => d.GetActorProxy.Send(new JoinRoomAnnunciate() {AccountId = player.Id, Error = 0}));
         }
 
         public override void QuitRoom(SPlayer player)
@@ -45,29 +65,29 @@ namespace ETModel
             
             // 发送离开房间消息
             
-            Players.ForEach(d => d.GetActorProxy.Send(new JoinRoomAnnunciate() {AccountId = player.Id, Error = -2}));
+            Players.Keys.ForEach(d => d.GetActorProxy.Send(new JoinRoomAnnunciate() {AccountId = player.Id, Error = -2}));
         }
 
         public override void StartGame()
         {
-            if (Players.Count < MaxPlayer)
-            {
-                //TODO:房间人数不够、无法开始游戏
-            }
+//            if (Players.Count < MaxPlayer)
+//            {
+//                //TODO:房间人数不够、无法开始游戏
+//            }
         }
 
         public override void EndGame()
         {
-            if (MaxDish > 0 && _currentDish > MaxDish)
-            {
-                //TODO:结束游戏、结算数据
-            }
-            else
-            {
-                //TODO:开始下一轮游戏
-
-                StartGame();
-            }
+//            if (MaxDish > 0 && _currentDish > MaxDish)
+//            {
+//                //TODO:结束游戏、结算数据
+//            }
+//            else
+//            {
+//                //TODO:开始下一轮游戏
+//
+//                StartGame();
+//            }
         }
 
         public override void DissolveRoom()
