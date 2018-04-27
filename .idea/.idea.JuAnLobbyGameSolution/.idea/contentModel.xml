@@ -40,7 +40,7 @@
                 <e p="Room" t="Include">
                   <e p="Map" t="Include">
                     <e p="CreateRoomHandler.cs" t="Include" />
-                    <e p="JoinRoomHandler.cs" t="Include" />
+                    <e p="RoomInfoHandler.cs" t="Include" />
                     <e p="RoomRulesHandler.cs" t="Include" />
                   </e>
                 </e>

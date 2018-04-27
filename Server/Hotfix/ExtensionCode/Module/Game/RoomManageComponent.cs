@@ -47,7 +47,7 @@ namespace ETHotfix
         /// <returns></returns>
         public static Room GetRoom(this RoomManageComponent self,long roomId)
         {
-            return self.Rooms.FirstOrDefault(d=>d.RoomId==roomId)?.Room;
+            return self.Rooms.FirstOrDefault(d => d.RoomId == roomId)?.Room;
         }
 
         /// <summary>

@@ -2,11 +2,81 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="43a2cc3c-b9a6-4da2-a947-693a35ac239f" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/../Logs/Log-DB-3/Info/2018-04-27.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Logs/Log-Gate-4/Info/2018-04-27.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Logs/Log-Location-5/Info/2018-04-27.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Logs/Log-Manager-1/Info/2018-04-27.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Logs/Log-Map-6/Info/2018-04-27.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Logs/Log-Realm-2/Info/2018-04-27.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bin/App.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Bin/App.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bin/App.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Bin/App.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bin/Hotfix.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Bin/Hotfix.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bin/Hotfix.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Bin/Hotfix.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bin/Model.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Bin/Model.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bin/Model.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Bin/Model.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bin/MongoDB.Bson.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Bin/MongoDB.Bson.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bin/MongoDB.Bson.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Bin/MongoDB.Bson.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bin/MongoDB.Driver.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Bin/MongoDB.Driver.Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bin/MongoDB.Driver.Core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Bin/MongoDB.Driver.Core.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bin/MongoDB.Driver.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Bin/MongoDB.Driver.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bin/MongoDB.Driver.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Bin/MongoDB.Driver.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bin/publish/App.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Bin/publish/App.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bin/publish/App.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Bin/publish/App.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bin/publish/Hotfix.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Bin/publish/Hotfix.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bin/publish/Hotfix.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Bin/publish/Hotfix.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bin/publish/Model.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Bin/publish/Model.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bin/publish/Model.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Bin/publish/Model.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bin/publish/MongoDB.Bson.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Bin/publish/MongoDB.Bson.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bin/publish/MongoDB.Bson.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Bin/publish/MongoDB.Bson.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bin/publish/MongoDB.Driver.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Bin/publish/MongoDB.Driver.Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bin/publish/MongoDB.Driver.Core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Bin/publish/MongoDB.Driver.Core.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bin/publish/MongoDB.Driver.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Bin/publish/MongoDB.Driver.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bin/publish/MongoDB.Driver.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Bin/publish/MongoDB.Driver.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Logs/Log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Logs/Log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Proto/HotfixMessage.proto" beforeDir="false" afterPath="$PROJECT_DIR$/../Proto/HotfixMessage.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/App/obj/Debug/App.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/App/obj/Debug/App.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/App/obj/Debug/App.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/App/obj/Debug/App.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/App/obj/Debug/Server.App.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/App/obj/Debug/Server.App.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/App/obj/Debug/Server.App.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/App/obj/Debug/Server.App.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/App/obj/Debug/Server.App.csprojResolveAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/App/obj/Debug/Server.App.csprojResolveAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/Hotfix/ExtensionCode/Entity/Game/NNRoom.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Hotfix/ExtensionCode/Entity/Game/NNRoom.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Server/Hotfix/ExtensionCode/Handler/LobbyScene/Room/Map/CreateRoomHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Hotfix/ExtensionCode/Handler/LobbyScene/Room/Map/CreateRoomHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/Hotfix/ExtensionCode/Handler/LobbyScene/Room/Map/JoinRoomHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Hotfix/ExtensionCode/Handler/LobbyScene/Room/Map/RoomInfoHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/Hotfix/ExtensionCode/Handler/LobbyScene/Room/Map/RoomRulesHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Hotfix/ExtensionCode/Handler/LobbyScene/Room/Map/RoomRulesHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Server/Hotfix/ExtensionCode/Module/Game/RoomManageComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Hotfix/ExtensionCode/Module/Game/RoomManageComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/Model/ExtensionCode/Module/Game/RoomManageComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Model/ExtensionCode/Module/Game/RoomManageComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/Hotfix/Module/Message/HotfixMessage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Hotfix/Module/Message/HotfixMessage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/Hotfix/Module/Message/HotfixOpcode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Hotfix/Module/Message/HotfixOpcode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/Hotfix/obj/Debug/Hotfix.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Hotfix/obj/Debug/Hotfix.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/Hotfix/obj/Debug/Hotfix.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Hotfix/obj/Debug/Hotfix.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/Hotfix/obj/Debug/Server.Hotfix.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Hotfix/obj/Debug/Server.Hotfix.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/Hotfix/obj/Debug/Server.Hotfix.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Hotfix/obj/Debug/Server.Hotfix.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/Hotfix/obj/Debug/Server.Hotfix.csprojResolveAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Hotfix/obj/Debug/Server.Hotfix.csprojResolveAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/Model/ExtensionCode/Entity/Room.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Model/ExtensionCode/Entity/Room.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/Model/obj/Debug/Model.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Model/obj/Debug/Model.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/Model/obj/Debug/Model.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Model/obj/Debug/Model.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/Model/obj/Debug/Server.Model.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Model/obj/Debug/Server.Model.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/Model/obj/Debug/Server.Model.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Model/obj/Debug/Server.Model.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/Model/obj/Debug/Server.Model.csprojResolveAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Model/obj/Debug/Server.Model.csprojResolveAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Bson/obj/Debug/MongoDB.Bson.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Bson/obj/Debug/MongoDB.Bson.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Bson/obj/Debug/MongoDB.Bson.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Bson/obj/Debug/MongoDB.Bson.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Bson/obj/Debug/MongoDB.Bson.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Bson/obj/Debug/MongoDB.Bson.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver.Core/obj/Debug/MongoDB.Driver.Core.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver.Core/obj/Debug/MongoDB.Driver.Core.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver.Core/obj/Debug/MongoDB.Driver.Core.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver.Core/obj/Debug/MongoDB.Driver.Core.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver.Core/obj/Debug/MongoDB.Driver.Core.csprojResolveAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver.Core/obj/Debug/MongoDB.Driver.Core.csprojResolveAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver.Core/obj/Debug/MongoDB.Driver.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver.Core/obj/Debug/MongoDB.Driver.Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver.Core/obj/Debug/MongoDB.Driver.Core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver.Core/obj/Debug/MongoDB.Driver.Core.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver/obj/Debug/MongoDB.Driver.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver/obj/Debug/MongoDB.Driver.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver/obj/Debug/MongoDB.Driver.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver/obj/Debug/MongoDB.Driver.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver/obj/Debug/MongoDB.Driver.csprojResolveAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver/obj/Debug/MongoDB.Driver.csprojResolveAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver/obj/Debug/MongoDB.Driver.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver/obj/Debug/MongoDB.Driver.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver/obj/Debug/MongoDB.Driver.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver/obj/Debug/MongoDB.Driver.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Unity.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/Unity.sln.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assembly-CSharp-Editor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp-Editor.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assembly-CSharp-firstpass.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp-firstpass.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Res/Config/GlobalProto.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Res/Config/GlobalProto.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotfix/Module/Message/HotfixMessage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Hotfix/Module/Message/HotfixMessage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotfix/Module/Message/HotfixOpcode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Hotfix/Module/Message/HotfixOpcode.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -31,7 +101,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="y" value="23" />
     <option name="width" value="1680" />
     <option name="height" value="942" />
@@ -115,8 +185,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1680" height="942" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1680" height="942" extended-state="1" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="right" id="Errors In Solution" order="3" />

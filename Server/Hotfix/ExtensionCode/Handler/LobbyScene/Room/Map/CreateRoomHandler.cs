@@ -21,11 +21,11 @@ namespace ETHotfix
                 var room = RoomManageComponent.Instance.Add(player.Id, message.RoomType);
 
                 var roomId = RoomManageComponent.Instance.GetRoomId(player.Id);
+                
+                response.RoomId = roomId ?? 0;
 
                 if (room)
                 {
-                    response.RoomId = roomId ?? 0;
-
                     Log.Info("用户：" + player.Id + "创建房间号：" + roomId);
                 }
                 else

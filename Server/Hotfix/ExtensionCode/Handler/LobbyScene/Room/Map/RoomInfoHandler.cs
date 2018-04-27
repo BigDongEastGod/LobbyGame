@@ -5,13 +5,13 @@ using ETModel;
 namespace ETHotfix
 {
     [ActorMessageHandler(AppType.Map)]
-    public class JoinRoomHandler: AMActorRpcHandler<SPlayer, JoinRoomRequest, JoinRoomResponse>
+    public class RoomInfoHandler: AMActorRpcHandler<SPlayer, RoomInfoRequest, RoomInfoResponse>
     {
-        protected override async Task Run(SPlayer player, JoinRoomRequest message, Action<JoinRoomResponse> reply)
+        protected override async Task Run(SPlayer player, RoomInfoRequest message, Action<RoomInfoResponse> reply)
         {
             await Task.CompletedTask;
             
-            var response = new JoinRoomResponse();
+            var response = new RoomInfoResponse();
             
             try
             {
@@ -24,10 +24,10 @@ namespace ETHotfix
                     return;
                 }
                 
-                // 获得需要加入的房间
-
+                // 获得房间
+                
                 var room = RoomManageComponent.Instance.GetRoom(message.RoomId);
-
+                
                 // 如果找到就加入到该房间、否则提示没有找到房间
                 
                 if (room == null)
@@ -35,12 +35,24 @@ namespace ETHotfix
                     response.Error = -1;
 
                     response.Message = "没有找到房间";
-                }
-                else
-                {
-                    room.JionRoom(player);
+                    
+                    reply(response);
+                    
+                    return;
                 }
                 
+                // 根据消息类型
+
+                switch (@message.Message)
+                {
+                    case 0: // 加入房间
+                        room.JionRoom(player);
+                        break;
+
+                    case 1: // 准备
+                        room.Prepare(player);
+                        break;
+                }
             }
             catch (Exception e)
             {
