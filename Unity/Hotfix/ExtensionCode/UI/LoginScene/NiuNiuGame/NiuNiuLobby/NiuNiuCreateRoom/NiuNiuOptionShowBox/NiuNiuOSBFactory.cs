@@ -3,15 +3,16 @@ using UnityEngine;
 
 namespace ETHotfix
 {
-    [UIFactory(UIType.NiuNiuOptions)]
-    public class NiuNiuOptionsFactory : AUIFactory
+    
+    [UIFactory(UIType.NiuNiuOSB)]
+    public class NNOSBFactory:AUIFactory
     {
         public override UI Create(Scene scene, string type, GameObject parent)
         {
             var ui = base.Create(scene, type, parent);
-
-            ui.AddComponent<NiuNiuOptionsComponent>();
-
+           
+            ui.AddComponent<NiuNiuOSBComponent>();
+            
             return ui;
         }
     }
