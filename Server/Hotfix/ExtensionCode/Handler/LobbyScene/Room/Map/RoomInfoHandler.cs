@@ -19,6 +19,8 @@ namespace ETHotfix
                 {
                     response.Error = -1;
 
+                    response.RoomId = player != null ? RoomManageComponent.Instance.GetRoomId(player.Id) ?? 0 : 0;
+
                     reply(response);
                     
                     return;
@@ -53,9 +55,6 @@ namespace ETHotfix
                         room.Prepare(player);
                         break;
                 }
-
-                response.RoomId = RoomManageComponent.Instance.GetRoomId(room) ?? 0;
-
             }
             catch (Exception e)
             {

@@ -175,7 +175,7 @@ message RoomInfoRequest // IActorRequest
 {
 	required int32 RoomId = 1;
 
-	required int16 Message = 2;  // 消息分类 0：加入房间 1：准备
+	required int16 Message = 2;  // 消息分类 -1：获取房间ID 0：加入房间 1：准备
 }
 message RoomInfoResponse // IActorResponse
 {
