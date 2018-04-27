@@ -31,7 +31,7 @@ namespace ETHotfix
 
         private GameObject _roomPeople6;
         private GameObject _optionsLayout;
-        private NiuNiuRule _curretNiuNiuRule;
+        public NiuNiuRule _curretNiuNiuRule;
 
         public void Awake()
         {
