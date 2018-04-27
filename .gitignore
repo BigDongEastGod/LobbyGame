@@ -1,10 +1,3 @@
-
-Unity/Assembly-CSharp-Editor\.csproj
-
-Unity/Assembly-CSharp-firstpass\.csproj
-
-Unity/Assembly-CSharp\.csproj
-
 Unity/Library/
 
 Unity/Temp/
@@ -13,24 +6,4 @@ Unity/ProjectSettings/
 
 Unity/obj/
 
-Unity/Assembly-CSharp-Editor-firstpass\.csproj
-
-Unity/Unity\.Editor\.Plugins\.csproj
-
-Unity/Unity\.Editor\.csproj
-
-Unity/Unity\.Plugins\.csproj
-
-Unity/Unity\.csproj
-
-Unity/Unity\.sln
-
-Unity/Unity1\.sln
-
 Unity/Hotfix/obj/
-
-Server/
-
-Unity/Assets/Res/Code/Hotfix\.dll\.bytes
-
-Unity/Assets/Res/Code/Hotfix\.pdb\.bytes
