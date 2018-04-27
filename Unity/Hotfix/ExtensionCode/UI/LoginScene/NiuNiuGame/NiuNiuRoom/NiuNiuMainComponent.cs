@@ -76,6 +76,8 @@ namespace ETHotfix
             var wiFiImg=rc.Get<GameObject>("WiFiImg");
             var AutomaticFlopToggle=rc.Get<GameObject>("AutomaticFlopToggle");
 
+
+            JoinRoomAnnunciateHandler.JoinRoomAction += RoomInfo;
             
             //房间信息窗口事件注册
             SceneHelperComponent.Instance.MonoEvent.AddButtonClick(roomInfoButton.GetComponent<Button>(), () =>
@@ -98,7 +100,20 @@ namespace ETHotfix
                 
                
             });
+            
+            
 
+        }
+
+        private void RoomInfo(JoinRoomAnnunciate obj)
+        {
+            if (obj.Error == -1)
+            {
+                
+            }
+            else
+            {
+            }
         }
     }
 }
