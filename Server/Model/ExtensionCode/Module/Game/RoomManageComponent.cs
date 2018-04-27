@@ -17,7 +17,7 @@ namespace ETModel
     {
         public class RoomModel
         {
-            public long RoomId;
+            public int RoomId;
             
             public long PlayerId;
             
