@@ -1,9 +1,0 @@
-/Users/sining/Projects/JuAnChessGame/Bin/MongoDB.Bson.deps.json
-/Users/sining/Projects/JuAnChessGame/Bin/MongoDB.Bson.dll
-/Users/sining/Projects/JuAnChessGame/Bin/MongoDB.Bson.pdb
-/Users/sining/Projects/JuAnChessGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Bson/obj/Debug/MongoDB.Bson.csprojResolveAssemblyReference.cache
-/Users/sining/Projects/JuAnChessGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Bson/obj/Debug/MongoDB.Bson.csproj.CoreCompileInputs.cache
-/Users/sining/Projects/JuAnChessGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Bson/obj/Debug/MongoDB.Bson.AssemblyInfoInputs.cache
-/Users/sining/Projects/JuAnChessGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Bson/obj/Debug/MongoDB.Bson.AssemblyInfo.cs
-/Users/sining/Projects/JuAnChessGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Bson/obj/Debug/MongoDB.Bson.dll
-/Users/sining/Projects/JuAnChessGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Bson/obj/Debug/MongoDB.Bson.pdb

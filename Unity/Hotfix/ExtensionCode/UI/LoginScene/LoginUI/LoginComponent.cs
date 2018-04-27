@@ -22,14 +22,20 @@ namespace ETHotfix
             // 登录注册按钮
             var registBtn = rc.Get<GameObject>("RegistBtn");
             var loginBtn = rc.Get<GameObject>("LoginBtn");
-
+           
             // 注册按钮
             SceneHelperComponent.Instance.MonoEvent.AddButtonClick(registBtn.GetComponent<Button>(),
                 () => { Game.Scene.GetComponent<UIComponent>().Get(UIType.RegistPanel).GameObject.SetActive(true); });
-
+            
             // 登录按钮
             SceneHelperComponent.Instance.MonoEvent.AddButtonClick(loginBtn.GetComponent<Button>(),
-                () => { Game.Scene.GetComponent<UIComponent>().Get(UIType.LoginPanel).GameObject.SetActive(true); });
+                () => {  Game.Scene.GetComponent<UIComponent>().Get(UIType.LoginPanel).GameObject.SetActive(true); });
+            
         }
+
+       
+
+
+        
     }
 }

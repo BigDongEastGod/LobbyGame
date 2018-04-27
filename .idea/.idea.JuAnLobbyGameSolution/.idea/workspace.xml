@@ -2,8 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c3321c9-b725-4478-bc18-7b7710790ca6" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.JuAnLobbyGameSolution/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.JuAnLobbyGameSolution/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.JuAnLobbyGameSolution/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.JuAnLobbyGameSolution/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Unity/Hotfix/Init.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Unity/Hotfix/Init.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/App/obj/Server.App.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Server/App/obj/Server.App.csproj.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/App/obj/Server.App.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Server/App/obj/Server.App.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/App/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Server/App/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/App/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Server/App/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Hotfix/obj/Server.Hotfix.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Hotfix/obj/Server.Hotfix.csproj.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Hotfix/obj/Server.Hotfix.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Hotfix/obj/Server.Hotfix.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Hotfix/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Hotfix/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Hotfix/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Hotfix/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Model/obj/Server.Model.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Model/obj/Server.Model.csproj.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Model/obj/Server.Model.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Model/obj/Server.Model.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Model/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Model/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Model/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Model/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Bson/obj/MongoDB.Bson.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Bson/obj/MongoDB.Bson.csproj.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Bson/obj/MongoDB.Bson.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Bson/obj/MongoDB.Bson.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Bson/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Bson/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Bson/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Bson/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver.Core/obj/MongoDB.Driver.Core.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver.Core/obj/MongoDB.Driver.Core.csproj.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver.Core/obj/MongoDB.Driver.Core.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver.Core/obj/MongoDB.Driver.Core.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver.Core/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver.Core/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver.Core/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver.Core/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver/obj/MongoDB.Driver.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver/obj/MongoDB.Driver.csproj.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver/obj/MongoDB.Driver.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver/obj/MongoDB.Driver.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Unity/Assets/Scripts/ET/Base/Event.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Unity/Assets/Scripts/ET/Base/Helper.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Unity/Assets/Scripts/ET/Base/IL.meta" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -13,26 +41,26 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="Init.cs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Unity/Hotfix/Init.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="465">
-              <caret line="33" column="16" lean-forward="true" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
+              <caret line="33" column="16" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
               <folding>
-                <marker date="1524746527793" expanded="false" signature="6:47" ph="..." />
-                <marker date="1524746527793" expanded="true" signature="67:1308" ph="{...}" />
-                <marker date="1524746527793" expanded="true" signature="95:1306" ph="{...}" />
-                <marker date="1524746527793" expanded="true" signature="127:952" ph="{...}" />
-                <marker date="1524746527793" expanded="true" signature="138:897" ph="{...}" />
-                <marker date="1524746527793" expanded="true" signature="920:948" ph="{...}" />
-                <marker date="1524746527793" expanded="true" signature="983:1090" ph="{...}" />
-                <marker date="1524746527793" expanded="true" signature="994:1035" ph="{...}" />
-                <marker date="1524746527793" expanded="true" signature="1058:1086" ph="{...}" />
-                <marker date="1524746527793" expanded="true" signature="1125:1236" ph="{...}" />
-                <marker date="1524746527793" expanded="true" signature="1136:1181" ph="{...}" />
-                <marker date="1524746527793" expanded="true" signature="1204:1232" ph="{...}" />
-                <marker date="1524746527793" expanded="true" signature="1278:1303" ph="{...}" />
+                <marker date="1524794863000" expanded="false" signature="6:47" ph="..." />
+                <marker date="1524794863000" expanded="true" signature="67:1309" ph="{...}" />
+                <marker date="1524794863000" expanded="true" signature="95:1307" ph="{...}" />
+                <marker date="1524794863000" expanded="true" signature="127:953" ph="{...}" />
+                <marker date="1524794863000" expanded="true" signature="138:898" ph="{...}" />
+                <marker date="1524794863000" expanded="true" signature="921:949" ph="{...}" />
+                <marker date="1524794863000" expanded="true" signature="984:1091" ph="{...}" />
+                <marker date="1524794863000" expanded="true" signature="995:1036" ph="{...}" />
+                <marker date="1524794863000" expanded="true" signature="1059:1087" ph="{...}" />
+                <marker date="1524794863000" expanded="true" signature="1126:1237" ph="{...}" />
+                <marker date="1524794863000" expanded="true" signature="1137:1182" ph="{...}" />
+                <marker date="1524794863000" expanded="true" signature="1205:1233" ph="{...}" />
+                <marker date="1524794863000" expanded="true" signature="1279:1304" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -44,8 +72,8 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Unity/Hotfix/Init.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Unity/Assets/Scripts/Base/OneThreadSynchronizationContext.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Unity/Hotfix/Init.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -60,8 +88,9 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="166" />
+    <option name="y" value="31" />
     <option name="width" value="1680" />
     <option name="height" value="947" />
   </component>
@@ -70,7 +99,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="SolutionExplorer">
         <subPane>
           <expand>
@@ -94,11 +122,13 @@
         <option name="show-file-system" value="false" />
         <option name="show-all-items" value="false" />
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -148,11 +178,12 @@
       <option name="presentableId" value="Default" />
       <updated>1524745811077</updated>
       <workItem from="1524745815727" duration="939000" />
+      <workItem from="1524795069416" duration="360000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="939000" />
+    <option name="totallyTimeSpent" value="1299000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -164,31 +195,31 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1680" height="947" extended-state="0" />
+    <frame x="166" y="31" width="1680" height="947" extended-state="0" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Errors In Solution" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Unit Tests" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
+      <window_info anchor="right" id="Errors In Solution" order="3" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Unit Tests" order="7" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="NuGet" />
-      <window_info anchor="right" id="JSON Viewer" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25274727" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="right" id="Database" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="NuGet" order="7" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25579977" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" id="JSON Viewer" order="3" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -199,41 +230,53 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Unity/Hotfix/Init.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="33" column="16" lean-forward="true" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
+          <folding>
+            <marker date="1524794863000" expanded="false" signature="6:47" ph="..." />
+            <marker date="1524794863000" expanded="true" signature="67:1309" ph="{...}" />
+            <marker date="1524794863000" expanded="true" signature="95:1307" ph="{...}" />
+            <marker date="1524794863000" expanded="true" signature="127:953" ph="{...}" />
+            <marker date="1524794863000" expanded="true" signature="138:898" ph="{...}" />
+            <marker date="1524794863000" expanded="true" signature="921:949" ph="{...}" />
+            <marker date="1524794863000" expanded="true" signature="984:1091" ph="{...}" />
+            <marker date="1524794863000" expanded="true" signature="995:1036" ph="{...}" />
+            <marker date="1524794863000" expanded="true" signature="1059:1087" ph="{...}" />
+            <marker date="1524794863000" expanded="true" signature="1126:1237" ph="{...}" />
+            <marker date="1524794863000" expanded="true" signature="1137:1182" ph="{...}" />
+            <marker date="1524794863000" expanded="true" signature="1205:1233" ph="{...}" />
+            <marker date="1524794863000" expanded="true" signature="1279:1304" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Unity/Assets/Scripts/Base/OneThreadSynchronizationContext.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="23" column="27" lean-forward="true" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
-          <folding>
-            <marker date="1523860367940" expanded="false" signature="6:74" ph="..." />
-            <marker date="1523860367940" expanded="true" signature="93:639" ph="{...}" />
-            <marker date="1523860367940" expanded="true" signature="166:637" ph="{...}" />
-            <marker date="1523860367940" expanded="true" signature="329:368" ph="{...}" />
-            <marker date="1523860367940" expanded="true" signature="392:513" ph="{...}" />
-            <marker date="1523860367940" expanded="true" signature="412:509" ph="{...}" />
-            <marker date="1523860367940" expanded="true" signature="470:495" ph="{...}" />
-            <marker date="1523860367940" expanded="true" signature="585:634" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Unity/Hotfix/Init.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="465">
-          <caret line="33" column="16" lean-forward="true" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
+          <caret line="33" column="16" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
           <folding>
-            <marker date="1524746527793" expanded="false" signature="6:47" ph="..." />
-            <marker date="1524746527793" expanded="true" signature="67:1308" ph="{...}" />
-            <marker date="1524746527793" expanded="true" signature="95:1306" ph="{...}" />
-            <marker date="1524746527793" expanded="true" signature="127:952" ph="{...}" />
-            <marker date="1524746527793" expanded="true" signature="138:897" ph="{...}" />
-            <marker date="1524746527793" expanded="true" signature="920:948" ph="{...}" />
-            <marker date="1524746527793" expanded="true" signature="983:1090" ph="{...}" />
-            <marker date="1524746527793" expanded="true" signature="994:1035" ph="{...}" />
-            <marker date="1524746527793" expanded="true" signature="1058:1086" ph="{...}" />
-            <marker date="1524746527793" expanded="true" signature="1125:1236" ph="{...}" />
-            <marker date="1524746527793" expanded="true" signature="1136:1181" ph="{...}" />
-            <marker date="1524746527793" expanded="true" signature="1204:1232" ph="{...}" />
-            <marker date="1524746527793" expanded="true" signature="1278:1303" ph="{...}" />
+            <marker date="1524794863000" expanded="false" signature="6:47" ph="..." />
+            <marker date="1524794863000" expanded="true" signature="67:1309" ph="{...}" />
+            <marker date="1524794863000" expanded="true" signature="95:1307" ph="{...}" />
+            <marker date="1524794863000" expanded="true" signature="127:953" ph="{...}" />
+            <marker date="1524794863000" expanded="true" signature="138:898" ph="{...}" />
+            <marker date="1524794863000" expanded="true" signature="921:949" ph="{...}" />
+            <marker date="1524794863000" expanded="true" signature="984:1091" ph="{...}" />
+            <marker date="1524794863000" expanded="true" signature="995:1036" ph="{...}" />
+            <marker date="1524794863000" expanded="true" signature="1059:1087" ph="{...}" />
+            <marker date="1524794863000" expanded="true" signature="1126:1237" ph="{...}" />
+            <marker date="1524794863000" expanded="true" signature="1137:1182" ph="{...}" />
+            <marker date="1524794863000" expanded="true" signature="1205:1233" ph="{...}" />
+            <marker date="1524794863000" expanded="true" signature="1279:1304" ph="{...}" />
           </folding>
         </state>
       </provider>
