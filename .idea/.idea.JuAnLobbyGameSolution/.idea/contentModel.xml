@@ -2800,8 +2800,8 @@
                       <e p="NiuNiuCRComponent.cs" t="Include" />
                       <e p="NiuNiuCRFactory.cs" t="Include" />
                       <e p="NiuNiuOptions" t="Include">
-                        <e p="NiuNiuOptionsComponent.cs" t="Include" />
-                        <e p="NiuNiuOptionsFactory.cs" t="Include" />
+                        <e p="NNOptionsComponent.cs" t="Include" />
+                        <e p="NNOptionsFactory.cs" t="Include" />
                       </e>
                     </e>
                     <e p="NiuNiuJoinRoom" t="Include">
@@ -2895,10 +2895,6 @@
         <e p="Temp/UnityVS_bin/Debug" t="ExcludeRecursive" />
       </e>
     </e>
-<<<<<<< HEAD
     <e p="$USER_HOME$/Library/Caches/Rider2018.1/resharper-host/local/Transient/ReSharperHost/v12/SolutionCaches/_JuAnLobbyGameSolution.1661154428.00" t="ExcludeRecursive" />
-=======
-    <e p="$USER_HOME$/Library/Caches/Rider2018.1/resharper-host/local/Transient/ReSharperHost/v12/SolutionCaches/_JuAnLobbyGameSolution.1842623789.00" t="ExcludeRecursive" />
->>>>>>> dev
   </component>
 </project>

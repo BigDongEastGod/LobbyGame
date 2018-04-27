@@ -14,6 +14,5 @@ namespace ETHotfix
 
             return ui;
         }
-
     }
 }
