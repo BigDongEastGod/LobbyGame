@@ -27,7 +27,7 @@ namespace ETModel
             
             if (Players.Any(d => d.Key.Id == player.Id))
             {
-                player.GetActorProxy.Send(new JoinRoomAnnunciate() {AccountId = player.Id, Error = -2});
+                player.GetActorProxy.Send(new RoomInfoAnnunciate() {AccountId = player.Id, Error = -2});
 
                 return;
             }
@@ -43,7 +43,7 @@ namespace ETModel
             
             // 发送房间人数满的消息
 
-            player.GetActorProxy.Send(new JoinRoomAnnunciate() {AccountId = player.Id, Error = -1});
+            player.GetActorProxy.Send(new RoomInfoAnnunciate() {AccountId = player.Id, Error = -1});
         }
 
         /// <summary>
@@ -55,8 +55,8 @@ namespace ETModel
             if (!Players.ContainsKey(player)) return;
             
             Players[player] = true;
-                
-            Players.Keys.ForEach(d => d.GetActorProxy.Send(new JoinRoomAnnunciate() {AccountId = player.Id, Error = 0}));
+
+            Players.Keys.Where(d => d != player).ForEach(d => d.GetActorProxy.Send(new RoomInfoAnnunciate() {AccountId = player.Id, Error = 0}));
         }
 
         public override void QuitRoom(SPlayer player)
@@ -64,8 +64,8 @@ namespace ETModel
             Players.Remove(player);
             
             // 发送离开房间消息
-            
-            Players.Keys.ForEach(d => d.GetActorProxy.Send(new JoinRoomAnnunciate() {AccountId = player.Id, Error = -2}));
+
+            Players.Keys.Where(d => d != player).ForEach(d => d.GetActorProxy.Send(new RoomInfoAnnunciate() {AccountId = player.Id, Error = -2}));
         }
 
         public override void StartGame()

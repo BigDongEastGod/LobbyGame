@@ -182,9 +182,9 @@ message RoomInfoResponse // IActorResponse
 	
 }
 // 加入房间消息通告
-message JoinRoomAnnunciate // IActorMessage
+message RoomInfoAnnunciate // IActorMessage
 {
 	required int64 AccountId = 1;
 
-	required int32 Error = 2;  // 提示消息 0:消息正长 -1:房间人数满 -2:玩家离开房间消息
+	required int32 Message = 2;  // 提示消息 0:准备游戏 -1:房间人数满 -2:玩家离开房间消息
 }

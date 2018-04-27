@@ -2764,7 +2764,7 @@
           <e p="ExtensionCode" t="Include">
             <e p="Handler" t="Include">
               <e p="NNGame" t="Include">
-                <e p="JoinRoomAnnunciateHandler.cs" t="Include" />
+                <e p="RoomInfoAnnunciateHandler.cs" t="Include" />
               </e>
             </e>
             <e p="Module" t="Include">
