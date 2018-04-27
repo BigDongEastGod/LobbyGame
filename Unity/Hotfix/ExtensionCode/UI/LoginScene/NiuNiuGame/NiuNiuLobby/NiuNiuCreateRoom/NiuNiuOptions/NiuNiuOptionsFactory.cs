@@ -3,14 +3,14 @@ using UnityEngine;
 
 namespace ETHotfix
 {
-    [UIFactory(UIType.DialogPanel)]
-    public class DialogPanelFatory : AUIFactory
+    [UIFactory(UIType.NiuNiuOptions)]
+    public class NiuNiuOptionsFactory : AUIFactory
     {
         public override UI Create(Scene scene, string type, GameObject parent)
         {
             var ui = base.Create(scene, type, parent);
 
-            ui.AddComponent<DialogPanelComponent>();
+            ui.AddComponent<NiuNiuOptionsComponent>();
 
             return ui;
         }
