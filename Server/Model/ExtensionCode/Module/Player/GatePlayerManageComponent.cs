@@ -86,6 +86,8 @@ namespace ETModel
 
         public void RemoveSession(Session session)
         {
+            if (_players.Any(d => d == session) == false) return;
+            
             _players.Remove(session);
 
             Game.Scene.GetComponent<PingComponent>()?.RemoveSession(session.Id);

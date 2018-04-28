@@ -26,7 +26,7 @@ namespace ETModel
             {
                 try
                 {
-                    Log.Info("在线人数 ：" + _sessionTimes.Count.ToString());
+                    //Log.Info("在线人数 ：" + _sessionTimes.Count.ToString());
 
                     await timerComponent.WaitAsync(waitTime);
 
