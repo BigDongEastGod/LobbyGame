@@ -17,7 +17,9 @@ namespace ETHotfix
             try
             {
                 // 添加房间到房间管理组件
-
+                
+                Log.Debug("房间类型：" + message.RoomType);
+                
                 var room = RoomManageComponent.Instance.Add(player.Id, message.RoomType);
 
                 response.RoomId = room?.Id ?? 0;

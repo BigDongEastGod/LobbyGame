@@ -31,7 +31,7 @@ namespace ETHotfix
         /// <returns></returns>
         public static Room Add(this RoomManageComponent self,long playerId,string roomType)
         {
-            if (self.Rooms.ContainsKey(playerId) == false) return null;
+            if (self.Rooms.ContainsKey(playerId)) return null;
             
             // 随机生成房间号
 
@@ -48,7 +48,7 @@ namespace ETHotfix
 
             var room = CreateRoom(roomType, roomId);
 
-            if (room != null) self.Rooms.Add(playerId, CreateRoom(roomType, roomId));
+            if (room != null) self.Rooms.Add(playerId, room);
 
             return room;
         }
