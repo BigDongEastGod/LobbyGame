@@ -23,6 +23,11 @@ namespace ETModel
             chessRules = ProtobufHelper.FromBytes<NNChess>(Rules);
         }
 
+        public override long PlayerIsInRomm(SPlayer player)
+        {
+            return Players.Keys.FirstOrDefault(d => d == player) != null ? this.Id : 0;
+        }
+
         public override void JionRoom(SPlayer player)
         {
             // 当玩家已经在这个房间里

@@ -351,7 +351,7 @@ namespace ETHotfix
 		public string Message { get; set; }
 
 		[ProtoMember(1, IsRequired = true)]
-		public int RoomId;
+		public long RoomId;
 
 	}
 
@@ -425,7 +425,7 @@ namespace ETHotfix
 		public long ActorId { get; set; }
 
 		[ProtoMember(1, IsRequired = true)]
-		public int RoomId;
+		public long RoomId;
 
 		[ProtoMember(2, IsRequired = true)]
 		public byte[] Rules;
@@ -459,7 +459,7 @@ namespace ETHotfix
 		public long ActorId { get; set; }
 
 		[ProtoMember(1, IsRequired = true)]
-		public int RoomId;
+		public long RoomId;
 
 		[ProtoMember(2, IsRequired = true)]
 		public short Message;
@@ -480,7 +480,7 @@ namespace ETHotfix
 		public string Message { get; set; }
 
 		[ProtoMember(1, IsRequired = false)]
-		public int RoomId;
+		public long RoomId;
 
 		[ProtoMember(2, IsRequired = false)]
 		public byte[] Rules;
