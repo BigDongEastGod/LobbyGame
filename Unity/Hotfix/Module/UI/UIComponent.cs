@@ -204,7 +204,9 @@ namespace ETHotfix
 			try
 			{
 				UI ui = UiTypes[type].Create(this.GetParent<Scene>(), type, Root);
+				
 				uis.Add(type, ui);
+				
 				ui.GameObject.transform.SetParent(parent, false);
 				return ui;
 			}

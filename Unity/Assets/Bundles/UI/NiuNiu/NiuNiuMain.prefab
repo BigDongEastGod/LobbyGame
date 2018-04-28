@@ -1131,7 +1131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8347f75bbf20473292de676504ad7398, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CanvasName: LoginCanvas
+  CanvasName: GameCanvas
 --- !u!114 &114222807414846846
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1670,7 +1670,7 @@ MonoBehaviour:
     gameObject: {fileID: 1639630012948488}
   - key: TimeTxt
     gameObject: {fileID: 1554535157571836}
-  - key: ' RoomInfoButton'
+  - key: RoomInfoButton
     gameObject: {fileID: 1622100017954658}
   - key: BetsButton2
     gameObject: {fileID: 1477083817807522}
