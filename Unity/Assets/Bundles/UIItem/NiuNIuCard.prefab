@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 222996797419722368}
   - component: {fileID: 114949921744467602}
   - component: {fileID: 95266736016746208}
+  - component: {fileID: 114576801982808976}
   - component: {fileID: 114621534662876572}
   m_Layer: 0
   m_Name: NiuNIuCard
@@ -301,6 +302,18 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114576801982808976
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1782999775388744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8347f75bbf20473292de676504ad7398, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CanvasName: GameCanvas
 --- !u!114 &114621534662876572
 MonoBehaviour:
   m_ObjectHideFlags: 1

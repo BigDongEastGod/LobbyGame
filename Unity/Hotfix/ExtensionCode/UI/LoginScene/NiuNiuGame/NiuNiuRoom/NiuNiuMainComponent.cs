@@ -1,4 +1,5 @@
 ﻿using ETModel;
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,15 +19,17 @@ namespace ETHotfix
     
     public class NiuNiuMainComponent:Component
     {
+        private Text roomNum;
         
-       public void Awake()
+        
+       public async void Awake()
         {
             ReferenceCollector rc = this.GetParent<UI>().GameObject.GetComponent<ReferenceCollector>();
             
             //房间分线图
             var bg = rc.Get<GameObject>("BgImg");
             //房间号码
-            var roomNum = rc.Get<GameObject>("roomNum");
+            roomNum = rc.Get<GameObject>("roomNum").GetComponent<Text>();
             //庄位信息
             var zhuangWeiTxt  = rc.Get<GameObject>("zhuangWei");
             //底分信息
@@ -73,9 +76,14 @@ namespace ETHotfix
             var timeTxt=rc.Get<GameObject>("TimeTxt");
             var batterySlider=rc.Get<GameObject>("BatterySlider");
             var wiFiImg=rc.Get<GameObject>("WiFiImg");
-            
             var AutomaticFlopToggle=rc.Get<GameObject>("AutomaticFlopToggle");
+            
+            var response =(RoomInfoResponse) await SceneHelperComponent.Instance.Session.Call(new RoomInfoRequest() {RoomId = 0, Message = -1});
 
+            roomNum.text = response.RoomId.ToString();
+
+
+            RoomInfoAnnunciateHandler.RoomAction += RoomInfo;
             
             //房间信息窗口事件注册
             SceneHelperComponent.Instance.MonoEvent.AddButtonClick(roomInfoButton.GetComponent<Button>(), () =>
@@ -83,7 +91,7 @@ namespace ETHotfix
                 
                 Game.Scene.GetComponent<UIComponent>().Create(UIType.NNRoomRuleInfoUIForm,UiLayer.Top);
             });
-            
+       
             //房间信息窗口事件注册
             SceneHelperComponent.Instance.MonoEvent.AddButtonClick(selectButton.GetComponent<Button>(), () =>
             {
@@ -91,6 +99,30 @@ namespace ETHotfix
                 Game.Scene.GetComponent<UIComponent>().Create(UIType.NNRoomOperation,UiLayer.Top);
             });
             
+            
+            //房间信息窗口事件注册
+            SceneHelperComponent.Instance.MonoEvent.AddButtonClick(sitDownBt.GetComponent<Button>(), () =>
+                {
+                    GetRoomInfo();
+                });
+            
+            
+
         }
+
+        private void RoomInfo(RoomInfoAnnunciate obj)
+        {
+            
+        }
+
+
+        private async void GetRoomInfo()
+        {
+
+            var response =(RoomInfoResponse) await SceneHelperComponent.Instance.Session.Call(new RoomInfoRequest() {RoomId = 0, Message = -1});
+
+        }
+
+       
     }
 }

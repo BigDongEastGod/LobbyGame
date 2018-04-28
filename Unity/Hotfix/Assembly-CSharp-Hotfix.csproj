@@ -233,6 +233,8 @@
     <Compile Include="ExtensionCode\UI\LoginScene\NiuNiuGame\NiuNiuRoom\NiuNiuMainFactory.cs" />
     <Compile Include="ExtensionCode\UI\LoginScene\NiuNiuGame\NiuNiuRoom\NNRoomOperationComponent.cs" />
     <Compile Include="ExtensionCode\UI\LoginScene\NiuNiuGame\NiuNiuRoom\NNRoomOperationFactory.cs" />
+    <Compile Include="ExtensionCode\UI\LoginScene\NiuNiuGame\NiuNiuRoom\NNRoomRuleInfoComponent.cs" />
+    <Compile Include="ExtensionCode\UI\LoginScene\NiuNiuGame\NiuNiuRoom\NNRoomRuleInfoFactory.cs" />
     <Compile Include="ExtensionCode\UI\LoginScene\NiuNiuGame\NiuNiuRoom\NNShowCardComponent.cs" />
     <Compile Include="ExtensionCode\UI\LoginScene\NiuNiuGame\NiuNiuRoom\NNShowCardFactory.cs" />
     <Compile Include="Module\FrameSync\OperaComponent.cs" />

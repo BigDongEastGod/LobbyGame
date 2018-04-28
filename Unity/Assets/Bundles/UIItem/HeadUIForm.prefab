@@ -106,6 +106,7 @@ GameObject:
   - component: {fileID: 224997245832747388}
   - component: {fileID: 222058273089220128}
   - component: {fileID: 114535479165365114}
+  - component: {fileID: 114057932576225504}
   - component: {fileID: 114259164086431484}
   m_Layer: 0
   m_Name: HeadUIForm
@@ -226,6 +227,18 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114057932576225504
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1710578671966518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8347f75bbf20473292de676504ad7398, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CanvasName: GameCanvas
 --- !u!114 &114141428375741208
 MonoBehaviour:
   m_ObjectHideFlags: 1
