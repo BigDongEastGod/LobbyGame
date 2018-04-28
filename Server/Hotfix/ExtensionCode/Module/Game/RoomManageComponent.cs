@@ -29,9 +29,9 @@ namespace ETHotfix
         /// <param name="playerId">玩家ID</param>
         /// <param name="roomType">房间类型</param>
         /// <returns></returns>
-        public static bool Add(this RoomManageComponent self,long playerId,string roomType)
+        public static Room Add(this RoomManageComponent self,long playerId,string roomType)
         {
-            if (self.Rooms.ContainsKey(playerId) == false) return false;
+            if (self.Rooms.ContainsKey(playerId) == false) return null;
             
             // 随机生成房间号
 
@@ -46,9 +46,11 @@ namespace ETHotfix
             
             // 创建房间  
 
-            self.Rooms.Add(playerId, CreateRoom(roomType, roomId));
+            var room = CreateRoom(roomType, roomId);
 
-            return true;
+            if (room != null) self.Rooms.Add(playerId, CreateRoom(roomType, roomId));
+
+            return room;
         }
 
         /// <summary>
