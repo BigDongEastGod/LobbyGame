@@ -30,6 +30,6 @@ namespace ETModel
 		 public const ushort RoomRulesResponse = 10026;
 		 public const ushort RoomInfoRequest = 10027;
 		 public const ushort RoomInfoResponse = 10028;
-		 public const ushort JoinRoomAnnunciate = 10029;
+		 public const ushort RoomInfoAnnunciate = 10029;
 	}
 }

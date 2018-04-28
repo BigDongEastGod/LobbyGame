@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using ETModel;
 
@@ -19,6 +20,17 @@ namespace ETHotfix
                 {
                     response.Error = -1;
 
+                    if (player != null)
+                    {
+                        var playerroom = RoomManageComponent.Instance.GetRommByPlayer(player);
+
+                        response.RoomId = playerroom.Id;
+
+                        response.Rules = playerroom.Rules;
+                        
+                        Log.Debug(response.Rules.Length.ToString());
+                    }
+                    
                     reply(response);
                     
                     return;

@@ -2,6 +2,10 @@
 {
     public abstract class Room :ETModel.Entity
     {
+        public byte[] Rules;
+
+        public virtual long PlayerIsInRomm(SPlayer player){return 0;}  // 判断用户是否在该房间中
+        
         public virtual void AddRules(byte[] rules){}  // 添加规则
         
         public virtual void Prepare(SPlayer player){}  // 准备游戏

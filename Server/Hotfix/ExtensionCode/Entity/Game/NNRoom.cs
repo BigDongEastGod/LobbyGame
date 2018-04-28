@@ -18,20 +18,27 @@ namespace ETModel
 
         public override void AddRules(byte[] rules)
         {
-            chessRules = ProtobufHelper.FromBytes<NNChess>(rules);
+            Rules = rules;
+            
+            chessRules = ProtobufHelper.FromBytes<NNChess>(Rules);
+        }
+
+        public override long PlayerIsInRomm(SPlayer player)
+        {
+            return Players.Keys.FirstOrDefault(d => d == player) != null ? this.Id : 0;
         }
 
         public override void JionRoom(SPlayer player)
         {
             // 当玩家已经在这个房间里
-            
-            if (Players.Any(d => d.Key.Id == player.Id))
+
+            if (Players.ContainsKey(player))
             {
-                player.GetActorProxy.Send(new JoinRoomAnnunciate() {AccountId = player.Id, Error = -2});
+                player.GetActorProxy.Send(new RoomInfoAnnunciate() {AccountId = player.Id, Message = -2});
 
                 return;
             }
-            
+
             // 如果房间小于指定人数，加入这个房间，并发送数据给房间里其他玩家
             
             if (Players.Count < chessRules.PlayerCount)
@@ -43,7 +50,7 @@ namespace ETModel
             
             // 发送房间人数满的消息
 
-            player.GetActorProxy.Send(new JoinRoomAnnunciate() {AccountId = player.Id, Error = -1});
+            player.GetActorProxy.Send(new RoomInfoAnnunciate() {AccountId = player.Id, Message = -1});
         }
 
         /// <summary>
@@ -55,8 +62,8 @@ namespace ETModel
             if (!Players.ContainsKey(player)) return;
             
             Players[player] = true;
-                
-            Players.Keys.ForEach(d => d.GetActorProxy.Send(new JoinRoomAnnunciate() {AccountId = player.Id, Error = 0}));
+
+            Players.Keys.Where(d => d != player).ForEach(d => d.GetActorProxy.Send(new RoomInfoAnnunciate() {AccountId = player.Id, Message = 0}));
         }
 
         public override void QuitRoom(SPlayer player)
@@ -64,8 +71,8 @@ namespace ETModel
             Players.Remove(player);
             
             // 发送离开房间消息
-            
-            Players.Keys.ForEach(d => d.GetActorProxy.Send(new JoinRoomAnnunciate() {AccountId = player.Id, Error = -2}));
+
+            Players.Keys.Where(d => d != player).ForEach(d => d.GetActorProxy.Send(new RoomInfoAnnunciate() {AccountId = player.Id, Message = -2}));
         }
 
         public override void StartGame()

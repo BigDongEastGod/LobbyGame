@@ -351,7 +351,7 @@ namespace ETHotfix
 		public string Message { get; set; }
 
 		[ProtoMember(1, IsRequired = true)]
-		public int RoomId;
+		public long RoomId;
 
 	}
 
@@ -425,7 +425,7 @@ namespace ETHotfix
 		public long ActorId { get; set; }
 
 		[ProtoMember(1, IsRequired = true)]
-		public int RoomId;
+		public long RoomId;
 
 		[ProtoMember(2, IsRequired = true)]
 		public byte[] Rules;
@@ -447,7 +447,7 @@ namespace ETHotfix
 
 	}
 
-// 加入游戏房间
+// 游戏房间信息
 	[Message(HotfixOpcode.RoomInfoRequest)]
 	[ProtoContract]
 	public partial class RoomInfoRequest: IActorRequest
@@ -459,7 +459,7 @@ namespace ETHotfix
 		public long ActorId { get; set; }
 
 		[ProtoMember(1, IsRequired = true)]
-		public int RoomId;
+		public long RoomId;
 
 		[ProtoMember(2, IsRequired = true)]
 		public short Message;
@@ -479,12 +479,18 @@ namespace ETHotfix
 		[ProtoMember(92, IsRequired = true)]
 		public string Message { get; set; }
 
+		[ProtoMember(1, IsRequired = false)]
+		public long RoomId;
+
+		[ProtoMember(2, IsRequired = false)]
+		public byte[] Rules;
+
 	}
 
 // 加入房间消息通告
-	[Message(HotfixOpcode.JoinRoomAnnunciate)]
+	[Message(HotfixOpcode.RoomInfoAnnunciate)]
 	[ProtoContract]
-	public partial class JoinRoomAnnunciate: IActorMessage
+	public partial class RoomInfoAnnunciate: IActorMessage
 	{
 		[ProtoMember(90, IsRequired = true)]
 		public int RpcId { get; set; }
@@ -496,7 +502,7 @@ namespace ETHotfix
 		public long AccountId;
 
 		[ProtoMember(2, IsRequired = true)]
-		public int Error;
+		public int Message;
 
 	}
 
