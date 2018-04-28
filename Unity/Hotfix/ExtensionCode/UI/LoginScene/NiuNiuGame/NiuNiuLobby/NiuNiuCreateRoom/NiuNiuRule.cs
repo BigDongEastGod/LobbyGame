@@ -23,16 +23,16 @@ namespace ETHotfix
         public List<int> PlayerPush; //闲家推注
 
         public List<List<string>> DoubleRules; //翻倍规则
-        bool ShunZiRules; //顺子牛
-        bool TonghuaRules; //同花牛
-        bool HuLuRules; //葫芦牛
-        bool WuHuaRules; //五花牛
-        bool ZhaDanRules; //炸弹牛
-        bool WuXiaoRules; //五小牛
-        bool ZhongTuJinRuRules; //中途禁入
-        bool CuoPaiRules; //禁止搓牌
-        bool WangLaiRules; //王癞玩法
-        bool MaiMaRules; //闲家买码
+//        bool ShunZiRules; //顺子牛
+//        bool TonghuaRules; //同花牛
+//        bool HuLuRules; //葫芦牛
+//        bool WuHuaRules; //五花牛
+//        bool ZhaDanRules; //炸弹牛
+//        bool WuXiaoRules; //五小牛
+//        bool ZhongTuJinRuRules; //中途禁入
+//        bool CuoPaiRules; //禁止搓牌
+//        bool WangLaiRules; //王癞玩法
+//        bool MaiMaRules; //闲家买码
 
         public NiuNiuRule(List<string> listDiFen, List<string> listjuShu, List<string> listFangFei,
             List<string> listZiDongKaiZhuo, List<string> listXianJiaTuiZhu, List<string> listShangZhuangFenShu,
@@ -131,7 +131,7 @@ namespace ETHotfix
             null,
             new List<string>() {"牛牛x4 牛九x3 牛八x2 牛七x2", "牛牛x3 牛九x2 牛八x2"},
             new List<string>() {"顺子牛(5倍)", "同花牛(5倍)", "葫芦牛(6倍)", "五花牛(5倍)", "炸弹牛(6倍)", "五小牛(8倍)"},
-            new List<string>() {"中途禁入", "禁止搓牌", "王癞玩法", "闲家买码", "下注限制", "暗抢庄家,下注加倍"})
+            new List<string>() {"中途禁入", "禁止搓牌", "王癞玩法", "闲家买码", "下注限制", "暗抢庄家", "下注加倍"})
         {
             Score = new List<string>() {"1/2", "2/4", "4/8", "5/10"},
             Dish = new List<int>() {10, 20},
