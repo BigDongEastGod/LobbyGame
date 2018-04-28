@@ -24,7 +24,7 @@ namespace ETHotfix
             Game.Scene.GetComponent<UIComponent>().Remove(UIType.NiuNiuCreateRoom);
             Game.Scene.GetComponent<UIComponent>().Remove(UIType.NiuNiuJoinRoom);
             Game.Scene.GetComponent<UIComponent>().Remove(UIType.NiuNiuLobbyMenu);
-            Game.Scene.GetComponent<UIComponent>().Remove(UIType.NiuNiuOptions);
+            Game.Scene.GetComponent<UIComponent>().Remove(UIType.NiuNiuGjxx);
             
             base.Remove(type);
         }

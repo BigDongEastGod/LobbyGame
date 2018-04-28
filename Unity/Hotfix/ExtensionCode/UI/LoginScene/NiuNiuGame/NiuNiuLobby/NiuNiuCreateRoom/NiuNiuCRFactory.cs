@@ -15,5 +15,12 @@ namespace ETHotfix
             return ui;
         }
 
+        public override void Remove(string type)
+        {
+            Game.Scene.GetComponent<UIComponent>().Remove(UIType.NiuNiuTspx);
+            Game.Scene.GetComponent<UIComponent>().Remove(UIType.NiuNiuGjxx);
+            
+            base.Remove(type);
+        }
     }
 }
