@@ -41,13 +41,16 @@ namespace ETHotfix
 
 	    #endregion
 
+	    #region 牛牛房间
 
-        public const string NiuNiuMain = "NiuNiuMain";
-	    
+	    public const string NiuNiuMain = "NiuNiuMain";
 	    public const string NNShowCard = "NNShowCardParent";
 	    public const string NNRoomOperation = "niuniuRoomOperation";
 	    public const string NNRoomRuleInfoUIForm = "NNRoomRuleInfoUIForm";
 	    public const string HeadUIForm = "HeadUIForm";
 	    public const string NiuNIuCard = "NiuNIuCard";
+	    
+	    #endregion
+     
     }
 }
