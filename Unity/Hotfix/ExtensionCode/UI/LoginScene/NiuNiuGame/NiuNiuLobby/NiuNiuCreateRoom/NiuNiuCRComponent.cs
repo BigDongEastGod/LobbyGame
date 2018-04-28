@@ -48,7 +48,7 @@ namespace ETHotfix
 
             // 房间人数Toggle
             _roomPeople6 = rc.Get<GameObject>("RoomPeople_6");
-            var _roomPeople8 = rc.Get<GameObject>("roomPeople_8");
+//            var _roomPeople8 = rc.Get<GameObject>("roomPeople_8");
             _optionsLayout = rc.Get<GameObject>("OptionsLayout");
             var toggleBtn = rc.Get<GameObject>("ToggleBtn");
             var createRoomBtn = rc.Get<GameObject>("CreateRoomBtn");
@@ -279,7 +279,7 @@ namespace ETHotfix
             }
         }
 
-        private async void SendRuleAndJoinRoom(int roomId, bool isJoin)
+        private async void SendRuleAndJoinRoom(long roomId, bool isJoin)
         {
             NNChess nnChess = GetCurrentNnChess();
             // 发送规则

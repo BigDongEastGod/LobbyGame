@@ -35,6 +35,8 @@ namespace ETHotfix
 
         private GameObject nnOptionShowBox;
 
+        private GameObject allSelectBtn;
+
         // 勾选的选项索引集合
         public List<int> SelectedOptions;
 
@@ -48,7 +50,7 @@ namespace ETHotfix
             var nnTeShuPaiXingDp = rc.Get<GameObject>("TeShuPaiXingDp");
             _osbPanel = rc.Get<GameObject>("OptionShowBoxPanel");
 
-            var allSelectBtn = rc.Get<GameObject>("AllSelectBtn");
+            allSelectBtn = rc.Get<GameObject>("AllSelectBtn");
             optionShowBoxGrid = rc.Get<GameObject>("OptionShowBoxGrid");
 
             nnOptionItemPrefab = rc.Get<GameObject>("NN_OptionItem");
@@ -67,29 +69,11 @@ namespace ETHotfix
             {
                 if (allSelectBtn.transform.Find("UnSelected").gameObject.activeSelf)
                 {
-                    allSelectBtn.transform.Find("UnSelected").gameObject.SetActive(false);
-                    allSelectBtn.transform.Find("Selected").gameObject.SetActive(true);
-                    int itemIndex = 0;
-                    foreach (Transform item in optionShowBoxGrid.transform)
-                    {
-                        item.Find("UnSelected").gameObject.SetActive(false);
-                        item.Find("Selected").gameObject.SetActive(true);
-                        if (!SelectedOptions.Contains(itemIndex)) SelectedOptions.Add(itemIndex);
-                        itemIndex++;
-                    }
+                    SelectedAllOptions();
                 }
                 else
                 {
-                    allSelectBtn.transform.Find("Selected").gameObject.SetActive(false);
-                    allSelectBtn.transform.Find("UnSelected").gameObject.SetActive(true);
-                    int itemIndex = 0;
-                    foreach (Transform item in optionShowBoxGrid.transform)
-                    {
-                        item.Find("UnSelected").gameObject.SetActive(true);
-                        item.Find("Selected").gameObject.SetActive(false);
-                        if (SelectedOptions.Contains(itemIndex)) SelectedOptions.Remove(itemIndex);
-                        itemIndex++;
-                    }
+                    ClearAllOptions();
                 }
             });
         }
@@ -132,27 +116,8 @@ namespace ETHotfix
 
         public void RefreshShowItem(int ruleCount)
         {
-            // 清除额外勾选选项
-//            for (int i = 0; i < SelectedOptions.Count; i++)
-//            {
-//                SelectedOptions.RemoveAt(0);
-////                optionShowBoxGrid.transform.Find(i.ToString() + "/UnSelected").gameObject.SetActive(true);
-////                optionShowBoxGrid.transform.Find(i.ToString() + "/Selected").gameObject.SetActive(false);
-//            }
-//
-//            foreach (Transform item in optionShowBoxGrid.transform)
-//            {
-//                item.Find("/UnSelected").gameObject.SetActive(true);
-//                item.Find("/Selected").gameObject.SetActive(false);
-//            }
-            foreach (Transform item in optionShowBoxGrid.transform)
-            {
-                if (SelectedOptions.Contains(Convert.ToInt32(item.name)))
-                    SelectedOptions.Remove(Convert.ToInt32(item.name));
-                item.Find("/UnSelected").gameObject.SetActive(true);
-                item.Find("/Selected").gameObject.SetActive(false);
-            }
-
+            // 清除额外勾选选项            
+            ClearAllOptions();
 
             if (ruleCount <= 3)
             {
@@ -175,9 +140,37 @@ namespace ETHotfix
                 optionShowBoxGrid.transform.GetChild(i).gameObject.SetActive(i < ruleCount);
             }
 
-            foreach (var VARIABLE in SelectedOptions)
+            foreach (var item in SelectedOptions)
             {
-                Debug.Log(VARIABLE);
+                Debug.Log("特殊牌型:" + item);
+            }
+        }
+
+        private void ClearAllOptions()
+        {
+            allSelectBtn.transform.Find("Selected").gameObject.SetActive(false);
+            allSelectBtn.transform.Find("UnSelected").gameObject.SetActive(true);
+            int itemIndex = 0;
+            foreach (Transform item in optionShowBoxGrid.transform)
+            {
+                item.Find("UnSelected").gameObject.SetActive(true);
+                item.Find("Selected").gameObject.SetActive(false);
+                if (SelectedOptions.Contains(itemIndex)) SelectedOptions.Remove(itemIndex);
+                itemIndex++;
+            }
+        }
+
+        private void SelectedAllOptions()
+        {
+            allSelectBtn.transform.Find("UnSelected").gameObject.SetActive(false);
+            allSelectBtn.transform.Find("Selected").gameObject.SetActive(true);
+            int itemIndex = 0;
+            foreach (Transform item in optionShowBoxGrid.transform)
+            {
+                item.Find("UnSelected").gameObject.SetActive(false);
+                item.Find("Selected").gameObject.SetActive(true);
+                if (!SelectedOptions.Contains(itemIndex)) SelectedOptions.Add(itemIndex);
+                itemIndex++;
             }
         }
     }
