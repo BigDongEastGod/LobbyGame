@@ -447,7 +447,7 @@ namespace ETHotfix
 
 	}
 
-// 加入游戏房间
+// 游戏房间信息
 	[Message(HotfixOpcode.RoomInfoRequest)]
 	[ProtoContract]
 	public partial class RoomInfoRequest: IActorRequest
@@ -479,8 +479,11 @@ namespace ETHotfix
 		[ProtoMember(92, IsRequired = true)]
 		public string Message { get; set; }
 
-		[ProtoMember(1, IsRequired = true)]
+		[ProtoMember(1, IsRequired = false)]
 		public int RoomId;
+
+		[ProtoMember(2, IsRequired = false)]
+		public byte[] Rules;
 
 	}
 

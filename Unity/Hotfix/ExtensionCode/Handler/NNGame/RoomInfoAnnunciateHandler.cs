@@ -11,7 +11,7 @@ namespace ETHotfix
         
         protected override void Run(Session session, RoomInfoAnnunciate message)
         {
-            RoomAction.Invoke(message);
+            RoomAction?.Invoke(message);
         }
     }
 }
