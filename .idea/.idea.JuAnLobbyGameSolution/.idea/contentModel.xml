@@ -2802,8 +2802,10 @@
                       <e p="NiuNiuCRComponent.cs" t="Include" />
                       <e p="NiuNiuCRFactory.cs" t="Include" />
                       <e p="NiuNiuOptions" t="Include">
-                        <e p="NNOptionsComponent.cs" t="Include" />
-                        <e p="NNOptionsFactory.cs" t="Include" />
+                        <e p="NNGjxxComponent.cs" t="Include" />
+                        <e p="NNGjxxFactory.cs" t="Include" />
+                        <e p="NNTspxComponent.cs" t="Include" />
+                        <e p="NNTspxFactory.cs" t="Include" />
                       </e>
                       <e p="NiuNiuRule.cs" t="Include" />
                     </e>

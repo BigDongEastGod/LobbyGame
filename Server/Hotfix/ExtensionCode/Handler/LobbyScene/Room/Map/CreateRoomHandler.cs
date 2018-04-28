@@ -17,16 +17,16 @@ namespace ETHotfix
             try
             {
                 // 添加房间到房间管理组件
-
+                
+                Log.Debug("房间类型：" + message.RoomType);
+                
                 var room = RoomManageComponent.Instance.Add(player.Id, message.RoomType);
 
-                var roomId = RoomManageComponent.Instance.GetRoomId(player.Id);
-                
-                response.RoomId = roomId ?? 0;
+                response.RoomId = room?.Id ?? 0;
 
-                if (room)
+                if (room != null)
                 {
-                    Log.Info("用户：" + player.Id + "创建房间号：" + roomId);
+                    Log.Info("用户：" + player.Id + "创建房间号：" + response.RoomId);
                 }
                 else
                 {
