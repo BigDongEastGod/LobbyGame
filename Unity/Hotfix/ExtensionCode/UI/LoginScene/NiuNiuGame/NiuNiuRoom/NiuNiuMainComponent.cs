@@ -1,4 +1,5 @@
 ﻿using ETModel;
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,23 +19,27 @@ namespace ETHotfix
     
     public class NiuNiuMainComponent:Component
     {
+        private Text roomNum;               //房间号码文本
+        private long roomId;                //房间号码
+        private UI showCardUI;
+        private Button sitDownBt;
         
-       public void Awake()
+        
+       public async void Awake()
         {
             ReferenceCollector rc = this.GetParent<UI>().GameObject.GetComponent<ReferenceCollector>();
             
             //房间分线图
             var bg = rc.Get<GameObject>("BgImg");
             //房间号码
-            var roomNum = rc.Get<GameObject>("roomNum");
+            roomNum = rc.Get<GameObject>("roomNum").GetComponent<Text>();
             //庄位信息
-            var zhuangWeiTxt  = rc.Get<GameObject>("zhuangWei");
+            var zhuangWeiTxt  = rc.Get<GameObject>("zhuangWei").GetComponent<Text>();
             //底分信息
-            var bottomScoreText  = rc.Get<GameObject>("BottomScoreText");
+            var bottomScoreText  = rc.Get<GameObject>("BottomScoreText").GetComponent<Text>();
             //房间局数
-            var roomCountText  = rc.Get<GameObject>("roomCountText");
-            //当前客户端提示标题
-            var mainTitleTxt = rc.Get<GameObject>("mainTitle");
+            var roomCountText  = rc.Get<GameObject>("roomCountText").GetComponent<Text>();
+           
             //房间信息按钮
             var roomInfoButton  = rc.Get<GameObject>("RoomInfoButton");
             //下拉窗口按钮
@@ -48,7 +53,7 @@ namespace ETHotfix
             //开始游戏按钮
             var startGameBt=rc.Get<GameObject>("StartGameBt");
             //坐下按钮
-            var sitDownBt=rc.Get<GameObject>("SitDownBt");
+            sitDownBt=rc.Get<GameObject>("SitDownBt").GetComponent<Button>();
             //不抢庄按钮
             var noBobButton=rc.Get<GameObject>("NoBobButton");
             //抢庄按钮
@@ -73,17 +78,32 @@ namespace ETHotfix
             var timeTxt=rc.Get<GameObject>("TimeTxt");
             var batterySlider=rc.Get<GameObject>("BatterySlider");
             var wiFiImg=rc.Get<GameObject>("WiFiImg");
-            
             var AutomaticFlopToggle=rc.Get<GameObject>("AutomaticFlopToggle");
+            
+            var response =(RoomInfoResponse) await SceneHelperComponent.Instance.Session.Call(new RoomInfoRequest() {RoomId = 0, Message = -1});
+    
+            var rules = response.Rules == null ? null : ProtobufHelper.FromBytes<NNChess>(response.Rules);
 
+            roomId = response.RoomId;
+            roomNum.text = response.RoomId == 0 ? null : roomId.ToString();
+             //zhuangWeiTxt=rules.
+            bottomScoreText.text = rules.Score.ToString();
+            roomCountText.text = rules.Dish.ToString();
+            
+            RoomInfoAnnunciateHandler.RoomAction += RoomInfo;
+            //获得房间显示卡牌窗口
+            showCardUI=Game.Scene.GetComponent<UIComponent>().Create(UIType.NNShowCard, UiLayer.Medium);
+            //设置房间人数
+            showCardUI.GetComponent<NNShowCardComponent>().roomPeople = 6;
+            //加载所需要的位置信息
+            showCardUI.GetComponent<NNShowCardComponent>().GetCurrentTablePos();
             
             //房间信息窗口事件注册
             SceneHelperComponent.Instance.MonoEvent.AddButtonClick(roomInfoButton.GetComponent<Button>(), () =>
             {
-                
                 Game.Scene.GetComponent<UIComponent>().Create(UIType.NNRoomRuleInfoUIForm,UiLayer.Top);
             });
-            
+       
             //房间信息窗口事件注册
             SceneHelperComponent.Instance.MonoEvent.AddButtonClick(selectButton.GetComponent<Button>(), () =>
             {
@@ -91,6 +111,35 @@ namespace ETHotfix
                 Game.Scene.GetComponent<UIComponent>().Create(UIType.NNRoomOperation,UiLayer.Top);
             });
             
+            
+            //房间信息窗口事件注册
+            SceneHelperComponent.Instance.MonoEvent.AddButtonClick(sitDownBt.GetComponent<Button>(), () =>
+                {
+                    GetRoomInfo();
+                });
+        
+            
+
         }
+
+        private void RoomInfo(RoomInfoAnnunciate obj)
+        {
+            
+        }
+
+
+        private async void GetRoomInfo()
+        {
+            var response =(RoomInfoResponse) await SceneHelperComponent.Instance.Session.Call(new RoomInfoRequest() {RoomId = roomId, Message = 1});
+            if (response.Error==0)
+            {
+                Debug.Log("成功坐下");
+                sitDownBt.gameObject.SetActive(false);
+                showCardUI.GetComponent<NNShowCardComponent>().CreateHead(-1);
+            }
+        }
+        
+        
+       
     }
 }
