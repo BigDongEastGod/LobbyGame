@@ -36,7 +36,8 @@ namespace ETHotfix
 	    #region 牛牛创建房间UI
 
 	    public const string NiuNiuCreateRoom = "NiuNiuCreateRoom";
-	    public const string NiuNiuOptions = "NiuNiuOptions";
+	    public const string NiuNiuGjxx = "NiuNiuGjxx";
+	    public const string NiuNiuTspx = "NiuNiuTspx";
 
 	    #endregion
 

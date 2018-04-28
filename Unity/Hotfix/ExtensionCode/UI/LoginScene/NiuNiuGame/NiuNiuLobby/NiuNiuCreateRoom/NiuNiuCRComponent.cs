@@ -27,7 +27,8 @@ namespace ETHotfix
     public class NiuNiuCRComponent : Component
     {
         private UI _nnLobby;
-        private UI _nnOptions;
+        private UI _nnOptionsTspx;
+        private UI _nnOptionsGjxx;
 
         private GameObject _roomPeople6;
         private GameObject _optionsLayout;
@@ -47,14 +48,14 @@ namespace ETHotfix
 
             // 房间人数Toggle
             _roomPeople6 = rc.Get<GameObject>("RoomPeople_6");
-            var _roomPeople8 = rc.Get<GameObject>("roomPeople_8");
+//            var _roomPeople8 = rc.Get<GameObject>("roomPeople_8");
             _optionsLayout = rc.Get<GameObject>("OptionsLayout");
             var toggleBtn = rc.Get<GameObject>("ToggleBtn");
             var createRoomBtn = rc.Get<GameObject>("CreateRoomBtn");
 
             #endregion
 
-            InitRule();
+            _curretNiuNiuRule = NiuNiuRuleInstance.NiuNiuShangZhuang;
 
             // 返回牛牛大厅按钮
             SceneHelperComponent.Instance.MonoEvent.AddButtonClick(nncrCloseBtn.GetComponent<Button>(), () =>
@@ -69,54 +70,19 @@ namespace ETHotfix
                 switch (toggle.name)
                 {
                     case "NiuNiuShangZhuangTg":
-                        SceneHelperComponent.Instance.MonoEvent.AddButtonClick(toggle.GetComponent<Button>(), () =>
-                        {
-                            // 切换显示标签 Background Checkmark
-                            ChangeToggleMark(toggle);
-                            // 切换规则内容显示
-                            ShowRule(NiuNiuRuleInstance.NiuNiuShangZhuang);
-                            _curretNiuNiuRule = NiuNiuRuleInstance.NiuNiuShangZhuang;
-                        });
+                        RegChangeModeBtn(toggle, NiuNiuRuleInstance.NiuNiuShangZhuang);
                         break;
                     case "GuDingZhuangJiaTg":
-                        SceneHelperComponent.Instance.MonoEvent.AddButtonClick(toggle.GetComponent<Button>(), () =>
-                        {
-                            // 切换显示标签 Background Checkmark
-                            ChangeToggleMark(toggle);
-                            // 切换规则内容显示
-                            ShowRule(NiuNiuRuleInstance.GuDingZhuangJia);
-                            _curretNiuNiuRule = NiuNiuRuleInstance.GuDingZhuangJia;
-                        });
+                        RegChangeModeBtn(toggle, NiuNiuRuleInstance.GuDingZhuangJia);
                         break;
                     case "ZiYouQiangZhuangTg":
-                        SceneHelperComponent.Instance.MonoEvent.AddButtonClick(toggle.GetComponent<Button>(), () =>
-                        {
-                            // 切换显示标签 Background Checkmark
-                            ChangeToggleMark(toggle);
-                            // 切换规则内容显示
-                            ShowRule(NiuNiuRuleInstance.ZiYouQiangZhuang);
-                            _curretNiuNiuRule = NiuNiuRuleInstance.ZiYouQiangZhuang;
-                        });
+                        RegChangeModeBtn(toggle, NiuNiuRuleInstance.ZiYouQiangZhuang);
                         break;
                     case "MingPaiQiangZhuangTg":
-                        SceneHelperComponent.Instance.MonoEvent.AddButtonClick(toggle.GetComponent<Button>(), () =>
-                        {
-                            // 切换显示标签 Background Checkmark
-                            ChangeToggleMark(toggle);
-                            // 切换规则内容显示
-                            ShowRule(NiuNiuRuleInstance.MingPaiQiangZhuang);
-                            _curretNiuNiuRule = NiuNiuRuleInstance.MingPaiQiangZhuang;
-                        });
+                        RegChangeModeBtn(toggle, NiuNiuRuleInstance.MingPaiQiangZhuang);
                         break;
                     case "TongBiNiuNiuTg":
-                        SceneHelperComponent.Instance.MonoEvent.AddButtonClick(toggle.GetComponent<Button>(), () =>
-                        {
-                            // 切换显示标签 Background Checkmark
-                            ChangeToggleMark(toggle);
-                            // 切换规则内容显示
-                            ShowRule(NiuNiuRuleInstance.TongBiNiuNiu);
-                            _curretNiuNiuRule = NiuNiuRuleInstance.TongBiNiuNiu;
-                        });
+                        RegChangeModeBtn(toggle, NiuNiuRuleInstance.TongBiNiuNiu);
                         break;
                 }
             }
@@ -128,9 +94,30 @@ namespace ETHotfix
         {
             _nnLobby = Game.Scene.GetComponent<UIComponent>().Get(UIType.NiuNiuLobby);
 
-            Game.Scene.GetComponent<UIComponent>().Create(UIType.NiuNiuOptions, _optionsLayout.transform.Find("Row5/TeShuPaiXing/OptionsPos"));
+            Game.Scene.GetComponent<UIComponent>().Create(UIType.NiuNiuTspx, _optionsLayout.transform.Find("Row5/TeShuPaiXing/OptionsPos"));
+            Game.Scene.GetComponent<UIComponent>().Create(UIType.NiuNiuGjxx, _optionsLayout.transform.Find("Row6/GaoJiXuanXiang/OptionsPos"));
 
-            _nnOptions = Game.Scene.GetComponent<UIComponent>().Get(UIType.NiuNiuOptions);
+            _nnOptionsTspx = Game.Scene.GetComponent<UIComponent>().Get(UIType.NiuNiuTspx);
+            _nnOptionsGjxx = Game.Scene.GetComponent<UIComponent>().Get(UIType.NiuNiuGjxx);
+        }
+
+        /// <summary>
+        /// 注册改变模式按钮
+        /// </summary>
+        /// <param name="toggle"></param>
+        /// <param name="nnRule"></param>
+        private void RegChangeModeBtn(Transform toggle, NiuNiuRule nnRule)
+        {
+            SceneHelperComponent.Instance.MonoEvent.AddButtonClick(toggle.GetComponent<Button>(), () =>
+            {
+                // 切换显示标签 Background Checkmark
+                ChangeToggleMark(toggle);
+                // 切换规则内容显示
+                _curretNiuNiuRule = nnRule;
+                _nnOptionsGjxx.GetComponent<NNGjxxComponent>().RefreshShowItem(_curretNiuNiuRule.ListGaoJiXuanXiang.Count);
+                _nnOptionsTspx.GetComponent<NNTspxComponent>().RefreshShowItem(_curretNiuNiuRule.ListTeShuPaiXing.Count);
+                ShowRule(_curretNiuNiuRule);
+            });
         }
 
         /// <summary>
@@ -263,15 +250,6 @@ namespace ETHotfix
         }
 
         /// <summary>
-        /// 牛牛规则初始化
-        /// </summary>
-        private void InitRule()
-        {
-            _curretNiuNiuRule = NiuNiuRuleInstance.NiuNiuShangZhuang;
-        }
-
-
-        /// <summary>
         /// 创建牌局
         /// </summary>
         private async void CreatePaiJu()
@@ -284,7 +262,7 @@ namespace ETHotfix
             {
                 Debug.Log("创建房间成功,房间号: " + creatRoomResponse.RoomId);
 
-                SendRuleAndJoinRoom(creatRoomResponse.RoomId);
+                SendRuleAndJoinRoom(creatRoomResponse.RoomId, true);
             }
 //            else if (creatRoomResponse.Error == -1)
 //            {
@@ -293,7 +271,7 @@ namespace ETHotfix
             else if (creatRoomResponse.Error == -2)
             {
                 Debug.Log(creatRoomResponse.Message + ",房间ID:" + creatRoomResponse.RoomId);
-                SendRuleAndJoinRoom(creatRoomResponse.RoomId);
+                SendRuleAndJoinRoom(creatRoomResponse.RoomId, false);
             }
             else
             {
@@ -301,7 +279,7 @@ namespace ETHotfix
             }
         }
 
-        private async void SendRuleAndJoinRoom(int roomId)
+        private async void SendRuleAndJoinRoom(long roomId, bool isJoin)
         {
             NNChess nnChess = GetCurrentNnChess();
             // 发送规则
@@ -316,19 +294,28 @@ namespace ETHotfix
             {
                 Debug.Log("发送规则成功");
 
-                var roomInfoResponse = (RoomInfoResponse) await SceneHelperComponent.Instance.Session.Call(
-                    new RoomInfoRequest() {RoomId = roomId, Message = 0});
-
-                if (roomInfoResponse.Error == 0)
+                if (isJoin)
                 {
-                    Debug.Log("加入房间成功,跳转至游戏主场景");
+                    var roomInfoResponse = (RoomInfoResponse) await SceneHelperComponent.Instance.Session.Call(
+                        new RoomInfoRequest() {RoomId = roomId, Message = 0});
+                    if (roomInfoResponse.Error == 0)
+                    {
+                        Debug.Log("加入房间成功,跳转至游戏主场景");
 
-                    Game.Scene.GetComponent<UIComponent>().Remove(UIType.NiuNiuLobby);
-                    Game.Scene.GetComponent<UIComponent>().Create(UIType.NiuNiuMain, UiLayer.Bottom);
+                        Game.Scene.GetComponent<UIComponent>().Remove(UIType.NiuNiuLobby);
+                        Game.Scene.GetComponent<UIComponent>().Create(UIType.NiuNiuMain, UiLayer.Bottom);
+                    }
+                    else
+                    {
+                        Debug.Log("加入房间失败: " + roomInfoResponse.Message);
+                    }
                 }
                 else
                 {
-                    Debug.Log("加入房间失败: " + roomInfoResponse.Message);
+                    Debug.Log("已经在房间内,跳转至游戏主场景");
+
+                    Game.Scene.GetComponent<UIComponent>().Remove(UIType.NiuNiuLobby);
+                    Game.Scene.GetComponent<UIComponent>().Create(UIType.NiuNiuMain, UiLayer.Bottom);
                 }
             }
             else
@@ -380,16 +367,64 @@ namespace ETHotfix
             nnChess.AutoGame = _curretNiuNiuRule.AutoGame[autoGame];
             nnChess.DoubleRules = _curretNiuNiuRule.DoubleRules[doubleRules];
 
+
             nnChess.ShunZiRules = false;
             nnChess.TongHuaRules = false;
             nnChess.HuLuRules = false;
             nnChess.WuHuaRules = false;
             nnChess.ZhaDanRules = false;
             nnChess.WuXiaoRules = false;
+
             nnChess.ZhongTuJinRuRules = false;
             nnChess.CuoPaiRules = false;
             nnChess.WangLaiRules = false;
+
             nnChess.MaiMaRules = false;
+
+            foreach (var selected in _nnOptionsTspx.GetComponent<NNTspxComponent>().SelectedOptions)
+            {
+                switch (selected)
+                {
+                    case 0:
+                        nnChess.ShunZiRules = true;
+                        break;
+                    case 1:
+                        nnChess.TongHuaRules = true;
+                        break;
+                    case 2:
+                        nnChess.HuLuRules = true;
+                        break;
+                    case 3:
+                        nnChess.WuHuaRules = true;
+                        break;
+                    case 4:
+                        nnChess.ZhaDanRules = true;
+                        break;
+                    case 5:
+                        nnChess.WuXiaoRules = true;
+                        break;
+                }
+            }
+
+            foreach (var selected in _nnOptionsGjxx.GetComponent<NNGjxxComponent>().SelectedOptions)
+            {
+                switch (selected)
+                {
+                    case 0:
+                        nnChess.ZhongTuJinRuRules = true;
+                        break;
+                    case 1:
+                        nnChess.CuoPaiRules = true;
+                        break;
+                    case 2:
+                        nnChess.WangLaiRules = true;
+                        break;
+                    case 3:
+                        nnChess.MaiMaRules = true;
+                        break;
+                }
+            }
+
             nnChess.PlayerCount = _roomPeople6.GetComponent<Toggle>().isOn ? 6 : 8;
 
             return nnChess;
