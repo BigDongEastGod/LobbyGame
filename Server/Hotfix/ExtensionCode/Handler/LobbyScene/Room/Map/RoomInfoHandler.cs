@@ -24,7 +24,7 @@ namespace ETHotfix
                     {
                         var playerroom = RoomManageComponent.Instance.GetRommByPlayer(player);
 
-                        response.RoomId = RoomManageComponent.Instance.GetRoomId(playerroom);
+                        response.RoomId = playerroom.Id;
 
                         response.Rules = playerroom.Rules;
                         
