@@ -22,7 +22,7 @@ namespace ETHotfix
 
                 var roomId = RoomManageComponent.Instance.GetRoomId(player.Id);
                 
-                response.RoomId = roomId ?? 0;
+                response.RoomId = roomId;
 
                 if (room)
                 {
