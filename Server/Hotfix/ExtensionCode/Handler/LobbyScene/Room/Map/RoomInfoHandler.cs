@@ -30,7 +30,7 @@ namespace ETHotfix
                         
                         Log.Debug(response.Rules.Length.ToString());
                     }
-
+                    
                     reply(response);
                     
                     return;
