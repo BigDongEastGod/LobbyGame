@@ -19,7 +19,14 @@ namespace ETHotfix
                 {
                     response.Error = -1;
 
-                    response.RoomId = player != null ? RoomManageComponent.Instance.GetRoomId(player.Id) ?? 0 : 0;
+                    if (player != null)
+                    {
+                        var playerroom = RoomManageComponent.Instance.GetRoom(player.Id);
+
+                        response.RoomId = RoomManageComponent.Instance.GetRoomId(playerroom) ?? 0;
+
+                        response.Rules = playerroom.Rules;
+                    }
 
                     reply(response);
                     

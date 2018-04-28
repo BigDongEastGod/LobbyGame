@@ -18,7 +18,9 @@ namespace ETModel
 
         public override void AddRules(byte[] rules)
         {
-            chessRules = ProtobufHelper.FromBytes<NNChess>(rules);
+            Rules = rules;
+            
+            chessRules = ProtobufHelper.FromBytes<NNChess>(Rules);
         }
 
         public override void JionRoom(SPlayer player)
