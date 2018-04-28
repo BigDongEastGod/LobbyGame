@@ -19,7 +19,10 @@ namespace ETHotfix
     
     public class NiuNiuMainComponent:Component
     {
-        private Text roomNum;
+        private Text roomNum;               //房间号码文本
+        private long roomId;                //房间号码
+        private UI showCardUI;
+        private Button sitDownBt;
         
         
        public async void Awake()
@@ -50,7 +53,7 @@ namespace ETHotfix
             //开始游戏按钮
             var startGameBt=rc.Get<GameObject>("StartGameBt");
             //坐下按钮
-            var sitDownBt=rc.Get<GameObject>("SitDownBt");
+            sitDownBt=rc.Get<GameObject>("SitDownBt").GetComponent<Button>();
             //不抢庄按钮
             var noBobButton=rc.Get<GameObject>("NoBobButton");
             //抢庄按钮
@@ -81,17 +84,23 @@ namespace ETHotfix
     
             var rules = response.Rules == null ? null : ProtobufHelper.FromBytes<NNChess>(response.Rules);
 
-             roomNum.text = response.RoomId == 0 ? null : response.RoomId.ToString();
+            roomId = response.RoomId;
+            roomNum.text = response.RoomId == 0 ? null : roomId.ToString();
              //zhuangWeiTxt=rules.
-             bottomScoreText.text = rules.Score.ToString();
-             roomCountText.text = rules.Dish.ToString();
+            bottomScoreText.text = rules.Score.ToString();
+            roomCountText.text = rules.Dish.ToString();
             
             RoomInfoAnnunciateHandler.RoomAction += RoomInfo;
+            //获得房间显示卡牌窗口
+            showCardUI=Game.Scene.GetComponent<UIComponent>().Create(UIType.NNShowCard, UiLayer.Medium);
+            //设置房间人数
+            showCardUI.GetComponent<NNShowCardComponent>().roomPeople = 6;
+            //加载所需要的位置信息
+            showCardUI.GetComponent<NNShowCardComponent>().GetCurrentTablePos();
             
             //房间信息窗口事件注册
             SceneHelperComponent.Instance.MonoEvent.AddButtonClick(roomInfoButton.GetComponent<Button>(), () =>
             {
-                
                 Game.Scene.GetComponent<UIComponent>().Create(UIType.NNRoomRuleInfoUIForm,UiLayer.Top);
             });
        
@@ -121,11 +130,16 @@ namespace ETHotfix
 
         private async void GetRoomInfo()
         {
-
-            var response =(RoomInfoResponse) await SceneHelperComponent.Instance.Session.Call(new RoomInfoRequest() {RoomId = 0, Message = -1});
-
+            var response =(RoomInfoResponse) await SceneHelperComponent.Instance.Session.Call(new RoomInfoRequest() {RoomId = roomId, Message = 1});
+            if (response.Error==0)
+            {
+                Debug.Log("成功坐下");
+                sitDownBt.gameObject.SetActive(false);
+                showCardUI.GetComponent<NNShowCardComponent>().CreateHead(-1);
+            }
         }
-
+        
+        
        
     }
 }

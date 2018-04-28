@@ -16,7 +16,7 @@ namespace ETHotfix
     
     public class HeadUIFormComponent:Component
     {
-        public Image headImg;                  //头像
+        public Image headMask;                  //头像
         public Text  userNameTxt;              //用户名
         public Text scoreTxt;                  //分数
         public Image qiangzhuangImg;           //抢庄
@@ -28,13 +28,19 @@ namespace ETHotfix
         {
             ReferenceCollector rc = this.GetParent<UI>().GameObject.GetComponent<ReferenceCollector>();
             
-            headImg = rc.Get<GameObject>("head").GetComponent<Image>();
+            headMask = rc.Get<GameObject>("headMask").GetComponent<Image>();
             userNameTxt = rc.Get<GameObject>("uesrNameTxt").GetComponent<Text>();
             scoreTxt = rc.Get<GameObject>("scoreTxt").GetComponent<Text>();
             qiangzhuangImg = rc.Get<GameObject>("qiangzhuangImg").GetComponent<Image>();
             BetsTitleImg = rc.Get<GameObject>("BetsTitleImg").GetComponent<Image>();
             BetsTxt = BetsTitleImg.gameObject.transform.GetChild(0).GetComponent<Text>();
             SelectImg = rc.Get<GameObject>("SelectImg").GetComponent<Image>();
+        }
+
+        public async void SetHeadUserInfo()
+        {
+            var response = (GetAccountInfoResponse) await SceneHelperComponent.Instance.Session.Call(new GetAccountInfoRequest());
+            userNameTxt.text = response.AccountInfo.UserName;
         }
     }
 }

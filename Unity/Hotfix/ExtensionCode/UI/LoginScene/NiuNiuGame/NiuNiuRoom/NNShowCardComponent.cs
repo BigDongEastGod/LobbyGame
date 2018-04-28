@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using ETModel;
 using UnityEngine;
 
@@ -31,6 +32,7 @@ namespace ETHotfix
         private RectTransform mainHeadPos;           //主头像位置
         private RectTransform mainCardPos;           //主卡牌像位置
         private Vector2 LicensingPos;                //发牌位置 
+        private ReferenceCollector rc;
 
         #endregion
  
@@ -38,17 +40,15 @@ namespace ETHotfix
         {
             sixTableList=new List<Vector2>();
             eightTableList=new List<Vector2>();
+            HeadUIDict=new Dictionary<short, UI>();
+            cardUIDict=new Dictionary<short, UI>();
             currentTablePosList=new List<Vector2>();
-            ReferenceCollector rc = this.GetParent<UI>().GameObject.GetComponent<ReferenceCollector>();
-            
+            rc = this.GetParent<UI>().GameObject.GetComponent<ReferenceCollector>();
             mainCardPos = rc.Get<GameObject>("MainCardPos").GetComponent<RectTransform>();
             mainHeadPos = rc.Get<GameObject>("mainHeadPos").GetComponent<RectTransform>();
             var mainTitle = rc.Get<GameObject>("mainTitle");
-            var sixTableObj = rc.Get<GameObject>("sixTable");
-            var eightTableObj = rc.Get<GameObject>("eightTable");
             LicensingPos = rc.Get<GameObject>("LicensingPos").GetComponent<RectTransform>().anchoredPosition;
             NNCardPrefab= rc.Get<GameObject>("NiuNIuCard");
-            GetCurrentTablePos(sixTableObj, eightTableObj);
             
         }
         
@@ -63,8 +63,11 @@ namespace ETHotfix
         }
         
         //获取当前房间出牌，头像的位置
-        private void GetCurrentTablePos(GameObject sixTable,GameObject eightTable)
+        public void GetCurrentTablePos()
         {
+            var sixTable = rc.Get<GameObject>("sixTable");
+            var eightTable = rc.Get<GameObject>("eightTable");
+            
             switch (roomPeople)
             {
                 case 6:
@@ -77,26 +80,22 @@ namespace ETHotfix
                     break;
             }
         }
-        
-        //当前的字典是否为空
-        private void IsListNull<T,A>(Dictionary<T,A> dict)
-        {
-            if(dict!=null) return;
-            dict=new Dictionary<T,A>();
-        }
+
 
         /// <summary>
         /// 创建本地头像
         /// </summary>
         /// <param name="ChairIndex">椅子索引</param>
-        private void CreateHead(int ChairIndex)
+        public void CreateHead(int ChairIndex)
         {
-            IsListNull<short,UI>(HeadUIDict);
             UI headUI= Game.Scene.GetComponent<UIComponent>().Create(UIType.HeadUIForm,currentTableObj);
+            
             short index;
-            if (ChairIndex != -1)
+            
+            if (ChairIndex == -1)
             {
                 headUI.GameObject.GetComponent<RectTransform>().anchoredPosition = mainHeadPos.anchoredPosition;
+                headUI.GetComponent<HeadUIFormComponent>().SetHeadUserInfo();
                 index = -1;
             }
             else
@@ -105,7 +104,7 @@ namespace ETHotfix
                 headUI.GameObject.GetComponent<RectTransform>().anchoredPosition = currentTablePosList[ChairIndex];
                 index = (short)ChairIndex;
             }
-            HeadUIDict.Add(index,headUI);
+            HeadUIDict.Add(1,headUI);
         }
         
         //取得对应位置的UI
