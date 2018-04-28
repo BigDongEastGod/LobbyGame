@@ -31,13 +31,12 @@ namespace ETHotfix
             //房间号码
             roomNum = rc.Get<GameObject>("roomNum").GetComponent<Text>();
             //庄位信息
-            var zhuangWeiTxt  = rc.Get<GameObject>("zhuangWei");
+            var zhuangWeiTxt  = rc.Get<GameObject>("zhuangWei").GetComponent<Text>();
             //底分信息
-            var bottomScoreText  = rc.Get<GameObject>("BottomScoreText");
+            var bottomScoreText  = rc.Get<GameObject>("BottomScoreText").GetComponent<Text>();
             //房间局数
-            var roomCountText  = rc.Get<GameObject>("roomCountText");
-            //当前客户端提示标题
-            var mainTitleTxt = rc.Get<GameObject>("mainTitle");
+            var roomCountText  = rc.Get<GameObject>("roomCountText").GetComponent<Text>();
+           
             //房间信息按钮
             var roomInfoButton  = rc.Get<GameObject>("RoomInfoButton");
             //下拉窗口按钮
@@ -79,10 +78,14 @@ namespace ETHotfix
             var AutomaticFlopToggle=rc.Get<GameObject>("AutomaticFlopToggle");
             
             var response =(RoomInfoResponse) await SceneHelperComponent.Instance.Session.Call(new RoomInfoRequest() {RoomId = 0, Message = -1});
+    
+            var rules = response.Rules == null ? null : ProtobufHelper.FromBytes<NNChess>(response.Rules);
 
-            roomNum.text = response.RoomId.ToString();
-
-
+             roomNum.text = response.RoomId == 0 ? null : response.RoomId.ToString();
+             //zhuangWeiTxt=rules.
+             bottomScoreText.text = rules.Score.ToString();
+             roomCountText.text = rules.Dish.ToString();
+            
             RoomInfoAnnunciateHandler.RoomAction += RoomInfo;
             
             //房间信息窗口事件注册
@@ -105,7 +108,7 @@ namespace ETHotfix
                 {
                     GetRoomInfo();
                 });
-            
+        
             
 
         }
