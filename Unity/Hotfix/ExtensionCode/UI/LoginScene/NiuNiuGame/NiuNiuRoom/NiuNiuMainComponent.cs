@@ -22,7 +22,7 @@ namespace ETHotfix
         private Text roomNum;
         
         
-       public void Awake()
+       public async void Awake()
         {
             ReferenceCollector rc = this.GetParent<UI>().GameObject.GetComponent<ReferenceCollector>();
             
@@ -77,9 +77,13 @@ namespace ETHotfix
             var batterySlider=rc.Get<GameObject>("BatterySlider");
             var wiFiImg=rc.Get<GameObject>("WiFiImg");
             var AutomaticFlopToggle=rc.Get<GameObject>("AutomaticFlopToggle");
+            
+            var response =(RoomInfoResponse) await SceneHelperComponent.Instance.Session.Call(new RoomInfoRequest() {RoomId = 0, Message = -1});
+
+            roomNum.text = response.RoomId.ToString();
 
 
-            JoinRoomAnnunciateHandler.JoinRoomAction += RoomInfo;
+            RoomInfoAnnunciateHandler.RoomAction += RoomInfo;
             
             //房间信息窗口事件注册
             SceneHelperComponent.Instance.MonoEvent.AddButtonClick(roomInfoButton.GetComponent<Button>(), () =>
@@ -98,44 +102,27 @@ namespace ETHotfix
             
             //房间信息窗口事件注册
             SceneHelperComponent.Instance.MonoEvent.AddButtonClick(sitDownBt.GetComponent<Button>(), () =>
-            {
-                
-               
-            });
+                {
+                    GetRoomInfo();
+                });
             
             
 
         }
 
-
+        private void RoomInfo(RoomInfoAnnunciate obj)
+        {
+            
+        }
 
 
         private async void GetRoomInfo()
         {
 
-//            var response =
-//                (RoomInfoResponse) await SceneHelperComponent.Instance.Session.Call(
-//                    new RoomInfoRequest() {RoomId = 0, Message = -1});
-//            
-//            response.r
-//            
-//            var creatRoomResponse = (CreateRoomResponse) await SceneHelperComponent.Instance.Session.Call(
-//                new CreateRoomRequest() {RoomType = "NN"});
-//            
-//            var roomInfoResponse = (RoomInfoResponse) await SceneHelperComponent.Instance.Session.Call(
-//                new RoomInfoRequest() {RoomId = creatRoomResponse.RoomId, Message = 1});
-//                roomNum=roomInfoResponse.
+            var response =(RoomInfoResponse) await SceneHelperComponent.Instance.Session.Call(new RoomInfoRequest() {RoomId = 0, Message = -1});
+
         }
 
-        private void RoomInfo(JoinRoomAnnunciate obj)
-        {
-            if (obj.Error == -1)
-            {
-                
-            }
-            else
-            {
-            }
-        }
+       
     }
 }
