@@ -567,4 +567,17 @@ namespace ETHotfix
 
 	}
 
+// 向Actor服务器发送下线通知
+	[Message(InnerOpcode.ActorQuitRequest)]
+	[ProtoContract]
+	public partial class ActorQuitRequest: IMessage
+	{
+		[ProtoMember(1, IsRequired = true)]
+		public long AccountId;
+
+		[ProtoMember(2, IsRequired = true)]
+		public long ActorId;
+
+	}
+
 }

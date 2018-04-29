@@ -27,8 +27,6 @@ namespace ETHotfix
                         response.RoomId = playerroom.Id;
 
                         response.Rules = playerroom.Rules;
-                        
-                        Log.Debug(response.Rules.Length.ToString());
                     }
                     
                     reply(response);

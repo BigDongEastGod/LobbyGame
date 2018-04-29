@@ -1,0 +1,55 @@
+2018-04-30 00:59:37.7033 Gate     004 (SessionGatePlayerComponent.cs:39) 1111111111111
+2018-04-30 00:59:37.7146 Gate     004 (SessionGatePlayerComponent.cs:41) 22222222222
+2018-04-30 00:59:37.7175 Gate     004 (SessionGatePlayerComponent.cs:43) 33333333333
+2018-04-30 00:59:37.7205 Gate     004 (SessionGatePlayerComponent.cs:44) 444444444444
+2018-04-30 01:02:04.2670 Gate     004 (SessionGatePlayerComponent.cs:42) 没有
+2018-04-30 01:05:27.7485 Gate     004 (GatePlayerManageComponent.cs:35) 00000000000 :1225843717636143
+2018-04-30 01:05:31.8077 Gate     004 (SessionGatePlayerComponent.cs:23) 11111111 :1225843717636143
+2018-04-30 01:05:31.8091 Gate     004 (SessionGatePlayerComponent.cs:42) 没有
+2018-04-30 01:09:05.0021 Gate     004 (GatePlayerManageComponent.cs:35) 00000000000 :1225843731857456
+2018-04-30 01:09:09.0652 Gate     004 (SessionGatePlayerComponent.cs:28) 有
+2018-04-30 01:11:24.9775 Gate     004 (GatePlayerManageComponent.cs:35) 00000000000 :1225843741032497
+2018-04-30 01:11:29.0450 Gate     004 (SessionGatePlayerComponent.cs:28) 有
+2018-04-30 01:15:13.1082 Gate     004 (GatePlayerManageComponent.cs:35) 00000000000 :1225843755974703
+2018-04-30 01:15:17.1847 Gate     004 (SessionGatePlayerComponent.cs:42) 没有
+2018-04-30 01:19:24.6749 Gate     004 (GatePlayerManageComponent.cs:35) 00000000000 :1225843772489776
+2018-04-30 01:19:28.7420 Gate     004 (SessionGatePlayerComponent.cs:28) 有
+2018-04-30 01:28:52.9764 Gate     004 (SessionGatePlayerComponent.cs:28) 有
+2018-04-30 01:29:47.0853 Gate     004 (SessionGatePlayerComponent.cs:28) 有
+2018-04-30 01:30:46.4881 Gate     004 (SessionGatePlayerComponent.cs:28) 有
+2018-04-30 01:32:32.7546 Gate     004 (SessionGatePlayerComponent.cs:28) 有
+2018-04-30 01:34:59.5196 Gate     004 (SessionGatePlayerComponent.cs:28) 有
+2018-04-30 01:36:38.1708 Gate     004 (SessionGatePlayerComponent.cs:28) 有
+2018-04-30 01:39:17.1284 Gate     004 (SessionGatePlayerComponent.cs:28) 有
+2018-04-30 01:40:01.5194 Gate     004 (SessionGatePlayerComponent.cs:28) 有
+2018-04-30 01:41:49.8904 Gate     004 (SessionGatePlayerComponent.cs:28) 有
+2018-04-30 01:44:22.1637 Gate     004 (SessionGatePlayerComponent.cs:28) 有
+2018-04-30 01:49:18.2095 Gate     004 (SessionGatePlayerComponent.cs:28) 有
+2018-04-30 01:49:18.2441 Gate     004 (SessionGatePlayerComponent.cs:49) ttttttttttttttt
+2018-04-30 01:49:18.2494 Gate     004 (GatePlayerManageComponent.cs:89) 66666666666
+2018-04-30 01:49:18.2538 Gate     004 (GatePlayerManageComponent.cs:91) 77777777777
+2018-04-30 01:50:42.5165 Gate     004 (SessionGatePlayerComponent.cs:28) 有
+2018-04-30 01:50:42.5532 Gate     004 (SessionGatePlayerComponent.cs:49) ttttttttttttttt
+2018-04-30 01:50:42.5590 Gate     004 (GatePlayerManageComponent.cs:89) 66666666666
+2018-04-30 01:50:42.5633 Gate     004 (GatePlayerManageComponent.cs:91) 77777777777
+2018-04-30 01:50:42.5673 Gate     004 (GatePlayerManageComponent.cs:93) 88888888888
+2018-04-30 01:50:42.5725 Gate     004 (GatePlayerManageComponent.cs:95) 99999999999
+2018-04-30 01:50:42.5781 Gate     004 (GatePlayerManageComponent.cs:97) 00000000000
+2018-04-30 01:51:08.6985 Gate     004 (SessionGatePlayerComponent.cs:28) 有
+2018-04-30 01:51:08.7097 Gate     004 (SessionGatePlayerComponent.cs:49) ttttttttttttttt
+2018-04-30 01:51:08.7147 Gate     004 (GatePlayerManageComponent.cs:89) 66666666666
+2018-04-30 01:51:08.7191 Gate     004 (GatePlayerManageComponent.cs:91) 77777777777
+2018-04-30 01:51:08.7237 Gate     004 (GatePlayerManageComponent.cs:93) 88888888888
+2018-04-30 01:51:08.7281 Gate     004 (GatePlayerManageComponent.cs:95) 99999999999
+2018-04-30 01:51:08.7323 Gate     004 (GatePlayerManageComponent.cs:97) 00000000000
+2018-04-30 01:51:59.7901 Gate     004 (SessionGatePlayerComponent.cs:28) 有
+2018-04-30 01:51:59.8202 Gate     004 (SessionGatePlayerComponent.cs:49) ttttttttttttttt
+2018-04-30 01:51:59.8254 Gate     004 (GatePlayerManageComponent.cs:89) 66666666666
+2018-04-30 01:51:59.8300 Gate     004 (GatePlayerManageComponent.cs:91) 77777777777
+2018-04-30 01:51:59.8347 Gate     004 (GatePlayerManageComponent.cs:93) 88888888888
+2018-04-30 01:51:59.8392 Gate     004 (GatePlayerManageComponent.cs:95) 99999999999
+2018-04-30 01:51:59.8436 Gate     004 (GatePlayerManageComponent.cs:97) 00000000000
+2018-04-30 01:53:07.5036 Gate     004 (SessionGatePlayerComponent.cs:28) 有
+2018-04-30 01:53:35.7039 Gate     004 (SessionGatePlayerComponent.cs:28) 有
+2018-04-30 01:56:53.4513 Gate     004 (SessionGatePlayerComponent.cs:28) 有
+2018-04-30 01:58:02.2859 Gate     004 (SessionGatePlayerComponent.cs:28) 有

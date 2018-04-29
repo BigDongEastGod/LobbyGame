@@ -77,7 +77,6 @@ namespace App
 						Game.Scene.AddComponent<ActorProxyComponent>();
 						Game.Scene.AddComponent<GateSessionKeyComponent>();
 						Game.Scene.AddComponent<ActorManagerComponent>();
-						Game.Scene.AddComponent<PingComponent,long,long>(2000,3);
 						Game.Scene.AddComponent<GatePlayerManageComponent>();
 						break;
 					case AppType.Location:

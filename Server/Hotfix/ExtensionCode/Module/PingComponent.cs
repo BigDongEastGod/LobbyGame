@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
+using ETModel;
 
-namespace ETModel
+namespace ETHotfix
 {
     [ObjectSystem]
-    public class PingAwakeSystem : AwakeSystem<PingComponent, long, long>
+    public class PingAwakeSystem : AwakeSystem<PingComponent, int, long>
     {
-        public override void Awake(PingComponent self, long a, long b)
+        public override void Awake(PingComponent self, int a, long b)
         {
             self.Awake(a, b);
         }
@@ -18,17 +20,13 @@ namespace ETModel
     {
         private readonly Dictionary<long, long> _sessionTimes = new Dictionary<long, long>();
 
-        public async void Awake(long waitTime, long overtime)
+        public async void Awake(int waitTime, long overtime)
         {
-            var timerComponent = Game.Scene.GetComponent<TimerComponent>();
-
             while (true)
             {
                 try
                 {
-                    //Log.Info("在线人数 ：" + _sessionTimes.Count.ToString());
-
-                    await timerComponent.WaitAsync(waitTime);
+                    await Task.Delay(waitTime);
 
                     // 检查所有Session
 
@@ -36,7 +34,9 @@ namespace ETModel
                     {
                         if ((TimeHelper.ClientNowSeconds() - _sessionTimes.ElementAt(i).Value) > overtime)
                         {
-                            GatePlayerManageComponent.Instance.RemoveSession(_sessionTimes.ElementAt(i).Key);
+                            GatePlayerManageComponent.Instance.GetSession(_sessionTimes.ElementAt(i).Key).Dispose();
+
+                            RemoveSession(_sessionTimes.ElementAt(i).Key);
                         }
                     }
                 }
@@ -51,7 +51,7 @@ namespace ETModel
         {
             if (IsInSession(id))
             {
-                UndateSession(id);
+                UpdateSession(id);
             }
             else
             {
@@ -61,7 +61,7 @@ namespace ETModel
 
         public void RemoveSession(long id)
         {
-            if(_sessionTimes.ContainsKey(id)) _sessionTimes.Remove(id);
+            if (_sessionTimes.ContainsKey(id)) _sessionTimes.Remove(id);
         }
 
         public bool IsInSession(long id)
@@ -69,9 +69,18 @@ namespace ETModel
             return this._sessionTimes.TryGetValue(id, out var session);
         }
 
-        public void UndateSession(long id)
+        public void UpdateSession(long id)
         {
             if (_sessionTimes.ContainsKey(id)) _sessionTimes[id] = TimeHelper.ClientNowSeconds();
+        }
+
+        public override void Dispose()
+        {
+            if (IsDisposed) return;
+
+            base.Dispose();
+
+            _sessionTimes.Clear();
         }
     }
 }

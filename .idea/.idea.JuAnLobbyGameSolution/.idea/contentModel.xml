@@ -26,9 +26,7 @@
         <e p="Hotfix" t="IncludeRecursive">
           <e p="ExtensionCode" t="Include">
             <e p="Base" t="Include">
-              <e p="Gate" t="Include">
-                <e p="PingHandler.cs" t="Include" />
-              </e>
+              <e p="Gate" t="Include" />
             </e>
             <e p="Entity" t="Include">
               <e p="Game" t="Include">
@@ -49,8 +47,10 @@
                 <e p="Gate" t="Include">
                   <e p="EnterGateHandler.cs" t="Include" />
                   <e p="JionPlayerByGateHandler.cs" t="Include" />
+                  <e p="PingHandler.cs" t="Include" />
                 </e>
                 <e p="Map" t="Include">
+                  <e p="ActorQuitHandler.cs" t="Include" />
                   <e p="GetAccountInfoHandler.cs" t="Include" />
                   <e p="RegisterGameHandler.cs" t="Include" />
                 </e>
@@ -64,6 +64,10 @@
               <e p="Game" t="Include">
                 <e p="RoomManageComponent.cs" t="Include" />
               </e>
+              <e p="GatePlayerManageComponent.cs" t="Include" />
+              <e p="PingComponent.cs" t="Include" />
+              <e p="PlayerManageComponent.cs" t="Include" />
+              <e p="SessionGatePlayerComponent.cs" t="Include" />
               <e p="SessionTKeyComponent.cs" t="Include" />
             </e>
           </e>
@@ -199,14 +203,12 @@
               <e p="Game" t="Include">
                 <e p="RoomManageComponent.cs" t="Include" />
               </e>
-              <e p="PingComponent.cs" t="Include" />
               <e p="Player" t="Include">
                 <e p="GatePlayer.cs" t="Include" />
                 <e p="GatePlayerManageComponent.cs" t="Include" />
                 <e p="PlayerManageComponent.cs" t="Include" />
                 <e p="SPlayer.cs" t="Include" />
               </e>
-              <e p="SessionGatePlayerComponent.cs" t="Include" />
             </e>
           </e>
           <e p="Module" t="Include">

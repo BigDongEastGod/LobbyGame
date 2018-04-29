@@ -22,16 +22,13 @@ namespace ETHotfix
             {
                 // 检查当前Gate里是否有该用户、如果有强制踢下线
                 
-                var player = GatePlayerManageComponent.Instance.GetSession(message.AccountId);
-
-                if (player != null) GatePlayerManageComponent.Instance.RemoveSession(player);
+//                var player = GatePlayerManageComponent.Instance.GetSession(message.AccountId);
+//
+//                if (player != null) GatePlayerManageComponent.Instance.RemoveSession(player);
                 
                 // 创建临时KEY
 
-                if (Game.Scene.GetComponent<SessionTKeyComponent>() == null)
-                {
-                    Game.Scene.AddComponent<SessionTKeyComponent>();
-                }
+                if (Game.Scene.GetComponent<SessionTKeyComponent>() == null) Game.Scene.AddComponent<SessionTKeyComponent>();
                 
                 response.Key  = Game.Scene.GetComponent<SessionTKeyComponent>().Add(message.AccountId);
             }

@@ -184,8 +184,14 @@
 
 		required int64 GateSessionId = 2;	
 	}
-
 	message RegisterGameResponse // IResponse
 	{
 		
 	}
+	// 向Actor服务器发送下线通知
+	message ActorQuitRequest // IMessage
+	{
+		required int64 AccountId = 1;
+
+		required int64 ActorId = 2;
+	}	
