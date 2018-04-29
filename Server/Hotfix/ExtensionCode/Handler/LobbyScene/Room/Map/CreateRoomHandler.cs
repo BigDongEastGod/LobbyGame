@@ -20,13 +20,15 @@ namespace ETHotfix
                 
                 Log.Debug("房间类型：" + message.RoomType);
                 
+                // 玩家创建新房间
+                
                 var room = RoomManageComponent.Instance.Add(player.Id, message.RoomType);
-
+                
                 response.RoomId = room?.Id ?? 0;
 
                 if (room != null)
                 {
-                    Log.Info("用户：" + player.Id + "创建房间号：" + response.RoomId);
+                    Log.Debug("用户：" + player.Id + "创建房间号：" + response.RoomId);
                 }
                 else
                 {
@@ -34,6 +36,7 @@ namespace ETHotfix
 
                     response.Message = "您已经创建了一个房间，不能再创建房间了";
                 }
+
             }
             catch (Exception e)
             {

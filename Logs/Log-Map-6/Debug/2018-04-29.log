@@ -1,0 +1,88 @@
+2018-04-29 21:51:44.2012 Map      006 (PlayerManageComponent.cs:62) 已经做到删除标记
+2018-04-29 21:53:52.0366 Map      006 (ActorQuitHandler.cs:25) 666666666 :1225842963972154
+2018-04-29 21:53:52.0458 Map      006 (PlayerManageComponent.cs:62) 已经做到删除标记
+2018-04-29 21:56:07.7741 Map      006 (ActorQuitHandler.cs:25) 666666666 :1225842972819509
+2018-04-29 21:56:07.7830 Map      006 (PlayerManageComponent.cs:63) 已经做到删除标记
+2018-04-29 21:56:07.7875 Map      006 (PlayerManageComponent.cs:65) 0000000 :127.0.0.1:9104
+2018-04-29 21:56:07.7909 Map      006 (PlayerManageComponent.cs:65) 0000000 :127.0.0.1:9102
+2018-04-29 21:57:46.5213 Map      006 (ActorQuitHandler.cs:25) 666666666 :1225842979438648
+2018-04-29 21:57:46.5285 Map      006 (PlayerManageComponent.cs:63) 已经做到删除标记
+2018-04-29 21:57:46.5333 Map      006 (PlayerManageComponent.cs:65) 0000000 :127.0.0.1:9104
+2018-04-29 21:57:46.5369 Map      006 (PlayerManageComponent.cs:65) 0000000 :127.0.0.1:9102
+2018-04-29 22:02:26.9428 Map      006 (ActorQuitHandler.cs:25) 666666666 :1225842997657656
+2018-04-29 22:02:26.9519 Map      006 (PlayerManageComponent.cs:63) 已经做到删除标记
+2018-04-29 22:02:26.9599 Map      006 (PlayerManageComponent.cs:65) 0000000 :127.0.0.1:9104
+2018-04-29 22:02:26.9658 Map      006 (PlayerManageComponent.cs:65) 0000000 :127.0.0.1:9102
+2018-04-29 22:03:37.1211 Map      006 (ActorQuitHandler.cs:25) 666666666 :1225843002376248
+2018-04-29 22:03:37.1308 Map      006 (PlayerManageComponent.cs:63) 已经做到删除标记
+2018-04-29 22:03:37.1377 Map      006 (PlayerManageComponent.cs:65) 0000000 :127.0.0.1:9104
+2018-04-29 22:03:37.1414 Map      006 (PlayerManageComponent.cs:65) 0000000 :127.0.0.1:9102
+2018-04-29 22:07:25.6089 Map      006 (GetAccountInfoHandler.cs:44) 127.0.0.1:9103
+2018-04-29 22:08:08.1164 Map      006 (GetAccountInfoHandler.cs:44) 127.0.0.1:9103
+2018-04-29 22:10:21.7781 Map      006 (CreateRoomHandler.cs:21) 房间类型：NN
+2018-04-29 22:10:21.7859 Map      006 (CreateRoomHandler.cs:31) 用户：662864470409257创建房间号：178879
+2018-04-29 22:10:21.8609 Map      006 (RoomRulesHandler.cs:27) 178879
+2018-04-29 22:11:55.7886 Map      006 (ActorQuitHandler.cs:25) 666666666 :1225843034751031
+2018-04-29 22:11:55.7979 Map      006 (PlayerManageComponent.cs:63) 已经做到删除标记
+2018-04-29 22:11:55.8032 Map      006 (PlayerManageComponent.cs:65) 0000000 :127.0.0.1:9104
+2018-04-29 22:11:55.8077 Map      006 (PlayerManageComponent.cs:65) 0000000 :127.0.0.1:9102
+2018-04-29 22:14:37.8843 Map      006 (ActorQuitHandler.cs:25) 666666666 :1225843044974645
+2018-04-29 22:14:37.8937 Map      006 (PlayerManageComponent.cs:63) 已经做到删除标记
+2018-04-29 22:14:47.9260 Map      006 (PlayerManageComponent.cs:81) 准备删除
+2018-04-29 22:14:47.9306 Map      006 (PlayerManageComponent.cs:89) 删除成功
+2018-04-29 22:17:37.1144 Map      006 (PlayerManageComponent.cs:63) 已经做到删除标记
+2018-04-29 22:17:47.1480 Map      006 (PlayerManageComponent.cs:81) 准备删除
+2018-04-29 22:17:47.1541 Map      006 (PlayerManageComponent.cs:89) 删除成功
+2018-04-29 22:20:40.9537 Map      006 (PlayerManageComponent.cs:63) 已经做到删除标记
+2018-04-29 22:20:50.9884 Map      006 (PlayerManageComponent.cs:83) 准备删除
+2018-04-29 22:20:50.9961 Map      006 (PlayerManageComponent.cs:91) 删除成功
+2018-04-29 22:25:28.3716 Map      006 (PlayerManageComponent.cs:63) 已经做到删除标记
+2018-04-29 22:25:33.4137 Map      006 (PlayerManageComponent.cs:85) 准备删除
+2018-04-29 22:25:33.4195 Map      006 (PlayerManageComponent.cs:93) 删除成功
+2018-04-29 22:28:41.7777 Map      006 (PlayerManageComponent.cs:63) 已经做到删除标记
+2018-04-29 22:28:51.8183 Map      006 (PlayerManageComponent.cs:81) 准备删除
+2018-04-29 22:28:51.8231 Map      006 (PlayerManageComponent.cs:89) 删除成功
+2018-04-29 22:30:55.7597 Map      006 (PlayerManageComponent.cs:63) 已经做到删除标记
+2018-04-29 22:31:05.7931 Map      006 (PlayerManageComponent.cs:81) 准备删除
+2018-04-29 22:31:05.7992 Map      006 (PlayerManageComponent.cs:89) 删除成功
+2018-04-29 22:33:21.2428 Map      006 (PlayerManageComponent.cs:63) 已经做到删除标记
+2018-04-29 22:33:31.2821 Map      006 (PlayerManageComponent.cs:81) 准备删除
+2018-04-29 22:33:31.2873 Map      006 (PlayerManageComponent.cs:89) 删除成功
+2018-04-29 22:35:38.7598 Map      006 (PlayerManageComponent.cs:63) 已经做到删除标记
+2018-04-29 22:35:48.7939 Map      006 (PlayerManageComponent.cs:81) 准备删除
+2018-04-29 22:35:48.7998 Map      006 (PlayerManageComponent.cs:89) 删除成功
+2018-04-29 22:39:28.4839 Map      006 (PlayerManageComponent.cs:63) 已经做到删除标记
+2018-04-29 22:39:38.5148 Map      006 (PlayerManageComponent.cs:81) 准备删除
+2018-04-29 22:39:38.5208 Map      006 (PlayerManageComponent.cs:89) 删除成功
+2018-04-29 22:41:09.4174 Map      006 (PlayerManageComponent.cs:63) 已经做到删除标记
+2018-04-29 22:41:19.4523 Map      006 (PlayerManageComponent.cs:81) 准备删除
+2018-04-29 22:41:19.4584 Map      006 (PlayerManageComponent.cs:89) 删除成功
+2018-04-29 22:44:03.0632 Map      006 (PlayerManageComponent.cs:63) 已经做到删除标记
+2018-04-29 22:45:37.9343 Map      006 (PlayerManageComponent.cs:63) 已经做到删除标记
+2018-04-29 22:45:47.9653 Map      006 (PlayerManageComponent.cs:81) 准备删除
+2018-04-29 22:45:47.9715 Map      006 (PlayerManageComponent.cs:89) 删除成功
+2018-04-29 22:49:30.3180 Map      006 (PlayerManageComponent.cs:63) 已经做到删除标记
+2018-04-29 22:51:06.6939 Map      006 (PlayerManageComponent.cs:63) 已经做到删除标记
+2018-04-29 22:55:48.4608 Map      006 (PlayerManageComponent.cs:63) 已经做到删除标记
+2018-04-29 22:56:52.4380 Map      006 (PlayerManageComponent.cs:63) 已经做到删除标记
+2018-04-29 22:57:02.4746 Map      006 (PlayerManageComponent.cs:81) 准备删除
+2018-04-29 22:57:02.4793 Map      006 (PlayerManageComponent.cs:89) 删除成功
+2018-04-29 22:57:12.0094 Map      006 (PlayerManageComponent.cs:63) 已经做到删除标记
+2018-04-29 22:57:22.0304 Map      006 (PlayerManageComponent.cs:81) 准备删除
+2018-04-29 22:57:22.0366 Map      006 (PlayerManageComponent.cs:89) 删除成功
+2018-04-29 22:59:02.3260 Map      006 (PlayerManageComponent.cs:63) 已经做到删除标记
+2018-04-29 22:59:12.3551 Map      006 (PlayerManageComponent.cs:81) 准备删除
+2018-04-29 22:59:12.3614 Map      006 (PlayerManageComponent.cs:89) 删除成功
+2018-04-29 23:01:10.6218 Map      006 (PlayerManageComponent.cs:63) 已经做到删除标记
+2018-04-29 23:15:50.4244 Map      006 (PlayerManageComponent.cs:63) 已经做到删除标记
+2018-04-29 23:16:00.4541 Map      006 (PlayerManageComponent.cs:81) 准备删除
+2018-04-29 23:16:00.4595 Map      006 (PlayerManageComponent.cs:89) 删除成功
+2018-04-29 23:16:49.2143 Map      006 (PlayerManageComponent.cs:63) 已经做到删除标记
+2018-04-29 23:16:59.2292 Map      006 (PlayerManageComponent.cs:81) 准备删除
+2018-04-29 23:16:59.2371 Map      006 (PlayerManageComponent.cs:89) 删除成功
+2018-04-29 23:20:55.6240 Map      006 (PlayerManageComponent.cs:63) 已经做到删除标记
+2018-04-29 23:25:11.1773 Map      006 (PlayerManageComponent.cs:63) 已经做到删除标记
+2018-04-29 23:57:14.4506 Map      006 (PlayerManageComponent.cs:63) 已经做到删除标记
+2018-04-29 23:57:24.4942 Map      006 (PlayerManageComponent.cs:81) 准备删除
+2018-04-29 23:57:24.5015 Map      006 (PlayerManageComponent.cs:89) 删除成功
+2018-04-29 23:58:43.9104 Map      006 (PlayerManageComponent.cs:63) 已经做到删除标记

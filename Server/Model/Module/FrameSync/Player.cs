@@ -29,5 +29,15 @@
 
 			base.Dispose();
 		}
+
+		/// <summary>
+		/// 获取注册的Actor服务器的Session
+		/// </summary>
+		public Session ActorSession => Game.Scene.GetComponent<NetInnerComponent>().Get(GetActorProxy.Address);
+
+		/// <summary>
+		/// 获取ActorProxy
+		/// </summary>
+		public ActorProxy GetActorProxy => Game.Scene.GetComponent<ActorProxyComponent>().Get(this.UnitId);
 	}
 }

@@ -1,0 +1,124 @@
+2018-04-29 11:35:14.8593 Map      006 消息没有处理: 1037 { "_t" : "ActorQuitRequest", "RpcId" : 5 } 
+ TrySetResult at offset 116 in file:line:column <filename unknown>:0:0
+RunContinuations at offset 501 in file:line:column <filename unknown>:0:0
+RunCallback at offset 69 in file:line:column <filename unknown>:0:0
+Run at offset 113 in file:line:column <filename unknown>:0:0
+MoveNext at offset 566 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Unity/Assets/Scripts/Module/Message/Session.cs:119:6
+Run at offset 513 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Unity/Assets/Scripts/Module/Message/Session.cs:151:5
+Dispatch at offset 1141 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Server/Hotfix/Module/Message/InnerMessageDispatcher.cs:34:4
+Handle at offset 336 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Server/Hotfix/Module/Message/MessageDispatherComponentSystem.cs:83:5
+Error at offset 67 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Server/Model/Base/Log.cs:36:4
+Error at offset 102 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Server/Model/Base/Logger/NLogAdapter.cs:35:4
+
+2018-04-29 21:51:44.2133 Map      006 System.ArgumentNullException: Value cannot be null.
+Parameter name: key
+   at System.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Collections.Generic.Dictionary`2.Remove(TKey key)
+   at ETHotfix.PlayerManageComponentEx.<Remove>d__4.MoveNext() in /Users/sining/Projects/JuAnChess/LobbyGame/Server/Hotfix/ExtensionCode/Module/PlayerManageComponent.cs:line 66
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at ETModel.OneThreadSynchronizationContext.<>c__DisplayClass3_0.<Post>b__0() in /Users/sining/Projects/JuAnChess/LobbyGame/Unity/Assets/Scripts/Base/OneThreadSynchronizationContext.cs:line 32
+   at ETModel.OneThreadSynchronizationContext.Update() in /Users/sining/Projects/JuAnChess/LobbyGame/Unity/Assets/Scripts/Base/OneThreadSynchronizationContext.cs:line 26
+   at App.Program.Main(String[] args) in /Users/sining/Projects/JuAnChess/LobbyGame/Server/App/Program.cs:line 130 
+ Main at offset 4698 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Server/App/Program.cs:130:7
+Error at offset 106 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Server/Model/Base/Log.cs:31:4
+Error at offset 102 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Server/Model/Base/Logger/NLogAdapter.cs:35:4
+
+2018-04-29 21:53:52.0557 Map      006 System.ArgumentNullException: Value cannot be null.
+Parameter name: key
+   at System.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Collections.Generic.Dictionary`2.Remove(TKey key)
+   at ETHotfix.PlayerManageComponentEx.<Remove>d__4.MoveNext() in /Users/sining/Projects/JuAnChess/LobbyGame/Server/Hotfix/ExtensionCode/Module/PlayerManageComponent.cs:line 66
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at ETModel.OneThreadSynchronizationContext.<>c__DisplayClass3_0.<Post>b__0() in /Users/sining/Projects/JuAnChess/LobbyGame/Unity/Assets/Scripts/Base/OneThreadSynchronizationContext.cs:line 32
+   at ETModel.OneThreadSynchronizationContext.Update() in /Users/sining/Projects/JuAnChess/LobbyGame/Unity/Assets/Scripts/Base/OneThreadSynchronizationContext.cs:line 26
+   at App.Program.Main(String[] args) in /Users/sining/Projects/JuAnChess/LobbyGame/Server/App/Program.cs:line 130 
+ Main at offset 4698 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Server/App/Program.cs:130:7
+Error at offset 106 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Server/Model/Base/Log.cs:31:4
+Error at offset 102 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Server/Model/Base/Logger/NLogAdapter.cs:35:4
+
+2018-04-29 21:56:07.7972 Map      006 System.ArgumentNullException: Value cannot be null.
+Parameter name: key
+   at System.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Collections.Generic.Dictionary`2.Remove(TKey key)
+   at ETHotfix.PlayerManageComponentEx.<Remove>d__4.MoveNext() in /Users/sining/Projects/JuAnChess/LobbyGame/Server/Hotfix/ExtensionCode/Module/PlayerManageComponent.cs:line 69
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at ETModel.OneThreadSynchronizationContext.<>c__DisplayClass3_0.<Post>b__0() in /Users/sining/Projects/JuAnChess/LobbyGame/Unity/Assets/Scripts/Base/OneThreadSynchronizationContext.cs:line 32
+   at ETModel.OneThreadSynchronizationContext.Update() in /Users/sining/Projects/JuAnChess/LobbyGame/Unity/Assets/Scripts/Base/OneThreadSynchronizationContext.cs:line 26
+   at App.Program.Main(String[] args) in /Users/sining/Projects/JuAnChess/LobbyGame/Server/App/Program.cs:line 130 
+ Main at offset 4698 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Server/App/Program.cs:130:7
+Error at offset 106 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Server/Model/Base/Log.cs:31:4
+Error at offset 102 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Server/Model/Base/Logger/NLogAdapter.cs:35:4
+
+2018-04-29 21:57:46.5435 Map      006 System.NullReferenceException: Object reference not set to an instance of an object.
+   at ETHotfix.PlayerManageComponentEx.<Remove>d__4.MoveNext() in /Users/sining/Projects/JuAnChess/LobbyGame/Server/Hotfix/ExtensionCode/Module/PlayerManageComponent.cs:line 67
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at ETModel.OneThreadSynchronizationContext.<>c__DisplayClass3_0.<Post>b__0() in /Users/sining/Projects/JuAnChess/LobbyGame/Unity/Assets/Scripts/Base/OneThreadSynchronizationContext.cs:line 32
+   at ETModel.OneThreadSynchronizationContext.Update() in /Users/sining/Projects/JuAnChess/LobbyGame/Unity/Assets/Scripts/Base/OneThreadSynchronizationContext.cs:line 26
+   at App.Program.Main(String[] args) in /Users/sining/Projects/JuAnChess/LobbyGame/Server/App/Program.cs:line 130 
+ Main at offset 4698 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Server/App/Program.cs:130:7
+Error at offset 106 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Server/Model/Base/Log.cs:31:4
+Error at offset 102 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Server/Model/Base/Logger/NLogAdapter.cs:35:4
+
+2018-04-29 22:02:26.9783 Map      006 System.NullReferenceException: Object reference not set to an instance of an object.
+   at ETHotfix.PlayerManageComponentEx.<Remove>d__4.MoveNext() in /Users/sining/Projects/JuAnChess/LobbyGame/Server/Hotfix/ExtensionCode/Module/PlayerManageComponent.cs:line 67
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at ETModel.OneThreadSynchronizationContext.<>c__DisplayClass3_0.<Post>b__0() in /Users/sining/Projects/JuAnChess/LobbyGame/Unity/Assets/Scripts/Base/OneThreadSynchronizationContext.cs:line 32
+   at ETModel.OneThreadSynchronizationContext.Update() in /Users/sining/Projects/JuAnChess/LobbyGame/Unity/Assets/Scripts/Base/OneThreadSynchronizationContext.cs:line 26
+   at App.Program.Main(String[] args) in /Users/sining/Projects/JuAnChess/LobbyGame/Server/App/Program.cs:line 130 
+ Main at offset 4698 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Server/App/Program.cs:130:7
+Error at offset 106 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Server/Model/Base/Log.cs:31:4
+Error at offset 102 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Server/Model/Base/Logger/NLogAdapter.cs:35:4
+
+2018-04-29 22:03:37.1491 Map      006 System.NullReferenceException: Object reference not set to an instance of an object.
+   at ETHotfix.PlayerManageComponentEx.<Remove>d__4.MoveNext() in /Users/sining/Projects/JuAnChess/LobbyGame/Server/Hotfix/ExtensionCode/Module/PlayerManageComponent.cs:line 67
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at ETModel.OneThreadSynchronizationContext.<>c__DisplayClass3_0.<Post>b__0() in /Users/sining/Projects/JuAnChess/LobbyGame/Unity/Assets/Scripts/Base/OneThreadSynchronizationContext.cs:line 32
+   at ETModel.OneThreadSynchronizationContext.Update() in /Users/sining/Projects/JuAnChess/LobbyGame/Unity/Assets/Scripts/Base/OneThreadSynchronizationContext.cs:line 26
+   at App.Program.Main(String[] args) in /Users/sining/Projects/JuAnChess/LobbyGame/Server/App/Program.cs:line 130 
+ Main at offset 4698 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Server/App/Program.cs:130:7
+Error at offset 106 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Server/Model/Base/Log.cs:31:4
+Error at offset 102 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Server/Model/Base/Logger/NLogAdapter.cs:35:4
+
+2018-04-29 22:07:25.5802 Map      006 System.NullReferenceException: Object reference not set to an instance of an object.
+   at ETHotfix.GetAccountInfoHandler.<Run>d__0.MoveNext() in /Users/sining/Projects/JuAnChess/LobbyGame/Server/Hotfix/ExtensionCode/Handler/LoginScene/Map/GetAccountInfoHandler.cs:line 44 
+ MoveNext at offset 1195 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Server/Hotfix/Module/DB/DBProxyComponentSystem.cs:57:3
+SetExistingTaskResult at offset 75 in file:line:column <filename unknown>:0:0
+TrySetResult at offset 150 in file:line:column <filename unknown>:0:0
+RunContinuations at offset 501 in file:line:column <filename unknown>:0:0
+RunCallback at offset 69 in file:line:column <filename unknown>:0:0
+Run at offset 113 in file:line:column <filename unknown>:0:0
+MoveNext at offset 996 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Server/Hotfix/ExtensionCode/Handler/LoginScene/Map/GetAccountInfoHandler.cs:44:25
+ReplyError at offset 85 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Server/Model/Module/Actor/AMActorHandler.cs:45:4
+Error at offset 106 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Server/Model/Base/Log.cs:31:4
+Error at offset 102 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Server/Model/Base/Logger/NLogAdapter.cs:35:4
+
+2018-04-29 22:08:08.0864 Map      006 System.NullReferenceException: Object reference not set to an instance of an object.
+   at ETHotfix.GetAccountInfoHandler.<Run>d__0.MoveNext() in /Users/sining/Projects/JuAnChess/LobbyGame/Server/Hotfix/ExtensionCode/Handler/LoginScene/Map/GetAccountInfoHandler.cs:line 44 
+ MoveNext at offset 1195 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Server/Hotfix/Module/DB/DBProxyComponentSystem.cs:57:3
+SetExistingTaskResult at offset 75 in file:line:column <filename unknown>:0:0
+TrySetResult at offset 150 in file:line:column <filename unknown>:0:0
+RunContinuations at offset 501 in file:line:column <filename unknown>:0:0
+RunCallback at offset 69 in file:line:column <filename unknown>:0:0
+Run at offset 113 in file:line:column <filename unknown>:0:0
+MoveNext at offset 996 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Server/Hotfix/ExtensionCode/Handler/LoginScene/Map/GetAccountInfoHandler.cs:44:25
+ReplyError at offset 85 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Server/Model/Module/Actor/AMActorHandler.cs:45:4
+Error at offset 106 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Server/Model/Base/Log.cs:31:4
+Error at offset 102 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Server/Model/Base/Logger/NLogAdapter.cs:35:4
+
+2018-04-29 22:11:55.8182 Map      006 System.NullReferenceException: Object reference not set to an instance of an object.
+   at ETHotfix.PlayerManageComponentEx.<Remove>d__4.MoveNext() in /Users/sining/Projects/JuAnChess/LobbyGame/Server/Hotfix/ExtensionCode/Module/PlayerManageComponent.cs:line 67
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at ETModel.OneThreadSynchronizationContext.<>c__DisplayClass3_0.<Post>b__0() in /Users/sining/Projects/JuAnChess/LobbyGame/Unity/Assets/Scripts/Base/OneThreadSynchronizationContext.cs:line 32
+   at ETModel.OneThreadSynchronizationContext.Update() in /Users/sining/Projects/JuAnChess/LobbyGame/Unity/Assets/Scripts/Base/OneThreadSynchronizationContext.cs:line 26
+   at App.Program.Main(String[] args) in /Users/sining/Projects/JuAnChess/LobbyGame/Server/App/Program.cs:line 130 
+ Main at offset 4698 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Server/App/Program.cs:130:7
+Error at offset 106 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Server/Model/Base/Log.cs:31:4
+Error at offset 102 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Server/Model/Base/Logger/NLogAdapter.cs:35:4
+
