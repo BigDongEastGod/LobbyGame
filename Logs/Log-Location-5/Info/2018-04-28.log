@@ -1,0 +1,38 @@
+2018-04-28 18:17:53.9459 Location 005 (Program.cs:43) server start........................ 5 Location
+2018-04-28 18:18:07.4304 Location 005 (LocationComponent.cs:100) location add key: 662864470409257 appid: 6
+2018-04-28 18:18:07.4931 Location 005 (LocationComponent.cs:100) location add key: 1225836453625912 appid: 4
+2018-04-28 18:18:07.5888 Location 005 (LocationComponent.cs:207) location get key: 662864470409257 6
+2018-04-28 18:18:42.8720 Location 005 (LocationComponent.cs:100) location add key: 662864470409257 appid: 6
+2018-04-28 18:18:42.8890 Location 005 (LocationComponent.cs:100) location add key: 1225836455919707 appid: 4
+2018-04-28 18:20:26.8425 Location 005 (Program.cs:43) server start........................ 5 Location
+2018-04-28 18:20:36.7445 Location 005 (LocationComponent.cs:100) location add key: 662864470409257 appid: 6
+2018-04-28 18:20:36.8090 Location 005 (LocationComponent.cs:100) location add key: 1225836463390773 appid: 4
+2018-04-28 18:20:36.9009 Location 005 (LocationComponent.cs:207) location get key: 662864470409257 6
+2018-04-28 18:21:10.8424 Location 005 (LocationComponent.cs:100) location add key: 662864470409257 appid: 6
+2018-04-28 18:21:10.8581 Location 005 (LocationComponent.cs:100) location add key: 1225836465619032 appid: 4
+2018-04-28 18:22:05.2120 Location 005 (Program.cs:43) server start........................ 5 Location
+2018-04-28 18:22:17.4626 Location 005 (LocationComponent.cs:100) location add key: 662864470409257 appid: 6
+2018-04-28 18:22:17.5332 Location 005 (LocationComponent.cs:100) location add key: 1225836470009911 appid: 4
+2018-04-28 18:22:17.6495 Location 005 (LocationComponent.cs:207) location get key: 662864470409257 6
+2018-04-28 18:23:02.3366 Location 005 (LocationComponent.cs:100) location add key: 662864470409257 appid: 6
+2018-04-28 18:23:02.3524 Location 005 (LocationComponent.cs:100) location add key: 1225836472959072 appid: 4
+2018-04-28 18:26:56.2355 Location 005 (Program.cs:43) server start........................ 5 Location
+2018-04-28 18:27:06.7075 Location 005 (LocationComponent.cs:100) location add key: 662864470409257 appid: 6
+2018-04-28 18:27:06.7754 Location 005 (LocationComponent.cs:100) location add key: 1225836488949815 appid: 4
+2018-04-28 18:27:06.9145 Location 005 (LocationComponent.cs:207) location get key: 662864470409257 6
+2018-04-28 18:28:09.2054 Location 005 (Program.cs:43) server start........................ 5 Location
+2018-04-28 18:28:20.4018 Location 005 (LocationComponent.cs:100) location add key: 662864470409257 appid: 6
+2018-04-28 18:28:20.4700 Location 005 (LocationComponent.cs:100) location add key: 1225836493799479 appid: 4
+2018-04-28 18:28:20.6121 Location 005 (LocationComponent.cs:207) location get key: 662864470409257 6
+2018-04-28 18:29:01.3512 Location 005 (Program.cs:43) server start........................ 5 Location
+2018-04-28 18:29:12.1152 Location 005 (LocationComponent.cs:100) location add key: 662864470409257 appid: 6
+2018-04-28 18:29:12.1803 Location 005 (LocationComponent.cs:100) location add key: 1225836497141815 appid: 4
+2018-04-28 18:29:12.3098 Location 005 (LocationComponent.cs:207) location get key: 662864470409257 6
+2018-04-28 18:29:49.3568 Location 005 (LocationComponent.cs:100) location add key: 662864470409257 appid: 6
+2018-04-28 18:29:49.3757 Location 005 (LocationComponent.cs:100) location add key: 1225836499632218 appid: 4
+2018-04-28 18:38:11.5040 Location 005 (Program.cs:43) server start........................ 5 Location
+2018-04-28 18:38:21.5477 Location 005 (LocationComponent.cs:100) location add key: 662864470409257 appid: 6
+2018-04-28 18:38:21.6127 Location 005 (LocationComponent.cs:100) location add key: 1225836533186613 appid: 4
+2018-04-28 18:38:21.7323 Location 005 (LocationComponent.cs:207) location get key: 662864470409257 6
+2018-04-28 18:38:32.7022 Location 005 (LocationComponent.cs:100) location add key: 662864470409257 appid: 6
+2018-04-28 18:38:32.7155 Location 005 (LocationComponent.cs:100) location add key: 1225836533907531 appid: 4

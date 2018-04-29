@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
+    <e p="$USER_HOME$/Library/Caches/Rider2018.1/resharper-host/local/Transient/ReSharperHost/v12/SolutionCaches/_JuAnLobbyGameSolution.-628942961.00" t="ExcludeRecursive" />
     <e p="$PROJECT_DIR$" t="IncludeFlat">
       <e p="Bin" t="ExcludeRecursive" />
       <e p="Client" t="Include" />
@@ -25,9 +26,7 @@
         <e p="Hotfix" t="IncludeRecursive">
           <e p="ExtensionCode" t="Include">
             <e p="Base" t="Include">
-              <e p="Gate" t="Include">
-                <e p="PingHandler.cs" t="Include" />
-              </e>
+              <e p="Gate" t="Include" />
             </e>
             <e p="Entity" t="Include">
               <e p="Game" t="Include">
@@ -48,8 +47,10 @@
                 <e p="Gate" t="Include">
                   <e p="EnterGateHandler.cs" t="Include" />
                   <e p="JionPlayerByGateHandler.cs" t="Include" />
+                  <e p="PingHandler.cs" t="Include" />
                 </e>
                 <e p="Map" t="Include">
+                  <e p="ActorQuitHandler.cs" t="Include" />
                   <e p="GetAccountInfoHandler.cs" t="Include" />
                   <e p="RegisterGameHandler.cs" t="Include" />
                 </e>
@@ -63,6 +64,10 @@
               <e p="Game" t="Include">
                 <e p="RoomManageComponent.cs" t="Include" />
               </e>
+              <e p="GatePlayerManageComponent.cs" t="Include" />
+              <e p="PingComponent.cs" t="Include" />
+              <e p="PlayerManageComponent.cs" t="Include" />
+              <e p="SessionGatePlayerComponent.cs" t="Include" />
               <e p="SessionTKeyComponent.cs" t="Include" />
             </e>
           </e>
@@ -198,14 +203,12 @@
               <e p="Game" t="Include">
                 <e p="RoomManageComponent.cs" t="Include" />
               </e>
-              <e p="PingComponent.cs" t="Include" />
               <e p="Player" t="Include">
                 <e p="GatePlayer.cs" t="Include" />
                 <e p="GatePlayerManageComponent.cs" t="Include" />
                 <e p="PlayerManageComponent.cs" t="Include" />
                 <e p="SPlayer.cs" t="Include" />
               </e>
-              <e p="SessionGatePlayerComponent.cs" t="Include" />
             </e>
           </e>
           <e p="Module" t="Include">
@@ -2902,6 +2905,5 @@
         <e p="Temp/UnityVS_bin/Debug" t="ExcludeRecursive" />
       </e>
     </e>
-    <e p="$USER_HOME$/Library/Caches/Rider2018.1/resharper-host/local/Transient/ReSharperHost/v12/SolutionCaches/_JuAnLobbyGameSolution.1842623789.00" t="ExcludeRecursive" />
   </component>
 </project>

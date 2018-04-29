@@ -12,7 +12,7 @@ namespace ETHotfix
 
             try
             {
-                Game.Scene.GetComponent<PingComponent>().UndateSession(session.Id);
+                Game.Scene.GetComponent<PingComponent>().UpdateSession(GatePlayerManageComponent.Instance.GatePlayer(session).Id);
 
                 reply(response);
             }
