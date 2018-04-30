@@ -38,5 +38,6 @@ namespace ETModel
 		 public const ushort JionPlayerByGateResponse = 1034;
 		 public const ushort RegisterGameRequest = 1035;
 		 public const ushort RegisterGameResponse = 1036;
+		 public const ushort ActorQuitRequest = 1037;
 	}
 }

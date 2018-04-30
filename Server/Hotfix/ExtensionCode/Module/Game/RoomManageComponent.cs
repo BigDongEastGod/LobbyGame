@@ -1,7 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Threading.Tasks;
+using CSharpx;
 using ETModel;
+using Model.ExtensionCode.DB;
 
 namespace ETHotfix
 {
@@ -10,6 +14,44 @@ namespace ETHotfix
     /// </summary>
     public static class RoomManageComponentEx
     {
+        /// <summary>
+        /// 根据用户获取所有创建的房间
+        /// </summary>
+        /// <param name="self"></param>
+        /// <param name="player"></param>
+        /// <returns></returns>
+        public static List<Room> GetRooms(this RoomManageComponent self, SPlayer player)
+        {
+            return self.Rooms.Where(d => d.PlayerId == player.Id).Select(d => d.Room).ToList();
+        }
+
+        /// <summary>
+        /// 获取玩家信息列表
+        /// </summary>
+        /// <param name="self"></param>
+        /// <param name="room"></param>
+        /// <returns></returns>
+        public static async Task<List<AccountInfo>> GetRoomPlayers(this RoomManageComponent self, Room room)
+        {
+            var accountInfos = new List<AccountInfo>();
+            
+            foreach (var playersKey in room.Players.Keys)
+            {
+                var account = await Game.Scene.GetComponent<DBProxyComponent>().Query<Account>(playersKey.Id);
+
+                accountInfos.Add(new AccountInfo()
+                {
+                    UserName = account.UserName,
+                    Password = account.Password,
+                    Diamond = account.Diamond,
+                    Gold = account.Gold,
+                    RegistrationTime = account.RegistrationTime.ToString(),
+                    LoginTime = account.LoginTime.ToString()
+                });
+            }
+
+            return accountInfos;
+        }
         
         /// <summary>
         /// 获取用户所在的房间
@@ -17,9 +59,9 @@ namespace ETHotfix
         /// <param name="self"></param>
         /// <param name="player">用户SPlayer</param>
         /// <returns></returns>
-        public static Room GetRommByPlayer(this RoomManageComponent self,SPlayer player)
+        public static RoomManageComponent.RoomModel GetRommByPlayer(this RoomManageComponent self,SPlayer player)
         {
-            return self.Rooms.Values.FirstOrDefault(d => d.PlayerIsInRomm(player) != 0);
+            return self.Rooms.FirstOrDefault(d => d.Room.PlayerIsInRomm(player) != 0);
         }
         
         /// <summary>
@@ -31,24 +73,22 @@ namespace ETHotfix
         /// <returns></returns>
         public static Room Add(this RoomManageComponent self,long playerId,string roomType)
         {
-            if (self.Rooms.ContainsKey(playerId)) return null;
-            
             // 随机生成房间号
-
-            var roomId = int.Parse(IdGenerater.GenerateId().ToString().Substring(0, 6));
-
+            
+            var roomId = long.Parse(new Random(int.Parse(DateTime.Now.ToString("HHmmssfff"))).Next(100000, 999999).ToString());
+            
             while (true)
             {
                 if (self.GetRoom(roomId) == null) break;
                     
-                roomId = int.Parse(IdGenerater.GenerateId().ToString().Substring(0, 6));
+                roomId = long.Parse(new Random(int.Parse(DateTime.Now.ToString("HHmmssfff"))).Next(100000, 999999).ToString());
             }
             
             // 创建房间  
 
             var room = CreateRoom(roomType, roomId);
 
-            if (room != null) self.Rooms.Add(playerId, room);
+            if (room != null) self.Rooms.Add(new RoomManageComponent.RoomModel() {PlayerId = playerId, Room = room});
 
             return room;
         }
@@ -59,9 +99,9 @@ namespace ETHotfix
         /// <param name="self"></param>
         /// <param name="roomId">房间ID</param>
         /// <returns></returns>
-        public static Room GetRoom(this RoomManageComponent self,long roomId)
+        public static RoomManageComponent.RoomModel GetRoom(this RoomManageComponent self,long roomId)
         {
-            return self.Rooms.Values.FirstOrDefault(d => d.Id == roomId);
+            return self.Rooms.FirstOrDefault(d => d.Room.Id == roomId);
         }
 
         /// <summary>
@@ -72,18 +112,7 @@ namespace ETHotfix
         /// <returns></returns>
         public static long GetRoomId(this RoomManageComponent self,Room room)
         {
-            return self.Rooms.Values.FirstOrDefault(d => d == room)?.Id ?? 0;
-        }
-
-        /// <summary>
-        /// 获取房间ID
-        /// </summary>
-        /// <param name="self"></param>
-        /// <param name="playerId">用户ID</param>
-        /// <returns></returns>
-        public static long GetRoomId(this RoomManageComponent self,long playerId)
-        {
-            return self.Rooms.TryGetValue(playerId, out var room) ? room.Id : 0;
+            return self.Rooms.FirstOrDefault(d => d.Room == room)?.Room.Id ?? 0;
         }
 
         /// <summary>
@@ -93,13 +122,13 @@ namespace ETHotfix
         /// <param name="room">房间</param>
         public static void Remove(this RoomManageComponent self,Room room)
         {
-            var removeroom = self.Rooms.FirstOrDefault(d => d.Value == room);
+            var removeroom = self.Rooms.FirstOrDefault(d => d.Room == room);
 
-            if (default(KeyValuePair<long, Room>).Equals(removeroom)) return;
+            if (removeroom == null) return;
             
-            removeroom.Value.DissolveRoom();
+            removeroom.Room.DissolveRoom();
 
-            self.Rooms.Remove(removeroom.Key);
+            self.Rooms.Remove(removeroom);
         }
 
         /// <summary>
@@ -109,11 +138,11 @@ namespace ETHotfix
         /// <param name="roomId">房间ID</param>
         public static void Remove(this RoomManageComponent self,long roomId)
         {
-            var removeroom = self.Rooms.FirstOrDefault(d => d.Value.Id == roomId);
-            
-            if (default(KeyValuePair<long, Room>).Equals(removeroom)) return;
+            var removeroom = self.Rooms.FirstOrDefault(d => d.Room.Id == roomId);
 
-            self.Remove(removeroom.Value);
+            if (removeroom == null) return;
+
+            self.Rooms.Remove(removeroom);
         }
         
         /// <summary>
@@ -122,7 +151,7 @@ namespace ETHotfix
         /// <param name="roomType"></param>
         /// <param name="roomId"></param>
         /// <returns></returns>
-        private static Room CreateRoom(string roomType,int roomId)
+        private static Room CreateRoom(string roomType,long roomId)
         {
             Room room = null;
             

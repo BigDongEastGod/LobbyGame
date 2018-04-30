@@ -466,6 +466,7 @@ namespace ETHotfix
 
 	}
 
+// Error消息分类 0:处理成功 1:房间人数满
 	[Message(HotfixOpcode.RoomInfoResponse)]
 	[ProtoContract]
 	public partial class RoomInfoResponse: IActorResponse
@@ -484,6 +485,9 @@ namespace ETHotfix
 
 		[ProtoMember(2, IsRequired = false)]
 		public byte[] Rules;
+
+		[ProtoMember(3)]
+		public List<AccountInfo> Players = new List<AccountInfo>();
 
 	}
 

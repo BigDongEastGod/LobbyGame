@@ -1,0 +1,606 @@
+2018-04-30 00:50:30.4444 Gate     004 (Program.cs:43) server start........................ 4 Gate
+2018-04-30 00:50:35.1577 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225843659112495 Session
+2018-04-30 00:50:35.1989 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 00:50:35.2070 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 00:50:37.2210 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-30 00:50:37.2226 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 00:50:39.2346 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225843659112495 Session
+2018-04-30 00:50:39.2536 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 00:50:39.2564 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 00:50:41.2650 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 00:50:41.2664 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 00:50:43.2744 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 00:50:43.2760 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 00:50:45.2831 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 00:50:45.2842 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 00:50:47.2926 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 00:50:47.2944 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 00:53:00.6928 Gate     004 (Program.cs:43) server start........................ 4 Gate
+2018-04-30 00:53:13.1865 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225843669467184 Session
+2018-04-30 00:53:13.2124 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 00:53:13.2182 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 00:53:15.2315 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-30 00:53:15.2333 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 00:53:17.2457 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-30 00:53:17.2479 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 00:53:18.1262 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225843669467184 Session
+2018-04-30 00:53:19.2629 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 00:53:19.2647 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 00:53:21.2728 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 00:53:21.2739 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 00:53:23.2847 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 00:53:23.2861 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 00:53:25.2946 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 00:53:25.2964 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 00:53:27.3085 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 00:53:27.3100 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 00:53:29.3226 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 00:53:29.3239 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 00:53:31.3357 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 00:53:31.3368 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 00:53:33.3493 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 00:53:33.3505 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 00:53:35.3616 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 00:53:35.3627 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 00:53:37.3751 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 00:53:37.3764 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 00:53:39.3887 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 00:53:39.3901 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 00:53:41.4018 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 00:53:41.4030 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 00:55:09.7376 Gate     004 (Program.cs:43) server start........................ 4 Gate
+2018-04-30 00:55:19.2367 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225843677724719 Session
+2018-04-30 00:55:19.2637 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 00:55:19.2700 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 00:55:21.2846 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-30 00:55:21.2866 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 00:55:23.2950 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-30 00:55:23.2970 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 00:55:23.6695 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225843677724719 Session
+2018-04-30 00:55:25.3098 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-30 00:55:25.3111 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 00:55:27.3225 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 00:55:27.3240 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 00:56:07.6242 Gate     004 (Program.cs:43) server start........................ 4 Gate
+2018-04-30 00:56:11.0625 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225843681132591 Session
+2018-04-30 00:56:11.0874 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 00:56:11.0949 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 00:56:13.1094 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-30 00:56:13.1110 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 00:56:15.1231 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-30 00:56:15.1244 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 00:56:17.1465 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225843681132591 Session
+2018-04-30 00:56:17.1594 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 00:56:17.1617 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 00:56:19.1690 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 00:56:19.1702 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 00:59:20.0000 Gate     004 (Program.cs:43) server start........................ 4 Gate
+2018-04-30 00:59:31.6227 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225843694305328 Session
+2018-04-30 00:59:31.6502 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 00:59:31.6560 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 00:59:33.6696 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-30 00:59:33.6711 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 00:59:35.6844 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-30 00:59:35.6858 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 00:59:37.7088 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225843694305328 Session
+2018-04-30 00:59:37.7369 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 00:59:37.7396 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 00:59:39.7479 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 00:59:39.7492 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 00:59:41.7618 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 00:59:41.7630 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 00:59:43.7749 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 00:59:43.7845 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 00:59:45.7914 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 00:59:45.7930 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 01:01:49.1086 Gate     004 (Program.cs:43) server start........................ 4 Gate
+2018-04-30 01:02:00.2146 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225843704004656 Session
+2018-04-30 01:02:00.2362 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:02:00.2414 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:02:02.2535 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-30 01:02:02.2548 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:02:04.2691 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225843704004656 Session
+2018-04-30 01:02:04.2864 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:02:04.2886 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 01:02:06.2967 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:02:06.2977 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 01:05:17.9854 Gate     004 (Program.cs:43) server start........................ 4 Gate
+2018-04-30 01:05:27.7576 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225843717636143 Session
+2018-04-30 01:05:27.7765 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:05:27.7822 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:05:29.7948 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-30 01:05:29.7964 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:05:31.8168 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225843717636143 Session
+2018-04-30 01:05:31.8342 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:05:31.8364 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 01:05:33.8442 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:05:33.8454 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 01:05:35.8577 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:05:35.8589 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 01:08:53.8340 Gate     004 (Program.cs:43) server start........................ 4 Gate
+2018-04-30 01:09:05.0109 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225843731857456 Session
+2018-04-30 01:09:05.0302 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:09:05.0366 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:09:07.0507 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-30 01:09:07.0529 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:09:09.0754 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225843731857456 Session
+2018-04-30 01:09:09.0876 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:09:09.0897 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:09:11.0978 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:09:11.0989 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:09:13.1113 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:09:13.1126 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:11:00.3527 Gate     004 (Program.cs:43) server start........................ 4 Gate
+2018-04-30 01:11:24.9876 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225843741032497 Session
+2018-04-30 01:11:25.0091 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:11:25.0152 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:11:27.0281 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-30 01:11:27.0297 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:11:29.0573 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225843741032497 Session
+2018-04-30 01:11:29.0694 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:11:29.0715 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:11:31.0799 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:11:31.0811 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:15:03.4091 Gate     004 (Program.cs:43) server start........................ 4 Gate
+2018-04-30 01:15:13.1155 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225843755974703 Session
+2018-04-30 01:15:13.1483 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:15:13.1562 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:15:15.1698 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-30 01:15:15.1720 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:15:17.1863 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225843755974703 Session
+2018-04-30 01:15:17.2027 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:15:17.2051 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 01:15:19.2146 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:15:19.2158 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 01:15:21.2279 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:15:21.2290 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 01:15:23.2368 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:15:23.2380 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 01:15:25.2510 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:15:25.2525 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 01:15:27.2626 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:15:27.2636 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 01:15:29.2763 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:15:29.2778 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 01:19:13.5282 Gate     004 (Program.cs:43) server start........................ 4 Gate
+2018-04-30 01:19:24.6855 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225843772489776 Session
+2018-04-30 01:19:24.7080 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:19:24.7132 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:19:26.7271 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-30 01:19:26.7288 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:19:28.7575 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225843772489776 Session
+2018-04-30 01:19:28.7715 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:19:28.7739 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:19:30.7814 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:19:30.7826 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:19:32.7953 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:19:32.7965 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:28:37.7288 Gate     004 (Program.cs:43) server start........................ 4 Gate
+2018-04-30 01:28:48.9169 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225843809452080 Session
+2018-04-30 01:28:48.9450 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:28:48.9507 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:28:50.9630 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-30 01:28:50.9644 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:28:52.9915 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225843809452080 Session
+2018-04-30 01:28:53.0070 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:28:53.0111 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:28:55.0189 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:28:55.0206 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:28:57.0332 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:28:57.0346 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:28:59.0476 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:28:59.0494 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:29:28.9064 Gate     004 (Program.cs:43) server start........................ 4 Gate
+2018-04-30 01:29:43.0257 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225843812991024 Session
+2018-04-30 01:29:43.0513 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:29:43.0565 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:29:45.0706 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-30 01:29:45.0728 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:29:47.0991 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225843812991024 Session
+2018-04-30 01:29:47.1235 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:29:47.1258 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:29:49.1321 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:29:49.1333 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:29:51.1456 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:29:51.1476 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:29:53.1602 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:29:53.1613 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:29:55.1729 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:29:55.1741 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:29:57.1853 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:29:57.1871 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:29:59.2000 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:29:59.2013 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:30:01.2172 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:30:01.2189 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:30:32.1126 Gate     004 (Program.cs:43) server start........................ 4 Gate
+2018-04-30 01:30:42.4214 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225843816923183 Session
+2018-04-30 01:30:42.4503 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:30:42.4561 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:30:44.4680 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-30 01:30:44.4697 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:30:46.5035 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225843816923183 Session
+2018-04-30 01:30:46.5199 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:30:46.5261 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:30:48.5333 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:30:48.5352 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:30:50.5476 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:30:50.5496 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:30:52.5625 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:30:52.5645 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:30:54.5793 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:30:54.5814 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:30:56.5932 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:30:56.5953 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:30:58.6075 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:30:58.6098 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:31:00.6226 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:31:00.6243 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:32:17.8503 Gate     004 (Program.cs:43) server start........................ 4 Gate
+2018-04-30 01:32:28.6951 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225843823870000 Session
+2018-04-30 01:32:28.7167 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:32:28.7220 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:32:30.7339 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-30 01:32:30.7366 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:32:32.7588 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225843823870000 Session
+2018-04-30 01:32:32.7727 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:32:32.7743 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:32:34.7839 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:32:34.7852 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:32:36.7973 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:32:36.7984 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:32:38.8104 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:32:38.8115 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:32:40.8244 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:32:40.8255 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:32:42.8374 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:32:42.8396 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:32:44.8446 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:32:44.8457 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:32:46.8553 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:32:46.8567 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:32:48.8691 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:32:48.8737 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:32:50.8825 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:32:50.8840 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:34:44.1739 Gate     004 (Program.cs:43) server start........................ 4 Gate
+2018-04-30 01:34:55.4456 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225843833503792 Session
+2018-04-30 01:34:55.4720 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:34:55.4847 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:34:57.5009 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-30 01:34:57.5028 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:34:59.5236 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225843833503792 Session
+2018-04-30 01:34:59.5401 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:34:59.5415 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:35:01.5494 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:35:01.5507 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:35:03.5607 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:35:03.5619 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:35:05.5744 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:35:05.5760 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:35:07.5890 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:35:07.5902 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:36:22.9544 Gate     004 (Program.cs:43) server start........................ 4 Gate
+2018-04-30 01:36:34.0974 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225843839926320 Session
+2018-04-30 01:36:34.1307 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:36:34.1387 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:36:36.1535 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-30 01:36:36.1551 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:36:38.1763 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225843839926320 Session
+2018-04-30 01:36:38.1970 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:36:38.1987 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:36:40.2083 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:36:40.2098 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:36:42.2180 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:36:42.2197 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:39:01.7301 Gate     004 (Program.cs:43) server start........................ 4 Gate
+2018-04-30 01:39:13.0633 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225843850346544 Session
+2018-04-30 01:39:13.0916 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:39:13.0970 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:39:15.1106 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-30 01:39:15.1125 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:39:17.1322 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225843850346544 Session
+2018-04-30 01:39:17.1507 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:39:17.1532 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:39:19.1633 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:39:19.1644 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:39:21.1777 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:39:21.1791 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:39:45.9340 Gate     004 (Program.cs:43) server start........................ 4 Gate
+2018-04-30 01:39:57.4548 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225843853295664 Session
+2018-04-30 01:39:57.4804 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:39:57.4880 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:39:59.5020 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-30 01:39:59.5034 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:40:01.5249 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225843853295664 Session
+2018-04-30 01:40:01.5438 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:40:01.5454 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:40:03.5553 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:40:03.5564 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:40:05.5679 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:40:05.5697 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:40:07.5812 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:40:07.5824 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:40:09.5951 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:40:09.5962 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:40:11.6041 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:40:11.6062 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:40:13.6133 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:40:13.6234 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:40:15.6313 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:40:15.6330 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:40:17.6449 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:40:17.6489 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:41:34.3724 Gate     004 (Program.cs:43) server start........................ 4 Gate
+2018-04-30 01:41:45.8299 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225843860373552 Session
+2018-04-30 01:41:45.8545 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:41:45.8602 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:41:47.8743 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-30 01:41:47.8762 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:41:49.8942 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225843860373552 Session
+2018-04-30 01:41:49.9074 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:41:49.9089 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:41:51.9184 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:41:51.9198 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:41:53.9313 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:41:53.9324 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:41:55.9445 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:41:55.9456 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:44:09.2991 Gate     004 (Program.cs:43) server start........................ 4 Gate
+2018-04-30 01:44:18.1024 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225843870335023 Session
+2018-04-30 01:44:18.1272 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:44:18.1338 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:44:20.1480 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-30 01:44:20.1494 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:44:22.1689 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225843870335023 Session
+2018-04-30 01:44:22.1851 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:44:22.1865 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:44:24.1921 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:44:24.1950 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:44:26.2066 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:44:26.2082 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:44:28.2210 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:44:28.2221 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:44:30.2344 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:44:30.2356 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:49:04.3492 Gate     004 (Program.cs:43) server start........................ 4 Gate
+2018-04-30 01:49:14.1515 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225843889733679 Session
+2018-04-30 01:49:14.1763 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:49:14.1828 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:49:16.1959 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-30 01:49:16.1974 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:49:18.2162 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225843889733679 Session
+2018-04-30 01:49:18.2349 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:49:18.2374 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:49:20.2447 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:49:20.2459 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 01:49:22.2582 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:49:22.2599 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 01:49:24.2693 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:49:24.2706 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 01:50:27.7426 Gate     004 (Program.cs:43) server start........................ 4 Gate
+2018-04-30 01:50:38.4485 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225843895304240 Session
+2018-04-30 01:50:38.4765 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:50:38.4840 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:50:40.4985 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-30 01:50:40.4999 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:50:42.5260 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225843895304240 Session
+2018-04-30 01:50:42.5433 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:50:42.5456 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:50:44.5515 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:50:44.5526 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 01:50:46.5649 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:50:46.5663 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 01:50:48.5725 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:50:48.5738 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 01:50:50.5857 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:50:50.5871 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 01:50:52.5997 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:50:52.6020 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 01:50:54.6087 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:50:54.6119 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 01:50:56.6232 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:50:56.6251 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 01:50:58.6380 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:50:58.6396 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 01:51:00.6531 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:51:00.6544 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 01:51:02.6622 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:51:02.6641 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 01:51:04.6756 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:51:04.6771 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 01:51:04.9135 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225843897008194 Session
+2018-04-30 01:51:06.6854 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-30 01:51:06.6872 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:51:08.7000 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225843897008194 Session
+2018-04-30 01:51:08.7065 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:51:08.7077 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:51:10.7149 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:51:10.7166 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 01:51:12.7288 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:51:12.7304 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 01:51:43.2442 Gate     004 (Program.cs:43) server start........................ 4 Gate
+2018-04-30 01:51:55.7284 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225843900350512 Session
+2018-04-30 01:51:55.7536 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:51:55.7594 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:51:57.7726 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-30 01:51:57.7745 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:51:59.7959 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225843900350512 Session
+2018-04-30 01:51:59.8093 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:51:59.8142 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:52:01.8201 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:52:01.8214 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 01:52:03.8338 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:52:03.8351 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 01:52:05.8472 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:52:05.8517 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 01:52:07.8606 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:52:07.8623 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 01:52:09.8748 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:52:09.8789 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 01:52:11.8868 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:52:11.8881 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 01:52:51.5596 Gate     004 (Program.cs:43) server start........................ 4 Gate
+2018-04-30 01:53:03.4392 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225843904806960 Session
+2018-04-30 01:53:03.4651 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:53:03.4725 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:53:05.4899 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-30 01:53:05.4917 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:53:07.5093 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225843904806960 Session
+2018-04-30 01:53:07.5264 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:53:07.5291 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:53:09.5407 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:53:09.5419 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 01:53:11.5536 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:53:11.5547 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 01:53:13.5671 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:53:13.5729 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 01:53:15.5766 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:53:15.5780 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 01:53:17.5882 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:53:17.5918 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 01:53:19.5985 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:53:19.6002 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 01:53:21.6109 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:53:21.6122 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 01:53:23.6239 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:53:23.6256 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 01:53:25.6387 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:53:25.6401 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 01:53:27.4038 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225843906379842 Session
+2018-04-30 01:53:27.6516 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-30 01:53:27.6596 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:53:29.6667 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-30 01:53:29.6680 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:53:31.6795 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-30 01:53:31.6814 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:53:33.6906 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-30 01:53:33.6924 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:53:35.7054 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225843906379842 Session
+2018-04-30 01:53:35.7127 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:53:35.7177 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:53:37.7249 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:53:37.7264 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 01:53:39.7377 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:53:39.7390 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 01:53:41.7508 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:53:41.7524 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 01:53:43.7650 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:53:43.7745 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 01:53:45.7817 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:53:45.7852 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 01:53:47.7921 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:53:47.7939 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 01:56:36.5203 Gate     004 (Program.cs:43) server start........................ 4 Gate
+2018-04-30 01:56:47.3800 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225843919487024 Session
+2018-04-30 01:56:47.4011 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:56:47.4062 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:56:49.4195 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-30 01:56:49.4212 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:56:51.4345 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-30 01:56:51.4365 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:56:53.4652 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225843919487024 Session
+2018-04-30 01:56:53.4874 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:56:53.4898 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:56:55.4982 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:56:55.5000 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 01:56:57.5131 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:56:57.5151 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 01:56:59.5284 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:56:59.5299 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 01:57:01.5435 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:57:01.5450 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 01:57:46.8344 Gate     004 (Program.cs:43) server start........................ 4 Gate
+2018-04-30 01:57:58.2071 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225843924074544 Session
+2018-04-30 01:57:58.2409 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:57:58.2510 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:58:00.2669 Gate     004 (PingComponent.cs:29) 在线人数 ：1
+2018-04-30 01:58:00.2685 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:58:02.2934 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225843924074544 Session
+2018-04-30 01:58:02.3128 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:58:02.3155 Gate     004 (PingComponent.cs:31) 在线人数1 ：1
+2018-04-30 01:58:04.3266 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:58:04.3280 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 01:58:06.3395 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:58:06.3411 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 01:58:08.3538 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:58:08.3552 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 01:58:10.3649 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:58:10.3665 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 01:58:12.3741 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:58:12.3786 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 01:58:14.3864 Gate     004 (PingComponent.cs:29) 在线人数 ：0
+2018-04-30 01:58:14.3879 Gate     004 (PingComponent.cs:31) 在线人数1 ：0
+2018-04-30 10:36:37.1648 Gate     004 (Program.cs:43) server start........................ 4 Gate
+2018-04-30 10:38:05.6601 Gate     004 (Program.cs:43) server start........................ 4 Gate
+2018-04-30 10:38:14.1254 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225845969846319 Session
+2018-04-30 10:38:18.3810 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225845969846319 Session
+2018-04-30 10:38:37.5342 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225845971419202 Session
+2018-04-30 10:38:41.4351 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225845971419202 Session
+2018-04-30 10:38:49.0569 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225845972205644 Session
+2018-04-30 10:38:54.2610 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225845972205644 Session
+2018-04-30 10:39:57.0419 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225845976662108 Session
+2018-04-30 10:39:59.7678 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225845976662108 Session
+2018-04-30 10:40:21.8028 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225845978234983 Session
+2018-04-30 10:40:24.1558 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225845978234983 Session
+2018-04-30 10:40:31.6461 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225845978890353 Session
+2018-04-30 10:40:36.5419 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225845978890353 Session
+2018-04-30 10:44:46.2642 Gate     004 (Program.cs:43) server start........................ 4 Gate
+2018-04-30 10:45:00.8505 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225845996519472 Session
+2018-04-30 10:45:06.8980 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225845996519472 Session
+2018-04-30 10:45:34.1823 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225845998747715 Session
+2018-04-30 10:45:36.3327 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225845998747715 Session
+2018-04-30 10:45:55.3819 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225846000123982 Session
+2018-04-30 10:45:57.4467 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225846000123982 Session
+2018-04-30 10:46:06.5799 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225846000844889 Session
+2018-04-30 10:46:11.0922 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225846000844889 Session
+2018-04-30 10:49:54.1141 Gate     004 (Program.cs:43) server start........................ 4 Gate
+2018-04-30 10:52:14.0905 Gate     004 (Program.cs:43) server start........................ 4 Gate
+2018-04-30 10:52:25.2959 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225846025682992 Session
+2018-04-30 10:52:27.2432 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225846025682992 Session
+2018-04-30 10:54:03.3124 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225846032105544 Session
+2018-04-30 10:54:07.5902 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225846032105544 Session
+2018-04-30 10:59:29.7637 Gate     004 (Program.cs:43) server start........................ 4 Gate
+2018-04-30 11:00:12.2449 Gate     004 (Program.cs:43) server start........................ 4 Gate
+2018-04-30 11:00:22.1782 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225846056878127 Session
+2018-04-30 11:00:26.3678 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225846056878127 Session
+2018-04-30 11:01:34.1999 Gate     004 (Program.cs:43) server start........................ 4 Gate
+2018-04-30 11:01:45.3457 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225846062383152 Session
+2018-04-30 11:01:46.9459 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225846062383152 Session
+2018-04-30 11:41:50.3942 Gate     004 (Program.cs:43) server start........................ 4 Gate
+2018-04-30 11:41:59.6702 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225846220587055 Session
+2018-04-30 11:42:06.0139 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225846220587055 Session
+2018-04-30 11:42:12.5499 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225846221439040 Session
+2018-04-30 11:42:20.9585 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225846221439040 Session
+2018-04-30 11:44:06.5455 Gate     004 (Program.cs:43) server start........................ 4 Gate
+2018-04-30 11:44:15.5899 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225846229499951 Session
+2018-04-30 11:44:18.0170 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225846229499951 Session
+2018-04-30 11:44:24.6132 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225846230089791 Session
+2018-04-30 11:44:33.7094 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225846230089791 Session
+2018-04-30 11:44:40.5448 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225846231138377 Session
+2018-04-30 11:44:49.7363 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225846231138377 Session
+2018-04-30 11:47:42.2837 Gate     004 (Program.cs:43) server start........................ 4 Gate
+2018-04-30 11:47:53.6210 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225846243786800 Session
+2018-04-30 11:47:57.6454 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225846243786800 Session
+2018-04-30 11:48:03.8731 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225846244442176 Session
+2018-04-30 11:48:11.7248 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225846244442176 Session
+2018-04-30 11:51:48.0474 Gate     004 (Program.cs:43) server start........................ 4 Gate
+2018-04-30 11:51:57.4601 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225846259777583 Session
+2018-04-30 11:52:01.8288 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225846259777583 Session
+2018-04-30 11:52:08.0022 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225846260432959 Session
+2018-04-30 11:52:15.5497 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225846260432959 Session
+2018-04-30 11:56:04.3744 Gate     004 (Program.cs:43) server start........................ 4 Gate
+2018-04-30 11:56:14.2846 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225846276554799 Session
+2018-04-30 11:56:18.5228 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225846276554799 Session
+2018-04-30 11:56:24.9356 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225846277275712 Session
+2018-04-30 11:56:32.3748 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225846277275712 Session
+2018-04-30 12:24:56.9695 Gate     004 (Program.cs:43) server start........................ 4 Gate
+2018-04-30 12:25:06.0843 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225846390063151 Session
+2018-04-30 12:25:10.2577 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225846390063151 Session
+2018-04-30 12:25:18.7373 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225846390915136 Session
+2018-04-30 12:25:24.1683 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225846390915136 Session
+2018-04-30 12:32:19.2399 Gate     004 (Program.cs:43) server start........................ 4 Gate
+2018-04-30 12:32:29.7225 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225846419161136 Session
+2018-04-30 12:32:35.6868 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225846419161136 Session
+2018-04-30 12:32:41.6090 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225846419947584 Session
+2018-04-30 12:32:46.8314 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225846419947584 Session

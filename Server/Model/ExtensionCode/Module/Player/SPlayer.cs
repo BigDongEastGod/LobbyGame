@@ -5,9 +5,9 @@
     /// </summary>
     public class SPlayer : Entity
     {
-        public long AccountId;
-
         public long GateSessionId;
+
+        public bool IsActivity;
         
         public override void Dispose()
         {

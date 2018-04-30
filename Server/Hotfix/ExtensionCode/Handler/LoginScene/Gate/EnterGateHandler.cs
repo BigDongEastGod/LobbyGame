@@ -34,15 +34,19 @@ namespace ETHotfix
                     
                     if (regedResponse.Error == 0)
                     {
-                        session.AddComponent<SessionGatePlayerComponent>();
-                    
                         // 添加用户到用户管理组件
 
-                        var player = GatePlayerManageComponent.Instance.Add(session, id ?? 0);
+                        GatePlayerManageComponent.Instance.Add(session, id ?? 0);
                         
                         // 向Location服务器注册位置
 
                         await session.AddComponent<ActorComponent, string>(ActorType.GateSession).AddLocation();
+                        
+                        // 添加到心跳组件
+
+                        if (Game.Scene.GetComponent<PingComponent>() == null) Game.Scene.AddComponent<PingComponent, int, long>(2000, 3);
+
+                        Game.Scene.GetComponent<PingComponent>().AddSession(id ?? 0);
                     }
                     else
                     {
