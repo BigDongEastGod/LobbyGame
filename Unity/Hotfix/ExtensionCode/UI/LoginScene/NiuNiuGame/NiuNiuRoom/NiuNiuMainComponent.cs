@@ -88,6 +88,7 @@ namespace ETHotfix
             Player = accountResponse;
             //请求获得当前房间准备好的玩家信息
             var response =(RoomInfoResponse) await SceneHelperComponent.Instance.Session.Call(new RoomInfoRequest() {RoomId = 0, Message = -1});
+            roomInfo = response;
             //获得房间规则信息
             var rules = response.Rules == null ? null : ProtobufHelper.FromBytes<NNChess>(response.Rules);
             //设置房间号
@@ -148,11 +149,9 @@ namespace ETHotfix
                 Debug.Log("成功坐下");
                 sitDownBt.gameObject.SetActive(false);
                 startGameBt.GetComponent<Animator>().SetInteger("IsMiddle",1);
-                foreach (var player in roomInfo.Players)
-                {
-                    if(player.UserName == Player.AccountInfo.UserName)
-                        showCardUI.GetComponent<NNShowCardComponent>().CreateHead(-1,player);
-                }
+
+                AccountInfo accountInfo=new AccountInfo(){UserName = Player.AccountInfo.UserName};
+                showCardUI.GetComponent<NNShowCardComponent>().CreateHead(-1,accountInfo);
             }
         }
 
