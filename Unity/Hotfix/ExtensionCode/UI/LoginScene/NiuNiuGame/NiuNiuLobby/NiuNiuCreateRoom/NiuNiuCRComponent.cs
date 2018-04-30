@@ -279,6 +279,11 @@ namespace ETHotfix
             }
         }
 
+        /// <summary>
+        /// 发送规则,加入房间
+        /// </summary>
+        /// <param name="roomId">房间号</param>
+        /// <param name="isJoin">是否加入房间</param>
         private async void SendRuleAndJoinRoom(long roomId, bool isJoin)
         {
             NNChess nnChess = GetCurrentNnChess();
@@ -286,7 +291,7 @@ namespace ETHotfix
             var roomRulesResponse = (RoomRulesResponse) await SceneHelperComponent.Instance.Session.Call(
                 new RoomRulesRequest() {RoomId = roomId, Rules = ProtobufHelper.ToBytes(nnChess)});
 
-            Debug.Log("nnChess.Score: " + GetCurrentNnChess().Score);
+            Debug.Log("nnChess.Score: " + nnChess.Score);
             Debug.Log("RoomRulesResponse Error code: " + roomRulesResponse.Error);
             Debug.Log("RoomRulesResponse Message: " + roomRulesResponse.Message);
 
