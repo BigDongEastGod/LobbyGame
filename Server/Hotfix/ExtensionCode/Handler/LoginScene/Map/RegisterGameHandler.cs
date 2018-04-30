@@ -27,7 +27,16 @@ namespace ETHotfix
 
                     player.GateSessionId = message.GateSessionId;
 
-                    await player.AddComponent<ActorComponent>().AddLocation();
+                    var actor = player.GetComponent<ActorComponent>();
+
+                    if (actor == null)
+                    {
+                        await player.AddComponent<ActorComponent>().AddLocation();
+                    }
+                    else
+                    {
+                        await actor.AddLocation();
+                    }
                 }
                 else
                 {

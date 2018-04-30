@@ -33,7 +33,7 @@
 		/// <summary>
 		/// 获取注册的Actor服务器的Session
 		/// </summary>
-		public Session ActorSession => Game.Scene.GetComponent<NetInnerComponent>().Get(GetActorProxy.Address);
+		public Session ActorSession => GetActorProxy == null ? null : Game.Scene.GetComponent<NetInnerComponent>().Get(GetActorProxy.Address);
 
 		/// <summary>
 		/// 获取ActorProxy

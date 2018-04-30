@@ -16,7 +16,6 @@ namespace ETHotfix
         /// </summary>
         /// <param name="self"></param>
         /// <param name="session">Session</param>
-        /// <param name="player">player</param>
         /// <param name="accountId">玩家ID</param>
         /// <returns></returns>
         public static void Add(this GatePlayerManageComponent self, Session session, long accountId)
@@ -28,6 +27,8 @@ namespace ETHotfix
                 self.Players.Remove(playerSession.Id);
                 
                 self.Sessions.Remove(accountId);
+                
+                playerSession.Dispose();
             }
             
             // 创建Player
@@ -42,7 +43,9 @@ namespace ETHotfix
             
             // 挂在Player组件，给Actor使用
 
-            session.AddComponent<Player>().UnitId = accountId;
+            var playerComponent = session.AddComponent<Player>();
+            
+            playerComponent.UnitId = accountId;
         }
 
         #endregion

@@ -34,8 +34,6 @@ namespace ETHotfix
                     
                     if (regedResponse.Error == 0)
                     {
-                        session.AddComponent<SessionGatePlayerComponent>();
-                        
                         // 添加用户到用户管理组件
 
                         GatePlayerManageComponent.Instance.Add(session, id ?? 0);

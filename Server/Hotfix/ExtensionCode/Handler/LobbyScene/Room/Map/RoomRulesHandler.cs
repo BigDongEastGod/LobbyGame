@@ -25,8 +25,8 @@ namespace ETHotfix
                 }
 
                 Log.Debug(message.RoomId.ToString());
-                
-                RoomManageComponent.Instance.GetRoom(message.RoomId)?.AddRules(message.Rules);
+
+                RoomManageComponent.Instance.GetRoom(message.RoomId)?.Room.AddRules(message.Rules);
             }
             catch (Exception e)
             {
