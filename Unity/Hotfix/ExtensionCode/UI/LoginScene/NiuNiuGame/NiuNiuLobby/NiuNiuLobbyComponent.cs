@@ -23,15 +23,31 @@ namespace ETHotfix
         }
     }
 
+    [ObjectSystem]
+    public class NiuNiuLobbyUpdateStartSystem : UpdateSystem<NiuNiuLobbyComponent>
+    {
+        public override void Update(NiuNiuLobbyComponent self)
+        {
+            self.Update();
+        }
+    }
+
     public class NiuNiuLobbyComponent : Component
     {
-
         private UI _nnCreateRoom;
         private UI _nnLobbyMenu;
         private UI _nnJoinRoom;
 
         private GameObject _userIdText;
         private GameObject _diamondText;
+
+        private float _barMoveSpeed;
+        private bool _isMoveBar;
+
+        private RectTransform barTextTransform;
+        private RectTransform posLeftTransform;
+        private RectTransform posRightTransform;
+
 
         public async void Awake()
         {
@@ -42,6 +58,17 @@ namespace ETHotfix
             // 用户信息
             _userIdText = rc.Get<GameObject>("UserIdText");
             _diamondText = rc.Get<GameObject>("DiamondText");
+
+            var _barText = rc.Get<GameObject>("NiuNiuNoticeBar").transform.Find("mask/NoticeBarText").gameObject;
+            var _barPosLeft = rc.Get<GameObject>("NiuNiuNoticeBar").transform.Find("BarPosLeft").gameObject;
+            var _barPosRight = rc.Get<GameObject>("NiuNiuNoticeBar").transform.Find("BarPosRight").gameObject;
+
+            barTextTransform = _barText.GetComponent<RectTransform>();
+            posLeftTransform = _barPosLeft.GetComponent<RectTransform>();
+            posRightTransform = _barPosRight.GetComponent<RectTransform>();
+
+            _barMoveSpeed = 10f;
+            _isMoveBar = true;
 
             // 页面
             var nnLobby = rc.Get<GameObject>("NiuNiuLobby");
@@ -76,19 +103,13 @@ namespace ETHotfix
             });
 
             // 加入房间按钮
-            SceneHelperComponent.Instance.MonoEvent.AddButtonClick(lobbyJoinRoomButton.GetComponent<Button>(), () =>
-            {
-                _nnJoinRoom.GameObject.SetActive(true);
-            });
+            SceneHelperComponent.Instance.MonoEvent.AddButtonClick(lobbyJoinRoomButton.GetComponent<Button>(), () => { _nnJoinRoom.GameObject.SetActive(true); });
 
 //            // 牛友群按钮
 //            SceneHelperComponent.Instance.MonoEvent.AddButtonClick(lobbyNiuFriendButton.GetComponent<Button>(), () => { });
 
             // 菜单按钮
-            SceneHelperComponent.Instance.MonoEvent.AddButtonClick(menuBtn.GetComponent<Button>(), () =>
-            {
-                _nnLobbyMenu.GameObject.SetActive(true);
-            });
+            SceneHelperComponent.Instance.MonoEvent.AddButtonClick(menuBtn.GetComponent<Button>(), () => { _nnLobbyMenu.GameObject.SetActive(true); });
 
             #endregion
         }
@@ -110,9 +131,28 @@ namespace ETHotfix
         {
             return _userIdText.GetComponent<Text>().text;
         }
+
         public string GetDiamond()
         {
             return _diamondText.GetComponent<Text>().text;
+        }
+
+        public void Update()
+        {
+            MoveBar();
+        }
+
+        private void MoveBar()
+        {
+            if (_isMoveBar)
+            {
+                Vector2 tempVec2 = new Vector2(barTextTransform.anchoredPosition.x - Time.deltaTime * 10 * _barMoveSpeed, barTextTransform.anchoredPosition.y);
+                barTextTransform.anchoredPosition = tempVec2;
+                if (tempVec2.x < posLeftTransform.anchoredPosition.x)
+                {
+                    barTextTransform.anchoredPosition = posRightTransform.anchoredPosition;
+                }
+            }
         }
     }
 }
