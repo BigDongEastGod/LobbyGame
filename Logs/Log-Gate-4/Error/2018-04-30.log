@@ -435,3 +435,109 @@ MoveNext at offset 514 in file:line:column /Users/sining/Projects/JuAnChess/Lobb
 Error at offset 106 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Server/Model/Base/Log.cs:31:4
 Error at offset 102 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Server/Model/Base/Logger/NLogAdapter.cs:35:4
 
+2018-04-30 10:40:36.5675 Gate     004 System.IO.IOException: Unable to transfer data on the transport connection: Operation canceled. ---> System.Net.Sockets.SocketException: Operation canceled
+   --- End of inner exception stack trace ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at ETModel.CircularBuffer.<ReadFromAsync>d__22.MoveNext() in /Users/sining/Projects/JuAnChess/LobbyGame/Unity/Assets/Scripts/Module/Message/Network/Circularbuffer.cs:line 126
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at ETModel.TChannel.<StartRecv>d__15.MoveNext() in /Users/sining/Projects/JuAnChess/LobbyGame/Unity/Assets/Scripts/Module/Message/Network/TCP/TChannel.cs:line 196 
+ MoveNext at offset 431 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Unity/Assets/Scripts/Module/Message/Network/Circularbuffer.cs:126:7
+SetException at offset 88 in file:line:column <filename unknown>:0:0
+TrySetException at offset 91 in file:line:column <filename unknown>:0:0
+FinishSlow at offset 31 in file:line:column <filename unknown>:0:0
+RunContinuations at offset 501 in file:line:column <filename unknown>:0:0
+RunCallback at offset 69 in file:line:column <filename unknown>:0:0
+Run at offset 113 in file:line:column <filename unknown>:0:0
+MoveNext at offset 514 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Unity/Assets/Scripts/Module/Message/Network/TCP/TChannel.cs:196:6
+Error at offset 106 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Server/Model/Base/Log.cs:31:4
+Error at offset 102 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Server/Model/Base/Logger/NLogAdapter.cs:35:4
+
+2018-04-30 11:42:23.7822 Gate     004 ETModel.RpcException: Error: 2 Message: 
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at ETHotfix.OuterMessageDispatcher.<Dispatch>d__0.MoveNext() in /Users/sining/Projects/JuAnChess/LobbyGame/Server/Hotfix/Module/Message/OuterMessageDispatcher.cs:line 40
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at ETModel.OneThreadSynchronizationContext.<>c__DisplayClass3_0.<Post>b__0() in /Users/sining/Projects/JuAnChess/LobbyGame/Unity/Assets/Scripts/Base/OneThreadSynchronizationContext.cs:line 32
+   at ETModel.OneThreadSynchronizationContext.Update() in /Users/sining/Projects/JuAnChess/LobbyGame/Unity/Assets/Scripts/Base/OneThreadSynchronizationContext.cs:line 26
+   at App.Program.Main(String[] args) in /Users/sining/Projects/JuAnChess/LobbyGame/Server/App/Program.cs:line 129 
+ Main at offset 4638 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Server/App/Program.cs:129:7
+Error at offset 106 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Server/Model/Base/Log.cs:31:4
+Error at offset 102 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Server/Model/Base/Logger/NLogAdapter.cs:35:4
+
+2018-04-30 11:44:49.7408 Gate     004 ETModel.RpcException: Error: 2 Message: 
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at ETHotfix.OuterMessageDispatcher.<Dispatch>d__0.MoveNext() in /Users/sining/Projects/JuAnChess/LobbyGame/Server/Hotfix/Module/Message/OuterMessageDispatcher.cs:line 40
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at ETModel.OneThreadSynchronizationContext.<>c__DisplayClass3_0.<Post>b__0() in /Users/sining/Projects/JuAnChess/LobbyGame/Unity/Assets/Scripts/Base/OneThreadSynchronizationContext.cs:line 32
+   at ETModel.OneThreadSynchronizationContext.Update() in /Users/sining/Projects/JuAnChess/LobbyGame/Unity/Assets/Scripts/Base/OneThreadSynchronizationContext.cs:line 26
+   at App.Program.Main(String[] args) in /Users/sining/Projects/JuAnChess/LobbyGame/Server/App/Program.cs:line 129 
+ Main at offset 4638 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Server/App/Program.cs:129:7
+Error at offset 106 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Server/Model/Base/Log.cs:31:4
+Error at offset 102 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Server/Model/Base/Logger/NLogAdapter.cs:35:4
+
+2018-04-30 11:48:11.7295 Gate     004 ETModel.RpcException: Error: 2 Message: 
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at ETHotfix.OuterMessageDispatcher.<Dispatch>d__0.MoveNext() in /Users/sining/Projects/JuAnChess/LobbyGame/Server/Hotfix/Module/Message/OuterMessageDispatcher.cs:line 40
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at ETModel.OneThreadSynchronizationContext.<>c__DisplayClass3_0.<Post>b__0() in /Users/sining/Projects/JuAnChess/LobbyGame/Unity/Assets/Scripts/Base/OneThreadSynchronizationContext.cs:line 32
+   at ETModel.OneThreadSynchronizationContext.Update() in /Users/sining/Projects/JuAnChess/LobbyGame/Unity/Assets/Scripts/Base/OneThreadSynchronizationContext.cs:line 26
+   at App.Program.Main(String[] args) in /Users/sining/Projects/JuAnChess/LobbyGame/Server/App/Program.cs:line 129 
+ Main at offset 4638 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Server/App/Program.cs:129:7
+Error at offset 106 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Server/Model/Base/Log.cs:31:4
+Error at offset 102 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Server/Model/Base/Logger/NLogAdapter.cs:35:4
+
+2018-04-30 11:52:15.5545 Gate     004 ETModel.RpcException: Error: 2 Message: 
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at ETHotfix.OuterMessageDispatcher.<Dispatch>d__0.MoveNext() in /Users/sining/Projects/JuAnChess/LobbyGame/Server/Hotfix/Module/Message/OuterMessageDispatcher.cs:line 40
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at ETModel.OneThreadSynchronizationContext.<>c__DisplayClass3_0.<Post>b__0() in /Users/sining/Projects/JuAnChess/LobbyGame/Unity/Assets/Scripts/Base/OneThreadSynchronizationContext.cs:line 32
+   at ETModel.OneThreadSynchronizationContext.Update() in /Users/sining/Projects/JuAnChess/LobbyGame/Unity/Assets/Scripts/Base/OneThreadSynchronizationContext.cs:line 26
+   at App.Program.Main(String[] args) in /Users/sining/Projects/JuAnChess/LobbyGame/Server/App/Program.cs:line 129 
+ Main at offset 4638 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Server/App/Program.cs:129:7
+Error at offset 106 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Server/Model/Base/Log.cs:31:4
+Error at offset 102 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Server/Model/Base/Logger/NLogAdapter.cs:35:4
+
+2018-04-30 11:56:32.3796 Gate     004 ETModel.RpcException: Error: 2 Message: 
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at ETHotfix.OuterMessageDispatcher.<Dispatch>d__0.MoveNext() in /Users/sining/Projects/JuAnChess/LobbyGame/Server/Hotfix/Module/Message/OuterMessageDispatcher.cs:line 40
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at ETModel.OneThreadSynchronizationContext.<>c__DisplayClass3_0.<Post>b__0() in /Users/sining/Projects/JuAnChess/LobbyGame/Unity/Assets/Scripts/Base/OneThreadSynchronizationContext.cs:line 32
+   at ETModel.OneThreadSynchronizationContext.Update() in /Users/sining/Projects/JuAnChess/LobbyGame/Unity/Assets/Scripts/Base/OneThreadSynchronizationContext.cs:line 26
+   at App.Program.Main(String[] args) in /Users/sining/Projects/JuAnChess/LobbyGame/Server/App/Program.cs:line 129 
+ Main at offset 4638 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Server/App/Program.cs:129:7
+Error at offset 106 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Server/Model/Base/Log.cs:31:4
+Error at offset 102 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Server/Model/Base/Logger/NLogAdapter.cs:35:4
+
+2018-04-30 12:25:24.1729 Gate     004 ETModel.RpcException: Error: 2 Message: 
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at ETHotfix.OuterMessageDispatcher.<Dispatch>d__0.MoveNext() in /Users/sining/Projects/JuAnChess/LobbyGame/Server/Hotfix/Module/Message/OuterMessageDispatcher.cs:line 40
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at ETModel.OneThreadSynchronizationContext.<>c__DisplayClass3_0.<Post>b__0() in /Users/sining/Projects/JuAnChess/LobbyGame/Unity/Assets/Scripts/Base/OneThreadSynchronizationContext.cs:line 32
+   at ETModel.OneThreadSynchronizationContext.Update() in /Users/sining/Projects/JuAnChess/LobbyGame/Unity/Assets/Scripts/Base/OneThreadSynchronizationContext.cs:line 26
+   at App.Program.Main(String[] args) in /Users/sining/Projects/JuAnChess/LobbyGame/Server/App/Program.cs:line 129 
+ Main at offset 4638 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Server/App/Program.cs:129:7
+Error at offset 106 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Server/Model/Base/Log.cs:31:4
+Error at offset 102 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Server/Model/Base/Logger/NLogAdapter.cs:35:4
+

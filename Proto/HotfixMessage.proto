@@ -175,13 +175,16 @@ message RoomInfoRequest // IActorRequest
 {
 	required int64 RoomId = 1;
 
-	required int16 Message = 2;  // 消息分类 -1：获取房间ID 0：加入房间 1：准备
+	required int16 Message = 2;  // 消息分类 -1：获取房间ID 0：加入房间 1：准备 2：获取当前房间玩家列表
 }
+// Error消息分类 0:处理成功 1:房间人数满
 message RoomInfoResponse // IActorResponse
 {
 	optional int64 RoomId = 1;
 
-	optional bytes Rules = 2;
+	optional bytes Rules = 2;  
+
+	repeated AccountInfo Players = 3;	
 }
 // 加入房间消息通告
 message RoomInfoAnnunciate // IActorMessage
