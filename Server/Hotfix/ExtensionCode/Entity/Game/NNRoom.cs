@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using CSharpx;
-using ETHotfix;
+using ETModel;
 
-namespace ETModel
+namespace ETHotfix
 {
     /// <summary>
     /// 牛牛房间系统

@@ -161,6 +161,7 @@ GameObject:
   - component: {fileID: 224290674810150144}
   - component: {fileID: 222459828696273526}
   - component: {fileID: 114239913898440824}
+  - component: {fileID: 114174777977873062}
   - component: {fileID: 114385997509301596}
   m_Layer: 0
   m_Name: niuniuRoomOperation
@@ -251,6 +252,18 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114174777977873062
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1987286071121384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8347f75bbf20473292de676504ad7398, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CanvasName: GameCanvas
 --- !u!114 &114196912686514682
 MonoBehaviour:
   m_ObjectHideFlags: 1
