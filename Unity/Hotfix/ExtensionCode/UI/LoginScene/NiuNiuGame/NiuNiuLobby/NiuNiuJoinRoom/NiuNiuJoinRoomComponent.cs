@@ -123,7 +123,24 @@ namespace ETHotfix
                 Debug.Log("请输入6位房间号");
                 return;
             }
+            
+            
+                        
             Debug.Log("加入房间:" + paijuNumber);
+            var roomInfoResponse = (RoomInfoResponse) await SceneHelperComponent.Instance.Session.Call(
+                new RoomInfoRequest() {RoomId = Convert.ToInt64(paijuNumber), Message = 0});
+            if (roomInfoResponse.Error == 0)
+            {
+                Debug.Log("加入房间成功,跳转至游戏主场景");
+
+                Game.Scene.GetComponent<UIComponent>().Remove(UIType.NiuNiuLobby);
+                Game.Scene.GetComponent<UIComponent>().Create(UIType.NiuNiuMain, UiLayer.Bottom);
+            }
+            else
+            {
+                Debug.Log("加入房间失败: " + roomInfoResponse.Message);
+            }
+
         }
 
         /// <summary>

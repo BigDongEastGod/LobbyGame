@@ -32,7 +32,9 @@ namespace ETHotfix
 
         private GameObject _roomPeople6;
         private GameObject _optionsLayout;
-        public NiuNiuRule _curretNiuNiuRule;
+        private NiuNiuRule _curretNiuNiuRule;
+
+        private GameObject _createRoomBtn;
 
         public void Awake()
         {
@@ -51,7 +53,7 @@ namespace ETHotfix
 //            var _roomPeople8 = rc.Get<GameObject>("roomPeople_8");
             _optionsLayout = rc.Get<GameObject>("OptionsLayout");
             var toggleBtn = rc.Get<GameObject>("ToggleBtn");
-            var createRoomBtn = rc.Get<GameObject>("CreateRoomBtn");
+            _createRoomBtn = rc.Get<GameObject>("CreateRoomBtn");
 
             #endregion
 
@@ -87,7 +89,7 @@ namespace ETHotfix
                 }
             }
 
-            SceneHelperComponent.Instance.MonoEvent.AddButtonClick(createRoomBtn.GetComponent<Button>(), CreatePaiJu);
+            SceneHelperComponent.Instance.MonoEvent.AddButtonClick(_createRoomBtn.GetComponent<Button>(), CreatePaiJu);
         }
 
         public void Start()
@@ -279,6 +281,11 @@ namespace ETHotfix
             }
         }
 
+        /// <summary>
+        /// 发送规则,加入房间
+        /// </summary>
+        /// <param name="roomId">房间号</param>
+        /// <param name="isJoin">是否加入房间</param>
         private async void SendRuleAndJoinRoom(long roomId, bool isJoin)
         {
             NNChess nnChess = GetCurrentNnChess();
@@ -286,7 +293,7 @@ namespace ETHotfix
             var roomRulesResponse = (RoomRulesResponse) await SceneHelperComponent.Instance.Session.Call(
                 new RoomRulesRequest() {RoomId = roomId, Rules = ProtobufHelper.ToBytes(nnChess)});
 
-            Debug.Log("nnChess.Score: " + GetCurrentNnChess().Score);
+            Debug.Log("nnChess.Score: " + nnChess.Score);
             Debug.Log("RoomRulesResponse Error code: " + roomRulesResponse.Error);
             Debug.Log("RoomRulesResponse Message: " + roomRulesResponse.Message);
 
@@ -428,6 +435,16 @@ namespace ETHotfix
             nnChess.PlayerCount = _roomPeople6.GetComponent<Toggle>().isOn ? 6 : 8;
 
             return nnChess;
+        }
+
+        public void LockCreateBtn()
+        {
+            _createRoomBtn.GetComponent<Button>().enabled = false;
+        }
+
+        public void UnLockCreateBtn()
+        {
+            _createRoomBtn.GetComponent<Button>().enabled = true;
         }
     }
 }
