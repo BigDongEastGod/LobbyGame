@@ -10,8 +10,6 @@ namespace ETHotfix
     /// </summary>
     public class NNRoom : Room
     {
-        public readonly Dictionary<SPlayer, bool> Players = new Dictionary<SPlayer, bool>();
-
         private int currentDish = 0;
 
         private NNChess chessRules;
@@ -28,42 +26,41 @@ namespace ETHotfix
             return Players.Keys.FirstOrDefault(d => d == player) != null ? this.Id : 0;
         }
 
-        public override void JionRoom(SPlayer player)
+        public override int JionRoom(SPlayer player)
         {
             // 当玩家已经在这个房间里
 
-            if (Players.ContainsKey(player))
-            {
-                player.GetActorProxy.Send(new RoomInfoAnnunciate() {AccountId = player.Id, Message = -2});
-
-                return;
-            }
+            if (Players.ContainsKey(player)) return 0;
 
             // 如果房间小于指定人数，加入这个房间，并发送数据给房间里其他玩家
             
             if (Players.Count < chessRules.PlayerCount)
             {
                 Players.Add(player, false);
+                
+                Players.Keys.Where(d => d != player).ForEach(d => d.GetActorProxy.Send(new RoomInfoAnnunciate() {AccountId = player.Id, Message = 0}));
 
-                return;
+                return 0;
             }
             
             // 发送房间人数满的消息
 
-            player.GetActorProxy.Send(new RoomInfoAnnunciate() {AccountId = player.Id, Message = -1});
+            return 1;
         }
 
         /// <summary>
         /// 准备游戏
         /// </summary>
         /// <param name="player"></param>
-        public override void Prepare(SPlayer player)
+        public override int Prepare(SPlayer player)
         {
-            if (!Players.ContainsKey(player)) return;
+            if (!Players.ContainsKey(player)) return -1;
             
             Players[player] = true;
 
             Players.Keys.Where(d => d != player).ForEach(d => d.GetActorProxy.Send(new RoomInfoAnnunciate() {AccountId = player.Id, Message = 0}));
+
+            return 0;
         }
 
         public override void QuitRoom(SPlayer player)

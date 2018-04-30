@@ -62,18 +62,6 @@ namespace ETHotfix
         {
             Log.Debug("已经做到删除标记");
 
-            // 删除Actor
-
-            Game.Scene.GetComponent<ActorProxyComponent>().Remove(player.GateSessionId);
-
-            // 删除在Location的注册
-
-            await player.GetComponent<ActorComponent>().RemoveLocation();
-
-            // 删除在Actor管理组件中
-
-            Game.Scene.GetComponent<ActorManagerComponent>()?.Remove(player.Id);
-
             player.IsActivity = false;
 
             await Task.Delay(waitTime);
@@ -82,6 +70,20 @@ namespace ETHotfix
 
             if (player.IsActivity == false)
             {
+                // 删除Actor
+
+                Game.Scene.GetComponent<ActorProxyComponent>().Remove(player.GateSessionId);
+
+                // 删除在Actor管理组件中
+
+                Game.Scene.GetComponent<ActorManagerComponent>()?.Remove(player.Id);
+                
+                await Game.Scene.GetComponent<LocationProxyComponent>().Remove(player.GateSessionId);
+                
+                // 删除在Location的注册
+
+                await player.GetComponent<ActorComponent>().RemoveLocation();
+                
                 self.RemovePlayer(player);
 
                 player.Dispose();

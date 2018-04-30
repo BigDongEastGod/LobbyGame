@@ -24,9 +24,14 @@ namespace ETHotfix
                     {
                         var playerroom = RoomManageComponent.Instance.GetRommByPlayer(player);
 
-                        response.RoomId = playerroom.Id;
+                        if (playerroom != null)
+                        {
+                            response.RoomId = playerroom.Room.Id;
 
-                        response.Rules = playerroom.Rules;
+                            response.Rules = playerroom.Room.Rules;
+
+                            response.Players = await RoomManageComponent.Instance.GetRoomPlayers(playerroom.Room);
+                        }
                     }
                     
                     reply(response);
@@ -56,11 +61,11 @@ namespace ETHotfix
                 switch (@message.Message)
                 {
                     case 0: // 加入房间
-                        room.JionRoom(player);
+                        response.Error = room.Room.JionRoom(player);
                         break;
 
                     case 1: // 准备
-                        room.Prepare(player);
+                        response.Error = room.Room.Prepare(player);
                         break;
                 }
             }

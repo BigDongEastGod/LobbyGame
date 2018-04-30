@@ -26,16 +26,7 @@ namespace ETHotfix
                 
                 response.RoomId = room?.Id ?? 0;
 
-                if (room != null)
-                {
-                    Log.Debug("用户：" + player.Id + "创建房间号：" + response.RoomId);
-                }
-                else
-                {
-                    response.Error = -2;
-
-                    response.Message = "您已经创建了一个房间，不能再创建房间了";
-                }
+                Log.Debug("用户：" + player.Id + "创建房间号：" + response.RoomId);
 
             }
             catch (Exception e)
