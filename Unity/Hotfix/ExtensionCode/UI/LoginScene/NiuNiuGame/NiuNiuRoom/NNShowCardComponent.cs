@@ -33,10 +33,11 @@ namespace ETHotfix
         private RectTransform mainCardPos;           //主卡牌像位置
         private Vector2 LicensingPos;                //发牌位置 
         private ReferenceCollector rc;
+     
 
         #endregion
  
-        public void Awake()
+        public async void Awake()
         {
             sixTableList=new List<Vector2>();
             eightTableList=new List<Vector2>();
@@ -49,7 +50,6 @@ namespace ETHotfix
             var mainTitle = rc.Get<GameObject>("mainTitle");
             LicensingPos = rc.Get<GameObject>("LicensingPos").GetComponent<RectTransform>().anchoredPosition;
             NNCardPrefab= rc.Get<GameObject>("NiuNIuCard");
-            
         }
         
         //屏幕适配需要获得的位置
@@ -86,7 +86,7 @@ namespace ETHotfix
         /// 创建本地头像
         /// </summary>
         /// <param name="ChairIndex">椅子索引</param>
-        public void CreateHead(int ChairIndex)
+        public void CreateHead(int ChairIndex,AccountInfo playerInfo)
         {
             UI headUI= Game.Scene.GetComponent<UIComponent>().Create(UIType.HeadUIForm,currentTableObj);
             
@@ -95,7 +95,7 @@ namespace ETHotfix
             if (ChairIndex == -1)
             {
                 headUI.GameObject.GetComponent<RectTransform>().anchoredPosition = mainHeadPos.anchoredPosition;
-                headUI.GetComponent<HeadUIFormComponent>().SetHeadUserInfo();
+                headUI.GetComponent<HeadUIFormComponent>().SetHeadUserInfo(playerInfo);
                 index = -1;
             }
             else
@@ -107,6 +107,13 @@ namespace ETHotfix
             HeadUIDict.Add(1,headUI);
         }
         
+        //获得准备好玩家数据
+        private async void GetAllReadyInfo()
+        {
+            var response = (RoomInfoResponse) await SceneHelperComponent.Instance.Session.Call(new RoomInfoRequest());
+        }
+
+
         //取得对应位置的UI
         private UI GetIndexUI(short index)
         {
