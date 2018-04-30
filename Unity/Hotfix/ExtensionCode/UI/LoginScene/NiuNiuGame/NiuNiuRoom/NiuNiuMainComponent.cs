@@ -21,9 +21,9 @@ namespace ETHotfix
     {
         private Text roomNum;               //房间号码文本
         private long roomId;                //房间号码
-        private UI showCardUI;
-        private Button sitDownBt;
-        
+        private UI showCardUI;              //卡牌存放窗口
+        private Button sitDownBt;           //坐下按钮
+        private Button startGameBt;         //开始按钮
         
        public async void Awake()
         {
@@ -51,7 +51,7 @@ namespace ETHotfix
             //声音按钮
             var audioButton=rc.Get<GameObject>("AudioButton");
             //开始游戏按钮
-            var startGameBt=rc.Get<GameObject>("StartGameBt");
+            startGameBt=rc.Get<GameObject>("StartGameBt").GetComponent<Button>();
             //坐下按钮
             sitDownBt=rc.Get<GameObject>("SitDownBt").GetComponent<Button>();
             //不抢庄按钮
@@ -135,6 +135,7 @@ namespace ETHotfix
             {
                 Debug.Log("成功坐下");
                 sitDownBt.gameObject.SetActive(false);
+                startGameBt.GetComponent<Animator>().SetInteger("IsMiddle",1);
                 showCardUI.GetComponent<NNShowCardComponent>().CreateHead(-1);
             }
         }
