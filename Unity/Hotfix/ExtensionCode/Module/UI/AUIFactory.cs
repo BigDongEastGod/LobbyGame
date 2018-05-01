@@ -31,6 +31,11 @@ namespace ETHotfix
                 return null;
             }
         }
+        
+        public virtual UI Create(Scene scene, string type, GameObject parent, params object[] args)
+        {
+            return Create(scene, type, parent);
+        }
 
         public virtual void Remove(string type)
         {
