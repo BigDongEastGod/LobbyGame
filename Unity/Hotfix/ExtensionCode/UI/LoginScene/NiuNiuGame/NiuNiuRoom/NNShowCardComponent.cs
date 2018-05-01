@@ -100,7 +100,9 @@ namespace ETHotfix
             }
             else
             {
+                Debug.Log("我来到这里拉");
                 headUI.GameObject.transform.localScale=new Vector2(0.7f,0.7f);
+                Debug.Log("这个头像的位置是"+currentTablePosList[ChairIndex]);
                 headUI.GameObject.GetComponent<RectTransform>().anchoredPosition = currentTablePosList[ChairIndex];
                 index = (short)ChairIndex;
             }

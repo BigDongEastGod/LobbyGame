@@ -26,8 +26,14 @@ namespace ETHotfix
         private Button startGameBt;                  //开始按钮
         public GetAccountInfoResponse Player;        //当前玩家数据
         public RoomInfoResponse roomInfo;            //房间信息
-        
-       public async void Awake()
+
+        public long GetRoomId
+        {
+            get { return roomId; }
+            set { roomId = value; }
+        }
+
+        public async void Awake()
         {
             ReferenceCollector rc = this.GetParent<UI>().GameObject.GetComponent<ReferenceCollector>();
             
@@ -87,7 +93,7 @@ namespace ETHotfix
             var accountResponse = (GetAccountInfoResponse) await SceneHelperComponent.Instance.Session.Call(new GetAccountInfoRequest());
             Player = accountResponse;
             //请求获得当前房间准备好的玩家信息
-            var response =(RoomInfoResponse) await SceneHelperComponent.Instance.Session.Call(new RoomInfoRequest() {RoomId = 0, Message = -1});
+            var response =(RoomInfoResponse) await SceneHelperComponent.Instance.Session.Call(new RoomInfoRequest() {RoomId = roomId, Message = 0});
             roomInfo = response;
             //获得房间规则信息
             var rules = response.Rules == null ? null : ProtobufHelper.FromBytes<NNChess>(response.Rules);
@@ -159,6 +165,7 @@ namespace ETHotfix
         {
             for (int i = 0; i < roomInfo.Players.Count; i++)
             {
+                Debug.Log("我进来了索引是"+i);
                 showCardUI.GetComponent<NNShowCardComponent>().CreateHead(i,roomInfo.Players[i]);
             }
         }
