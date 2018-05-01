@@ -22,15 +22,6 @@ namespace ETHotfix
         }
     }
 
-    [ObjectSystem]
-    public class LobbyComponentStartSystem : StartSystem<LobbyComponent>
-    {
-        public override void Start(LobbyComponent self)
-        {
-            self.Start();
-        }
-    }
-
     public class LobbyComponent : Component
     {
         private GameObject _userIdText;
@@ -69,18 +60,9 @@ namespace ETHotfix
             {
                 // TODO 启动牛牛
                 Game.Scene.GetComponent<UIComponent>().Create(UIType.NiuNiuLobby, UiLayer.Bottom);
-
-                UI niuniuLobbyUi = Game.Scene.GetComponent<UIComponent>().Get(UIType.NiuNiuLobby);
-                niuniuLobbyUi.GetComponent<NiuNiuLobbyComponent>().InitUserInfo(response.AccountInfo.UserName, response.AccountInfo.Diamond.ToString());
-
                 Game.Scene.GetComponent<UIComponent>().Remove(UIType.Lobby);
             });
         }
-
-        public void Start()
-        {
-        }
-
 
         public void Update()
         {
@@ -88,7 +70,7 @@ namespace ETHotfix
         }
 
 
-        public void InitUserInfo(string userName, string diamond)
+        private void InitUserInfo(string userName, string diamond)
         {
             _userIdText.GetComponent<Text>().text = userName;
             _diamondText.GetComponent<Text>().text = diamond;
