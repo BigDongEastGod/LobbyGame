@@ -15,6 +15,8 @@ namespace ETHotfix
 
         public override void AddRules(byte[] rules)
         {
+            Rules = rules;
+            
             ChessRules = ProtobufHelper.FromBytes<NNChess>(rules);
         }
 
@@ -86,7 +88,7 @@ namespace ETHotfix
 
             Players.Where(d => d != player).ForEach(d => d.GetActorProxy.Send(response));
             
-            Guest.ForEach(d => d.GetActorProxy.Send(response));
+            Guest.Where(d => d != player).ForEach(d => d.GetActorProxy.Send(response));
         }
 
         public override void StartGame()

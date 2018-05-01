@@ -1,0 +1,4 @@
+2018-05-01 15:54:36.7310 Map      006 (CreateRoomHandler.cs:21) 房间类型：NN
+2018-05-01 15:54:36.7510 Map      006 (CreateRoomHandler.cs:29) 用户：662864470409257创建房间号：202829
+2018-05-01 15:54:36.8193 Map      006 (RoomRulesHandler.cs:35) 22222222222222
+2018-05-01 15:54:42.8806 Map      006 (PlayerManageComponent.cs:63) 已经做到删除标记

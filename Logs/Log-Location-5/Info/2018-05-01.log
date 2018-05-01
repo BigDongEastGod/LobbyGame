@@ -1,0 +1,4 @@
+2018-05-01 15:53:27.3288 Location 005 (Program.cs:43) server start........................ 5 Location
+2018-05-01 15:54:32.7414 Location 005 (LocationComponent.cs:100) location add key: 662864470409257 appid: 6
+2018-05-01 15:54:32.8194 Location 005 (LocationComponent.cs:100) location add key: 1225852875964469 appid: 4
+2018-05-01 15:54:32.9236 Location 005 (LocationComponent.cs:207) location get key: 662864470409257 6
