@@ -94,7 +94,7 @@ namespace ETHotfix
             var accountResponse = (GetAccountInfoResponse) await SceneHelperComponent.Instance.Session.Call(new GetAccountInfoRequest());
             Player = accountResponse;
             //请求获得当前房间准备好的玩家信息
-            var response =(RoomInfoResponse) await SceneHelperComponent.Instance.Session.Call(new RoomInfoRequest() {RoomId = roomId, Message = 0});
+            var response =(RoomInfoResponse) await SceneHelperComponent.Instance.Session.Call(new RoomInfoRequest() {RoomId = roomId});
             roomInfo = response;
             //获得房间规则信息
             var rules = response.Rules == null ? null : ProtobufHelper.FromBytes<NNChess>(response.Rules);
@@ -151,7 +151,7 @@ namespace ETHotfix
 
         private async void GetRoomInfo()
         {
-            var response =(RoomInfoResponse) await SceneHelperComponent.Instance.Session.Call(new RoomInfoRequest() {RoomId = roomId, Message = 1});
+            var response =(PrepareGameResponse) await SceneHelperComponent.Instance.Session.Call(new PrepareGameRequest(){RoomId = roomId});
             if (response.Error==0)
             {
                 Debug.Log("成功坐下");
