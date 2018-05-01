@@ -23,8 +23,9 @@ namespace ETHotfix
         public Image BetsTitleImg;             //下注
         public Text BetsTxt;                   //下注金币 
         public Image SelectImg;                //特效选择
+     
         
-        public void Awake()
+        public async void Awake()
         {
             ReferenceCollector rc = this.GetParent<UI>().GameObject.GetComponent<ReferenceCollector>();
             
@@ -35,12 +36,16 @@ namespace ETHotfix
             BetsTitleImg = rc.Get<GameObject>("BetsTitleImg").GetComponent<Image>();
             BetsTxt = BetsTitleImg.gameObject.transform.GetChild(0).GetComponent<Text>();
             SelectImg = rc.Get<GameObject>("SelectImg").GetComponent<Image>();
+            
         }
 
-        public async void SetHeadUserInfo()
+        public async void SetHeadUserInfo(AccountInfo playerInfo)
         {
-            var response = (GetAccountInfoResponse) await SceneHelperComponent.Instance.Session.Call(new GetAccountInfoRequest());
-            userNameTxt.text = response.AccountInfo.UserName;
+            userNameTxt.text = playerInfo.UserName;
         }
+
+     
+
+
     }
 }

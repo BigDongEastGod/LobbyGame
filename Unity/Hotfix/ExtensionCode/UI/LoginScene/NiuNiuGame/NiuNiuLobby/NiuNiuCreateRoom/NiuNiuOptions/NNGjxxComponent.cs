@@ -36,23 +36,30 @@ namespace ETHotfix
 
         private GameObject allSelectBtn;
 
+        private GameObject nnGaoJiXuanXiangDp;
+
         // 勾选的选项索引集合
         public List<int> SelectedOptions;
 
-        public UI NNTspx;
+        private GameObject SelectedText;
+
+        private UI NNTspx;
+        private UI NNCreateRoom;
 
         public void Awake()
         {
             ReferenceCollector rc = this.GetParent<UI>().GameObject.GetComponent<ReferenceCollector>();
 
             nnOptionShowBox = rc.Get<GameObject>("NiuNiuGjxx");
-            var nnGaoJiXuanXiangDp = rc.Get<GameObject>("GaoJiXuanXiangDp");
+            nnGaoJiXuanXiangDp = rc.Get<GameObject>("GaoJiXuanXiangDp");
             _osbPanel = rc.Get<GameObject>("OptionShowBoxPanel");
 
             allSelectBtn = rc.Get<GameObject>("AllSelectBtn");
             optionShowBoxGrid = rc.Get<GameObject>("OptionShowBoxGrid");
 
             nnOptionItemPrefab = rc.Get<GameObject>("NN_OptionItem");
+
+            SelectedText = nnGaoJiXuanXiangDp.transform.Find("Label").gameObject;
 
             SelectedOptions = new List<int>();
 
@@ -62,6 +69,7 @@ namespace ETHotfix
                 NNTspx.GetComponent<NNTspxComponent>().CloseMask();
                 _osbPanel.SetActive(true);
                 nnOptionShowBox.GetComponent<Image>().raycastTarget = true;
+                NNCreateRoom.GetComponent<NiuNiuCRComponent>().LockCreateBtn();
             });
             SceneHelperComponent.Instance.MonoEvent.AddButtonClick(allSelectBtn.GetComponent<Button>(), () =>
             {
@@ -74,12 +82,12 @@ namespace ETHotfix
                     ClearAllOptions();
                 }
             });
-
         }
 
         public void Start()
         {
             NNTspx = Game.Scene.GetComponent<UIComponent>().Get(UIType.NiuNiuTspx);
+            NNCreateRoom = Game.Scene.GetComponent<UIComponent>().Get(UIType.NiuNiuCreateRoom);
 
             for (int i = 0; i < NiuNiuRuleInstance.ZiYouQiangZhuang.ListGaoJiXuanXiang.Count; i++)
             {
@@ -87,7 +95,8 @@ namespace ETHotfix
                 gameobject.transform.Find("Text").GetComponent<Text>().text = NiuNiuRuleInstance.ZiYouQiangZhuang.ListGaoJiXuanXiang[i];
                 gameobject.name = i.ToString();
                 _osbPanel.GetComponent<RectTransform>().sizeDelta = new Vector2(1124f, 350f);
-                _osbPanel.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 350f / 2 + 0.5f);
+                Vector2 tempPos = nnGaoJiXuanXiangDp.transform.Find("Row2Pos").GetComponent<RectTransform>().anchoredPosition;
+                _osbPanel.GetComponent<RectTransform>().anchoredPosition = tempPos;
 
                 SceneHelperComponent.Instance.MonoEvent.AddButtonClick(gameobject.GetComponent<Button>(), () =>
                 {
@@ -96,17 +105,19 @@ namespace ETHotfix
                         gameobject.transform.Find("UnSelected").gameObject.SetActive(false);
                         gameobject.transform.Find("Selected").gameObject.SetActive(true);
                         SelectedOptions.Add(Convert.ToInt32(gameobject.name));
+                        RefreshOptionsText();
                     }
                     else
                     {
                         gameobject.transform.Find("UnSelected").gameObject.SetActive(true);
                         gameobject.transform.Find("Selected").gameObject.SetActive(false);
                         SelectedOptions.Remove(Convert.ToInt32(gameobject.name));
+                        RefreshOptionsText();
                     }
                 });
             }
-            
-            
+
+
             RefreshShowItem(NiuNiuRuleInstance.NiuNiuShangZhuang.ListGaoJiXuanXiang.Count);
         }
 
@@ -114,6 +125,7 @@ namespace ETHotfix
         {
             _osbPanel.SetActive(false);
             nnOptionShowBox.GetComponent<Image>().raycastTarget = false;
+            NNCreateRoom.GetComponent<NiuNiuCRComponent>().UnLockCreateBtn();
         }
 
 
@@ -125,17 +137,20 @@ namespace ETHotfix
             if (ruleCount <= 3)
             {
                 _osbPanel.GetComponent<RectTransform>().sizeDelta = new Vector2(1124f, 187f);
-                _osbPanel.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 187f / 2 + 0.5f);
+                Vector2 tempPos = nnGaoJiXuanXiangDp.transform.Find("Row1Pos").GetComponent<RectTransform>().anchoredPosition;
+                _osbPanel.GetComponent<RectTransform>().anchoredPosition = tempPos;
             }
             else if (ruleCount > 3 && ruleCount <= 6)
             {
                 _osbPanel.GetComponent<RectTransform>().sizeDelta = new Vector2(1124f, 269f);
-                _osbPanel.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 269f / 2 + 0.5f);
+                Vector2 tempPos = nnGaoJiXuanXiangDp.transform.Find("Row2Pos").GetComponent<RectTransform>().anchoredPosition;
+                _osbPanel.GetComponent<RectTransform>().anchoredPosition = tempPos;
             }
             else
             {
                 _osbPanel.GetComponent<RectTransform>().sizeDelta = new Vector2(1124f, 350f);
-                _osbPanel.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 350f / 2 + 0.5f);
+                Vector2 tempPos = nnGaoJiXuanXiangDp.transform.Find("Row3Pos").GetComponent<RectTransform>().anchoredPosition;
+                _osbPanel.GetComponent<RectTransform>().anchoredPosition = tempPos;
             }
 
             for (int i = 0; i < optionShowBoxGrid.transform.childCount; i++)
@@ -160,9 +175,15 @@ namespace ETHotfix
             {
                 item.Find("UnSelected").gameObject.SetActive(true);
                 item.Find("Selected").gameObject.SetActive(false);
-                if (SelectedOptions.Contains(itemIndex)) SelectedOptions.Remove(itemIndex);
+                if (SelectedOptions.Contains(itemIndex))
+                {
+                    SelectedOptions.Remove(itemIndex);
+                }
+
                 itemIndex++;
             }
+
+            SelectedText.GetComponent<Text>().text = "无";
         }
 
         private void SelectedAllOptions()
@@ -174,8 +195,35 @@ namespace ETHotfix
             {
                 item.Find("UnSelected").gameObject.SetActive(false);
                 item.Find("Selected").gameObject.SetActive(true);
-                if (!SelectedOptions.Contains(itemIndex)) SelectedOptions.Add(itemIndex);
+                if (!SelectedOptions.Contains(itemIndex))
+                {
+                    SelectedOptions.Add(itemIndex);
+                }
+
                 itemIndex++;
+            }
+
+            RefreshOptionsText();
+        }
+
+        private void RefreshOptionsText()
+        {
+            SelectedText.GetComponent<Text>().text = "";
+
+            int count = 0;
+
+            foreach (Transform select in optionShowBoxGrid.transform)
+            {
+                if (select.Find("Selected").gameObject.activeSelf)
+                {
+                    SelectedText.GetComponent<Text>().text += select.Find("Text").GetComponent<Text>().text + "    ";
+                    count++;
+                }
+            }
+
+            if (count == 0)
+            {
+                SelectedText.GetComponent<Text>().text = "无";
             }
         }
     }
