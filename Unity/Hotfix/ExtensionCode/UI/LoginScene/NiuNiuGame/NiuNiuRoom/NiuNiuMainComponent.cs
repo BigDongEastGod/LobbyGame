@@ -1,4 +1,5 @@
-﻿using ETModel;
+﻿using System;
+using ETModel;
 using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.UI;
@@ -19,7 +20,7 @@ namespace ETHotfix
     public class NiuNiuMainComponent:Component
     {
         private Text roomNum;                        //房间号码文本
-        private long roomId;                         //房间号码
+        private long m_roomId;                         //房间号码
         private UI showCardUI;                       //卡牌存放窗口
         private Button sitDownBt;                    //坐下按钮
         private Button startGameBt;                  //开始按钮
@@ -28,12 +29,13 @@ namespace ETHotfix
 
         public async void Awake(object[] args)
         {
-            SetRoomInfo((long) args[0]);
+            SetRoomInfo(Convert.ToInt64(args[0]));
         }
-
+        
         //初始化数据
         private async void SetRoomInfo(long roomId)
         {
+            Debug.Log("加入房间"+roomId);
             ReferenceCollector rc = this.GetParent<UI>().GameObject.GetComponent<ReferenceCollector>();
             
             //房间分线图
@@ -90,30 +92,34 @@ namespace ETHotfix
             var bottomScoreText  = rc.Get<GameObject>("BottomScoreText").GetComponent<Text>();
             //房间局数
             var roomCountText  = rc.Get<GameObject>("roomCountText").GetComponent<Text>();
+            
             //获取当前账号
             var accountResponse = (GetAccountInfoResponse) await SceneHelperComponent.Instance.Session.Call(new GetAccountInfoRequest());
             Player = accountResponse;
+            
             //请求获得当前房间准备好的玩家信息
             var response =(RoomInfoResponse) await SceneHelperComponent.Instance.Session.Call(new RoomInfoRequest() {RoomId = roomId});
             roomInfo = response;
             //获得房间规则信息
             var rules = response.Rules == null ? null : ProtobufHelper.FromBytes<NNChess>(response.Rules);
             //设置房间号
-            roomId = response.RoomId;
-            roomNum.text = response.RoomId == 0 ? null : roomId.ToString();
+            Debug.Log("roomId"+roomId);
+            m_roomId = roomId;
+            roomNum.text = roomId.ToString();
             //TODo.....庄位信息
             //zhuangWeiTxt=rules.
-            
+
             //设置房间底分
-            bottomScoreText.text = rules.Score.ToString();
+              bottomScoreText.text = rules.Score.ToString();
             //设置房间局数
-            roomCountText.text = "1/"+rules.Dish.ToString();
+              roomCountText.text = "1/"+rules.Dish.ToString();
             //获得房间显示卡牌窗口
             showCardUI=Game.Scene.GetComponent<UIComponent>().Create(UIType.NNShowCard, UiLayer.Medium);
             //设置房间人数
             showCardUI.GetComponent<NNShowCardComponent>().roomPeople =(ushort)rules.PlayerCount;
             //加载所需要的位置信息
             showCardUI.GetComponent<NNShowCardComponent>().GetCurrentTablePos();
+            
             //房间信息窗口事件注册
             SceneHelperComponent.Instance.MonoEvent.AddButtonClick(roomInfoButton.GetComponent<Button>(), () =>
             {
@@ -145,10 +151,9 @@ namespace ETHotfix
             
         }
 
-
         private async void GetRoomInfo()
         {
-            var response =(PrepareGameResponse) await SceneHelperComponent.Instance.Session.Call(new PrepareGameRequest(){RoomId = roomId});
+            var response =(PrepareGameResponse) await SceneHelperComponent.Instance.Session.Call(new PrepareGameRequest(){RoomId = m_roomId});
             if (response.Error==0)
             {
                 Debug.Log("成功坐下");
