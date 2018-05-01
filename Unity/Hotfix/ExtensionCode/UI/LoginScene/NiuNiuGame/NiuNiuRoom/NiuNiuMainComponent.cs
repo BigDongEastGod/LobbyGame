@@ -145,7 +145,6 @@ namespace ETHotfix
             
         }
 
-
         private async void GetRoomInfo()
         {
             var response =(PrepareGameResponse) await SceneHelperComponent.Instance.Session.Call(new PrepareGameRequest(){RoomId = roomId});
