@@ -12,7 +12,7 @@ namespace ETHotfix
             self.Awake();
         }
     }
-    
+
     
     public class HeadUIFormComponent:Component
     {
@@ -23,7 +23,7 @@ namespace ETHotfix
         public Image BetsTitleImg;             //下注
         public Text BetsTxt;                   //下注金币 
         public Image SelectImg;                //特效选择
-     
+
         
         public async void Awake()
         {
