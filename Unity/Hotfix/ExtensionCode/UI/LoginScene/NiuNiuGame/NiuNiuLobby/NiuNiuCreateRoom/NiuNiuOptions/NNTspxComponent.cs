@@ -47,6 +47,8 @@ namespace ETHotfix
         private UI NNGjxx;
         private UI NNCreateRoom;
 
+        private int _ruleCount;
+
         public void Awake()
         {
             ReferenceCollector rc = this.GetParent<UI>().GameObject.GetComponent<ReferenceCollector>();
@@ -67,6 +69,11 @@ namespace ETHotfix
             SceneHelperComponent.Instance.MonoEvent.AddButtonClick(nnOptionShowBox.GetComponent<Button>(), CloseMask);
             SceneHelperComponent.Instance.MonoEvent.AddButtonClick(nnTeShuPaiXingDp.GetComponent<Button>(), () =>
             {
+                if (_osbPanel.activeInHierarchy)
+                {
+                    CloseMask();
+                    return;
+                }
                 NNGjxx.GetComponent<NNGjxxComponent>().CloseMask();
                 _osbPanel.SetActive(true);
                 nnOptionShowBox.GetComponent<Image>().raycastTarget = true;
@@ -123,8 +130,13 @@ namespace ETHotfix
                         SelectedOptions.Remove(Convert.ToInt32(gameobject.name));
                         RefreshOptionsText();
                     }
+
+                    CheckAllSelected();
                 });
             }
+
+            RefreshShowItem(NiuNiuRuleInstance.NiuNiuShangZhuang.ListTeShuPaiXing.Count);
+            _ruleCount = NiuNiuRuleInstance.NiuNiuShangZhuang.ListTeShuPaiXing.Count;
         }
 
         public void RefreshShowItem(int ruleCount)
@@ -212,6 +224,30 @@ namespace ETHotfix
             if (count == 0)
             {
                 SelectedText.GetComponent<Text>().text = "无";
+            }
+        }
+
+
+        private void CheckAllSelected()
+        {
+            int count = 0;
+            foreach (Transform item in optionShowBoxGrid.transform)
+            {
+                if (item.Find("Selected").gameObject.activeSelf)
+                {
+                    count++;
+                }
+            }
+
+            if (count == _ruleCount)
+            {
+                allSelectBtn.transform.Find("Selected").gameObject.SetActive(true);
+                allSelectBtn.transform.Find("UnSelected").gameObject.SetActive(false);
+            }
+            else if (count < _ruleCount)
+            {
+                allSelectBtn.transform.Find("Selected").gameObject.SetActive(false);
+                allSelectBtn.transform.Find("UnSelected").gameObject.SetActive(true);
             }
         }
     }

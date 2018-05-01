@@ -49,7 +49,7 @@ namespace ETHotfix
         private RectTransform posRightTransform;
 
 
-        public async void Awake()
+        public void Awake()
         {
             ReferenceCollector rc = this.GetParent<UI>().GameObject.GetComponent<ReferenceCollector>();
 
@@ -76,20 +76,25 @@ namespace ETHotfix
             // 大厅主要按钮
             var lobbyCreateButton = rc.Get<GameObject>("LobbyCreateButton");
             var lobbyJoinRoomButton = rc.Get<GameObject>("LobbyJoinRoomButton");
-            var lobbyNiuFriendButton = rc.Get<GameObject>("LobbyNiuFriendButton");
+//            var lobbyNiuFriendButton = rc.Get<GameObject>("LobbyNiuFriendButton");
 
             // 大厅次要按钮
-            var ruleBtn = rc.Get<GameObject>("RuleBtn");
-            var feedbackBtn = rc.Get<GameObject>("FeedbackBtn");
-            var settingBtn = rc.Get<GameObject>("SettingBtn");
-            var backLobbyBtn = rc.Get<GameObject>("BackLobbyBtn");
-            var portraitBtn = rc.Get<GameObject>("PortraitBtn");
-            var buyDiamondBtn = rc.Get<GameObject>("BuyDiamondBtn");
-            var yaoQingMaBtn = rc.Get<GameObject>("YaoQingMaBtn");
-            var zhanJiBtn = rc.Get<GameObject>("ZhanJiBtn");
-            var mailBtn = rc.Get<GameObject>("MailBtn");
-            var shareBtn = rc.Get<GameObject>("ShareBtn");
+//            var ruleBtn = rc.Get<GameObject>("RuleBtn");
+//            var feedbackBtn = rc.Get<GameObject>("FeedbackBtn");
+//            var settingBtn = rc.Get<GameObject>("SettingBtn");
+//            var backLobbyBtn = rc.Get<GameObject>("BackLobbyBtn");
+//            var portraitBtn = rc.Get<GameObject>("PortraitBtn");
+//            var buyDiamondBtn = rc.Get<GameObject>("BuyDiamondBtn");
+//            var yaoQingMaBtn = rc.Get<GameObject>("YaoQingMaBtn");
+//            var zhanJiBtn = rc.Get<GameObject>("ZhanJiBtn");
+//            var mailBtn = rc.Get<GameObject>("MailBtn");
+//            var shareBtn = rc.Get<GameObject>("ShareBtn");
             var menuBtn = rc.Get<GameObject>("MenuBtn");
+
+            // 已创建房间列表
+            var roomEmptyImg = rc.Get<GameObject>("RoomEmptyImg");
+            var roomContent = rc.Get<GameObject>("RoomContent");
+            var roomInfoItem = rc.Get<GameObject>("RoomInfoItem");
 
             #endregion
 
