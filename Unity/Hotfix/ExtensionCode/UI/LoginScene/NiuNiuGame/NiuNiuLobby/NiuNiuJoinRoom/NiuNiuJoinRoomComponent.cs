@@ -134,7 +134,7 @@ namespace ETHotfix
                 Debug.Log("加入房间成功,跳转至游戏主场景");
 
                 var nnMainUI = Game.Scene.GetComponent<UIComponent>().Create(UIType.NiuNiuMain, UiLayer.Bottom);
-                
+                nnMainUI.GetComponent<NiuNiuMainComponent>().GetRoomId = Convert.ToInt64(paijuNumber);
                 Game.Scene.GetComponent<UIComponent>().Remove(UIType.NiuNiuLobby);
             }
             else

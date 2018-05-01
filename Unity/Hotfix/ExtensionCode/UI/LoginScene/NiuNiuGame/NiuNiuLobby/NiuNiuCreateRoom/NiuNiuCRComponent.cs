@@ -309,7 +309,7 @@ namespace ETHotfix
                     {
                         Debug.Log("加入房间成功,跳转至游戏主场景");
 
-                        var nnMainUI = Game.Scene.GetComponent<UIComponent>().Create(UIType.NiuNiuMain, UiLayer.Bottom);
+                        Game.Scene.GetComponent<UIComponent>().Create(UIType.NiuNiuMain, UiLayer.Bottom);
                         Game.Scene.GetComponent<UIComponent>().Remove(UIType.NiuNiuLobby);
                     }
                     else
@@ -321,8 +321,8 @@ namespace ETHotfix
                 {
                     Debug.Log("已经在房间内,跳转至游戏主场景");
 
-                    Game.Scene.GetComponent<UIComponent>().Remove(UIType.NiuNiuLobby);
                     Game.Scene.GetComponent<UIComponent>().Create(UIType.NiuNiuMain, UiLayer.Bottom);
+                    Game.Scene.GetComponent<UIComponent>().Remove(UIType.NiuNiuLobby);
                 }
             }
             else
