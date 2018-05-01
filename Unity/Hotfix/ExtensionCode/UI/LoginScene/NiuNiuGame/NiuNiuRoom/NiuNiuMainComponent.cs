@@ -116,7 +116,7 @@ namespace ETHotfix
             //获得房间显示卡牌窗口
             showCardUI=Game.Scene.GetComponent<UIComponent>().Create(UIType.NNShowCard, UiLayer.Medium);
             //设置房间人数
-            showCardUI.GetComponent<NNShowCardComponent>().roomPeople =(ushort)rules.PlayerCount;
+            showCardUI.GetComponent<NNShowCardComponent>().roomPeople =rules.PlayerCount;
             //加载所需要的位置信息
             showCardUI.GetComponent<NNShowCardComponent>().GetCurrentTablePos();
             
@@ -139,6 +139,13 @@ namespace ETHotfix
             {
                 GetRoomInfo();
             });
+            
+            //下拉按照注册
+            SceneHelperComponent.Instance.MonoEvent.AddButtonClick(selectButton.GetComponent<Button>(), () =>
+            {
+                Game.Scene.GetComponent<UIComponent>().Get(UIType.NNRoomOperation).GameObject.SetActive(true);
+            });
+            
 
             //获取房间准备号玩家的数据
             GetAllReadyInfo();
@@ -146,11 +153,13 @@ namespace ETHotfix
             RoomInfoAnnunciateHandler.RoomAction += RoomInfo;
         }
 
-        private void RoomInfo(RoomInfoAnnunciate obj)
+        private async void ShowRoomOperationUIForm()
         {
-            
+//            var accountResponse = (GetAccountInfoResponse) await SceneHelperComponent.Instance.Session.Call(new GetAccountInfoRequest());
         }
 
+
+        //创建本地玩家头像
         private async void GetRoomInfo()
         {
             var response =(PrepareGameResponse) await SceneHelperComponent.Instance.Session.Call(new PrepareGameRequest(){RoomId = m_roomId});
@@ -165,15 +174,20 @@ namespace ETHotfix
             }
         }
 
+        //其他玩家的头像创建
         private void GetAllReadyInfo()
         {
             for (int i = 0; i < roomInfo.Players.Count; i++)
             {
-                Debug.Log("我进来了索引是"+i);
                 showCardUI.GetComponent<NNShowCardComponent>().CreateHead(i,roomInfo.Players[i]);
             }
         }
 
+        
+        private void RoomInfo(RoomInfoAnnunciate obj)
+        {
+            
+        }
 
     }
 }

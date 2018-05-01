@@ -1,5 +1,6 @@
 ﻿using ETModel;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace ETHotfix
 {
@@ -25,6 +26,12 @@ namespace ETHotfix
             var dissolutionButton = rc.Get<GameObject>("DissolutionButton");
             var settingButton = rc.Get<GameObject>("SettingButton");
             var playback = rc.Get<GameObject>("playback");
+            
+            //离开房间按照注册
+            SceneHelperComponent.Instance.MonoEvent.AddButtonClick(exitButton.GetComponent<Button>(), () =>
+            {
+                
+            });
         }
     }
 }

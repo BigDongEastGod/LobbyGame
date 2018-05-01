@@ -23,7 +23,7 @@ namespace ETHotfix
         
         public List<Vector2> sixTableList;           //六人桌的位置
         public List<Vector2> eightTableList;         //八人桌的位置
-        public ushort roomPeople;                    //房间人数
+        public int roomPeople;                    //房间人数
         
         private List<Vector2> currentTablePosList;   //当前房间位置
         private Transform currentTableObj;           //当前桌子
