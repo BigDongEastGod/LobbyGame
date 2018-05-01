@@ -179,6 +179,15 @@ message JoinRoomResponse // IActorResponse
 {
 	
 }
+// 退出游戏房间
+message QuitRoomRequest // IActorRequest
+{
+	required int64 RoomId = 1;	
+}
+message QuitRoomResponse // IActorResponse
+{
+	
+}
 // 准备游戏房间
 message PrepareGameRequest // IActorRequest
 {
@@ -202,11 +211,12 @@ message RoomInfoResponse // IActorResponse
 	repeated AccountInfo Players = 4 ; // 准备的所有玩家
 }
 // 加入房间消息通告
+// 提示消息 0:加入房间 1:坐下（准备） 2:离开房间
 message RoomInfoAnnunciate // IActorMessage
 {
 	required int64 AccountId = 1;
 
-	required int32 Message = 2;  // 提示消息 0:准备游戏 -1:房间人数满 -2:玩家离开房间消息
+	required int32 Message = 2;  
 }
 // 游戏房间
 //message Room

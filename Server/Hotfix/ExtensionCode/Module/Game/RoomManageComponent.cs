@@ -14,6 +14,8 @@ namespace ETHotfix
     /// </summary>
     public static class RoomManageComponentEx
     {
+        #region 根据用户获取所有创建的房间
+
         /// <summary>
         /// 根据用户获取所有创建的房间
         /// </summary>
@@ -22,8 +24,10 @@ namespace ETHotfix
         /// <returns></returns>
         public static List<Room> GetRooms(this RoomManageComponent self, SPlayer player)
         {
-            return self.Rooms.Where(d => d.Key == player.Id).Select(d => d.Value).ToList();
+            return self.Rooms.Where(d => d.CreatePlayer == player.Id).ToList();
         }
+
+        #endregion
 
         #region 获取玩家列表
 
@@ -101,7 +105,7 @@ namespace ETHotfix
         /// <returns></returns>
         public static Room GetRommByPlayer(this RoomManageComponent self,SPlayer player)
         {
-            return self.Rooms.FirstOrDefault(d => d.Value.PlayerIsInRomm(player) != 0).Value;
+            return self.Rooms.FirstOrDefault(d => d.PlayerIsInRomm(player) != 0);
         }
         
         /// <summary>
@@ -128,7 +132,12 @@ namespace ETHotfix
 
             var room = CreateRoom(roomType, roomId);
 
-            if (room != null) self.Rooms.Add(playerId, room);
+            if (room != null)
+            {
+                room.CreatePlayer = playerId;
+
+                self.Rooms.Add(room);
+            }
 
             return room;
         }
@@ -141,9 +150,7 @@ namespace ETHotfix
         /// <returns></returns>
         public static Room GetRoom(this RoomManageComponent self, long roomId)
         {
-            var room = self.Rooms.FirstOrDefault(d => d.Value.Id == roomId);
-
-            return room.Equals(default(KeyValuePair<long, Room>)) ? null : room.Value;
+            return self.Rooms.FirstOrDefault(d => d.Id == roomId);
         }
 
         /// <summary>
@@ -154,9 +161,7 @@ namespace ETHotfix
         /// <returns></returns>
         public static long GetCreateRoomPlayerId(this RoomManageComponent self,Room room)
         {
-            var player = self.Rooms.FirstOrDefault(d => d.Value == room);
-
-            return player.Equals(default(KeyValuePair<long, Room>)) ? 0 : player.Key;
+            return self.Rooms.FirstOrDefault(d => d == room)?.CreatePlayer ?? 0;
         }
         
         #endregion
@@ -170,13 +175,11 @@ namespace ETHotfix
         /// <param name="room">房间</param>
         public static void Remove(this RoomManageComponent self,Room room)
         {
-            var removeroom = self.Rooms.FirstOrDefault(d => d.Value == room);
-
-            if (removeroom.Equals(default(KeyValuePair<long, Room>))) return;
+            if (room == null || self.Rooms.FirstOrDefault(d => d == room) == null) return;
             
-            removeroom.Value.DissolveRoom();
+            room.DissolveRoom();
 
-            self.Rooms.Remove(removeroom.Key);
+            self.Rooms.Remove(room);
         }
 
         /// <summary>
@@ -186,11 +189,13 @@ namespace ETHotfix
         /// <param name="roomId">房间ID</param>
         public static void Remove(this RoomManageComponent self,long roomId)
         {
-            var removeroom = self.Rooms.FirstOrDefault(d => d.Value.Id == roomId);
+            var removeroom = self.Rooms.FirstOrDefault(d => d.Id == roomId);
+            
+            if (removeroom == null) return;
+            
+            removeroom.DissolveRoom();
 
-            if (removeroom.Equals(default(KeyValuePair<long, Room>))) return;
-
-            self.Rooms.Remove(removeroom.Key);
+            self.Rooms.Remove(removeroom);
         }
 
         #endregion
@@ -210,12 +215,19 @@ namespace ETHotfix
             switch (roomType)
             {
                 case "NN":
+                    
                     room = ComponentFactory.CreateWithId<NNRoom>(roomId);
+                    
                     room.RoomType = RoomType.NN;
+                    
                     break;
+                
                 case "DDZ":
+                    
                     break;
+                
                 case "SXMZ":
+                    
                     break;
             }
 
