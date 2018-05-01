@@ -49,7 +49,7 @@ namespace ETHotfix
         private RectTransform posRightTransform;
 
 
-        public void Awake()
+        public async void Awake()
         {
             ReferenceCollector rc = this.GetParent<UI>().GameObject.GetComponent<ReferenceCollector>();
 
@@ -117,6 +117,9 @@ namespace ETHotfix
             SceneHelperComponent.Instance.MonoEvent.AddButtonClick(menuBtn.GetComponent<Button>(), () => { _nnLobbyMenu.GameObject.SetActive(true); });
 
             #endregion
+            
+            var response = (GetAccountInfoResponse) await SceneHelperComponent.Instance.Session.Call(new GetAccountInfoRequest());
+            InitUserInfo(response.AccountInfo.UserName, response.AccountInfo.Diamond.ToString());
         }
 
         public void Start()
@@ -124,22 +127,14 @@ namespace ETHotfix
             _nnCreateRoom = Game.Scene.GetComponent<UIComponent>().Get(UIType.NiuNiuCreateRoom);
             _nnJoinRoom = Game.Scene.GetComponent<UIComponent>().Get(UIType.NiuNiuJoinRoom);
             _nnLobbyMenu = Game.Scene.GetComponent<UIComponent>().Get(UIType.NiuNiuLobbyMenu);
+            
+            
         }
 
-        public void InitUserInfo(string userName, string diamond)
+        private void InitUserInfo(string userName, string diamond)
         {
             _userIdText.GetComponent<Text>().text = userName;
             _diamondText.GetComponent<Text>().text = diamond;
-        }
-
-        public string GetUserName()
-        {
-            return _userIdText.GetComponent<Text>().text;
-        }
-
-        public string GetDiamond()
-        {
-            return _diamondText.GetComponent<Text>().text;
         }
 
         public void Update()
