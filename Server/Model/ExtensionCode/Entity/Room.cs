@@ -13,6 +13,8 @@ namespace ETModel
         public readonly List<SPlayer> Players = new List<SPlayer>();
 
         public readonly List<SPlayer> Guest = new List<SPlayer>();
+
+        public long CreatePlayer;  // 创建房间玩家ID
         
         public byte[] Rules;  // 房间规则
 
