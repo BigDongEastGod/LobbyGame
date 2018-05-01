@@ -40,6 +40,7 @@
                     <e p="CreateRoomHandler.cs" t="Include" />
                     <e p="JoinRoomHandler.cs" t="Include" />
                     <e p="PrepareGameHandler.cs" t="Include" />
+                    <e p="QuitRoomHandler.cs" t="Include" />
                     <e p="RoomInfoHandler.cs" t="Include" />
                     <e p="RoomListHandler.cs" t="Include" />
                     <e p="RoomRulesHandler.cs" t="Include" />
