@@ -15,30 +15,24 @@ namespace ETHotfix
     }
 
 
-    public class NiuNiuJoinRoomComponent:Component
+    public class NiuNiuJoinRoomComponent : Component
     {
         private GameObject _nnjrShowNumber;
-        
+
         public void Awake()
         {
             ReferenceCollector rc = this.GetParent<UI>().GameObject.GetComponent<ReferenceCollector>();
-            
+
             // 加入房间
             var nnJoinRoom = rc.Get<GameObject>("NiuNiuJoinRoom");
             var nnjrInput = rc.Get<GameObject>("NNJR_Input");
             _nnjrShowNumber = rc.Get<GameObject>("NNJR_ShowNumber");
             var nnjrJoinBtn = rc.Get<GameObject>("NNJR_JoinBtn");
             var nnjrCloseBtn = rc.Get<GameObject>("NNJR_CloseBtn");
-            
-            
-            SceneHelperComponent.Instance.MonoEvent.AddButtonClick(nnjrCloseBtn.GetComponent<Button>(), () =>
-            {
-                nnJoinRoom.SetActive(false);
-            });
-            SceneHelperComponent.Instance.MonoEvent.AddButtonClick(nnJoinRoom.GetComponent<Button>(), () =>
-            {
-                nnJoinRoom.SetActive(false);
-            });
+
+
+            SceneHelperComponent.Instance.MonoEvent.AddButtonClick(nnjrCloseBtn.GetComponent<Button>(), () => { nnJoinRoom.SetActive(false); });
+            SceneHelperComponent.Instance.MonoEvent.AddButtonClick(nnJoinRoom.GetComponent<Button>(), () => { nnJoinRoom.SetActive(false); });
             SceneHelperComponent.Instance.MonoEvent.AddButtonClick(nnjrJoinBtn.GetComponent<Button>(), JoinPaiJu);
 
             foreach (Transform numBtn in nnjrInput.transform)
@@ -100,7 +94,7 @@ namespace ETHotfix
                 }
             }
         }
-        
+
         /// <summary>
         /// 加入房间
         /// </summary>
@@ -118,29 +112,28 @@ namespace ETHotfix
                 }
             }
 
-            if (count<6)
+            if (count < 6)
             {
                 Debug.Log("请输入6位房间号");
                 return;
             }
-            
-            
-                        
+
+
             Debug.Log("加入房间:" + paijuNumber);
-            var roomInfoResponse = (RoomInfoResponse) await SceneHelperComponent.Instance.Session.Call(
-                new RoomInfoRequest() {RoomId = Convert.ToInt64(paijuNumber), Message = 0});
+            var roomInfoResponse = (JoinRoomResponse) await SceneHelperComponent.Instance.Session.Call(
+                new JoinRoomRequest() {RoomId = Convert.ToInt64(paijuNumber)});
             if (roomInfoResponse.Error == 0)
             {
                 Debug.Log("加入房间成功,跳转至游戏主场景");
 
+                var nnMainUI = Game.Scene.GetComponent<UIComponent>().Create(UIType.NiuNiuMain, UiLayer.Bottom);
+                nnMainUI.GetComponent<NiuNiuMainComponent>().GetRoomId = Convert.ToInt64(paijuNumber);
                 Game.Scene.GetComponent<UIComponent>().Remove(UIType.NiuNiuLobby);
-                Game.Scene.GetComponent<UIComponent>().Create(UIType.NiuNiuMain, UiLayer.Bottom);
             }
             else
             {
                 Debug.Log("加入房间失败: " + roomInfoResponse.Message);
             }
-
         }
 
         /// <summary>
@@ -157,9 +150,5 @@ namespace ETHotfix
                 }
             }
         }
-        
-        
-        
-        
     }
 }
