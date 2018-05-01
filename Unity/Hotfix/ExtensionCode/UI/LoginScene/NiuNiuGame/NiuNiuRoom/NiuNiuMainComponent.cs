@@ -7,16 +7,15 @@ namespace ETHotfix
 {
     
     [ObjectSystem]
-    public class NiuNiuMainComponentAwakeSystem : AwakeSystem<NiuNiuMainComponent>
+    public class NiuNiuMainComponentAwakeArgSystem : AwakeSystem<NiuNiuMainComponent,object[]>
     {
-        public override void Awake(NiuNiuMainComponent self)
+        public override void Awake(NiuNiuMainComponent self,object[] args)
         {
-            self.Awake();
+            self.Awake(args);
         }
     }
     
-    
-    
+
     public class NiuNiuMainComponent:Component
     {
         private Text roomNum;                        //房间号码文本
@@ -27,11 +26,12 @@ namespace ETHotfix
         public GetAccountInfoResponse Player;        //当前玩家数据
         public RoomInfoResponse roomInfo;            //房间信息
 
-        public async void Awake()
+        public async void Awake(object[] args)
         {
-
+            SetRoomInfo((long) args[0]);
         }
 
+        //初始化数据
         private async void SetRoomInfo(long roomId)
         {
             ReferenceCollector rc = this.GetParent<UI>().GameObject.GetComponent<ReferenceCollector>();
@@ -139,9 +139,6 @@ namespace ETHotfix
             
             RoomInfoAnnunciateHandler.RoomAction += RoomInfo;
         }
-
-
-
 
         private void RoomInfo(RoomInfoAnnunciate obj)
         {
