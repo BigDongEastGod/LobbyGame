@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using ETModel;
 using UnityEngine;
 
@@ -23,16 +24,16 @@ namespace ETHotfix
         public List<Vector2> eightTableList;         //八人桌的位置
         public ushort roomPeople;                    //房间人数
         
-        
         private List<Vector2> currentTablePosList;   //当前房间位置
         private Transform currentTableObj;           //当前桌子
         private GameObject NNCardPrefab;             //卡牌预设
-        private Dictionary<short,UI> HeadUIDict;     //头像列表
-        private Dictionary<short,UI> cardUIDict;     //卡牌列表
+        private Dictionary<short,UI> HeadUIDict;     //头像位置列表
+        private Dictionary<short,UI> cardUIDict;     //卡牌位置列表
         private RectTransform mainHeadPos;           //主头像位置
         private RectTransform mainCardPos;           //主卡牌像位置
         private Vector2 LicensingPos;                //发牌位置 
         private ReferenceCollector rc;
+        private Dictionary<short,List<UI>> NiuNiuCardDict;  //游戏中生产的卡牌
      
 
         #endregion
@@ -44,6 +45,7 @@ namespace ETHotfix
             HeadUIDict=new Dictionary<short, UI>();
             cardUIDict=new Dictionary<short, UI>();
             currentTablePosList=new List<Vector2>();
+            NiuNiuCardDict=new Dictionary<short, List<UI>>();
             rc = this.GetParent<UI>().GameObject.GetComponent<ReferenceCollector>();
             mainCardPos = rc.Get<GameObject>("MainCardPos").GetComponent<RectTransform>();
             mainHeadPos = rc.Get<GameObject>("mainHeadPos").GetComponent<RectTransform>();
@@ -109,13 +111,6 @@ namespace ETHotfix
             HeadUIDict.Add(1,headUI);
         }
         
-        //获得准备好玩家数据
-        private async void GetAllReadyInfo()
-        {
-            var response = (RoomInfoResponse) await SceneHelperComponent.Instance.Session.Call(new RoomInfoRequest());
-        }
-
-
         //取得对应位置的UI
         private UI GetIndexUI(short index)
         {
@@ -124,46 +119,7 @@ namespace ETHotfix
             return headUI;
         }
 
-        #region 调用头像组建的函数
-
-        //显示自己准备
-        private void GetReady(short index)
-        {
-            GetIndexUI(index);
-            //调用显示准备的函数 todo...
-        }
         
-        //显示否抢庄
-        private void SHowQingZhuang(short index)
-        {
-            
-        }
-        
-        //显示加注的金币UI
-        private void ShowBetsUI()
-        {
-            
-        }
-        
-        //设置用户名
-        private void SetUserName()
-        {
-            
-        }
-
-        //设置得分
-        private void SetScore()
-        {
-            
-        }
-
-        //金币移动动画
-        private void MoveCoinAnimation()
-        {
-            
-        }
-
-        #endregion
         
        //翻牌动画
         private void FlopAniamtion(List<UI> cardList)
@@ -188,9 +144,20 @@ namespace ETHotfix
                 }
             }
         }
+
+        //创建卡牌数据
+        private void CreateCard(short chairIndex)
+        {
+            
+        }
         
-        
-        
+        //发牌
+        private void Licensing()
+        {
+            
+        }
+
+
 
     }
 }
