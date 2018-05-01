@@ -536,6 +536,9 @@ MonoBehaviour:
       type: 2}
   - key: LicensingPos
     gameObject: {fileID: 1413788566558770}
+  - key: HeadUIForm
+    gameObject: {fileID: 1710578671966518, guid: 7ed231f32d7564218a972c222c528eb0,
+      type: 2}
 --- !u!114 &114763093749441592
 MonoBehaviour:
   m_ObjectHideFlags: 1
