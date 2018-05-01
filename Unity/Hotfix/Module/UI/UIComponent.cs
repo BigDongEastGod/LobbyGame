@@ -157,20 +157,25 @@ namespace ETHotfix
 
 		#region 创建UI
 
-		public UI Create(string type,UiLayer layer)
+		private UI CreateUI(string type, params object[] args)
+		{
+			UI ui = args == null ? UiTypes[type].Create(this.GetParent<Scene>(), type, Root) : UiTypes[type].Create(this.GetParent<Scene>(), type, Root, args);
+
+			uis.Add(type, ui);
+
+			return ui;
+		}
+
+		public UI Create(string type, UiLayer layer, params object[] args)
 		{
 			try
 			{
-				UI ui = UiTypes[type].Create(this.GetParent<Scene>(), type, Root);
-				
-				uis.Add(type, ui);
+				var ui = CreateUI(type, args);
 
-				// 设置canvas和层级
-			    
 				var cavasName = ui.GameObject.GetComponent<CanvasConfig>().CanvasName;
-				
+
 				ui.GameObject.transform.SetParent(this.Root.Get<GameObject>(cavasName).transform.Find(layer.ToString()), false);
-				
+
 				return ui;
 			}
 			catch (Exception e)
@@ -179,18 +184,16 @@ namespace ETHotfix
 			}
 		}
 
-		public UI Create(string type)
+		public UI Create(string type, params object[] args)
 		{
 			try
 			{
-				UI ui = UiTypes[type].Create(this.GetParent<Scene>(), type, Root);
-				
-				uis.Add(type, ui);
-				
+				var ui = CreateUI(type, args);
+
 				string cavasName = ui.GameObject.GetComponent<CanvasConfig>().CanvasName;
-				
+
 				ui.GameObject.transform.SetParent(this.Root.Get<GameObject>(cavasName).transform, false);
-				
+
 				return ui;
 			}
 			catch (Exception e)
@@ -199,15 +202,14 @@ namespace ETHotfix
 			}
 		}
 
-		public UI Create(string type, Transform parent)
+		public UI Create(string type, Transform parent, params object[] args)
 		{
 			try
 			{
-				UI ui = UiTypes[type].Create(this.GetParent<Scene>(), type, Root);
-				
-				uis.Add(type, ui);
-				
+				var ui = CreateUI(type, args);
+
 				ui.GameObject.transform.SetParent(parent, false);
+				
 				return ui;
 			}
 			catch (Exception e)
@@ -215,7 +217,6 @@ namespace ETHotfix
 				throw new Exception($"{type} UI 错误: {e}");
 			}
 		}
-
 
 		#endregion
 
