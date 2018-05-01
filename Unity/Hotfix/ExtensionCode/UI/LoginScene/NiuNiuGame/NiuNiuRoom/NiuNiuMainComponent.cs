@@ -27,26 +27,19 @@ namespace ETHotfix
         public GetAccountInfoResponse Player;        //当前玩家数据
         public RoomInfoResponse roomInfo;            //房间信息
 
-        public long GetRoomId
+        public async void Awake()
         {
-            get { return roomId; }
-            set { roomId = value; }
+
         }
 
-        public async void Awake()
+        private async void SetRoomInfo(long roomId)
         {
             ReferenceCollector rc = this.GetParent<UI>().GameObject.GetComponent<ReferenceCollector>();
             
             //房间分线图
             var bg = rc.Get<GameObject>("BgImg");
             //房间号码
-            roomNum = rc.Get<GameObject>("roomNum").GetComponent<Text>();
-            //庄位信息
-            var zhuangWeiTxt  = rc.Get<GameObject>("zhuangWei").GetComponent<Text>();
-            //底分信息
-            var bottomScoreText  = rc.Get<GameObject>("BottomScoreText").GetComponent<Text>();
-            //房间局数
-            var roomCountText  = rc.Get<GameObject>("roomCountText").GetComponent<Text>();
+            
             //房间信息按钮
             var roomInfoButton  = rc.Get<GameObject>("RoomInfoButton");
             //下拉窗口按钮
@@ -89,11 +82,19 @@ namespace ETHotfix
             var wiFiImg=rc.Get<GameObject>("WiFiImg");
             //自动翻牌
             var AutomaticFlopToggle=rc.Get<GameObject>("AutomaticFlopToggle");
-            //请求获得当前账号数据
+            
+            roomNum = rc.Get<GameObject>("roomNum").GetComponent<Text>();
+            //庄位信息
+            var zhuangWeiTxt  = rc.Get<GameObject>("zhuangWei").GetComponent<Text>();
+            //底分信息
+            var bottomScoreText  = rc.Get<GameObject>("BottomScoreText").GetComponent<Text>();
+            //房间局数
+            var roomCountText  = rc.Get<GameObject>("roomCountText").GetComponent<Text>();
+            //获取当前账号
             var accountResponse = (GetAccountInfoResponse) await SceneHelperComponent.Instance.Session.Call(new GetAccountInfoRequest());
             Player = accountResponse;
             //请求获得当前房间准备好的玩家信息
-            var response =(RoomInfoResponse) await SceneHelperComponent.Instance.Session.Call(new RoomInfoRequest() {RoomId = roomId, Message = 0});
+            var response =(RoomInfoResponse) await SceneHelperComponent.Instance.Session.Call(new RoomInfoRequest() {RoomId = roomId});
             roomInfo = response;
             //获得房间规则信息
             var rules = response.Rules == null ? null : ProtobufHelper.FromBytes<NNChess>(response.Rules);
@@ -113,7 +114,6 @@ namespace ETHotfix
             showCardUI.GetComponent<NNShowCardComponent>().roomPeople =(ushort)rules.PlayerCount;
             //加载所需要的位置信息
             showCardUI.GetComponent<NNShowCardComponent>().GetCurrentTablePos();
-            
             //房间信息窗口事件注册
             SceneHelperComponent.Instance.MonoEvent.AddButtonClick(roomInfoButton.GetComponent<Button>(), () =>
             {
@@ -130,16 +130,18 @@ namespace ETHotfix
             
             //房间信息窗口事件注册
             SceneHelperComponent.Instance.MonoEvent.AddButtonClick(sitDownBt.GetComponent<Button>(), () =>
-                {
-                    GetRoomInfo();
-                });
+            {
+                GetRoomInfo();
+            });
 
             //获取房间准备号玩家的数据
             GetAllReadyInfo();
             
             RoomInfoAnnunciateHandler.RoomAction += RoomInfo;
-
         }
+
+
+
 
         private void RoomInfo(RoomInfoAnnunciate obj)
         {
@@ -149,7 +151,7 @@ namespace ETHotfix
 
         private async void GetRoomInfo()
         {
-            var response =(RoomInfoResponse) await SceneHelperComponent.Instance.Session.Call(new RoomInfoRequest() {RoomId = roomId, Message = 1});
+            var response =(PrepareGameResponse) await SceneHelperComponent.Instance.Session.Call(new PrepareGameRequest(){RoomId = roomId});
             if (response.Error==0)
             {
                 Debug.Log("成功坐下");
