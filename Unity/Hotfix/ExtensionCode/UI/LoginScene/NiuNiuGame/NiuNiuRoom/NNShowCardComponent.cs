@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using ETModel;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace ETHotfix
 {
@@ -27,13 +28,14 @@ namespace ETHotfix
         private List<Vector2> currentTablePosList;   //当前房间位置
         private Transform currentTableObj;           //当前桌子
         private GameObject NNCardPrefab;             //卡牌预设
-        private Dictionary<short,UI> HeadUIDict;     //头像位置列表
-        private Dictionary<short,UI> cardUIDict;     //卡牌位置列表
+        private Dictionary<int,ReferenceCollector> HeadUIDict;     //头像位置列表
+        private Dictionary<int,UI> cardUIDict;     //卡牌位置列表
         private RectTransform mainHeadPos;           //主头像位置
         private RectTransform mainCardPos;           //主卡牌像位置
         private Vector2 LicensingPos;                //发牌位置 
         private ReferenceCollector rc;
         private Dictionary<short,List<UI>> NiuNiuCardDict;  //游戏中生产的卡牌
+        private GameObject headUIform;
      
 
         #endregion
@@ -42,8 +44,8 @@ namespace ETHotfix
         {
             sixTableList=new List<Vector2>();
             eightTableList=new List<Vector2>();
-            HeadUIDict=new Dictionary<short, UI>();
-            cardUIDict=new Dictionary<short, UI>();
+            HeadUIDict=new Dictionary<int, ReferenceCollector>();
+            cardUIDict=new Dictionary<int, UI>();
             currentTablePosList=new List<Vector2>();
             NiuNiuCardDict=new Dictionary<short, List<UI>>();
             rc = this.GetParent<UI>().GameObject.GetComponent<ReferenceCollector>();
@@ -52,6 +54,7 @@ namespace ETHotfix
             var mainTitle = rc.Get<GameObject>("mainTitle");
             LicensingPos = rc.Get<GameObject>("LicensingPos").GetComponent<RectTransform>().anchoredPosition;
             NNCardPrefab= rc.Get<GameObject>("NiuNIuCard");
+            headUIform=rc.Get<GameObject>("HeadUIForm");
         }
         
         //屏幕适配需要获得的位置
@@ -90,38 +93,41 @@ namespace ETHotfix
         /// <param name="ChairIndex">椅子索引</param>
         public void CreateHead(int ChairIndex,AccountInfo playerInfo)
         {
-            UI headUI= Game.Scene.GetComponent<UIComponent>().Create(UIType.HeadUIForm,currentTableObj);
-            
-            short index;
+            GameObject headObj = UnityEngine.Object.Instantiate(headUIform, currentTableObj);
             
             if (ChairIndex == -1)
             {
-                headUI.GameObject.GetComponent<RectTransform>().anchoredPosition = mainHeadPos.anchoredPosition;
-                headUI.GetComponent<HeadUIFormComponent>().SetHeadUserInfo(playerInfo);
-                index = -1;
+                headObj.GetComponent<RectTransform>().anchoredPosition = mainHeadPos.anchoredPosition;
             }
             else
             {
-                Debug.Log("我来到这里拉");
-                headUI.GameObject.transform.localScale=new Vector2(0.7f,0.7f);
-                Debug.Log("这个头像的位置是"+currentTablePosList[ChairIndex]);
-                headUI.GameObject.GetComponent<RectTransform>().anchoredPosition = currentTablePosList[ChairIndex];
-                index = (short)ChairIndex;
+                headObj.transform.localScale=new Vector2(0.7f,0.7f);
+                headObj.GetComponent<RectTransform>().anchoredPosition = currentTablePosList[ChairIndex];
             }
-            HeadUIDict.Add(1,headUI);
-        }
-        
-        //取得对应位置的UI
-        private UI GetIndexUI(short index)
-        {
-            UI headUI;
-            HeadUIDict.TryGetValue(index, out headUI);
-            return headUI;
+           
+            SetHeadUIComponent(headObj, playerInfo);
+            HeadUIDict.Add(ChairIndex,headObj.GetComponent<ReferenceCollector>());
         }
 
         
         
-       //翻牌动画
+        private void SetHeadUIComponent(GameObject headItem,AccountInfo playerInfo)
+        {
+            ReferenceCollector rc = headItem.GetComponent<ReferenceCollector>();
+            
+            var headMask = rc.Get<GameObject>("headMask");
+            var userNameTxt = rc.Get<GameObject>("uesrNameTxt").GetComponent<Text>();
+            var scoreTxt = rc.Get<GameObject>("scoreTxt");
+            var qiangzhuangImg = rc.Get<GameObject>("qiangzhuangImg");
+            var BetsTitleImg = rc.Get<GameObject>("BetsTitleImg");
+            var BetsTxt = BetsTitleImg.gameObject.transform.GetChild(0);
+            var SelectImg = rc.Get<GameObject>("SelectImg");
+            
+            userNameTxt.text = playerInfo.UserName;
+        }
+
+
+        //翻牌动画
         private void FlopAniamtion(List<UI> cardList)
         {
             foreach (var card in cardList)
