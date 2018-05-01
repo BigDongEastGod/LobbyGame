@@ -27,6 +27,11 @@ namespace ETHotfix
 		        return null;
 	        }
 		}
+	    
+	    public UI Create(Scene scene, string type, GameObject parent, params object[] args)
+	    {
+		    return Create(scene, type, parent);
+	    }
 
 	    public void Remove(string type)
 	    {

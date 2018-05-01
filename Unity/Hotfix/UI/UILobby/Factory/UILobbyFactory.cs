@@ -28,6 +28,11 @@ namespace ETHotfix
 	        }
 		}
 
+	    public UI Create(Scene scene, string type, GameObject parent, params object[] args)
+	    {
+		    return Create(scene, type, parent);
+	    }
+
 	    public void Remove(string type)
 	    {
 			ETModel.Game.Scene.GetComponent<ResourcesComponent>().UnloadBundle($"{type}.unity3d");
