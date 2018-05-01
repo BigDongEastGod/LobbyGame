@@ -2,59 +2,40 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="43a2cc3c-b9a6-4da2-a947-693a35ac239f" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/../Server/Hotfix/ExtensionCode/Handler/LobbyScene/Room/Map/RoomListHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/.idea.JuAnLobbyGameSolution/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/.idea.JuAnLobbyGameSolution/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Bin/Hotfix.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Bin/Hotfix.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Bin/Hotfix.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Bin/Hotfix.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Bin/Model.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Bin/Model.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Bin/Model.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Bin/Model.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Bin/publish/App.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Bin/publish/App.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Bin/publish/App.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Bin/publish/App.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Bin/publish/Hotfix.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Bin/publish/Hotfix.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Bin/publish/Hotfix.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Bin/publish/Hotfix.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Bin/publish/Model.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Bin/publish/Model.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Bin/publish/Model.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Bin/publish/Model.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Logs/Log-DB-3/Info/2018-04-30.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Logs/Log-DB-3/Info/2018-04-30.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Logs/Log-Gate-4/Debug/2018-04-30.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Logs/Log-Gate-4/Debug/2018-04-30.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Logs/Log-Gate-4/Error/2018-04-30.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Logs/Log-Gate-4/Error/2018-04-30.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Logs/Log-Gate-4/Info/2018-04-30.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Logs/Log-Gate-4/Info/2018-04-30.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Logs/Log-Location-5/Info/2018-04-30.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Logs/Log-Location-5/Info/2018-04-30.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Logs/Log-Manager-1/Info/2018-04-30.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Logs/Log-Manager-1/Info/2018-04-30.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Logs/Log-Map-6/Debug/2018-04-30.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Logs/Log-Map-6/Debug/2018-04-30.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Logs/Log-Map-6/Info/2018-04-30.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Logs/Log-Map-6/Info/2018-04-30.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Logs/Log-Realm-2/Info/2018-04-30.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Logs/Log-Realm-2/Info/2018-04-30.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Logs/Log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Logs/Log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Config/StartConfig/JuAnServer" beforeDir="false" afterPath="$PROJECT_DIR$/../Config/StartConfig/JuAnServer" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Proto/HotfixMessage.proto" beforeDir="false" afterPath="$PROJECT_DIR$/../Proto/HotfixMessage.proto" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Server/App/obj/Debug/Server.App.csprojResolveAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/App/obj/Debug/Server.App.csprojResolveAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/Hotfix/ExtensionCode/Entity/Game/NNRoom.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Hotfix/ExtensionCode/Entity/Game/NNRoom.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/Hotfix/ExtensionCode/Handler/LobbyScene/Room/Map/CreateRoomHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Hotfix/ExtensionCode/Handler/LobbyScene/Room/Map/CreateRoomHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Server/Hotfix/ExtensionCode/Handler/LobbyScene/Room/Map/RoomInfoHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Hotfix/ExtensionCode/Handler/LobbyScene/Room/Map/RoomInfoHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/Hotfix/ExtensionCode/Handler/LobbyScene/Room/Map/RoomRulesHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Hotfix/ExtensionCode/Handler/LobbyScene/Room/Map/RoomRulesHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/Hotfix/ExtensionCode/Handler/LoginScene/Gate/EnterGateHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Hotfix/ExtensionCode/Handler/LoginScene/Gate/EnterGateHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/Hotfix/ExtensionCode/Handler/LoginScene/Gate/JionPlayerByGateHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Hotfix/ExtensionCode/Handler/LoginScene/Gate/JionPlayerByGateHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/Hotfix/ExtensionCode/Handler/LoginScene/Map/RegisterGameHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Hotfix/ExtensionCode/Handler/LoginScene/Map/RegisterGameHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/Hotfix/ExtensionCode/Handler/LoginScene/Gate/PingHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Hotfix/ExtensionCode/Handler/LoginScene/Gate/PingHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Server/Hotfix/ExtensionCode/Module/Game/RoomManageComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Hotfix/ExtensionCode/Module/Game/RoomManageComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/Hotfix/ExtensionCode/Module/GatePlayerManageComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Hotfix/ExtensionCode/Module/Manage/GatePlayerManageComponent.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Server/Hotfix/ExtensionCode/Module/PingComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Hotfix/ExtensionCode/Module/PingComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/Hotfix/ExtensionCode/Module/PlayerManageComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Hotfix/ExtensionCode/Module/Manage/PlayerManageComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/Hotfix/ExtensionCode/Module/SessionGatePlayerComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Hotfix/ExtensionCode/Module/Manage/SessionGatePlayerComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/Hotfix/Server.Hotfix.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Hotfix/Server.Hotfix.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/Hotfix/Module/Message/HotfixMessage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Hotfix/Module/Message/HotfixMessage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/Hotfix/Module/Message/HotfixOpcode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Hotfix/Module/Message/HotfixOpcode.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Server/Hotfix/obj/Debug/Hotfix.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Hotfix/obj/Debug/Hotfix.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Server/Hotfix/obj/Debug/Hotfix.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Hotfix/obj/Debug/Hotfix.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Server/Hotfix/obj/Debug/Server.Hotfix.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Hotfix/obj/Debug/Server.Hotfix.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Server/Hotfix/obj/Debug/Server.Hotfix.csprojResolveAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Hotfix/obj/Debug/Server.Hotfix.csprojResolveAssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Server/Model/ExtensionCode/Entity/Room.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Model/ExtensionCode/Entity/Room.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/Model/ExtensionCode/Module/Game/RoomManageComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Model/ExtensionCode/Module/Game/RoomManageComponent.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Server/Model/Module/FrameSync/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Model/Module/FrameSync/Player.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Server/Model/obj/Debug/Model.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Model/obj/Debug/Model.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Server/Model/obj/Debug/Model.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Model/obj/Debug/Model.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/Model/obj/Debug/Server.Model.csprojResolveAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Model/obj/Debug/Server.Model.csprojResolveAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver.Core/obj/Debug/MongoDB.Driver.Core.csprojResolveAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver.Core/obj/Debug/MongoDB.Driver.Core.csprojResolveAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver/obj/Debug/MongoDB.Driver.csprojResolveAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver/obj/Debug/MongoDB.Driver.csprojResolveAssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assembly-CSharp-Editor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp-Editor.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assembly-CSharp-firstpass.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp-firstpass.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Module/Message/Network/TCP/TChannel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Module/Message/Network/TCP/TChannel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Res/Config/GlobalProto.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Res/Config/GlobalProto.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotfix/Module/Message/HotfixMessage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Hotfix/Module/Message/HotfixMessage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotfix/Module/Message/HotfixOpcode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Hotfix/Module/Message/HotfixOpcode.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -168,7 +149,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="942" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="right" id="Errors In Solution" order="3" />

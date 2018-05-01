@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using CSharpx;
 using ETModel;
 
@@ -8,68 +7,86 @@ namespace ETHotfix
     /// <summary>
     /// 牛牛房间系统
     /// </summary>
-    public class NNRoom : Room
+    public class NNRoom : ETModel.Room
     {
-        private int currentDish = 0;
+        public int CurrentDish { get; private set; }
 
-        private NNChess chessRules;
+        public NNChess ChessRules { get; private set; }
 
         public override void AddRules(byte[] rules)
         {
-            Rules = rules;
-            
-            chessRules = ProtobufHelper.FromBytes<NNChess>(Rules);
+            ChessRules = ProtobufHelper.FromBytes<NNChess>(rules);
         }
 
         public override long PlayerIsInRomm(SPlayer player)
         {
-            return Players.Keys.FirstOrDefault(d => d == player) != null ? this.Id : 0;
+            return Players.FirstOrDefault(d => d == player && d.IsActivity) != null ? this.Id : 0;
         }
 
-        public override int JionRoom(SPlayer player)
+        /// <summary>
+        /// 加入房间
+        /// </summary>
+        /// <param name="player"></param>
+        /// <returns></returns>
+        public override string JionRoom(SPlayer player)
         {
             // 当玩家已经在这个房间里
 
-            if (Players.ContainsKey(player)) return 0;
-
-            // 如果房间小于指定人数，加入这个房间，并发送数据给房间里其他玩家
+            if (Guest.Any(d => d == player)) return "InRomm";
             
-            if (Players.Count < chessRules.PlayerCount)
-            {
-                Players.Add(player, false);
-                
-                Players.Keys.Where(d => d != player).ForEach(d => d.GetActorProxy.Send(new RoomInfoAnnunciate() {AccountId = player.Id, Message = 0}));
+            // 发送数据给房间所有人
 
-                return 0;
-            }
+            var response = new RoomInfoAnnunciate() {AccountId = player.Id, Message = 0};
+
+            Players.ForEach(d => d.GetActorProxy.Send(response));
+
+            Guest.ForEach(d => d.GetActorProxy.Send(response));
             
-            // 发送房间人数满的消息
+            // 添加玩家到客人列表
+            
+            Guest.Add(player);
 
-            return 1;
+            return "JionRoom";
         }
 
         /// <summary>
         /// 准备游戏
         /// </summary>
         /// <param name="player"></param>
-        public override int Prepare(SPlayer player)
+        public override string Prepare(SPlayer player)
         {
-            if (!Players.ContainsKey(player)) return -1;
+            if (Players.Any(d => d == player)) return "InPrepare";  // 玩家已经准备了
             
-            Players[player] = true;
+            if (Guest.Any(d => d == player) == false) return "NoInGuest"; // 玩家没有在游客房间
+            
+            Players.Add(player);  // 添加到玩家列表
 
-            Players.Keys.Where(d => d != player).ForEach(d => d.GetActorProxy.Send(new RoomInfoAnnunciate() {AccountId = player.Id, Message = 0}));
+            Guest.Remove(player); // 从客人列表移除
+            
+            // 发送数据给房间所有人
+            
+            var response = new RoomInfoAnnunciate() {AccountId = player.Id, Message = 1};
 
-            return 0;
+            Players.Where(d => d != player).ForEach(d => d.GetActorProxy.Send(response));
+
+            Guest.ForEach(d => d.GetActorProxy.Send(response));
+
+            return "Prepare";
         }
 
         public override void QuitRoom(SPlayer player)
         {
             Players.Remove(player);
+
+            Guest.Remove(player);
             
             // 发送离开房间消息
+            
+            var response = new RoomInfoAnnunciate() {AccountId = player.Id, Message = 2};
 
-            Players.Keys.Where(d => d != player).ForEach(d => d.GetActorProxy.Send(new RoomInfoAnnunciate() {AccountId = player.Id, Message = -2}));
+            Players.Where(d => d != player).ForEach(d => d.GetActorProxy.Send(response));
+            
+            Guest.ForEach(d => d.GetActorProxy.Send(response));
         }
 
         public override void StartGame()
@@ -108,6 +125,8 @@ namespace ETHotfix
             base.Dispose();
             
             Players.Clear();
+            
+            Guest.Clear();
 
             RoomManageComponent.Instance.Remove(this);
         }

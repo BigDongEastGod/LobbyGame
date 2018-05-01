@@ -5,28 +5,26 @@ using ETModel;
 namespace ETHotfix
 {
     [ActorMessageHandler(AppType.Map)]
-    public class RoomRulesHandler: AMActorRpcHandler<SPlayer, RoomRulesRequest, RoomRulesResponse>
+    public class JoinRoomHandler : AMActorRpcHandler<SPlayer, JoinRoomRequest, JoinRoomResponse>
     {
-        protected override async Task Run(SPlayer unit, RoomRulesRequest message, Action<RoomRulesResponse> reply)
+        protected override async Task Run(SPlayer player, JoinRoomRequest message, Action<JoinRoomResponse> reply)
         {
             await Task.CompletedTask;
             
-            var response = new RoomRulesResponse();
-            
+            var response = new JoinRoomResponse();
+                        
             try
             {
                 if (message == null || message?.RoomId == 0)
                 {
                     response.Error = -1;
-
-                    reply(response);
-                    
-                    return;
                 }
-                
-                var room = RoomManageComponent.Instance.GetRoom(message.RoomId);
+                else 
+                {
+                    var room = RoomManageComponent.Instance.GetRoom(message.RoomId);
 
-                room?.AddRules(message.Rules);
+                    if (room != null) response.Message = room.JionRoom(player);
+                }
             }
             catch (Exception e)
             {

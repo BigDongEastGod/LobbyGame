@@ -35,33 +35,38 @@ namespace ETHotfix
                         if ((TimeHelper.ClientNowSeconds() - _sessionTimes.ElementAt(i).Value) > overtime)
                         {
                             var session = GatePlayerManageComponent.Instance.GetSession(_sessionTimes.ElementAt(i).Key);
-                            Log.Debug("有用户退出");
-                            try
+
+                            if (session != null)
                             {
-                                // 删除Actor
-
-                                // 获取GatePlayer组件，并发送给注册的Actor服务器下线消息
-
-                                var player = GatePlayerManageComponent.Instance.GatePlayer(session);
-
-                                if (player != null)
+                                Log.Debug("有用户退出");
+                            
+                                try
                                 {
-                                    player.ActorSession?.Send(new ActorQuitRequest() {AccountId = player.Id, ActorId = player.UnitId});
-
                                     // 删除Actor
+
+                                    // 获取GatePlayer组件，并发送给注册的Actor服务器下线消息
+
+                                    var player = GatePlayerManageComponent.Instance.GatePlayer(session);
+
+                                    if (player != null)
+                                    {
+                                        player.ActorSession?.Send(new ActorQuitRequest() {AccountId = player.Id, ActorId = player.UnitId});
+
+                                        // 删除Actor
                 
-                                    Game.Scene.GetComponent<ActorProxyComponent>().Remove(player.UnitId);
+                                        Game.Scene.GetComponent<ActorProxyComponent>().Remove(player.UnitId);
+                                    }
+                
+                                    Game.Scene.GetComponent<ActorManagerComponent>().Remove(session.Id);
+                
+                                    Game.Scene.GetComponent<NetOuterComponent>().Remove(session.Id);
+                
+                                    GatePlayerManageComponent.Instance.Remove(session); 
                                 }
-                
-                                Game.Scene.GetComponent<ActorManagerComponent>().Remove(session.Id);
-                
-                                Game.Scene.GetComponent<NetOuterComponent>().Remove(session.Id);
-                
-                                GatePlayerManageComponent.Instance.Remove(session); 
-                            }
-                            catch (Exception e)
-                            {
-                                Log.Error(e);
+                                catch (Exception e)
+                                {
+                                    Log.Error(e);
+                                }
                             }
 
                             RemoveSession(_sessionTimes.ElementAt(i).Key);

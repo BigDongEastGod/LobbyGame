@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Linq;
 using System.Threading.Tasks;
 using ETModel;
 
 namespace ETHotfix
 {
     [ActorMessageHandler(AppType.Map)]
-    public class RoomInfoHandler: AMActorRpcHandler<SPlayer, RoomInfoRequest, RoomInfoResponse>
+    public class RoomInfoHandler : AMActorRpcHandler<SPlayer, RoomInfoRequest, RoomInfoResponse>
     {
         protected override async Task Run(SPlayer player, RoomInfoRequest message, Action<RoomInfoResponse> reply)
         {
@@ -20,53 +19,20 @@ namespace ETHotfix
                 {
                     response.Error = -1;
 
-                    if (player != null)
-                    {
-                        var playerroom = RoomManageComponent.Instance.GetRommByPlayer(player);
-
-                        if (playerroom != null)
-                        {
-                            response.RoomId = playerroom.Room.Id;
-
-                            response.Rules = playerroom.Room.Rules;
-
-                            response.Players = await RoomManageComponent.Instance.GetRoomPlayers(playerroom.Room);
-                        }
-                    }
-                    
                     reply(response);
                     
                     return;
                 }
-                
-                // 获得房间
                 
                 var room = RoomManageComponent.Instance.GetRoom(message.RoomId);
-                
-                // 如果找到就加入到该房间、否则提示没有找到房间
-                
-                if (room == null)
+
+                if (room != null)
                 {
-                    response.Error = -1;
+                    response.RoomId = room.Id;
 
-                    response.Message = "没有找到房间";
-                    
-                    reply(response);
-                    
-                    return;
-                }
-                
-                // 根据消息类型
+                    response.Rules = room.Rules;
 
-                switch (@message.Message)
-                {
-                    case 0: // 加入房间
-                        response.Error = room.Room.JionRoom(player);
-                        break;
-
-                    case 1: // 准备
-                        response.Error = room.Room.Prepare(player);
-                        break;
+                    response.Players = await RoomManageComponent.Instance.GetRoomPlayers(room, player);
                 }
             }
             catch (Exception e)

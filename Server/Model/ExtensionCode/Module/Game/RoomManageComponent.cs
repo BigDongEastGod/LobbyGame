@@ -15,14 +15,7 @@ namespace ETModel
     
     public class RoomManageComponent : Component
     {
-        public class RoomModel
-        {
-            public long PlayerId;
-
-            public Room Room;
-        }
-        
-        public List<RoomModel> Rooms;
+        public Dictionary<long, Room> Rooms;
         
         public static RoomManageComponent Instance;
         
@@ -30,7 +23,7 @@ namespace ETModel
         {
             Instance = this;
 
-            Rooms = new List<RoomModel>();
+            Rooms = new Dictionary<long, Room>();
         }
 
         public override void Dispose()
@@ -38,8 +31,8 @@ namespace ETModel
             if (this.IsDisposed) return;
 
             base.Dispose();
-            
-            Rooms.ForEach(d=>d.Room.DissolveRoom());
+
+            Rooms.ForEach(d => d.Value.DissolveRoom());
             
             Rooms.Clear();
         }

@@ -12,7 +12,9 @@ namespace ETHotfix
 
             try
             {
-                Game.Scene.GetComponent<PingComponent>().UpdateSession(GatePlayerManageComponent.Instance.GatePlayer(session).Id);
+                var player = GatePlayerManageComponent.Instance.GatePlayer(session);
+
+                if (player != null) Game.Scene.GetComponent<PingComponent>().UpdateSession(player.Id);
 
                 reply(response);
             }
