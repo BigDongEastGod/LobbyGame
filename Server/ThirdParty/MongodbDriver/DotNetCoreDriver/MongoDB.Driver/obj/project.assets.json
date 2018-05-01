@@ -856,23 +856,23 @@
     ]
   },
   "packageFolders": {
-    "/Users/zhaolin/.nuget/packages/": {},
+    "/Users/juankeji/.nuget/packages/": {},
     "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/MyDocuments/JuAnNetWork/JuAnGame/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver/MongoDB.Driver.csproj",
+      "projectUniqueName": "/Users/juankeji/JuAn/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver/MongoDB.Driver.csproj",
       "projectName": "MongoDB.Driver",
-      "projectPath": "/MyDocuments/JuAnNetWork/JuAnGame/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver/MongoDB.Driver.csproj",
-      "packagesPath": "/Users/zhaolin/.nuget/packages/",
-      "outputPath": "/MyDocuments/JuAnNetWork/JuAnGame/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver/obj/",
+      "projectPath": "/Users/juankeji/JuAn/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver/MongoDB.Driver.csproj",
+      "packagesPath": "/Users/juankeji/.nuget/packages/",
+      "outputPath": "/Users/juankeji/JuAn/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/Users/zhaolin/.config/NuGet/NuGet.Config"
+        "/Users/juankeji/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.0"
@@ -883,11 +883,11 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "/MyDocuments/JuAnNetWork/JuAnGame/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Bson/MongoDB.Bson.csproj": {
-              "projectPath": "/MyDocuments/JuAnNetWork/JuAnGame/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Bson/MongoDB.Bson.csproj"
+            "/Users/juankeji/JuAn/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Bson/MongoDB.Bson.csproj": {
+              "projectPath": "/Users/juankeji/JuAn/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Bson/MongoDB.Bson.csproj"
             },
-            "/MyDocuments/JuAnNetWork/JuAnGame/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver.Core/MongoDB.Driver.Core.csproj": {
-              "projectPath": "/MyDocuments/JuAnNetWork/JuAnGame/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver.Core/MongoDB.Driver.Core.csproj"
+            "/Users/juankeji/JuAn/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver.Core/MongoDB.Driver.Core.csproj": {
+              "projectPath": "/Users/juankeji/JuAn/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver.Core/MongoDB.Driver.Core.csproj"
             }
           }
         }
