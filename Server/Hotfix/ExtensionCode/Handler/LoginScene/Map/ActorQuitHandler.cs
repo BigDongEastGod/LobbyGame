@@ -8,13 +8,11 @@ namespace ETHotfix
     [MessageHandler(AppType.Map)]
     public class ActorQuitHandler: AMHandler<ActorQuitRequest>
     {
-        protected override void Run(Session session, ActorQuitRequest message)
+        protected override async void Run(Session session, ActorQuitRequest message)
         {
             if (message ==null || message?.AccountId == 0) return;
-            
-            var player = PlayerManageComponent.Instance.GetPlayer(message.AccountId);
 
-            Task.Run(() => PlayerManageComponent.Instance.Remove(player));
+            await PlayerManageComponent.Instance.Remove(PlayerManageComponent.Instance.GetPlayer(message.AccountId));
         }
     }
 }

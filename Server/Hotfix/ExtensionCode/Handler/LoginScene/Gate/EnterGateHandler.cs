@@ -34,6 +34,10 @@ namespace ETHotfix
                     
                     if (regedResponse.Error == 0)
                     {
+                        // 挂载Session销毁触发组件、并设置UnitId方便销毁时删除Actor
+                        
+                        session.AddComponent<SessionGatePlayerComponent>();
+                        
                         // 添加用户到用户管理组件
 
                         GatePlayerManageComponent.Instance.Add(session, id ?? 0);
@@ -45,7 +49,7 @@ namespace ETHotfix
                         // 添加到心跳组件
 
                         if (Game.Scene.GetComponent<PingComponent>() == null) Game.Scene.AddComponent<PingComponent, int, long>(2000, 3);
-
+                        
                         Game.Scene.GetComponent<PingComponent>().AddSession(id ?? 0);
                     }
                     else

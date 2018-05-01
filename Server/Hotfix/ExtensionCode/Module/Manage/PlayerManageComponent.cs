@@ -78,6 +78,8 @@ namespace ETHotfix
 
                 Game.Scene.GetComponent<ActorManagerComponent>()?.Remove(player.Id);
                 
+                // 删除Gate服务器上的位置
+                
                 await Game.Scene.GetComponent<LocationProxyComponent>().Remove(player.GateSessionId);
                 
                 // 删除在Location的注册
@@ -86,7 +88,7 @@ namespace ETHotfix
                 
                 self.RemovePlayer(player);
 
-                player.Dispose();
+                if (player.IsDisposed == false) player.Dispose();
 
                 Log.Debug("删除成功");
             }

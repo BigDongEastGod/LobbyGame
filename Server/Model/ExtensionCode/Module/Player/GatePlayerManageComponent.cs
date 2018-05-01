@@ -16,9 +16,7 @@ namespace ETModel
 
     public class GatePlayerManageComponent : Component
     {
-        public readonly Dictionary<long, Player> Players = new Dictionary<long, Player>();
-        
-        public readonly Dictionary<long, Session> Sessions = new Dictionary<long, Session>();
+        public readonly List<Session> Sessions = new List<Session>();
 
         public static GatePlayerManageComponent Instance;
 
@@ -33,9 +31,9 @@ namespace ETModel
 
             base.Dispose();
 
-            Players.Values.ForEach(d => d.Dispose());
+            Sessions.ForEach(d => d.Dispose());
 
-            this.Players.Clear();
+            this.Sessions.Clear();
         }
     }
 }
