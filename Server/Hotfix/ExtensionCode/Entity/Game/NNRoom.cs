@@ -15,6 +15,8 @@ namespace ETHotfix
 
         public override void AddRules(byte[] rules)
         {
+            Rules = rules;
+            
             ChessRules = ProtobufHelper.FromBytes<NNChess>(rules);
         }
 
