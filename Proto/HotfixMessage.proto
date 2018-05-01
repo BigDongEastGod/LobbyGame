@@ -170,21 +170,36 @@ message RoomRulesResponse // IActorResponse
 {
 	
 }
-// 游戏房间信息
+// 加入游戏房间
+message JoinRoomRequest // IActorRequest
+{
+	required int64 RoomId = 1;	
+}
+message JoinRoomResponse // IActorResponse
+{
+	
+}
+// 准备游戏房间
+message PrepareGameRequest // IActorRequest
+{
+	required int64 RoomId = 1;	
+}
+message PrepareGameResponse // IActorResponse
+{
+	
+}
+// 房间信息
 message RoomInfoRequest // IActorRequest
 {
-	required int64 RoomId = 1;
-
-	required int16 Message = 2;  // 消息分类 -1：获取房间ID 0：加入房间 1：准备 2：获取当前房间玩家列表
+	required int64 RoomId = 1;	
 }
-// Error消息分类 0:处理成功 1:房间人数满
 message RoomInfoResponse // IActorResponse
 {
-	optional int64 RoomId = 1;
+	required int64 RoomId = 1;	// 房间号
 
-	optional bytes Rules = 2;  
+	required bytes Rules = 2;  // 房间规则
 
-	repeated AccountInfo Players = 3;	
+	repeated AccountInfo Players = 4 ; // 准备的所有玩家
 }
 // 加入房间消息通告
 message RoomInfoAnnunciate // IActorMessage
@@ -192,4 +207,22 @@ message RoomInfoAnnunciate // IActorMessage
 	required int64 AccountId = 1;
 
 	required int32 Message = 2;  // 提示消息 0:准备游戏 -1:房间人数满 -2:玩家离开房间消息
+}
+// 游戏房间
+//message Room
+//{
+	//required int32 RoomId = 1;  // 局数
+
+	//required string PlayingMethod = 2;  // 玩法
+//}
+// 游戏房间信息
+message RoomListRequest // IActorRequest
+{
+	
+
+	required int32 Dish = 2;  // 局数
+}
+message RoomListResponse // IActorResponse
+{
+	repeated AccountInfo Players = 3;	
 }

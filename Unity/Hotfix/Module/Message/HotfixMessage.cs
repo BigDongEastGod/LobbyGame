@@ -447,7 +447,69 @@ namespace ETHotfix
 
 	}
 
-// 游戏房间信息
+// 加入游戏房间
+	[Message(HotfixOpcode.JoinRoomRequest)]
+	[ProtoContract]
+	public partial class JoinRoomRequest: IActorRequest
+	{
+		[ProtoMember(90, IsRequired = true)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(93, IsRequired = true)]
+		public long ActorId { get; set; }
+
+		[ProtoMember(1, IsRequired = true)]
+		public long RoomId;
+
+	}
+
+	[Message(HotfixOpcode.JoinRoomResponse)]
+	[ProtoContract]
+	public partial class JoinRoomResponse: IActorResponse
+	{
+		[ProtoMember(90, IsRequired = true)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(91, IsRequired = true)]
+		public int Error { get; set; }
+
+		[ProtoMember(92, IsRequired = true)]
+		public string Message { get; set; }
+
+	}
+
+// 准备游戏房间
+	[Message(HotfixOpcode.PrepareGameRequest)]
+	[ProtoContract]
+	public partial class PrepareGameRequest: IActorRequest
+	{
+		[ProtoMember(90, IsRequired = true)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(93, IsRequired = true)]
+		public long ActorId { get; set; }
+
+		[ProtoMember(1, IsRequired = true)]
+		public long RoomId;
+
+	}
+
+	[Message(HotfixOpcode.PrepareGameResponse)]
+	[ProtoContract]
+	public partial class PrepareGameResponse: IActorResponse
+	{
+		[ProtoMember(90, IsRequired = true)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(91, IsRequired = true)]
+		public int Error { get; set; }
+
+		[ProtoMember(92, IsRequired = true)]
+		public string Message { get; set; }
+
+	}
+
+// 房间信息
 	[Message(HotfixOpcode.RoomInfoRequest)]
 	[ProtoContract]
 	public partial class RoomInfoRequest: IActorRequest
@@ -461,12 +523,8 @@ namespace ETHotfix
 		[ProtoMember(1, IsRequired = true)]
 		public long RoomId;
 
-		[ProtoMember(2, IsRequired = true)]
-		public short Message;
-
 	}
 
-// Error消息分类 0:处理成功 1:房间人数满
 	[Message(HotfixOpcode.RoomInfoResponse)]
 	[ProtoContract]
 	public partial class RoomInfoResponse: IActorResponse
@@ -480,13 +538,13 @@ namespace ETHotfix
 		[ProtoMember(92, IsRequired = true)]
 		public string Message { get; set; }
 
-		[ProtoMember(1, IsRequired = false)]
+		[ProtoMember(1, IsRequired = true)]
 		public long RoomId;
 
-		[ProtoMember(2, IsRequired = false)]
+		[ProtoMember(2, IsRequired = true)]
 		public byte[] Rules;
 
-		[ProtoMember(3, TypeName = "ETHotfix.AccountInfo")]
+		[ProtoMember(4, TypeName = "ETHotfix.AccountInfo")]
 		public List<AccountInfo> Players = new List<AccountInfo>();
 
 	}
@@ -507,6 +565,46 @@ namespace ETHotfix
 
 		[ProtoMember(2, IsRequired = true)]
 		public int Message;
+
+	}
+
+// 游戏房间
+//message Room
+//{
+//required int32 RoomId = 1;  // 局数
+//required string PlayingMethod = 2;  // 玩法
+//}
+// 游戏房间信息
+	[Message(HotfixOpcode.RoomListRequest)]
+	[ProtoContract]
+	public partial class RoomListRequest: IActorRequest
+	{
+		[ProtoMember(90, IsRequired = true)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(93, IsRequired = true)]
+		public long ActorId { get; set; }
+
+		[ProtoMember(2, IsRequired = true)]
+		public int Dish;
+
+	}
+
+	[Message(HotfixOpcode.RoomListResponse)]
+	[ProtoContract]
+	public partial class RoomListResponse: IActorResponse
+	{
+		[ProtoMember(90, IsRequired = true)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(91, IsRequired = true)]
+		public int Error { get; set; }
+
+		[ProtoMember(92, IsRequired = true)]
+		public string Message { get; set; }
+
+		[ProtoMember(3, TypeName = "ETHotfix.AccountInfo")]
+		public List<AccountInfo> Players = new List<AccountInfo>();
 
 	}
 
