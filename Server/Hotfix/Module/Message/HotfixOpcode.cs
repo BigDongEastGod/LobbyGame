@@ -28,8 +28,14 @@ namespace ETModel
 		 public const ushort NNChess = 10024;
 		 public const ushort RoomRulesRequest = 10025;
 		 public const ushort RoomRulesResponse = 10026;
-		 public const ushort RoomInfoRequest = 10027;
-		 public const ushort RoomInfoResponse = 10028;
-		 public const ushort RoomInfoAnnunciate = 10029;
+		 public const ushort JoinRoomRequest = 10027;
+		 public const ushort JoinRoomResponse = 10028;
+		 public const ushort PrepareGameRequest = 10029;
+		 public const ushort PrepareGameResponse = 10030;
+		 public const ushort RoomInfoRequest = 10031;
+		 public const ushort RoomInfoResponse = 10032;
+		 public const ushort RoomInfoAnnunciate = 10033;
+		 public const ushort RoomListRequest = 10034;
+		 public const ushort RoomListResponse = 10035;
 	}
 }

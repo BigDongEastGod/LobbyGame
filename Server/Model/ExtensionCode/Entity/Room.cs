@@ -2,19 +2,29 @@
 
 namespace ETModel
 {
-    public abstract class Room :ETModel.Entity
+    public enum RoomType
     {
-        public readonly Dictionary<SPlayer, bool> Players = new Dictionary<SPlayer, bool>();
+        NN =0,
+        DDZ =1
+    }
+    
+    public abstract class Room : Entity
+    {
+        public readonly List<SPlayer> Players = new List<SPlayer>();
+
+        public readonly List<SPlayer> Guest = new List<SPlayer>();
         
-        public byte[] Rules;
+        public byte[] Rules;  // 房间规则
+
+        public RoomType RoomType;  // 房间类型
 
         public virtual long PlayerIsInRomm(SPlayer player){return 0;}  // 判断用户是否在该房间中
         
         public virtual void AddRules(byte[] rules){}  // 添加规则
         
-        public virtual int Prepare(SPlayer player){return 0;}  // 准备游戏
+        public virtual string Prepare(SPlayer player){return null;}  // 准备游戏
 
-        public virtual int JionRoom(SPlayer player){return 0;}  // 加入房间
+        public virtual string JionRoom(SPlayer player){return null;}  // 加入房间
 
         public virtual void QuitRoom(SPlayer player){}  // 退出房间
         
