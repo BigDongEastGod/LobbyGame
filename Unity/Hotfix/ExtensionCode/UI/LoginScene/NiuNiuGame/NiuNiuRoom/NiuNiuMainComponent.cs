@@ -179,10 +179,7 @@ namespace ETHotfix
             }
         }
 
-        private void ClearHeadUI()
-        {
-            
-        }
+     
 
         //房间回调
         private void RoomBack(RoomInfoAnnunciate obj)
@@ -203,18 +200,9 @@ namespace ETHotfix
                  showCardUI.GetComponent<NNShowCardComponent>().QuitRoom(obj.UserName);
                     break;
                 case 3:
-                    
+                    startGameBt.gameObject.SetActive(true);
+                    startGameBt.GetComponent<Animator>().SetInteger("IsMiddle",1);
                     break;
-                    
-            }
-        }
-
-        private void IsShowStartGame(string userName)
-        {
-            if (Player.AccountInfo.UserName == userName)
-            {
-                startGameBt.gameObject.SetActive(true);
-                startGameBt.GetComponent<Animator>().SetInteger("IsMiddle",1);
             }
         }
 
