@@ -269,7 +269,7 @@ namespace ETHotfix
 // 获取用户信息
 	[Message(HotfixOpcode.AccountInfo)]
 	[ProtoContract]
-	public partial class AccountInfo
+	public partial class  AccountInfo
 	{
 		[ProtoMember(1, IsRequired = true)]
 		public string UserName;
