@@ -9235,3 +9235,102 @@ Parameter name: key
 2018-05-01 23:08:37.1786 Location 005 (LocationComponent.cs:108) location remove key: 1225854572101680
 2018-05-01 23:08:37.1905 Location 005 (LocationComponent.cs:108) location remove key: 662864470409257
 2018-05-01 23:08:37.1978 Map      006 (PlayerManageComponent.cs:93) 删除成功
+2018-05-02 10:01:05.9380 Manager  001 (Program.cs:43) server start........................ 1 Manager
+2018-05-02 10:01:06.2174 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=2 --appType=Realm --config=../Config/StartConfig/JuAnServer
+2018-05-02 10:01:06.2338 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=3 --appType=DB --config=../Config/StartConfig/JuAnServer
+2018-05-02 10:01:06.2378 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=4 --appType=Gate --config=../Config/StartConfig/JuAnServer
+2018-05-02 10:01:06.2419 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=5 --appType=Location --config=../Config/StartConfig/JuAnServer
+2018-05-02 10:01:06.2461 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=6 --appType=Map --config=../Config/StartConfig/JuAnServer
+2018-05-02 10:01:07.0227 Location 005 (Program.cs:43) server start........................ 5 Location
+2018-05-02 10:01:07.0312 DB       003 (Program.cs:43) server start........................ 3 DB
+2018-05-02 10:01:07.0315 Gate     004 (Program.cs:43) server start........................ 4 Gate
+2018-05-02 10:01:07.0306 Realm    002 (Program.cs:43) server start........................ 2 Realm
+2018-05-02 10:01:07.0534 Map      006 (Program.cs:43) server start........................ 6 Map
+2018-05-02 10:01:17.5642 Map      006 (ActorManagerComponent.cs:14) add actor: 662864470409257 SPlayer
+2018-05-02 10:01:17.6065 Location 005 (LocationComponent.cs:100) location add key: 662864470409257 appid: 6
+2018-05-02 10:01:17.6439 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225857149239344 Session
+2018-05-02 10:01:17.6546 Location 005 (LocationComponent.cs:100) location add key: 1225857149239344 appid: 4
+2018-05-02 10:01:17.8133 Location 005 (LocationComponent.cs:207) location get key: 662864470409257 6
+2018-05-02 10:01:23.2628 Gate     004 (SessionGatePlayerComponent.cs:16) 有用户退出
+2018-05-02 10:01:23.2755 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225857149239344 Session
+2018-05-02 10:01:23.2794 Gate     004 (GatePlayerManageComponent.cs:83) 玩家数量 ：0
+2018-05-02 10:01:23.2795 Map      006 (PlayerManageComponent.cs:63) 已经做到删除标记
+2018-05-02 10:01:33.2908 Map      006 (PlayerManageComponent.cs:69) 准备删除
+2018-05-02 10:01:33.3015 Map      006 (ActorManagerComponent.cs:25) remove actor: 662864470409257 SPlayer
+2018-05-02 10:01:33.3097 Location 005 (LocationComponent.cs:108) location remove key: 1225857149239344
+2018-05-02 10:01:33.3237 Location 005 (LocationComponent.cs:108) location remove key: 662864470409257
+2018-05-02 10:01:33.3310 Map      006 (PlayerManageComponent.cs:93) 删除成功
+2018-05-02 10:02:14.8810 Manager  001 (Program.cs:43) server start........................ 1 Manager
+2018-05-02 10:02:14.9927 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=2 --appType=Realm --config=../Config/StartConfig/JuAnServer
+2018-05-02 10:02:15.0028 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=3 --appType=DB --config=../Config/StartConfig/JuAnServer
+2018-05-02 10:02:15.0062 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=4 --appType=Gate --config=../Config/StartConfig/JuAnServer
+2018-05-02 10:02:15.0101 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=5 --appType=Location --config=../Config/StartConfig/JuAnServer
+2018-05-02 10:02:15.0144 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=6 --appType=Map --config=../Config/StartConfig/JuAnServer
+2018-05-02 10:02:15.8034 Gate     004 (Program.cs:43) server start........................ 4 Gate
+2018-05-02 10:02:15.8151 DB       003 (Program.cs:43) server start........................ 3 DB
+2018-05-02 10:02:15.8129 Realm    002 (Program.cs:43) server start........................ 2 Realm
+2018-05-02 10:02:15.8139 Map      006 (Program.cs:43) server start........................ 6 Map
+2018-05-02 10:02:15.8198 Location 005 (Program.cs:43) server start........................ 5 Location
+2018-05-02 10:02:24.9946 Map      006 (ActorManagerComponent.cs:14) add actor: 662864470409257 SPlayer
+2018-05-02 10:02:25.0408 Location 005 (LocationComponent.cs:100) location add key: 662864470409257 appid: 6
+2018-05-02 10:02:25.0833 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225857153630255 Session
+2018-05-02 10:02:25.0963 Location 005 (LocationComponent.cs:100) location add key: 1225857153630255 appid: 4
+2018-05-02 10:02:25.1935 Location 005 (LocationComponent.cs:207) location get key: 662864470409257 6
+2018-05-02 10:02:25.2231 Map      006 (GetAccountInfoHandler.cs:26) 
+2018-05-02 10:02:29.1221 Gate     004 (SessionGatePlayerComponent.cs:16) 有用户退出
+2018-05-02 10:02:29.1337 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225857153630255 Session
+2018-05-02 10:02:29.1368 Gate     004 (GatePlayerManageComponent.cs:83) 玩家数量 ：0
+2018-05-02 10:02:29.1382 Map      006 (PlayerManageComponent.cs:63) 已经做到删除标记
+2018-05-02 10:02:29.1505 Gate     004 (GatePlayerManageComponent.cs:83) 玩家数量 ：0
+2018-05-02 10:03:15.7967 Manager  001 (Program.cs:43) server start........................ 1 Manager
+2018-05-02 10:03:15.9073 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=2 --appType=Realm --config=../Config/StartConfig/JuAnServer
+2018-05-02 10:03:15.9181 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=3 --appType=DB --config=../Config/StartConfig/JuAnServer
+2018-05-02 10:03:15.9217 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=4 --appType=Gate --config=../Config/StartConfig/JuAnServer
+2018-05-02 10:03:15.9265 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=5 --appType=Location --config=../Config/StartConfig/JuAnServer
+2018-05-02 10:03:15.9312 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=6 --appType=Map --config=../Config/StartConfig/JuAnServer
+2018-05-02 10:03:16.6661 Realm    002 (Program.cs:43) server start........................ 2 Realm
+2018-05-02 10:03:16.6742 Location 005 (Program.cs:43) server start........................ 5 Location
+2018-05-02 10:03:16.6777 Gate     004 (Program.cs:43) server start........................ 4 Gate
+2018-05-02 10:03:16.6761 DB       003 (Program.cs:43) server start........................ 3 DB
+2018-05-02 10:03:16.6748 Map      006 (Program.cs:43) server start........................ 6 Map
+2018-05-02 10:03:27.1871 Map      006 (ActorManagerComponent.cs:14) add actor: 662864470409257 SPlayer
+2018-05-02 10:03:27.2364 Location 005 (LocationComponent.cs:100) location add key: 662864470409257 appid: 6
+2018-05-02 10:03:27.2819 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225857157693488 Session
+2018-05-02 10:03:27.2971 Location 005 (LocationComponent.cs:100) location add key: 1225857157693488 appid: 4
+2018-05-02 10:03:27.4131 Location 005 (LocationComponent.cs:207) location get key: 662864470409257 6
+2018-05-02 10:03:27.4471 Map      006 (GetAccountInfoHandler.cs:26) 
+2018-05-02 10:03:35.8515 Gate     004 (SessionGatePlayerComponent.cs:16) 有用户退出
+2018-05-02 10:03:35.8641 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225857157693488 Session
+2018-05-02 10:03:35.8681 Gate     004 (GatePlayerManageComponent.cs:83) 玩家数量 ：0
+2018-05-02 10:03:35.8681 Map      006 (PlayerManageComponent.cs:63) 已经做到删除标记
+2018-05-02 10:03:45.8794 Map      006 (PlayerManageComponent.cs:69) 准备删除
+2018-05-02 10:03:45.8917 Map      006 (ActorManagerComponent.cs:25) remove actor: 662864470409257 SPlayer
+2018-05-02 10:03:45.9004 Location 005 (LocationComponent.cs:108) location remove key: 1225857157693488
+2018-05-02 10:03:45.9143 Location 005 (LocationComponent.cs:108) location remove key: 662864470409257
+2018-05-02 10:03:45.9203 Map      006 (PlayerManageComponent.cs:93) 删除成功
+2018-05-02 10:17:00.0496 Manager  001 (Program.cs:43) server start........................ 1 Manager
+2018-05-02 10:17:00.2931 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=2 --appType=Realm --config=../Config/StartConfig/JuAnServer
+2018-05-02 10:17:00.3030 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=3 --appType=DB --config=../Config/StartConfig/JuAnServer
+2018-05-02 10:17:00.3064 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=4 --appType=Gate --config=../Config/StartConfig/JuAnServer
+2018-05-02 10:17:00.3099 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=5 --appType=Location --config=../Config/StartConfig/JuAnServer
+2018-05-02 10:17:00.3137 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=6 --appType=Map --config=../Config/StartConfig/JuAnServer
+2018-05-02 10:17:01.1125 Map      006 (Program.cs:43) server start........................ 6 Map
+2018-05-02 10:17:01.1182 Location 005 (Program.cs:43) server start........................ 5 Location
+2018-05-02 10:17:01.1207 DB       003 (Program.cs:43) server start........................ 3 DB
+2018-05-02 10:17:01.1200 Gate     004 (Program.cs:43) server start........................ 4 Gate
+2018-05-02 10:17:01.1295 Realm    002 (Program.cs:43) server start........................ 2 Realm
+2018-05-02 10:17:14.8752 Map      006 (ActorManagerComponent.cs:14) add actor: 662864470409257 SPlayer
+2018-05-02 10:17:14.9238 Location 005 (LocationComponent.cs:100) location add key: 662864470409257 appid: 6
+2018-05-02 10:17:14.9690 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225857211957296 Session
+2018-05-02 10:17:14.9847 Location 005 (LocationComponent.cs:100) location add key: 1225857211957296 appid: 4
+2018-05-02 10:17:15.0953 Location 005 (LocationComponent.cs:207) location get key: 662864470409257 6
+2018-05-02 10:17:15.1250 Map      006 (GetAccountInfoHandler.cs:26) 1
+2018-05-02 10:17:19.8277 Gate     004 (SessionGatePlayerComponent.cs:16) 有用户退出
+2018-05-02 10:17:19.8348 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225857211957296 Session
+2018-05-02 10:17:19.8391 Gate     004 (GatePlayerManageComponent.cs:83) 玩家数量 ：0
+2018-05-02 10:17:19.8388 Map      006 (PlayerManageComponent.cs:63) 已经做到删除标记
+2018-05-02 10:17:29.8460 Map      006 (PlayerManageComponent.cs:69) 准备删除
+2018-05-02 10:17:29.8573 Map      006 (ActorManagerComponent.cs:25) remove actor: 662864470409257 SPlayer
+2018-05-02 10:17:29.8655 Location 005 (LocationComponent.cs:108) location remove key: 1225857211957296
+2018-05-02 10:17:29.8791 Location 005 (LocationComponent.cs:108) location remove key: 662864470409257
+2018-05-02 10:17:29.8857 Map      006 (PlayerManageComponent.cs:93) 删除成功

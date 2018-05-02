@@ -214,7 +214,7 @@ message RoomInfoResponse // IActorResponse
 // 提示消息 0:加入房间 1:坐下（准备） 2:离开房间
 message RoomInfoAnnunciate // IActorMessage
 {
-	required int64 AccountId = 1;
+	required string UserName = 1;
 
 	required int32 Message = 2;  
 }
