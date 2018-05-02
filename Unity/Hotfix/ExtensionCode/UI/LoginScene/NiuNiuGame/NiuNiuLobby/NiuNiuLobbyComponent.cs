@@ -24,7 +24,7 @@ namespace ETHotfix
     }
 
     [ObjectSystem]
-    public class NiuNiuLobbyUpdateStartSystem : UpdateSystem<NiuNiuLobbyComponent>
+    public class NiuNiuLobbyComponentUpdateSystem : UpdateSystem<NiuNiuLobbyComponent>
     {
         public override void Update(NiuNiuLobbyComponent self)
         {
@@ -51,6 +51,9 @@ namespace ETHotfix
 
         public async void Awake()
         {
+            // 获取用户信息
+            var response = (GetAccountInfoResponse) await SceneHelperComponent.Instance.Session.Call(new GetAccountInfoRequest());
+
             ReferenceCollector rc = this.GetParent<UI>().GameObject.GetComponent<ReferenceCollector>();
 
             #region 获取游戏物体
@@ -58,7 +61,8 @@ namespace ETHotfix
             // 用户信息
             _userIdText = rc.Get<GameObject>("UserIdText");
             _diamondText = rc.Get<GameObject>("DiamondText");
-            
+            InitUserInfo(response.AccountInfo.UserName, response.AccountInfo.Diamond.ToString());
+
             var _barText = rc.Get<GameObject>("NiuNiuNoticeBar").transform.Find("mask/NoticeBarText").gameObject;
             var _barPosLeft = rc.Get<GameObject>("NiuNiuNoticeBar").transform.Find("BarPosLeft").gameObject;
             var _barPosRight = rc.Get<GameObject>("NiuNiuNoticeBar").transform.Find("BarPosRight").gameObject;
@@ -117,11 +121,6 @@ namespace ETHotfix
             SceneHelperComponent.Instance.MonoEvent.AddButtonClick(menuBtn.GetComponent<Button>(), () => { _nnLobbyMenu.GameObject.SetActive(true); });
 
             #endregion
-            
-            // 获取用户信息
-            var response = (GetAccountInfoResponse) await SceneHelperComponent.Instance.Session.Call(new GetAccountInfoRequest());
-            InitUserInfo(response.AccountInfo.UserName, response.AccountInfo.Diamond.ToString());
-            
         }
 
         public void Start()
@@ -129,8 +128,6 @@ namespace ETHotfix
             _nnCreateRoom = Game.Scene.GetComponent<UIComponent>().Get(UIType.NiuNiuCreateRoom);
             _nnJoinRoom = Game.Scene.GetComponent<UIComponent>().Get(UIType.NiuNiuJoinRoom);
             _nnLobbyMenu = Game.Scene.GetComponent<UIComponent>().Get(UIType.NiuNiuLobbyMenu);
-            
-            
         }
 
         private void InitUserInfo(string userName, string diamond)
@@ -146,7 +143,7 @@ namespace ETHotfix
 
         private void MoveBar()
         {
-            if (_isMoveBar)
+            if (_isMoveBar && barTextTransform && posLeftTransform && posRightTransform)
             {
                 Vector2 tempVec2 = new Vector2(barTextTransform.anchoredPosition.x - Time.deltaTime * 10 * _barMoveSpeed, barTextTransform.anchoredPosition.y);
                 barTextTransform.anchoredPosition = tempVec2;

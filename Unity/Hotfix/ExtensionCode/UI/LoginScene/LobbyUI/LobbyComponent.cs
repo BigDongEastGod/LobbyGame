@@ -36,12 +36,16 @@ namespace ETHotfix
 
         public async void Awake()
         {
+            // 获取用户信息
+            var response = (GetAccountInfoResponse) await SceneHelperComponent.Instance.Session.Call(new GetAccountInfoRequest());
+
             ReferenceCollector rc = this.GetParent<UI>().GameObject.GetComponent<ReferenceCollector>();
 
             var niuniuStartBtn = rc.Get<GameObject>("NiuNiuStartBtn");
             _userIdText = rc.Get<GameObject>("UserIdText");
             _diamondText = rc.Get<GameObject>("DiamondText");
-            
+            InitUserInfo(response.AccountInfo.UserName, response.AccountInfo.Diamond.ToString());
+
             _barText = rc.Get<GameObject>("NoticeBarText");
             var _barPosLeft = rc.Get<GameObject>("NiuNiuNoticeBar").transform.Find("BarPosLeft").gameObject;
             var _barPosRight = rc.Get<GameObject>("NiuNiuNoticeBar").transform.Find("BarPosRight").gameObject;
@@ -59,10 +63,7 @@ namespace ETHotfix
                 Game.Scene.GetComponent<UIComponent>().Create(UIType.NiuNiuLobby, UiLayer.Bottom);
                 Game.Scene.GetComponent<UIComponent>().Remove(UIType.Lobby);
             });
-            
-            // 获取用户信息
-            var response = (GetAccountInfoResponse) await SceneHelperComponent.Instance.Session.Call(new GetAccountInfoRequest());
-            InitUserInfo(response.AccountInfo.UserName, response.AccountInfo.Diamond.ToString());
+
         }
 
         public void Update()
@@ -79,7 +80,7 @@ namespace ETHotfix
 
         private void MoveBar()
         {
-            if (_isMoveBar)
+            if (_isMoveBar && barTextTransform && posLeftTransform && posRightTransform )
             {
                 Vector2 tempVec2 = new Vector2(barTextTransform.anchoredPosition.x - Time.deltaTime * 10 * _barMoveSpeed, barTextTransform.anchoredPosition.y);
                 barTextTransform.anchoredPosition = tempVec2;
