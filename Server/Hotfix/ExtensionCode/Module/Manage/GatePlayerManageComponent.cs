@@ -63,6 +63,17 @@ namespace ETHotfix
             return self.Sessions.FirstOrDefault(d => d.GetComponent<SessionGatePlayerComponent>()?.GetComponent<Player>()?.Id == accountId);
         }
 
+        /// <summary>
+        /// 根据玩家ID获取Session
+        /// </summary>
+        /// <param name="self"></param>
+        /// <param name="session"></param>
+        /// <returns></returns>
+        public static Session GetSession(this GatePlayerManageComponent self, Session session)
+        {
+            return self.Sessions.FirstOrDefault(d => d.Id == session.Id);
+        }
+
         #endregion
 
         #region 移除操作
