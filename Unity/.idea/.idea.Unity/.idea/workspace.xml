@@ -2,23 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="43a2cc3c-b9a6-4da2-a947-693a35ac239f" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/../Bin/Hotfix.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Bin/Hotfix.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bin/Hotfix.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Bin/Hotfix.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Bin/publish/Hotfix.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Bin/publish/Hotfix.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Bin/publish/Hotfix.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Bin/publish/Hotfix.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Logs/Log-DB-3/Info/2018-05-02.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Logs/Log-DB-3/Info/2018-05-02.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Logs/Log-Gate-4/Debug/2018-05-02.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Logs/Log-Gate-4/Debug/2018-05-02.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Logs/Log-Gate-4/Info/2018-05-02.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Logs/Log-Gate-4/Info/2018-05-02.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Logs/Log-Location-5/Info/2018-05-02.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Logs/Log-Location-5/Info/2018-05-02.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Logs/Log-Manager-1/Info/2018-05-02.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Logs/Log-Manager-1/Info/2018-05-02.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Logs/Log-Map-6/Debug/2018-05-02.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Logs/Log-Map-6/Debug/2018-05-02.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Logs/Log-Map-6/Info/2018-05-02.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Logs/Log-Map-6/Info/2018-05-02.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Logs/Log-Realm-2/Info/2018-05-02.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Logs/Log-Realm-2/Info/2018-05-02.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Logs/Log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Logs/Log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/Hotfix/ExtensionCode/Handler/LoginScene/Gate/EnterGateHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Hotfix/ExtensionCode/Handler/LoginScene/Gate/EnterGateHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bin/publish/NLog.config" beforeDir="false" afterPath="$PROJECT_DIR$/../Bin/publish/NLog.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/App/NLog.config" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/App/NLog.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/Hotfix/obj/Debug/Hotfix.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Hotfix/obj/Debug/Hotfix.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/Hotfix/obj/Debug/Hotfix.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Hotfix/obj/Debug/Hotfix.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assembly-CSharp-Editor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp-Editor.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assembly-CSharp-firstpass.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp-firstpass.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotfix/ExtensionCode/Module/SceneHelperComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Hotfix/ExtensionCode/Module/SceneHelperComponent.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
