@@ -1,4 +1,5 @@
-﻿using ETModel;
+﻿using System;
+using ETModel;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,11 +7,11 @@ namespace ETHotfix
 {
     
     [ObjectSystem]
-    public class NNRoomOperationComponentAwakeSystem : AwakeSystem<NNRoomOperationComponent>
+    public class NNRoomOperationComponentArgSystem : AwakeSystem<NNRoomOperationComponent,object[]>
     {
-        public override void Awake(NNRoomOperationComponent self)
+        public override void Awake(NNRoomOperationComponent self,object[] args)
         {
-            self.Awake();
+            self.Awake(args);
         }
     }
     
@@ -18,7 +19,7 @@ namespace ETHotfix
     
     public class NNRoomOperationComponent:Component
     {
-        public void Awake()
+        public void Awake(object[] args)
         {
             ReferenceCollector rc = this.GetParent<UI>().GameObject.GetComponent<ReferenceCollector>();
             
@@ -29,9 +30,23 @@ namespace ETHotfix
             
             //离开房间按照注册
             SceneHelperComponent.Instance.MonoEvent.AddButtonClick(exitButton.GetComponent<Button>(), () =>
+                {
+                    QuitRoom(Convert.ToInt64(args[0]));
+                });
+        }
+
+        
+        
+        private async void QuitRoom(long roomId)
+        {
+            var quitResponse = (QuitRoomResponse) await SceneHelperComponent.Instance.Session.Call(new QuitRoomRequest(){RoomId = roomId});
+            if (quitResponse.Error == 0)
             {
-                
-            });
+                Game.Scene.GetComponent<UIComponent>().Create(UIType.NiuNiuLobby, UiLayer.Bottom);
+                Game.Scene.GetComponent<UIComponent>().Remove(UIType.NiuNiuMain);
+                Game.Scene.GetComponent<UIComponent>().Remove(UIType.NNShowCard);
+                Game.Scene.GetComponent<UIComponent>().Remove(UIType.NNRoomOperation);
+            }
         }
     }
 }

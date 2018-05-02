@@ -35,7 +35,6 @@ namespace ETHotfix
         //初始化数据
         private async void SetRoomInfo(long roomId)
         {
-            Debug.Log("加入房间"+roomId);
             ReferenceCollector rc = this.GetParent<UI>().GameObject.GetComponent<ReferenceCollector>();
             
             //房间分线图
@@ -143,7 +142,8 @@ namespace ETHotfix
             //下拉按照注册
             SceneHelperComponent.Instance.MonoEvent.AddButtonClick(selectButton.GetComponent<Button>(), () =>
             {
-                Game.Scene.GetComponent<UIComponent>().Get(UIType.NNRoomOperation).GameObject.SetActive(true);
+                object[] arg = new object[] {m_roomId, this};
+                Game.Scene.GetComponent<UIComponent>().Create(UIType.NNRoomOperation, UiLayer.Top,arg);
             });
             
 
@@ -151,13 +151,9 @@ namespace ETHotfix
             GetAllReadyInfo();
             
             RoomInfoAnnunciateHandler.RoomAction += RoomInfo;
+            
+            
         }
-
-        private async void ShowRoomOperationUIForm()
-        {
-//            var accountResponse = (GetAccountInfoResponse) await SceneHelperComponent.Instance.Session.Call(new GetAccountInfoRequest());
-        }
-
 
         //创建本地玩家头像
         private async void GetRoomInfo()
@@ -183,10 +179,24 @@ namespace ETHotfix
             }
         }
 
-        
-        private void RoomInfo(RoomInfoAnnunciate obj)
+        private void ClearHeadUI()
         {
             
+        }
+
+
+        private void RoomInfo(RoomInfoAnnunciate obj)
+        {
+            switch (obj.Message)
+            {
+                case 0:
+                 break;
+                case 1:
+                 break;
+                case 2:
+//                    obj.AccountId
+                    break;
+            }
         }
 
     }

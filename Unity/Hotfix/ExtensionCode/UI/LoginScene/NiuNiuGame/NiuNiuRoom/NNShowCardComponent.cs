@@ -21,20 +21,20 @@ namespace ETHotfix
     {
         #region variable
         
-        public List<Vector2> sixTableList;           //六人桌的位置
-        public List<Vector2> eightTableList;         //八人桌的位置
-        public int roomPeople;                    //房间人数
+        public List<Vector2> sixTableList;                         //六人桌的位置
+        public List<Vector2> eightTableList;                       //八人桌的位置
+        public int roomPeople;                                     //房间人数
         
-        private List<Vector2> currentTablePosList;   //当前房间位置
-        private Transform currentTableObj;           //当前桌子
-        private GameObject NNCardPrefab;             //卡牌预设
+        private List<Vector2> currentTablePosList;                 //当前房间位置
+        private Transform currentTableObj;                         //当前桌子
+        private GameObject NNCardPrefab;                           //卡牌预设
         private Dictionary<int,ReferenceCollector> HeadUIDict;     //头像位置列表
-        private Dictionary<int,UI> cardUIDict;     //卡牌位置列表
-        private RectTransform mainHeadPos;           //主头像位置
-        private RectTransform mainCardPos;           //主卡牌像位置
-        private Vector2 LicensingPos;                //发牌位置 
+        private Dictionary<int,UI> cardUIDict;                     //卡牌位置列表
+        private RectTransform mainHeadPos;                         //主头像位置
+        private RectTransform mainCardPos;                         //主卡牌像位置
+        private Vector2 LicensingPos;                              //发牌位置 
         private ReferenceCollector rc;
-        private Dictionary<short,List<UI>> NiuNiuCardDict;  //游戏中生产的卡牌
+        private Dictionary<short,List<UI>> NiuNiuCardDict;         //游戏中生产的卡牌
         private GameObject headUIform;
      
 
@@ -110,7 +110,7 @@ namespace ETHotfix
         }
 
         
-        
+        //设置头像的信息
         private void SetHeadUIComponent(GameObject headItem,AccountInfo playerInfo)
         {
             ReferenceCollector rc = headItem.GetComponent<ReferenceCollector>();
@@ -162,7 +162,7 @@ namespace ETHotfix
         {
             
         }
-
+        
 
 
     }
