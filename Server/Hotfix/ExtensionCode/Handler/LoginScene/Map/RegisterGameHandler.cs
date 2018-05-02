@@ -32,7 +32,7 @@ namespace ETHotfix
 
                     // 数据库读取账号数据，并挂载到Player组件下
 
-                    player.AddComponent(await Game.Scene.GetComponent<DBProxyComponent>().Query<Account>(player.Id));
+                    if (player.GetComponent<Account>() == null) player.AddComponent(await Game.Scene.GetComponent<DBProxyComponent>().Query<Account>(player.Id));
 
                     // 挂载Actor
 
