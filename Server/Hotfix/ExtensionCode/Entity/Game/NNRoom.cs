@@ -38,7 +38,7 @@ namespace ETHotfix
             
             // 发送数据给房间所有人
 
-            var response = new RoomInfoAnnunciate() {AccountId = player.Id, Message = 0};
+            var response = new RoomInfoAnnunciate() {UserName = player.Account.UserName, Message = 0};
 
             Players.ForEach(d => d.GetActorProxy.Send(response));
 
@@ -67,7 +67,7 @@ namespace ETHotfix
             
             // 发送数据给房间所有人
             
-            var response = new RoomInfoAnnunciate() {AccountId = player.Id, Message = 1};
+            var response = new RoomInfoAnnunciate() {UserName = player.Account.UserName, Message = 1};
 
             Players.Where(d => d != player).ForEach(d => d.GetActorProxy.Send(response));
 
@@ -84,7 +84,7 @@ namespace ETHotfix
             
             // 发送离开房间消息
             
-            var response = new RoomInfoAnnunciate() {AccountId = player.Id, Message = 2};
+            var response = new RoomInfoAnnunciate() {UserName = player.Account.UserName, Message = 2};
 
             Players.Where(d => d != player).ForEach(d => d.GetActorProxy.Send(response));
             

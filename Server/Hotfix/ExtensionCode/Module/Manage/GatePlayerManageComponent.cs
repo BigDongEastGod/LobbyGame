@@ -20,32 +20,32 @@ namespace ETHotfix
         /// <returns></returns>
         public static void Add(this GatePlayerManageComponent self, Session session, long accountId)
         {
-            // 如果有跟用户ID想关联的Session、就删除该Session
+            // 获取跟用户ID关联的Session
+            
+            var gateSession = self.Sessions.FirstOrDefault(d => d.GetComponent<Player>()?.Id == accountId);
+            
+            // 如果找找到，移除这个Session和执行Dispose方法
 
-            if (self.Sessions.TryGetValue(accountId,out var playerSession))
+            if (gateSession != null)
             {
-                self.Players.Remove(playerSession.Id);
-                
-                self.Sessions.Remove(accountId);
-                
-                playerSession.Dispose();
+                if (gateSession.IsDisposed == false) gateSession.Dispose();
+
+                self.Sessions.Remove(gateSession);
             }
-            
-            // 创建Player
-            
-            var player = ComponentFactory.CreateWithId<Player>(accountId);
 
-            player.UnitId = accountId;
-            
-            self.Players.Add(session.Id, player);
-
-            self.Sessions.Add(accountId, session);
-            
             // 挂在Player组件，给Actor使用
 
-            var playerComponent = session.AddComponent<Player>();
+            var sessionGatePlayer = session.GetComponent<SessionGatePlayerComponent>();
+
+            if (sessionGatePlayer == null) return;
+
+            var playerComponent = sessionGatePlayer.AddComponent<Player>();
+            
+            playerComponent.Id = accountId;
             
             playerComponent.UnitId = accountId;
+
+            self.Sessions.Add(session);
         }
 
         #endregion
@@ -60,22 +60,7 @@ namespace ETHotfix
         /// <returns></returns>
         public static Session GetSession(this GatePlayerManageComponent self, long accountId)
         {
-            self.Sessions.TryGetValue(accountId, out var session);
-
-            return session;
-        }
-
-        /// <summary>
-        /// 根据Session获取玩家
-        /// </summary>
-        /// <param name="self"></param>
-        /// <param name="session"></param>
-        /// <returns></returns>
-        public static Player GatePlayer(this GatePlayerManageComponent self, Session session)
-        {
-            self.Players.TryGetValue(session.Id, out var player);
-
-            return player;
+            return self.Sessions.FirstOrDefault(d => d.GetComponent<SessionGatePlayerComponent>()?.GetComponent<Player>()?.Id == accountId);
         }
 
         #endregion
@@ -89,13 +74,13 @@ namespace ETHotfix
         /// <param name="session"></param>
         public static void Remove(this GatePlayerManageComponent self, Session session)
         {
-            if (!self.Players.TryGetValue(session.Id, out var player)) return;
+            if (!self.Sessions.Contains(session)) return;
             
-            self.Sessions[player.Id].Dispose();
-            
-            self.Sessions.Remove(player.Id);
-            
-            self.Players.Remove(session.Id);
+            if (session.IsDisposed == false) session.Dispose();
+
+            self.Sessions.Remove(session);
+
+            Log.Debug("玩家数量 ：" + self.Sessions.Count);
         }
 
         /// <summary>
@@ -103,16 +88,9 @@ namespace ETHotfix
         /// </summary>
         /// <param name="self"></param>
         /// <param name="accountId"></param>
-        /// <param name="isRemovePlayer"></param>
-        public static void Remove(this GatePlayerManageComponent self, long accountId, bool isRemovePlayer = true)
+        public static void Remove(this GatePlayerManageComponent self, long accountId)
         {
-            if (!self.Sessions.TryGetValue(accountId, out var session)) return;
-
-            if (isRemovePlayer) self.Players.Remove(session.Id);
-
-            session.Dispose();
-
-            self.Sessions.Remove(accountId);
+            self.Remove(self.GetSession(accountId));
         }
 
         #endregion

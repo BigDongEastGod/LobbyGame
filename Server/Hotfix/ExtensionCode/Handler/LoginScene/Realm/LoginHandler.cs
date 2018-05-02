@@ -43,16 +43,14 @@ namespace ETHotfix
                     #region 登录Gate服务器（如果有多个随机分配）
 
                     // 随机分配网关服务器
-                    
+
                     var gateConfig = Game.Scene.GetComponent<RealmGateAddressComponent>().GetAddress();
-                    
+
                     var gateSession = Game.Scene.GetComponent<NetInnerComponent>().Get(gateConfig.GetComponent<InnerConfig>().IPEndPoint);
 
                     var gateOutConfig = gateConfig.GetComponent<OuterConfig>().IPEndPoint2;
-                    
-                    var gateresponse =
-                        (JionPlayerByGateResponse) await gateSession.Call(
-                            new JionPlayerByGateRequest() {AccountId = account.Id});
+
+                    var gateresponse = (JionPlayerByGateResponse) await gateSession.Call(new JionPlayerByGateRequest() {AccountId = account.Id});
 
                     if (gateresponse.Error != 0)
                     {
@@ -62,10 +60,10 @@ namespace ETHotfix
                     }
                     else
                     {
-                        response.Address = gateOutConfig.Address.ToString()+ ":" + gateOutConfig.Port;
+                        response.Address = gateOutConfig.Address.ToString() + ":" + gateOutConfig.Port;
 
                         response.Key = gateresponse.Key;
-                        
+
                         response.Error = 0;
                     }
 

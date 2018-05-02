@@ -51,6 +51,24 @@ namespace ETModel
 			this.components.Clear();
 			this.componentDict.Clear();
 		}
+		
+		public Component AddComponent(Component component)
+		{
+			var type = component.GetType();
+			
+			if (this.componentDict.ContainsKey(type))
+			{
+				throw new Exception($"AddComponent, component already exist, id: {this.Id}, component: {type.Name}");
+			}
+
+			if (component is ISerializeToEntity)
+			{
+				this.components.Add(component);
+			}
+			this.componentDict.Add(component.GetType(), component);
+			
+			return component;
+		}
 
 		public Component AddComponent(Type type)
 		{
