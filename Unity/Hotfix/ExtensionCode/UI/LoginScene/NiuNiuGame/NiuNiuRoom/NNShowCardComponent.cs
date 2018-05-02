@@ -183,6 +183,7 @@ namespace ETHotfix
             
         }
 
+        //离开房间
         public void QuitRoom(string userName)
         {
             if (HeadUIDict.ContainsKey(userName))
