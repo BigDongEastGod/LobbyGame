@@ -77,7 +77,7 @@ namespace ETHotfix
 
                     if (Game.Scene.GetComponent<PingComponent>() == null)
                     {
-                        Game.Scene.AddComponent<PingComponent, long, SessionWrap, Action>(2000, Session, null);
+                        Game.Scene.AddComponent<PingComponent, long, SessionWrap, Action>(5000, Session, null);
                     }
                 }
             }

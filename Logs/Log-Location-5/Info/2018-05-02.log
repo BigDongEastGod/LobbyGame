@@ -26,3 +26,19 @@
 2018-05-02 14:38:46.5614 Location 005 (LocationComponent.cs:207) location get key: 662864470409257 6
 2018-05-02 14:39:17.9370 Location 005 (LocationComponent.cs:108) location remove key: 1225858240282677
 2018-05-02 14:39:17.9514 Location 005 (LocationComponent.cs:108) location remove key: 662864470409257
+2018-05-02 15:37:53.7650 Location 005 (Program.cs:43) server start........................ 5 Location
+2018-05-02 15:38:05.5444 Location 005 (LocationComponent.cs:100) location add key: 662908520103977 appid: 6
+2018-05-02 15:38:05.6049 Location 005 (LocationComponent.cs:100) location add key: 1225858473590832 appid: 4
+2018-05-02 15:38:05.7285 Location 005 (LocationComponent.cs:207) location get key: 662908520103977 6
+2018-05-02 15:38:31.6519 Location 005 (LocationComponent.cs:108) location remove key: 1225858473590832
+2018-05-02 15:38:31.6716 Location 005 (LocationComponent.cs:108) location remove key: 662908520103977
+2018-05-02 15:38:36.4703 Location 005 (LocationComponent.cs:100) location add key: 662908522201138 appid: 6
+2018-05-02 15:38:36.4803 Location 005 (LocationComponent.cs:100) location add key: 1225858475622466 appid: 4
+2018-05-02 15:38:36.5819 Location 005 (LocationComponent.cs:207) location get key: 662908522201138 6
+2018-05-02 15:39:06.4635 Location 005 (LocationComponent.cs:100) location add key: 662908524167224 appid: 6
+2018-05-02 15:39:06.4746 Location 005 (LocationComponent.cs:100) location add key: 1225858477588557 appid: 4
+2018-05-02 15:39:06.5657 Location 005 (LocationComponent.cs:207) location get key: 662908524167224 6
+2018-05-02 15:39:09.5701 Location 005 (LocationComponent.cs:108) location remove key: 1225858475622466
+2018-05-02 15:39:09.5744 Location 005 (LocationComponent.cs:108) location remove key: 662908522201138
+2018-05-02 15:39:30.6732 Location 005 (LocationComponent.cs:108) location remove key: 1225858477588557
+2018-05-02 15:39:30.6783 Location 005 (LocationComponent.cs:108) location remove key: 662908524167224
