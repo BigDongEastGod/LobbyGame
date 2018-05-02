@@ -9361,3 +9361,66 @@ Parameter name: key
 2018-05-02 14:39:17.9370 Location 005 (LocationComponent.cs:108) location remove key: 1225858240282677
 2018-05-02 14:39:17.9514 Location 005 (LocationComponent.cs:108) location remove key: 662864470409257
 2018-05-02 14:39:17.9592 Map      006 (PlayerManageComponent.cs:93) 删除成功
+2018-05-02 15:37:52.5890 Manager  001 (Program.cs:43) server start........................ 1 Manager
+2018-05-02 15:37:52.8306 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=2 --appType=Realm --config=../Config/StartConfig/JuAnServer
+2018-05-02 15:37:52.8400 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=3 --appType=DB --config=../Config/StartConfig/JuAnServer
+2018-05-02 15:37:52.8445 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=4 --appType=Gate --config=../Config/StartConfig/JuAnServer
+2018-05-02 15:37:52.8486 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=5 --appType=Location --config=../Config/StartConfig/JuAnServer
+2018-05-02 15:37:52.8535 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=6 --appType=Map --config=../Config/StartConfig/JuAnServer
+2018-05-02 15:37:53.7471 Realm    002 (Program.cs:43) server start........................ 2 Realm
+2018-05-02 15:37:53.7569 Gate     004 (Program.cs:43) server start........................ 4 Gate
+2018-05-02 15:37:53.7579 DB       003 (Program.cs:43) server start........................ 3 DB
+2018-05-02 15:37:53.7650 Location 005 (Program.cs:43) server start........................ 5 Location
+2018-05-02 15:37:53.7844 Map      006 (Program.cs:43) server start........................ 6 Map
+2018-05-02 15:38:05.4936 Map      006 (ActorManagerComponent.cs:14) add actor: 662908520103977 SPlayer
+2018-05-02 15:38:05.5444 Location 005 (LocationComponent.cs:100) location add key: 662908520103977 appid: 6
+2018-05-02 15:38:05.5925 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225858473590832 Session
+2018-05-02 15:38:05.6049 Location 005 (LocationComponent.cs:100) location add key: 1225858473590832 appid: 4
+2018-05-02 15:38:05.7285 Location 005 (LocationComponent.cs:207) location get key: 662908520103977 6
+2018-05-02 15:38:09.2190 Map      006 (CreateRoomHandler.cs:21) 房间类型：NN
+2018-05-02 15:38:09.2271 Map      006 (CreateRoomHandler.cs:29) 用户：662908520103977创建房间号：950031
+2018-05-02 15:38:15.1206 Map      006 (CreateRoomHandler.cs:21) 房间类型：NN
+2018-05-02 15:38:15.1342 Map      006 (CreateRoomHandler.cs:29) 用户：662908520103977创建房间号：489912
+2018-05-02 15:38:19.7078 Map      006 (CreateRoomHandler.cs:21) 房间类型：NN
+2018-05-02 15:38:19.7182 Map      006 (CreateRoomHandler.cs:29) 用户：662908520103977创建房间号：307789
+2018-05-02 15:38:21.6053 Gate     004 (SessionGatePlayerComponent.cs:16) 有用户退出
+2018-05-02 15:38:21.6172 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225858473590832 Session
+2018-05-02 15:38:21.6215 Gate     004 (GatePlayerManageComponent.cs:94) 玩家数量 ：0
+2018-05-02 15:38:21.6217 Map      006 (PlayerManageComponent.cs:63) 已经做到删除标记
+2018-05-02 15:38:31.6319 Map      006 (PlayerManageComponent.cs:69) 准备删除
+2018-05-02 15:38:31.6409 Map      006 (ActorManagerComponent.cs:25) remove actor: 662908520103977 SPlayer
+2018-05-02 15:38:31.6519 Location 005 (LocationComponent.cs:108) location remove key: 1225858473590832
+2018-05-02 15:38:31.6716 Location 005 (LocationComponent.cs:108) location remove key: 662908520103977
+2018-05-02 15:38:31.6814 Map      006 (PlayerManageComponent.cs:93) 删除成功
+2018-05-02 15:38:36.4609 Map      006 (ActorManagerComponent.cs:14) add actor: 662908522201138 SPlayer
+2018-05-02 15:38:36.4703 Location 005 (LocationComponent.cs:100) location add key: 662908522201138 appid: 6
+2018-05-02 15:38:36.4749 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225858475622466 Session
+2018-05-02 15:38:36.4803 Location 005 (LocationComponent.cs:100) location add key: 1225858475622466 appid: 4
+2018-05-02 15:38:36.5819 Location 005 (LocationComponent.cs:207) location get key: 662908522201138 6
+2018-05-02 15:38:44.5054 Map      006 (CreateRoomHandler.cs:21) 房间类型：NN
+2018-05-02 15:38:44.5127 Map      006 (CreateRoomHandler.cs:29) 用户：662908522201138创建房间号：319705
+2018-05-02 15:38:59.5454 Gate     004 (SessionGatePlayerComponent.cs:16) 有用户退出
+2018-05-02 15:38:59.5487 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225858475622466 Session
+2018-05-02 15:38:59.5491 Map      006 (PlayerManageComponent.cs:63) 已经做到删除标记
+2018-05-02 15:38:59.5517 Gate     004 (GatePlayerManageComponent.cs:94) 玩家数量 ：0
+2018-05-02 15:39:06.4522 Map      006 (ActorManagerComponent.cs:14) add actor: 662908524167224 SPlayer
+2018-05-02 15:39:06.4635 Location 005 (LocationComponent.cs:100) location add key: 662908524167224 appid: 6
+2018-05-02 15:39:06.4694 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225858477588557 Session
+2018-05-02 15:39:06.4746 Location 005 (LocationComponent.cs:100) location add key: 1225858477588557 appid: 4
+2018-05-02 15:39:06.5657 Location 005 (LocationComponent.cs:207) location get key: 662908524167224 6
+2018-05-02 15:39:09.2915 Map      006 (CreateRoomHandler.cs:21) 房间类型：NN
+2018-05-02 15:39:09.2970 Map      006 (CreateRoomHandler.cs:29) 用户：662908524167224创建房间号：611286
+2018-05-02 15:39:09.5595 Map      006 (PlayerManageComponent.cs:69) 准备删除
+2018-05-02 15:39:09.5674 Map      006 (ActorManagerComponent.cs:25) remove actor: 662908522201138 SPlayer
+2018-05-02 15:39:09.5701 Location 005 (LocationComponent.cs:108) location remove key: 1225858475622466
+2018-05-02 15:39:09.5744 Location 005 (LocationComponent.cs:108) location remove key: 662908522201138
+2018-05-02 15:39:09.5791 Map      006 (PlayerManageComponent.cs:93) 删除成功
+2018-05-02 15:39:20.6506 Gate     004 (SessionGatePlayerComponent.cs:16) 有用户退出
+2018-05-02 15:39:20.6540 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225858477588557 Session
+2018-05-02 15:39:20.6547 Map      006 (PlayerManageComponent.cs:63) 已经做到删除标记
+2018-05-02 15:39:20.6571 Gate     004 (GatePlayerManageComponent.cs:94) 玩家数量 ：0
+2018-05-02 15:39:30.6632 Map      006 (PlayerManageComponent.cs:69) 准备删除
+2018-05-02 15:39:30.6684 Map      006 (ActorManagerComponent.cs:25) remove actor: 662908524167224 SPlayer
+2018-05-02 15:39:30.6732 Location 005 (LocationComponent.cs:108) location remove key: 1225858477588557
+2018-05-02 15:39:30.6783 Location 005 (LocationComponent.cs:108) location remove key: 662908524167224
+2018-05-02 15:39:30.6831 Map      006 (PlayerManageComponent.cs:93) 删除成功

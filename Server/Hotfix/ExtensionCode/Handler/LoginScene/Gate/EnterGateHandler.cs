@@ -48,7 +48,7 @@ namespace ETHotfix
                         
                         // 添加到心跳组件
 
-                        if (Game.Scene.GetComponent<PingComponent>() == null) Game.Scene.AddComponent<PingComponent, int, long>(2000, 3);
+                        if (Game.Scene.GetComponent<PingComponent>() == null) Game.Scene.AddComponent<PingComponent, int, long>(5000, 4);
                         
                         Game.Scene.GetComponent<PingComponent>().AddSession(id ?? 0);
                     }
