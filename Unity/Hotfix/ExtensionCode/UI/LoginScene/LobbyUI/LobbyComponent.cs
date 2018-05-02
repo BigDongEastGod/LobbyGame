@@ -41,7 +41,7 @@ namespace ETHotfix
             var niuniuStartBtn = rc.Get<GameObject>("NiuNiuStartBtn");
             _userIdText = rc.Get<GameObject>("UserIdText");
             _diamondText = rc.Get<GameObject>("DiamondText");
-
+            
             _barText = rc.Get<GameObject>("NoticeBarText");
             var _barPosLeft = rc.Get<GameObject>("NiuNiuNoticeBar").transform.Find("BarPosLeft").gameObject;
             var _barPosRight = rc.Get<GameObject>("NiuNiuNoticeBar").transform.Find("BarPosRight").gameObject;
@@ -53,15 +53,16 @@ namespace ETHotfix
             _barMoveSpeed = 10f;
             _isMoveBar = true;
 
-            var response = (GetAccountInfoResponse) await SceneHelperComponent.Instance.Session.Call(new GetAccountInfoRequest());
-            InitUserInfo(response.AccountInfo.UserName, response.AccountInfo.Diamond.ToString());
-
             SceneHelperComponent.Instance.MonoEvent.AddButtonClick(niuniuStartBtn.GetComponent<Button>(), () =>
             {
                 // TODO 启动牛牛
                 Game.Scene.GetComponent<UIComponent>().Create(UIType.NiuNiuLobby, UiLayer.Bottom);
                 Game.Scene.GetComponent<UIComponent>().Remove(UIType.Lobby);
             });
+            
+            // 获取用户信息
+            var response = (GetAccountInfoResponse) await SceneHelperComponent.Instance.Session.Call(new GetAccountInfoRequest());
+            InitUserInfo(response.AccountInfo.UserName, response.AccountInfo.Diamond.ToString());
         }
 
         public void Update()

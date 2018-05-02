@@ -58,7 +58,7 @@ namespace ETHotfix
             // 用户信息
             _userIdText = rc.Get<GameObject>("UserIdText");
             _diamondText = rc.Get<GameObject>("DiamondText");
-
+            
             var _barText = rc.Get<GameObject>("NiuNiuNoticeBar").transform.Find("mask/NoticeBarText").gameObject;
             var _barPosLeft = rc.Get<GameObject>("NiuNiuNoticeBar").transform.Find("BarPosLeft").gameObject;
             var _barPosRight = rc.Get<GameObject>("NiuNiuNoticeBar").transform.Find("BarPosRight").gameObject;
@@ -118,8 +118,10 @@ namespace ETHotfix
 
             #endregion
             
+            // 获取用户信息
             var response = (GetAccountInfoResponse) await SceneHelperComponent.Instance.Session.Call(new GetAccountInfoRequest());
             InitUserInfo(response.AccountInfo.UserName, response.AccountInfo.Diamond.ToString());
+            
         }
 
         public void Start()
