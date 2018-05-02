@@ -1,4 +1,6 @@
-﻿namespace ETModel
+﻿using Model.ExtensionCode.DB;
+
+namespace ETModel
 {
     /// <summary>
     /// 用户操作组件、后期添加操作数据库方法
@@ -17,5 +19,7 @@
         }
 
         public ActorProxy GetActorProxy => Game.Scene.GetComponent<ActorProxyComponent>().Get(this.GateSessionId);
+
+        public Account Account => GetComponent<Account>();
     }
 }

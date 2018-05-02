@@ -2830,8 +2830,6 @@
                     </e>
                   </e>
                   <e p="NiuNiuRoom" t="Include">
-                    <e p="HeadUIFormComponent.cs" t="Include" />
-                    <e p="HeadUIFormFsctory.cs" t="Include" />
                     <e p="NiuNiuCardComponent.cs" t="Include" />
                     <e p="NiuNIuCardFactory.cs" t="Include" />
                     <e p="NiuNiuMainComponent.cs" t="Include" />

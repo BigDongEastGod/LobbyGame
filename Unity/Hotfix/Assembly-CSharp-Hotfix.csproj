@@ -227,8 +227,6 @@
     <Compile Include="ExtensionCode\UI\LoginScene\NiuNiuGame\NiuNiuLobby\NiuNiuLobbyFactory.cs" />
     <Compile Include="ExtensionCode\UI\LoginScene\NiuNiuGame\NiuNiuLobby\NiuNiuLobbyMenu\NiuNiuLobbyMenuComponent.cs" />
     <Compile Include="ExtensionCode\UI\LoginScene\NiuNiuGame\NiuNiuLobby\NiuNiuLobbyMenu\NiuNiuLobbyMenuFactory.cs" />
-    <Compile Include="ExtensionCode\UI\LoginScene\NiuNiuGame\NiuNiuRoom\HeadUIFormComponent.cs" />
-    <Compile Include="ExtensionCode\UI\LoginScene\NiuNiuGame\NiuNiuRoom\HeadUIFormFsctory.cs" />
     <Compile Include="ExtensionCode\UI\LoginScene\NiuNiuGame\NiuNiuRoom\NiuNiuCardComponent.cs" />
     <Compile Include="ExtensionCode\UI\LoginScene\NiuNiuGame\NiuNiuRoom\NiuNIuCardFactory.cs" />
     <Compile Include="ExtensionCode\UI\LoginScene\NiuNiuGame\NiuNiuRoom\NiuNiuMainComponent.cs" />

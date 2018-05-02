@@ -593,7 +593,7 @@ namespace ETHotfix
 		public long ActorId { get; set; }
 
 		[ProtoMember(1, IsRequired = true)]
-		public long AccountId;
+		public string UserName;
 
 		[ProtoMember(2, IsRequired = true)]
 		public int Message;

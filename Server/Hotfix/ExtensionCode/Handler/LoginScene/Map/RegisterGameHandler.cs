@@ -1,5 +1,6 @@
 ﻿using System;
 using ETModel;
+using Model.ExtensionCode.DB;
 
 namespace ETHotfix
 {
@@ -23,9 +24,17 @@ namespace ETHotfix
             {
                 if (message != null)
                 {
+                    // 添加到Player管理组件里
+
                     var player = PlayerManageComponent.Instance.Add(message.AccountId);
 
                     player.GateSessionId = message.GateSessionId;
+
+                    // 数据库读取账号数据，并挂载到Player组件下
+
+                    if (player.GetComponent<Account>() == null) player.AddComponent(await Game.Scene.GetComponent<DBProxyComponent>().Query<Account>(player.Id));
+
+                    // 挂载Actor
 
                     var actor = player.GetComponent<ActorComponent>();
 

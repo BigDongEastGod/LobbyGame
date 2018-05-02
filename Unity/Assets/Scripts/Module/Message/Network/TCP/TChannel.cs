@@ -215,19 +215,17 @@ namespace ETModel
 					}
 				}
 			}
-			catch (IOException e)
+			catch (IOException)
 			{
-				//Log.Error(e);
 				this.OnError(SocketError.SocketError);
 			}
-			catch (ObjectDisposedException e)
+			catch (ObjectDisposedException)
 			{
-				//Log.Error(e);
 				this.OnError(SocketError.SocketError);
 			}
 			catch (Exception e)
 			{
-				//Log.Error(e);
+				Log.Error(e);
 				this.OnError(SocketError.SocketError);
 			}
 		}

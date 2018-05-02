@@ -1,0 +1,21 @@
+2018-05-01 21:47:59.9937 DB       003 System.Exception: 172.17.16.124:9102 ---> System.Net.Sockets.SocketException: Can't assign requested address
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at System.Net.Sockets.TcpListener.Start(Int32 backlog)
+   at System.Net.Sockets.TcpListener.Start()
+   at ETModel.TService..ctor(IPEndPoint ipEndPoint) in /Users/sining/Projects/JuAnChess/LobbyGame/Unity/Assets/Scripts/Module/Message/Network/TCP/TService.cs:line 24
+   at ETModel.NetworkComponent.Awake(NetworkProtocol protocol, IPEndPoint ipEndPoint) in /Users/sining/Projects/JuAnChess/LobbyGame/Unity/Assets/Scripts/Module/Message/NetworkComponent.cs:line 43
+   --- End of inner exception stack trace ---
+   at ETModel.NetworkComponent.Awake(NetworkProtocol protocol, IPEndPoint ipEndPoint) in /Users/sining/Projects/JuAnChess/LobbyGame/Unity/Assets/Scripts/Module/Message/NetworkComponent.cs:line 56
+   at ETHotfix.NetInnerComponentEx.Awake(NetInnerComponent self, IPEndPoint ipEndPoint) in /Users/sining/Projects/JuAnChess/LobbyGame/Server/Hotfix/Module/Message/NetInnerComponentSystem.cs:line 45
+   at ETHotfix.NetInnerComponentAwake1System.Awake(NetInnerComponent self, IPEndPoint a) in /Users/sining/Projects/JuAnChess/LobbyGame/Server/Hotfix/Module/Message/NetInnerComponentSystem.cs:line 20
+   at ETModel.AwakeSystem`2.Run(Object o, A a) in /Users/sining/Projects/JuAnChess/LobbyGame/Unity/Assets/Scripts/Base/Object/IAwakeSystem.cs:line 54
+   at ETModel.EventSystem.Awake[P1](Component component, P1 p1) in /Users/sining/Projects/JuAnChess/LobbyGame/Unity/Assets/Scripts/Base/Object/EventSystem.cs:line 248 
+ Main at offset 2559 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Server/App/Program.cs:69:7
+AddComponent<K,P1> at offset 620 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Unity/Assets/Scripts/Base/Object/Entity.cs:96:4
+CreateWithParent<T,A> at offset 248 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Unity/Assets/Scripts/Base/Object/ComponentFactory.cs:27:4
+Awake<P1> at offset 533 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Unity/Assets/Scripts/Base/Object/EventSystem.cs:248:6
+Error at offset 106 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Server/Model/Base/Log.cs:31:4
+Error at offset 102 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Server/Model/Base/Logger/NLogAdapter.cs:35:4
+

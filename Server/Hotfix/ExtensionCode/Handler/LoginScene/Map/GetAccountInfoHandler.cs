@@ -21,7 +21,7 @@ namespace ETHotfix
                 }
                 else
                 {
-                    var account = await Game.Scene.GetComponent<DBProxyComponent>().Query<Account>(player.Id);
+                    var account = player.GetComponent<Account>();
 
                     if (account == null)
                     {
