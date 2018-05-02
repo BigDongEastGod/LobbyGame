@@ -193,8 +193,8 @@ namespace ETHotfix
                  break;
                 case 1:
                  break;
-                case 2:
-//                    obj.AccountId
+                case 2://quitRoom
+                 showCardUI.GetComponent<NNShowCardComponent>().QuitRoom(obj.UserName);
                     break;
             }
         }

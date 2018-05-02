@@ -28,7 +28,7 @@ namespace ETHotfix
         private List<Vector2> currentTablePosList;                 //当前房间位置
         private Transform currentTableObj;                         //当前桌子
         private GameObject NNCardPrefab;                           //卡牌预设
-        private Dictionary<int,ReferenceCollector> HeadUIDict;     //头像位置列表
+        private Dictionary<string,ReferenceCollector> HeadUIDict;     //头像位置列表
         private Dictionary<int,UI> cardUIDict;                     //卡牌位置列表
         private RectTransform mainHeadPos;                         //主头像位置
         private RectTransform mainCardPos;                         //主卡牌像位置
@@ -44,7 +44,7 @@ namespace ETHotfix
         {
             sixTableList=new List<Vector2>();
             eightTableList=new List<Vector2>();
-            HeadUIDict=new Dictionary<int, ReferenceCollector>();
+            HeadUIDict=new Dictionary<string, ReferenceCollector>();
             cardUIDict=new Dictionary<int, UI>();
             currentTablePosList=new List<Vector2>();
             NiuNiuCardDict=new Dictionary<short, List<UI>>();
@@ -106,7 +106,7 @@ namespace ETHotfix
             }
            
             SetHeadUIComponent(headObj, playerInfo);
-            HeadUIDict.Add(ChairIndex,headObj.GetComponent<ReferenceCollector>());
+            HeadUIDict.Add(playerInfo.UserName,headObj.GetComponent<ReferenceCollector>());
         }
 
         
@@ -162,7 +162,18 @@ namespace ETHotfix
         {
             
         }
-        
+
+        public void QuitRoom(string userName)
+        {
+            if (HeadUIDict.ContainsKey(userName))
+            {
+                UnityEngine.Object.Destroy(HeadUIDict[userName].gameObject);
+                
+                HeadUIDict[userName] = null;
+            }
+
+        }
+
 
 
     }
