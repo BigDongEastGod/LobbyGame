@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using ETModel;
 
@@ -33,6 +34,8 @@ namespace ETHotfix
                     response.Rules = room.Rules;
 
                     response.Players = await RoomManageComponent.Instance.GetRoomPlayers(room, player);
+
+                    response.StartGameUserName = room.Players.FirstOrDefault()?.Account?.UserName;
                 }
             }
             catch (Exception e)

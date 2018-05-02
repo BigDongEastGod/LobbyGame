@@ -10,3 +10,6 @@
 2018-05-02 10:17:01.1200 Gate     004 (Program.cs:43) server start........................ 4 Gate
 2018-05-02 10:17:14.9690 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225857211957296 Session
 2018-05-02 10:17:19.8348 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225857211957296 Session
+2018-05-02 14:37:36.1366 Gate     004 (Program.cs:43) server start........................ 4 Gate
+2018-05-02 14:38:46.3721 Gate     004 (ActorManagerComponent.cs:14) add actor: 1225858240282677 Session
+2018-05-02 14:39:07.9082 Gate     004 (ActorManagerComponent.cs:25) remove actor: 1225858240282677 Session

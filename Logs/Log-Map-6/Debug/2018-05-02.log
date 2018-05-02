@@ -11,3 +11,8 @@
 2018-05-02 10:17:19.8388 Map      006 (PlayerManageComponent.cs:63) 已经做到删除标记
 2018-05-02 10:17:29.8460 Map      006 (PlayerManageComponent.cs:69) 准备删除
 2018-05-02 10:17:29.8857 Map      006 (PlayerManageComponent.cs:93) 删除成功
+2018-05-02 14:38:53.9630 Map      006 (CreateRoomHandler.cs:21) 房间类型：NN
+2018-05-02 14:38:53.9744 Map      006 (CreateRoomHandler.cs:29) 用户：662864470409257创建房间号：791310
+2018-05-02 14:39:07.9130 Map      006 (PlayerManageComponent.cs:63) 已经做到删除标记
+2018-05-02 14:39:17.9227 Map      006 (PlayerManageComponent.cs:69) 准备删除
+2018-05-02 14:39:17.9592 Map      006 (PlayerManageComponent.cs:93) 删除成功

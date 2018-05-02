@@ -269,7 +269,7 @@ namespace ETHotfix
 // 获取用户信息
 	[Message(HotfixOpcode.AccountInfo)]
 	[ProtoContract]
-	public partial class  AccountInfo
+	public partial class AccountInfo
 	{
 		[ProtoMember(1, IsRequired = true)]
 		public string UserName;
@@ -574,6 +574,9 @@ namespace ETHotfix
 
 		[ProtoMember(2, IsRequired = true)]
 		public byte[] Rules;
+
+		[ProtoMember(3, IsRequired = true)]
+		public string StartGameUserName;
 
 		[ProtoMember(4, TypeName = "ETHotfix.AccountInfo")]
 		public List<AccountInfo> Players = new List<AccountInfo>();
