@@ -78,10 +78,6 @@ namespace ETHotfix
 
         public override void QuitRoom(SPlayer player)
         {
-            Players.Remove(player);
-
-            Guest.Remove(player);
-            
             // 发送离开房间消息
             
             var response = new RoomInfoAnnunciate() {UserName = player.Account.UserName, Message = 2};
@@ -89,6 +85,27 @@ namespace ETHotfix
             Players.Where(d => d != player).ForEach(d => d.GetActorProxy.Send(response));
             
             Guest.Where(d => d != player).ForEach(d => d.GetActorProxy.Send(response));
+            
+            // 更改开始游戏玩家
+
+            if (Players.FirstOrDefault() == player)
+            {
+                Players.Remove(player);
+
+                response.UserName = Players.FirstOrDefault()?.Account?.UserName;
+
+                response.Message = 3;
+                
+                // 发送给需要开始游戏的玩家
+            
+                Players.FirstOrDefault()?.GetActorProxy.Send(response);
+            }
+            else
+            {
+                Players.Remove(player);
+            }
+
+            Guest.Remove(player);
         }
 
         public override void StartGame()

@@ -575,6 +575,9 @@ namespace ETHotfix
 		[ProtoMember(2, IsRequired = true)]
 		public byte[] Rules;
 
+		[ProtoMember(3, IsRequired = true)]
+		public string StartGameUserName;
+
 		[ProtoMember(4)]
 		public List<AccountInfo> Players = new List<AccountInfo>();
 
