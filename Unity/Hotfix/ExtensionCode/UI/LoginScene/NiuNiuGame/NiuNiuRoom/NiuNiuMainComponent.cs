@@ -125,32 +125,33 @@ namespace ETHotfix
                 Game.Scene.GetComponent<UIComponent>().Create(UIType.NNRoomRuleInfoUIForm,UiLayer.Top);
             });
        
-            //房间信息窗口事件注册
-            SceneHelperComponent.Instance.MonoEvent.AddButtonClick(selectButton.GetComponent<Button>(), () =>
-            {
-                
-                Game.Scene.GetComponent<UIComponent>().Create(UIType.NNRoomOperation,UiLayer.Top);
-            });
             
-            
-            //房间信息窗口事件注册
+            //坐下按钮事件注册
             SceneHelperComponent.Instance.MonoEvent.AddButtonClick(sitDownBt.GetComponent<Button>(), () =>
             {
                 GetRoomInfo();
             });
             
-            //下拉按照注册
+            //下拉按钮注册
             SceneHelperComponent.Instance.MonoEvent.AddButtonClick(selectButton.GetComponent<Button>(), () =>
             {
                 object[] arg = new object[] {m_roomId, this};
                 Game.Scene.GetComponent<UIComponent>().Create(UIType.NNRoomOperation, UiLayer.Top,arg);
             });
             
+            //开始按钮注册
+            SceneHelperComponent.Instance.MonoEvent.AddButtonClick(startGameBt.GetComponent<Button>(), () =>
+            {
+//                var response =(PrepareGameResponse) await SceneHelperComponent.Instance.Session.Call(new PrepareGameRequest(){RoomId = m_roomId});
+                
+            });
+            
+            
 
             //获取房间准备号玩家的数据
             GetAllReadyInfo();
             
-            RoomInfoAnnunciateHandler.RoomAction += RoomInfo;
+            RoomInfoAnnunciateHandler.RoomAction += RoomBack;
             
             
         }
@@ -163,7 +164,7 @@ namespace ETHotfix
             {
                 Debug.Log("成功坐下");
                 sitDownBt.gameObject.SetActive(false);
-                startGameBt.GetComponent<Animator>().SetInteger("IsMiddle",1);
+                
 
                 AccountInfo accountInfo=new AccountInfo(){UserName = Player.AccountInfo.UserName};
                 showCardUI.GetComponent<NNShowCardComponent>().CreateHead(-1,accountInfo);
@@ -179,13 +180,10 @@ namespace ETHotfix
             }
         }
 
-        private void ClearHeadUI()
-        {
-            
-        }
+     
 
-
-        private void RoomInfo(RoomInfoAnnunciate obj)
+        //房间回调
+        private void RoomBack(RoomInfoAnnunciate obj)
         {
             switch (obj.Message)
             {
@@ -198,11 +196,13 @@ namespace ETHotfix
                         AccountInfo accountInfo=new AccountInfo(){UserName = obj.UserName};
                         showCardUI.GetComponent<NNShowCardComponent>().CreateHead(chairIndex,accountInfo);
                     }
-
                     break;
                 case 2://quitRoom
                  showCardUI.GetComponent<NNShowCardComponent>().QuitRoom(obj.UserName);
-                                 
+                    break;
+                case 3:
+                    startGameBt.gameObject.SetActive(true);
+                    startGameBt.GetComponent<Animator>().SetInteger("IsMiddle",1);
                     break;
             }
         }
