@@ -192,7 +192,14 @@ namespace ETHotfix
                 case 0:
                  break;
                 case 1:
-                 break;
+                  int chairIndex= showCardUI.GetComponent<NNShowCardComponent>().FindFreeChair(obj.UserName);
+                    if (chairIndex != -1)
+                    {
+                        AccountInfo accountInfo=new AccountInfo(){UserName = obj.UserName};
+                        showCardUI.GetComponent<NNShowCardComponent>().CreateHead(chairIndex,accountInfo);
+                    }
+
+                    break;
                 case 2://quitRoom
                  showCardUI.GetComponent<NNShowCardComponent>().QuitRoom(obj.UserName);
                                  
