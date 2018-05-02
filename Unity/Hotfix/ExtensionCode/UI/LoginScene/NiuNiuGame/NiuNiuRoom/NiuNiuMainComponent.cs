@@ -125,26 +125,27 @@ namespace ETHotfix
                 Game.Scene.GetComponent<UIComponent>().Create(UIType.NNRoomRuleInfoUIForm,UiLayer.Top);
             });
        
-            //房间信息窗口事件注册
-            SceneHelperComponent.Instance.MonoEvent.AddButtonClick(selectButton.GetComponent<Button>(), () =>
-            {
-                
-                Game.Scene.GetComponent<UIComponent>().Create(UIType.NNRoomOperation,UiLayer.Top);
-            });
             
-            
-            //房间信息窗口事件注册
+            //坐下按钮事件注册
             SceneHelperComponent.Instance.MonoEvent.AddButtonClick(sitDownBt.GetComponent<Button>(), () =>
             {
                 GetRoomInfo();
             });
             
-            //下拉按照注册
+            //下拉按钮注册
             SceneHelperComponent.Instance.MonoEvent.AddButtonClick(selectButton.GetComponent<Button>(), () =>
             {
                 object[] arg = new object[] {m_roomId, this};
                 Game.Scene.GetComponent<UIComponent>().Create(UIType.NNRoomOperation, UiLayer.Top,arg);
             });
+            
+            //开始按钮注册
+            SceneHelperComponent.Instance.MonoEvent.AddButtonClick(startGameBt.GetComponent<Button>(), () =>
+            {
+//                var response =(PrepareGameResponse) await SceneHelperComponent.Instance.Session.Call(new PrepareGameRequest(){RoomId = m_roomId});
+                
+            });
+            
             
 
             //获取房间准备号玩家的数据
