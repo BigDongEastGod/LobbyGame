@@ -195,6 +195,7 @@ namespace ETHotfix
                  break;
                 case 2://quitRoom
                  showCardUI.GetComponent<NNShowCardComponent>().QuitRoom(obj.UserName);
+                                 
                     break;
             }
         }
