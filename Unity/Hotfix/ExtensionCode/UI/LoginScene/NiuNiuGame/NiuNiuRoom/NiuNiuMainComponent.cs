@@ -35,7 +35,6 @@ namespace ETHotfix
         //初始化数据
         private async void SetRoomInfo(long roomId)
         {
-            Debug.Log("加入房间"+roomId);
             ReferenceCollector rc = this.GetParent<UI>().GameObject.GetComponent<ReferenceCollector>();
             
             //房间分线图
@@ -116,7 +115,7 @@ namespace ETHotfix
             //获得房间显示卡牌窗口
             showCardUI=Game.Scene.GetComponent<UIComponent>().Create(UIType.NNShowCard, UiLayer.Medium);
             //设置房间人数
-            showCardUI.GetComponent<NNShowCardComponent>().roomPeople =(ushort)rules.PlayerCount;
+            showCardUI.GetComponent<NNShowCardComponent>().roomPeople =rules.PlayerCount;
             //加载所需要的位置信息
             showCardUI.GetComponent<NNShowCardComponent>().GetCurrentTablePos();
             
@@ -139,18 +138,24 @@ namespace ETHotfix
             {
                 GetRoomInfo();
             });
+            
+            //下拉按照注册
+            SceneHelperComponent.Instance.MonoEvent.AddButtonClick(selectButton.GetComponent<Button>(), () =>
+            {
+                object[] arg = new object[] {m_roomId, this};
+                Game.Scene.GetComponent<UIComponent>().Create(UIType.NNRoomOperation, UiLayer.Top,arg);
+            });
+            
 
             //获取房间准备号玩家的数据
             GetAllReadyInfo();
             
             RoomInfoAnnunciateHandler.RoomAction += RoomInfo;
-        }
-
-        private void RoomInfo(RoomInfoAnnunciate obj)
-        {
+            
             
         }
 
+        //创建本地玩家头像
         private async void GetRoomInfo()
         {
             var response =(PrepareGameResponse) await SceneHelperComponent.Instance.Session.Call(new PrepareGameRequest(){RoomId = m_roomId});
@@ -165,15 +170,34 @@ namespace ETHotfix
             }
         }
 
+        //其他玩家的头像创建
         private void GetAllReadyInfo()
         {
             for (int i = 0; i < roomInfo.Players.Count; i++)
             {
-                Debug.Log("我进来了索引是"+i);
                 showCardUI.GetComponent<NNShowCardComponent>().CreateHead(i,roomInfo.Players[i]);
             }
         }
 
+        private void ClearHeadUI()
+        {
+            
+        }
+
+
+        private void RoomInfo(RoomInfoAnnunciate obj)
+        {
+            switch (obj.Message)
+            {
+                case 0:
+                 break;
+                case 1:
+                 break;
+                case 2://quitRoom
+                 showCardUI.GetComponent<NNShowCardComponent>().QuitRoom(obj.UserName);
+                    break;
+            }
+        }
 
     }
 }
