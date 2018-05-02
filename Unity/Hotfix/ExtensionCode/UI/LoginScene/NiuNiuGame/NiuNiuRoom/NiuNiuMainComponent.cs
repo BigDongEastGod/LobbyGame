@@ -146,13 +146,11 @@ namespace ETHotfix
                 
             });
             
-            
 
             //获取房间准备号玩家的数据
             GetAllReadyInfo();
             
             RoomInfoAnnunciateHandler.RoomAction += RoomBack;
-            
             
         }
 
@@ -162,12 +160,7 @@ namespace ETHotfix
             var response =(PrepareGameResponse) await SceneHelperComponent.Instance.Session.Call(new PrepareGameRequest(){RoomId = m_roomId});
             if (response.Error==0)
             {
-                Debug.Log("成功坐下");
-                sitDownBt.gameObject.SetActive(false);
-                
-
-                AccountInfo accountInfo=new AccountInfo(){UserName = Player.AccountInfo.UserName};
-                showCardUI.GetComponent<NNShowCardComponent>().CreateHead(-1,accountInfo);
+                SitDown();
             }
         }
 
@@ -176,11 +169,26 @@ namespace ETHotfix
         {
             for (int i = 0; i < roomInfo.Players.Count; i++)
             {
-                showCardUI.GetComponent<NNShowCardComponent>().CreateHead(i,roomInfo.Players[i]);
+                if (roomInfo.Players[i].UserName != Player.AccountInfo.UserName)
+                {
+                    showCardUI.GetComponent<NNShowCardComponent>().CreateHead(i,roomInfo.Players[i]);
+                }
+                else
+                {
+                    SitDown();
+                }
             }
         }
 
-     
+
+        private void SitDown()
+        {
+            sitDownBt.gameObject.SetActive(false);
+            AccountInfo accountInfo=new AccountInfo(){UserName = Player.AccountInfo.UserName};
+            showCardUI.GetComponent<NNShowCardComponent>().CreateHead(-1,accountInfo);
+        }
+
+
 
         //房间回调
         private void RoomBack(RoomInfoAnnunciate obj)
