@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
+    <e p="$USER_HOME$/Library/Caches/Rider2018.1/resharper-host/local/Transient/ReSharperHost/v12/SolutionCaches/_JuAnLobbyGameSolution.-628942961.00" t="ExcludeRecursive" />
     <e p="$PROJECT_DIR$" t="IncludeFlat">
       <e p="Bin" t="ExcludeRecursive" />
       <e p="Client" t="Include" />
@@ -36,6 +37,7 @@
               <e p="LobbyScene" t="Include">
                 <e p="Room" t="Include">
                   <e p="Map" t="Include">
+                    <e p="BetGameHandler.cs" t="Include" />
                     <e p="CreateRoomHandler.cs" t="Include" />
                     <e p="JoinRoomHandler.cs" t="Include" />
                     <e p="PrepareGameHandler.cs" t="Include" />
@@ -2915,6 +2917,5 @@
         <e p="Temp/UnityVS_bin/Debug" t="ExcludeRecursive" />
       </e>
     </e>
-    <e p="$USER_HOME$/Library/Caches/Rider2018.1/resharper-host/local/Transient/ReSharperHost/v12/SolutionCaches/_JuAnLobbyGameSolution.1661154428.00" t="ExcludeRecursive" />
   </component>
 </project>
