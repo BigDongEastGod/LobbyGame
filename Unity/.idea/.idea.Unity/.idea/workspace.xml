@@ -2,36 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="43a2cc3c-b9a6-4da2-a947-693a35ac239f" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/.idea.JuAnLobbyGameSolution/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/.idea.JuAnLobbyGameSolution/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/App/obj/Server.App.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/App/obj/Server.App.csproj.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/App/obj/Server.App.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/App/obj/Server.App.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/App/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/App/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/App/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/App/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/Hotfix/obj/Server.Hotfix.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Hotfix/obj/Server.Hotfix.csproj.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/Hotfix/obj/Server.Hotfix.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Hotfix/obj/Server.Hotfix.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/Hotfix/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Hotfix/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/Hotfix/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Hotfix/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/Model/obj/Server.Model.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Model/obj/Server.Model.csproj.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/Model/obj/Server.Model.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Model/obj/Server.Model.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/Model/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Model/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/Model/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Model/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Bson/obj/MongoDB.Bson.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Bson/obj/MongoDB.Bson.csproj.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Bson/obj/MongoDB.Bson.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Bson/obj/MongoDB.Bson.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Bson/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Bson/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Bson/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Bson/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver.Core/obj/MongoDB.Driver.Core.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver.Core/obj/MongoDB.Driver.Core.csproj.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver.Core/obj/MongoDB.Driver.Core.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver.Core/obj/MongoDB.Driver.Core.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver.Core/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver.Core/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver.Core/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver.Core/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver/obj/MongoDB.Driver.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver/obj/MongoDB.Driver.csproj.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver/obj/MongoDB.Driver.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver/obj/MongoDB.Driver.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assembly-CSharp-Editor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp-Editor.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assembly-CSharp-firstpass.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp-firstpass.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotfix/ExtensionCode/UI/LoginScene/NiuNiuGame/NiuNiuRoom/NiuNiuMainComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Hotfix/ExtensionCode/UI/LoginScene/NiuNiuGame/NiuNiuRoom/NiuNiuMainComponent.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -58,7 +31,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="2048" />
     <option name="height" value="1061" />
@@ -144,12 +117,12 @@
       <workItem from="1525254988889" duration="509000" />
       <workItem from="1525315226163" duration="350000" />
       <workItem from="1525315874106" duration="10000" />
-      <workItem from="1525350886743" duration="605000" />
+      <workItem from="1525350886743" duration="611000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5148000" />
+    <option name="totallyTimeSpent" value="5154000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -161,7 +134,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="2048" height="1152" extended-state="0" />
+    <frame x="0" y="23" width="2048" height="1061" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
