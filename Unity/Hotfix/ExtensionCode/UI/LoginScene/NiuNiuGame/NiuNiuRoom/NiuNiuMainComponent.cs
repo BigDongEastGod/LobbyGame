@@ -142,7 +142,8 @@ namespace ETHotfix
             //开始按钮注册
             SceneHelperComponent.Instance.MonoEvent.AddButtonClick(startGameBt.GetComponent<Button>(), () =>
             {
-//                var response =(PrepareGameResponse) await SceneHelperComponent.Instance.Session.Call(new PrepareGameRequest(){RoomId = m_roomId});
+//             var startResponse =(StartGameRequest) await SceneHelperComponent.Instance.Session.Call(new StartGameRequest(){RoomId = m_roomId});
+                
                 
             });
             
@@ -178,28 +179,22 @@ namespace ETHotfix
             }
         }
 
-
+        //坐下
         private void SitDown(int chairIndex,string username)
         {
             AccountInfo accountInfo=new AccountInfo(){UserName = username};
             showCardUI.GetComponent<NNShowCardComponent>().CreateHead(chairIndex,accountInfo);
         }
 
-
-
         //房间回调
         public void RoomBack(RoomInfoAnnunciate obj)
         {
-            Debug.Log("回调 ： " + obj.Message);
-            
             switch (obj.Message)
             {
                 case 0:
                  break;
                 case 1:
-                    Debug.Log("RoomBack/1/调用了一次");
                   int chairIndex= showCardUI.GetComponent<NNShowCardComponent>().FindFreeChair(obj.UserName);
-                    Debug.Log("chairIndex"+chairIndex);
                     SitDown(chairIndex, obj.UserName);
                     break;
                 case 2://quitRoom
