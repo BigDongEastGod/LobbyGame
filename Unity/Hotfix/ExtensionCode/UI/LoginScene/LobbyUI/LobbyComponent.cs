@@ -64,6 +64,8 @@ namespace ETHotfix
                 Game.Scene.GetComponent<UIComponent>().Create(UIType.NiuNiuLobby, UiLayer.Bottom);
                 Game.Scene.GetComponent<UIComponent>().Remove(UIType.Lobby);
             });
+
+            Game.Scene.GetComponent<PingComponent>().PingBackCall = ReloadGame;
         }
 
         public void Update()
@@ -111,6 +113,8 @@ namespace ETHotfix
 
                     // 连接网关服务器
                     await SceneHelperComponent.Instance.CreateGateSession(response.Address, response.Key);
+                    
+                    Debug.Log("重连成功");
                 }
                 else if (response.Error == -1)
                 {
