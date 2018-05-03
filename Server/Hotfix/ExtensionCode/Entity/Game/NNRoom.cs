@@ -34,15 +34,15 @@ namespace ETHotfix
         {
             // 当玩家已经在这个房间里
 
-            if (Guest.Any(d => d == player)) return "InRomm";
+            if (Players.Any(d => d == player) || Guest.Any(d => d == player)) return "InRomm";
             
             // 发送数据给房间所有人
 
             var response = new RoomInfoAnnunciate() {UserName = player.Account.UserName, Message = 0};
 
-            Players.ForEach(d => d.GetActorProxy.Send(response));
+            Players.Where(d => d != player && d.IsActivity).ForEach(d => d.GetActorProxy.Send(response));
 
-            Guest.ForEach(d => d.GetActorProxy.Send(response));
+            Guest.Where(d => d != player && d.IsActivity).ForEach(d => d.GetActorProxy.Send(response));
             
             // 添加玩家到客人列表
             
@@ -57,9 +57,9 @@ namespace ETHotfix
         /// <param name="player"></param>
         public override string Prepare(SPlayer player)
         {
-            if (Players.Any(d => d == player)) return "InPrepare";  // 玩家已经准备了
-            
             if (Guest.Any(d => d == player) == false) return "NoInGuest"; // 玩家没有在游客房间
+            
+            if (Players.Any(d => d == player)) return "InPrepare";  // 玩家已经准备了
             
             Players.Add(player);  // 添加到玩家列表
 
@@ -69,9 +69,15 @@ namespace ETHotfix
             
             var response = new RoomInfoAnnunciate() {UserName = player.Account.UserName, Message = 1};
 
-            Players.Where(d => d != player).ForEach(d => d.GetActorProxy.Send(response));
+            Players.Where(d => d != player && d.IsActivity).ForEach(d => d.GetActorProxy.Send(response));
 
-            Guest.ForEach(d => d.GetActorProxy.Send(response));
+            Guest.Where(d => d != player && d.IsActivity).ForEach(d => d.GetActorProxy.Send(response));
+            
+            // 发送开始游戏玩家
+
+            var startplayer = Players.FirstOrDefault(d => d.IsActivity);
+
+            startplayer?.GetActorProxy.Send(new RoomInfoAnnunciate() {UserName = startplayer.Account.UserName, Message = 3});
 
             return "Prepare";
         }
@@ -81,23 +87,19 @@ namespace ETHotfix
             // 发送离开房间消息
             
             var response = new RoomInfoAnnunciate() {UserName = player.Account.UserName, Message = 2};
-
-            Players.Where(d => d != player).ForEach(d => d.GetActorProxy.Send(response));
-            
-            Guest.Where(d => d != player).ForEach(d => d.GetActorProxy.Send(response));
             
             // 更改开始游戏玩家
 
-            if (Players.FirstOrDefault() == player)
+            if (Players.FirstOrDefault() == player && Players.Count > 2)
             {
                 Players.Remove(player);
 
                 response.UserName = Players.FirstOrDefault()?.Account?.UserName;
 
                 response.Message = 3;
-                
+
                 // 发送给需要开始游戏的玩家
-            
+
                 Players.FirstOrDefault()?.GetActorProxy.Send(response);
             }
             else
@@ -106,6 +108,10 @@ namespace ETHotfix
             }
 
             Guest.Remove(player);
+            
+            Players.Where(d => d != player && d.IsActivity).ForEach(d => d.GetActorProxy.Send(response));
+
+            Guest.Where(d => d != player && d.IsActivity).ForEach(d => d.GetActorProxy.Send(response));
         }
 
         public override void StartGame()
