@@ -9,7 +9,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <ProjectGuid>{CD8C9303-404B-FB8D-6B9B-21988D5CAC0A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -138,6 +139,7 @@
     <Compile Include="Assets\Scripts\Entity\WWWAsync.cs" />
     <Compile Include="Assets\Scripts\ExtendDevelop\Module\UIManageComponent.cs" />
     <Compile Include="Assets\Scripts\ExtendDevelop\MonoEventHelper.cs" />
+    <Compile Include="Assets\Scripts\ExtensionCode\Helper\SerializeHelper.cs" />
     <Compile Include="Assets\Scripts\ExtensionCode\Module\MonoEventComponent.cs" />
     <Compile Include="Assets\Scripts\ExtensionCode\Module\SceneManagerComponent.cs" />
     <Compile Include="Assets\Scripts\Helper\ActionHelper.cs" />
