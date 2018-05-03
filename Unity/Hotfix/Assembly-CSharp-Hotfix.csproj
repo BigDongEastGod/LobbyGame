@@ -199,6 +199,7 @@
     <Compile Include="Base\Object\IChangeSystem.cs" />
     <Compile Include="Base\Object\IDestroySystem.cs" />
     <Compile Include="Base\Object\IStartSystem.cs" />
+    <Compile Include="ExtensionCode\Handler\NNGame\GameInfoAnnunciateHandler.cs" />
     <Compile Include="ExtensionCode\Handler\NNGame\RoomInfoAnnunciateHandler.cs" />
     <Compile Include="ExtensionCode\Module\PingComponent.cs" />
     <Compile Include="ExtensionCode\Module\SceneHelperComponent.cs" />
