@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using CSharpx;
 using ETModel;
 
@@ -12,6 +14,15 @@ namespace ETHotfix
         public int CurrentDish { get; private set; }
 
         public NNChess ChessRules { get; private set; }
+        
+        private class GameState
+        {
+            public bool IsSend;
+
+            public int Bet;
+        }
+
+        private readonly Dictionary<SPlayer, GameState> _gameStates = new Dictionary<SPlayer, GameState>();
 
         public override void AddRules(byte[] rules)
         {
@@ -148,7 +159,7 @@ namespace ETHotfix
             
             // 给玩家发送下注消息
 
-            var response = new GameInfoAnnunciate {Message = 0};
+            var response = new GameInfoAnnunciate {Message = 0, Arg = null};
 
             Players.Where(d => d.IsActivity).ForEach(d =>
             {
@@ -156,6 +167,12 @@ namespace ETHotfix
 
                 d.GetActorProxy.Send(response);
             });
+            
+            // 添加玩家到游戏状态中
+
+            _gameStates.Clear();
+
+            Players.ForEach(d => _gameStates.Add(d, new GameState()));
 
             return "StartGame";
         }
@@ -172,6 +189,48 @@ namespace ETHotfix
 //
 //                StartGame();
 //            }
+        }
+
+        public override void SendMessages(SPlayer player, params object[] args)
+        {
+            // 0 : 下注
+
+            switch (Convert.ToInt32(args[0]))
+            {
+                case 0:
+
+                    // 用户下注
+                    
+                    if (_gameStates.ContainsKey(player))
+                    {
+                        _gameStates[player].Bet = Convert.ToInt32(args[1]);
+
+                        var response = new GameInfoAnnunciate() {Arg = args[1], Message = 1};
+
+                        // 发送下注消息给其他玩家
+                        
+                        Players.Where(p => p != player).ForEach(d =>
+                            {
+                                response.UserName = player.Account.UserName;
+
+                                d.GetActorProxy.Send(response);
+                            }
+                        );
+
+                        _gameStates[player].IsSend = true;
+
+                        // 判断是否全部下注成功
+                        
+                        if (_gameStates.Values.Count(d => !d.IsSend) == 0)
+                        {
+                            //TODO:全部下注成功、开始发牌了
+                        }
+                    }
+                    
+                    break;
+                case 1:
+                    break;
+            }
         }
 
         public override void DissolveRoom(SPlayer player)

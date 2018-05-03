@@ -35,5 +35,7 @@ namespace ETModel
         public virtual void EndGame(){}  // 结束游戏
 
         public virtual void DissolveRoom(SPlayer player){} // 解散房间
+        
+        public virtual void SendMessages(SPlayer player,params object[] args){} // 发送消息
     }
 }
