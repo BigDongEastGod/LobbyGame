@@ -194,7 +194,7 @@ namespace ETHotfix
                     ShowBetsButton();
                     break;
                 case 1://下注完成
-                    ShowBet(obj.UserName,Convert.ToInt32(ProtobufHelper.FromBytes<object>(obj.Arg)));
+                    ShowBet(obj.UserName,SerializeHelper.Instance.DeserializeObject<int>(obj.Arg));
                     break;
             }
         }
