@@ -29,19 +29,15 @@ namespace ETHotfix
         private Button betsButton2;
         private Text bottomScoreText;                //底分文本
 
-        public async void Awake(object[] args)
+        public void Awake(object[] args)
         {
-            SetRoomInfo(Convert.ToInt64(args[0]));
+            SetRoomInfo(Convert.ToInt64(args[0]),Convert.ToBoolean(args[1]));
             
-            if ((Convert.ToBoolean(args[1]) == true))
-            {
-                sitDownBt.gameObject.SetActive(false);
-                SitDown(-1,Player.AccountInfo.UserName);
-            }
+       
         }
         
         //初始化数据
-        private async void SetRoomInfo(long roomId)
+        private async void SetRoomInfo(long roomId,bool isSitDown)
         {
             ReferenceCollector rc = this.GetParent<UI>().GameObject.GetComponent<ReferenceCollector>();
             
@@ -153,6 +149,16 @@ namespace ETHotfix
             
             RoomInfoAnnunciateHandler.RoomAction += RoomBack;
             GameInfoAnnunciateHandler.GameAction += GameBack;
+            
+            Debug.Log("isSitDown/"+isSitDown);
+            if (isSitDown)
+            {
+                SitDown(-1,Player.AccountInfo.UserName);
+            }
+            else
+            {
+                sitDownBt.gameObject.SetActive(true);
+            }
 
         }
 
@@ -218,8 +224,11 @@ namespace ETHotfix
         //坐下
         private void SitDown(int chairIndex,string username)
         {
+            Debug.Log("33333");
             AccountInfo accountInfo=new AccountInfo(){UserName = username};
+            Debug.Log("11111");
             showCardUI.GetComponent<NNShowCardComponent>().CreateHead(chairIndex,accountInfo);
+            Debug.Log("22222");
         }
         
         //开始游戏点
