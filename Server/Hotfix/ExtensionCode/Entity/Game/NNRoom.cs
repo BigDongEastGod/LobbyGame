@@ -204,7 +204,7 @@ namespace ETHotfix
                     if (_gameStates.ContainsKey(player))
                     {
                         _gameStates[player].Bet = Convert.ToInt32(args[1]);
-
+                        
                         var response = new GameInfoAnnunciate() {Arg = SerializeHelper.Instance.SerializeObject(args[1]), Message = 1};
 
                         // 发送下注消息给其他玩家
@@ -224,6 +224,8 @@ namespace ETHotfix
                         if (_gameStates.Values.Count(d => !d.IsSend) == 0)
                         {
                             //TODO:全部下注成功、开始发牌了
+                            
+                            Log.Debug("全部下注成功、开始发牌了");
                         }
                     }
                     
