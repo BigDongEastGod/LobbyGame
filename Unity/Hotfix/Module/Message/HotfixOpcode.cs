@@ -39,7 +39,8 @@ namespace ETModel
 		 public const ushort StartGameRequest = 10035;
 		 public const ushort StartGameResponse = 10036;
 		 public const ushort RoomInfoAnnunciate = 10037;
-		 public const ushort RoomListRequest = 10038;
-		 public const ushort RoomListResponse = 10039;
+		 public const ushort GameInfoAnnunciate = 10038;
+		 public const ushort RoomListRequest = 10039;
+		 public const ushort RoomListResponse = 10040;
 	}
 }
