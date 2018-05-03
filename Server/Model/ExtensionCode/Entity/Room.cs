@@ -30,10 +30,10 @@ namespace ETModel
 
         public virtual void QuitRoom(SPlayer player){}  // 退出房间
         
-        public virtual void StartGame(){} // 开始游戏
+        public virtual void StartGame(SPlayer player){} // 开始游戏
 
         public virtual void EndGame(){}  // 结束游戏
 
-        public virtual void DissolveRoom(){} // 解散房间
+        public virtual void DissolveRoom(SPlayer player){} // 解散房间
     }
 }
