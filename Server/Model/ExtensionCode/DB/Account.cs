@@ -11,6 +11,8 @@ namespace Model.ExtensionCode.DB
         public long Diamond;
         
         public long Gold;
+        
+        public long RoomId;  // 所在房间ID
 
         public DateTime RegistrationTime;
 
