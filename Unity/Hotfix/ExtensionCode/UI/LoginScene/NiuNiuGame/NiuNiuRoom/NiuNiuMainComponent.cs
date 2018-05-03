@@ -160,7 +160,8 @@ namespace ETHotfix
             var response =(PrepareGameResponse) await SceneHelperComponent.Instance.Session.Call(new PrepareGameRequest(){RoomId = m_roomId});
             if (response.Error==0)
             {
-                SitDown();
+                sitDownBt.gameObject.SetActive(false);
+                SitDown(-1,Player.AccountInfo.UserName);
             }
         }
 
@@ -173,19 +174,14 @@ namespace ETHotfix
                 {
                     showCardUI.GetComponent<NNShowCardComponent>().CreateHead(i,roomInfo.Players[i]);
                 }
-                else
-                {
-                    SitDown();
-                }
             }
         }
 
 
-        private void SitDown()
+        private void SitDown(int chairIndex,string username)
         {
-            sitDownBt.gameObject.SetActive(false);
-            AccountInfo accountInfo=new AccountInfo(){UserName = Player.AccountInfo.UserName};
-            showCardUI.GetComponent<NNShowCardComponent>().CreateHead(-1,accountInfo);
+            AccountInfo accountInfo=new AccountInfo(){UserName = username};
+            showCardUI.GetComponent<NNShowCardComponent>().CreateHead(chairIndex,accountInfo);
         }
 
 
@@ -198,12 +194,10 @@ namespace ETHotfix
                 case 0:
                  break;
                 case 1:
+                    Debug.Log("RoomBack/1/调用了一次");
                   int chairIndex= showCardUI.GetComponent<NNShowCardComponent>().FindFreeChair(obj.UserName);
-                    if (chairIndex != -1)
-                    {
-                        AccountInfo accountInfo=new AccountInfo(){UserName = obj.UserName};
-                        showCardUI.GetComponent<NNShowCardComponent>().CreateHead(chairIndex,accountInfo);
-                    }
+                    Debug.Log("chairIndex"+chairIndex);
+                    SitDown(chairIndex, obj.UserName);
                     break;
                 case 2://quitRoom
                  showCardUI.GetComponent<NNShowCardComponent>().QuitRoom(obj.UserName);
