@@ -1,0 +1,10 @@
+2018-05-03 10:40:05.4118 Map      006 (Program.cs:43) server start........................ 6 Map
+2018-05-03 10:41:06.2208 Map      006 (Program.cs:43) server start........................ 6 Map
+2018-05-03 10:41:20.3200 Map      006 (ActorManagerComponent.cs:14) add actor: 662864470409257 SPlayer
+2018-05-03 10:41:40.5107 Map      006 (ActorManagerComponent.cs:25) remove actor: 662864470409257 SPlayer
+2018-05-03 10:42:35.6445 Map      006 (Program.cs:43) server start........................ 6 Map
+2018-05-03 10:42:49.3132 Map      006 (ActorManagerComponent.cs:14) add actor: 662864470409257 SPlayer
+2018-05-03 10:43:09.4859 Map      006 (ActorManagerComponent.cs:25) remove actor: 662864470409257 SPlayer
+2018-05-03 10:46:33.1782 Map      006 (Program.cs:43) server start........................ 6 Map
+2018-05-03 10:46:41.8857 Map      006 (ActorManagerComponent.cs:14) add actor: 662864470409257 SPlayer
+2018-05-03 10:47:50.8245 Map      006 (ActorManagerComponent.cs:25) remove actor: 662864470409257 SPlayer
