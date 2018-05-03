@@ -95,12 +95,14 @@ namespace ETHotfix
 
                 if (response.Error == 0)
                 {
+                    PlayerPrefs.SetString("username",loginNameText.GetComponent<InputField>().text);
+                    PlayerPrefs.SetString("password", loginPwdText.GetComponent<InputField>().text);
+                    
                     session.Dispose();
 
                     // 连接网关服务器
 
                     await SceneHelperComponent.Instance.CreateGateSession(response.Address, response.Key);
-
 
                     // 获取用户信息
                     var accountResponse = (GetAccountInfoResponse) await SceneHelperComponent.Instance.Session.Call(new GetAccountInfoRequest());
@@ -144,7 +146,7 @@ namespace ETHotfix
             {
                 Debug.Log("加入房间成功,跳转至游戏主场景");
 
-                Game.Scene.GetComponent<UIComponent>().Create(UIType.NiuNiuMain, UiLayer.Bottom, roomId);
+                Game.Scene.GetComponent<UIComponent>().Create(UIType.NiuNiuMain, UiLayer.Bottom, roomId, true);
                 Game.Scene.GetComponent<UIComponent>().Remove(UIType.NiuNiuLobby);
             }
             else

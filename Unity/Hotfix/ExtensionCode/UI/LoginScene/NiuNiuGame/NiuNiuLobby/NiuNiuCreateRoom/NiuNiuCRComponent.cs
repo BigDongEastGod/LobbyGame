@@ -303,7 +303,7 @@ namespace ETHotfix
             {
                 Debug.Log("加入房间成功,跳转至游戏主场景");
 
-                Game.Scene.GetComponent<UIComponent>().Create(UIType.NiuNiuMain, UiLayer.Bottom, roomId);
+                Game.Scene.GetComponent<UIComponent>().Create(UIType.NiuNiuMain, UiLayer.Bottom, roomId, false);
                 Game.Scene.GetComponent<UIComponent>().Remove(UIType.NiuNiuLobby);
             }
             else
