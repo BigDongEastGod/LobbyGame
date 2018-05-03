@@ -583,8 +583,39 @@ namespace ETHotfix
 
 	}
 
+// 开始房间游戏
+	[Message(HotfixOpcode.StartGameRequest)]
+	[ProtoContract]
+	public partial class StartGameRequest: IActorRequest
+	{
+		[ProtoMember(90, IsRequired = true)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(93, IsRequired = true)]
+		public long ActorId { get; set; }
+
+		[ProtoMember(1, IsRequired = true)]
+		public long RoomId;
+
+	}
+
+	[Message(HotfixOpcode.StartGameResponse)]
+	[ProtoContract]
+	public partial class StartGameResponse: IActorResponse
+	{
+		[ProtoMember(90, IsRequired = true)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(91, IsRequired = true)]
+		public int Error { get; set; }
+
+		[ProtoMember(92, IsRequired = true)]
+		public string Message { get; set; }
+
+	}
+
 // 加入房间消息通告
-// 提示消息 0:加入房间 1:坐下（准备） 2:离开房间
+// 提示消息 0:加入房间 1:坐下（准备） 2:离开房间 3:更改开始玩家
 	[Message(HotfixOpcode.RoomInfoAnnunciate)]
 	[ProtoContract]
 	public partial class RoomInfoAnnunciate: IActorMessage

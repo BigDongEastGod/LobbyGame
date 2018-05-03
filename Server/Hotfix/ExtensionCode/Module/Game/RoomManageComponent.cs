@@ -177,7 +177,7 @@ namespace ETHotfix
         {
             if (room == null || self.Rooms.FirstOrDefault(d => d == room) == null) return;
             
-            room.DissolveRoom();
+            room.DissolveRoom(null);
 
             self.Rooms.Remove(room);
         }
@@ -193,7 +193,7 @@ namespace ETHotfix
             
             if (removeroom == null) return;
             
-            removeroom.DissolveRoom();
+            removeroom.DissolveRoom(null);
 
             self.Rooms.Remove(removeroom);
         }
