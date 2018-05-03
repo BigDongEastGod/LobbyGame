@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="$USER_HOME$/Library/Caches/Rider2018.1/resharper-host/local/Transient/ReSharperHost/v12/SolutionCaches/_Unity.1725444897.00" t="ExcludeRecursive" />
     <e p="$PROJECT_DIR$" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets/Bundles" t="Include">
+        <e p="Resources" t="Include">
+          <e p="Shader" t="Include">
+            <e p="LoadingImage.shader" t="Include" />
+          </e>
+        </e>
+      </e>
       <e p="Assets/Editor" t="Include">
         <e p="BehaviorTreeEditor" t="Include">
           <e p="BehaviorNodeConfigExtension.cs" t="Include" />
@@ -1279,5 +1285,6 @@
       </e>
       <e p="Unity.sln" t="IncludeFlat" />
     </e>
+    <e p="$USER_HOME$/Library/Caches/Rider2018.1/resharper-host/local/Transient/ReSharperHost/v12/SolutionCaches/_Unity.-880402881.00" t="ExcludeRecursive" />
   </component>
 </project>
