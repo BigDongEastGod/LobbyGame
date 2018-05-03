@@ -26,9 +26,7 @@ namespace ETHotfix
                 {
                     // 添加到Player管理组件里
 
-                    var player = PlayerManageComponent.Instance.Add(message.AccountId);
-
-                    player.GateSessionId = message.GateSessionId;
+                    var player = await PlayerManageComponent.Instance.Add(message.AccountId, message.GateSessionId);
 
                     // 数据库读取账号数据，并挂载到Player组件下
 
@@ -36,16 +34,7 @@ namespace ETHotfix
 
                     // 挂载Actor
 
-                    var actor = player.GetComponent<ActorComponent>();
-
-                    if (actor == null)
-                    {
-                        await player.AddComponent<ActorComponent>().AddLocation();
-                    }
-                    else
-                    {
-                        await actor.AddLocation();
-                    }
+                    await player.AddComponent<ActorComponent>().AddLocation();
                 }
                 else
                 {

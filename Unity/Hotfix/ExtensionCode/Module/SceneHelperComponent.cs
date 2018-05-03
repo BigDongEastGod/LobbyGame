@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using ETModel;
+using UnityEngine;
 
 namespace ETHotfix
 {
@@ -22,6 +23,8 @@ namespace ETHotfix
         public void Awake()
         {
             Instance = this;
+
+            Session = null;
         }
 
         #region 网络操作
@@ -44,12 +47,7 @@ namespace ETHotfix
         /// <returns></returns>
         public async Task<SessionWrap> CreateGateSession(string address,long key)
         {
-            if (Session != null)
-            {
-                RemoveComponentByHotfix<PingComponent>(); // 移除心跳组件
-                
-                Session.Dispose();
-            }
+            if (Session != null) return Session;
 
             try
             {
@@ -70,6 +68,8 @@ namespace ETHotfix
                     Session.Dispose();
 
                     Session = null;
+                    
+                    Debug.Log("无法进入到服务器、原因EntherGateRequest");
                 }
                 else
                 {
@@ -77,7 +77,7 @@ namespace ETHotfix
 
                     if (Game.Scene.GetComponent<PingComponent>() == null)
                     {
-                        Game.Scene.AddComponent<PingComponent, long, SessionWrap, Action>(5000, Session, null);
+                        Game.Scene.AddComponent<PingComponent, long, SessionWrap, Action>(4000, Session, null);
                     }
                 }
             }

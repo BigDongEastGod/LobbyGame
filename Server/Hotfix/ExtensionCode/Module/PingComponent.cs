@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Schema;
 using ETModel;
 
 namespace ETHotfix
@@ -32,7 +33,7 @@ namespace ETHotfix
 
                     for (var i = 0; i < _sessionTimes.Count; i++)
                     {
-                        if ((TimeHelper.ClientNowSeconds() - _sessionTimes.ElementAt(i).Value) < overtime) continue;
+                        if ((TimeHelper.ClientNowSeconds() - _sessionTimes.ElementAt(i).Value) <= overtime) continue;
                         
                         GatePlayerManageComponent.Instance.Remove(_sessionTimes.ElementAt(i).Key);
 
@@ -65,12 +66,12 @@ namespace ETHotfix
 
         public bool IsInSession(long id)
         {
-            return this._sessionTimes.TryGetValue(id, out var session);
+            return _sessionTimes.ContainsKey(id);
         }
 
         public void UpdateSession(long id)
         {
-            if (_sessionTimes.ContainsKey(id)) _sessionTimes[id] = TimeHelper.ClientNowSeconds();
+            if (_sessionTimes.TryGetValue(id, out _)) TimeHelper.ClientNowSeconds();
         }
 
         public override void Dispose()
