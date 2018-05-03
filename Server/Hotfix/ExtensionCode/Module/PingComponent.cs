@@ -71,7 +71,7 @@ namespace ETHotfix
 
         public void UpdateSession(long id)
         {
-            if (_sessionTimes.TryGetValue(id, out _)) TimeHelper.ClientNowSeconds();
+            if (_sessionTimes.ContainsKey(id)) _sessionTimes[id] = TimeHelper.ClientNowSeconds();
         }
 
         public override void Dispose()

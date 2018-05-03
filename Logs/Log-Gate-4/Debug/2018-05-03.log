@@ -1,0 +1,14 @@
+2018-05-03 10:41:30.4625 Gate     004 (PingComponent.cs:37) 88888888888
+2018-05-03 10:41:30.4784 Gate     004 (SessionGatePlayerComponent.cs:16) 有用户退出
+2018-05-03 10:41:30.4871 Gate     004 (GatePlayerManageComponent.cs:81) 玩家数量 ：0
+2018-05-03 10:41:30.5009 Gate     004 (GatePlayerManageComponent.cs:81) 玩家数量 ：0
+2018-05-03 10:42:49.4633 Gate     004 (PingHandler.cs:19) 0000000000000000
+2018-05-03 10:42:53.5272 Gate     004 (PingHandler.cs:19) 0000000000000000
+2018-05-03 10:42:57.5578 Gate     004 (PingHandler.cs:19) 0000000000000000
+2018-05-03 10:42:59.4430 Gate     004 (PingComponent.cs:37) 88888888888
+2018-05-03 10:42:59.4563 Gate     004 (SessionGatePlayerComponent.cs:16) 有用户退出
+2018-05-03 10:42:59.4657 Gate     004 (GatePlayerManageComponent.cs:81) 玩家数量 ：0
+2018-05-03 10:42:59.4797 Gate     004 (GatePlayerManageComponent.cs:81) 玩家数量 ：0
+2018-05-03 10:47:40.7922 Gate     004 (SessionGatePlayerComponent.cs:16) 有用户退出
+2018-05-03 10:47:40.8025 Gate     004 (GatePlayerManageComponent.cs:81) 玩家数量 ：0
+2018-05-03 10:47:47.0742 Gate     004 (PingComponent.cs:37) 88888888888

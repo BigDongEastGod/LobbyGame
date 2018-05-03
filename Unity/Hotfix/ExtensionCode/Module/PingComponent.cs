@@ -60,7 +60,16 @@ namespace ETHotfix
             {
                 try
                 {
-                    if (this._session == null) break;
+                    if (this._session == null)
+                    {
+                        // 执行断线后的操作
+
+                        action?.Invoke();
+
+                        Debug.Log("断线了");
+                        
+                        break;
+                    }
 
                     _sendTimer = TimeHelper.ClientNowSeconds();
 
