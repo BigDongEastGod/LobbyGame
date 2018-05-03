@@ -134,8 +134,8 @@ namespace ETHotfix
             
             HeadUIDict.Add(playerInfo.UserName,headObj.GetComponent<ReferenceCollector>());
         }
-
         
+  
         //设置头像的信息
         private void SetHeadUIComponent(GameObject headItem,AccountInfo playerInfo)
         {
@@ -150,6 +150,19 @@ namespace ETHotfix
             var SelectImg = rc.Get<GameObject>("SelectImg");
             
             userNameTxt.text = playerInfo.UserName;
+        }
+        
+        
+        //显示下注分数
+        public void ShowBets(string userName,int score)
+        {
+            if (HeadUIDict.ContainsKey(userName))
+            {
+                ReferenceCollector rc;
+                HeadUIDict.TryGetValue(userName, out rc);
+                rc.Get<GameObject>("BetsTitleImg").SetActive(true);
+                rc.Get<GameObject>("BetsTitleImg").transform.GetChild(0).GetComponent<Text>().text = score.ToString();
+            }
         }
 
 

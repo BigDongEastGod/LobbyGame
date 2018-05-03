@@ -54,6 +54,7 @@ namespace ETHotfix
                 Game.Scene.GetComponent<UIComponent>().Remove(UIType.NNRoomOperation);
                 Game.Scene.GetComponent<UIComponent>().Create(UIType.NiuNiuLobby, UiLayer.Bottom);
                 RoomInfoAnnunciateHandler.RoomAction -= niuNiuMainComponent.RoomBack;
+                GameInfoAnnunciateHandler.GameAction -= niuNiuMainComponent.GameBack;
 
             }
         }

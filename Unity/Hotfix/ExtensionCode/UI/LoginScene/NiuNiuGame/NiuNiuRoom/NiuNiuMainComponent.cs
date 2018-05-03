@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 namespace ETHotfix
 {
-    
     [ObjectSystem]
     public class NiuNiuMainComponentAwakeArgSystem : AwakeSystem<NiuNiuMainComponent,object[]>
     {
@@ -26,14 +25,17 @@ namespace ETHotfix
         private Button startGameBt;                  //开始按钮
         public GetAccountInfoResponse Player;        //当前玩家数据
         public RoomInfoResponse roomInfo;            //房间信息
+        private Button betsButton1;
+        private Button betsButton2;
+        private Text bottomScoreText;                //底分文本
 
-        public async void Awake(object[] args)
+        public void Awake(object[] args)
         {
-            SetRoomInfo(Convert.ToInt64(args[0]));
+            SetRoomInfo(Convert.ToInt64(args[0]),Convert.ToBoolean(args[1]));
         }
         
         //初始化数据
-        private async void SetRoomInfo(long roomId)
+        private async void SetRoomInfo(long roomId,bool isSitDown)
         {
             ReferenceCollector rc = this.GetParent<UI>().GameObject.GetComponent<ReferenceCollector>();
             
@@ -60,9 +62,9 @@ namespace ETHotfix
             //抢庄按钮
             var qiangzhuangBt=rc.Get<GameObject>("qiangzhuangBt");
             //下注选择按钮1
-            var betsButton1=rc.Get<GameObject>("BetsButton1");
+            betsButton1=rc.Get<GameObject>("BetsButton1").GetComponent<Button>();
             //下注选择按钮2
-            var betsButton2=rc.Get<GameObject>("BetsButton2");
+            betsButton2=rc.Get<GameObject>("BetsButton2").GetComponent<Button>();
             //复制房间号按钮
             var copyNumButton=rc.Get<GameObject>("CopyNumButton");
             //邀请微信好友按钮
@@ -88,7 +90,7 @@ namespace ETHotfix
             //庄位信息
             var zhuangWeiTxt  = rc.Get<GameObject>("zhuangWei").GetComponent<Text>();
             //底分信息
-            var bottomScoreText  = rc.Get<GameObject>("BottomScoreText").GetComponent<Text>();
+            bottomScoreText  = rc.Get<GameObject>("BottomScoreText").GetComponent<Text>();
             //房间局数
             var roomCountText  = rc.Get<GameObject>("roomCountText").GetComponent<Text>();
             
@@ -127,10 +129,7 @@ namespace ETHotfix
        
             
             //坐下按钮事件注册
-            SceneHelperComponent.Instance.MonoEvent.AddButtonClick(sitDownBt.GetComponent<Button>(), () =>
-            {
-                GetRoomInfo();
-            });
+            SceneHelperComponent.Instance.MonoEvent.AddButtonClick(sitDownBt.GetComponent<Button>(), GetRoomInfo);
             
             //下拉按钮注册
             SceneHelperComponent.Instance.MonoEvent.AddButtonClick(selectButton.GetComponent<Button>(), () =>
@@ -140,20 +139,66 @@ namespace ETHotfix
             });
             
             //开始按钮注册
-            SceneHelperComponent.Instance.MonoEvent.AddButtonClick(startGameBt.GetComponent<Button>(), () =>
-            {
-//                var response =(PrepareGameResponse) await SceneHelperComponent.Instance.Session.Call(new PrepareGameRequest(){RoomId = m_roomId});
-                
-            });
+            SceneHelperComponent.Instance.MonoEvent.AddButtonClick(startGameBt.GetComponent<Button>(), StartGameOclick);
             
 
             //获取房间准备号玩家的数据
             GetAllReadyInfo();
             
             RoomInfoAnnunciateHandler.RoomAction += RoomBack;
+            GameInfoAnnunciateHandler.GameAction += GameBack;
             
+            if (isSitDown)
+            {
+                SitDown(-1,Player.AccountInfo.UserName);
+            }
+            else
+            {
+                sitDownBt.gameObject.SetActive(true);
+            }
+
         }
 
+      
+
+        //房间回调
+        public void RoomBack(RoomInfoAnnunciate obj)
+        {
+            switch (obj.Message)
+            {
+                case 0://加入房间
+                    break;
+                case 1://准备
+                    int chairIndex= showCardUI.GetComponent<NNShowCardComponent>().FindFreeChair(obj.UserName);
+                    SitDown(chairIndex, obj.UserName);
+                    break;
+                case 2://离开房间
+                    showCardUI.GetComponent<NNShowCardComponent>().QuitRoom(obj.UserName);
+                    break;
+                case 3://显示开始游戏按钮
+                    startGameBt.gameObject.SetActive(true);
+                    startGameBt.GetComponent<Animator>().SetInteger("IsMiddle",1);
+                    break;
+                case 4:
+                    break;
+            }
+        }
+        
+        public void GameBack(GameInfoAnnunciate obj)
+        {
+           Debug.Log("收到回调"+obj.Message);
+            switch (obj.Message)
+            {
+                case 0://显示下注按钮
+                    startGameBt.gameObject.SetActive(false);
+                    ShowBetsButton();
+                    break;
+                case 1://下注完成
+                    ShowBet(obj.UserName, (int)obj.Arg);
+                    break;
+            }
+        }
+        
         //创建本地玩家头像
         private async void GetRoomInfo()
         {
@@ -162,7 +207,6 @@ namespace ETHotfix
             {
                 sitDownBt.gameObject.SetActive(false);
                 SitDown(-1,Player.AccountInfo.UserName);
-                Debug.Log("坐下成功");
             }
         }
 
@@ -178,38 +222,54 @@ namespace ETHotfix
             }
         }
 
-
+        //坐下
         private void SitDown(int chairIndex,string username)
         {
             AccountInfo accountInfo=new AccountInfo(){UserName = username};
             showCardUI.GetComponent<NNShowCardComponent>().CreateHead(chairIndex,accountInfo);
         }
-
-
-
-        //房间回调
-        public void RoomBack(RoomInfoAnnunciate obj)
+        
+        //开始游戏点
+        private async void StartGameOclick()
         {
-            Debug.Log("回调 ： " + obj.Message);
-            
-            switch (obj.Message)
+            var startResponse =(StartGameResponse) await SceneHelperComponent.Instance.Session.Call(new StartGameRequest(){RoomId = m_roomId});
+            if (startResponse.Error == -1)
             {
-                case 0:
-                 break;
-                case 1:
-                    Debug.Log("RoomBack/1/调用了一次");
-                  int chairIndex= showCardUI.GetComponent<NNShowCardComponent>().FindFreeChair(obj.UserName);
-                    Debug.Log("chairIndex"+chairIndex);
-                    SitDown(chairIndex, obj.UserName);
-                    break;
-                case 2://quitRoom
-                 showCardUI.GetComponent<NNShowCardComponent>().QuitRoom(obj.UserName);
-                    break;
-                case 3:
-                    startGameBt.gameObject.SetActive(true);
-                    startGameBt.GetComponent<Animator>().SetInteger("IsMiddle",1);
-                    break;
+                Debug.Log("当前房间人数不够，不能开始游戏!!!");
             }
+            else
+            {
+                Debug.Log("开始游戏成功!!!");
+            }
+        }
+        
+        //显示下注按钮
+        private void ShowBetsButton()
+        {
+            string[] scroeStr = bottomScoreText.text.Split('/');
+            if (scroeStr.Length > 1)
+            {
+                betsButton1.gameObject.SetActive(true);
+                betsButton2.gameObject.SetActive(true);
+                betsButton1.transform.GetChild(0).GetComponent<Text>().text = scroeStr[0];
+                betsButton2.transform.GetChild(0).GetComponent<Text>().text = scroeStr[1];
+                betsButton1.onClick.AddListener(()=>AddBetsEvent(scroeStr[0]));
+                betsButton2.onClick.AddListener(()=>AddBetsEvent(scroeStr[1]));
+            }
+        }
+
+        //向服务器发送下注请求
+        private async void AddBetsEvent(string score)
+        {
+            var betsResponse =(BetGameResponse) await SceneHelperComponent.Instance.Session.Call(new BetGameRequest(){Bet=int.Parse(score)});
+            if(betsResponse.Error==0) 
+                Debug.Log("下注成功，底分为:"+score);
+        }
+
+        //显示下注的分数
+        private void ShowBet(string userName,int score)
+        {
+            showCardUI.GetComponent<NNShowCardComponent>().ShowBets(userName, score);
         }
 
     }
