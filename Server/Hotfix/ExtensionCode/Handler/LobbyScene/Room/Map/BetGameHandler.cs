@@ -5,13 +5,13 @@ using ETModel;
 namespace ETHotfix
 {
     [ActorMessageHandler(AppType.Map)]
-    public class StartGameHandler : AMActorRpcHandler<SPlayer, StartGameRequest, StartGameResponse>
+    public class BetGameHandler : AMActorRpcHandler<SPlayer, BetGameRequest, BetGameResponse>
     {
-        protected override async Task Run(SPlayer player, StartGameRequest message, Action<StartGameResponse> reply)
+        protected override async Task Run(SPlayer player, BetGameRequest message, Action<BetGameResponse> reply)
         {
             await Task.CompletedTask;
             
-            var response = new StartGameResponse();
+            var response = new BetGameResponse();
                         
             try
             {
@@ -22,10 +22,8 @@ namespace ETHotfix
                 else 
                 {
                     var room = RoomManageComponent.Instance.GetRoom(message.RoomId);
-
-                    response.Message = room?.StartGame(player);
-
-                    if (response.Message == "CantStartGame") response.Error = -1;
+                    
+                    room?.SendMessages(player, 0, message.Bet);
                 }
             }
             catch (Exception e)
