@@ -656,7 +656,7 @@ namespace ETHotfix
 		public int Message;
 
 		[ProtoMember(3, IsRequired = true)]
-		public object Arg;
+		public byte[] Arg;
 
 	}
 
