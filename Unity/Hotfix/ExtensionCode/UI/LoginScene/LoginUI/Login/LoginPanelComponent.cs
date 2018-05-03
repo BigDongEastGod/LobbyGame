@@ -101,9 +101,20 @@ namespace ETHotfix
 
                     await SceneHelperComponent.Instance.CreateGateSession(response.Address, response.Key);
 
-                    Game.Scene.GetComponent<UIComponent>().Create(UIType.Lobby, UiLayer.Bottom);
 
-                    Game.Scene.GetComponent<UIComponent>().Remove(UIType.Login);
+                    // 获取用户信息
+                    var accountResponse = (GetAccountInfoResponse) await SceneHelperComponent.Instance.Session.Call(new GetAccountInfoRequest());
+                    Debug.Log("重新连接,房间号: " + accountResponse.AccountInfo.RoomId);
+                    
+                    if (accountResponse.AccountInfo.RoomId == 0)
+                    {
+                        Game.Scene.GetComponent<UIComponent>().Create(UIType.Lobby, UiLayer.Bottom);
+                        Game.Scene.GetComponent<UIComponent>().Remove(UIType.Login);
+                    }
+                    else
+                    {
+                        JoinPaiJu(accountResponse.AccountInfo.RoomId);
+                    }
                 }
                 else if (response.Error == -1)
                 {
@@ -117,6 +128,28 @@ namespace ETHotfix
             catch (Exception e)
             {
                 _dialogPanelUI.GetComponent<DialogPanelComponent>().ShowDialogBox("网络连接错误:" + e.Message);
+            }
+        }
+
+        /// <summary>
+        /// 加入房间
+        /// </summary>
+        private async void JoinPaiJu(long roomId)
+        {
+            // TODO 加入牌局
+            var joinRoomResponse = (JoinRoomResponse) await SceneHelperComponent.Instance.Session.Call(
+                new JoinRoomRequest() {RoomId = roomId});
+
+            if (joinRoomResponse.Error == 0)
+            {
+                Debug.Log("加入房间成功,跳转至游戏主场景");
+
+                Game.Scene.GetComponent<UIComponent>().Create(UIType.NiuNiuMain, UiLayer.Bottom, roomId);
+                Game.Scene.GetComponent<UIComponent>().Remove(UIType.NiuNiuLobby);
+            }
+            else
+            {
+                Debug.Log("加入房间失败: " + joinRoomResponse.Message);
             }
         }
     }
