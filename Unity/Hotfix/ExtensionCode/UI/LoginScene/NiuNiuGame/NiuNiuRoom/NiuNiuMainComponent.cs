@@ -142,9 +142,7 @@ namespace ETHotfix
             //开始按钮注册
             SceneHelperComponent.Instance.MonoEvent.AddButtonClick(startGameBt.GetComponent<Button>(), () =>
             {
-//             var startResponse =(StartGameRequest) await SceneHelperComponent.Instance.Session.Call(new StartGameRequest(){RoomId = m_roomId});
-                
-                
+              StartGameOclick();
             });
             
 
@@ -155,6 +153,29 @@ namespace ETHotfix
             
         }
 
+        //房间回调
+        public void RoomBack(RoomInfoAnnunciate obj)
+        {
+            switch (obj.Message)
+            {
+                case 0://加入房间
+                    break;
+                case 1://准备
+                    int chairIndex= showCardUI.GetComponent<NNShowCardComponent>().FindFreeChair(obj.UserName);
+                    SitDown(chairIndex, obj.UserName);
+                    break;
+                case 2://离开房间
+                    showCardUI.GetComponent<NNShowCardComponent>().QuitRoom(obj.UserName);
+                    break;
+                case 3://显示开始游戏按钮
+                    startGameBt.gameObject.SetActive(true);
+                    startGameBt.GetComponent<Animator>().SetInteger("IsMiddle",1);
+                    break;
+                case 4:
+                    break;
+            }
+        }
+        
         //创建本地玩家头像
         private async void GetRoomInfo()
         {
@@ -185,25 +206,14 @@ namespace ETHotfix
             AccountInfo accountInfo=new AccountInfo(){UserName = username};
             showCardUI.GetComponent<NNShowCardComponent>().CreateHead(chairIndex,accountInfo);
         }
-
-        //房间回调
-        public void RoomBack(RoomInfoAnnunciate obj)
+        
+        //开始游戏点
+        private async void StartGameOclick()
         {
-            switch (obj.Message)
+            var startResponse =(StartGameResponse) await SceneHelperComponent.Instance.Session.Call(new StartGameRequest(){RoomId = m_roomId});
+            if (startResponse.Error == -1)
             {
-                case 0:
-                 break;
-                case 1:
-                  int chairIndex= showCardUI.GetComponent<NNShowCardComponent>().FindFreeChair(obj.UserName);
-                    SitDown(chairIndex, obj.UserName);
-                    break;
-                case 2://quitRoom
-                 showCardUI.GetComponent<NNShowCardComponent>().QuitRoom(obj.UserName);
-                    break;
-                case 3:
-                    startGameBt.gameObject.SetActive(true);
-                    startGameBt.GetComponent<Animator>().SetInteger("IsMiddle",1);
-                    break;
+                Debug.Log("当前房间人数不够，不能开始游戏!!!");
             }
         }
 
