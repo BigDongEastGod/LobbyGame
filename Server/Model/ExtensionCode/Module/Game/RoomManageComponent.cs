@@ -32,7 +32,7 @@ namespace ETModel
 
             base.Dispose();
 
-            Rooms.ForEach(d => d.DissolveRoom());
+            Rooms.ForEach(d => d.DissolveRoom(null));
             
             Rooms.Clear();
         }

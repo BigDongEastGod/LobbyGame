@@ -60,6 +60,8 @@ namespace ETHotfix
             if (Players.Contains(player))
             {
                 //TODO:断线重连需要发送重连消息
+
+                player.Account.RoomId = this.Id;
                 
                 return "InPrepare"; // 玩家已经准备了
             }
@@ -74,6 +76,12 @@ namespace ETHotfix
 
             Guest.Where(d => d != player && d.IsActivity).ForEach(d => d.GetActorProxy.Send(response));
             
+            // 添加到玩家列表
+            
+            player.Account.RoomId = this.Id;
+            
+            Players.Add(player);  
+            
             // 发送给玩家开始游戏权限
 
             var startplayer = Players.FirstOrDefault(d => d.IsActivity);
@@ -82,10 +90,6 @@ namespace ETHotfix
             {
                 player.GetActorProxy.Send(new RoomInfoAnnunciate() {UserName = startplayer.Account.UserName, Message = 3});
             }
-            
-            // 添加到玩家列表
-            
-            Players.Add(player);  
 
             return "Prepare";
         }
@@ -100,28 +104,32 @@ namespace ETHotfix
 
             if (Players.Contains(player))
             {
-                // 更改开始游戏玩家
+                // 更改游戏玩家开始权限
 
                 if (Players.FirstOrDefault(d => d.IsActivity) == player)
                 {
                     var startPlayer = Players.FirstOrDefault(d => d != player && d.IsActivity);
-
+                    
                     if (startPlayer != null)
                     {
                         response.UserName = startPlayer.Account?.UserName;
 
                         response.Message = 3;
 
-                        // 发送给需要开始游戏的玩家
+                        // 发送给玩家开始游戏权限
 
                         startPlayer.GetActorProxy.Send(response);
                     }
                 }
-
+            
                 Players.Remove(player);
             }
+            
+            // 如果是游客就删除游客
 
             if (Guest.Contains(player)) Guest.Remove(player);
+            
+            // 发送退出消息给其他玩家
 
             response.UserName = player.Account.UserName;
 
@@ -131,9 +139,10 @@ namespace ETHotfix
 
             Guest.Where(d => d != player && d.IsActivity).ForEach(d => d.GetActorProxy.Send(response));
 
+            player.Account.RoomId = 0;
         }
 
-        public override void StartGame()
+        public override void StartGame(SPlayer player)
         {
 //            if (Players.Count < MaxPlayer)
 //            {
@@ -155,9 +164,9 @@ namespace ETHotfix
 //            }
         }
 
-        public override void DissolveRoom()
+        public override void DissolveRoom(SPlayer player)
         {
-            base.DissolveRoom();
+            base.DissolveRoom(player);
 
             this.Dispose();
         }
