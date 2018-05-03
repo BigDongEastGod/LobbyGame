@@ -101,9 +101,11 @@ message AccountInfo
         
     required int64 Gold = 4;
 
-    required string RegistrationTime = 5;
+    required int64 RoomId = 5;
 
-    required string LoginTime = 6;
+    required string RegistrationTime = 6;
+
+    required string LoginTime = 7;
 }
 message GetAccountInfoRequest // IActorRequest
 {

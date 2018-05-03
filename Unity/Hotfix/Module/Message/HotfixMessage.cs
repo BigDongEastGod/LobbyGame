@@ -284,9 +284,12 @@ namespace ETHotfix
 		public long Gold;
 
 		[ProtoMember(5, IsRequired = true)]
-		public string RegistrationTime;
+		public long RoomId;
 
 		[ProtoMember(6, IsRequired = true)]
+		public string RegistrationTime;
+
+		[ProtoMember(7, IsRequired = true)]
 		public string LoginTime;
 
 	}
