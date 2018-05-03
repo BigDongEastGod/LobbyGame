@@ -135,7 +135,7 @@ namespace ETHotfix
             //下拉按钮注册
             SceneHelperComponent.Instance.MonoEvent.AddButtonClick(selectButton.GetComponent<Button>(), () =>
             {
-                object[] arg = new object[] {m_roomId, this};
+                object[] arg = new object[] {m_roomId,this};
                 Game.Scene.GetComponent<UIComponent>().Create(UIType.NNRoomOperation, UiLayer.Top,arg);
             });
             
@@ -162,6 +162,7 @@ namespace ETHotfix
             {
                 sitDownBt.gameObject.SetActive(false);
                 SitDown(-1,Player.AccountInfo.UserName);
+                Debug.Log("坐下成功");
             }
         }
 
@@ -187,8 +188,10 @@ namespace ETHotfix
 
 
         //房间回调
-        private void RoomBack(RoomInfoAnnunciate obj)
+        public void RoomBack(RoomInfoAnnunciate obj)
         {
+            Debug.Log("回调 ： " + obj.Message);
+            
             switch (obj.Message)
             {
                 case 0:

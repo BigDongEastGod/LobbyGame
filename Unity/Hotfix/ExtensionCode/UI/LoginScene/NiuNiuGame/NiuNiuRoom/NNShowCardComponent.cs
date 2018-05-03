@@ -127,6 +127,7 @@ namespace ETHotfix
             if (ChairIndex != -1)
             {
                 List<string> chairList= chairArray.ToList<string>();
+                Debug.Log("UserName"+playerInfo.UserName);
                 chairList.Add(playerInfo.UserName);
                 chairArray= chairList.ToArray();
             }
