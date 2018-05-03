@@ -1460,6 +1460,13 @@
         <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
         <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
         <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+        <e p="Assets/Bundles" t="Include">
+          <e p="Resources" t="Include">
+            <e p="Shader" t="Include">
+              <e p="LoadingImage.shader" t="Include" />
+            </e>
+          </e>
+        </e>
         <e p="Assets/Editor" t="Include">
           <e p="BehaviorTreeEditor" t="Include">
             <e p="BehaviorNodeConfigExtension.cs" t="Include" />

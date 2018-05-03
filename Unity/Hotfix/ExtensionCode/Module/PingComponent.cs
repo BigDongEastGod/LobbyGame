@@ -44,12 +44,16 @@ namespace ETHotfix
         /// </summary>
         private readonly PingRequest _request = new PingRequest();
 
+        public Action PingBackCall;
+
         #endregion
 
         #region Awake
 
         public async void Awake(long waitTime, SessionWrap _sessionWrap, Action action)
         {
+            this.PingBackCall = action;
+            
             var timerComponent = ETModel.Game.Scene.GetComponent<TimerComponent>();
 
             this._session = _sessionWrap;
@@ -63,8 +67,10 @@ namespace ETHotfix
                     if (this._session == null)
                     {
                         // 执行断线后的操作
+                        
+                        Game.Scene.RemoveComponent<PingComponent>();
 
-                        action?.Invoke();
+                        this.PingBackCall?.Invoke();
 
                         Debug.Log("断线了");
                         
@@ -85,7 +91,11 @@ namespace ETHotfix
                 {
                     // 执行断线后的操作
 
-                    action?.Invoke();
+                    this._session = null;
+                    
+                    Game.Scene.RemoveComponent<PingComponent>();
+
+                    this.PingBackCall?.Invoke();
 
                     Debug.Log("断线了");
                 }

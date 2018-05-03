@@ -1,4 +1,5 @@
-﻿using ETModel;
+﻿using System;
+using ETModel;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -64,6 +65,7 @@ namespace ETHotfix
                 Game.Scene.GetComponent<UIComponent>().Remove(UIType.Lobby);
             });
 
+//            Game.Scene.GetComponent<PingComponent>().PingBackCall = ReloadGame;
         }
 
         public void Update()
@@ -80,7 +82,7 @@ namespace ETHotfix
 
         private void MoveBar()
         {
-            if (_isMoveBar && barTextTransform && posLeftTransform && posRightTransform )
+            if (_isMoveBar && barTextTransform && posLeftTransform && posRightTransform)
             {
                 Vector2 tempVec2 = new Vector2(barTextTransform.anchoredPosition.x - Time.deltaTime * 10 * _barMoveSpeed, barTextTransform.anchoredPosition.y);
                 barTextTransform.anchoredPosition = tempVec2;
@@ -88,6 +90,41 @@ namespace ETHotfix
                 {
                     barTextTransform.anchoredPosition = posRightTransform.anchoredPosition;
                 }
+            }
+        }
+
+
+        private async void ReloadGame()
+        {
+            try
+            {
+                SessionWrap session = SceneHelperComponent.Instance.CreateRealmSession();
+
+                LoginResponse response = (LoginResponse) await session.Call(
+                    new LoginRequest()
+                    {
+                        UserName = PlayerPrefs.GetString("username"),
+                        Password = PlayerPrefs.GetString("password")
+                    });
+
+                if (response.Error == 0)
+                {
+                    session.Dispose();
+
+                    // 连接网关服务器
+                    await SceneHelperComponent.Instance.CreateGateSession(response.Address, response.Key);
+                    
+                    Debug.Log("重连成功");
+                }
+                else if (response.Error == -1)
+                {
+                    // 登录失败
+//                    _dialogPanelUI.GetComponent<DialogPanelComponent>().ShowDialogBox(response.Message);
+                }
+            }
+            catch (Exception e)
+            {
+//                _dialogPanelUI.GetComponent<DialogPanelComponent>().ShowDialogBox("网络连接错误:" + e.Message);
             }
         }
     }
