@@ -67,6 +67,8 @@ namespace ETHotfix
                     if (this._session == null)
                     {
                         // 执行断线后的操作
+                        
+                        Game.Scene.RemoveComponent<PingComponent>();
 
                         this.PingBackCall?.Invoke();
 
@@ -88,6 +90,10 @@ namespace ETHotfix
                 catch (Exception e)
                 {
                     // 执行断线后的操作
+
+                    this._session = null;
+                    
+                    Game.Scene.RemoveComponent<PingComponent>();
 
                     this.PingBackCall?.Invoke();
 
