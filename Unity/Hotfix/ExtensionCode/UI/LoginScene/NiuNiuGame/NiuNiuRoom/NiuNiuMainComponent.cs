@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 namespace ETHotfix
 {
-    
     [ObjectSystem]
     public class NiuNiuMainComponentAwakeArgSystem : AwakeSystem<NiuNiuMainComponent,object[]>
     {
@@ -26,10 +25,19 @@ namespace ETHotfix
         private Button startGameBt;                  //开始按钮
         public GetAccountInfoResponse Player;        //当前玩家数据
         public RoomInfoResponse roomInfo;            //房间信息
+        private Button betsButton1;
+        private Button betsButton2;
+        private Text bottomScoreText;                //底分文本
 
         public async void Awake(object[] args)
         {
             SetRoomInfo(Convert.ToInt64(args[0]));
+            
+            if ((Convert.ToBoolean(args[1]) == true))
+            {
+                sitDownBt.gameObject.SetActive(false);
+                SitDown(-1,Player.AccountInfo.UserName);
+            }
         }
         
         //初始化数据
@@ -60,9 +68,9 @@ namespace ETHotfix
             //抢庄按钮
             var qiangzhuangBt=rc.Get<GameObject>("qiangzhuangBt");
             //下注选择按钮1
-            var betsButton1=rc.Get<GameObject>("BetsButton1");
+            betsButton1=rc.Get<GameObject>("BetsButton1").GetComponent<Button>();
             //下注选择按钮2
-            var betsButton2=rc.Get<GameObject>("BetsButton2");
+            betsButton2=rc.Get<GameObject>("BetsButton2").GetComponent<Button>();
             //复制房间号按钮
             var copyNumButton=rc.Get<GameObject>("CopyNumButton");
             //邀请微信好友按钮
@@ -88,7 +96,7 @@ namespace ETHotfix
             //庄位信息
             var zhuangWeiTxt  = rc.Get<GameObject>("zhuangWei").GetComponent<Text>();
             //底分信息
-            var bottomScoreText  = rc.Get<GameObject>("BottomScoreText").GetComponent<Text>();
+            bottomScoreText  = rc.Get<GameObject>("BottomScoreText").GetComponent<Text>();
             //房间局数
             var roomCountText  = rc.Get<GameObject>("roomCountText").GetComponent<Text>();
             
@@ -127,10 +135,7 @@ namespace ETHotfix
        
             
             //坐下按钮事件注册
-            SceneHelperComponent.Instance.MonoEvent.AddButtonClick(sitDownBt.GetComponent<Button>(), () =>
-            {
-                GetRoomInfo();
-            });
+            SceneHelperComponent.Instance.MonoEvent.AddButtonClick(sitDownBt.GetComponent<Button>(), GetRoomInfo);
             
             //下拉按钮注册
             SceneHelperComponent.Instance.MonoEvent.AddButtonClick(selectButton.GetComponent<Button>(), () =>
@@ -140,18 +145,18 @@ namespace ETHotfix
             });
             
             //开始按钮注册
-            SceneHelperComponent.Instance.MonoEvent.AddButtonClick(startGameBt.GetComponent<Button>(), () =>
-            {
-              StartGameOclick();
-            });
+            SceneHelperComponent.Instance.MonoEvent.AddButtonClick(startGameBt.GetComponent<Button>(), StartGameOclick);
             
 
             //获取房间准备号玩家的数据
             GetAllReadyInfo();
             
             RoomInfoAnnunciateHandler.RoomAction += RoomBack;
-            
+            GameInfoAnnunciateHandler.GameAction += GameBack;
+
         }
+
+      
 
         //房间回调
         public void RoomBack(RoomInfoAnnunciate obj)
@@ -176,6 +181,17 @@ namespace ETHotfix
             }
         }
         
+        public void GameBack(GameInfoAnnunciate obj)
+        {
+            switch (obj.Message)
+            {
+                case 0://显示下注按钮
+                    startGameBt.gameObject.SetActive(false);
+                    ShowBetsButton();
+                    break;
+            }
+        }
+        
         //创建本地玩家头像
         private async void GetRoomInfo()
         {
@@ -184,7 +200,6 @@ namespace ETHotfix
             {
                 sitDownBt.gameObject.SetActive(false);
                 SitDown(-1,Player.AccountInfo.UserName);
-                Debug.Log("坐下成功");
             }
         }
 
@@ -215,6 +230,31 @@ namespace ETHotfix
             {
                 Debug.Log("当前房间人数不够，不能开始游戏!!!");
             }
+            else
+            {
+                Debug.Log("开始游戏成功!!!");
+            }
+        }
+        
+        //显示下注按钮
+        private void ShowBetsButton()
+        {
+            string[] scroeStr = bottomScoreText.text.Split('/');
+            if (scroeStr.Length > 1)
+            {
+                betsButton1.gameObject.SetActive(true);
+                betsButton2.gameObject.SetActive(true);
+                betsButton1.transform.GetChild(0).GetComponent<Text>().text = scroeStr[0];
+                betsButton2.transform.GetChild(0).GetComponent<Text>().text = scroeStr[1];
+                betsButton1.onClick.AddListener(()=>AddBetsEvent(scroeStr[0]));
+                betsButton2.onClick.AddListener(()=>AddBetsEvent(scroeStr[1]));
+            }
+        }
+
+        private async void AddBetsEvent(string score)
+        {
+            int.Parse(score);
+
         }
 
     }
