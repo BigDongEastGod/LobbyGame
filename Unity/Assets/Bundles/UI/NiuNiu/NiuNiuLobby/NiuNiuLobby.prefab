@@ -1931,8 +1931,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data:
-  - key: UserIdText
-    gameObject: {fileID: 1015562943369660}
+  - key: BuyDiamondBtn
+    gameObject: {fileID: 1719390539415598}
   - key: DiamondText
     gameObject: {fileID: 1288246978568042}
   - key: LobbyCreateButton
@@ -1941,31 +1941,31 @@ MonoBehaviour:
     gameObject: {fileID: 1594384025685638}
   - key: LobbyNiuFriendButton
     gameObject: {fileID: 1454229657635832}
-  - key: PortraitBtn
-    gameObject: {fileID: 1576777077904044}
-  - key: BuyDiamondBtn
-    gameObject: {fileID: 1719390539415598}
-  - key: YaoQingMaBtn
-    gameObject: {fileID: 1586214188779072}
-  - key: ZhanJiBtn
-    gameObject: {fileID: 1944747836344294}
   - key: MailBtn
     gameObject: {fileID: 1555496825740802}
-  - key: ShareBtn
-    gameObject: {fileID: 1448070608318400}
   - key: MenuBtn
     gameObject: {fileID: 1983742871641788}
   - key: NiuNiuLobby
     gameObject: {fileID: 1577604075783616}
   - key: NiuNiuNoticeBar
     gameObject: {fileID: 1807056243870914}
-  - key: RoomInfoItem
+  - key: NiuNiuRoomInfoItem
     gameObject: {fileID: 1838360034915832, guid: ca92351f9b90f47deb0568fab5d78c81,
       type: 2}
+  - key: PortraitBtn
+    gameObject: {fileID: 1576777077904044}
   - key: RoomContent
     gameObject: {fileID: 1826096143957482}
   - key: RoomEmptyImg
     gameObject: {fileID: 1920331150871830}
+  - key: ShareBtn
+    gameObject: {fileID: 1448070608318400}
+  - key: UserIdText
+    gameObject: {fileID: 1015562943369660}
+  - key: YaoQingMaBtn
+    gameObject: {fileID: 1586214188779072}
+  - key: ZhanJiBtn
+    gameObject: {fileID: 1944747836344294}
 --- !u!114 &114422932786908446
 MonoBehaviour:
   m_ObjectHideFlags: 1

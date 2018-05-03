@@ -20,19 +20,6 @@ namespace ETHotfix
         /// <returns></returns>
         public static void Add(this GatePlayerManageComponent self, Session session, long accountId)
         {
-            // 获取跟用户ID关联的Session
-            
-            var gateSession = self.Sessions.FirstOrDefault(d => d.GetComponent<Player>()?.Id == accountId);
-            
-            // 如果找找到，移除这个Session和执行Dispose方法
-
-            if (gateSession != null)
-            {
-                if (gateSession.IsDisposed == false) gateSession.Dispose();
-
-                self.Sessions.Remove(gateSession);
-            }
-
             // 挂在Player组件，给Actor使用
 
             var sessionGatePlayer = session.GetComponent<SessionGatePlayerComponent>();

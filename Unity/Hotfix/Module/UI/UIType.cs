@@ -30,6 +30,7 @@ namespace ETHotfix
 	    public const string NiuNiuLobby = "NiuNiuLobby";
 	    public const string NiuNiuLobbyMenu = "NiuNiuLobbyMenu";
 	    public const string NiuNiuJoinRoom = "NiuNiuJoinRoom";
+	    public const string NiuNiuSetting = "NiuNiuSettingPanel";
 
 	    #endregion
 

@@ -2828,6 +2828,10 @@
                       <e p="NiuNiuLobbyMenuComponent.cs" t="Include" />
                       <e p="NiuNiuLobbyMenuFactory.cs" t="Include" />
                     </e>
+                    <e p="NNLobbyTop" t="Include">
+                      <e p="NNSettingComponent.cs" t="Include" />
+                      <e p="NNSettingFactory.cs" t="Include" />
+                    </e>
                   </e>
                   <e p="NiuNiuRoom" t="Include">
                     <e p="NiuNiuCardComponent.cs" t="Include" />
