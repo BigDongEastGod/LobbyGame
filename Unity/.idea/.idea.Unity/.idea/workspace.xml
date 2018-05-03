@@ -1,7 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="43a2cc3c-b9a6-4da2-a947-693a35ac239f" name="Default" comment="" />
+    <list default="true" id="43a2cc3c-b9a6-4da2-a947-693a35ac239f" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/.idea.JuAnLobbyGameSolution/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/.idea.JuAnLobbyGameSolution/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/App/obj/Server.App.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/App/obj/Server.App.csproj.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/App/obj/Server.App.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/App/obj/Server.App.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/App/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/App/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/App/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/App/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/Hotfix/obj/Server.Hotfix.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Hotfix/obj/Server.Hotfix.csproj.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/Hotfix/obj/Server.Hotfix.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Hotfix/obj/Server.Hotfix.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/Hotfix/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Hotfix/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/Hotfix/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Hotfix/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/Model/obj/Server.Model.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Model/obj/Server.Model.csproj.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/Model/obj/Server.Model.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Model/obj/Server.Model.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/Model/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Model/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/Model/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Model/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Bson/obj/MongoDB.Bson.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Bson/obj/MongoDB.Bson.csproj.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Bson/obj/MongoDB.Bson.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Bson/obj/MongoDB.Bson.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Bson/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Bson/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Bson/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Bson/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver.Core/obj/MongoDB.Driver.Core.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver.Core/obj/MongoDB.Driver.Core.csproj.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver.Core/obj/MongoDB.Driver.Core.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver.Core/obj/MongoDB.Driver.Core.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver.Core/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver.Core/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver.Core/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver.Core/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver/obj/MongoDB.Driver.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver/obj/MongoDB.Driver.csproj.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver/obj/MongoDB.Driver.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver/obj/MongoDB.Driver.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assembly-CSharp-Editor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp-Editor.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assembly-CSharp-firstpass.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp-firstpass.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotfix/ExtensionCode/UI/LoginScene/NiuNiuGame/NiuNiuRoom/NiuNiuMainComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Hotfix/ExtensionCode/UI/LoginScene/NiuNiuGame/NiuNiuRoom/NiuNiuMainComponent.cs" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
