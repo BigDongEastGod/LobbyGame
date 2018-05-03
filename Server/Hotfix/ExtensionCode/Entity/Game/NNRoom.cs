@@ -204,7 +204,7 @@ namespace ETHotfix
                     if (_gameStates.ContainsKey(player))
                     {
                         _gameStates[player].Bet = Convert.ToInt32(args[1]);
-
+                        
                         var response = new GameInfoAnnunciate() {Arg = ProtobufHelper.ToBytes(args[1]), Message = 1};
 
                         // 发送下注消息给其他玩家
