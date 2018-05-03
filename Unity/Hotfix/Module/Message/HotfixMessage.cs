@@ -674,7 +674,7 @@ namespace ETHotfix
 		[ProtoMember(1, IsRequired = true)]
 		public long RoomId;
 
-		[ProtoMember(1, IsRequired = true)]
+		[ProtoMember(2, IsRequired = true)]
 		public int Bet;
 
 	}
