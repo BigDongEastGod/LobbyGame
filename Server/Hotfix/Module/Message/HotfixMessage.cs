@@ -638,7 +638,7 @@ namespace ETHotfix
 	}
 
 // 游戏消息通告
-// 提示消息 0:加入房间 1:坐下（准备） 2:离开房间 3:更改玩家开始游戏权限
+// 提示消息 0:下注 1:下注完成 2:离开房间 3:更改玩家开始游戏权限
 	[Message(HotfixOpcode.GameInfoAnnunciate)]
 	[ProtoContract]
 	public partial class GameInfoAnnunciate: IActorMessage
@@ -654,6 +654,43 @@ namespace ETHotfix
 
 		[ProtoMember(2, IsRequired = true)]
 		public int Message;
+
+		[ProtoMember(3, IsRequired = true)]
+		public object Arg;
+
+	}
+
+// 牛牛游戏下注
+	[Message(HotfixOpcode.BetGameRequest)]
+	[ProtoContract]
+	public partial class BetGameRequest: IActorRequest
+	{
+		[ProtoMember(90, IsRequired = true)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(93, IsRequired = true)]
+		public long ActorId { get; set; }
+
+		[ProtoMember(1, IsRequired = true)]
+		public long RoomId;
+
+		[ProtoMember(1, IsRequired = true)]
+		public int Bet;
+
+	}
+
+	[Message(HotfixOpcode.BetGameResponse)]
+	[ProtoContract]
+	public partial class BetGameResponse: IActorResponse
+	{
+		[ProtoMember(90, IsRequired = true)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(91, IsRequired = true)]
+		public int Error { get; set; }
+
+		[ProtoMember(92, IsRequired = true)]
+		public string Message { get; set; }
 
 	}
 
