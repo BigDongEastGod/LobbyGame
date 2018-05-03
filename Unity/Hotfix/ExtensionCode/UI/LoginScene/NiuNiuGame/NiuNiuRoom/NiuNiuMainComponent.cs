@@ -32,8 +32,6 @@ namespace ETHotfix
         public void Awake(object[] args)
         {
             SetRoomInfo(Convert.ToInt64(args[0]),Convert.ToBoolean(args[1]));
-            
-       
         }
         
         //初始化数据
@@ -150,7 +148,6 @@ namespace ETHotfix
             RoomInfoAnnunciateHandler.RoomAction += RoomBack;
             GameInfoAnnunciateHandler.GameAction += GameBack;
             
-            Debug.Log("isSitDown/"+isSitDown);
             if (isSitDown)
             {
                 SitDown(-1,Player.AccountInfo.UserName);
@@ -189,11 +186,15 @@ namespace ETHotfix
         
         public void GameBack(GameInfoAnnunciate obj)
         {
+           Debug.Log("收到回调"+obj.Message);
             switch (obj.Message)
             {
                 case 0://显示下注按钮
                     startGameBt.gameObject.SetActive(false);
                     ShowBetsButton();
+                    break;
+                case 1://下注完成
+                    ShowBet(obj.UserName, (int)obj.Arg);
                     break;
             }
         }
@@ -224,11 +225,8 @@ namespace ETHotfix
         //坐下
         private void SitDown(int chairIndex,string username)
         {
-            Debug.Log("33333");
             AccountInfo accountInfo=new AccountInfo(){UserName = username};
-            Debug.Log("11111");
             showCardUI.GetComponent<NNShowCardComponent>().CreateHead(chairIndex,accountInfo);
-            Debug.Log("22222");
         }
         
         //开始游戏点
@@ -260,10 +258,18 @@ namespace ETHotfix
             }
         }
 
+        //向服务器发送下注请求
         private async void AddBetsEvent(string score)
         {
-            int.Parse(score);
+            var betsResponse =(BetGameResponse) await SceneHelperComponent.Instance.Session.Call(new BetGameRequest(){Bet=int.Parse(score)});
+            if(betsResponse.Error==0) 
+                Debug.Log("下注成功，底分为:"+score);
+        }
 
+        //显示下注的分数
+        private void ShowBet(string userName,int score)
+        {
+            showCardUI.GetComponent<NNShowCardComponent>().ShowBets(userName, score);
         }
 
     }
