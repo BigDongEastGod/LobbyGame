@@ -10,20 +10,25 @@ namespace ETHotfix
         protected override async Task Run(SPlayer player, JoinRoomRequest message, Action<JoinRoomResponse> reply)
         {
             await Task.CompletedTask;
+
+            var response = new JoinRoomResponse {Error = -1};
             
-            var response = new JoinRoomResponse();
-                        
+            if (message == null || message?.RoomId == 0)
+            {
+                reply(response);
+                    
+                return;
+            }
+
             try
             {
-                if (message == null || message?.RoomId == 0)
-                {
-                    response.Error = -1;
-                }
-                else 
-                {
-                    var room = RoomManageComponent.Instance.GetRoom(message.RoomId);
+                var room = RoomManageComponent.Instance.GetRoom(message.RoomId);
 
-                    if (room != null) response.Message = room.JionRoom(player);
+                if (room != null)
+                {
+                    response.Message = room.JionRoom(player);
+
+                    response.Error = 0;
                 }
             }
             catch (Exception e)
