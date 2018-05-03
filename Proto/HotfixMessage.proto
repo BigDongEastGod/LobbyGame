@@ -239,7 +239,7 @@ message GameInfoAnnunciate // IActorMessage
 
 	required int32 Message = 2;  
 
-	required object Arg = 3;
+    object Arg = 3;
 }
 // 牛牛游戏下注
 message BetGameRequest // IActorRequest
