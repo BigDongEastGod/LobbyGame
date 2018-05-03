@@ -65,7 +65,7 @@ namespace ETHotfix
                 Game.Scene.GetComponent<UIComponent>().Remove(UIType.Lobby);
             });
 
-            Game.Scene.GetComponent<PingComponent>().PingBackCall = ReloadGame;
+//            Game.Scene.GetComponent<PingComponent>().PingBackCall = ReloadGame;
         }
 
         public void Update()
