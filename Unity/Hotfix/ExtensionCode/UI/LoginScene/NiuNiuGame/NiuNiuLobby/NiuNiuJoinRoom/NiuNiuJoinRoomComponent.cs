@@ -120,9 +120,11 @@ namespace ETHotfix
 
 
             Debug.Log("加入房间:" + paijuNumber);
-            var roomInfoResponse = (JoinRoomResponse) await SceneHelperComponent.Instance.Session.Call(
+            
+            var joinRoomResponse = (JoinRoomResponse) await SceneHelperComponent.Instance.Session.Call(
                 new JoinRoomRequest() {RoomId = Convert.ToInt64(paijuNumber)});
-            if (roomInfoResponse.Error == 0)
+            
+            if (joinRoomResponse.Error == 0)
             {
                 Debug.Log("加入房间成功,跳转至游戏主场景");
 
@@ -131,7 +133,7 @@ namespace ETHotfix
             }
             else
             {
-                Debug.Log("加入房间失败: " + roomInfoResponse.Message);
+                Debug.Log("加入房间失败: " + joinRoomResponse.Message);
             }
         }
 
