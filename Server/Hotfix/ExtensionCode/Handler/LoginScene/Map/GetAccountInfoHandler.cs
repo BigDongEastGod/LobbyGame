@@ -37,6 +37,7 @@ namespace ETHotfix
                             Password = account.Password,
                             Diamond = account.Diamond,
                             Gold = account.Gold,
+                            RoomId = account.RoomId,
                             RegistrationTime = account.RegistrationTime.ToString(),
                             LoginTime = account.LoginTime.ToString()
                         };
