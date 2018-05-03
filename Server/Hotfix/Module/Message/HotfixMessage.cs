@@ -655,6 +655,9 @@ namespace ETHotfix
 		[ProtoMember(2, IsRequired = true)]
 		public int Message;
 
+		[ProtoMember(3, IsRequired = true)]
+		public object Arg;
+
 	}
 
 // 牛牛游戏下注
