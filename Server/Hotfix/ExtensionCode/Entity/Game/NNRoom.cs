@@ -144,14 +144,16 @@ namespace ETHotfix
 
         public override string StartGame(SPlayer player)
         {
-            if (Players.Count < 2) return "DontStartGame";
+            if (Players.Count < 2) return "CantStartGame";
+            
+            // 给玩家发送下注消息
 
             var response = new GameInfoAnnunciate {Message = 0};
 
-            Players.Where(d => d != player && d.IsActivity).ForEach(d =>
+            Players.Where(d => d.IsActivity).ForEach(d =>
             {
                 response.UserName = d.Account.UserName;
-                
+
                 d.GetActorProxy.Send(response);
             });
 
