@@ -142,12 +142,20 @@ namespace ETHotfix
             player.Account.RoomId = 0;
         }
 
-        public override void StartGame(SPlayer player)
+        public override string StartGame(SPlayer player)
         {
-//            if (Players.Count < MaxPlayer)
-//            {
-//                //TODO:房间人数不够、无法开始游戏
-//            }
+            if (Players.Count < 2) return "DontStartGame";
+
+            var response = new GameInfoAnnunciate {Message = 0};
+
+            Players.Where(d => d != player && d.IsActivity).ForEach(d =>
+            {
+                response.UserName = d.Account.UserName;
+                
+                d.GetActorProxy.Send(response);
+            });
+
+            return "StartGame";
         }
 
         public override void EndGame()

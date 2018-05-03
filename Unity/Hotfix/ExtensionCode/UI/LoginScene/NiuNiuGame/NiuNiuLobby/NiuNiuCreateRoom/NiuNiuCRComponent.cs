@@ -264,16 +264,24 @@ namespace ETHotfix
             {
                 Debug.Log("创建房间成功,房间号: " + creatRoomResponse.RoomId);
 
-                SendRuleAndJoinRoom(creatRoomResponse.RoomId, true);
-            }
-//            else if (creatRoomResponse.Error == -1)
-//            {
-//                Debug.Log(creatRoomResponse.Message);
-//            }
-            else if (creatRoomResponse.Error == -2)
-            {
-                Debug.Log(creatRoomResponse.Message + ",房间ID:" + creatRoomResponse.RoomId);
-                SendRuleAndJoinRoom(creatRoomResponse.RoomId, false);
+                NNChess nnChess = GetCurrentNnChess();
+                
+                // 发送规则
+                var roomRulesResponse = (RoomRulesResponse) await SceneHelperComponent.Instance.Session.Call(
+                    new RoomRulesRequest() {RoomId = creatRoomResponse.RoomId, Rules = ProtobufHelper.ToBytes(nnChess)});
+
+                if (roomRulesResponse.Error == 0)
+                {
+                    Debug.Log("发送规则成功");
+
+                    SendRuleAndJoinRoom(creatRoomResponse.RoomId);
+                }
+                else
+                {
+                    Debug.Log("发送规则失败");
+                    Debug.Log(roomRulesResponse.Message);
+                }
+                
             }
             else
             {
@@ -286,50 +294,23 @@ namespace ETHotfix
         /// </summary>
         /// <param name="roomId">房间号</param>
         /// <param name="isJoin">是否加入房间</param>
-        private async void SendRuleAndJoinRoom(long roomId, bool isJoin)
+        private async void SendRuleAndJoinRoom(long roomId)
         {
-            NNChess nnChess = GetCurrentNnChess();
-            // 发送规则
-            var roomRulesResponse = (RoomRulesResponse) await SceneHelperComponent.Instance.Session.Call(
-                new RoomRulesRequest() {RoomId = roomId, Rules = ProtobufHelper.ToBytes(nnChess)});
-
-            Debug.Log("nnChess.Score: " + nnChess.Score);
-            Debug.Log("RoomRulesResponse Error code: " + roomRulesResponse.Error);
-            Debug.Log("RoomRulesResponse Message: " + roomRulesResponse.Message);
-
-            if (roomRulesResponse.Error == 0)
+            var joinRoomResponse = (JoinRoomResponse) await SceneHelperComponent.Instance.Session.Call(
+                new JoinRoomRequest() {RoomId = roomId});
+            
+            if (joinRoomResponse.Error == 0)
             {
-                Debug.Log("发送规则成功");
+                Debug.Log("加入房间成功,跳转至游戏主场景");
 
-                if (isJoin)
-                {
-                    var roomInfoResponse = (JoinRoomResponse) await SceneHelperComponent.Instance.Session.Call(
-                        new JoinRoomRequest() {RoomId = roomId});
-                    if (roomInfoResponse.Error == 0)
-                    {
-                        Debug.Log("加入房间成功,跳转至游戏主场景");
-
-                        Game.Scene.GetComponent<UIComponent>().Create(UIType.NiuNiuMain, UiLayer.Bottom, roomId);
-                        Game.Scene.GetComponent<UIComponent>().Remove(UIType.NiuNiuLobby);
-                    }
-                    else
-                    {
-                        Debug.Log("加入房间失败: " + roomInfoResponse.Message);
-                    }
-                }
-                else
-                {
-                    Debug.Log("已经在房间内,跳转至游戏主场景");
-
-                    Game.Scene.GetComponent<UIComponent>().Create(UIType.NiuNiuMain, UiLayer.Bottom, roomId);
-                    Game.Scene.GetComponent<UIComponent>().Remove(UIType.NiuNiuLobby);
-                }
+                Game.Scene.GetComponent<UIComponent>().Create(UIType.NiuNiuMain, UiLayer.Bottom, roomId);
+                Game.Scene.GetComponent<UIComponent>().Remove(UIType.NiuNiuLobby);
             }
             else
             {
-                Debug.Log("发送规则失败");
-                Debug.Log(roomRulesResponse.Message);
+                Debug.Log("加入房间失败: " + joinRoomResponse.Message);
             }
+
         }
 
         /// <summary>

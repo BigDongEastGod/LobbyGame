@@ -284,9 +284,12 @@ namespace ETHotfix
 		public long Gold;
 
 		[ProtoMember(5, IsRequired = true)]
-		public string RegistrationTime;
+		public long RoomId;
 
 		[ProtoMember(6, IsRequired = true)]
+		public string RegistrationTime;
+
+		[ProtoMember(7, IsRequired = true)]
 		public string LoginTime;
 
 	}
@@ -614,11 +617,31 @@ namespace ETHotfix
 
 	}
 
-// 加入房间消息通告
-// 提示消息 0:加入房间 1:坐下（准备） 2:离开房间 3:更改开始玩家
+// 房间消息通告
+// 提示消息 0:加入房间 1:坐下（准备） 2:离开房间 3:更改玩家开始游戏权限
 	[Message(HotfixOpcode.RoomInfoAnnunciate)]
 	[ProtoContract]
 	public partial class RoomInfoAnnunciate: IActorMessage
+	{
+		[ProtoMember(90, IsRequired = true)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(93, IsRequired = true)]
+		public long ActorId { get; set; }
+
+		[ProtoMember(1, IsRequired = true)]
+		public string UserName;
+
+		[ProtoMember(2, IsRequired = true)]
+		public int Message;
+
+	}
+
+// 游戏消息通告
+// 提示消息 0:加入房间 1:坐下（准备） 2:离开房间 3:更改玩家开始游戏权限
+	[Message(HotfixOpcode.GameInfoAnnunciate)]
+	[ProtoContract]
+	public partial class GameInfoAnnunciate: IActorMessage
 	{
 		[ProtoMember(90, IsRequired = true)]
 		public int RpcId { get; set; }
