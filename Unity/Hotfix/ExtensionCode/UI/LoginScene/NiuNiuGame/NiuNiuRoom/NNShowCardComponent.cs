@@ -121,11 +121,17 @@ namespace ETHotfix
                 headObj.transform.localScale=new Vector2(0.7f,0.7f);
                 headObj.GetComponent<RectTransform>().anchoredPosition = currentTablePosList[ChairIndex];
             }
-           
+            //设置头像信息
             SetHeadUIComponent(headObj, playerInfo);
-            List<string> chairList= chairArray.ToList<string>();
-            chairList.Add(playerInfo.UserName);
-            chairArray= chairList.ToArray();
+           
+            if (ChairIndex != -1)
+            {
+                List<string> chairList= chairArray.ToList<string>();
+                Debug.Log("UserName"+playerInfo.UserName);
+                chairList.Add(playerInfo.UserName);
+                chairArray= chairList.ToArray();
+            }
+            
             HeadUIDict.Add(playerInfo.UserName,headObj.GetComponent<ReferenceCollector>());
         }
 
