@@ -159,7 +159,7 @@ namespace ETHotfix
             
             // 给玩家发送下注消息
 
-            var response = new GameInfoAnnunciate {Message = 0};
+            var response = new GameInfoAnnunciate {Message = 0, Arg = null};
 
             Players.Where(d => d.IsActivity).ForEach(d =>
             {
