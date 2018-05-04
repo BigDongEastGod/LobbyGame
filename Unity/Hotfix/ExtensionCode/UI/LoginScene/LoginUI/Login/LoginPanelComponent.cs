@@ -66,21 +66,16 @@ namespace ETHotfix
         /// <param name="loginPwdText"></param>
         public async void OnLoginSubmitBtn(string loginNameText, string loginPwdText)
         {
-            Debug.Log("LoginBtn");
             if (String.IsNullOrWhiteSpace(loginPwdText) || String.IsNullOrWhiteSpace(loginNameText))
             {
-                GameTools.ShowDialogMessage("帐号或密码不能为空!","LoginCanvas");
+                GameTools.ShowDialogMessage("帐号或密码不能为空!", "LoginCanvas");
                 return;
             }
 
             try
             {
-                var session = _registPanelUI.GetComponent<RegistPanelComponent>().Session ?? SceneHelperComponent.Instance.CreateRealmSession();
+                var session = _registPanelUI.GetComponent<RegistPanelComponent>().Session ?? SceneHelperComponent.Instance.CreateRealmSession() ?? SceneHelperComponent.Instance.CreateRealmSession();
 
-                if (session == null)
-                {
-                    session = SceneHelperComponent.Instance.CreateRealmSession();
-                }
                 SceneHelperComponent.Instance.MonoEvent.RemoveButtonClick(loginSubmitBtn.GetComponent<Button>());
                 LoginResponse response = (LoginResponse) await session.Call(
                     new LoginRequest()
@@ -99,7 +94,6 @@ namespace ETHotfix
                     await SceneHelperComponent.Instance.CreateGateSession(response.Address, response.Key);
                     // 获取用户信息
                     var accountResponse = (GetAccountInfoResponse) await SceneHelperComponent.Instance.Session.Call(new GetAccountInfoRequest());
-                    Debug.Log("重新连接,房间号: " + accountResponse.AccountInfo.RoomId);
 
                     if (accountResponse.AccountInfo.RoomId == 0)
                     {
@@ -108,13 +102,14 @@ namespace ETHotfix
                     }
                     else
                     {
+                        Debug.Log("重新连接,房间号: " + accountResponse.AccountInfo.RoomId);
                         JoinPaiJu(accountResponse.AccountInfo.RoomId);
                     }
                 }
                 else if (response.Error == -1)
                 {
                     // 登录失败
-                    GameTools.ShowDialogMessage(response.Message,"LoginCanvas");
+                    GameTools.ShowDialogMessage(response.Message, "LoginCanvas");
                 }
 
                 SceneHelperComponent.Instance.MonoEvent.AddButtonClick(loginSubmitBtn.GetComponent<Button>(),
@@ -122,7 +117,7 @@ namespace ETHotfix
             }
             catch (Exception e)
             {
-                GameTools.ShowDialogMessage("网络连接错误!"+ e.Message,"LoginCanvas");
+                GameTools.ShowDialogMessage("网络连接错误!" + e.Message, "LoginCanvas");
             }
         }
 
@@ -140,11 +135,12 @@ namespace ETHotfix
                 Debug.Log("加入房间成功,跳转至游戏主场景");
 
                 Game.Scene.GetComponent<UIComponent>().Create(UIType.NiuNiuMain, UiLayer.Bottom, roomId, true);
-                Game.Scene.GetComponent<UIComponent>().Remove(UIType.NiuNiuLobby);
+                Game.Scene.GetComponent<UIComponent>().Remove(UIType.Login);
             }
             else
             {
                 Debug.Log("加入房间失败: " + joinRoomResponse.Message);
+                GameTools.ShowDialogMessage("加入房间失败!","LoginCanvas");
             }
         }
     }

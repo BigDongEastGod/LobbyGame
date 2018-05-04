@@ -36,8 +36,6 @@ namespace ETHotfix
         private RectTransform posLeftTransform;
         private RectTransform posRightTransform;
 
-        private GameObject _loadingPanel;
-
         public async void Awake()
         {
             // 获取用户信息
@@ -59,9 +57,6 @@ namespace ETHotfix
             posLeftTransform = _barPosLeft.GetComponent<RectTransform>();
             posRightTransform = _barPosRight.GetComponent<RectTransform>();
 
-            var loadingPanel = rc.Get<GameObject>("LoadingPanel");
-            _loadingPanel = UnityEngine.Object.Instantiate(loadingPanel, lobby.transform.parent.parent.Find("TopMost"));
-
             _barMoveSpeed = 10f;
             _isMoveBar = true;
 
@@ -72,7 +67,10 @@ namespace ETHotfix
                 Game.Scene.GetComponent<UIComponent>().Remove(UIType.Lobby);
             });
 
-            Game.Scene.GetComponent<PingComponent>().PingBackCall = ReloadGame;
+            Game.Scene.GetComponent<PingComponent>().PingBackCall = () =>
+            {
+                GameTools.ReLoading("LobbyCanvas");
+            };
         }
 
         public void Update()
@@ -97,50 +95,6 @@ namespace ETHotfix
                 {
                     barTextTransform.anchoredPosition = posRightTransform.anchoredPosition;
                 }
-            }
-        }
-
-
-        private async void ReloadGame()
-        {
-            _loadingPanel.SetActive(true);
-
-            try
-            {
-                var session = SceneHelperComponent.Instance.CreateRealmSession();
-
-                var response = (LoginResponse) await session.Call(
-                    new LoginRequest()
-                    {
-                        UserName = PlayerPrefs.GetString("username"),
-                        Password = PlayerPrefs.GetString("password")
-                    });
-
-                if (response.Error == 0)
-                {
-                    session.Dispose();
-
-                    Debug.Log("Address: " + response.Address);
-                    Debug.Log("Key: " + response.Key);
-
-                    // 连接网关服务器
-                    await SceneHelperComponent.Instance.CreateGateSession(response.Address, response.Key);
-
-                    Debug.Log("重连成功");
-
-                    UnityEngine.Object.DestroyImmediate(_loadingPanel);
-
-                    InitUserInfo(PlayerPrefs.GetString("username"), PlayerPrefs.GetString("password"));
-                }
-                else
-                {
-                    // 登录失败
-                    GameTools.ShowDialogMessage(response.Message, "LobbyCanvas");
-                }
-            }
-            catch (Exception e)
-            {
-                GameTools.ShowDialogMessage(e.Message, "LobbyCanvas");
             }
         }
     }
