@@ -14,14 +14,48 @@
             </e>
           </e>
         </e>
-        <e p="Demigiant" t="Include">
-          <e p="DemiLib" t="Include">
-            <e p="Core" t="Include">
-              <e p="DemiLib.xml" t="Include" />
-              <e p="Editor" t="Include">
-                <e p="DemiEditor.xml" t="Include" />
-              </e>
+      </e>
+      <e p="Assets/Demigiant" t="Include">
+        <e p="DemiLib" t="Include">
+          <e p="Core" t="Include">
+            <e p="DemiLib.xml" t="Include" />
+            <e p="Editor" t="Include">
+              <e p="DemiEditor.xml" t="Include" />
             </e>
+          </e>
+        </e>
+        <e p="DOTween" t="Include">
+          <e p="DOTween43.xml" t="Include" />
+          <e p="DOTween46.xml" t="Include" />
+          <e p="DOTween50.xml" t="Include" />
+          <e p="readme.txt" t="Include" />
+        </e>
+        <e p="DOTweenPro" t="Include">
+          <e p="DOTweenAnimation.cs" t="Include" />
+          <e p="Editor" t="Include">
+            <e p="DOTweenAnimationInspector.cs" t="Include" />
+          </e>
+          <e p="readme.txt" t="Include" />
+        </e>
+      </e>
+      <e p="Assets/Editor" t="Include">
+        <e p="BehaviorTreeEditor" t="Include">
+          <e p="BehaviorNodeConfigExtension.cs" t="Include" />
+          <e p="BehaviorNodeData.cs" t="Include" />
+          <e p="BehaviorTreeConfigEditor.cs" t="Include" />
+          <e p="BehaviorTreeConfigExtension.cs" t="Include" />
+          <e p="BehaviorTreeData.cs" t="Include" />
+          <e p="BehaviorTreeMenu.cs" t="Include" />
+          <e p="BehaviorTreeNodeClassPopup.cs" t="Include" />
+          <e p="BehaviorTreeOperateUtility.cs" t="Include" />
+          <e p="BehaviorTreeTipsHelper.cs" t="Include" />
+          <e p="BTBatchOperation.cs" t="Include" />
+          <e p="BTDesignerUtility.cs" t="Include" />
+          <e p="BTEditor.cs" t="Include" />
+          <e p="BTEditorWindow.cs" t="Include" />
+          <e p="Component" t="Include">
+            <e p="BTDebugComponent.cs" t="Include" />
+            <e p="BTNodeInfoComponent.cs" t="Include" />
           </e>
           <e p="DOTween" t="Include">
             <e p="DOTween43.xml" t="Include" />
@@ -467,89 +501,10 @@
             <e p="UnitConfig.txt" t="Include" />
           </e>
         </e>
-        <e p="Scripts" t="Include">
-          <e p="Base" t="Include">
-            <e p="DoubleMap.cs" t="Include" />
-            <e p="Event" t="Include">
-              <e p="Env.cs" t="Include" />
-              <e p="EnvKey.cs" t="Include" />
-              <e p="EventAttribute.cs" t="Include" />
-              <e p="EventIdType.cs" t="Include" />
-              <e p="IEvent.cs" t="Include" />
-            </e>
-            <e p="Helper" t="Include">
-              <e p="ByteHelper.cs" t="Include" />
-              <e p="EnumHelper.cs" t="Include" />
-              <e p="FileHelper.cs" t="Include" />
-              <e p="IdGenerater.cs" t="Include" />
-              <e p="JsonHelper.cs" t="Include" />
-              <e p="MD5Helper.cs" t="Include" />
-              <e p="MethodInfoHelper.cs" t="Include" />
-              <e p="NetHelper.cs" t="Include" />
-              <e p="ObjectHelper.cs" t="Include" />
-              <e p="ProtobufHelper.cs" t="Include" />
-              <e p="RandomHelper.cs" t="Include" />
-              <e p="StringHelper.cs" t="Include" />
-              <e p="TimeHelper.cs" t="Include" />
-              <e p="ZipHelper.cs" t="Include" />
-            </e>
-            <e p="IL" t="Include">
-              <e p="IAsyncStateMachineAdaptor.cs" t="Include" />
-              <e p="IDisposableAdaptor.cs" t="Include" />
-              <e p="ILAdapterAttribute.cs" t="Include" />
-              <e p="ILBindingAttribute.cs" t="Include" />
-            </e>
-            <e p="Log.cs" t="Include" />
-            <e p="LogType.cs" t="Include" />
-            <e p="Math" t="Include">
-              <e p="AcosLookupTable.cs" t="Include" />
-              <e p="Atan2LookupTable.cs" t="Include" />
-              <e p="IntMath.cs" t="Include" />
-              <e p="SinCosLookupTable.cs" t="Include" />
-              <e p="VFactor.cs" t="Include" />
-              <e p="VInt.cs" t="Include" />
-              <e p="VInt2.cs" t="Include" />
-              <e p="VInt3.cs" t="Include" />
-              <e p="VLine.cs" t="Include" />
-              <e p="VRect.cs" t="Include" />
-            </e>
-            <e p="MultiMap.cs" t="Include" />
-            <e p="Object" t="Include">
-              <e p="Component.cs" t="Include" />
-              <e p="ComponentFactory.cs" t="Include" />
-              <e p="ComponentWithId.cs" t="Include" />
-              <e p="Entity.cs" t="Include" />
-              <e p="EntityEventAttribute.cs" t="Include" />
-              <e p="EntityType.cs" t="Include" />
-              <e p="EventProxy.cs" t="Include" />
-              <e p="EventSystem.cs" t="Include" />
-              <e p="IAwakeSystem.cs" t="Include" />
-              <e p="IChangeSystem.cs" t="Include" />
-              <e p="IDestroySystem.cs" t="Include" />
-              <e p="ILateUpdateSystem.cs" t="Include" />
-              <e p="ILoadSystem.cs" t="Include" />
-              <e p="ISerializeToEntity.cs" t="Include" />
-              <e p="IStartSystem.cs" t="Include" />
-              <e p="IUpdateSystem.cs" t="Include" />
-              <e p="Object.cs" t="Include" />
-              <e p="ObjectPool.cs" t="Include" />
-              <e p="ObjectSystemAttribute.cs" t="Include" />
-            </e>
-            <e p="OneThreadSynchronizationContext.cs" t="Include" />
-            <e p="QueueDictionary.cs" t="Include" />
-            <e p="TryLocker.cs" t="Include" />
-            <e p="UnOrderMultiMap.cs" t="Include" />
-          </e>
-          <e p="BehaviorTreeNode" t="Include">
-            <e p="CreateUIEffect.cs" t="Include" />
-            <e p="Root" t="Include">
-              <e p="Root.cs" t="Include" />
-              <e p="UICreateRoot.cs" t="Include" />
-            </e>
-            <e p="Selector.cs" t="Include" />
-            <e p="Sequence.cs" t="Include" />
-            <e p="True.cs" t="Include" />
-            <e p="UIScale.cs" t="Include" />
+        <e p="ExtensionCode" t="Include">
+          <e p="Helper" t="Include">
+            <e p="ETDoTween.cs" t="Include" />
+            <e p="SerializeHelper.cs" t="Include" />
           </e>
           <e p="Component" t="Include">
             <e p="Config" t="Include">
@@ -878,23 +833,129 @@
               <e p="UnityEngine_Vector3_Binding.cs" t="Include" />
               <e p="VInt3_Binding.cs" t="Include" />
             </e>
-            <e p="ILRuntime" t="Include">
-              <e p="CLR" t="Include">
-                <e p="Method" t="Include">
-                  <e p="CLRMethod.cs" t="Include" />
-                  <e p="ExceptionHandler.cs" t="Include" />
-                  <e p="ILMethod.cs" t="Include" />
-                  <e p="IMethod.cs" t="Include" />
-                </e>
-                <e p="TypeSystem" t="Include">
-                  <e p="CLRType.cs" t="Include" />
-                  <e p="ILGenericParameterType.cs" t="Include" />
-                  <e p="ILType.cs" t="Include" />
-                  <e p="IType.cs" t="Include" />
-                </e>
-                <e p="Utils" t="Include">
-                  <e p="Extensions.cs" t="Include" />
-                </e>
+            <e p="Factory" t="Include">
+              <e p="UILoadingFactory.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="Assets/Test.cs" t="Include" />
+      <e p="Assets/ThirdParty" t="Include">
+        <e p="ILRuntime" t="Include">
+          <e p="Editor" t="Include">
+            <e p="ILRuntimeCLRBinding.cs" t="Include" />
+          </e>
+          <e p="Generated" t="Include">
+            <e p="CLRBindings.cs" t="Include" />
+            <e p="ETModel_ActionHelper_Binding.cs" t="Include" />
+            <e p="ETModel_Actor_CreateUnits_Binding.cs" t="Include" />
+            <e p="ETModel_Actor_Test_Binding.cs" t="Include" />
+            <e p="ETModel_Actor_TestRequest_Binding.cs" t="Include" />
+            <e p="ETModel_Actor_TransferRequest_Binding.cs" t="Include" />
+            <e p="ETModel_C2G_EnterMap_Binding.cs" t="Include" />
+            <e p="ETModel_CameraComponent_Binding.cs" t="Include" />
+            <e p="ETModel_CanvasConfig_Binding.cs" t="Include" />
+            <e p="ETModel_Component_Binding.cs" t="Include" />
+            <e p="ETModel_ComponentFactory_Binding.cs" t="Include" />
+            <e p="ETModel_ComponentWithId_Binding.cs" t="Include" />
+            <e p="ETModel_DoubleMap_2_UInt16_Type_Binding.cs" t="Include" />
+            <e p="ETModel_Entity_Binding.cs" t="Include" />
+            <e p="ETModel_EventAttribute_Binding.cs" t="Include" />
+            <e p="ETModel_EventProxy_Binding.cs" t="Include" />
+            <e p="ETModel_EventSystem_Binding.cs" t="Include" />
+            <e p="ETModel_Frame_ClickMap_Binding.cs" t="Include" />
+            <e p="ETModel_Game_Binding.cs" t="Include" />
+            <e p="ETModel_GameObjectHelper_Binding.cs" t="Include" />
+            <e p="ETModel_GlobalConfigComponent_Binding.cs" t="Include" />
+            <e p="ETModel_GlobalProto_Binding.cs" t="Include" />
+            <e p="ETModel_Hotfix_Binding.cs" t="Include" />
+            <e p="ETModel_IdGenerater_Binding.cs" t="Include" />
+            <e p="ETModel_Log_Binding.cs" t="Include" />
+            <e p="ETModel_MessageAttribute_Binding.cs" t="Include" />
+            <e p="ETModel_MessageDispatherComponent_Binding.cs" t="Include" />
+            <e p="ETModel_MessageInfo_Binding.cs" t="Include" />
+            <e p="ETModel_MessageProxy_Binding.cs" t="Include" />
+            <e p="ETModel_MoveComponent_Binding.cs" t="Include" />
+            <e p="ETModel_NetworkComponent_Binding.cs" t="Include" />
+            <e p="ETModel_NetworkHelper_Binding.cs" t="Include" />
+            <e p="ETModel_OpcodeTypeComponent_Binding.cs" t="Include" />
+            <e p="ETModel_Packet_Binding.cs" t="Include" />
+            <e p="ETModel_Player_Binding.cs" t="Include" />
+            <e p="ETModel_PlayerComponent_Binding.cs" t="Include" />
+            <e p="ETModel_ProtobufHelper_Binding.cs" t="Include" />
+            <e p="ETModel_ResourcesComponent_Binding.cs" t="Include" />
+            <e p="ETModel_RpcException_Binding.cs" t="Include" />
+            <e p="ETModel_Scene_Binding.cs" t="Include" />
+            <e p="ETModel_Session_Binding.cs" t="Include" />
+            <e p="ETModel_SessionCallbackComponent_Binding.cs" t="Include" />
+            <e p="ETModel_SessionComponent_Binding.cs" t="Include" />
+            <e p="ETModel_UIFactoryAttribute_Binding.cs" t="Include" />
+            <e p="ETModel_Unit_Binding.cs" t="Include" />
+            <e p="ETModel_UnitComponent_Binding.cs" t="Include" />
+            <e p="ETModel_UnitFactory_Binding.cs" t="Include" />
+            <e p="ETModel_UnitInfo_Binding.cs" t="Include" />
+            <e p="ETModel_UnOrderMultiMap_2_Type_ILTypeInstance_Binding.cs" t="Include" />
+            <e p="LitJson_JsonMapper_Binding.cs" t="Include" />
+            <e p="ProtoBuf_PType_Binding.cs" t="Include" />
+            <e p="ReferenceCollector_Binding.cs" t="Include" />
+            <e p="System_Activator_Binding.cs" t="Include" />
+            <e p="System_Collections_Generic_Dictionary_2_Int32_Action_1_ILTypeI_t.cs" t="Include" />
+            <e p="System_Collections_Generic_Dictionary_2_Int64_ILTypeInstance_B_t.cs" t="Include" />
+            <e p="System_Collections_Generic_Dictionary_2_String_ILTypeInstance__t.cs" t="Include" />
+            <e p="System_Collections_Generic_Dictionary_2_String_ILTypeInstance__t_t.cs" t="Include" />
+            <e p="System_Collections_Generic_Dictionary_2_String_ILTypeInstance__t_t_t.cs" t="Include" />
+            <e p="System_Collections_Generic_Dictionary_2_String_List_1_ILTypeIn_t.cs" t="Include" />
+            <e p="System_Collections_Generic_Dictionary_2_Type_ILTypeInstance_Bi_t.cs" t="Include" />
+            <e p="System_Collections_Generic_Dictionary_2_Type_Queue_1_ILTypeIns_t.cs" t="Include" />
+            <e p="System_Collections_Generic_Dictionary_2_UInt16_List_1_ILTypeIn_t.cs" t="Include" />
+            <e p="System_Collections_Generic_HashSet_1_ILTypeInstance_Binding.cs" t="Include" />
+            <e p="System_Collections_Generic_HashSet_1_ILTypeInstance_Binding_En_t.cs" t="Include" />
+            <e p="System_Collections_Generic_List_1_ILTypeInstance_Binding.cs" t="Include" />
+            <e p="System_Collections_Generic_List_1_ILTypeInstance_Binding_Enume_t.cs" t="Include" />
+            <e p="System_Collections_Generic_List_1_Object_Binding.cs" t="Include" />
+            <e p="System_Collections_Generic_List_1_String_Binding.cs" t="Include" />
+            <e p="System_Collections_Generic_List_1_UnitInfo_Binding.cs" t="Include" />
+            <e p="System_Collections_Generic_List_1_UnitInfo_Binding_Enumerator__t.cs" t="Include" />
+            <e p="System_Collections_Generic_Queue_1_ILTypeInstance_Binding.cs" t="Include" />
+            <e p="System_Collections_Generic_Queue_1_Int64_Binding.cs" t="Include" />
+            <e p="System_Collections_IDictionary_Binding.cs" t="Include" />
+            <e p="System_Exception_Binding.cs" t="Include" />
+            <e p="System_IDisposable_Binding.cs" t="Include" />
+            <e p="System_Linq_Enumerable_Binding.cs" t="Include" />
+            <e p="System_NotImplementedException_Binding.cs" t="Include" />
+            <e p="System_Object_Binding.cs" t="Include" />
+            <e p="System_Reflection_MemberInfo_Binding.cs" t="Include" />
+            <e p="System_Runtime_CompilerServices_AsyncVoidMethodBuilder_Binding.cs" t="Include" />
+            <e p="System_Runtime_CompilerServices_TaskAwaiter_1_ILTypeInstance_B_t.cs" t="Include" />
+            <e p="System_Runtime_CompilerServices_TaskAwaiter_1_IResponse_Bindin_t.cs" t="Include" />
+            <e p="System_String_Binding.cs" t="Include" />
+            <e p="System_Threading_CancellationToken_Binding.cs" t="Include" />
+            <e p="System_Threading_Tasks_Task_1_ILTypeInstance_Binding.cs" t="Include" />
+            <e p="System_Threading_Tasks_Task_1_IResponse_Binding.cs" t="Include" />
+            <e p="System_Threading_Tasks_TaskCompletionSource_1_ILTypeInstance_B_t.cs" t="Include" />
+            <e p="System_Type_Binding.cs" t="Include" />
+            <e p="UnityEngine_Camera_Binding.cs" t="Include" />
+            <e p="UnityEngine_Component_Binding.cs" t="Include" />
+            <e p="UnityEngine_GameObject_Binding.cs" t="Include" />
+            <e p="UnityEngine_Input_Binding.cs" t="Include" />
+            <e p="UnityEngine_LayerMask_Binding.cs" t="Include" />
+            <e p="UnityEngine_Object_Binding.cs" t="Include" />
+            <e p="UnityEngine_Physics_Binding.cs" t="Include" />
+            <e p="UnityEngine_RaycastHit_Binding.cs" t="Include" />
+            <e p="UnityEngine_TextAsset_Binding.cs" t="Include" />
+            <e p="UnityEngine_Transform_Binding.cs" t="Include" />
+            <e p="UnityEngine_UI_Button_Binding.cs" t="Include" />
+            <e p="UnityEngine_UI_InputField_Binding.cs" t="Include" />
+            <e p="UnityEngine_Vector3_Binding.cs" t="Include" />
+            <e p="VInt3_Binding.cs" t="Include" />
+          </e>
+          <e p="ILRuntime" t="Include">
+            <e p="CLR" t="Include">
+              <e p="Method" t="Include">
+                <e p="CLRMethod.cs" t="Include" />
+                <e p="ExceptionHandler.cs" t="Include" />
+                <e p="ILMethod.cs" t="Include" />
+                <e p="IMethod.cs" t="Include" />
               </e>
               <e p="Other" t="Include">
                 <e p="ByReferenceKeyComparer.cs" t="Include" />
