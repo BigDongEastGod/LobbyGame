@@ -1375,6 +1375,11 @@ MonoBehaviour:
     gameObject: {fileID: 1417919993755674}
   - key: NiuNiuNoticeBar
     gameObject: {fileID: 1770695945758702}
+  - key: LoadingPanel
+    gameObject: {fileID: 1021553985353716, guid: 386c1561cc2c8481abbe69bfcaa5339f,
+      type: 2}
+  - key: Lobby
+    gameObject: {fileID: 1758851217498806}
 --- !u!114 &114734761021352826
 MonoBehaviour:
   m_ObjectHideFlags: 1
