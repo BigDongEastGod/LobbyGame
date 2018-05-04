@@ -11,6 +11,8 @@ namespace ETHotfix
     /// </summary>
     public class NNRoom : ETModel.Room
     {
+        #region 成员变量和其他方法
+
         public int CurrentDish { get; private set; }
 
         public NNChess ChessRules { get; private set; }
@@ -19,7 +21,7 @@ namespace ETHotfix
         {
             public bool IsBanker;
             
-            public bool IsSend;
+            public bool IsBet;
 
             public int Bet;
         }
@@ -41,6 +43,10 @@ namespace ETHotfix
         {
             return Players.FirstOrDefault(d => d == player && d.IsActivity) != null ? this.Id : 0;
         }
+
+        #endregion
+
+        #region 加入房间
 
         /// <summary>
         /// 加入房间
@@ -67,6 +73,10 @@ namespace ETHotfix
 
             return "JionRoom";
         }
+
+        #endregion
+
+        #region 准备游戏
 
         /// <summary>
         /// 准备游戏
@@ -110,6 +120,10 @@ namespace ETHotfix
 
             return "Prepare";
         }
+
+        #endregion
+
+        #region 退出房间
 
         public override void QuitRoom(SPlayer player)
         {
@@ -159,6 +173,8 @@ namespace ETHotfix
             player.Account.RoomId = 0;
         }
 
+        #endregion
+
         public override string StartGame(SPlayer player)
         {
             if (Players.Count < 2) return "CantStartGame";
@@ -178,6 +194,17 @@ namespace ETHotfix
                 d.GetActorProxy.Send(response);
 
                 _gameStates.Add(d, d == Players.ElementAt(randomPlayerId) ? new GameState() {IsBanker = true} : new GameState());
+            });
+            
+            // 给玩家发送下注消息
+
+            response = new GameInfoAnnunciate {Message = 0, Arg = null};
+
+            Players.Where(d => d.IsActivity).ForEach(d =>
+            {
+                response.UserName = d.Account.UserName;
+
+                d.GetActorProxy.Send(response);
             });
             
             return "StartGame";
@@ -205,28 +232,6 @@ namespace ETHotfix
             {
                 case 0:
 
-                    // 如果庄家（抢庄）成功、给玩家发送开始下注消息
-                    
-                    if (_gameStates.Values.FirstOrDefault(d => d.IsBanker) != null)
-                    {
-                        if (_gameStates.FirstOrDefault(d => d.Value.IsBanker).Key == player)
-                        {
-                            // 给玩家发送下注消息
-
-                            var response = new GameInfoAnnunciate {Message = 0, Arg = null};
-
-                            Players.Where(d => d.IsActivity).ForEach(d =>
-                            {
-                                response.UserName = d.Account.UserName;
-
-                                d.GetActorProxy.Send(response);
-                            });
-                        }
-                    }
-                    
-                    break;
-                case 1:
-                    
                     // 用户下注
                     
                     if (_gameStates.ContainsKey(player))
@@ -245,17 +250,22 @@ namespace ETHotfix
                             }
                         );
 
-                        _gameStates[player].IsSend = true;
+                        _gameStates[player].IsBet = true;
 
                         // 判断是否全部下注成功
-                        
-                        if (_gameStates.Values.Count(d => !d.IsSend) == 0)
+
+                        if (_gameStates.Values.Count(d => d.IsBet) == _gameStates.Count)
                         {
                             //TODO:全部下注成功、开始发牌了
-                            
+
                             Log.Debug("全部下注成功、开始发牌了");
                         }
                     }
+                    
+                    break;
+                case 1:
+                    
+                    
                     
                     break;
             }
