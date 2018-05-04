@@ -11,7 +11,7 @@
 		// No culling or depth
 		//Cull Off ZWrite Off ZTest Always
 
-		Tags{"Queue" = "Geometry + 20"}
+		Tags{"Queue" = "Geometry-20"}
 
 		ZWrite Off
 
