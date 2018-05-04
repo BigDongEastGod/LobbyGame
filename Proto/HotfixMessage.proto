@@ -1,0 +1,281 @@
+message C2R_Login // IRequest
+{
+	required string	Account	 = 1;	// 帐号
+	required string	Password = 2;	// 密码
+}
+
+message R2C_Login // IResponse
+{
+	required string Address = 1;
+	required int64 	Key	    = 2;
+}
+
+message C2G_LoginGate // IRequest
+{
+	required int64 Key = 1;	// 帐号
+}
+
+message G2C_LoginGate // IResponse
+{
+	required int64 PlayerId = 1;
+}
+
+message G2C_TestHotfixMessage // IMessage
+{
+	required string Info = 1;
+}
+
+message C2M_TestActorRequest // IActorRequest
+{
+	required string Info = 1;
+}
+
+message M2C_TestActorResponse // IActorResponse
+{
+	required string Info = 1;
+}
+
+message PlayerInfo // IMessage
+{
+}
+
+message C2G_PlayerInfo // IRequest
+{
+}
+
+message G2C_PlayerInfo // IResponse
+{
+	repeated PlayerInfo PlayerInfos = 1;
+}
+// 心跳包
+message PingRequest // IRequest
+{
+	
+}
+
+message PingResponse // IResponse
+{
+	
+}
+// 用户登录
+message LoginRequest // IRequest
+{
+	required string	UserName	 = 1;	// 帐号
+
+	required string	Password = 2;	// 密码
+}
+message LoginResponse // IResponse
+{
+	required string	Address = 1;
+
+	required int64	Key = 2;
+}
+// 用户注册
+message RegisteredRequest // IRequest
+{
+	required string	UserName	 = 1;	// 帐号
+
+	required string	Password = 2;	// 密码
+}
+message RegisteredResponse // IResponse
+{
+	
+}
+// 登录Gate服务器
+message EntherGateRequest // IRequest
+{
+	required int64 Key = 1;		
+}
+message EntherGateResponse // IResponse
+{
+		
+}
+// 获取用户信息
+message AccountInfo
+{
+	required string UserName = 1;
+
+    required string Password = 2;
+        
+    required int64 Diamond = 3;
+        
+    required int64 Gold = 4;
+
+    required int64 RoomId = 5;
+
+    required string RegistrationTime = 6;
+
+    required string LoginTime = 7;
+}
+message GetAccountInfoRequest // IActorRequest
+{
+	
+}
+message GetAccountInfoResponse // IActorResponse
+{
+	required AccountInfo AccountInfo = 1;
+}
+// 创建游戏房间
+message CreateRoomRequest // IActorRequest
+{
+	required string RoomType = 1;
+}
+message CreateRoomResponse // IActorResponse
+{
+	required int64 RoomId = 1;
+}
+// 牛牛棋牌规则
+message NNChess
+{
+	required string Score = 1;  // 底分
+
+	required int32 Dish = 2;  // 局数
+
+	required int32 RoomRate = 3;  // 局费
+
+	required int32 AutoGame = 4;  // 自动开桌
+
+	required int32 PlayerPush = 5;  // 闲家推注
+
+	repeated string DoubleRules = 6;  // 翻倍规则
+
+	required bool ShunZiRules = 7;  // 顺子牛
+
+	required bool TongHuaRules = 8;  // 同花牛
+
+	required bool HuLuRules = 9;  // 葫芦牛
+
+	required bool WuHuaRules = 10;  // 五花牛
+
+	required bool ZhaDanRules = 11;  // 炸弹牛
+
+	required bool WuXiaoRules = 12;  // 五小牛
+
+	required bool ZhongTuJinRuRules = 13;  // 中途禁入
+
+	required bool CuoPaiRules = 14;  // 禁止搓牌
+
+	required bool WangLaiRules = 15;  // 王癞玩法
+
+	required bool MaiMaRules = 16;  // 闲家买码
+
+	required int32 PlayerCount = 17;  // 人数	
+}
+// 游戏房间规则
+message RoomRulesRequest // IActorRequest
+{
+	required int64 RoomId = 1;
+
+	required bytes Rules = 2;
+}
+message RoomRulesResponse // IActorResponse
+{
+	
+}
+// 加入游戏房间
+message JoinRoomRequest // IActorRequest
+{
+	required int64 RoomId = 1;	
+}
+message JoinRoomResponse // IActorResponse
+{
+	
+}
+// 退出游戏房间
+message QuitRoomRequest // IActorRequest
+{
+	required int64 RoomId = 1;	
+}
+message QuitRoomResponse // IActorResponse
+{
+	
+}
+// 准备游戏房间
+message PrepareGameRequest // IActorRequest
+{
+	required int64 RoomId = 1;	
+}
+message PrepareGameResponse // IActorResponse
+{
+	
+}
+// 房间信息
+message RoomInfoRequest // IActorRequest
+{
+	required int64 RoomId = 1;	
+}
+message RoomInfoResponse // IActorResponse
+{
+	required int64 RoomId = 1;	// 房间号
+
+	required bytes Rules = 2;  // 房间规则
+
+	required string StartGameUserName = 3;  // 房间规则
+
+	repeated AccountInfo Players = 4 ; // 准备的所有玩家
+}
+// 开始房间游戏
+message StartGameRequest // IActorRequest
+{
+	required int64 RoomId = 1;	
+}
+message StartGameResponse // IActorResponse
+{
+	
+}
+// 房间消息通告
+// 提示消息 0:加入房间 1:坐下（准备） 2:离开房间 3:更改玩家开始游戏权限
+message RoomInfoAnnunciate // IActorMessage
+{
+	required string UserName = 1;
+
+	required int32 Message = 2;  
+}
+// 游戏消息通告
+// 提示消息 0:下注 1:下注完成 2:选择庄家 3:更改玩家开始游戏权限
+message GameInfoAnnunciate // IActorMessage
+{
+	required string UserName = 1;
+
+	required int32 Message = 2;  
+
+	required bytes Arg = 3;
+}
+// 牛牛游戏庄家
+message GameBankerRequest // IActorRequest
+{
+	required int64 RoomId = 1;		
+}
+message GameBankerResponse // IActorResponse
+{
+	
+}
+// 牛牛游戏下注
+message BetGameRequest // IActorRequest
+{
+	required int64 RoomId = 1;	
+
+	required int32 Bet = 2;
+}
+message BetGameResponse // IActorResponse
+{
+	
+}
+// 游戏房间
+//message Room
+//{
+	//required int32 RoomId = 1;  // 局数
+
+	//required string PlayingMethod = 2;  // 玩法
+//}
+// 游戏房间信息
+message RoomListRequest // IActorRequest
+{
+	
+
+	required int32 Dish = 2;  // 局数
+}
+message RoomListResponse // IActorResponse
+{
+	repeated AccountInfo Players = 3;	
+}

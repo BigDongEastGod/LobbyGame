@@ -1,0 +1,704 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="db4bb926-52e7-4a28-9bea-64285d3df5bc" name="Default" comment="" />
+    <list default="true" id="94796027-b961-4e4b-bf3e-9243c5244203" name="Default" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="Init.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Hotfix/Init.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1524274698369" expanded="true" signature="6:28" ph="..." />
+                <marker date="1524274698369" expanded="true" signature="48:1424" ph="{...}" />
+                <marker date="1524274698369" expanded="true" signature="76:1422" ph="{...}" />
+                <marker date="1524274698369" expanded="true" signature="108:1068" ph="{...}" />
+                <marker date="1524274698369" expanded="true" signature="119:1013" ph="{...}" />
+                <marker date="1524274698369" expanded="true" signature="1036:1064" ph="{...}" />
+                <marker date="1524274698369" expanded="true" signature="1099:1206" ph="{...}" />
+                <marker date="1524274698369" expanded="true" signature="1110:1151" ph="{...}" />
+                <marker date="1524274698369" expanded="true" signature="1174:1202" ph="{...}" />
+                <marker date="1524274698369" expanded="true" signature="1241:1352" ph="{...}" />
+                <marker date="1524274698369" expanded="true" signature="1252:1297" ph="{...}" />
+                <marker date="1524274698369" expanded="true" signature="1320:1348" ph="{...}" />
+                <marker date="1524274698369" expanded="true" signature="1394:1419" ph="{...}" />
+      <file leaf-file-name="SceneHelperComponent.cs" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SceneHelperComponent.cs" pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="SceneHelperComponent.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Hotfix/ExtensionCode/Module/SceneHelperComponent.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1065">
+              <caret line="108" column="9" lean-forward="false" selection-start-line="108" selection-start-column="9" selection-end-line="108" selection-end-column="9" />
+              <folding>
+                <marker date="1524294563889" expanded="false" signature="6:28" ph="..." />
+                <marker date="1524294563889" expanded="true" signature="145:265" ph="{...}" />
+                <marker date="1524294563889" expanded="true" signature="213:259" ph="{...}" />
+                <marker date="1524294563889" expanded="true" signature="316:3464" ph="{...}" />
+                <marker date="1524294563889" expanded="true" signature="462:511" ph="{...}" />
+                <marker date="1524294563889" expanded="true" signature="521:1863" ph="网络操作" />
+                <marker date="1524294563889" expanded="true" signature="543:601" ph="/// 创建验证服务器连接 ... " />
+                <marker date="1524294563889" expanded="true" signature="649:896" ph="{...}" />
+                <marker date="1524294563889" expanded="true" signature="906:1046" ph="/// 创建网关服务器连接 ... " />
+                <marker date="1524294563889" expanded="true" signature="1107:1843" ph="{...}" />
+                <marker date="1524294563889" expanded="true" signature="1150:1298" ph="{...}" />
+                <marker date="1524294563889" expanded="true" signature="1672:1804" ph="{...}" />
+                <marker date="1524294563889" expanded="false" signature="1873:3023" ph="组件" />
+                <marker date="1524294563889" expanded="true" signature="3063:3458" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UILoginComponent.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Hotfix/UI/UILogin/Component/UILoginComponent.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="417">
+              <caret line="47" column="13" lean-forward="false" selection-start-line="47" selection-start-column="13" selection-end-line="47" selection-end-column="13" />
+              <folding>
+                <marker date="1524304251610" expanded="false" signature="6:87" ph="..." />
+                <marker date="1524304251610" expanded="true" signature="107:2994" ph="{...}" />
+                <marker date="1524304251610" expanded="true" signature="194:277" ph="{...}" />
+                <marker date="1524304251610" expanded="true" signature="249:274" ph="{...}" />
+                <marker date="1524304251610" expanded="true" signature="321:2992" ph="{...}" />
+                <marker date="1524304251610" expanded="true" signature="408:822" ph="{...}" />
+                <marker date="1524304251610" expanded="true" signature="508:665" ph="/* loginBtn = rc.Get&lt;GameObject&gt;(&quot;LoginBtn&quot;); ... */" />
+                <marker date="1524304251610" expanded="true" signature="861:1470" ph="{...}" />
+                <marker date="1524304251610" expanded="true" signature="1299:1466" ph="/* if (response.Error == 0) ... */" />
+                <marker date="1524304251610" expanded="true" signature="1501:2989" ph="{...}" />
+                <marker date="1524304251610" expanded="true" signature="1547:2906" ph="{...}" />
+                <marker date="1524304251610" expanded="true" signature="2929:2985" ph="{...}" />
+                <marker date="1524197638264" expanded="false" signature="6:28" ph="..." />
+                <marker date="1524197638264" expanded="true" signature="48:3006" ph="{...}" />
+                <marker date="1524197638264" expanded="true" signature="145:265" ph="{...}" />
+                <marker date="1524197638264" expanded="true" signature="213:259" ph="{...}" />
+                <marker date="1524197638264" expanded="true" signature="316:3004" ph="{...}" />
+                <marker date="1524197638264" expanded="true" signature="462:511" ph="{...}" />
+                <marker date="1524197638264" expanded="true" signature="521:1403" ph="网络操作" />
+                <marker date="1524197638264" expanded="true" signature="543:604" ph="/// 验证服务器Session ... " />
+                <marker date="1524197638264" expanded="true" signature="647:1383" ph="{...}" />
+                <marker date="1524197638264" expanded="true" signature="673:1373" ph="{...}" />
+                <marker date="1524197638264" expanded="true" signature="724:1326" ph="{...}" />
+                <marker date="1524197638264" expanded="true" signature="1152:1308" ph="{...}" />
+                <marker date="1524197638264" expanded="true" signature="1413:2563" ph="组件" />
+                <marker date="1524197638264" expanded="true" signature="1433:1488" ph="/// 事件管理组件 ... " />
+                <marker date="1524197638264" expanded="true" signature="1704:1759" ph="/// 场景管理组件 ... " />
+                <marker date="1524197638264" expanded="true" signature="1993:2543" ph="移除组件" />
+                <marker date="1524197638264" expanded="true" signature="2015:2119" ph="/// 移除Mono层组件 ... " />
+                <marker date="1524197638264" expanded="true" signature="2196:2270" ph="{...}" />
+                <marker date="1524197638264" expanded="true" signature="2280:2386" ph="/// 移除Hotfix层组件 ... " />
+                <marker date="1524197638264" expanded="true" signature="2457:2523" ph="{...}" />
+                <marker date="1524197638264" expanded="true" signature="2603:2998" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Init.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Hotfix/Init.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="23" column="25" lean-forward="true" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
+              <folding>
+                <marker date="1524275765802" expanded="false" signature="6:28" ph="..." />
+                <marker date="1524275765802" expanded="true" signature="48:1477" ph="{...}" />
+                <marker date="1524275765802" expanded="true" signature="76:1475" ph="{...}" />
+                <marker date="1524275765802" expanded="true" signature="108:1121" ph="{...}" />
+                <marker date="1524275765802" expanded="true" signature="119:1066" ph="{...}" />
+                <marker date="1524275765802" expanded="true" signature="1089:1117" ph="{...}" />
+                <marker date="1524275765802" expanded="true" signature="1152:1259" ph="{...}" />
+                <marker date="1524275765802" expanded="true" signature="1163:1204" ph="{...}" />
+                <marker date="1524275765802" expanded="true" signature="1227:1255" ph="{...}" />
+                <marker date="1524275765802" expanded="true" signature="1294:1405" ph="{...}" />
+                <marker date="1524275765802" expanded="true" signature="1305:1350" ph="{...}" />
+                <marker date="1524275765802" expanded="true" signature="1373:1401" ph="{...}" />
+                <marker date="1524275765802" expanded="true" signature="1447:1472" ph="{...}" />
+                <marker date="1524294319012" expanded="false" signature="6:87" ph="..." />
+                <marker date="1524294319012" expanded="true" signature="107:2718" ph="{...}" />
+                <marker date="1524294319012" expanded="true" signature="194:277" ph="{...}" />
+                <marker date="1524294319012" expanded="true" signature="249:274" ph="{...}" />
+                <marker date="1524294319012" expanded="true" signature="321:2716" ph="{...}" />
+                <marker date="1524294319012" expanded="true" signature="408:822" ph="{...}" />
+                <marker date="1524294319012" expanded="true" signature="508:665" ph="/* loginBtn = rc.Get&lt;GameObject&gt;(&quot;LoginBtn&quot;); ... */" />
+                <marker date="1524294319012" expanded="true" signature="861:1194" ph="{...}" />
+                <marker date="1524294319012" expanded="true" signature="1070:1113" ph="{...}" />
+                <marker date="1524294319012" expanded="true" signature="1121:1164" ph="{...}" />
+                <marker date="1524294319012" expanded="true" signature="1225:2713" ph="{...}" />
+                <marker date="1524294319012" expanded="true" signature="1271:2630" ph="{...}" />
+                <marker date="1524294319012" expanded="true" signature="2653:2709" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Hotfix/Module/UI/UIComponent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Module/Message/Session.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Hotfix/Module/FrameSync/Actor_CreateUnitsHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Module/Message/Network/NetworkHelper.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Hotfix/UI/UILogin/Component/UILoginComponent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Hotfix/Module/FrameSync/Frame_ClickMapHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Hotfix/Module/Message/SessionWrap.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Hotfix/Module/Message/SessionWrapComponent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Hotfix/Module/Message/HotfixMessage.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Hotfix/ExtensionCode/Module/SceneHelperComponent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ExtensionCode/Module/MonoEventComponent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Hotfix/Init.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Hotfix/Init.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Hotfix/ExtensionCode/Module/UIManageComponent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Hotfix/ExtensionCode/Module/PingComponent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Hotfix/ExtensionCode/Module/SceneHelperComponent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Hotfix/Module/Config/ConfigHelper.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Hotfix/Init.cs" />
+        <option value="$PROJECT_DIR$/Hotfix/Module/Config/ConfigHelper.cs" />
+        <option value="$PROJECT_DIR$/Hotfix/ExtensionCode/Module/SceneHelperComponent.cs" />
+        <option value="$PROJECT_DIR$/Hotfix/UI/UILogin/Component/UILoginComponent.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="1680" />
+    <option name="height" value="947" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="SolutionExplorer" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="SolutionExplorer">
+        <subPane>
+          <expand>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="Assembly-CSharp-Mac (5 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+        <option name="show-file-system" value="false" />
+        <option name="show-all-items" value="false" />
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" />
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="db4bb926-52e7-4a28-9bea-64285d3df5bc" name="Default" comment="" />
+      <created>1524274955219</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1524274955219</updated>
+      <workItem from="1524274956621" duration="844000" />
+      <changelist id="94796027-b961-4e4b-bf3e-9243c5244203" name="Default" comment="" />
+      <created>1524275433241</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1524275433241</updated>
+      <workItem from="1524275434675" duration="314000" />
+      <workItem from="1524275434675" duration="1845000" />
+      <workItem from="1524279883768" duration="311000" />
+      <workItem from="1524280220806" duration="9680000" />
+      <workItem from="1524312976937" duration="213000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="12049000" />
+    <option name="totallyTimeSpent" value="314000" />
+    <option name="totallyTimeSpent" value="844000" />
+    <option name="totallyTimeSpent" value="1503000" />
+    <option name="totallyTimeSpent" value="7630000" />
+    <option name="totallyTimeSpent" value="10487000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="1680" height="947" extended-state="0" />
+    <frame x="0" y="23" width="1680" height="945" extended-state="0" />
+    <layout>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Errors In Solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Unit Tests" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32914287" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Hotfix/UI/UILogin/Component/UILoginComponent.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="44" column="54" lean-forward="false" selection-start-line="44" selection-start-column="54" selection-end-line="44" selection-end-column="54" />
+          <folding>
+            <marker date="1524304251610" expanded="false" signature="6:87" ph="..." />
+            <marker date="1524304251610" expanded="true" signature="107:2994" ph="{...}" />
+            <marker date="1524304251610" expanded="true" signature="194:277" ph="{...}" />
+            <marker date="1524304251610" expanded="true" signature="249:274" ph="{...}" />
+            <marker date="1524304251610" expanded="true" signature="321:2992" ph="{...}" />
+            <marker date="1524304251610" expanded="true" signature="408:822" ph="{...}" />
+            <marker date="1524304251610" expanded="true" signature="508:665" ph="/* loginBtn = rc.Get&lt;GameObject&gt;(&quot;LoginBtn&quot;); ... */" />
+            <marker date="1524304251610" expanded="true" signature="861:1470" ph="{...}" />
+            <marker date="1524304251610" expanded="true" signature="1299:1466" ph="/* if (response.Error == 0) ... */" />
+            <marker date="1524304251610" expanded="true" signature="1501:2989" ph="{...}" />
+            <marker date="1524304251610" expanded="true" signature="1547:2906" ph="{...}" />
+            <marker date="1524304251610" expanded="true" signature="2929:2985" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hotfix/ExtensionCode/Module/SceneHelperComponent.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1065">
+          <caret line="108" column="9" lean-forward="false" selection-start-line="108" selection-start-column="9" selection-end-line="108" selection-end-column="9" />
+          <folding>
+            <marker date="1524294563889" expanded="false" signature="6:28" ph="..." />
+            <marker date="1524294563889" expanded="true" signature="145:265" ph="{...}" />
+            <marker date="1524294563889" expanded="true" signature="213:259" ph="{...}" />
+            <marker date="1524294563889" expanded="true" signature="316:3464" ph="{...}" />
+            <marker date="1524294563889" expanded="true" signature="462:511" ph="{...}" />
+            <marker date="1524294563889" expanded="true" signature="521:1863" ph="网络操作" />
+            <marker date="1524294563889" expanded="true" signature="543:601" ph="/// 创建验证服务器连接 ... " />
+            <marker date="1524294563889" expanded="true" signature="649:896" ph="{...}" />
+            <marker date="1524294563889" expanded="true" signature="906:1046" ph="/// 创建网关服务器连接 ... " />
+            <marker date="1524294563889" expanded="true" signature="1107:1843" ph="{...}" />
+            <marker date="1524294563889" expanded="true" signature="1150:1298" ph="{...}" />
+            <marker date="1524294563889" expanded="true" signature="1672:1804" ph="{...}" />
+            <marker date="1524294563889" expanded="false" signature="1873:3023" ph="组件" />
+            <marker date="1524294563889" expanded="true" signature="3063:3458" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hotfix/Module/Config/ConfigHelper.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="14" column="16" lean-forward="false" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hotfix/ExtensionCode/Module/SceneHelperComponent.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="14" column="37" lean-forward="false" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="37" />
+          <folding>
+            <marker date="1524294563889" expanded="false" signature="6:28" ph="..." />
+            <marker date="1524294563889" expanded="true" signature="145:265" ph="{...}" />
+            <marker date="1524294563889" expanded="true" signature="213:259" ph="{...}" />
+            <marker date="1524294563889" expanded="true" signature="316:3464" ph="{...}" />
+            <marker date="1524294563889" expanded="true" signature="462:511" ph="{...}" />
+            <marker date="1524294563889" expanded="true" signature="521:1863" ph="网络操作" />
+            <marker date="1524294563889" expanded="true" signature="543:601" ph="/// 创建验证服务器连接 ... " />
+            <marker date="1524294563889" expanded="true" signature="649:896" ph="{...}" />
+            <marker date="1524294563889" expanded="true" signature="906:1046" ph="/// 创建网关服务器连接 ... " />
+            <marker date="1524294563889" expanded="true" signature="1107:1843" ph="{...}" />
+            <marker date="1524294563889" expanded="true" signature="1150:1298" ph="{...}" />
+            <marker date="1524294563889" expanded="true" signature="1672:1804" ph="{...}" />
+            <marker date="1524294563889" expanded="false" signature="1873:3023" ph="组件" />
+            <marker date="1524294563889" expanded="true" signature="3063:3458" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hotfix/ExtensionCode/Module/UIManageComponent.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="25" column="4" lean-forward="false" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hotfix/Module/UI/UIComponent.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1350">
+          <caret line="94" column="9" lean-forward="true" selection-start-line="94" selection-start-column="9" selection-end-line="94" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hotfix/ExtensionCode/Module/SceneHelperComponent.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="14" column="37" lean-forward="false" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="37" />
+          <folding>
+            <marker date="1524294563889" expanded="false" signature="6:28" ph="..." />
+            <marker date="1524294563889" expanded="true" signature="145:265" ph="{...}" />
+            <marker date="1524294563889" expanded="true" signature="213:259" ph="{...}" />
+            <marker date="1524294563889" expanded="true" signature="316:3464" ph="{...}" />
+            <marker date="1524294563889" expanded="true" signature="462:511" ph="{...}" />
+            <marker date="1524294563889" expanded="true" signature="521:1863" ph="网络操作" />
+            <marker date="1524294563889" expanded="true" signature="543:601" ph="/// 创建验证服务器连接 ... " />
+            <marker date="1524294563889" expanded="true" signature="649:896" ph="{...}" />
+            <marker date="1524294563889" expanded="true" signature="906:1046" ph="/// 创建网关服务器连接 ... " />
+            <marker date="1524294563889" expanded="true" signature="1107:1843" ph="{...}" />
+            <marker date="1524294563889" expanded="true" signature="1150:1298" ph="{...}" />
+            <marker date="1524294563889" expanded="true" signature="1672:1804" ph="{...}" />
+            <marker date="1524294563889" expanded="false" signature="1873:3023" ph="组件" />
+            <marker date="1524294563889" expanded="true" signature="3063:3458" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hotfix/ExtensionCode/Module/UIManageComponent.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="25" column="4" lean-forward="false" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hotfix/Module/Config/ConfigHelper.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="47" lean-forward="true" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hotfix/Init.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="23" column="25" lean-forward="true" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hotfix/Module/FrameSync/Frame_ClickMapHandler.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hotfix/Module/FrameSync/Actor_CreateUnitsHandler.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hotfix/ExtensionCode/Module/UIManageComponent.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-57">
+          <caret line="26" column="17" lean-forward="true" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hotfix/Module/Config/ConfigHelper.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="14" column="16" lean-forward="false" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hotfix/Module/UI/UIComponent.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="94" column="9" lean-forward="false" selection-start-line="94" selection-start-column="9" selection-end-line="94" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Module/Message/Network/NetworkHelper.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="33" lean-forward="false" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Module/Message/Session.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="27" column="24" lean-forward="false" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hotfix/Module/Message/SessionWrap.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="71" column="52" lean-forward="false" selection-start-line="71" selection-start-column="36" selection-end-line="71" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hotfix/Module/Message/SessionWrapComponent.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="17" lean-forward="false" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hotfix/ExtensionCode/Module/PingComponent.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="74" column="33" lean-forward="false" selection-start-line="74" selection-start-column="33" selection-end-line="74" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hotfix/ExtensionCode/Module/SceneHelperComponent.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1065">
+          <caret line="108" column="9" lean-forward="false" selection-start-line="108" selection-start-column="9" selection-end-line="108" selection-end-column="9" />
+          <folding>
+            <marker date="1524294563889" expanded="false" signature="6:28" ph="..." />
+            <marker date="1524294563889" expanded="true" signature="145:265" ph="{...}" />
+            <marker date="1524294563889" expanded="true" signature="213:259" ph="{...}" />
+            <marker date="1524294563889" expanded="true" signature="316:3464" ph="{...}" />
+            <marker date="1524294563889" expanded="true" signature="462:511" ph="{...}" />
+            <marker date="1524294563889" expanded="true" signature="521:1863" ph="网络操作" />
+            <marker date="1524294563889" expanded="true" signature="543:601" ph="/// 创建验证服务器连接 ... " />
+            <marker date="1524294563889" expanded="true" signature="649:896" ph="{...}" />
+            <marker date="1524294563889" expanded="true" signature="906:1046" ph="/// 创建网关服务器连接 ... " />
+            <marker date="1524294563889" expanded="true" signature="1107:1843" ph="{...}" />
+            <marker date="1524294563889" expanded="true" signature="1150:1298" ph="{...}" />
+            <marker date="1524294563889" expanded="true" signature="1672:1804" ph="{...}" />
+            <marker date="1524294563889" expanded="false" signature="1873:3023" ph="组件" />
+            <marker date="1524294563889" expanded="true" signature="3063:3458" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hotfix/Module/Message/HotfixMessage.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="625">
+          <caret line="256" column="44" lean-forward="true" selection-start-line="256" selection-start-column="44" selection-end-line="256" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hotfix/UI/UILogin/Component/UILoginComponent.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="417">
+          <caret line="47" column="13" lean-forward="false" selection-start-line="47" selection-start-column="13" selection-end-line="47" selection-end-column="13" />
+          <folding>
+            <marker date="1524197638264" expanded="false" signature="6:28" ph="..." />
+            <marker date="1524197638264" expanded="true" signature="48:3006" ph="{...}" />
+            <marker date="1524197638264" expanded="true" signature="145:265" ph="{...}" />
+            <marker date="1524197638264" expanded="true" signature="213:259" ph="{...}" />
+            <marker date="1524197638264" expanded="true" signature="316:3004" ph="{...}" />
+            <marker date="1524197638264" expanded="true" signature="462:511" ph="{...}" />
+            <marker date="1524197638264" expanded="true" signature="521:1403" ph="网络操作" />
+            <marker date="1524197638264" expanded="true" signature="543:604" ph="/// 验证服务器Session ... " />
+            <marker date="1524197638264" expanded="true" signature="647:1383" ph="{...}" />
+            <marker date="1524197638264" expanded="true" signature="673:1373" ph="{...}" />
+            <marker date="1524197638264" expanded="true" signature="724:1326" ph="{...}" />
+            <marker date="1524197638264" expanded="true" signature="1152:1308" ph="{...}" />
+            <marker date="1524197638264" expanded="true" signature="1413:2563" ph="组件" />
+            <marker date="1524197638264" expanded="true" signature="1433:1488" ph="/// 事件管理组件 ... " />
+            <marker date="1524197638264" expanded="true" signature="1704:1759" ph="/// 场景管理组件 ... " />
+            <marker date="1524197638264" expanded="true" signature="1993:2543" ph="移除组件" />
+            <marker date="1524197638264" expanded="true" signature="2015:2119" ph="/// 移除Mono层组件 ... " />
+            <marker date="1524197638264" expanded="true" signature="2196:2270" ph="{...}" />
+            <marker date="1524197638264" expanded="true" signature="2280:2386" ph="/// 移除Hotfix层组件 ... " />
+            <marker date="1524197638264" expanded="true" signature="2457:2523" ph="{...}" />
+            <marker date="1524197638264" expanded="true" signature="2603:2998" ph="{...}" />
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/ExtensionCode/Module/MonoEventComponent.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1524274698180" expanded="false" signature="6:113" ph="..." />
+            <marker date="1524274698180" expanded="true" signature="132:3060" ph="{...}" />
+            <marker date="1524274698180" expanded="true" signature="181:3058" ph="{...}" />
+            <marker date="1524274698180" expanded="true" signature="196:822" ph="点击事件" />
+            <marker date="1524274698180" expanded="true" signature="272:342" ph="{...}" />
+            <marker date="1524274698180" expanded="true" signature="353:564" ph="/// 添加ButtonClick事件 /// ... " />
+            <marker date="1524274698180" expanded="true" signature="654:801" ph="{...}" />
+            <marker date="1524274698180" expanded="true" signature="832:3052" ph="触发事件" />
+            <marker date="1524274698180" expanded="true" signature="855:1093" ph="/// 添加触发事件 /// ... " />
+            <marker date="1524274698180" expanded="true" signature="1219:1315" ph="{...}" />
+            <marker date="1524274698180" expanded="true" signature="1326:1636" ph="/// 添加触发事件 /// ... " />
+            <marker date="1524274698180" expanded="true" signature="1790:1909" ph="{...}" />
+            <marker date="1524274698180" expanded="true" signature="1920:2303" ph="/// 添加触发事件 /// ... " />
+            <marker date="1524274698180" expanded="true" signature="2479:3022" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hotfix/ExtensionCode/Module/SceneHelperComponent.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1524274698369" expanded="false" signature="6:28" ph="..." />
+            <marker date="1524274698369" expanded="true" signature="48:3006" ph="{...}" />
+            <marker date="1524274698369" expanded="true" signature="145:265" ph="{...}" />
+            <marker date="1524274698369" expanded="true" signature="213:259" ph="{...}" />
+            <marker date="1524274698369" expanded="true" signature="316:3004" ph="{...}" />
+            <marker date="1524274698369" expanded="true" signature="462:511" ph="{...}" />
+            <marker date="1524274698369" expanded="true" signature="521:1403" ph="网络操作" />
+            <marker date="1524274698369" expanded="true" signature="543:604" ph="/// 验证服务器Session ... " />
+            <marker date="1524274698369" expanded="true" signature="647:1383" ph="{...}" />
+            <marker date="1524274698369" expanded="true" signature="673:1373" ph="{...}" />
+            <marker date="1524274698369" expanded="true" signature="724:1326" ph="{...}" />
+            <marker date="1524274698369" expanded="true" signature="1152:1308" ph="{...}" />
+            <marker date="1524274698369" expanded="true" signature="1413:2563" ph="组件" />
+            <marker date="1524274698369" expanded="true" signature="1433:1488" ph="/// 事件管理组件 ... " />
+            <marker date="1524274698369" expanded="true" signature="1704:1759" ph="/// 场景管理组件 ... " />
+            <marker date="1524274698369" expanded="true" signature="1993:2543" ph="移除组件" />
+            <marker date="1524274698369" expanded="true" signature="2015:2119" ph="/// 移除Mono层组件 ... " />
+            <marker date="1524274698369" expanded="true" signature="2196:2270" ph="{...}" />
+            <marker date="1524274698369" expanded="true" signature="2280:2386" ph="/// 移除Hotfix层组件 ... " />
+            <marker date="1524274698369" expanded="true" signature="2457:2523" ph="{...}" />
+            <marker date="1524274698369" expanded="true" signature="2603:2998" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hotfix/Init.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1524274698369" expanded="true" signature="6:28" ph="..." />
+            <marker date="1524274698369" expanded="true" signature="48:1424" ph="{...}" />
+            <marker date="1524274698369" expanded="true" signature="76:1422" ph="{...}" />
+            <marker date="1524274698369" expanded="true" signature="108:1068" ph="{...}" />
+            <marker date="1524274698369" expanded="true" signature="119:1013" ph="{...}" />
+            <marker date="1524274698369" expanded="true" signature="1036:1064" ph="{...}" />
+            <marker date="1524274698369" expanded="true" signature="1099:1206" ph="{...}" />
+            <marker date="1524274698369" expanded="true" signature="1110:1151" ph="{...}" />
+            <marker date="1524274698369" expanded="true" signature="1174:1202" ph="{...}" />
+            <marker date="1524274698369" expanded="true" signature="1241:1352" ph="{...}" />
+            <marker date="1524274698369" expanded="true" signature="1252:1297" ph="{...}" />
+            <marker date="1524274698369" expanded="true" signature="1320:1348" ph="{...}" />
+            <marker date="1524274698369" expanded="true" signature="1394:1419" ph="{...}" />
+        <state relative-caret-position="330">
+          <caret line="23" column="25" lean-forward="true" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
+          <folding>
+            <marker date="1524275765802" expanded="false" signature="6:28" ph="..." />
+            <marker date="1524275765802" expanded="true" signature="48:1477" ph="{...}" />
+            <marker date="1524275765802" expanded="true" signature="76:1475" ph="{...}" />
+            <marker date="1524275765802" expanded="true" signature="108:1121" ph="{...}" />
+            <marker date="1524275765802" expanded="true" signature="119:1066" ph="{...}" />
+            <marker date="1524275765802" expanded="true" signature="1089:1117" ph="{...}" />
+            <marker date="1524275765802" expanded="true" signature="1152:1259" ph="{...}" />
+            <marker date="1524275765802" expanded="true" signature="1163:1204" ph="{...}" />
+            <marker date="1524275765802" expanded="true" signature="1227:1255" ph="{...}" />
+            <marker date="1524275765802" expanded="true" signature="1294:1405" ph="{...}" />
+            <marker date="1524275765802" expanded="true" signature="1305:1350" ph="{...}" />
+            <marker date="1524275765802" expanded="true" signature="1373:1401" ph="{...}" />
+            <marker date="1524275765802" expanded="true" signature="1447:1472" ph="{...}" />
+            <marker date="1524294319012" expanded="false" signature="6:87" ph="..." />
+            <marker date="1524294319012" expanded="true" signature="107:2718" ph="{...}" />
+            <marker date="1524294319012" expanded="true" signature="194:277" ph="{...}" />
+            <marker date="1524294319012" expanded="true" signature="249:274" ph="{...}" />
+            <marker date="1524294319012" expanded="true" signature="321:2716" ph="{...}" />
+            <marker date="1524294319012" expanded="true" signature="408:822" ph="{...}" />
+            <marker date="1524294319012" expanded="true" signature="508:665" ph="/* loginBtn = rc.Get&lt;GameObject&gt;(&quot;LoginBtn&quot;); ... */" />
+            <marker date="1524294319012" expanded="true" signature="861:1194" ph="{...}" />
+            <marker date="1524294319012" expanded="true" signature="1070:1113" ph="{...}" />
+            <marker date="1524294319012" expanded="true" signature="1121:1164" ph="{...}" />
+            <marker date="1524294319012" expanded="true" signature="1225:2713" ph="{...}" />
+            <marker date="1524294319012" expanded="true" signature="1271:2630" ph="{...}" />
+            <marker date="1524294319012" expanded="true" signature="2653:2709" ph="{...}" />
+            <marker date="1524304251610" expanded="false" signature="6:87" ph="..." />
+            <marker date="1524304251610" expanded="true" signature="107:2994" ph="{...}" />
+            <marker date="1524304251610" expanded="true" signature="194:277" ph="{...}" />
+            <marker date="1524304251610" expanded="true" signature="249:274" ph="{...}" />
+            <marker date="1524304251610" expanded="true" signature="321:2992" ph="{...}" />
+            <marker date="1524304251610" expanded="true" signature="408:822" ph="{...}" />
+            <marker date="1524304251610" expanded="true" signature="508:665" ph="/* loginBtn = rc.Get&lt;GameObject&gt;(&quot;LoginBtn&quot;); ... */" />
+            <marker date="1524304251610" expanded="true" signature="861:1470" ph="{...}" />
+            <marker date="1524304251610" expanded="true" signature="1299:1466" ph="/* if (response.Error == 0) ... */" />
+            <marker date="1524304251610" expanded="true" signature="1501:2989" ph="{...}" />
+            <marker date="1524304251610" expanded="true" signature="1547:2906" ph="{...}" />
+            <marker date="1524304251610" expanded="true" signature="2929:2985" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

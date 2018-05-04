@@ -1,0 +1,17 @@
+2018-05-02 10:01:23.2628 Gate     004 (SessionGatePlayerComponent.cs:16) 有用户退出
+2018-05-02 10:01:23.2794 Gate     004 (GatePlayerManageComponent.cs:83) 玩家数量 ：0
+2018-05-02 10:02:29.1221 Gate     004 (SessionGatePlayerComponent.cs:16) 有用户退出
+2018-05-02 10:02:29.1368 Gate     004 (GatePlayerManageComponent.cs:83) 玩家数量 ：0
+2018-05-02 10:02:29.1505 Gate     004 (GatePlayerManageComponent.cs:83) 玩家数量 ：0
+2018-05-02 10:03:35.8515 Gate     004 (SessionGatePlayerComponent.cs:16) 有用户退出
+2018-05-02 10:03:35.8681 Gate     004 (GatePlayerManageComponent.cs:83) 玩家数量 ：0
+2018-05-02 10:17:19.8277 Gate     004 (SessionGatePlayerComponent.cs:16) 有用户退出
+2018-05-02 10:17:19.8391 Gate     004 (GatePlayerManageComponent.cs:83) 玩家数量 ：0
+2018-05-02 14:39:07.9016 Gate     004 (SessionGatePlayerComponent.cs:16) 有用户退出
+2018-05-02 14:39:07.9130 Gate     004 (GatePlayerManageComponent.cs:94) 玩家数量 ：0
+2018-05-02 15:38:21.6053 Gate     004 (SessionGatePlayerComponent.cs:16) 有用户退出
+2018-05-02 15:38:21.6215 Gate     004 (GatePlayerManageComponent.cs:94) 玩家数量 ：0
+2018-05-02 15:38:59.5454 Gate     004 (SessionGatePlayerComponent.cs:16) 有用户退出
+2018-05-02 15:38:59.5517 Gate     004 (GatePlayerManageComponent.cs:94) 玩家数量 ：0
+2018-05-02 15:39:20.6506 Gate     004 (SessionGatePlayerComponent.cs:16) 有用户退出
+2018-05-02 15:39:20.6571 Gate     004 (GatePlayerManageComponent.cs:94) 玩家数量 ：0

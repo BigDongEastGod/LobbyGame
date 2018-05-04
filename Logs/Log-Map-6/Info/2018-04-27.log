@@ -1,0 +1,6 @@
+2018-04-27 15:39:42.9495 Map      006 (Program.cs:43) server start........................ 6 Map
+2018-04-27 15:41:25.8175 Map      006 (Program.cs:43) server start........................ 6 Map
+2018-04-27 15:46:34.0196 Map      006 (Program.cs:43) server start........................ 6 Map
+2018-04-27 16:02:14.3256 Map      006 (Program.cs:43) server start........................ 6 Map
+2018-04-27 16:03:22.7738 Map      006 (ActorManagerComponent.cs:14) add actor: 662864470409257 SPlayer
+2018-04-27 16:03:26.9688 Map      006 (CreateRoomHandler.cs:29) 用户：662864470409257创建房间号：803265
