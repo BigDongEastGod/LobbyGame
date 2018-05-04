@@ -167,7 +167,7 @@ namespace ETHotfix
 
             var randomPlayerId = new Random().Next(0, Players.Count);
 
-            var response = new GameInfoAnnunciate {Message = 2, Arg = SerializeHelper.Instance.SerializeObject(randomPlayerId)};
+            var response = new GameInfoAnnunciate {Message = 2, Arg = null, UserName = Players.ElementAt(randomPlayerId).Account.UserName};
             
             // 添加玩家到游戏状态中、并发送消息给其他玩家
             
