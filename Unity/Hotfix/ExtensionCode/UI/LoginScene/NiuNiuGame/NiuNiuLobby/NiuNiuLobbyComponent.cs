@@ -121,6 +121,12 @@ namespace ETHotfix
             SceneHelperComponent.Instance.MonoEvent.AddButtonClick(menuBtn.GetComponent<Button>(), () => { _nnLobbyMenu.GameObject.SetActive(true); });
 
             #endregion
+            
+            
+            Game.Scene.GetComponent<PingComponent>().PingBackCall = () =>
+            {
+                GameTools.ReLoading("GameCanvas");
+            };
         }
 
         public void Start()

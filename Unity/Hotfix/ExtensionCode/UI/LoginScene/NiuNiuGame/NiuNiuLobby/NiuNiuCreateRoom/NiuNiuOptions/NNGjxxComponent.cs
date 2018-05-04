@@ -204,6 +204,10 @@ namespace ETHotfix
             int itemIndex = 0;
             foreach (Transform item in optionShowBoxGrid.transform)
             {
+                if (!item.gameObject.activeSelf)
+                {
+                    continue;
+                }
                 item.Find("UnSelected").gameObject.SetActive(false);
                 item.Find("Selected").gameObject.SetActive(true);
                 if (!SelectedOptions.Contains(itemIndex))
@@ -225,7 +229,7 @@ namespace ETHotfix
 
             foreach (Transform select in optionShowBoxGrid.transform)
             {
-                if (select.Find("Selected").gameObject.activeSelf)
+                if (select.gameObject.activeSelf && select.Find("Selected").gameObject.activeSelf)
                 {
                     SelectedText.GetComponent<Text>().text += select.Find("Text").GetComponent<Text>().text + "    ";
                     count++;
@@ -243,7 +247,7 @@ namespace ETHotfix
             int count = 0;
             foreach (Transform item in optionShowBoxGrid.transform)
             {
-                if (item.Find("Selected").gameObject.activeSelf)
+                if (item.gameObject.activeSelf && item.Find("Selected").gameObject.activeSelf)
                 {
                     count++;
                 }
