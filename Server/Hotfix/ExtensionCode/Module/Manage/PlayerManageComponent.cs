@@ -30,7 +30,7 @@ namespace ETHotfix
                 
                 await self.RemoveActor(player);
             }
-Log.Debug("000000000000");
+
             player.IsActivity = true;
 
             player.GateSessionId = gateSessionId;
