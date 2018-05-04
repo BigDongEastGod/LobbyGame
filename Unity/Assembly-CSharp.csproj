@@ -52,6 +52,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Demigiant\DOTweenPro\DOTweenAnimation.cs" />
     <Compile Include="Assets\Scripts\Base\DoubleMap.cs" />
     <Compile Include="Assets\Scripts\Base\Event\Env.cs" />
     <Compile Include="Assets\Scripts\Base\Event\EnvKey.cs" />
@@ -714,9 +715,15 @@
     <Compile Include="Assets\ThirdParty\Protobuf\protobuf-net\ServiceModel\XmlProtoSerializer.cs" />
     <Compile Include="Assets\ThirdParty\Protobuf\protobuf-net\SubItemToken.cs" />
     <Compile Include="Assets\ThirdParty\Protobuf\protobuf-net\WireType.cs" />
+    <None Include="Assets\Demigiant\DOTweenPro\readme.txt" />
+    <None Include="Assets\Demigiant\DemiLib\Core\DemiLib.xml" />
+    <None Include="Assets\Demigiant\DOTween\DOTween50.xml" />
+    <None Include="Assets\Demigiant\DOTween\DOTween46.xml" />
     <None Include="Assets\Res\Config\GlobalProto.txt" />
     <None Include="Assets\link.xml" />
+    <None Include="Assets\Demigiant\DOTween\readme.txt" />
     <None Include="Assets\Res\Config\BuffConfig.txt" />
+    <None Include="Assets\Demigiant\DOTween\DOTween43.xml" />
     <None Include="Assets\Bundles\Resources\Shader\LoadingImage.shader" />
     <None Include="Assets\Res\Config\UnitConfig.txt" />
     <Reference Include="UnityEngine.UI">
@@ -829,6 +836,24 @@
     </Reference>
     <Reference Include="UnityEngine.StandardEvents">
       <HintPath>/Users/juankeji/Library/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.10/UnityEngine.StandardEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="DemiLib">
+      <HintPath>/Users/sining/Projects/JuAnChess/LobbyGame/Unity/Assets/Demigiant/DemiLib/Core/DemiLib.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween43">
+      <HintPath>/Users/sining/Projects/JuAnChess/LobbyGame/Unity/Assets/Demigiant/DOTween/DOTween43.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween50">
+      <HintPath>/Users/sining/Projects/JuAnChess/LobbyGame/Unity/Assets/Demigiant/DOTween/DOTween50.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween">
+      <HintPath>/Users/sining/Projects/JuAnChess/LobbyGame/Unity/Assets/Demigiant/DOTween/DOTween.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTweenPro">
+      <HintPath>/Users/sining/Projects/JuAnChess/LobbyGame/Unity/Assets/Demigiant/DOTweenPro/DOTweenPro.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween46">
+      <HintPath>/Users/sining/Projects/JuAnChess/LobbyGame/Unity/Assets/Demigiant/DOTween/DOTween46.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
