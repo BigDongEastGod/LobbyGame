@@ -162,6 +162,11 @@ namespace ETHotfix
             {
                 _sitDownBt.gameObject.SetActive(true);
             }
+
+            Game.Scene.GetComponent<PingComponent>().PingBackCall = () =>
+            {
+                GameTools.ReLoading("GameCanvas");
+            };
         }
 
       
@@ -206,6 +211,9 @@ namespace ETHotfix
                     ShowZhuangJiaIcon(obj.UserName);
                     _zhuangJiaName = obj.UserName;
                     break;
+                case 3:
+                    break;
+                    
             }
         }
         
