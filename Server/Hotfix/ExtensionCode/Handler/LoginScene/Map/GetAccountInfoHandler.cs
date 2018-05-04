@@ -11,6 +11,8 @@ namespace ETHotfix
     {
         protected override async Task Run(SPlayer player, GetAccountInfoRequest message, Action<GetAccountInfoResponse> reply)
         {
+            await Task.CompletedTask;
+            
             var response = new GetAccountInfoResponse();
             
             try

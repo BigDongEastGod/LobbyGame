@@ -47,8 +47,6 @@ namespace ETHotfix
         /// <returns></returns>
         public async Task<SessionWrap> CreateGateSession(string address,long key)
         {
-            if (Session != null) return Session;
-
             try
             {
                 // 连接到Gate服务器
