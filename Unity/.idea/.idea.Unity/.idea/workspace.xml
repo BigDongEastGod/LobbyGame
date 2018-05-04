@@ -8,13 +8,8 @@
       <change beforePath="$PROJECT_DIR$/Assembly-CSharp-Editor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp-Editor.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assembly-CSharp-firstpass.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp-firstpass.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Bundles/UIItem/HeadUIForm.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Bundles/UIItem/HeadUIForm.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Res/Code/Hotfix.dll.bytes" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Res/Code/Hotfix.dll.bytes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Res/Code/Hotfix.pdb.bytes" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Res/Code/Hotfix.pdb.bytes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Test.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Test.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Hotfix/ExtensionCode/UI/LoginScene/NiuNiuGame/NiuNiuRoom/NNShowCardComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Hotfix/ExtensionCode/UI/LoginScene/NiuNiuGame/NiuNiuRoom/NNShowCardComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotfix/ExtensionCode/UI/LoginScene/NiuNiuGame/NiuNiuRoom/NiuNiuMainComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Hotfix/ExtensionCode/UI/LoginScene/NiuNiuGame/NiuNiuRoom/NiuNiuMainComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Unity.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/Unity.sln.DotSettings.user" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -28,18 +23,18 @@
       <file leaf-file-name="Test.cs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Test.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="583">
-              <caret line="30" column="12" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="12" />
+            <state relative-caret-position="339">
+              <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
               <folding>
-                <marker date="1525393708000" expanded="false" signature="6:78" ph="..." />
-                <marker date="1525393708000" expanded="true" signature="113:931" ph="{...}" />
-                <marker date="1525393708000" expanded="true" signature="269:278" ph="{...}" />
-                <marker date="1525393708000" expanded="true" signature="333:342" ph="{...}" />
-                <marker date="1525393708000" expanded="true" signature="371:460" ph="{...}" />
-                <marker date="1525393708000" expanded="true" signature="404:457" ph="{...}" />
-                <marker date="1525393708000" expanded="true" signature="552:929" ph="{...}" />
-                <marker date="1525393708000" expanded="true" signature="582:926" ph="{...}" />
-                <marker date="1525393708000" expanded="true" signature="782:922" ph="{...}" />
+                <marker date="1525398029000" expanded="true" signature="6:97" ph="..." />
+                <marker date="1525398029000" expanded="true" signature="132:946" ph="{...}" />
+                <marker date="1525398029000" expanded="true" signature="288:297" ph="{...}" />
+                <marker date="1525398029000" expanded="true" signature="352:361" ph="{...}" />
+                <marker date="1525398029000" expanded="true" signature="390:475" ph="{...}" />
+                <marker date="1525398029000" expanded="true" signature="423:472" ph="{...}" />
+                <marker date="1525398029000" expanded="true" signature="567:944" ph="{...}" />
+                <marker date="1525398029000" expanded="true" signature="597:941" ph="{...}" />
+                <marker date="1525398029000" expanded="true" signature="797:937" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -53,6 +48,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/../Server/Model/ExtensionCode/Entity/Room.cs" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Assets/Test.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Hotfix/ExtensionCode/UI/LoginScene/NiuNiuGame/NiuNiuRoom/NNShowCardComponent.cs" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/../Server/Model/ExtensionCode/Module/Game/RoomManageComponent.cs" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/../Server/Hotfix/ExtensionCode/Module/Game/RoomManageComponent.cs" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Helper/ActionHelper.cs" root0="FORCE_HIGHLIGHTING" />
@@ -70,9 +66,9 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="153" />
-    <option name="y" value="222" />
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="195" />
+    <option name="y" value="175" />
     <option name="width" value="2048" />
     <option name="height" value="1061" />
   </component>
@@ -158,12 +154,12 @@
       <workItem from="1525315226163" duration="350000" />
       <workItem from="1525315874106" duration="10000" />
       <workItem from="1525350886743" duration="611000" />
-      <workItem from="1525392917931" duration="1422000" />
+      <workItem from="1525392917931" duration="2531000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6576000" />
+    <option name="totallyTimeSpent" value="7685000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -175,7 +171,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="153" y="222" width="2048" height="1061" extended-state="0" />
+    <frame x="195" y="175" width="2048" height="1061" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -214,18 +210,18 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Assets/Test.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="583">
-          <caret line="30" column="12" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="12" />
+        <state relative-caret-position="339">
+          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
           <folding>
-            <marker date="1525393708000" expanded="false" signature="6:78" ph="..." />
-            <marker date="1525393708000" expanded="true" signature="113:931" ph="{...}" />
-            <marker date="1525393708000" expanded="true" signature="269:278" ph="{...}" />
-            <marker date="1525393708000" expanded="true" signature="333:342" ph="{...}" />
-            <marker date="1525393708000" expanded="true" signature="371:460" ph="{...}" />
-            <marker date="1525393708000" expanded="true" signature="404:457" ph="{...}" />
-            <marker date="1525393708000" expanded="true" signature="552:929" ph="{...}" />
-            <marker date="1525393708000" expanded="true" signature="582:926" ph="{...}" />
-            <marker date="1525393708000" expanded="true" signature="782:922" ph="{...}" />
+            <marker date="1525398029000" expanded="true" signature="6:97" ph="..." />
+            <marker date="1525398029000" expanded="true" signature="132:946" ph="{...}" />
+            <marker date="1525398029000" expanded="true" signature="288:297" ph="{...}" />
+            <marker date="1525398029000" expanded="true" signature="352:361" ph="{...}" />
+            <marker date="1525398029000" expanded="true" signature="390:475" ph="{...}" />
+            <marker date="1525398029000" expanded="true" signature="423:472" ph="{...}" />
+            <marker date="1525398029000" expanded="true" signature="567:944" ph="{...}" />
+            <marker date="1525398029000" expanded="true" signature="597:941" ph="{...}" />
+            <marker date="1525398029000" expanded="true" signature="797:937" ph="{...}" />
           </folding>
         </state>
       </provider>

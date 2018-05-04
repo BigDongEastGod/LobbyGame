@@ -5,6 +5,8 @@ using System.Runtime.InteropServices;
 using ETModel;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
+using DG;
 
 namespace ETHotfix
 {
@@ -168,7 +170,10 @@ namespace ETHotfix
         //下注动画
         private void BetsAnim(GameObject coinObj,GameObject posObj)
         {
-            
+//           Vector2 origin= coinObj.transform.GetComponent<RectTransform>().anchoredPosition;
+//           Vector2 target=posObj.transform.GetComponent<RectTransform>().anchoredPosition;
+//            coinObj.GetComponent<>()
+
         }
 
 

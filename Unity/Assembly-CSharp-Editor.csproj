@@ -226,31 +226,31 @@
       <HintPath>/Users/juankeji/Library/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.10/UnityEngine.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="DemiLib">
-      <HintPath>/Users/sining/Projects/JuAnChess/LobbyGame/Unity/Assets/Demigiant/DemiLib/Core/DemiLib.dll</HintPath>
+      <HintPath>/Users/juankeji/JuAn/LobbyGame/Unity/Assets/Demigiant/DemiLib/Core/DemiLib.dll</HintPath>
     </Reference>
     <Reference Include="DOTween43">
-      <HintPath>/Users/sining/Projects/JuAnChess/LobbyGame/Unity/Assets/Demigiant/DOTween/DOTween43.dll</HintPath>
+      <HintPath>/Users/juankeji/JuAn/LobbyGame/Unity/Assets/Demigiant/DOTween/DOTween43.dll</HintPath>
     </Reference>
     <Reference Include="DOTweenEditor">
-      <HintPath>/Users/sining/Projects/JuAnChess/LobbyGame/Unity/Assets/Demigiant/DOTween/Editor/DOTweenEditor.dll</HintPath>
+      <HintPath>/Users/juankeji/JuAn/LobbyGame/Unity/Assets/Demigiant/DOTween/Editor/DOTweenEditor.dll</HintPath>
     </Reference>
     <Reference Include="DOTween50">
-      <HintPath>/Users/sining/Projects/JuAnChess/LobbyGame/Unity/Assets/Demigiant/DOTween/DOTween50.dll</HintPath>
+      <HintPath>/Users/juankeji/JuAn/LobbyGame/Unity/Assets/Demigiant/DOTween/DOTween50.dll</HintPath>
     </Reference>
     <Reference Include="DOTweenProEditor">
-      <HintPath>/Users/sining/Projects/JuAnChess/LobbyGame/Unity/Assets/Demigiant/DOTweenPro/Editor/DOTweenProEditor.dll</HintPath>
+      <HintPath>/Users/juankeji/JuAn/LobbyGame/Unity/Assets/Demigiant/DOTweenPro/Editor/DOTweenProEditor.dll</HintPath>
     </Reference>
     <Reference Include="DOTween">
-      <HintPath>/Users/sining/Projects/JuAnChess/LobbyGame/Unity/Assets/Demigiant/DOTween/DOTween.dll</HintPath>
+      <HintPath>/Users/juankeji/JuAn/LobbyGame/Unity/Assets/Demigiant/DOTween/DOTween.dll</HintPath>
     </Reference>
     <Reference Include="DOTweenPro">
-      <HintPath>/Users/sining/Projects/JuAnChess/LobbyGame/Unity/Assets/Demigiant/DOTweenPro/DOTweenPro.dll</HintPath>
+      <HintPath>/Users/juankeji/JuAn/LobbyGame/Unity/Assets/Demigiant/DOTweenPro/DOTweenPro.dll</HintPath>
     </Reference>
     <Reference Include="DemiEditor">
-      <HintPath>/Users/sining/Projects/JuAnChess/LobbyGame/Unity/Assets/Demigiant/DemiLib/Core/Editor/DemiEditor.dll</HintPath>
+      <HintPath>/Users/juankeji/JuAn/LobbyGame/Unity/Assets/Demigiant/DemiLib/Core/Editor/DemiEditor.dll</HintPath>
     </Reference>
     <Reference Include="DOTween46">
-      <HintPath>/Users/sining/Projects/JuAnChess/LobbyGame/Unity/Assets/Demigiant/DOTween/DOTween46.dll</HintPath>
+      <HintPath>/Users/juankeji/JuAn/LobbyGame/Unity/Assets/Demigiant/DOTween/DOTween46.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>/Applications/Unity/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
@@ -277,6 +277,16 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <ItemGroup>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>/Applications/Unity/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="UnityEditor.iOS.Extensions.Common">
+      <HintPath>/Applications/Unity/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Common.dll</HintPath>
+    </Reference>
+  </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>/Applications/Unity/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>

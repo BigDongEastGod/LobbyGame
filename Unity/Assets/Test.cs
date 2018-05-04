@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class Test : MonoBehaviour
 {
@@ -28,7 +29,6 @@ public class Test : MonoBehaviour
 		for (int i = 0; i < 5; i++)
 		{
 			UnityEngine.Object.Instantiate(card);
-			
 		}
 	}
 
