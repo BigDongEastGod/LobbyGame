@@ -60,6 +60,9 @@
     <Compile Include="..\..\Unity\Assets\Scripts\Component\Config\InnerConfig.cs" Link="Module\Message\InnerConfig.cs" />
     <Compile Include="..\..\Unity\Assets\Scripts\Component\Config\OuterConfig.cs" Link="Module\Message\OuterConfig.cs" />
     <Compile Include="..\..\Unity\Assets\Scripts\Component\TimerComponent.cs" Link="Component\TimerComponent.cs" />
+    <Compile Include="..\..\Unity\Assets\Scripts\ExtensionCode\Entity\Poker\PokerCard.cs">
+      <Link>ExtensionCode/Entity/PokerCard.cs</Link>
+    </Compile>
     <Compile Include="..\..\Unity\Assets\Scripts\ExtensionCode\Helper\SerializeHelper.cs">
       <Link>ExtensionCode/Helper/SerializeHelper.cs</Link>
     </Compile>
