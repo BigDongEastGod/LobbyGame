@@ -2212,6 +2212,7 @@
             </e>
           </e>
         </e>
+        <e p="Assets/Test.cs" t="Include" />
         <e p="Assets/ThirdParty" t="Include">
           <e p="ILRuntime" t="Include">
             <e p="Editor" t="Include">

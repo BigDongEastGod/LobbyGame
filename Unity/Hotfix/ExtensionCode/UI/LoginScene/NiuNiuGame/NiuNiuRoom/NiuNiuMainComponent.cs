@@ -262,8 +262,14 @@ namespace ETHotfix
         private async void AddBetsEvent(string score)
         {
             var betsResponse =(BetGameResponse) await SceneHelperComponent.Instance.Session.Call(new BetGameRequest(){Bet=int.Parse(score)});
-            if(betsResponse.Error==0) 
+            if (betsResponse.Error == 0)
+            {
                 Debug.Log("下注成功，底分为:"+score);
+                betsButton1.gameObject.SetActive(false);
+                betsButton2.gameObject.SetActive(false);
+                showCardUI.GetComponent<NNShowCardComponent>().ShowBets(Player.AccountInfo.UserName,int.Parse(score));
+            }
+
         }
 
         //显示下注的分数

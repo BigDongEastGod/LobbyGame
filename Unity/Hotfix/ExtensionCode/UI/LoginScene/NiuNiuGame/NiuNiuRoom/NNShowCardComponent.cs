@@ -164,6 +164,12 @@ namespace ETHotfix
                 rc.Get<GameObject>("BetsTitleImg").transform.GetChild(0).GetComponent<Text>().text = score.ToString();
             }
         }
+        
+        //下注动画
+        private void BetsAnim(GameObject coinObj,GameObject posObj)
+        {
+            
+        }
 
 
         //翻牌动画
@@ -180,7 +186,7 @@ namespace ETHotfix
         {
             if (cardList.Count != 0)
             {
-                cardList[0].GetComponent<RectTransform>().anchoredPosition=Vector2.Lerp(LicensingPos,targetPos,0.5f);
+                cardList[0].GetComponent<RectTransform>().anchoredPosition+=Vector2.Lerp(LicensingPos,targetPos,0.5f);
                 if (cardList[0].GetComponent<RectTransform>().anchoredPosition.x - targetPos.x <= 0.01)
                 {
                     cardList[0].GetComponent<RectTransform>().anchoredPosition = targetPos;

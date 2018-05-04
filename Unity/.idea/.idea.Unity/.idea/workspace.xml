@@ -2,9 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="43a2cc3c-b9a6-4da2-a947-693a35ac239f" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/.idea.JuAnLobbyGameSolution/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/.idea.JuAnLobbyGameSolution/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assembly-CSharp-Editor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp-Editor.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assembly-CSharp-firstpass.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp-firstpass.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bundles/UIItem/HeadUIForm.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Bundles/UIItem/HeadUIForm.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Res/Code/Hotfix.dll.bytes" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Res/Code/Hotfix.dll.bytes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Res/Code/Hotfix.pdb.bytes" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Res/Code/Hotfix.pdb.bytes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotfix/ExtensionCode/UI/LoginScene/NiuNiuGame/NiuNiuRoom/NNShowCardComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Hotfix/ExtensionCode/UI/LoginScene/NiuNiuGame/NiuNiuRoom/NNShowCardComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotfix/ExtensionCode/UI/LoginScene/NiuNiuGame/NiuNiuRoom/NiuNiuMainComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Hotfix/ExtensionCode/UI/LoginScene/NiuNiuGame/NiuNiuRoom/NiuNiuMainComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Unity.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/Unity.sln.DotSettings.user" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,16 +24,45 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="Test.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/Test.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="583">
+              <caret line="30" column="12" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="12" />
+              <folding>
+                <marker date="1525393708000" expanded="false" signature="6:78" ph="..." />
+                <marker date="1525393708000" expanded="true" signature="113:931" ph="{...}" />
+                <marker date="1525393708000" expanded="true" signature="269:278" ph="{...}" />
+                <marker date="1525393708000" expanded="true" signature="333:342" ph="{...}" />
+                <marker date="1525393708000" expanded="true" signature="371:460" ph="{...}" />
+                <marker date="1525393708000" expanded="true" signature="404:457" ph="{...}" />
+                <marker date="1525393708000" expanded="true" signature="552:929" ph="{...}" />
+                <marker date="1525393708000" expanded="true" signature="582:926" ph="{...}" />
+                <marker date="1525393708000" expanded="true" signature="782:922" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/../Server/Model/ExtensionCode/Entity/Room.cs" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Assets/Test.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Server/Model/ExtensionCode/Module/Game/RoomManageComponent.cs" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/../Server/Hotfix/ExtensionCode/Module/Game/RoomManageComponent.cs" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Helper/ActionHelper.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/Test.cs" />
+      </list>
+    </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
@@ -32,7 +71,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
+    <option name="x" value="153" />
+    <option name="y" value="222" />
     <option name="width" value="2048" />
     <option name="height" value="1061" />
   </component>
@@ -45,7 +85,6 @@
       <pane id="UnityExplorer">
         <option name="show-hidden-items" value="false" />
       </pane>
-      <pane id="Scratches" />
       <pane id="SolutionExplorer">
         <subPane>
           <expand>
@@ -59,6 +98,7 @@
         <option name="show-file-system" value="false" />
         <option name="show-all-items" value="false" />
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -118,11 +158,12 @@
       <workItem from="1525315226163" duration="350000" />
       <workItem from="1525315874106" duration="10000" />
       <workItem from="1525350886743" duration="611000" />
+      <workItem from="1525392917931" duration="1422000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5154000" />
+    <option name="totallyTimeSpent" value="6576000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -134,7 +175,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="2048" height="1061" extended-state="0" />
+    <frame x="153" y="222" width="2048" height="1061" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -142,15 +183,15 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Unit Tests" order="7" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.010967099" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Unity" order="8" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="NuGet" order="7" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -171,6 +212,24 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Assets/Test.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="583">
+          <caret line="30" column="12" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="12" />
+          <folding>
+            <marker date="1525393708000" expanded="false" signature="6:78" ph="..." />
+            <marker date="1525393708000" expanded="true" signature="113:931" ph="{...}" />
+            <marker date="1525393708000" expanded="true" signature="269:278" ph="{...}" />
+            <marker date="1525393708000" expanded="true" signature="333:342" ph="{...}" />
+            <marker date="1525393708000" expanded="true" signature="371:460" ph="{...}" />
+            <marker date="1525393708000" expanded="true" signature="404:457" ph="{...}" />
+            <marker date="1525393708000" expanded="true" signature="552:929" ph="{...}" />
+            <marker date="1525393708000" expanded="true" signature="582:926" ph="{...}" />
+            <marker date="1525393708000" expanded="true" signature="782:922" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Helper/ActionHelper.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
