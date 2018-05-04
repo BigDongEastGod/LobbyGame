@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using ETModel;
 using UnityEngine;
 using UnityEngine.UI;
@@ -35,6 +36,8 @@ namespace ETHotfix
         private RectTransform posLeftTransform;
         private RectTransform posRightTransform;
 
+        private GameObject _loadingPanel;
+
         public async void Awake()
         {
             // 获取用户信息
@@ -43,6 +46,7 @@ namespace ETHotfix
             ReferenceCollector rc = this.GetParent<UI>().GameObject.GetComponent<ReferenceCollector>();
 
             var niuniuStartBtn = rc.Get<GameObject>("NiuNiuStartBtn");
+            var lobby = rc.Get<GameObject>("Lobby");
             _userIdText = rc.Get<GameObject>("UserIdText");
             _diamondText = rc.Get<GameObject>("DiamondText");
             InitUserInfo(response.AccountInfo.UserName, response.AccountInfo.Diamond.ToString());
@@ -55,6 +59,9 @@ namespace ETHotfix
             posLeftTransform = _barPosLeft.GetComponent<RectTransform>();
             posRightTransform = _barPosRight.GetComponent<RectTransform>();
 
+            var loadingPanel = rc.Get<GameObject>("LoadingPanel");
+            _loadingPanel = UnityEngine.Object.Instantiate(loadingPanel, lobby.transform.parent.parent.Find("TopMost"));
+
             _barMoveSpeed = 10f;
             _isMoveBar = true;
 
@@ -65,7 +72,7 @@ namespace ETHotfix
                 Game.Scene.GetComponent<UIComponent>().Remove(UIType.Lobby);
             });
 
-//            Game.Scene.GetComponent<PingComponent>().PingBackCall = ReloadGame;
+            Game.Scene.GetComponent<PingComponent>().PingBackCall = ReloadGame;
         }
 
         public void Update()
@@ -96,11 +103,13 @@ namespace ETHotfix
 
         private async void ReloadGame()
         {
+            _loadingPanel.SetActive(true);
+
             try
             {
-                SessionWrap session = SceneHelperComponent.Instance.CreateRealmSession();
+                var session = SceneHelperComponent.Instance.CreateRealmSession();
 
-                LoginResponse response = (LoginResponse) await session.Call(
+                var response = (LoginResponse) await session.Call(
                     new LoginRequest()
                     {
                         UserName = PlayerPrefs.GetString("username"),
@@ -111,20 +120,27 @@ namespace ETHotfix
                 {
                     session.Dispose();
 
+                    Debug.Log("Address: " + response.Address);
+                    Debug.Log("Key: " + response.Key);
+
                     // 连接网关服务器
                     await SceneHelperComponent.Instance.CreateGateSession(response.Address, response.Key);
-                    
+
                     Debug.Log("重连成功");
+
+                    UnityEngine.Object.DestroyImmediate(_loadingPanel);
+
+                    InitUserInfo(PlayerPrefs.GetString("username"), PlayerPrefs.GetString("password"));
                 }
-                else if (response.Error == -1)
+                else
                 {
                     // 登录失败
-//                    _dialogPanelUI.GetComponent<DialogPanelComponent>().ShowDialogBox(response.Message);
+                    GameTools.ShowDialogMessage(response.Message, "LobbyCanvas");
                 }
             }
             catch (Exception e)
             {
-//                _dialogPanelUI.GetComponent<DialogPanelComponent>().ShowDialogBox("网络连接错误:" + e.Message);
+                GameTools.ShowDialogMessage(e.Message, "LobbyCanvas");
             }
         }
     }

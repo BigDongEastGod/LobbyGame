@@ -54,6 +54,9 @@ namespace ETHotfix
             // 获取用户信息
             var response = (GetAccountInfoResponse) await SceneHelperComponent.Instance.Session.Call(new GetAccountInfoRequest());
 
+            Debug.Log("获取用户名: "+response.AccountInfo.UserName);
+            Debug.Log("获取用户钻石: " + response.AccountInfo.Diamond);
+            
             ReferenceCollector rc = this.GetParent<UI>().GameObject.GetComponent<ReferenceCollector>();
 
             #region 获取游戏物体
@@ -132,6 +135,7 @@ namespace ETHotfix
 
         private void InitUserInfo(string userName, string diamond)
         {
+            Debug.Log(userName + ": " + diamond);
             _userIdText.GetComponent<Text>().text = userName;
             _diamondText.GetComponent<Text>().text = diamond;
         }

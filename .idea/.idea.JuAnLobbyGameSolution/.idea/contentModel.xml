@@ -1470,6 +1470,29 @@
             </e>
           </e>
         </e>
+        <e p="Assets/Demigiant" t="Include">
+          <e p="DemiLib" t="Include">
+            <e p="Core" t="Include">
+              <e p="DemiLib.xml" t="Include" />
+              <e p="Editor" t="Include">
+                <e p="DemiEditor.xml" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="DOTween" t="Include">
+            <e p="DOTween43.xml" t="Include" />
+            <e p="DOTween46.xml" t="Include" />
+            <e p="DOTween50.xml" t="Include" />
+            <e p="readme.txt" t="Include" />
+          </e>
+          <e p="DOTweenPro" t="Include">
+            <e p="DOTweenAnimation.cs" t="Include" />
+            <e p="Editor" t="Include">
+              <e p="DOTweenAnimationInspector.cs" t="Include" />
+            </e>
+            <e p="readme.txt" t="Include" />
+          </e>
+        </e>
         <e p="Assets/Editor" t="Include">
           <e p="BehaviorTreeEditor" t="Include">
             <e p="BehaviorNodeConfigExtension.cs" t="Include" />
@@ -2800,6 +2823,7 @@
             <e p="UI" t="Include">
               <e p="InitSceneStart_CreateLoginUI.cs" t="Include" />
               <e p="LoginScene" t="Include">
+                <e p="GameTools.cs" t="Include" />
                 <e p="LobbyUI" t="Include">
                   <e p="LobbyComponent.cs" t="Include" />
                   <e p="LobbyFactory.cs" t="Include" />
@@ -2808,6 +2832,10 @@
                   <e p="Dialog" t="Include">
                     <e p="DialogPanelComponent.cs" t="Include" />
                     <e p="DialogPanelFactory.cs" t="Include" />
+                  </e>
+                  <e p="Loading" t="Include">
+                    <e p="LoadingComponent.cs" t="Include" />
+                    <e p="LoadingFactory.cs" t="Include" />
                   </e>
                   <e p="Login" t="Include">
                     <e p="LoginPanelComponent.cs" t="Include" />

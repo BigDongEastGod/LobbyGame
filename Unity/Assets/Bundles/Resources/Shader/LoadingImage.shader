@@ -10,13 +10,29 @@
 	{
 		// No culling or depth
 		//Cull Off ZWrite Off ZTest Always
+         Tags
+        { 
+            "Queue"="Transparent" 
+            //"IgnoreProjector"="True" 
+            "RenderType"="Transparent" 
+            //"PreviewType"="Plane"
+            //"CanUseSpriteAtlas"="True"
+        }
 
-		Tags{"Queue" = "Geometry-20"}
+        Stencil  
+        {  
+            Ref[_Stencil]  
+            Comp[_StencilComp]  
+            Pass[_StencilOp]  
+            ReadMask[_StencilReadMask]  
+            WriteMask[_StencilWriteMask]  
+        }  
 
-		ZWrite Off
-
-		LOD 200
-
+        LOD 200
+        //Cull Off
+        //Lighting Off
+        //ZWrite Off
+        Fog { Mode Off }
         Blend SrcAlpha OneMinusSrcAlpha
 
 		Pass
@@ -24,7 +40,7 @@
 			CGPROGRAM
 			#pragma vertex vert
 			#pragma fragment frag
-			
+			#pragma multi_compile DUMMY PIXELSNAP_ON
 			#include "UnityCG.cginc"
 
 			struct appdata
