@@ -558,6 +558,9 @@
           <e p="MonoEventHelper.cs" t="Include" />
         </e>
         <e p="ExtensionCode" t="Include">
+          <e p="Helper" t="Include">
+            <e p="SerializeHelper.cs" t="Include" />
+          </e>
           <e p="Module" t="Include">
             <e p="MonoEventComponent.cs" t="Include" />
             <e p="SceneManagerComponent.cs" t="Include" />

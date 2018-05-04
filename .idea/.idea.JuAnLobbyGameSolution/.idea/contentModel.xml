@@ -38,6 +38,7 @@
                   <e p="Map" t="Include">
                     <e p="BetGameHandler.cs" t="Include" />
                     <e p="CreateRoomHandler.cs" t="Include" />
+                    <e p="GameBankerHandler.cs" t="Include" />
                     <e p="JoinRoomHandler.cs" t="Include" />
                     <e p="PrepareGameHandler.cs" t="Include" />
                     <e p="QuitRoomHandler.cs" t="Include" />
@@ -207,6 +208,7 @@
             <e p="Entity" t="Include">
               <e p="Room.cs" t="Include" />
             </e>
+            <e p="Helper" t="Include" />
             <e p="Module" t="Include">
               <e p="Game" t="Include">
                 <e p="RoomManageComponent.cs" t="Include" />
@@ -2019,6 +2021,9 @@
             <e p="MonoEventHelper.cs" t="Include" />
           </e>
           <e p="ExtensionCode" t="Include">
+            <e p="Helper" t="Include">
+              <e p="SerializeHelper.cs" t="Include" />
+            </e>
             <e p="Module" t="Include">
               <e p="MonoEventComponent.cs" t="Include" />
               <e p="SceneManagerComponent.cs" t="Include" />

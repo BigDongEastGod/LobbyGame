@@ -23,7 +23,7 @@ namespace ETHotfix
                 {
                     var room = RoomManageComponent.Instance.GetRoom(message.RoomId);
                     
-                    room?.SendMessages(player, 0, message.Bet);
+                    room?.SendMessages(player, 1, message.Bet);
                 }
             }
             catch (Exception e)

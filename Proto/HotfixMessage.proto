@@ -232,21 +232,30 @@ message RoomInfoAnnunciate // IActorMessage
 	required int32 Message = 2;  
 }
 // 游戏消息通告
-// 提示消息 0:下注 1:下注完成 2:离开房间 3:更改玩家开始游戏权限
+// 提示消息 0:下注 1:下注完成 2:选择庄家 3:更改玩家开始游戏权限
 message GameInfoAnnunciate // IActorMessage
 {
 	required string UserName = 1;
 
 	required int32 Message = 2;  
 
-	required object Arg = 3;
+	required bytes Arg = 3;
+}
+// 牛牛游戏庄家
+message GameBankerRequest // IActorRequest
+{
+	required int64 RoomId = 1;		
+}
+message GameBankerResponse // IActorResponse
+{
+	
 }
 // 牛牛游戏下注
 message BetGameRequest // IActorRequest
 {
 	required int64 RoomId = 1;	
 
-	required int32 Bet = 1;
+	required int32 Bet = 2;
 }
 message BetGameResponse // IActorResponse
 {
