@@ -291,6 +291,8 @@ namespace ETHotfix
                                 response.Arg = SerializeHelper.Instance.SerializeObject(playerPokers[i]);
                                 
                                 activityPlayers[i].GetActorProxy.Send(response);
+
+                                _gameStates[activityPlayers[i]].Cards = playerPokers[i];
                             }
                         }
                     }
