@@ -29,6 +29,7 @@ namespace ETHotfix
         private Button _betsButton1;
         private Button _betsButton2;
         private Text _bottomScoreText;                //底分文本
+        private string _zhuangJiaName;
 
         public void Awake(object[] args)
         {
@@ -201,6 +202,7 @@ namespace ETHotfix
                     break;
                 case 2://抢庄
                     ShowZhuangJiaIcon(obj.UserName);
+                    
                     break;
             }
         }
@@ -274,6 +276,7 @@ namespace ETHotfix
         //显示庄家
         private void ShowZhuangJiaIcon(string userName)
         {
+            _startGameBt.gameObject.SetActive(false);
             _showCardUi.GetComponent<NnShowCardComponent>().ShowZhuangJiaIcon(userName);
         }
 

@@ -157,6 +157,7 @@ namespace ETHotfix
             var qiangzhuangImg = rc.Get<GameObject>("qiangzhuangImg");
             userNameTxt.text = playerInfo.UserName;
         }
+        
         //显示庄家头像
         public void ShowZhuangJiaIcon(string userName)
         {
