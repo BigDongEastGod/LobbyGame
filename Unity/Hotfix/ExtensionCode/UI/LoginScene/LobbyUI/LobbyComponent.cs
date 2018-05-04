@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using ETModel;
 using UnityEngine;
 using UnityEngine.UI;
@@ -43,6 +44,7 @@ namespace ETHotfix
             ReferenceCollector rc = this.GetParent<UI>().GameObject.GetComponent<ReferenceCollector>();
 
             var niuniuStartBtn = rc.Get<GameObject>("NiuNiuStartBtn");
+            var lobby = rc.Get<GameObject>("Lobby");
             _userIdText = rc.Get<GameObject>("UserIdText");
             _diamondText = rc.Get<GameObject>("DiamondText");
             InitUserInfo(response.AccountInfo.UserName, response.AccountInfo.Diamond.ToString());
@@ -65,7 +67,10 @@ namespace ETHotfix
                 Game.Scene.GetComponent<UIComponent>().Remove(UIType.Lobby);
             });
 
-//            Game.Scene.GetComponent<PingComponent>().PingBackCall = ReloadGame;
+            Game.Scene.GetComponent<PingComponent>().PingBackCall = () =>
+            {
+                GameTools.ReLoading("LobbyCanvas");
+            };
         }
 
         public void Update()
@@ -90,41 +95,6 @@ namespace ETHotfix
                 {
                     barTextTransform.anchoredPosition = posRightTransform.anchoredPosition;
                 }
-            }
-        }
-
-
-        private async void ReloadGame()
-        {
-            try
-            {
-                SessionWrap session = SceneHelperComponent.Instance.CreateRealmSession();
-
-                LoginResponse response = (LoginResponse) await session.Call(
-                    new LoginRequest()
-                    {
-                        UserName = PlayerPrefs.GetString("username"),
-                        Password = PlayerPrefs.GetString("password")
-                    });
-
-                if (response.Error == 0)
-                {
-                    session.Dispose();
-
-                    // 连接网关服务器
-                    await SceneHelperComponent.Instance.CreateGateSession(response.Address, response.Key);
-                    
-                    Debug.Log("重连成功");
-                }
-                else if (response.Error == -1)
-                {
-                    // 登录失败
-//                    _dialogPanelUI.GetComponent<DialogPanelComponent>().ShowDialogBox(response.Message);
-                }
-            }
-            catch (Exception e)
-            {
-//                _dialogPanelUI.GetComponent<DialogPanelComponent>().ShowDialogBox("网络连接错误:" + e.Message);
             }
         }
     }

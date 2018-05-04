@@ -15,7 +15,9 @@ namespace ETHotfix
 	    public const string Login = "Login";
 	    public const string LoginPanel = "LoginPanel";
 	    public const string RegistPanel = "RegistPanel";
+	    
 	    public const string DialogPanel = "DialogPanel";
+	    public const string LoadingPanel = "LoadingPanel";
 
 	    #endregion
 

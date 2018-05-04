@@ -2818,6 +2818,7 @@
             <e p="UI" t="Include">
               <e p="InitSceneStart_CreateLoginUI.cs" t="Include" />
               <e p="LoginScene" t="Include">
+                <e p="GameTools.cs" t="Include" />
                 <e p="LobbyUI" t="Include">
                   <e p="LobbyComponent.cs" t="Include" />
                   <e p="LobbyFactory.cs" t="Include" />
@@ -2826,6 +2827,10 @@
                   <e p="Dialog" t="Include">
                     <e p="DialogPanelComponent.cs" t="Include" />
                     <e p="DialogPanelFactory.cs" t="Include" />
+                  </e>
+                  <e p="Loading" t="Include">
+                    <e p="LoadingComponent.cs" t="Include" />
+                    <e p="LoadingFactory.cs" t="Include" />
                   </e>
                   <e p="Login" t="Include">
                     <e p="LoginPanelComponent.cs" t="Include" />

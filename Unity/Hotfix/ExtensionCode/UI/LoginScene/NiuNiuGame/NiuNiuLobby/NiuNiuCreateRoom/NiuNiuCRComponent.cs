@@ -272,20 +272,19 @@ namespace ETHotfix
 
                 if (roomRulesResponse.Error == 0)
                 {
-                    Debug.Log("发送规则成功");
-
                     SendRuleAndJoinRoom(creatRoomResponse.RoomId);
                 }
                 else
                 {
-                    Debug.Log("发送规则失败");
                     Debug.Log(roomRulesResponse.Message);
+                    GameTools.ShowDialogMessage("创建牌局失败!", "GameCanvas");
                 }
                 
             }
             else
             {
                 Debug.Log(creatRoomResponse.Message);
+                GameTools.ShowDialogMessage("创建牌局失败!", "GameCanvas");
             }
         }
 
@@ -301,14 +300,13 @@ namespace ETHotfix
             
             if (joinRoomResponse.Error == 0)
             {
-                Debug.Log("加入房间成功,跳转至游戏主场景");
-
                 Game.Scene.GetComponent<UIComponent>().Create(UIType.NiuNiuMain, UiLayer.Bottom, roomId, false);
                 Game.Scene.GetComponent<UIComponent>().Remove(UIType.NiuNiuLobby);
             }
             else
             {
                 Debug.Log("加入房间失败: " + joinRoomResponse.Message);
+                GameTools.ShowDialogMessage("加入房间失败!", "GameCanvas");
             }
 
         }
@@ -340,7 +338,6 @@ namespace ETHotfix
                         {
                             playerPush = row.Find($"{NnDpType.XianJiaTuiZhu}/{NnDpType.XianJiaTuiZhu}Dp").GetComponent<Dropdown>().value;
                         }
-
                         break;
                     case "Row4":
                         doubleRules = row.Find($"{NnDpType.FanBeiGuiZe}/{NnDpType.FanBeiGuiZe}Dp").GetComponent<Dropdown>().value;
