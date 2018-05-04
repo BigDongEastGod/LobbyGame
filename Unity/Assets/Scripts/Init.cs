@@ -2,16 +2,19 @@
 using System.Threading;
 using UnityEngine;
 
+
 namespace ETModel
 {
 	public class Init : MonoBehaviour
 	{
 		private readonly OneThreadSynchronizationContext contex = new OneThreadSynchronizationContext();
-
+		
 		private async void Start()
 		{
 			try
 			{
+				
+				
 				SynchronizationContext.SetSynchronizationContext(this.contex);
 
 				DontDestroyOnLoad(gameObject);

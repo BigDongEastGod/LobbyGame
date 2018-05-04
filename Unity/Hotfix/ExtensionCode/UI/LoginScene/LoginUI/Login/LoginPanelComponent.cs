@@ -75,7 +75,7 @@ namespace ETHotfix
 
             try
             {
-                SessionWrap session = _registPanelUI.GetComponent<RegistPanelComponent>().Session;
+                var session = _registPanelUI.GetComponent<RegistPanelComponent>().Session ?? SceneHelperComponent.Instance.CreateRealmSession();
 
                 if (session == null)
                 {
