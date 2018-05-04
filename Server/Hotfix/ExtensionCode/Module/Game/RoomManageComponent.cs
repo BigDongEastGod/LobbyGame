@@ -217,6 +217,8 @@ namespace ETHotfix
                 case "NN":
                     
                     room = ComponentFactory.CreateWithId<NNRoom>(roomId);
+
+                    room.AddComponent<NNPoker>();
                     
                     room.RoomType = RoomType.NN;
                     
