@@ -17,11 +17,17 @@ namespace ETHotfix
         
         private class GameState
         {
+            public bool IsBanker;
+            
             public bool IsSend;
 
             public int Bet;
         }
 
+        /// <summary>
+        /// 玩家游戏状态
+        /// </summary>
+        
         private readonly Dictionary<SPlayer, GameState> _gameStates = new Dictionary<SPlayer, GameState>();
 
         public override void AddRules(byte[] rules)
@@ -156,24 +162,24 @@ namespace ETHotfix
         public override string StartGame(SPlayer player)
         {
             if (Players.Count < 2) return "CantStartGame";
+
+            // 随机选择出庄家
+
+            var randomPlayerId = new Random().Next(0, Players.Count);
+
+            var response = new GameInfoAnnunciate {Message = 2, Arg = SerializeHelper.Instance.SerializeObject(randomPlayerId)};
             
-            // 给玩家发送下注消息
-
-            var response = new GameInfoAnnunciate {Message = 0, Arg = null};
-
-            Players.Where(d => d.IsActivity).ForEach(d =>
+            // 添加玩家到游戏状态中、并发送消息给其他玩家
+            
+            _gameStates.Clear();
+            
+            Players.ForEach(d =>
             {
-                response.UserName = d.Account.UserName;
-
                 d.GetActorProxy.Send(response);
+
+                _gameStates.Add(d, d == Players.ElementAt(randomPlayerId) ? new GameState() {IsBanker = true} : new GameState());
             });
             
-            // 添加玩家到游戏状态中
-
-            _gameStates.Clear();
-
-            Players.ForEach(d => _gameStates.Add(d, new GameState()));
-
             return "StartGame";
         }
 
@@ -193,12 +199,34 @@ namespace ETHotfix
 
         public override void SendMessages(SPlayer player, params object[] args)
         {
-            // 0 : 下注
+            // 0 : 庄家（抢庄完成） 0 : 下注完成
 
             switch (Convert.ToInt32(args[0]))
             {
                 case 0:
-                   
+
+                    // 如果庄家（抢庄）成功、给玩家发送开始下注消息
+                    
+                    if (_gameStates.Values.FirstOrDefault(d => d.IsBanker) != null)
+                    {
+                        if (_gameStates.FirstOrDefault(d => d.Value.IsBanker).Key == player)
+                        {
+                            // 给玩家发送下注消息
+
+                            var response = new GameInfoAnnunciate {Message = 0, Arg = null};
+
+                            Players.Where(d => d.IsActivity).ForEach(d =>
+                            {
+                                response.UserName = d.Account.UserName;
+
+                                d.GetActorProxy.Send(response);
+                            });
+                        }
+                    }
+                    
+                    break;
+                case 1:
+                    
                     // 用户下注
                     
                     if (_gameStates.ContainsKey(player))
@@ -229,8 +257,6 @@ namespace ETHotfix
                         }
                     }
                     
-                    break;
-                case 1:
                     break;
             }
         }
