@@ -16,6 +16,8 @@ namespace ETHotfix
         public int CurrentDish { get; private set; }
 
         public NNChess ChessRules { get; private set; }
+
+        public List<PokerCard> Cards { get; private set; }
         
         private class GameState
         {
@@ -24,6 +26,8 @@ namespace ETHotfix
             public bool IsBet;
 
             public int Bet;
+
+            public List<PokerCard> Cards;
         }
 
         /// <summary>
@@ -241,8 +245,8 @@ namespace ETHotfix
                         var response = new GameInfoAnnunciate() {Arg = SerializeHelper.Instance.SerializeObject(args[1]), Message = 1};
 
                         // 发送下注消息给其他玩家
-                        
-                        Players.Where(p => p != player).ForEach(d =>
+
+                        Players.Where(p => p != player && p.IsActivity).ForEach(d =>
                             {
                                 response.UserName = player.Account.UserName;
 
@@ -259,10 +263,40 @@ namespace ETHotfix
                             //TODO:全部下注成功、开始发牌了
 
                             Log.Debug("全部下注成功、开始发牌了");
+
+                            var poker = GetComponent<NNPoker>();
+                            
+                            // 生成卡牌
+
+                            Cards = poker.CreateCards(1);
+                            
+                            // 分发卡牌
+
+                            var playerPokers = poker.Deal(Cards, Players.Count, 5, true);
+                            
+                            // 创建发送协议
+
+                            response = new GameInfoAnnunciate() {Message = 3};
+                            
+                            // 获取所有参展玩家
+
+                            var activityPlayers = Players.Where(d => d.IsActivity).ToArray();
+                            
+                            // 每个玩家分发卡牌
+
+                            for (var i = 0; i < activityPlayers.Count(); i++)
+                            {
+                                response.UserName = player.Account.UserName;
+
+                                response.Arg = SerializeHelper.Instance.SerializeObject(playerPokers[i]);
+                                
+                                activityPlayers[i].GetActorProxy.Send(response);
+                            }
                         }
                     }
                     
                     break;
+                
                 case 1:
                     
                     
