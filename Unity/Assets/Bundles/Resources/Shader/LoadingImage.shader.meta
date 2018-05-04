@@ -4,7 +4,8 @@ timeCreated: 1525335417
 licenseType: Pro
 ShaderImporter:
   externalObjects: {}
-  defaultTextures: []
+  defaultTextures:
+  - _MainTex: {instanceID: 0}
   userData: 
   assetBundleName: 
   assetBundleVariant: 

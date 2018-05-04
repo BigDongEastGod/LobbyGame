@@ -223,10 +223,13 @@
     <Compile Include="ExtensionCode\Module\SceneHelperComponent.cs" />
     <Compile Include="ExtensionCode\Module\UI\AUIFactory.cs" />
     <Compile Include="ExtensionCode\UI\InitSceneStart_CreateLoginUI.cs" />
+    <Compile Include="ExtensionCode\UI\LoginScene\GameTools.cs" />
     <Compile Include="ExtensionCode\UI\LoginScene\LobbyUI\LobbyComponent.cs" />
     <Compile Include="ExtensionCode\UI\LoginScene\LobbyUI\LobbyFactory.cs" />
     <Compile Include="ExtensionCode\UI\LoginScene\LoginUI\Dialog\DialogPanelComponent.cs" />
     <Compile Include="ExtensionCode\UI\LoginScene\LoginUI\Dialog\DialogPanelFactory.cs" />
+    <Compile Include="ExtensionCode\UI\LoginScene\LoginUI\Loading\LoadingComponent.cs" />
+    <Compile Include="ExtensionCode\UI\LoginScene\LoginUI\Loading\LoadingFactory.cs" />
     <Compile Include="ExtensionCode\UI\LoginScene\LoginUI\LoginComponent.cs" />
     <Compile Include="ExtensionCode\UI\LoginScene\LoginUI\LoginFactory.cs" />
     <Compile Include="ExtensionCode\UI\LoginScene\LoginUI\Login\LoginPanelComponent.cs" />

@@ -3,22 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="43a2cc3c-b9a6-4da2-a947-693a35ac239f" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/../.idea/.idea.JuAnLobbyGameSolution/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/.idea.JuAnLobbyGameSolution/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Bin/Hotfix.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Bin/Hotfix.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Bin/Hotfix.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Bin/Hotfix.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Bin/publish/Hotfix.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Bin/publish/Hotfix.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Bin/publish/Hotfix.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Bin/publish/Hotfix.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/App/obj/Debug/Server.App.csprojResolveAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/App/obj/Debug/Server.App.csprojResolveAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/Hotfix/ExtensionCode/Entity/Game/NNRoom.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Hotfix/ExtensionCode/Entity/Game/NNRoom.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/Hotfix/obj/Debug/Hotfix.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Hotfix/obj/Debug/Hotfix.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/Hotfix/obj/Debug/Hotfix.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Hotfix/obj/Debug/Hotfix.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/Hotfix/obj/Debug/Server.Hotfix.csprojResolveAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/Hotfix/obj/Debug/Server.Hotfix.csprojResolveAssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assembly-CSharp-Editor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp-Editor.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assembly-CSharp-firstpass.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp-firstpass.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ExtendDevelop.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UnityPackageManager/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotfix/ExtensionCode/UI/LoginScene/LobbyUI/LobbyComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Hotfix/ExtensionCode/UI/LoginScene/LobbyUI/LobbyComponent.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -56,12 +44,15 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="UnityExplorer">
+        <option name="show-hidden-items" value="false" />
+      </pane>
       <pane id="SolutionExplorer">
         <subPane>
           <expand>
             <path>
               <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="Unity (3 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Loading solution..." type="977d5f41:SolutionExplorerNodeRider" />
             </path>
           </expand>
           <select />
@@ -70,9 +61,6 @@
         <option name="show-all-items" value="false" />
       </pane>
       <pane id="Scratches" />
-      <pane id="UnityExplorer">
-        <option name="show-hidden-items" value="false" />
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -131,13 +119,14 @@
       <workItem from="1525254988889" duration="509000" />
       <workItem from="1525315226163" duration="350000" />
       <workItem from="1525315874106" duration="10000" />
-      <workItem from="1525350886743" duration="605000" />
-      <workItem from="1525413628586" duration="21000" />
+      <workItem from="1525341237356" duration="64000" />
+      <workItem from="1525344437710" duration="2000" />
+      <workItem from="1525397378537" duration="3000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5169000" />
+    <option name="totallyTimeSpent" value="4612000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -150,6 +139,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="right" id="Errors In Solution" order="3" />
@@ -159,16 +149,15 @@
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info anchor="right" id="JSON Viewer" order="4" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.010989011" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Unity" order="8" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="NuGet" order="7" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Unity" order="8" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" />

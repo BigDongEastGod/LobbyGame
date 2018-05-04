@@ -1308,5 +1308,6 @@
       </e>
       <e p="Unity.sln" t="IncludeFlat" />
     </e>
+    <e p="$USER_HOME$/Library/Caches/Rider2018.1/resharper-host/local/Transient/ReSharperHost/v12/SolutionCaches/_Unity.-920771506.00" t="ExcludeRecursive" />
   </component>
 </project>
