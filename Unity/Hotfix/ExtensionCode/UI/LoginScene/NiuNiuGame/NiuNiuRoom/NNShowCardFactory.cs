@@ -10,7 +10,7 @@ namespace ETHotfix
         {
             var ui = base.Create(scene, type, parent);
 
-            ui.AddComponent<NNShowCardComponent>();
+            ui.AddComponent<NnShowCardComponent>();
             
             return ui;
         }

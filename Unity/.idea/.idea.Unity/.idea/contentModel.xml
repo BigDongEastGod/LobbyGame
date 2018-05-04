@@ -12,6 +12,29 @@
           </e>
         </e>
       </e>
+      <e p="Assets/Demigiant" t="Include">
+        <e p="DemiLib" t="Include">
+          <e p="Core" t="Include">
+            <e p="DemiLib.xml" t="Include" />
+            <e p="Editor" t="Include">
+              <e p="DemiEditor.xml" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="DOTween" t="Include">
+          <e p="DOTween43.xml" t="Include" />
+          <e p="DOTween46.xml" t="Include" />
+          <e p="DOTween50.xml" t="Include" />
+          <e p="readme.txt" t="Include" />
+        </e>
+        <e p="DOTweenPro" t="Include">
+          <e p="DOTweenAnimation.cs" t="Include" />
+          <e p="Editor" t="Include">
+            <e p="DOTweenAnimationInspector.cs" t="Include" />
+          </e>
+          <e p="readme.txt" t="Include" />
+        </e>
+      </e>
       <e p="Assets/Editor" t="Include">
         <e p="BehaviorTreeEditor" t="Include">
           <e p="BehaviorNodeConfigExtension.cs" t="Include" />
@@ -551,14 +574,9 @@
           <e p="UnityWebRequestAsync.cs" t="Include" />
           <e p="WWWAsync.cs" t="Include" />
         </e>
-        <e p="ExtendDevelop" t="Include">
-          <e p="Module" t="Include">
-            <e p="UIManageComponent.cs" t="Include" />
-          </e>
-          <e p="MonoEventHelper.cs" t="Include" />
-        </e>
         <e p="ExtensionCode" t="Include">
           <e p="Helper" t="Include">
+            <e p="ETDoTween.cs" t="Include" />
             <e p="SerializeHelper.cs" t="Include" />
           </e>
           <e p="Module" t="Include">
@@ -750,6 +768,7 @@
           </e>
         </e>
       </e>
+      <e p="Assets/Test.cs" t="Include" />
       <e p="Assets/ThirdParty" t="Include">
         <e p="ILRuntime" t="Include">
           <e p="Editor" t="Include">
