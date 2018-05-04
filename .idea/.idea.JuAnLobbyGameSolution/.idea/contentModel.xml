@@ -2039,7 +2039,6 @@
           </e>
           <e p="ExtensionCode" t="Include">
             <e p="Helper" t="Include">
-              <e p="ETDoTween.cs" t="Include" />
               <e p="SerializeHelper.cs" t="Include" />
             </e>
             <e p="Module" t="Include">

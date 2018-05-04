@@ -137,7 +137,6 @@
     <Compile Include="Assets\Scripts\Entity\Scene.cs" />
     <Compile Include="Assets\Scripts\Entity\UnityWebRequestAsync.cs" />
     <Compile Include="Assets\Scripts\Entity\WWWAsync.cs" />
-    <Compile Include="Assets\Scripts\ExtensionCode\Helper\ETDoTween.cs" />
     <Compile Include="Assets\Scripts\ExtensionCode\Helper\SerializeHelper.cs" />
     <Compile Include="Assets\Scripts\ExtensionCode\Module\MonoEventComponent.cs" />
     <Compile Include="Assets\Scripts\ExtensionCode\Module\SceneManagerComponent.cs" />
