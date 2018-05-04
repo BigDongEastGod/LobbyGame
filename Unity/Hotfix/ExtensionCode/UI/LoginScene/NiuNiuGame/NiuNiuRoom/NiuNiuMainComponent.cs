@@ -194,6 +194,7 @@ namespace ETHotfix
             switch (obj.Message)
             {
                 case 0://显示下注按钮
+                    if(_zhuangJiaName==_player.AccountInfo.UserName) return;
                     _startGameBt.gameObject.SetActive(false);
                     ShowBetsButton();
                     break;
@@ -201,8 +202,9 @@ namespace ETHotfix
                     ShowBet(obj.UserName,SerializeHelper.Instance.DeserializeObject<int>(obj.Arg));
                     break;
                 case 2://抢庄
+                    Debug.Log("2/obj.UserName/"+obj.UserName);
                     ShowZhuangJiaIcon(obj.UserName);
-                    
+                    _zhuangJiaName = obj.UserName;
                     break;
             }
         }
