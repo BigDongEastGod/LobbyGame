@@ -181,7 +181,7 @@ namespace ETHotfix
 
             // 随机选择出庄家
 
-            var randomPlayerId = new Random().Next(0, Players.Count);
+            var randomPlayerId = RandomHelper.RandomNumber(0, Players.Count);
 
             var response = new GameInfoAnnunciate {Message = 2, Arg = null, UserName = Players.ElementAt(randomPlayerId).Account.UserName};
             
