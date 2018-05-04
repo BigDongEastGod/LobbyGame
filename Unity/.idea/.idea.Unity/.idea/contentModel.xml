@@ -574,14 +574,9 @@
           <e p="UnityWebRequestAsync.cs" t="Include" />
           <e p="WWWAsync.cs" t="Include" />
         </e>
-        <e p="ExtendDevelop" t="Include">
-          <e p="Module" t="Include">
-            <e p="UIManageComponent.cs" t="Include" />
-          </e>
-          <e p="MonoEventHelper.cs" t="Include" />
-        </e>
         <e p="ExtensionCode" t="Include">
           <e p="Helper" t="Include">
+            <e p="ETDoTween.cs" t="Include" />
             <e p="SerializeHelper.cs" t="Include" />
           </e>
           <e p="Module" t="Include">

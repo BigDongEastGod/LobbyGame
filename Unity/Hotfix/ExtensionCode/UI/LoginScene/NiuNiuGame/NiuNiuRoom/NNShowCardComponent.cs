@@ -173,7 +173,7 @@ namespace ETHotfix
 //           Vector2 origin= coinObj.transform.GetComponent<RectTransform>().anchoredPosition;
 //           Vector2 target=posObj.transform.GetComponent<RectTransform>().anchoredPosition;
 //            coinObj.GetComponent<>()
-
+            coinObj.transform.DOMove(posObj.GetComponent<RectTransform>().anchoredPosition, 1);
         }
 
 
