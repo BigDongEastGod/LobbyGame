@@ -70,10 +70,6 @@ namespace ETHotfix
             // 删除Actor
 
             Game.Scene.GetComponent<ActorProxyComponent>().Remove(player.GateSessionId);
-
-            // 删除在Actor管理组件中
-
-            Game.Scene.GetComponent<ActorManagerComponent>().Remove(player.Id);
                 
             // 删除Gate服务器上的位置
                 
