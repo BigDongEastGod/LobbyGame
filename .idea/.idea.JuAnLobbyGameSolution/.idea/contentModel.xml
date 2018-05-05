@@ -29,26 +29,31 @@
               <e p="Gate" t="Include" />
             </e>
             <e p="Entity" t="Include">
-              <e p="Game" t="Include">
+              <e p="Game" t="Include" />
+              <e p="Poker" t="Include">
                 <e p="NNPoker.cs" t="Include" />
-                <e p="NNRoom.cs" t="Include" />
                 <e p="Poker.cs" t="Include" />
+              </e>
+              <e p="Room" t="Include">
+                <e p="NNRoom.cs" t="Include" />
               </e>
             </e>
             <e p="Handler" t="Include">
               <e p="LobbyScene" t="Include">
-                <e p="Room" t="Include">
-                  <e p="Map" t="Include">
+                <e p="Map" t="Include">
+                  <e p="Game" t="Include">
                     <e p="BetGameHandler.cs" t="Include" />
-                    <e p="CreateRoomHandler.cs" t="Include" />
                     <e p="GameBankerHandler.cs" t="Include" />
-                    <e p="JoinRoomHandler.cs" t="Include" />
                     <e p="PrepareGameHandler.cs" t="Include" />
+                    <e p="StartGameHandler.cs" t="Include" />
+                  </e>
+                  <e p="Room" t="Include">
+                    <e p="CreateRoomHandler.cs" t="Include" />
+                    <e p="JoinRoomHandler.cs" t="Include" />
                     <e p="QuitRoomHandler.cs" t="Include" />
                     <e p="RoomInfoHandler.cs" t="Include" />
                     <e p="RoomListHandler.cs" t="Include" />
                     <e p="RoomRulesHandler.cs" t="Include" />
-                    <e p="StartGameHandler.cs" t="Include" />
                   </e>
                 </e>
               </e>
