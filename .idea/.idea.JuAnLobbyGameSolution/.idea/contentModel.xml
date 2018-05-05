@@ -227,7 +227,6 @@
           <e p="Module" t="Include">
             <e p="Actor" t="Include">
               <e p="ActorComponent.cs" t="Include" />
-              <e p="ActorManagerComponent.cs" t="Include" />
               <e p="ActorMessageAttribute.cs" t="Include" />
               <e p="ActorMessageDispatherComponent.cs" t="Include" />
               <e p="ActorMessageHandlerAttribute.cs" t="Include" />

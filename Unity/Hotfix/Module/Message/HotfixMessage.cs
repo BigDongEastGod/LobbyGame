@@ -638,7 +638,7 @@ namespace ETHotfix
 	}
 
 // 游戏消息通告
-// 提示消息 0:下注 1:下注完成 2:选择庄家 3:更改玩家开始游戏权限
+// 提示消息 0:下注 1:下注完成 2:选择庄家 3:发送卡牌
 	[Message(HotfixOpcode.GameInfoAnnunciate)]
 	[ProtoContract]
 	public partial class GameInfoAnnunciate: IActorMessage
