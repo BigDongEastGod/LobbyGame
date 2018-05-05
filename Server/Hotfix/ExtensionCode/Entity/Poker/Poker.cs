@@ -99,6 +99,11 @@ namespace ETHotfix
         }
 
         #endregion
+
+        public virtual int Calculate(int number)
+        {
+            return 0;
+        }
         
         public virtual PokerCard[] CalculateCards(List<PokerCard> cards)
         {

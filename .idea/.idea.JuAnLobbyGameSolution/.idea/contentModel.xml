@@ -43,6 +43,8 @@
                 <e p="Map" t="Include">
                   <e p="Game" t="Include">
                     <e p="BetGameHandler.cs" t="Include" />
+                    <e p="CalculateCardHandler.cs" t="Include" />
+                    <e p="DealPokeHandler.cs" t="Include" />
                     <e p="GameBankerHandler.cs" t="Include" />
                     <e p="PrepareGameHandler.cs" t="Include" />
                     <e p="StartGameHandler.cs" t="Include" />
@@ -2825,6 +2827,7 @@
                 <e p="RoomInfoAnnunciateHandler.cs" t="Include" />
               </e>
             </e>
+            <e p="Helper" t="Include" />
             <e p="Module" t="Include">
               <e p="PingComponent.cs" t="Include" />
               <e p="SceneHelperComponent.cs" t="Include" />

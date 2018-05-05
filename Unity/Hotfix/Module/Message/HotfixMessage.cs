@@ -638,7 +638,12 @@ namespace ETHotfix
 	}
 
 // 游戏消息通告
-// 提示消息 0:下注 1:下注完成 2:选择庄家 3:发送卡牌
+// 提示消息
+// 0:玩家接收庄家信息
+// 1:发送玩家开始下注消息
+// 2:发送下注消息给其他玩家
+// 3:给玩家发牌消息
+// 4:计算玩家手里卡牌、并把结果返回给玩家消息
 	[Message(HotfixOpcode.GameInfoAnnunciate)]
 	[ProtoContract]
 	public partial class GameInfoAnnunciate: IActorMessage
@@ -713,6 +718,68 @@ namespace ETHotfix
 	[Message(HotfixOpcode.BetGameResponse)]
 	[ProtoContract]
 	public partial class BetGameResponse: IActorResponse
+	{
+		[ProtoMember(90, IsRequired = true)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(91, IsRequired = true)]
+		public int Error { get; set; }
+
+		[ProtoMember(92, IsRequired = true)]
+		public string Message { get; set; }
+
+	}
+
+// 牛牛游戏接收到卡牌
+	[Message(HotfixOpcode.DealPokeRequest)]
+	[ProtoContract]
+	public partial class DealPokeRequest: IActorRequest
+	{
+		[ProtoMember(90, IsRequired = true)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(93, IsRequired = true)]
+		public long ActorId { get; set; }
+
+		[ProtoMember(1, IsRequired = true)]
+		public long RoomId;
+
+	}
+
+	[Message(HotfixOpcode.DealPokeResponse)]
+	[ProtoContract]
+	public partial class DealPokeResponse: IActorResponse
+	{
+		[ProtoMember(90, IsRequired = true)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(91, IsRequired = true)]
+		public int Error { get; set; }
+
+		[ProtoMember(92, IsRequired = true)]
+		public string Message { get; set; }
+
+	}
+
+// 牛牛游戏接收到计算卡牌结果
+	[Message(HotfixOpcode.CalculateCardRequest)]
+	[ProtoContract]
+	public partial class CalculateCardRequest: IActorRequest
+	{
+		[ProtoMember(90, IsRequired = true)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(93, IsRequired = true)]
+		public long ActorId { get; set; }
+
+		[ProtoMember(1, IsRequired = true)]
+		public long RoomId;
+
+	}
+
+	[Message(HotfixOpcode.CalculateCardResponse)]
+	[ProtoContract]
+	public partial class CalculateCardResponse: IActorResponse
 	{
 		[ProtoMember(90, IsRequired = true)]
 		public int RpcId { get; set; }

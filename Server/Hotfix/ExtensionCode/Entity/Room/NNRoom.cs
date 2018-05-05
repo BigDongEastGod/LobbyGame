@@ -11,41 +11,228 @@ namespace ETHotfix
     /// </summary>
     public class NNRoom : ETModel.Room
     {
-        #region 成员变量和其他方法
+        #region 成员变量
+        
+        // 当前局数
 
-        public int CurrentDish { get; private set; }
+        public int CurrentDish;
+        
+        // 游戏规则
 
-        public NNChess ChessRules { get; private set; }
+        public NNChess ChessRules;
+        
+        // 卡牌数组
 
         public List<PokerCard> Cards { get; private set; }
         
-        private class GameState
+        // 游戏状态实体类
+        
+        public class PlayerState
         {
             public bool IsBanker;
             
-            public bool IsBet;
+            public bool IsReceive;
 
             public int Bet;
 
             public List<PokerCard> Cards;
         }
 
+        // 游戏逻辑委托队列
+
+        public Stack<Action<SPlayer, object[]>> GameQueue = new Stack<Action<SPlayer, object[]>>();
+
         /// <summary>
         /// 玩家游戏状态
         /// </summary>
         
-        private readonly Dictionary<SPlayer, GameState> _gameStates = new Dictionary<SPlayer, GameState>();
+        public readonly Dictionary<SPlayer, PlayerState> GameStates = new Dictionary<SPlayer, PlayerState>();
 
+        #endregion
+        
+        /// <summary>
+        /// 添加游戏规则到该房间
+        /// </summary>
+        /// <param name="rules"></param>
         public override void AddRules(byte[] rules)
         {
             Rules = rules;
             
             ChessRules = ProtobufHelper.FromBytes<NNChess>(rules);
+            
+            // 清空队列
+            
+            GameQueue.Clear();
+            
+            GameQueue.Push(CreateBankerMessage);
+            
+            GameQueue.Push(StartBetMessage);
+            
+            GameQueue.Push(DealPokerMessage);
+            
+            GameQueue.Push(CalculateCardsMessage);
         }
 
+        /// <summary>
+        /// 检查玩家是否在这个房间中
+        /// </summary>
+        /// <param name="player"></param>
+        /// <returns></returns>
         public override long PlayerIsInRomm(SPlayer player)
         {
             return Players.FirstOrDefault(d => d == player && d.IsActivity) != null ? this.Id : 0;
+        }
+
+        #region 游戏逻辑实现
+
+        /// <summary>
+        /// 随机创建一个庄家
+        /// </summary>
+        /// <param name="player"></param>
+        /// <param name="args"></param>
+        private void CreateBankerMessage(SPlayer player, params object[] args)
+        {
+            // 把玩家接收信息标记为false
+            
+            GameStates.Values.ForEach(d => d.IsReceive = false);
+            
+            // 随机选择出庄家
+
+            var randomPlayerId = RandomHelper.RandomNumber(0, Players.Count);
+
+            var banker = Players.ElementAt(randomPlayerId);
+
+            var response = new GameInfoAnnunciate {Message = 0, Arg = null, UserName = banker.Account.UserName};
+            
+            // 并发送消息给其他玩家
+
+            GameStates.Keys.ForEach(d => d.GetActorProxy.Send(response));
+        }
+
+        /// <summary>
+        /// 给玩家发送下注消息
+        /// </summary>
+        /// <param name="player"></param>
+        /// <param name="args"></param>
+        private void StartBetMessage(SPlayer player, params object[] args)
+        {
+            // 把玩家接收信息标记为false
+            
+            GameStates.Values.ForEach(d => d.IsReceive = false);
+            
+            var response = new GameInfoAnnunciate {Message = 1, Arg = null};
+            
+            GameStates.Keys.ForEach(d =>
+            {
+                response.UserName = d.Account.UserName;
+                
+                d.GetActorProxy.Send(response);
+            });
+        }
+
+        /// <summary>
+        /// 发送下注消息给其他玩家
+        /// </summary>
+        private void SendBetMessage(SPlayer player, params object[] args)
+        {
+            if (GameStates.ContainsKey(player) == false || args[1] == null || args[1].Equals("")) return;
+            
+            // 存放玩家下注的点数
+            
+            GameStates[player].Bet = Convert.ToInt32(args[1]);
+            
+            // 发送下注消息给其他玩家
+
+            var response = new GameInfoAnnunciate() {Arg = SerializeHelper.Instance.SerializeObject(args[1]), Message = 2};
+
+            GameStates.Keys.Where(d => d != player).ForEach(d =>
+            {
+                response.UserName = d.Account.UserName;
+
+                d.GetActorProxy.Send(response);
+            });
+        }
+
+        /// <summary>
+        /// 给玩家发牌
+        /// </summary>
+        /// <param name="player"></param>
+        /// <param name="args"></param>
+        private void DealPokerMessage(SPlayer player, params object[] args)
+        {
+            // 把玩家接收信息标记为false
+            
+            GameStates.Values.ForEach(d => d.IsReceive = false);
+            
+            var poker = GetComponent<Poker>();
+                            
+            // 生成卡牌
+
+            Cards = poker.CreateCards(1);
+                            
+            // 分发卡牌
+
+            var playerPokers = poker.Deal(Cards, Players.Count, 5, true);
+                            
+            // 创建发送协议
+
+            var response = new GameInfoAnnunciate() {Message = 3};
+                            
+            // 获取所有参展玩家
+
+            var activityPlayers = GameStates.Keys.Where(d => d.IsActivity).ToArray();
+                            
+            // 每个玩家分发卡牌
+
+            for (var i = 0; i < activityPlayers.Count(); i++)
+            {
+                response.UserName = activityPlayers.ElementAt(i).Account.UserName;
+
+                response.Arg = SerializeHelper.Instance.SerializeObject(playerPokers[i]);
+                                
+                activityPlayers[i].GetActorProxy.Send(response);
+
+                GameStates[activityPlayers[i]].Cards = playerPokers[i];
+            }
+        }
+
+        /// <summary>
+        /// 计算玩家手里卡牌
+        /// </summary>
+        /// <param name="player"></param>
+        /// <param name="args"></param>
+        private void CalculateCardsMessage(SPlayer player, params object[] args)
+        {
+            // 把玩家接收信息标记为false
+            
+            GameStates.Values.ForEach(d => d.IsReceive = false);
+            
+            var poker = GetComponent<Poker>();
+            
+            // 计算好牌，并排序（如果有牛的话）
+
+            var pokerStr = 0;
+
+            var cards = poker.CalculateCards(GameStates[player].Cards).ToList();
+
+            if (cards.Count > 0)
+            {
+                GameStates[player].Cards = cards;
+
+                pokerStr = poker.Calculate(
+                    (GameStates[player].Cards.ElementAt(3).CardNumber > 10 ? 10 : GameStates[player].Cards.ElementAt(3).CardNumber) +
+                    (GameStates[player].Cards.ElementAt(4).CardNumber > 10 ? 10 : GameStates[player].Cards.ElementAt(4).CardNumber)
+                );
+            }
+
+            // 创建发送协议
+
+            var response = new GameInfoAnnunciate() {Message = 4, Arg = SerializeHelper.Instance.SerializeObject(pokerStr), UserName = player.Account.UserName};
+            
+            GameStates.Keys.ForEach(d =>
+            {
+                d.GetActorProxy.Send(response);
+            });
         }
 
         #endregion
@@ -179,129 +366,78 @@ namespace ETHotfix
 
         #endregion
 
+        #region 开始游戏
+
         public override string StartGame(SPlayer player)
         {
             if (Players.Count < 2) return "CantStartGame";
-
-            // 随机选择出庄家
-
-            var randomPlayerId = RandomHelper.RandomNumber(0, Players.Count);
-
-            var response = new GameInfoAnnunciate {Message = 2, Arg = null, UserName = Players.ElementAt(randomPlayerId).Account.UserName};
             
-            // 添加玩家到游戏状态中、并发送消息给其他玩家
+            // 添加玩家到游戏状态列表
             
-            _gameStates.Clear();
+            GameStates.Clear();
+
+            Players.Where(d => d.IsActivity).ForEach(d => GameStates.Add(d, new PlayerState()));
             
-            Players.ForEach(d =>
-            {
-                d.GetActorProxy.Send(response);
+            // 执行栈中的逻辑
 
-                _gameStates.Add(d, d == Players.ElementAt(randomPlayerId) ? new GameState() {IsBanker = true} : new GameState());
-            });
-            
-            // 给玩家发送下注消息
-
-            response = new GameInfoAnnunciate {Message = 0, Arg = null};
-
-            Players.Where(d => d.IsActivity).ForEach(d =>
-            {
-                response.UserName = d.Account.UserName;
-
-                d.GetActorProxy.Send(response);
-            });
+            GameQueue.Pop()?.Invoke(player, null);
             
             return "StartGame";
         }
 
+        #endregion
+
         public override void EndGame()
         {
-//            if (MaxDish > 0 && _currentDish > MaxDish)
-//            {
-//                //TODO:结束游戏、结算数据
-//            }
-//            else
-//            {
-//                //TODO:开始下一轮游戏
-//
-//                StartGame();
-//            }
-        }
 
+        }
+        
+        /// <summary>
+        /// 消息回调
+        /// </summary>
+        /// <param name="player"></param>
+        /// <param name="args"></param>
         public override void SendMessages(SPlayer player, params object[] args)
         {
-            // 0 : 庄家（抢庄完成） 0 : 下注完成
+            /*       提示消息
+                0:玩家接收庄家信息
+                1:接收玩家下注消息
+                2:接收玩家发牌消息
+             */
+            
+            if (!GameStates.ContainsKey(player)) return;
+            
+            // 设置已接收标记
+
+            GameStates[player].IsReceive = true;
 
             switch (Convert.ToInt32(args[0]))
             {
-                case 0:
+                case 0:  // 接收玩家庄家信息，返回的消息
 
-                    // 用户下注
-                    
-                    if (_gameStates.ContainsKey(player))
-                    {
-                        _gameStates[player].Bet = Convert.ToInt32(args[1]);
-                        
-                        var response = new GameInfoAnnunciate() {Arg = SerializeHelper.Instance.SerializeObject(args[1]), Message = 1};
-
-                        // 发送下注消息给其他玩家
-
-                        Players.Where(p => p != player && p.IsActivity).ForEach(d =>
-                            {
-                                response.UserName = player.Account.UserName;
-
-                                d.GetActorProxy.Send(response);
-                            }
-                        );
-
-                        _gameStates[player].IsBet = true;
-
-                        // 判断是否全部下注成功
-
-                        if (_gameStates.Values.Count(d => d.IsBet) == _gameStates.Count)
-                        {
-                            //TODO:全部下注成功、开始发牌了
-
-                            Log.Debug("全部下注成功、开始发牌了");
-
-                            var poker = GetComponent<NNPoker>();
-                            
-                            // 生成卡牌
-
-                            Cards = poker.CreateCards(1);
-                            
-                            // 分发卡牌
-
-                            var playerPokers = poker.Deal(Cards, Players.Count, 5, true);
-                            
-                            // 创建发送协议
-
-                            response = new GameInfoAnnunciate() {Message = 3};
-                            
-                            // 获取所有参展玩家
-
-                            var activityPlayers = Players.Where(d => d.IsActivity).ToArray();
-                            
-                            // 每个玩家分发卡牌
-
-                            for (var i = 0; i < activityPlayers.Count(); i++)
-                            {
-                                response.UserName = player.Account.UserName;
-
-                                response.Arg = SerializeHelper.Instance.SerializeObject(playerPokers[i]);
-                                
-                                activityPlayers[i].GetActorProxy.Send(response);
-
-                                _gameStates[activityPlayers[i]].Cards = playerPokers[i];
-                            }
-                        }
-                    }
+                    if (GameStates.Values.Count(d => d.IsReceive) == GameStates.Count) GameQueue.Pop()?.Invoke(player, args);
                     
                     break;
                 
-                case 1:
+                case 1:  // 接收玩家下注消息
+
+                    // 发送下注消息给其他玩家
                     
+                    SendBetMessage(player, args);
                     
+                    if (GameStates.Values.Count(d => d.IsReceive) == GameStates.Count) GameQueue.Pop()?.Invoke(player, args);
+                    
+                    break;
+                
+                case 2: // 接收玩家发牌消息
+                    
+                    if (GameStates.Values.Count(d => d.IsReceive) == GameStates.Count) GameQueue.Pop()?.Invoke(player, args);
+                    
+                    break;
+                
+                case 3: // 接收玩家计算卡牌消息
+                    
+                    if (GameStates.Values.Count(d => d.IsReceive) == GameStates.Count) GameQueue.Pop()?.Invoke(player, args);
                     
                     break;
             }
