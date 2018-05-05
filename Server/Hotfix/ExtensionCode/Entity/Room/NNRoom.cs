@@ -40,7 +40,7 @@ namespace ETHotfix
 
         // 游戏逻辑委托队列
 
-        public Stack<Action<SPlayer, object[]>> GameQueue = new Stack<Action<SPlayer, object[]>>();
+        public Queue<Action<SPlayer, object[]>> GameQueue = new Queue<Action<SPlayer, object[]>>();
 
         /// <summary>
         /// 玩家游戏状态
@@ -49,7 +49,9 @@ namespace ETHotfix
         public readonly Dictionary<SPlayer, PlayerState> GameStates = new Dictionary<SPlayer, PlayerState>();
 
         #endregion
-        
+
+        #region 规则和其他
+
         /// <summary>
         /// 添加游戏规则到该房间
         /// </summary>
@@ -64,13 +66,15 @@ namespace ETHotfix
             
             GameQueue.Clear();
             
-            GameQueue.Push(CreateBankerMessage);
+            GameQueue.Enqueue(CreateBankerMessage);  // 随机创建一个庄家
             
-            GameQueue.Push(StartBetMessage);
+            GameQueue.Enqueue(StartBetMessage);  // 给玩家发送下注消息
             
-            GameQueue.Push(DealPokerMessage);
+            GameQueue.Enqueue(SendBetMessage);  // 发送下注消息给其他玩家
             
-            GameQueue.Push(CalculateCardsMessage);
+            GameQueue.Enqueue(DealPokerMessage);  // 给玩家发牌
+            
+            GameQueue.Enqueue(CalculateCardsMessage);  // 计算玩家手里卡牌
         }
 
         /// <summary>
@@ -82,6 +86,8 @@ namespace ETHotfix
         {
             return Players.FirstOrDefault(d => d == player && d.IsActivity) != null ? this.Id : 0;
         }
+
+        #endregion
 
         #region 游戏逻辑实现
 
@@ -380,18 +386,24 @@ namespace ETHotfix
             
             // 执行栈中的逻辑
 
-            GameQueue.Pop()?.Invoke(player, null);
+            GameQueue.Dequeue()?.Invoke(player, null);
             
             return "StartGame";
         }
 
         #endregion
 
+        #region 结束游戏
+
         public override void EndGame()
         {
 
         }
-        
+
+        #endregion
+
+        #region 消息回调
+
         /// <summary>
         /// 消息回调
         /// </summary>
@@ -411,37 +423,32 @@ namespace ETHotfix
 
             GameStates[player].IsReceive = true;
 
-            switch (Convert.ToInt32(args[0]))
+            // 接收玩家下注消息
+            
+            if (Convert.ToInt32(args[0]) == 1)
             {
-                case 0:  // 接收玩家庄家信息，返回的消息
+                // 发送下注消息给其他玩家
 
-                    if (GameStates.Values.Count(d => d.IsReceive) == GameStates.Count) GameQueue.Pop()?.Invoke(player, args);
-                    
-                    break;
+                GameQueue.Peek()?.Invoke(player, args);
                 
-                case 1:  // 接收玩家下注消息
-
-                    // 发送下注消息给其他玩家
-                    
-                    SendBetMessage(player, args);
-                    
-                    if (GameStates.Values.Count(d => d.IsReceive) == GameStates.Count) GameQueue.Pop()?.Invoke(player, args);
-                    
-                    break;
+                if (GameStates.Values.Count(d => d.IsReceive) == GameStates.Count)
+                {
+                    GameQueue.Dequeue();
+                        
+                    GameQueue.Dequeue()?.Invoke(player, args);
+                }
+            }
+            else
+            {
+                // 如果该队列所有玩家都已经接受到消息、移除当前栈中的队列
                 
-                case 2: // 接收玩家发牌消息
-                    
-                    if (GameStates.Values.Count(d => d.IsReceive) == GameStates.Count) GameQueue.Pop()?.Invoke(player, args);
-                    
-                    break;
-                
-                case 3: // 接收玩家计算卡牌消息
-                    
-                    if (GameStates.Values.Count(d => d.IsReceive) == GameStates.Count) GameQueue.Pop()?.Invoke(player, args);
-                    
-                    break;
+                if (GameStates.Values.Count(d => d.IsReceive) == GameStates.Count) GameQueue.Dequeue()?.Invoke(player, args);
             }
         }
+
+        #endregion
+
+        #region 解散和Dispose
 
         public override void DissolveRoom(SPlayer player)
         {
@@ -462,5 +469,7 @@ namespace ETHotfix
 
             RoomManageComponent.Instance.Remove(this);
         }
+
+        #endregion
     }
 }
