@@ -2,19 +2,20 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Threading.Tasks;
 using ETModel;
 using UnityEngine;
 using DG.Tweening;
 using DG;
-using NPOI.SS.Formula.Functions;
+using UnityEngine.UI;
 using Text = UnityEngine.UI.Text;
  
 namespace ETHotfix
 {
     [ObjectSystem]
-    public class NNShowCardComponentAwakeSystem : AwakeSystem<NNShowCardComponent>
+    public class NNShowCardComponentAwakeSystem : AwakeSystem<NnShowCardComponent>
     {
-        public override void Awake(NNShowCardComponent self)
+        public override void Awake(NnShowCardComponent self)
         {
             self.Awake();
         }
@@ -35,7 +36,7 @@ namespace ETHotfix
 
         private List<Vector2> _sixTableList;                         //六人桌的位置
         private List<Vector2> _eightTableList;                       //八人桌的位置
-        public int RoomPeople;                                     //房间人数
+        public int RoomPeople;                                       //房间人数
         
         private List<Vector2> _currentTablePosList;                 //当前房间位置
         private Transform _currentTableObj;                         //当前桌子
@@ -61,6 +62,7 @@ namespace ETHotfix
             _sixTableList=new List<Vector2>();
             _eightTableList=new List<Vector2>();
             _headUiDict=new Dictionary<string, ReferenceCollector>();
+            _pokerObjList=new Dictionary<string, List<ReferenceCollector>>();
             _chairArray=new string[8];
             _cardUiDict=new Dictionary<int, UI>();
             _currentTablePosList=new List<Vector2>();
@@ -72,6 +74,7 @@ namespace ETHotfix
             _licensingPos = _rc.Get<GameObject>("LicensingPos").GetComponent<RectTransform>().anchoredPosition;
             _nnCardPrefab= _rc.Get<GameObject>("NiuNIuCard");
             _headUIform=_rc.Get<GameObject>("HeadUIForm");
+            CurrentUserName = "1";
         }
         
         public void Update()
@@ -98,12 +101,12 @@ namespace ETHotfix
             switch (RoomPeople)
             {
                 case 6:
-                    currentTablePosList= GetChildItem(sixTable.transform, sixTableList);
-                    currentTableObj = sixTable.transform;
+                    _currentTablePosList= GetChildItem(sixTable.transform, _sixTableList);
+                    _currentTableObj = sixTable.transform;
                     break;
                 case 8:
-                    currentTablePosList=GetChildItem(eightTable.transform, eightTableList);
-                    currentTableObj = eightTable.transform;
+                    _currentTablePosList=GetChildItem(eightTable.transform, _eightTableList);
+                    _currentTableObj = eightTable.transform;
                     break;
             }
         }
@@ -112,11 +115,11 @@ namespace ETHotfix
         //寻找空闲椅子
         public int FindFreeChair(string userName)
         {
-            for (int i = 0; i < chairArray.Length; i++)
+            for (int i = 0; i < _chairArray.Length; i++)
             {
-                if (chairArray[i] == null)
+                if (_chairArray[i] == null)
                 {
-                    chairArray[i] = userName;
+                    _chairArray[i] = userName;
                     return i;
                 }
             }
@@ -126,29 +129,26 @@ namespace ETHotfix
         //创建头像
         public void CreateHead(int chairIndex,AccountInfo playerInfo)
         {
-            GameObject headObj = UnityEngine.Object.Instantiate(headUIform, currentTableObj);
+            GameObject headObj = UnityEngine.Object.Instantiate(_headUIform, _currentTableObj);
             
-            if (ChairIndex == -1)
+            if (chairIndex == -1)
             {
                 headObj.GetComponent<RectTransform>().anchoredPosition = _mainHeadPos.anchoredPosition;
             }
             else
             {
                 headObj.transform.localScale=new Vector2(0.7f,0.7f);
-                headObj.GetComponent<RectTransform>().anchoredPosition = currentTablePosList[ChairIndex];
+                headObj.GetComponent<RectTransform>().anchoredPosition = _currentTablePosList[chairIndex];
             }
             //设置头像信息
             SetHeadUIComponent(headObj, playerInfo);
            
-            if (ChairIndex != -1)
+            if (chairIndex != -1)
             {
-                var chairList= _chairArray.ToList<string>();
-                Debug.Log("UserName"+playerInfo.UserName);
-                chairList.Add(playerInfo.UserName);
-                _chairArray= chairList.ToArray();
+                SaveOtherPlayerChair(playerInfo.UserName);
             }
             
-            HeadUIDict.Add(playerInfo.UserName,headObj.GetComponent<ReferenceCollector>());
+            _headUiDict.Add(playerInfo.UserName,headObj.GetComponent<ReferenceCollector>());
         }
         
         //保存其他玩家的位置
@@ -198,21 +198,21 @@ namespace ETHotfix
         //显示下注分数
         public void ShowBets(string userName,int score)
         {
-            if (HeadUIDict.ContainsKey(userName))
+            if (_headUiDict.ContainsKey(userName))
             {
                 ReferenceCollector rc;
-                HeadUIDict.TryGetValue(userName, out rc);
+                _headUiDict.TryGetValue(userName, out rc);
                 rc.Get<GameObject>("BetsTitleImg").SetActive(true);
                 rc.Get<GameObject>("BetsTitleImg").transform.GetChild(0).GetComponent<Text>().text = score.ToString();
             }
         }
  
         //翻牌动画
-        private void FlopAniamtion(IEnumerable<UI> cardList)
+        private void FlopAniamtion(IEnumerable<ReferenceCollector> cardList)
         {
             foreach (var card in cardList)
             {
-                card.GameObject.GetComponent<Animator>().SetTrigger("IsFlop");
+                card.GetComponent<Animator>().SetTrigger("IsFlop");
             }
         }
     
@@ -238,9 +238,7 @@ namespace ETHotfix
                     tempCardList.Add(cardObj.GetComponent<ReferenceCollector>());
                 }
  
-                var name = i == 0 ? CurrentUserName : _chairArray[i - 1];
                 _pokerObjList.Add(i == 0 ? CurrentUserName : _chairArray[i-1], tempCardList);
-                Debug.Log("添加的账号名是:"+name+"当前的索引是"+i);
             }
         }
     
@@ -257,6 +255,22 @@ namespace ETHotfix
             {
                 //获得牌的点数
                 cardNumber.sprite = rc.Get<Sprite>("num_" + data.CardNumber);
+              
+                //如果不是J Q K
+                if (data.CardNumber < 10)
+                {
+                    flowerColor.sprite = rc.Get<Sprite>("t_" + data.CardType);
+                    bigFlowerColor1.sprite = rc.Get<Sprite>("t_" + data.CardType);
+                }
+                //如果是J Q K
+                else
+                {
+                    flowerColor.sprite = rc.Get<Sprite>(data.CardType +"_" +data.CardNumber);
+                    bigFlowerColor1.sprite = rc.Get<Sprite>(data.CardType +"_" +data.CardNumber);
+                }
+
+                if (data.CardType > 9) return;
+                
                 //获得卡牌的颜色
                 switch (data.CardType)
                 {
@@ -269,26 +283,18 @@ namespace ETHotfix
                         cardNumber.GetComponent<Image>().color = Color.black;
                         break;
                 }
+            }
+            else
+            {
+                //获得王的标志
+                cardNumber.sprite = rc.Get<Sprite>("joker");
+                //大小王的颜色设置
+                cardNumber.GetComponent<Image>().color = data.CardNumber == 1 ? Color.red : Color.white;
 
-                //如果不是J Q K
-                if (data.CardNumber < 10)
-                {
-                    flowerColor.sprite = rc.Get<Sprite>("t_" + data.CardType);
-                    bigFlowerColor1.sprite = rc.Get<Sprite>("t_" + data.CardType);
-                }
-                //如果是J Q K
-                else
-                {
-                    //获得王的标志
-                    cardNumber.sprite = rc.Get<Sprite>("joker");
-                    //大小王的颜色设置
-                    cardNumber.GetComponent<Image>().color = data.CardNumber == 1 ? Color.red : Color.white;
-
-                    bigFlowerColor2.gameObject.SetActive(true);
-                    bigFlowerColor1.gameObject.SetActive(false);
-                    flowerColor.sprite = rc.Get<Sprite>("k_" + data.CardNumber);
-                    bigFlowerColor2.sprite = rc.Get<Sprite>("k_" + data.CardNumber);
-                }
+                bigFlowerColor2.gameObject.SetActive(true);
+                bigFlowerColor1.gameObject.SetActive(false);
+                flowerColor.sprite = rc.Get<Sprite>("k_" + data.CardNumber);
+                bigFlowerColor2.sprite = rc.Get<Sprite>("k_" + data.CardNumber);
             }
         }
         
