@@ -5,7 +5,6 @@ namespace ETHotfix
 {
     public static class GameTools
     {
-        
         /// <summary>
         /// 显示提示框
         /// </summary>
@@ -14,11 +13,11 @@ namespace ETHotfix
         public static void ShowDialogMessage(string message, string canvasName)
         {
             var dialogUI = Game.Scene.GetComponent<UIComponent>().Get(UIType.DialogPanel);
-            
+
             dialogUI.GetComponent<DialogPanelComponent>().ShowDialogBox(message);
 
             Transform parent = GameObject.Find("Global/UI/" + canvasName + "/Top").transform;
-            
+
             dialogUI.GameObject.transform.SetParent(parent);
 
             dialogUI.GameObject.SetActive(true);
@@ -31,13 +30,15 @@ namespace ETHotfix
         public static async void ReLoading(string canvasName)
         {
             var loadingUI = Game.Scene.GetComponent<UIComponent>().Get(UIType.LoadingPanel);
-            
+
             Transform parent = GameObject.Find("Global/UI/" + canvasName + "/TopMost").transform;
-            
+
             loadingUI.GameObject.transform.SetParent(parent);
-            
+
             loadingUI.GameObject.SetActive(true);
-            
+
+            loadingUI.GetComponent<LoadingComponent>().ReLoadingStart = true;
+
             try
             {
                 var session = SceneHelperComponent.Instance.CreateRealmSession();
@@ -71,6 +72,5 @@ namespace ETHotfix
                 ShowDialogMessage(e.Message, canvasName);
             }
         }
-        
     }
 }
