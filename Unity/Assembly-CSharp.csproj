@@ -9,7 +9,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <ProjectGuid>{CD8C9303-404B-FB8D-6B9B-21988D5CAC0A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -282,7 +283,6 @@
     <Compile Include="Assets\Scripts\UI\UILoading\Event\LoadingBeginEvent_CreateLoadingUI.cs" />
     <Compile Include="Assets\Scripts\UI\UILoading\Event\LoadingFinishEvent_RemoveLoadingUI.cs" />
     <Compile Include="Assets\Scripts\UI\UILoading\Factory\UILoadingFactory.cs" />
-    <Compile Include="Assets\Test.cs" />
     <Compile Include="Assets\ThirdParty\ILRuntime\Generated\CLRBindings.cs" />
     <Compile Include="Assets\ThirdParty\ILRuntime\Generated\ETModel_ActionHelper_Binding.cs" />
     <Compile Include="Assets\ThirdParty\ILRuntime\Generated\ETModel_Actor_CreateUnits_Binding.cs" />
@@ -443,6 +443,7 @@
     <Compile Include="Assets\ThirdParty\ILRuntime\ILRuntime\Runtime\Enviorment\CLRRedirections.cs" />
     <Compile Include="Assets\ThirdParty\ILRuntime\ILRuntime\Runtime\Enviorment\CrossBindingAdaptor.cs" />
     <Compile Include="Assets\ThirdParty\ILRuntime\ILRuntime\Runtime\Enviorment\DelegateManager.cs" />
+    <Compile Include="Assets\ThirdParty\ILRuntime\ILRuntime\Runtime\Enviorment\InvocationContext.cs" />
     <Compile Include="Assets\ThirdParty\ILRuntime\ILRuntime\Runtime\Enviorment\ValueTypeBinder.cs" />
     <Compile Include="Assets\ThirdParty\ILRuntime\ILRuntime\Runtime\Extensions.cs" />
     <Compile Include="Assets\ThirdParty\ILRuntime\ILRuntime\Runtime\Intepreter\DelegateAdapter.cs" />
@@ -725,6 +726,7 @@
     <None Include="Assets\Demigiant\DOTween\DOTween43.xml" />
     <None Include="Assets\Bundles\Resources\Shader\LoadingImage.shader" />
     <None Include="Assets\Res\Config\UnitConfig.txt" />
+    <None Include="Assets\StreamingAssets\Version.txt" />
     <Reference Include="UnityEngine.UI">
       <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
     </Reference>

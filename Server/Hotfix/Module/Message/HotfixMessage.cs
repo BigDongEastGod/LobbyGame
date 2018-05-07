@@ -414,6 +414,12 @@ namespace ETHotfix
 		[ProtoMember(17, IsRequired = true)]
 		public int PlayerCount;
 
+		[ProtoMember(18, IsRequired = true)]
+		public string PlayerMode;
+
+		[ProtoMember(19, IsRequired = true)]
+		public string PayMode;
+
 	}
 
 // 游戏房间规则
@@ -638,7 +644,12 @@ namespace ETHotfix
 	}
 
 // 游戏消息通告
-// 提示消息 0:下注 1:下注完成 2:选择庄家 3:更改玩家开始游戏权限
+// 提示消息
+// 0:玩家接收庄家信息
+// 1:发送玩家开始下注消息
+// 2:发送下注消息给其他玩家
+// 3:给玩家发牌消息
+// 4:计算玩家手里卡牌、并把结果返回给玩家消息
 	[Message(HotfixOpcode.GameInfoAnnunciate)]
 	[ProtoContract]
 	public partial class GameInfoAnnunciate: IActorMessage
@@ -725,13 +736,94 @@ namespace ETHotfix
 
 	}
 
-// 游戏房间
-//message Room
-//{
-//required int32 RoomId = 1;  // 局数
-//required string PlayingMethod = 2;  // 玩法
-//}
+// 牛牛游戏接收到卡牌
+	[Message(HotfixOpcode.DealPokeRequest)]
+	[ProtoContract]
+	public partial class DealPokeRequest: IActorRequest
+	{
+		[ProtoMember(90, IsRequired = true)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(93, IsRequired = true)]
+		public long ActorId { get; set; }
+
+		[ProtoMember(1, IsRequired = true)]
+		public long RoomId;
+
+	}
+
+	[Message(HotfixOpcode.DealPokeResponse)]
+	[ProtoContract]
+	public partial class DealPokeResponse: IActorResponse
+	{
+		[ProtoMember(90, IsRequired = true)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(91, IsRequired = true)]
+		public int Error { get; set; }
+
+		[ProtoMember(92, IsRequired = true)]
+		public string Message { get; set; }
+
+	}
+
+// 牛牛游戏接收到计算卡牌结果
+	[Message(HotfixOpcode.CalculateCardRequest)]
+	[ProtoContract]
+	public partial class CalculateCardRequest: IActorRequest
+	{
+		[ProtoMember(90, IsRequired = true)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(93, IsRequired = true)]
+		public long ActorId { get; set; }
+
+		[ProtoMember(1, IsRequired = true)]
+		public long RoomId;
+
+	}
+
+	[Message(HotfixOpcode.CalculateCardResponse)]
+	[ProtoContract]
+	public partial class CalculateCardResponse: IActorResponse
+	{
+		[ProtoMember(90, IsRequired = true)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(91, IsRequired = true)]
+		public int Error { get; set; }
+
+		[ProtoMember(92, IsRequired = true)]
+		public string Message { get; set; }
+
+	}
+
 // 游戏房间信息
+	[Message(HotfixOpcode.GameRoomInfo)]
+	[ProtoContract]
+	public partial class GameRoomInfo
+	{
+		[ProtoMember(1, IsRequired = true)]
+		public long RoomId;
+
+		[ProtoMember(2, IsRequired = true)]
+		public string PlayerMode;
+
+		[ProtoMember(3, IsRequired = true)]
+		public string Score;
+
+		[ProtoMember(4, IsRequired = true)]
+		public int Dish;
+
+		[ProtoMember(5, IsRequired = true)]
+		public string PayMode;
+
+		[ProtoMember(6, IsRequired = true)]
+		public string PlayerCount;
+
+	}
+
+// 获取游戏房间列表
 	[Message(HotfixOpcode.RoomListRequest)]
 	[ProtoContract]
 	public partial class RoomListRequest: IActorRequest
@@ -742,8 +834,8 @@ namespace ETHotfix
 		[ProtoMember(93, IsRequired = true)]
 		public long ActorId { get; set; }
 
-		[ProtoMember(2, IsRequired = true)]
-		public int Dish;
+		[ProtoMember(1, IsRequired = true)]
+		public string GameType;
 
 	}
 
@@ -760,8 +852,8 @@ namespace ETHotfix
 		[ProtoMember(92, IsRequired = true)]
 		public string Message { get; set; }
 
-		[ProtoMember(3)]
-		public List<AccountInfo> Players = new List<AccountInfo>();
+		[ProtoMember(1)]
+		public List<GameRoomInfo> Rooms = new List<GameRoomInfo>();
 
 	}
 

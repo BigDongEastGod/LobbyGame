@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using ETModel;
 
@@ -16,23 +17,15 @@ namespace ETHotfix
             
             try
             {
-                var rooms = RoomManageComponent.Instance.GetRooms(player);
 
-                var roomsResponse = new List<Room>();
-
-                foreach (var room in rooms)
+                if (!player.RoomsRecord.TryGetValue(message.GameType, out var roomInfos))
                 {
-                    switch (@room.RoomType)
-                    {
-                        case RoomType.NN:
-                            
-                            break;
-                        
-                        case RoomType.DDZ:
-                            
-                            break;
-                    }
+                    reply(response);
+                    
+                    return;
                 }
+
+                response.Rooms = roomInfos;
             }
             catch (Exception e)
             {

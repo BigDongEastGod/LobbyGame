@@ -11,11 +11,11 @@ namespace ETHotfix
         /// </summary>
         /// <param name="number">数值</param>
         /// <returns>转换成例如：牛1、牛牛等文字</returns>
-        private static string Calculate(int number)
+        public override int Calculate(int number)
         {
             var calculateNumber = number % 10;
 
-            return calculateNumber > 0 ? "牛" + calculateNumber : "牛牛";
+            return calculateNumber > 0 ? calculateNumber : 10;
         }
 
         /// <summary>
@@ -23,7 +23,7 @@ namespace ETHotfix
         /// </summary>
         /// <param name="cardNumber">卡牌数值</param>
         /// <returns>如果牌数值大于10就变成10</returns>
-        private static int ConvertCard(int cardNumber)
+        private int ConvertCard(int cardNumber)
         {
             return cardNumber > 10 ? 10 : cardNumber;
         }

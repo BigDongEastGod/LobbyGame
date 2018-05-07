@@ -18,25 +18,16 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/../Server/Model/ExtensionCode/Entity/Room.cs" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Assets/Test.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Hotfix/ExtensionCode/UI/LoginScene/NiuNiuGame/NiuNiuRoom/NNShowCardComponent.cs" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/../Server/Model/ExtensionCode/Module/Game/RoomManageComponent.cs" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/../Server/Hotfix/ExtensionCode/Module/Game/RoomManageComponent.cs" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Helper/ActionHelper.cs" root0="FORCE_HIGHLIGHTING" />
-  </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/Assets/Test.cs" />
-      </list>
-    </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
@@ -44,7 +35,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="y" value="23" />
     <option name="width" value="2048" />
     <option name="height" value="1061" />
@@ -55,7 +46,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="UnityExplorer">
         <option name="show-hidden-items" value="false" />
       </pane>
@@ -64,7 +54,7 @@
           <expand>
             <path>
               <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="Unity (3 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Loading solution..." type="977d5f41:SolutionExplorerNodeRider" />
             </path>
           </expand>
           <select />
@@ -72,6 +62,7 @@
         <option name="show-file-system" value="false" />
         <option name="show-all-items" value="false" />
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -130,6 +121,11 @@
       <workItem from="1525254988889" duration="509000" />
       <workItem from="1525315226163" duration="350000" />
       <workItem from="1525315874106" duration="10000" />
+<<<<<<< HEAD
+      <workItem from="1525341237356" duration="64000" />
+      <workItem from="1525344437710" duration="2000" />
+      <workItem from="1525397378537" duration="3000" />
+=======
       <workItem from="1525350886743" duration="611000" />
       <workItem from="1525392917931" duration="2531000" />
       <workItem from="1525418119579" duration="175000" />
@@ -150,6 +146,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
+<<<<<<< HEAD
+    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
+=======
     <frame x="0" y="23" width="2048" height="1061" extended-state="6" />
     <editor active="true" />
     <layout>
@@ -161,36 +160,21 @@
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.010967099" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.010989011" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Unity" order="8" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="NuGet" order="7" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Unity" order="8" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.010967099" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="right" id="JSON Viewer" order="4" />
-      <window_info anchor="bottom" id="Unit Tests" order="7" />
-      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="right" id="Errors In Solution" order="3" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info id="Favorites" order="2" side_tool="true" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -201,60 +185,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Assets/Test.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
-          <folding>
-            <marker date="1525398029000" expanded="false" signature="6:97" ph="..." />
-            <marker date="1525398029000" expanded="true" signature="132:946" ph="{...}" />
-            <marker date="1525398029000" expanded="true" signature="288:297" ph="{...}" />
-            <marker date="1525398029000" expanded="true" signature="352:361" ph="{...}" />
-            <marker date="1525398029000" expanded="true" signature="390:475" ph="{...}" />
-            <marker date="1525398029000" expanded="true" signature="423:472" ph="{...}" />
-            <marker date="1525398029000" expanded="true" signature="567:944" ph="{...}" />
-            <marker date="1525398029000" expanded="true" signature="597:941" ph="{...}" />
-            <marker date="1525398029000" expanded="true" signature="797:937" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Test.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
-          <folding>
-            <marker date="1525398029000" expanded="false" signature="6:97" ph="..." />
-            <marker date="1525398029000" expanded="true" signature="132:946" ph="{...}" />
-            <marker date="1525398029000" expanded="true" signature="288:297" ph="{...}" />
-            <marker date="1525398029000" expanded="true" signature="352:361" ph="{...}" />
-            <marker date="1525398029000" expanded="true" signature="390:475" ph="{...}" />
-            <marker date="1525398029000" expanded="true" signature="423:472" ph="{...}" />
-            <marker date="1525398029000" expanded="true" signature="567:944" ph="{...}" />
-            <marker date="1525398029000" expanded="true" signature="597:941" ph="{...}" />
-            <marker date="1525398029000" expanded="true" signature="797:937" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Test.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
-          <folding>
-            <marker date="1525398029000" expanded="false" signature="6:97" ph="..." />
-            <marker date="1525398029000" expanded="true" signature="132:946" ph="{...}" />
-            <marker date="1525398029000" expanded="true" signature="288:297" ph="{...}" />
-            <marker date="1525398029000" expanded="true" signature="352:361" ph="{...}" />
-            <marker date="1525398029000" expanded="true" signature="390:475" ph="{...}" />
-            <marker date="1525398029000" expanded="true" signature="423:472" ph="{...}" />
-            <marker date="1525398029000" expanded="true" signature="567:944" ph="{...}" />
-            <marker date="1525398029000" expanded="true" signature="597:941" ph="{...}" />
-            <marker date="1525398029000" expanded="true" signature="797:937" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Helper/ActionHelper.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
