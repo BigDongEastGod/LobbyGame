@@ -267,6 +267,10 @@ namespace ETHotfix
             // 添加玩家到客人列表
             
             Guest.Add(player);
+            
+            // 添加到玩家房间记录
+
+            if (player.RoomsRecord.Contains(this.Id)) player.RoomsRecord.Add(this.Id);
 
             return "JionRoom";
         }
