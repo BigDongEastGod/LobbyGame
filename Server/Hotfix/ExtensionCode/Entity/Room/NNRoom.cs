@@ -291,7 +291,7 @@ namespace ETHotfix
 
             var roomtype = Enum.GetName(typeof(RoomType), this.RoomType);
 
-            if (!player.RoomsRecord.TryGetValue(roomtype, out var rooms)) player.RoomsRecord.Add(roomtype, new List<GameRoomInfo>());
+            if (!player.RoomsRecord.ContainsKey(roomtype)) player.RoomsRecord.Add(roomtype, new List<GameRoomInfo>());
 
             var gameroominfo = new GameRoomInfo()
             {
@@ -303,11 +303,11 @@ namespace ETHotfix
                 PlayerCount = this.Players.Count + "/" + ChessRules.PlayerCount
             };
 
-            var roominfo = rooms?.FirstOrDefault(d => d.RoomId == this.Id);
+            var roominfo = player.RoomsRecord[roomtype].FirstOrDefault(d => d.RoomId == this.Id);
 
             if (roominfo == null)
             {
-                rooms?.Add(gameroominfo);
+                player.RoomsRecord[roomtype].Add(gameroominfo);
             }
             else
             {
@@ -501,7 +501,7 @@ namespace ETHotfix
         public override void DissolveRoom(SPlayer player)
         {
             base.DissolveRoom(player);
-
+            
             DissolveRoomAction?.Invoke(this.Id, Enum.GetName(typeof(RoomType), this.RoomType));
 
             if (DissolveRoomAction != null) DissolveRoomAction -= player.DissolveRoomABackCall;

@@ -17,7 +17,6 @@ namespace ETHotfix
             
             try
             {
-
                 if (!player.RoomsRecord.TryGetValue(message.GameType, out var roomInfos))
                 {
                     reply(response);
@@ -26,6 +25,15 @@ namespace ETHotfix
                 }
 
                 response.Rooms = roomInfos;
+
+                Log.Debug("玩家ID：" + player.Id);
+                
+                Log.Debug("开始测试");
+                
+                response.Rooms.ForEach(d=>Log.Debug(d.RoomId.ToString()));
+                
+                Log.Debug("结束测试");
+                
             }
             catch (Exception e)
             {

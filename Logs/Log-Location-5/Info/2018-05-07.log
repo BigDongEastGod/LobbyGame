@@ -1,0 +1,8 @@
+2018-05-07 20:03:31.3785 Location 005 (Program.cs:39) server start........................ 5 Location
+2018-05-07 20:03:43.5655 Location 005 (LocationComponent.cs:64) location add key: 662864470409257 instanceId: 1788837783076906
+2018-05-07 20:03:43.6220 Location 005 (LocationComponent.cs:64) location add key: 1225887829655599 instanceId: 1225887829655600
+2018-05-07 20:03:43.7125 Location 005 (LocationComponent.cs:171) location get key: 662864470409257 1788837783076906
+2018-05-07 20:04:06.3228 Location 005 (LocationComponent.cs:72) location remove key: 1225887829655599
+2018-05-07 20:04:06.3425 Location 005 (LocationComponent.cs:72) location remove key: 662864470409257
+2018-05-07 20:04:06.3514 Location 005 (LocationComponent.cs:64) location add key: 662864470409257 instanceId: 1788837783076906
+2018-05-07 20:04:06.3605 Location 005 (LocationComponent.cs:64) location add key: 1225887831162944 instanceId: 1225887831162945
