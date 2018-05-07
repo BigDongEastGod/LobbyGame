@@ -3261,23 +3261,39 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "/Users/sining/.nuget/packages/": {},
+=======
+    "/Users/zhaolin/.nuget/packages/": {},
+>>>>>>> parent of 6052e3b... 1
     "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "/Users/sining/Projects/JuAnChess/LobbyGame/Server/Model/Server.Model.csproj",
       "projectName": "Server.Model",
       "projectPath": "/Users/sining/Projects/JuAnChess/LobbyGame/Server/Model/Server.Model.csproj",
       "packagesPath": "/Users/sining/.nuget/packages/",
       "outputPath": "/Users/sining/Projects/JuAnChess/LobbyGame/Server/Model/obj/",
+=======
+      "projectUniqueName": "/MyDocuments/JuAnNetWork/JuAnGame/LobbyGame/Server/Model/Server.Model.csproj",
+      "projectName": "Server.Model",
+      "projectPath": "/MyDocuments/JuAnNetWork/JuAnGame/LobbyGame/Server/Model/Server.Model.csproj",
+      "packagesPath": "/Users/zhaolin/.nuget/packages/",
+      "outputPath": "/MyDocuments/JuAnNetWork/JuAnGame/LobbyGame/Server/Model/obj/",
+>>>>>>> parent of 6052e3b... 1
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
+<<<<<<< HEAD
         "/Users/sining/.config/NuGet/NuGet.Config"
+=======
+        "/Users/zhaolin/.config/NuGet/NuGet.Config"
+>>>>>>> parent of 6052e3b... 1
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
@@ -3288,6 +3304,7 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
+<<<<<<< HEAD
             "/Users/sining/Projects/JuAnChess/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Bson/MongoDB.Bson.csproj": {
               "projectPath": "/Users/sining/Projects/JuAnChess/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Bson/MongoDB.Bson.csproj"
             },
@@ -3296,6 +3313,16 @@
             },
             "/Users/sining/Projects/JuAnChess/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver/MongoDB.Driver.csproj": {
               "projectPath": "/Users/sining/Projects/JuAnChess/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver/MongoDB.Driver.csproj"
+=======
+            "/MyDocuments/JuAnNetWork/JuAnGame/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Bson/MongoDB.Bson.csproj": {
+              "projectPath": "/MyDocuments/JuAnNetWork/JuAnGame/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Bson/MongoDB.Bson.csproj"
+            },
+            "/MyDocuments/JuAnNetWork/JuAnGame/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver.Core/MongoDB.Driver.Core.csproj": {
+              "projectPath": "/MyDocuments/JuAnNetWork/JuAnGame/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver.Core/MongoDB.Driver.Core.csproj"
+            },
+            "/MyDocuments/JuAnNetWork/JuAnGame/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver/MongoDB.Driver.csproj": {
+              "projectPath": "/MyDocuments/JuAnNetWork/JuAnGame/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver/MongoDB.Driver.csproj"
+>>>>>>> parent of 6052e3b... 1
             }
           }
         }
