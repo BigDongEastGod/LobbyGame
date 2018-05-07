@@ -53,6 +53,8 @@ namespace ETHotfix
                 player = ComponentFactory.CreateWithId<SPlayer>(accountId);
 
                 Players.Add(player);
+                
+                Log.Debug("新创建：" +Players.Count);
             }
             else
             {

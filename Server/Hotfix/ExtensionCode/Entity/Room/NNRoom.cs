@@ -501,7 +501,7 @@ namespace ETHotfix
         public override void DissolveRoom(SPlayer player)
         {
             base.DissolveRoom(player);
-
+            
             DissolveRoomAction?.Invoke(this.Id, Enum.GetName(typeof(RoomType), this.RoomType));
 
             if (DissolveRoomAction != null) DissolveRoomAction -= player.DissolveRoomABackCall;
