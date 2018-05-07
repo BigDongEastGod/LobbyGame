@@ -51,7 +51,7 @@ namespace ETHotfix
 
             // 登录帐号按钮
             SceneHelperComponent.Instance.MonoEvent.AddButtonClick(loginSubmitBtn.GetComponent<Button>(),
-                () => OnLoginSubmitBtn(loginNameInputField.GetComponent<InputField>().text, loginPwdInputField.GetComponent<InputField>().text));
+                () => OnLoginSubmitBtn(loginNameInputField.GetComponent<InputField>(), loginPwdInputField.GetComponent<InputField>()));
         }
 
         public void Start()
@@ -64,9 +64,14 @@ namespace ETHotfix
         /// </summary>
         /// <param name="loginNameText"></param>
         /// <param name="loginPwdText"></param>
-        public async void OnLoginSubmitBtn(string loginNameText, string loginPwdText)
+        public async void OnLoginSubmitBtn(InputField loginNameText, InputField loginPwdText)
         {
-            if (String.IsNullOrWhiteSpace(loginPwdText) || String.IsNullOrWhiteSpace(loginNameText))
+            Debug.Log("UserName: " + loginNameText);
+            Debug.Log("Password: " + loginPwdText);
+            Debug.Log("PlayerPrefs.username: " + PlayerPrefs.GetString("username"));
+            Debug.Log("PlayerPrefs.password: " + PlayerPrefs.GetString("password"));
+
+            if (String.IsNullOrWhiteSpace(loginPwdText.text) || String.IsNullOrWhiteSpace(loginNameText.text))
             {
                 GameTools.ShowDialogMessage("帐号或密码不能为空!", "LoginCanvas");
                 return;
@@ -80,13 +85,13 @@ namespace ETHotfix
                 LoginResponse response = (LoginResponse) await session.Call(
                     new LoginRequest()
                     {
-                        UserName = loginNameText,
-                        Password = loginPwdText
+                        UserName = loginNameText.text,
+                        Password = loginPwdText.text
                     });
                 if (response.Error == 0)
                 {
-                    PlayerPrefs.SetString("username", loginNameText);
-                    PlayerPrefs.SetString("password", loginPwdText);
+                    PlayerPrefs.SetString("username", loginNameText.text);
+                    PlayerPrefs.SetString("password", loginPwdText.text);
 
                     session.Dispose();
 
@@ -140,7 +145,7 @@ namespace ETHotfix
             else
             {
                 Debug.Log("加入房间失败: " + joinRoomResponse.Message);
-                GameTools.ShowDialogMessage("加入房间失败!","LoginCanvas");
+                GameTools.ShowDialogMessage("加入房间失败!", "LoginCanvas");
             }
         }
     }
