@@ -23,16 +23,31 @@ namespace ETHotfix
         public List<int> PlayerPush; //闲家推注
 
         public List<List<string>> DoubleRules; //翻倍规则
+
+        // 玩法类型
+        public string PlayerMode;
+        // 
+
 //        bool ShunZiRules; //顺子牛
+
 //        bool TonghuaRules; //同花牛
+
 //        bool HuLuRules; //葫芦牛
+
 //        bool WuHuaRules; //五花牛
+
 //        bool ZhaDanRules; //炸弹牛
+
 //        bool WuXiaoRules; //五小牛
+
 //        bool ZhongTuJinRuRules; //中途禁入
+
 //        bool CuoPaiRules; //禁止搓牌
+
 //        bool WangLaiRules; //王癞玩法
+
 //        bool MaiMaRules; //闲家买码
+
 
         public NiuNiuRule(List<string> listDiFen, List<string> listjuShu, List<string> listFangFei,
             List<string> listZiDongKaiZhuo, List<string> listXianJiaTuiZhu, List<string> listShangZhuangFenShu,
