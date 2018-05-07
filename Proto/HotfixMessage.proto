@@ -288,21 +288,27 @@ message CalculateCardResponse // IActorResponse
 {
 	
 }
-// 游戏房间
-//message Room
-//{
-	//required int32 RoomId = 1;  // 局数
-
-	//required string PlayingMethod = 2;  // 玩法
-//}
 // 游戏房间信息
+message GameRoomInfo
+{
+	required int64 RoomId = 1;  // 房间ID
+
+	required string PlayerMode = 2;  // 玩法
+
+	required string Score = 3; // 底分
+
+	required int32 Dish = 4;  // 局数
+
+	required string PayMode = 5; // 支付方式 
+
+	required string PlayerCount = 6; // 人数（格式：当前人数/支持人数）
+}
+// 获取游戏房间列表
 message RoomListRequest // IActorRequest
 {
-	
-
-	required int32 Dish = 2;  // 局数
+	required string GameType = 1;  // 游戏类型
 }
 message RoomListResponse // IActorResponse
 {
-	repeated AccountInfo Players = 3;	
+	repeated GameRoomInfo Rooms = 1;	
 }
