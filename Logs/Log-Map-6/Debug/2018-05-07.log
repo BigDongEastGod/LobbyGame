@@ -1,0 +1,6 @@
+2018-05-07 20:03:43.3772 Map      006 (PlayerManageComponent.cs:57) 新创建：1
+2018-05-07 20:03:47.3866 Map      006 (CreateRoomHandler.cs:21) 房间类型：NN
+2018-05-07 20:03:47.3966 Map      006 (CreateRoomHandler.cs:29) 用户：662864470409257创建房间号：555482
+2018-05-07 20:04:03.6911 Map      006 (PlayerManageComponent.cs:130) 用户ID：662864470409257 延时10000毫秒后删除
+2018-05-07 20:04:13.7009 Map      006 (PlayerManageComponent.cs:136) 准备删除
+2018-05-07 20:04:13.7047 Map      006 (PlayerManageComponent.cs:158) 用户ID：662864470409257撤销删除、因为用户登录了
