@@ -290,8 +290,12 @@ namespace ETHotfix
             // 添加到玩家房间记录
 
             var roomtype = Enum.GetName(typeof(RoomType), this.RoomType);
+            
+            // 如果不存在该游戏类型就创建一个
 
             if (!player.RoomsRecord.ContainsKey(roomtype)) player.RoomsRecord.Add(roomtype, new List<GameRoomInfo>());
+            
+            // 当前房间信息
 
             var gameroominfo = new GameRoomInfo()
             {
@@ -302,17 +306,18 @@ namespace ETHotfix
                 PayMode = ChessRules.PayMode,
                 PlayerCount = this.Players.Count + "/" + ChessRules.PlayerCount
             };
+            
+            // 检查是否有当前房间信息
 
             var roominfo = player.RoomsRecord[roomtype].FirstOrDefault(d => d.RoomId == this.Id);
+            
+            // 如果有就删除
 
-            if (roominfo == null)
-            {
-                player.RoomsRecord[roomtype].Add(gameroominfo);
-            }
-            else
-            {
-                roominfo = gameroominfo;
-            }
+            if (roominfo != null) player.RoomsRecord[roomtype].Remove(roominfo);
+            
+            // 添加房间信息到玩家浏览房间列表
+            
+            player.RoomsRecord[roomtype].Add(gameroominfo);
             
             // 添加委托
 
