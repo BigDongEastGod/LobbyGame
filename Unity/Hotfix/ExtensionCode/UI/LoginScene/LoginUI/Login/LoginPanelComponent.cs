@@ -74,7 +74,7 @@ namespace ETHotfix
 
             try
             {
-                var session = _registPanelUI.GetComponent<RegistPanelComponent>().Session ?? SceneHelperComponent.Instance.CreateRealmSession() ?? SceneHelperComponent.Instance.CreateRealmSession();
+                var session = _registPanelUI.GetComponent<RegistPanelComponent>().Session ?? SceneHelperComponent.Instance.CreateRealmSession();
 
                 SceneHelperComponent.Instance.MonoEvent.RemoveButtonClick(loginSubmitBtn.GetComponent<Button>());
                 LoginResponse response = (LoginResponse) await session.Call(
