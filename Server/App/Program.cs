@@ -83,9 +83,7 @@ namespace App
 						Game.Scene.AddComponent<LocationProxyComponent>();
 						Game.Scene.AddComponent<ActorProxyComponent>();
 						Game.Scene.AddComponent<ActorMessageDispatherComponent>();
-						Game.Scene.AddComponent<PlayerManageComponent>();
 						Game.Scene.AddComponent<DBProxyComponent>();
-						Game.Scene.AddComponent<RoomManageComponent>();
 						break;
 					case AppType.AllServer:
 						Game.Scene.AddComponent<ActorProxyComponent>();

@@ -318,9 +318,6 @@
       <Name>Assembly-CSharp</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ExtensionCode\Helper" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!--<PropertyGroup>-->
   <!--<PostBuildEvent>"$(ProjectDir)\..\Tools\pdb2mdb.exe" $(TargetFileName)</PostBuildEvent>-->
