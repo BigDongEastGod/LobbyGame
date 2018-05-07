@@ -92,3 +92,32 @@
 2018-05-03 10:47:50.8339 Location 005 (LocationComponent.cs:108) location remove key: 1225862990069807
 2018-05-03 10:47:50.8474 Location 005 (LocationComponent.cs:108) location remove key: 662864470409257
 2018-05-03 10:47:50.8537 Map      006 (PlayerManageComponent.cs:128) 删除成功
+2018-05-07 20:03:30.4006 Manager  001 (Program.cs:39) server start........................ 1 Manager
+2018-05-07 20:03:30.5337 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=2 --appType=Realm --config=../Config/StartConfig/JuAnServer
+2018-05-07 20:03:30.5424 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=3 --appType=DB --config=../Config/StartConfig/JuAnServer
+2018-05-07 20:03:30.5460 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=4 --appType=Gate --config=../Config/StartConfig/JuAnServer
+2018-05-07 20:03:30.5503 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=5 --appType=Location --config=../Config/StartConfig/JuAnServer
+2018-05-07 20:03:30.5541 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=6 --appType=Map --config=../Config/StartConfig/JuAnServer
+2018-05-07 20:03:31.3699 DB       003 (Program.cs:39) server start........................ 3 DB
+2018-05-07 20:03:31.3785 Location 005 (Program.cs:39) server start........................ 5 Location
+2018-05-07 20:03:31.3805 Gate     004 (Program.cs:39) server start........................ 4 Gate
+2018-05-07 20:03:31.3813 Realm    002 (Program.cs:39) server start........................ 2 Realm
+2018-05-07 20:03:31.3821 Map      006 (Program.cs:39) server start........................ 6 Map
+2018-05-07 20:03:43.3772 Map      006 (PlayerManageComponent.cs:57) 新创建：1
+2018-05-07 20:03:43.5655 Location 005 (LocationComponent.cs:64) location add key: 662864470409257 instanceId: 1788837783076906
+2018-05-07 20:03:43.6220 Location 005 (LocationComponent.cs:64) location add key: 1225887829655599 instanceId: 1225887829655600
+2018-05-07 20:03:43.7125 Location 005 (LocationComponent.cs:171) location get key: 662864470409257 1788837783076906
+2018-05-07 20:03:47.3866 Map      006 (CreateRoomHandler.cs:21) 房间类型：NN
+2018-05-07 20:03:47.3966 Map      006 (CreateRoomHandler.cs:29) 用户：662864470409257创建房间号：555482
+2018-05-07 20:04:03.6724 Gate     004 (SessionGatePlayerComponent.cs:16) 有用户退出
+2018-05-07 20:04:03.6865 Gate     004 (GatePlayerManageComponent.cs:81) 玩家数量 ：0
+2018-05-07 20:04:03.6911 Map      006 (PlayerManageComponent.cs:130) 用户ID：662864470409257 延时10000毫秒后删除
+2018-05-07 20:04:03.7017 Gate     004 (GatePlayerManageComponent.cs:81) 玩家数量 ：0
+2018-05-07 20:04:06.3228 Location 005 (LocationComponent.cs:72) location remove key: 1225887829655599
+2018-05-07 20:04:06.3425 Location 005 (LocationComponent.cs:72) location remove key: 662864470409257
+2018-05-07 20:04:06.3514 Location 005 (LocationComponent.cs:64) location add key: 662864470409257 instanceId: 1788837783076906
+2018-05-07 20:04:06.3605 Location 005 (LocationComponent.cs:64) location add key: 1225887831162944 instanceId: 1225887831162945
+2018-05-07 20:04:07.8055 Gate     004 (SessionGatePlayerComponent.cs:16) 有用户退出
+2018-05-07 20:04:07.8114 Gate     004 (GatePlayerManageComponent.cs:81) 玩家数量 ：0
+2018-05-07 20:04:13.7009 Map      006 (PlayerManageComponent.cs:136) 准备删除
+2018-05-07 20:04:13.7047 Map      006 (PlayerManageComponent.cs:158) 用户ID：662864470409257撤销删除、因为用户登录了
