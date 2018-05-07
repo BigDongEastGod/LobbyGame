@@ -48,6 +48,12 @@ namespace ETHotfix
         
         public readonly Dictionary<SPlayer, PlayerState> GameStates = new Dictionary<SPlayer, PlayerState>();
 
+        
+        /// <summary>
+        /// 解散房间委托
+        /// </summary>
+        public event Action<long,string> DissolveRoomAction;
+
         #endregion
 
         #region 规则和其他
@@ -270,9 +276,47 @@ namespace ETHotfix
             
             // 添加到玩家房间记录
 
-            if (player.RoomsRecord.Contains(this.Id)) player.RoomsRecord.Add(this.Id);
+            AddRoomsRecord(player);
 
             return "JionRoom";
+        }
+
+        /// <summary>
+        /// 添加到玩家房间记录
+        /// </summary>
+        /// <param name="player"></param>
+        private void AddRoomsRecord(SPlayer player)
+        {
+            // 添加到玩家房间记录
+
+            var roomtype = Enum.GetName(typeof(RoomType), this.RoomType);
+
+            if (!player.RoomsRecord.TryGetValue(roomtype, out var rooms)) player.RoomsRecord.Add(roomtype, new List<GameRoomInfo>());
+
+            var gameroominfo = new GameRoomInfo()
+            {
+                RoomId = this.Id,
+                PlayerMode = ChessRules.PlayerMode,
+                Score = ChessRules.Score,
+                Dish = ChessRules.Dish,
+                PayMode = ChessRules.PayMode,
+                PlayerCount = this.Players.Count + "/" + ChessRules.PlayerCount
+            };
+
+            var roominfo = rooms?.FirstOrDefault(d => d.RoomId == this.Id);
+
+            if (roominfo == null)
+            {
+                rooms?.Add(gameroominfo);
+            }
+            else
+            {
+                roominfo = gameroominfo;
+            }
+            
+            // 添加委托
+
+            DissolveRoomAction += player.DissolveRoomABackCall;
         }
 
         #endregion
@@ -457,6 +501,10 @@ namespace ETHotfix
         public override void DissolveRoom(SPlayer player)
         {
             base.DissolveRoom(player);
+
+            DissolveRoomAction?.Invoke(this.Id, Enum.GetName(typeof(RoomType), this.RoomType));
+
+            if (DissolveRoomAction != null) DissolveRoomAction -= player.DissolveRoomABackCall;
 
             this.Dispose();
         }

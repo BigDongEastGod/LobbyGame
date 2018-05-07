@@ -6,7 +6,7 @@ namespace ETHotfix
     [MessageHandler]
     public class GameInfoAnnunciateHandler : AMHandler<GameInfoAnnunciate>
     {
-        public static Action<GameInfoAnnunciate> GameAction;
+        public static event Action<GameInfoAnnunciate> GameAction;
         
         protected override void Run(Session session, GameInfoAnnunciate message)
         {

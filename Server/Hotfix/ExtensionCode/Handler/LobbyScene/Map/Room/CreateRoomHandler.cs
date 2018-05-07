@@ -25,10 +25,6 @@ namespace ETHotfix
                 var room = RoomManageComponent.Instance.Add(player.Id, message.RoomType);
                 
                 response.RoomId = room?.Id ?? 0;
-                
-                // 添加到玩家房间记录
-
-                if (player.RoomsRecord.Contains(response.RoomId)) player.RoomsRecord.Add(response.RoomId);
 
                 Log.Debug("用户：" + player.Id + "创建房间号：" + response.RoomId);
 
