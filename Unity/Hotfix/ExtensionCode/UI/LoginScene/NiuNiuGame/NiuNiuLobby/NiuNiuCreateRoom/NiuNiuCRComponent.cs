@@ -63,6 +63,7 @@ namespace ETHotfix
             SceneHelperComponent.Instance.MonoEvent.AddButtonClick(nncrCloseBtn.GetComponent<Button>(), () =>
             {
                 nnCreateRoom.SetActive(false);
+                _nnLobby.GetComponent<NiuNiuLobbyComponent>().GetRoomList();
                 _nnLobby.GameObject.SetActive(true);
             });
 
@@ -265,7 +266,7 @@ namespace ETHotfix
                 Debug.Log("创建房间成功,房间号: " + creatRoomResponse.RoomId);
 
                 NNChess nnChess = GetCurrentNnChess();
-                
+
                 // 发送规则
                 var roomRulesResponse = (RoomRulesResponse) await SceneHelperComponent.Instance.Session.Call(
                     new RoomRulesRequest() {RoomId = creatRoomResponse.RoomId, Rules = ProtobufHelper.ToBytes(nnChess)});
@@ -279,7 +280,6 @@ namespace ETHotfix
                     Debug.Log(roomRulesResponse.Message);
                     GameTools.ShowDialogMessage("创建牌局失败!", "GameCanvas");
                 }
-                
             }
             else
             {
@@ -297,7 +297,7 @@ namespace ETHotfix
         {
             var joinRoomResponse = (JoinRoomResponse) await SceneHelperComponent.Instance.Session.Call(
                 new JoinRoomRequest() {RoomId = roomId});
-            
+
             if (joinRoomResponse.Error == 0)
             {
                 Game.Scene.GetComponent<UIComponent>().Create(UIType.NiuNiuMain, UiLayer.Bottom, roomId, false);
@@ -308,7 +308,6 @@ namespace ETHotfix
                 Debug.Log("加入房间失败: " + joinRoomResponse.Message);
                 GameTools.ShowDialogMessage("加入房间失败!", "GameCanvas");
             }
-
         }
 
         /// <summary>
@@ -338,6 +337,11 @@ namespace ETHotfix
                         {
                             playerPush = row.Find($"{NnDpType.XianJiaTuiZhu}/{NnDpType.XianJiaTuiZhu}Dp").GetComponent<Dropdown>().value;
                         }
+                        else
+                        {
+                            playerPush = -1;
+                        }
+
                         break;
                     case "Row4":
                         doubleRules = row.Find($"{NnDpType.FanBeiGuiZe}/{NnDpType.FanBeiGuiZe}Dp").GetComponent<Dropdown>().value;
@@ -348,10 +352,12 @@ namespace ETHotfix
             nnChess.Score = _curretNiuNiuRule.Score[score];
             nnChess.Dish = _curretNiuNiuRule.Dish[dish];
             nnChess.RoomRate = _curretNiuNiuRule.RoomRate[roomRate];
-            nnChess.PlayerPush = _curretNiuNiuRule.PlayerPush[playerPush];
+            nnChess.PlayerPush = playerPush == -1 ? -1 : _curretNiuNiuRule.PlayerPush[playerPush];
             nnChess.AutoGame = _curretNiuNiuRule.AutoGame[autoGame];
             nnChess.DoubleRules = _curretNiuNiuRule.DoubleRules[doubleRules];
 
+            nnChess.PlayerMode = _curretNiuNiuRule.PlayerMode;
+            nnChess.PayMode = roomRate == 0 ? NnDpType.FangZhuPay : NnDpType.AaPay;
 
             nnChess.ShunZiRules = false;
             nnChess.TongHuaRules = false;
