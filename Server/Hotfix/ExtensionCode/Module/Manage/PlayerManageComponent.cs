@@ -53,8 +53,6 @@ namespace ETHotfix
                 player = ComponentFactory.CreateWithId<SPlayer>(accountId);
 
                 Players.Add(player);
-                
-                Log.Debug("新创建：" +Players.Count);
             }
             else
             {
@@ -123,40 +121,28 @@ namespace ETHotfix
         /// 删除SPlayer
         /// </summary>
         /// <param name="player">SPlayer</param>
-        /// <param name="waitTime">等待时间</param>
         /// <returns>如果在一定时间内没有更新该SPlayer就删除</returns>
-        public async Task Remove(SPlayer player, int waitTime = 10000)
+        public async Task Remove(SPlayer player)
         {
-            Log.Debug("用户ID：" + player.Id + " 延时" + waitTime + "毫秒后删除");
-
-            player.IsActivity = false;
-
-            await Task.Delay(waitTime);
-
             Log.Debug("准备删除");
+            
+            // 删除Actor相关组件
 
-            if (player.IsActivity == false)
-            {
-                // 删除Actor相关组件
+            await RemoveActor(player);
 
-                await RemoveActor(player);
+            // 用户管理里删除
 
-                // 用户管理里删除
+            RemovePlayer(player);
 
-                RemovePlayer(player);
+            // 找到用户所在房间、如果有就退出该房间
 
-                // 找到用户所在房间、如果有就退出该房间
+            RoomManageComponent.Instance.GetRommByPlayer(player)?.QuitRoom(player);
+            
+            // Dispose
 
-                RoomManageComponent.Instance.GetRommByPlayer(player)?.QuitRoom(player);
+            if (player.IsDisposed == false) player.Dispose();
 
-                if (player.IsDisposed == false) player.Dispose();
-
-                Log.Debug("删除成功");
-            }
-            else
-            {
-                Log.Debug("用户ID：" + player.Id + "撤销删除、因为用户登录了");
-            }
+            Log.Debug("删除成功");
         }
     }
 }

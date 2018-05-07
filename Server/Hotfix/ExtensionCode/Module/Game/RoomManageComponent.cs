@@ -199,8 +199,8 @@ namespace ETHotfix
         public void Remove(Room room)
         {
             if (room == null || Rooms.FirstOrDefault(d => d == room) == null) return;
-
-            room.DissolveRoom(null);
+            
+            room.Dispose();
 
             Rooms.Remove(room);
         }
@@ -211,13 +211,7 @@ namespace ETHotfix
         /// <param name="roomId">房间ID</param>
         public void Remove(long roomId)
         {
-            var removeroom = Rooms.FirstOrDefault(d => d.Id == roomId);
-
-            if (removeroom == null) return;
-
-            removeroom.DissolveRoom(null);
-
-            Rooms.Remove(removeroom);
+            Rooms.FirstOrDefault(d => d.Id == roomId)?.DissolveRoom(null);
         }
 
         #endregion
