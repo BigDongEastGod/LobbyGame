@@ -145,6 +145,7 @@
       <workItem from="1525254988889" duration="509000" />
       <workItem from="1525315226163" duration="350000" />
       <workItem from="1525315874106" duration="10000" />
+<<<<<<< HEAD
       <workItem from="1525341237356" duration="64000" />
       <workItem from="1525344437710" duration="2000" />
       <workItem from="1525397378537" duration="3000" />
@@ -165,6 +166,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
+<<<<<<< HEAD
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />

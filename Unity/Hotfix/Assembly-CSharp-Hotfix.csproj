@@ -259,8 +259,8 @@
     <Compile Include="ExtensionCode\UI\LoginScene\NiuNiuGame\NiuNiuRoom\NNRoomOperationFactory.cs" />
     <Compile Include="ExtensionCode\UI\LoginScene\NiuNiuGame\NiuNiuRoom\NNRoomRuleInfoComponent.cs" />
     <Compile Include="ExtensionCode\UI\LoginScene\NiuNiuGame\NiuNiuRoom\NNRoomRuleInfoFactory.cs" />
-    <Compile Include="ExtensionCode\UI\LoginScene\NiuNiuGame\NiuNiuRoom\NNShowCardComponent.cs" />
-    <Compile Include="ExtensionCode\UI\LoginScene\NiuNiuGame\NiuNiuRoom\NNShowCardFactory.cs" />
+    <Compile Include="ExtensionCode\UI\LoginScene\NiuNiuGame\NiuNiuRoom\NnShowCardComponent.cs" />
+    <Compile Include="ExtensionCode\UI\LoginScene\NiuNiuGame\NiuNiuRoom\NnShowCardFactory.cs" />
     <Compile Include="Module\FrameSync\OperaComponent.cs" />
     <Compile Include="Entity\Config\UnitConfig.cs" />
     <Compile Include="Module\FrameSync\TestHotfixSubscribMonoEvent_LogString.cs" />
