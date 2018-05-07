@@ -798,13 +798,32 @@ namespace ETHotfix
 
 	}
 
-// 游戏房间
-//message Room
-//{
-//required int32 RoomId = 1;  // 局数
-//required string PlayingMethod = 2;  // 玩法
-//}
 // 游戏房间信息
+	[Message(HotfixOpcode.GameRoomInfo)]
+	[ProtoContract]
+	public partial class GameRoomInfo
+	{
+		[ProtoMember(1, IsRequired = true)]
+		public long RoomId;
+
+		[ProtoMember(2, IsRequired = true)]
+		public string PlayerMode;
+
+		[ProtoMember(3, IsRequired = true)]
+		public string Score;
+
+		[ProtoMember(4, IsRequired = true)]
+		public int Dish;
+
+		[ProtoMember(5, IsRequired = true)]
+		public string PayMode;
+
+		[ProtoMember(6, IsRequired = true)]
+		public string PlayerCount;
+
+	}
+
+// 获取游戏房间列表
 	[Message(HotfixOpcode.RoomListRequest)]
 	[ProtoContract]
 	public partial class RoomListRequest: IActorRequest
@@ -815,8 +834,8 @@ namespace ETHotfix
 		[ProtoMember(93, IsRequired = true)]
 		public long ActorId { get; set; }
 
-		[ProtoMember(2, IsRequired = true)]
-		public int Dish;
+		[ProtoMember(1, IsRequired = true)]
+		public string GameType;
 
 	}
 
@@ -833,8 +852,8 @@ namespace ETHotfix
 		[ProtoMember(92, IsRequired = true)]
 		public string Message { get; set; }
 
-		[ProtoMember(3, TypeName = "ETHotfix.AccountInfo")]
-		public List<AccountInfo> Players = new List<AccountInfo>();
+		[ProtoMember(1, TypeName = "ETHotfix.GameRoomInfo")]
+		public List<GameRoomInfo> Rooms = new List<GameRoomInfo>();
 
 	}
 
