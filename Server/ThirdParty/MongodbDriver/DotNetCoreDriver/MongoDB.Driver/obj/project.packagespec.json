@@ -1,10 +1,17 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
+<<<<<<< HEAD
     "projectUniqueName": "/Users/sining/Projects/JuAnChess/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver/MongoDB.Driver.csproj",
     "projectName": "MongoDB.Driver",
     "projectPath": "/Users/sining/Projects/JuAnChess/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver/MongoDB.Driver.csproj",
     "outputPath": "/Users/sining/Projects/JuAnChess/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver/obj/",
+=======
+    "projectUniqueName": "/MyDocuments/JuAnNetWork/JuAnGame/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver/MongoDB.Driver.csproj",
+    "projectName": "MongoDB.Driver",
+    "projectPath": "/MyDocuments/JuAnNetWork/JuAnGame/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver/MongoDB.Driver.csproj",
+    "outputPath": "/MyDocuments/JuAnNetWork/JuAnGame/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver/obj/",
+>>>>>>> parent of 6052e3b... 1
     "projectStyle": "PackageReference",
     "fallbackFolders": [
       "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
@@ -15,11 +22,19 @@
     "frameworks": {
       "netstandard2.0": {
         "projectReferences": {
+<<<<<<< HEAD
           "/Users/sining/Projects/JuAnChess/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Bson/MongoDB.Bson.csproj": {
             "projectPath": "/Users/sining/Projects/JuAnChess/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Bson/MongoDB.Bson.csproj"
           },
           "/Users/sining/Projects/JuAnChess/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver.Core/MongoDB.Driver.Core.csproj": {
             "projectPath": "/Users/sining/Projects/JuAnChess/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver.Core/MongoDB.Driver.Core.csproj"
+=======
+          "/MyDocuments/JuAnNetWork/JuAnGame/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Bson/MongoDB.Bson.csproj": {
+            "projectPath": "/MyDocuments/JuAnNetWork/JuAnGame/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Bson/MongoDB.Bson.csproj"
+          },
+          "/MyDocuments/JuAnNetWork/JuAnGame/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver.Core/MongoDB.Driver.Core.csproj": {
+            "projectPath": "/MyDocuments/JuAnNetWork/JuAnGame/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver.Core/MongoDB.Driver.Core.csproj"
+>>>>>>> parent of 6052e3b... 1
           }
         }
       }

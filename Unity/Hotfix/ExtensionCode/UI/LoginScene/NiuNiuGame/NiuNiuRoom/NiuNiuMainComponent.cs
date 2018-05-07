@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
+using DG.Tweening;
 using ETModel;
 using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.UI;
-
+ 
 namespace ETHotfix
 {
     [ObjectSystem]
@@ -14,99 +16,108 @@ namespace ETHotfix
             self.Awake(args);
         }
     }
-    
 
-    public class NiuNiuMainComponent:Component
+
+    public class NiuNiuMainComponent : Component
     {
-        private Text roomNum;                        //房间号码文本
-        private long m_roomId;                         //房间号码
-        private UI showCardUI;                       //卡牌存放窗口
-        private Button sitDownBt;                    //坐下按钮
-        private Button startGameBt;                  //开始按钮
-        public GetAccountInfoResponse Player;        //当前玩家数据
-        public RoomInfoResponse roomInfo;            //房间信息
-        private Button betsButton1;
-        private Button betsButton2;
-        private Text bottomScoreText;                //底分文本
+        private Text _roomNum;                        //房间号码文本
+        private long _mRoomId;                         //房间号码
+        private UI _showCardUi;                       //卡牌存放窗口
+        private Button _sitDownBt;                    //坐下按钮
+        private Button _startGameBt;                  //开始按钮
+        private GetAccountInfoResponse _player;        //当前玩家数据
+        private RoomInfoResponse _roomInfo;            //房间信息
+        private Button _betsButton1;
+        private Button _betsButton2;
+        private Text _bottomScoreText;                //底分文本
+        private string _zhuangJiaName;
 
         public void Awake(object[] args)
         {
-            SetRoomInfo(Convert.ToInt64(args[0]),Convert.ToBoolean(args[1]));
+            SetRoomInfo(Convert.ToInt64(args[0]), Convert.ToBoolean(args[1]));
         }
-        
+
         //初始化数据
-        private async void SetRoomInfo(long roomId,bool isSitDown)
+        private async void SetRoomInfo(long roomId, bool isSitDown)
         {
-            ReferenceCollector rc = this.GetParent<UI>().GameObject.GetComponent<ReferenceCollector>();
-            
+            #region GetRoomNeedComponent
+
+            var rc = this.GetParent<UI>().GameObject.GetComponent<ReferenceCollector>();
+
             //房间分线图
             var bg = rc.Get<GameObject>("BgImg");
             //房间号码
             
             //房间信息按钮
-            var roomInfoButton  = rc.Get<GameObject>("RoomInfoButton");
+            var roomInfoButton = rc.Get<GameObject>("RoomInfoButton");
             //下拉窗口按钮
-            var selectButton=rc.Get<GameObject>("SelectButton"); 
+            var selectButton = rc.Get<GameObject>("SelectButton");
             //托管按钮
-            var trusteeshipButton=rc.Get<GameObject>("Trusteeship");
+            var trusteeshipButton = rc.Get<GameObject>("Trusteeship");
             //表情按钮
-            var expressionButton=rc.Get<GameObject>("Expression");
+            var expressionButton = rc.Get<GameObject>("Expression");
             //声音按钮
-            var audioButton=rc.Get<GameObject>("AudioButton");
+            var audioButton = rc.Get<GameObject>("AudioButton");
             //开始游戏按钮
-            startGameBt=rc.Get<GameObject>("StartGameBt").GetComponent<Button>();
+            _startGameBt=rc.Get<GameObject>("StartGameBt").GetComponent<Button>();
             //坐下按钮
-            sitDownBt=rc.Get<GameObject>("SitDownBt").GetComponent<Button>();
+            _sitDownBt=rc.Get<GameObject>("SitDownBt").GetComponent<Button>();
             //不抢庄按钮
-            var noBobButton=rc.Get<GameObject>("NoBobButton");
+            var noBobButton = rc.Get<GameObject>("NoBobButton");
             //抢庄按钮
-            var qiangzhuangBt=rc.Get<GameObject>("qiangzhuangBt");
+            var qiangzhuangBt = rc.Get<GameObject>("qiangzhuangBt");
             //下注选择按钮1
-            betsButton1=rc.Get<GameObject>("BetsButton1").GetComponent<Button>();
+            _betsButton1=rc.Get<GameObject>("BetsButton1").GetComponent<Button>();
             //下注选择按钮2
-            betsButton2=rc.Get<GameObject>("BetsButton2").GetComponent<Button>();
+            _betsButton2=rc.Get<GameObject>("BetsButton2").GetComponent<Button>();
             //复制房间号按钮
-            var copyNumButton=rc.Get<GameObject>("CopyNumButton");
+            var copyNumButton = rc.Get<GameObject>("CopyNumButton");
             //邀请微信好友按钮
-            var invitingFriendsButton=rc.Get<GameObject>("InvitingFriendsButton");
+            var invitingFriendsButton = rc.Get<GameObject>("InvitingFriendsButton");
             //搓牌按钮
-            var shuffleButton=rc.Get<GameObject>("ShuffleButton");
+            var shuffleButton = rc.Get<GameObject>("ShuffleButton");
             //翻牌按钮
-            var flopButton=rc.Get<GameObject>("FlopButton");
+            var flopButton = rc.Get<GameObject>("FlopButton");
             //准备按钮
-            var readyButton=rc.Get<GameObject>("readyButton");
+            var readyButton = rc.Get<GameObject>("readyButton");
             //表情按钮
-            var exitButton=rc.Get<GameObject>("ExitButton");
+            var exitButton = rc.Get<GameObject>("ExitButton");
             //时间
-            var timeTxt=rc.Get<GameObject>("TimeTxt");
+            var timeTxt = rc.Get<GameObject>("TimeTxt");
             //电池
-            var batterySlider=rc.Get<GameObject>("BatterySlider");
+            var batterySlider = rc.Get<GameObject>("BatterySlider");
             //wifi
-            var wiFiImg=rc.Get<GameObject>("WiFiImg");
+            var wiFiImg = rc.Get<GameObject>("WiFiImg");
             //自动翻牌
-            var AutomaticFlopToggle=rc.Get<GameObject>("AutomaticFlopToggle");
+            var automaticFlopToggle = rc.Get<GameObject>("AutomaticFlopToggle");
+            //提示按钮
+            var tipsButton = rc.Get<GameObject>("tipsButton");
+            //亮牌按钮
+            var brightButton=rc.Get<GameObject>("brightButton");
             
-            roomNum = rc.Get<GameObject>("roomNum").GetComponent<Text>();
+            _roomNum = rc.Get<GameObject>("roomNum").GetComponent<Text>();
             //庄位信息
-            var zhuangWeiTxt  = rc.Get<GameObject>("zhuangWei").GetComponent<Text>();
+            var zhuangWeiTxt = rc.Get<GameObject>("zhuangWei").GetComponent<Text>();
             //底分信息
-            bottomScoreText  = rc.Get<GameObject>("BottomScoreText").GetComponent<Text>();
+            _bottomScoreText  = rc.Get<GameObject>("BottomScoreText").GetComponent<Text>();
             //房间局数
             var roomCountText  = rc.Get<GameObject>("roomCountText").GetComponent<Text>();
-            
+
+            #endregion
+         
             //获取当前账号
             var accountResponse = (GetAccountInfoResponse) await SceneHelperComponent.Instance.Session.Call(new GetAccountInfoRequest());
-            Player = accountResponse;
+            _player = accountResponse;
             
             //请求获得当前房间准备好的玩家信息
             var response =(RoomInfoResponse) await SceneHelperComponent.Instance.Session.Call(new RoomInfoRequest() {RoomId = roomId});
-            roomInfo = response;
+            _roomInfo = response;
             //获得房间规则信息
             var rules = response.Rules == null ? null : ProtobufHelper.FromBytes<NNChess>(response.Rules);
             //设置房间号
             Debug.Log("roomId"+roomId);
-            m_roomId = roomId;
-            roomNum.text = roomId.ToString();
+            _mRoomId = roomId;
+            _roomNum.text = roomId.ToString();
             //TODo.....庄位信息
             //zhuangWeiTxt=rules.
 
@@ -119,48 +130,57 @@ namespace ETHotfix
             //设置房间人数
             showCardUI.GetComponent<NNShowCardComponent>().roomPeople =rules.PlayerCount;
             //加载所需要的位置信息
-            showCardUI.GetComponent<NNShowCardComponent>().GetCurrentTablePos();
+            _showCardUi.GetComponent<NnShowCardComponent>().GetCurrentTablePos();
             
             //房间信息窗口事件注册
-            SceneHelperComponent.Instance.MonoEvent.AddButtonClick(roomInfoButton.GetComponent<Button>(), () =>
-            {
-                Game.Scene.GetComponent<UIComponent>().Create(UIType.NNRoomRuleInfoUIForm,UiLayer.Top);
-            });
-       
-            
+            SceneHelperComponent.Instance.MonoEvent.AddButtonClick(roomInfoButton.GetComponent<Button>(),
+                () => { Game.Scene.GetComponent<UIComponent>().Create(UIType.NNRoomRuleInfoUIForm, UiLayer.Top); });
+
             //坐下按钮事件注册
-            SceneHelperComponent.Instance.MonoEvent.AddButtonClick(sitDownBt.GetComponent<Button>(), GetRoomInfo);
+            SceneHelperComponent.Instance.MonoEvent.AddButtonClick(_sitDownBt.GetComponent<Button>(), GetRoomInfo);
             
             //下拉按钮注册
             SceneHelperComponent.Instance.MonoEvent.AddButtonClick(selectButton.GetComponent<Button>(), () =>
             {
-                object[] arg = new object[] {m_roomId,this};
+                object[] arg = new object[] {_mRoomId,this};
                 Game.Scene.GetComponent<UIComponent>().Create(UIType.NNRoomOperation, UiLayer.Top,arg);
             });
-            
+
             //开始按钮注册
-            SceneHelperComponent.Instance.MonoEvent.AddButtonClick(startGameBt.GetComponent<Button>(), StartGameOclick);
+            SceneHelperComponent.Instance.MonoEvent.AddButtonClick(_startGameBt.GetComponent<Button>(), StartGameOclick);
             
+
 
             //获取房间准备号玩家的数据
             GetAllReadyInfo();
-            
-            RoomInfoAnnunciateHandler.RoomAction += RoomBack;
-            GameInfoAnnunciateHandler.GameAction += GameBack;
-            
-            if (isSitDown)
-            {
-                SitDown(-1,Player.AccountInfo.UserName);
-            }
-            else
-            {
-                sitDownBt.gameObject.SetActive(true);
-            }
+
+//            RoomInfoAnnunciateHandler.RoomAction += RoomBack;
+//            GameInfoAnnunciateHandler.GameAction += GameBack;
+
+            #region 短线处理
+
+//            //如果是短线重连，判断是否已经坐下
+//            if (isSitDown)
+//            {
+//                SitDown(-1,_player.AccountInfo.UserName);
+//            }
+//            else
+//            {
+//                _sitDownBt.gameObject.SetActive(true);
+//            }
+//
+//            Game.Scene.GetComponent<PingComponent>().PingBackCall = () =>
+//            {
+//                GameTools.ReLoading("GameCanvas");
+//            };
+
+            #endregion
+
+            //Test();
+
 
         }
-
-      
-
+        
         //房间回调
         public void RoomBack(RoomInfoAnnunciate obj)
         {
@@ -184,9 +204,10 @@ namespace ETHotfix
             }
         }
         
+        //房间游戏回调
         public void GameBack(GameInfoAnnunciate obj)
         {
-           Debug.Log("收到回调"+obj.Message);
+            Debug.Log("收到回调"+obj.Message);
             switch (obj.Message)
             {
                 case 0://显示下注按钮
@@ -196,6 +217,15 @@ namespace ETHotfix
                 case 1://下注完成
                     ShowBet(obj.UserName,SerializeHelper.Instance.DeserializeObject<int>(obj.Arg));
                     break;
+                case 2://抢庄
+                    ShowZhuangJiaIcon(obj.UserName);
+                    _zhuangJiaName = obj.UserName;
+                    break;
+                case 3://发牌
+                    var pokerCard= SerializeHelper.Instance.DeserializeObject<List<PokerCard>>(obj.Arg);
+                    Licensing(pokerCard);
+                    break;
+                    
             }
         }
         
@@ -209,7 +239,7 @@ namespace ETHotfix
                 SitDown(-1,Player.AccountInfo.UserName);
             }
         }
-
+ 
         //其他玩家的头像创建
         private void GetAllReadyInfo()
         {
@@ -221,7 +251,7 @@ namespace ETHotfix
                 }
             }
         }
-
+ 
         //坐下
         private void SitDown(int chairIndex,string username)
         {
@@ -257,20 +287,75 @@ namespace ETHotfix
                 betsButton2.onClick.AddListener(()=>AddBetsEvent(scroeStr[1]));
             }
         }
-
+ 
         //向服务器发送下注请求
         private async void AddBetsEvent(string score)
         {
             var betsResponse =(BetGameResponse) await SceneHelperComponent.Instance.Session.Call(new BetGameRequest(){Bet=int.Parse(score)});
-            if(betsResponse.Error==0) 
-                Debug.Log("下注成功，底分为:"+score);
-        }
+            if (betsResponse.Error != 0) return;
+            Debug.Log("下注成功，底分为:"+score);
+            _betsButton1.gameObject.SetActive(false);
+            _betsButton2.gameObject.SetActive(false);
+            _showCardUi.GetComponent<NnShowCardComponent>().ShowBets(_player.AccountInfo.UserName,int.Parse(score));
 
+        }
+ 
         //显示下注的分数
         private void ShowBet(string userName,int score)
         {
             showCardUI.GetComponent<NNShowCardComponent>().ShowBets(userName, score);
         }
+        
+        //显示庄家
+        private void ShowZhuangJiaIcon(string userName)
+        {
+            _startGameBt.gameObject.SetActive(false);
+            _showCardUi.GetComponent<NnShowCardComponent>().ShowZhuangJiaIcon(userName);
+        }
+        
+        //发牌
+        private void Licensing(List<PokerCard> pokerCards)
+        {
+            _showCardUi.GetComponent<NnShowCardComponent>().Licensing(pokerCards);
+        }
+
+
+        private void Test()
+        {
+            var accountInfo=new AccountInfo(){UserName = "1"};
+            _showCardUi.GetComponent<NnShowCardComponent>().CreateHead(-1,accountInfo);
+            var accountInfo1=new AccountInfo(){UserName = "2"};
+            _showCardUi.GetComponent<NnShowCardComponent>().CreateHead(0,accountInfo1);
+            var accountInfo2=new AccountInfo(){UserName = "3"};
+            _showCardUi.GetComponent<NnShowCardComponent>().CreateHead(1,accountInfo2);
+            var accountInfo3=new AccountInfo(){UserName = "4"};
+            _showCardUi.GetComponent<NnShowCardComponent>().CreateHead(2,accountInfo3);
+            var accountInfo4=new AccountInfo(){UserName = "5"};
+            _showCardUi.GetComponent<NnShowCardComponent>().CreateHead(3,accountInfo4);
+            var accountInfo5=new AccountInfo(){UserName = "6"};
+            _showCardUi.GetComponent<NnShowCardComponent>().CreateHead(4,accountInfo5);
+            
+            
+            List<PokerCard> list=new List<PokerCard>();
+            for (var i = 0; i < 5; i++)
+            {
+                PokerCard temp = new PokerCard
+                {
+                    CardNumber = i,
+                    CardType = 0
+                };
+                list.Add(temp);
+            }
+
+            _player.AccountInfo.UserName = "1";
+            Licensing(list);
+        }
 
     }
 }
+        
+        
+        
+
+
+
