@@ -352,6 +352,9 @@ namespace ETHotfix
             nnChess.AutoGame = _curretNiuNiuRule.AutoGame[autoGame];
             nnChess.DoubleRules = _curretNiuNiuRule.DoubleRules[doubleRules];
 
+            nnChess.PlayerMode = _curretNiuNiuRule.PlayerMode;
+
+            nnChess.PayMode = roomRate == 0 ? NnDpType.FangZhuPay : NnDpType.AaPay;
 
             nnChess.ShunZiRules = false;
             nnChess.TongHuaRules = false;

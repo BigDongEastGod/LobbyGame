@@ -66,11 +66,6 @@ namespace ETHotfix
         /// <param name="loginPwdText"></param>
         public async void OnLoginSubmitBtn(InputField loginNameText, InputField loginPwdText)
         {
-            Debug.Log("UserName: " + loginNameText);
-            Debug.Log("Password: " + loginPwdText);
-            Debug.Log("PlayerPrefs.username: " + PlayerPrefs.GetString("username"));
-            Debug.Log("PlayerPrefs.password: " + PlayerPrefs.GetString("password"));
-
             if (String.IsNullOrWhiteSpace(loginPwdText.text) || String.IsNullOrWhiteSpace(loginNameText.text))
             {
                 GameTools.ShowDialogMessage("帐号或密码不能为空!", "LoginCanvas");

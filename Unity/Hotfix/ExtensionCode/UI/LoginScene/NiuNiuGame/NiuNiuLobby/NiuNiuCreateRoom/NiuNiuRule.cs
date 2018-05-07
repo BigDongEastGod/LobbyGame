@@ -24,9 +24,8 @@ namespace ETHotfix
 
         public List<List<string>> DoubleRules; //翻倍规则
 
-        // 玩法类型
-        public string PlayerMode;
-        // 
+//        public List<string> PayMode;// 支付方式
+        public string PlayerMode; // 玩法类型
 
 //        bool ShunZiRules; //顺子牛
 
@@ -77,6 +76,15 @@ namespace ETHotfix
         public const string ShangZhuangFenShu = "ShangZhuangFenShu";
         public const string ZuiDaQiangZhuang = "ZuiDaQiangZhuang";
         public const string FanBeiGuiZe = "FanBeiGuiZe";
+
+        public const string NiuNiuShangZhuang = "牛牛上庄";
+        public const string GuDingZhuangJia = "固定庄家";
+        public const string ZiYouQiangZhuang = "自由抢庄";
+        public const string MingPaiQiangZhuang = "明牌抢庄";
+        public const string TongBiNiuNiu = "通比牛牛";
+        
+        public const string FangZhuPay = "房主";
+        public const string AaPay = "AA";
     }
 
     public static class NiuNiuRuleInstance
@@ -103,7 +111,8 @@ namespace ETHotfix
             {
                 new List<string>() {"0/4", "9/3", "8/2", "7/2"},
                 new List<string>() {"0/3", "9/2", "8/2"}
-            }
+            },
+            PlayerMode = NnDpType.NiuNiuShangZhuang
         };
 
         #endregion
@@ -130,7 +139,8 @@ namespace ETHotfix
             {
                 new List<string>() {"0/4", "9/3", "8/2", "7/2"},
                 new List<string>() {"0/3", "9/2", "8/2"}
-            }
+            },
+            PlayerMode = NnDpType.GuDingZhuangJia
         };
 
         #endregion
@@ -157,7 +167,8 @@ namespace ETHotfix
             {
                 new List<string>() {"0/4", "9/3", "8/2", "7/2"},
                 new List<string>() {"0/3", "9/2", "8/2"}
-            }
+            },
+            PlayerMode = NnDpType.ZiYouQiangZhuang
         };
 
         #endregion
@@ -184,7 +195,8 @@ namespace ETHotfix
             {
                 new List<string>() {"0/4", "9/3", "8/2", "7/2"},
                 new List<string>() {"0/3", "9/2", "8/2"}
-            }
+            },
+            PlayerMode = NnDpType.MingPaiQiangZhuang
         };
 
         #endregion
@@ -211,7 +223,8 @@ namespace ETHotfix
             {
                 new List<string>() {"0/4", "9/3", "8/2", "7/2"},
                 new List<string>() {"0/3", "9/2", "8/2"}
-            }
+            },
+            PlayerMode = NnDpType.TongBiNiuNiu
         };
 
         #endregion
