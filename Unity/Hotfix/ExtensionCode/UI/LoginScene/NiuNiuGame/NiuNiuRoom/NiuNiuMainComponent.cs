@@ -91,7 +91,7 @@ namespace ETHotfix
             //提示按钮
             var tipsButton=rc.Get<GameObject>("tipsButton");
             //亮牌按钮
-            var brightButton=rc.Get<GameObject>("brightButton");
+            var brightButton=rc.Get<GameObject>("brightButton");   
             
             _roomNum = rc.Get<GameObject>("roomNum").GetComponent<Text>();
             //庄位信息
