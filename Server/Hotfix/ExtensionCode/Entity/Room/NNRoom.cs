@@ -47,13 +47,7 @@ namespace ETHotfix
         /// </summary>
         
         public readonly Dictionary<SPlayer, PlayerState> GameStates = new Dictionary<SPlayer, PlayerState>();
-
         
-        /// <summary>
-        /// 解散房间委托
-        /// </summary>
-        public event Action<long,string> DissolveRoomAction;
-
         #endregion
 
         #region 规则和其他
@@ -261,7 +255,7 @@ namespace ETHotfix
             // 当玩家已经在这个房间里
 
             if (Players.Contains(player) || Guest.Contains(player)) return "InRomm";
-            
+
             // 发送数据给房间所有人
 
             var response = new RoomInfoAnnunciate() {UserName = player.Account.UserName, Message = 0};
@@ -269,59 +263,25 @@ namespace ETHotfix
             Players.Where(d => d != player && d.IsActivity).ForEach(d => d.GetActorProxy.Send(response));
 
             Guest.Where(d => d != player && d.IsActivity).ForEach(d => d.GetActorProxy.Send(response));
-            
+
             // 添加玩家到客人列表
-            
+
             Guest.Add(player);
-            
+
             // 添加到玩家房间记录
 
-            AddRoomsRecord(player);
+            player.AddRoomsRecord(
+                new GameRoomInfo()
+                {
+                    RoomId = this.Id,
+                    PlayerMode = ChessRules.PlayerMode,
+                    Score = ChessRules.Score,
+                    Dish = ChessRules.Dish,
+                    PayMode = ChessRules.PayMode,
+                    PlayerCount = this.Players.Count + "/" + ChessRules.PlayerCount
+                }, this);
 
             return "JionRoom";
-        }
-
-        /// <summary>
-        /// 添加到玩家房间记录
-        /// </summary>
-        /// <param name="player"></param>
-        private void AddRoomsRecord(SPlayer player)
-        {
-            // 添加到玩家房间记录
-
-            var roomtype = Enum.GetName(typeof(RoomType), this.RoomType);
-            
-            // 如果不存在该游戏类型就创建一个
-
-            if (!player.RoomsRecord.ContainsKey(roomtype)) player.RoomsRecord.Add(roomtype, new List<GameRoomInfo>());
-            
-            // 当前房间信息
-
-            var gameroominfo = new GameRoomInfo()
-            {
-                RoomId = this.Id,
-                PlayerMode = ChessRules.PlayerMode,
-                Score = ChessRules.Score,
-                Dish = ChessRules.Dish,
-                PayMode = ChessRules.PayMode,
-                PlayerCount = this.Players.Count + "/" + ChessRules.PlayerCount
-            };
-            
-            // 检查是否有当前房间信息
-
-            var roominfo = player.RoomsRecord[roomtype].FirstOrDefault(d => d.RoomId == this.Id);
-            
-            // 如果有就删除
-
-            if (roominfo != null) player.RoomsRecord[roomtype].Remove(roominfo);
-            
-            // 添加房间信息到玩家浏览房间列表
-            
-            player.RoomsRecord[roomtype].Add(gameroominfo);
-            
-            // 添加委托
-
-            DissolveRoomAction += player.DissolveRoomABackCall;
         }
 
         #endregion
@@ -507,11 +467,7 @@ namespace ETHotfix
         {
             base.DissolveRoom(player);
             
-            DissolveRoomAction?.Invoke(this.Id, Enum.GetName(typeof(RoomType), this.RoomType));
-
-            if (DissolveRoomAction != null) DissolveRoomAction -= player.DissolveRoomABackCall;
-
-            this.Dispose();
+            RoomManageComponent.Instance.Remove(this);
         }
 
         public override void Dispose()
@@ -520,11 +476,27 @@ namespace ETHotfix
             
             base.Dispose();
             
+            // 解散房间、清空所有事件委托
+            
+            DissolveRoomAction?.Invoke(this.Id, Enum.GetName(typeof(RoomType), this.RoomType));
+
+            while (DissolveRoomAction != null) DissolveRoomAction -= DissolveRoomAction;
+            
+            // 清空房间所有成员变量
+            
             Players.Clear();
             
             Guest.Clear();
+            
+            Cards.Clear();
+            
+            GameQueue.Clear();
+            
+            GameStates.Clear();
 
-            RoomManageComponent.Instance.Remove(this);
+            ChessRules = null;
+
+            CurrentDish = 0;
         }
 
         #endregion
