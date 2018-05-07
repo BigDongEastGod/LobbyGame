@@ -17,60 +17,57 @@ namespace ETHotfix
             
             try
             {
-                var rooms = RoomManageComponent.Instance.GetRooms(player);
-
-                var roomsResponse = new List<Room>();
-
-                foreach (var room in rooms)
+                switch (message.GameType)
                 {
-                    switch (@room.RoomType)
-                    {
-                        case RoomType.NN:  // 牛牛
+                    case "NN":  // 牛牛
 
-                            #region 牛牛游戏
+                        #region 牛牛游戏
                             
-                            var roomInfos = new List<GameRoomInfo>();
+                        var roomInfos = new List<GameRoomInfo>();
 
-                            for (var i = 0; i < player.RoomsRecord.Count; i++)
+                        for (var i = 0; i < player.RoomsRecord.Count; i++)
+                        {
+                            // 根据房间号获取房间
+                                
+                            var roominfo = RoomManageComponent.Instance.GetRoom(player.RoomsRecord.ElementAt(i));
+
+                            // 如果房间为空或没有规则就删除浏览记录
+                                
+                            if (roominfo?.Rules == null)
                             {
-                                // 根据房间号获取房间
-                                
-                                var roominfo = RoomManageComponent.Instance.GetRoom(player.RoomsRecord.ElementAt(i));
+                                player.RoomsRecord.RemoveAt(i);
 
-                                // 如果房间为空或没有规则就删除浏览记录
-                                
-                                if (roominfo?.Rules == null)
-                                {
-                                    player.RoomsRecord.RemoveAt(i);
-
-                                    continue;
-                                }
-                                
-                                // 获取规则并添加到发送房间列表里
-
-                                var rule = ProtobufHelper.FromBytes<NNChess>(roominfo.Rules);
-
-                                roomInfos.Add(new GameRoomInfo()
-                                {
-                                    RoomId = roominfo.Id,
-                                    PlayerMode = rule.PlayerMode,
-                                    Score = rule.Score,
-                                    Dish = rule.Dish,
-                                    PayMode = rule.PayMode,
-                                    PlayerCount = roominfo.Players.Count + "/" + rule.PlayerCount
-                                });
+                                continue;
                             }
 
-                            response.Rooms = roomInfos;
+                            // 判断房间类型
                             
-                            #endregion
+                            if (Enum.GetName(typeof(RoomType), roominfo.RoomType) != "NN") continue;
 
-                            break;
-                        
-                        case RoomType.DDZ:
+                            // 获取规则并添加到发送房间列表里
+
+                            var rule = ProtobufHelper.FromBytes<NNChess>(roominfo.Rules);
+
+                            roomInfos.Add(new GameRoomInfo()
+                            {
+                                RoomId = roominfo.Id,
+                                PlayerMode = rule.PlayerMode,
+                                Score = rule.Score,
+                                Dish = rule.Dish,
+                                PayMode = rule.PayMode,
+                                PlayerCount = roominfo.Players.Count + "/" + rule.PlayerCount
+                            });
+                        }
+
+                        response.Rooms = roomInfos;
                             
-                            break;
-                    }
+                        #endregion
+
+                        break;
+                        
+                    case "DDZ":
+                            
+                        break;
                 }
             }
             catch (Exception e)

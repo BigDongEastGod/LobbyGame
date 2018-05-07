@@ -306,7 +306,7 @@ message GameRoomInfo
 // 获取游戏房间列表
 message RoomListRequest // IActorRequest
 {
-	
+	required string GameType = 1;  // 游戏类型
 }
 message RoomListResponse // IActorResponse
 {
