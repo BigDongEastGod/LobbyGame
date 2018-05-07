@@ -1,10 +1,17 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
+<<<<<<< HEAD
     "projectUniqueName": "/Users/sining/Projects/JuAnChess/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Bson/MongoDB.Bson.csproj",
     "projectName": "MongoDB.Bson",
     "projectPath": "/Users/sining/Projects/JuAnChess/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Bson/MongoDB.Bson.csproj",
     "outputPath": "/Users/sining/Projects/JuAnChess/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Bson/obj/",
+=======
+    "projectUniqueName": "/MyDocuments/JuAnNetWork/JuAnGame/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Bson/MongoDB.Bson.csproj",
+    "projectName": "MongoDB.Bson",
+    "projectPath": "/MyDocuments/JuAnNetWork/JuAnGame/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Bson/MongoDB.Bson.csproj",
+    "outputPath": "/MyDocuments/JuAnNetWork/JuAnGame/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Bson/obj/",
+>>>>>>> parent of 6052e3b... 1
     "projectStyle": "PackageReference",
     "fallbackFolders": [
       "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
