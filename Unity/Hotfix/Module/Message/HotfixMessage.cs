@@ -414,6 +414,12 @@ namespace ETHotfix
 		[ProtoMember(17, IsRequired = true)]
 		public int PlayerCount;
 
+		[ProtoMember(18, IsRequired = true)]
+		public string PlayerMode;
+
+		[ProtoMember(19, IsRequired = true)]
+		public string PayMode;
+
 	}
 
 // 游戏房间规则

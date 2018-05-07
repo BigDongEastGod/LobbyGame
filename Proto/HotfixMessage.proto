@@ -159,7 +159,11 @@ message NNChess
 
 	required bool MaiMaRules = 16;  // 闲家买码
 
-	required int32 PlayerCount = 17;  // 人数	
+	required int32 PlayerCount = 17;  // 人数
+
+	required string PlayerMode = 18;  // 玩法
+
+	required string PayMode = 19; // 支付方式 	
 }
 // 游戏房间规则
 message RoomRulesRequest // IActorRequest
