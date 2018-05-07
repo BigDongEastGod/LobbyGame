@@ -7,3 +7,12 @@
 /Users/sining/Projects/JuAnChess/LobbyGame/Server/Model/obj/Debug/Server.Model.AssemblyInfo.cs
 /Users/sining/Projects/JuAnChess/LobbyGame/Server/Model/obj/Debug/Model.dll
 /Users/sining/Projects/JuAnChess/LobbyGame/Server/Model/obj/Debug/Model.pdb
+/Users/juankeji/JuAn/LobbyGame/Bin/Model.deps.json
+/Users/juankeji/JuAn/LobbyGame/Bin/Model.dll
+/Users/juankeji/JuAn/LobbyGame/Bin/Model.pdb
+/Users/juankeji/JuAn/LobbyGame/Server/Model/obj/Debug/Server.Model.csprojResolveAssemblyReference.cache
+/Users/juankeji/JuAn/LobbyGame/Server/Model/obj/Debug/Server.Model.csproj.CoreCompileInputs.cache
+/Users/juankeji/JuAn/LobbyGame/Server/Model/obj/Debug/Server.Model.AssemblyInfoInputs.cache
+/Users/juankeji/JuAn/LobbyGame/Server/Model/obj/Debug/Server.Model.AssemblyInfo.cs
+/Users/juankeji/JuAn/LobbyGame/Server/Model/obj/Debug/Model.dll
+/Users/juankeji/JuAn/LobbyGame/Server/Model/obj/Debug/Model.pdb
