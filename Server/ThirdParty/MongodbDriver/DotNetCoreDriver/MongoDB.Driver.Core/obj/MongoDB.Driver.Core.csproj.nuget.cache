@@ -1,5 +1,9 @@
 {
   "version": 1,
+<<<<<<< HEAD
   "dgSpecHash": "KRaSx7BOxj6Kwp3NC59Zo31rnOaLx/UNtnbm42FrnYmjhBYglnfbMmCLDCk/S5e/cfyEtEuA347Z+/Go3fv6Uw==",
+=======
+  "dgSpecHash": "c2uYGjxYSAkMHye0nnlZJGL/pPI+AIWxWUlQAXAmXUxfxeBFgSzRUscBFe6MMA0ly4zcp4+Z0E3UZYnutTkVTg==",
+>>>>>>> parent of 6052e3b... 1
   "success": true
 }
