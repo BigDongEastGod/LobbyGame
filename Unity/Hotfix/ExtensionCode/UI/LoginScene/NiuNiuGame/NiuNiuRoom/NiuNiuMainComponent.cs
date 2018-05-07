@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using DG.Tweening;
 using ETModel;
 using JetBrains.Annotations;
 using UnityEngine;
@@ -37,7 +39,9 @@ namespace ETHotfix
         //初始化数据
         private async void SetRoomInfo(long roomId,bool isSitDown)
         {
-            ReferenceCollector rc = this.GetParent<UI>().GameObject.GetComponent<ReferenceCollector>();
+            #region GetRoomNeedComponent
+
+            var rc = this.GetParent<UI>().GameObject.GetComponent<ReferenceCollector>();
             
             //房间分线图
             var bg = rc.Get<GameObject>("BgImg");
@@ -84,7 +88,11 @@ namespace ETHotfix
             //wifi
             var wiFiImg=rc.Get<GameObject>("WiFiImg");
             //自动翻牌
-            var AutomaticFlopToggle=rc.Get<GameObject>("AutomaticFlopToggle");
+            var automaticFlopToggle=rc.Get<GameObject>("AutomaticFlopToggle");
+            //提示按钮
+            var tipsButton=rc.Get<GameObject>("tipsButton");
+            //亮牌按钮
+            var brightButton=rc.Get<GameObject>("brightButton");
             
             roomNum = rc.Get<GameObject>("roomNum").GetComponent<Text>();
             //庄位信息
@@ -145,17 +153,30 @@ namespace ETHotfix
             //获取房间准备号玩家的数据
             GetAllReadyInfo();
             
-            RoomInfoAnnunciateHandler.RoomAction += RoomBack;
-            GameInfoAnnunciateHandler.GameAction += GameBack;
-            
-            if (isSitDown)
-            {
-                SitDown(-1,Player.AccountInfo.UserName);
-            }
-            else
-            {
-                sitDownBt.gameObject.SetActive(true);
-            }
+//            RoomInfoAnnunciateHandler.RoomAction += RoomBack;
+//            GameInfoAnnunciateHandler.GameAction += GameBack;
+
+            #region 短线处理
+
+//            //如果是短线重连，判断是否已经坐下
+//            if (isSitDown)
+//            {
+//                SitDown(-1,_player.AccountInfo.UserName);
+//            }
+//            else
+//            {
+//                _sitDownBt.gameObject.SetActive(true);
+//            }
+//
+//            Game.Scene.GetComponent<PingComponent>().PingBackCall = () =>
+//            {
+//                GameTools.ReLoading("GameCanvas");
+//            };
+
+            #endregion
+
+           //Test();
+
 
         }
 
@@ -196,6 +217,15 @@ namespace ETHotfix
                 case 1://下注完成
                     ShowBet(obj.UserName,SerializeHelper.Instance.DeserializeObject<int>(obj.Arg));
                     break;
+                case 2://抢庄
+                    ShowZhuangJiaIcon(obj.UserName);
+                    _zhuangJiaName = obj.UserName;
+                    break;
+                case 3://发牌
+                    var pokerCard= SerializeHelper.Instance.DeserializeObject<List<PokerCard>>(obj.Arg);
+                    Licensing(pokerCard);
+                    break;
+                    
             }
         }
         
@@ -270,6 +300,19 @@ namespace ETHotfix
         private void ShowBet(string userName,int score)
         {
             showCardUI.GetComponent<NNShowCardComponent>().ShowBets(userName, score);
+        }
+        
+        //显示庄家
+        private void ShowZhuangJiaIcon(string userName)
+        {
+            _startGameBt.gameObject.SetActive(false);
+            _showCardUi.GetComponent<NnShowCardComponent>().ShowZhuangJiaIcon(userName);
+        }
+        
+        //发牌
+        private void Licensing(List<PokerCard> pokerCards)
+        {
+            _showCardUi.GetComponent<NnShowCardComponent>().Licensing(pokerCards);
         }
 
     }

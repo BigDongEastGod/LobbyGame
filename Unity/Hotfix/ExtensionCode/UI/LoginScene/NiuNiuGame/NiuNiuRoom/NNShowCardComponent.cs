@@ -4,7 +4,10 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using ETModel;
 using UnityEngine;
-using UnityEngine.UI;
+using DG.Tweening;
+using DG;
+using NPOI.SS.Formula.Functions;
+using Text = UnityEngine.UI.Text;
 
 namespace ETHotfix
 {
@@ -21,43 +24,43 @@ namespace ETHotfix
     public class NNShowCardComponent:Component
     {
         #region variable
+
+        private List<Vector2> _sixTableList;                         //六人桌的位置
+        private List<Vector2> _eightTableList;                       //八人桌的位置
+        public int RoomPeople;                                     //房间人数
         
-        public List<Vector2> sixTableList;                         //六人桌的位置
-        public List<Vector2> eightTableList;                       //八人桌的位置
-        public int roomPeople;                                     //房间人数
-        
-        private List<Vector2> currentTablePosList;                 //当前房间位置
-        private Transform currentTableObj;                         //当前桌子
-        private GameObject NNCardPrefab;                           //卡牌预设
-        private Dictionary<string,ReferenceCollector> HeadUIDict;  //头像位置列表
-        private string[] chairArray;                               //椅子管理数组
-        private Dictionary<int,UI> cardUIDict;                     //卡牌位置列表
-        private RectTransform mainHeadPos;                         //主头像位置
-        private RectTransform mainCardPos;                         //主卡牌像位置
-        private Vector2 LicensingPos;                              //发牌位置 
-        private ReferenceCollector rc;
-        private Dictionary<short,List<UI>> NiuNiuCardDict;         //游戏中生产的卡牌
-        private GameObject headUIform;
+        private List<Vector2> _currentTablePosList;                 //当前房间位置
+        private Transform _currentTableObj;                         //当前桌子
+        private GameObject _nnCardPrefab;                           //卡牌预设
+        private Dictionary<string,ReferenceCollector> _headUiDict;  //头像位置列表
+        private string[] _chairArray;                               //椅子管理数组
+        private Dictionary<int,UI> _cardUiDict;                     //卡牌位置列表
+        private RectTransform _mainHeadPos;                         //主头像位置
+        private RectTransform _mainCardPos;                         //主卡牌像位置
+        private Vector2 _licensingPos;                              //发牌位置 
+        private ReferenceCollector _rc;
+        private Dictionary<short,List<UI>> _niuNiuCardDict;         //游戏中生产的卡牌
+        private GameObject _headUIform;
      
 
         #endregion
  
         public async void Awake()
         {
-            sixTableList=new List<Vector2>();
-            eightTableList=new List<Vector2>();
-            HeadUIDict=new Dictionary<string, ReferenceCollector>();
-            chairArray=new string[8];
-            cardUIDict=new Dictionary<int, UI>();
-            currentTablePosList=new List<Vector2>();
-            NiuNiuCardDict=new Dictionary<short, List<UI>>();
-            rc = this.GetParent<UI>().GameObject.GetComponent<ReferenceCollector>();
-            mainCardPos = rc.Get<GameObject>("MainCardPos").GetComponent<RectTransform>();
-            mainHeadPos = rc.Get<GameObject>("mainHeadPos").GetComponent<RectTransform>();
-            var mainTitle = rc.Get<GameObject>("mainTitle");
-            LicensingPos = rc.Get<GameObject>("LicensingPos").GetComponent<RectTransform>().anchoredPosition;
-            NNCardPrefab= rc.Get<GameObject>("NiuNIuCard");
-            headUIform=rc.Get<GameObject>("HeadUIForm");
+            _sixTableList=new List<Vector2>();
+            _eightTableList=new List<Vector2>();
+            _headUiDict=new Dictionary<string, ReferenceCollector>();
+            _chairArray=new string[8];
+            _cardUiDict=new Dictionary<int, UI>();
+            _currentTablePosList=new List<Vector2>();
+            _niuNiuCardDict=new Dictionary<short, List<UI>>();
+            _rc = this.GetParent<UI>().GameObject.GetComponent<ReferenceCollector>();
+            _mainCardPos = _rc.Get<GameObject>("MainCardPos").GetComponent<RectTransform>();
+            _mainHeadPos = _rc.Get<GameObject>("mainHeadPos").GetComponent<RectTransform>();
+            var mainTitle = _rc.Get<GameObject>("mainTitle");
+            _licensingPos = _rc.Get<GameObject>("LicensingPos").GetComponent<RectTransform>().anchoredPosition;
+            _nnCardPrefab= _rc.Get<GameObject>("NiuNIuCard");
+            _headUIform=_rc.Get<GameObject>("HeadUIForm");
         }
         
         //屏幕适配需要获得的位置
@@ -73,10 +76,10 @@ namespace ETHotfix
         //获取当前房间出牌，头像的位置
         public void GetCurrentTablePos()
         {
-            var sixTable = rc.Get<GameObject>("sixTable");
-            var eightTable = rc.Get<GameObject>("eightTable");
+            var sixTable = _rc.Get<GameObject>("sixTable");
+            var eightTable = _rc.Get<GameObject>("eightTable");
             
-            switch (roomPeople)
+            switch (RoomPeople)
             {
                 case 6:
                     currentTablePosList= GetChildItem(sixTable.transform, sixTableList);
@@ -107,14 +110,15 @@ namespace ETHotfix
         /// <summary>
         /// 创建本地头像
         /// </summary>
-        /// <param name="ChairIndex">椅子索引</param>
-        public void CreateHead(int ChairIndex,AccountInfo playerInfo)
+        /// <param name="chairIndex">椅子索引</param>
+        /// <param name="playerInfo"></param>
+        public void CreateHead(int chairIndex,AccountInfo playerInfo)
         {
             GameObject headObj = UnityEngine.Object.Instantiate(headUIform, currentTableObj);
             
             if (ChairIndex == -1)
             {
-                headObj.GetComponent<RectTransform>().anchoredPosition = mainHeadPos.anchoredPosition;
+                headObj.GetComponent<RectTransform>().anchoredPosition = _mainHeadPos.anchoredPosition;
             }
             else
             {
@@ -126,16 +130,25 @@ namespace ETHotfix
            
             if (ChairIndex != -1)
             {
-                List<string> chairList= chairArray.ToList<string>();
+                var chairList= _chairArray.ToList<string>();
                 Debug.Log("UserName"+playerInfo.UserName);
                 chairList.Add(playerInfo.UserName);
-                chairArray= chairList.ToArray();
+                _chairArray= chairList.ToArray();
             }
             
             HeadUIDict.Add(playerInfo.UserName,headObj.GetComponent<ReferenceCollector>());
         }
-        
-  
+
+        //获取字典里的值
+        private static T2 GetDictValue<T1, T2>(IReadOnlyDictionary<T1, T2> dict,T1 key)
+        {
+            if (!dict.ContainsKey(key)) return default(T2);
+            T2 value;
+            dict.TryGetValue(key, out value);
+            return value;
+        }
+
+
         //设置头像的信息
         private void SetHeadUIComponent(GameObject headItem,AccountInfo playerInfo)
         {
@@ -167,7 +180,7 @@ namespace ETHotfix
 
 
         //翻牌动画
-        private void FlopAniamtion(List<UI> cardList)
+        private void FlopAniamtion(IEnumerable<UI> cardList)
         {
             foreach (var card in cardList)
             {
@@ -176,18 +189,14 @@ namespace ETHotfix
         }
 
         //发牌动画
-        private void Licensing(Vector2 targetPos,float spacing,List<GameObject> cardList)
+        private void Licensing(Vector2 targetPos,float spacing,IList<GameObject> cardList)
         {
-            if (cardList.Count != 0)
-            {
-                cardList[0].GetComponent<RectTransform>().anchoredPosition=Vector2.Lerp(LicensingPos,targetPos,0.5f);
-                if (cardList[0].GetComponent<RectTransform>().anchoredPosition.x - targetPos.x <= 0.01)
-                {
-                    cardList[0].GetComponent<RectTransform>().anchoredPosition = targetPos;
-                    targetPos.x += spacing;
-                    cardList.RemoveAt(0);
-                }
-            }
+            if (cardList.Count == 0) return;
+            cardList[0].GetComponent<RectTransform>().anchoredPosition+=Vector2.Lerp(_licensingPos,targetPos,0.5f);
+            if (!(cardList[0].GetComponent<RectTransform>().anchoredPosition.x - targetPos.x <= 0.01)) return;
+            cardList[0].GetComponent<RectTransform>().anchoredPosition = targetPos;
+            targetPos.x += spacing;
+            cardList.RemoveAt(0);
         }
 
         //创建卡牌数据
@@ -205,16 +214,14 @@ namespace ETHotfix
         //离开房间
         public void QuitRoom(string userName)
         {
-            if (HeadUIDict.ContainsKey(userName))
+            if (!_headUiDict.ContainsKey(userName)) return;
+            UnityEngine.Object.Destroy(_headUiDict[userName].gameObject);
+            _headUiDict.Remove(userName);
+            for (var i = 0; i < _chairArray.Length; i++)
             {
-                UnityEngine.Object.Destroy(HeadUIDict[userName].gameObject);
-                HeadUIDict.Remove(userName);
-                for (int i = 0; i < chairArray.Length; i++)
+                if (_chairArray[i] == userName)
                 {
-                    if (chairArray[i] == userName)
-                    {
-                        chairArray[i] = null;
-                    }
+                    _chairArray[i] = null;
                 }
             }
 

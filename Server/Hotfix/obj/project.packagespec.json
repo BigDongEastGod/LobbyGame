@@ -1,10 +1,17 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
+<<<<<<< HEAD
     "projectUniqueName": "/Users/sining/Projects/JuAnChess/LobbyGame/Server/Hotfix/Server.Hotfix.csproj",
     "projectName": "Server.Hotfix",
     "projectPath": "/Users/sining/Projects/JuAnChess/LobbyGame/Server/Hotfix/Server.Hotfix.csproj",
     "outputPath": "/Users/sining/Projects/JuAnChess/LobbyGame/Server/Hotfix/obj/",
+=======
+    "projectUniqueName": "/MyDocuments/JuAnNetWork/JuAnGame/LobbyGame/Server/Hotfix/Server.Hotfix.csproj",
+    "projectName": "Server.Hotfix",
+    "projectPath": "/MyDocuments/JuAnNetWork/JuAnGame/LobbyGame/Server/Hotfix/Server.Hotfix.csproj",
+    "outputPath": "/MyDocuments/JuAnNetWork/JuAnGame/LobbyGame/Server/Hotfix/obj/",
+>>>>>>> parent of 6052e3b... 1
     "projectStyle": "PackageReference",
     "fallbackFolders": [
       "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
@@ -15,8 +22,13 @@
     "frameworks": {
       "netcoreapp2.0": {
         "projectReferences": {
+<<<<<<< HEAD
           "/Users/sining/Projects/JuAnChess/LobbyGame/Server/Model/Server.Model.csproj": {
             "projectPath": "/Users/sining/Projects/JuAnChess/LobbyGame/Server/Model/Server.Model.csproj"
+=======
+          "/MyDocuments/JuAnNetWork/JuAnGame/LobbyGame/Server/Model/Server.Model.csproj": {
+            "projectPath": "/MyDocuments/JuAnNetWork/JuAnGame/LobbyGame/Server/Model/Server.Model.csproj"
+>>>>>>> parent of 6052e3b... 1
           }
         }
       }

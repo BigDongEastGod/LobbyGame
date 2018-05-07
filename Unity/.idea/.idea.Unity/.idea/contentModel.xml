@@ -467,6 +467,7 @@
             <e p="UnitConfig.txt" t="Include" />
           </e>
         </e>
+<<<<<<< HEAD
         <e p="Scripts" t="Include">
           <e p="Base" t="Include">
             <e p="DoubleMap.cs" t="Include" />
@@ -550,6 +551,15 @@
             <e p="Sequence.cs" t="Include" />
             <e p="True.cs" t="Include" />
             <e p="UIScale.cs" t="Include" />
+=======
+        <e p="ExtensionCode" t="Include">
+          <e p="Helper" t="Include">
+            <e p="SerializeHelper.cs" t="Include" />
+          </e>
+          <e p="Module" t="Include">
+            <e p="MonoEventComponent.cs" t="Include" />
+            <e p="SceneManagerComponent.cs" t="Include" />
+>>>>>>> parent of 6052e3b... 1
           </e>
           <e p="Component" t="Include">
             <e p="Config" t="Include">
