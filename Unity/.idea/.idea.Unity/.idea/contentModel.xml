@@ -575,11 +575,6 @@
           <e p="WWWAsync.cs" t="Include" />
         </e>
         <e p="ExtensionCode" t="Include">
-          <e p="Entity" t="Include">
-            <e p="Poker" t="Include">
-              <e p="PokerCard.cs" t="Include" />
-            </e>
-          </e>
           <e p="Helper" t="Include">
             <e p="SerializeHelper.cs" t="Include" />
           </e>
