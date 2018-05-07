@@ -16,3 +16,12 @@
 /Users/sining/Projects/JuAnChess/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver.Core/obj/Debug/MongoDB.Driver.Core.AssemblyInfo.cs
 /Users/sining/Projects/JuAnChess/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver.Core/obj/Debug/MongoDB.Driver.Core.dll
 /Users/sining/Projects/JuAnChess/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver.Core/obj/Debug/MongoDB.Driver.Core.pdb
+/Users/juankeji/JuAn/LobbyGame/Bin/MongoDB.Driver.Core.deps.json
+/Users/juankeji/JuAn/LobbyGame/Bin/MongoDB.Driver.Core.dll
+/Users/juankeji/JuAn/LobbyGame/Bin/MongoDB.Driver.Core.pdb
+/Users/juankeji/JuAn/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver.Core/obj/Debug/MongoDB.Driver.Core.csprojResolveAssemblyReference.cache
+/Users/juankeji/JuAn/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver.Core/obj/Debug/MongoDB.Driver.Core.csproj.CoreCompileInputs.cache
+/Users/juankeji/JuAn/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver.Core/obj/Debug/MongoDB.Driver.Core.AssemblyInfoInputs.cache
+/Users/juankeji/JuAn/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver.Core/obj/Debug/MongoDB.Driver.Core.AssemblyInfo.cs
+/Users/juankeji/JuAn/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver.Core/obj/Debug/MongoDB.Driver.Core.dll
+/Users/juankeji/JuAn/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver.Core/obj/Debug/MongoDB.Driver.Core.pdb

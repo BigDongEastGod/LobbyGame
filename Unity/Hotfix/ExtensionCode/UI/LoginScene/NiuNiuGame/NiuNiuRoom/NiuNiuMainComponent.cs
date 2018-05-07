@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using DG.Tweening;
 using ETModel;
 using JetBrains.Annotations;
@@ -39,12 +40,12 @@ namespace ETHotfix
         //初始化数据
         private async void SetRoomInfo(long roomId,bool isSitDown)
         {
+            #region GetRoomNeedComponent
+
             var rc = this.GetParent<UI>().GameObject.GetComponent<ReferenceCollector>();
             
             //房间分线图
             var bg = rc.Get<GameObject>("BgImg");
-            //房间号码
-            
             //房间信息按钮
             var roomInfoButton  = rc.Get<GameObject>("RoomInfoButton");
             //下拉窗口按钮
@@ -87,6 +88,10 @@ namespace ETHotfix
             var wiFiImg=rc.Get<GameObject>("WiFiImg");
             //自动翻牌
             var automaticFlopToggle=rc.Get<GameObject>("AutomaticFlopToggle");
+            //提示按钮
+            var tipsButton=rc.Get<GameObject>("tipsButton");
+            //亮牌按钮
+            var brightButton=rc.Get<GameObject>("brightButton");
             
             _roomNum = rc.Get<GameObject>("roomNum").GetComponent<Text>();
             //庄位信息
@@ -95,7 +100,9 @@ namespace ETHotfix
             _bottomScoreText  = rc.Get<GameObject>("BottomScoreText").GetComponent<Text>();
             //房间局数
             var roomCountText  = rc.Get<GameObject>("roomCountText").GetComponent<Text>();
-            
+
+            #endregion
+         
             //获取当前账号
             var accountResponse = (GetAccountInfoResponse) await SceneHelperComponent.Instance.Session.Call(new GetAccountInfoRequest());
             _player = accountResponse;
@@ -151,22 +158,31 @@ namespace ETHotfix
             //获取房间准备号玩家的数据
             GetAllReadyInfo();
             
-            RoomInfoAnnunciateHandler.RoomAction += RoomBack;
-            GameInfoAnnunciateHandler.GameAction += GameBack;
-            
-            if (isSitDown)
-            {
-                SitDown(-1,_player.AccountInfo.UserName);
-            }
-            else
-            {
-                _sitDownBt.gameObject.SetActive(true);
-            }
+//            RoomInfoAnnunciateHandler.RoomAction += RoomBack;
+//            GameInfoAnnunciateHandler.GameAction += GameBack;
 
-            Game.Scene.GetComponent<PingComponent>().PingBackCall = () =>
-            {
-                GameTools.ReLoading("GameCanvas");
-            };
+            #region 短线处理
+
+//            //如果是短线重连，判断是否已经坐下
+//            if (isSitDown)
+//            {
+//                SitDown(-1,_player.AccountInfo.UserName);
+//            }
+//            else
+//            {
+//                _sitDownBt.gameObject.SetActive(true);
+//            }
+//
+//            Game.Scene.GetComponent<PingComponent>().PingBackCall = () =>
+//            {
+//                GameTools.ReLoading("GameCanvas");
+//            };
+
+            #endregion
+
+           //Test();
+
+
         }
 
       
@@ -207,11 +223,12 @@ namespace ETHotfix
                     ShowBet(obj.UserName,SerializeHelper.Instance.DeserializeObject<int>(obj.Arg));
                     break;
                 case 2://抢庄
-                    Debug.Log("2/obj.UserName/"+obj.UserName);
                     ShowZhuangJiaIcon(obj.UserName);
                     _zhuangJiaName = obj.UserName;
                     break;
-                case 3:
+                case 3://发牌
+                    var pokerCard= SerializeHelper.Instance.DeserializeObject<List<PokerCard>>(obj.Arg);
+                    Licensing(pokerCard);
                     break;
                     
             }
@@ -288,6 +305,44 @@ namespace ETHotfix
         {
             _startGameBt.gameObject.SetActive(false);
             _showCardUi.GetComponent<NnShowCardComponent>().ShowZhuangJiaIcon(userName);
+        }
+        
+        //发牌
+        private void Licensing(List<PokerCard> pokerCards)
+        {
+            _showCardUi.GetComponent<NnShowCardComponent>().Licensing(pokerCards);
+        }
+
+
+        private void Test()
+        {
+            var accountInfo=new AccountInfo(){UserName = "1"};
+            _showCardUi.GetComponent<NnShowCardComponent>().CreateHead(-1,accountInfo);
+            var accountInfo1=new AccountInfo(){UserName = "2"};
+            _showCardUi.GetComponent<NnShowCardComponent>().CreateHead(0,accountInfo1);
+            var accountInfo2=new AccountInfo(){UserName = "3"};
+            _showCardUi.GetComponent<NnShowCardComponent>().CreateHead(1,accountInfo2);
+            var accountInfo3=new AccountInfo(){UserName = "4"};
+            _showCardUi.GetComponent<NnShowCardComponent>().CreateHead(2,accountInfo3);
+            var accountInfo4=new AccountInfo(){UserName = "5"};
+            _showCardUi.GetComponent<NnShowCardComponent>().CreateHead(3,accountInfo4);
+            var accountInfo5=new AccountInfo(){UserName = "6"};
+            _showCardUi.GetComponent<NnShowCardComponent>().CreateHead(4,accountInfo5);
+            
+            
+            List<PokerCard> list=new List<PokerCard>();
+            for (var i = 0; i < 5; i++)
+            {
+                PokerCard temp = new PokerCard
+                {
+                    CardNumber = i,
+                    CardType = 0
+                };
+                list.Add(temp);
+            }
+
+            _player.AccountInfo.UserName = "1";
+            Licensing(list);
         }
 
     }

@@ -24,3 +24,16 @@
 /Users/sining/Projects/JuAnChess/LobbyGame/Server/App/obj/Debug/Server.App.AssemblyInfo.cs
 /Users/sining/Projects/JuAnChess/LobbyGame/Server/App/obj/Debug/App.dll
 /Users/sining/Projects/JuAnChess/LobbyGame/Server/App/obj/Debug/App.pdb
+/Users/juankeji/JuAn/LobbyGame/Bin/NLog.config
+/Users/juankeji/JuAn/LobbyGame/Bin/App.dll.config
+/Users/juankeji/JuAn/LobbyGame/Bin/App.deps.json
+/Users/juankeji/JuAn/LobbyGame/Bin/App.runtimeconfig.json
+/Users/juankeji/JuAn/LobbyGame/Bin/App.runtimeconfig.dev.json
+/Users/juankeji/JuAn/LobbyGame/Bin/App.dll
+/Users/juankeji/JuAn/LobbyGame/Bin/App.pdb
+/Users/juankeji/JuAn/LobbyGame/Server/App/obj/Debug/Server.App.csprojResolveAssemblyReference.cache
+/Users/juankeji/JuAn/LobbyGame/Server/App/obj/Debug/Server.App.csproj.CoreCompileInputs.cache
+/Users/juankeji/JuAn/LobbyGame/Server/App/obj/Debug/Server.App.AssemblyInfoInputs.cache
+/Users/juankeji/JuAn/LobbyGame/Server/App/obj/Debug/Server.App.AssemblyInfo.cs
+/Users/juankeji/JuAn/LobbyGame/Server/App/obj/Debug/App.dll
+/Users/juankeji/JuAn/LobbyGame/Server/App/obj/Debug/App.pdb
