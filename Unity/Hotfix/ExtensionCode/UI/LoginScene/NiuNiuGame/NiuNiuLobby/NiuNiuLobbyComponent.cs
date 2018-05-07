@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using ETModel;
 using UnityEngine;
 using UnityEngine.UI;
@@ -44,10 +46,20 @@ namespace ETHotfix
         private float _barMoveSpeed;
         private bool _isMoveBar;
 
-        private RectTransform barTextTransform;
-        private RectTransform posLeftTransform;
-        private RectTransform posRightTransform;
+        private RectTransform _barTextTransform;
+        private RectTransform _posLeftTransform;
+        private RectTransform _posRightTransform;
 
+        private GameObject _roomEmptyImg;
+        private GameObject _roomContent;
+        private GameObject _roomInfoItem;
+        private GameObject _nnLobby;
+
+        private int _time;
+
+        private List<GameObject> _roomInfoList;
+
+        private bool _isNiuFriendRoom;
 
         public async void Awake()
         {
@@ -58,6 +70,8 @@ namespace ETHotfix
 
             #region 获取游戏物体
 
+            _nnLobby = rc.Get<GameObject>("NiuNiuLobby");
+
             // 用户信息
             _userIdText = rc.Get<GameObject>("UserIdText");
             _diamondText = rc.Get<GameObject>("DiamondText");
@@ -67,12 +81,18 @@ namespace ETHotfix
             var _barPosLeft = rc.Get<GameObject>("NiuNiuNoticeBar").transform.Find("BarPosLeft").gameObject;
             var _barPosRight = rc.Get<GameObject>("NiuNiuNoticeBar").transform.Find("BarPosRight").gameObject;
 
-            barTextTransform = _barText.GetComponent<RectTransform>();
-            posLeftTransform = _barPosLeft.GetComponent<RectTransform>();
-            posRightTransform = _barPosRight.GetComponent<RectTransform>();
+            _barTextTransform = _barText.GetComponent<RectTransform>();
+            _posLeftTransform = _barPosLeft.GetComponent<RectTransform>();
+            _posRightTransform = _barPosRight.GetComponent<RectTransform>();
 
             _barMoveSpeed = 10f;
             _isMoveBar = true;
+
+            _time = 100;
+
+            _roomInfoList = new List<GameObject>();
+
+            _isNiuFriendRoom = false;
 
             // 页面
             var nnLobby = rc.Get<GameObject>("NiuNiuLobby");
@@ -81,6 +101,9 @@ namespace ETHotfix
             var lobbyCreateButton = rc.Get<GameObject>("LobbyCreateButton");
             var lobbyJoinRoomButton = rc.Get<GameObject>("LobbyJoinRoomButton");
 //            var lobbyNiuFriendButton = rc.Get<GameObject>("LobbyNiuFriendButton");
+
+            var friendToggle = rc.Get<GameObject>("FriendToggle");
+            var niuFriendToggle = rc.Get<GameObject>("NiuFriendToggle");
 
             // 大厅次要按钮
 //            var ruleBtn = rc.Get<GameObject>("RuleBtn");
@@ -96,9 +119,9 @@ namespace ETHotfix
             var menuBtn = rc.Get<GameObject>("MenuBtn");
 
             // 已创建房间列表
-            var roomEmptyImg = rc.Get<GameObject>("RoomEmptyImg");
-            var roomContent = rc.Get<GameObject>("RoomContent");
-            var roomInfoItem = rc.Get<GameObject>("RoomInfoItem");
+            _roomEmptyImg = rc.Get<GameObject>("RoomEmptyImg"); //没有房间信息时候显示图片
+            _roomContent = rc.Get<GameObject>("RoomContent"); //房间列表父物体
+            _roomInfoItem = rc.Get<GameObject>("NiuNiuRoomInfoItem"); //房间信息预设
 
             #endregion
 
@@ -120,13 +143,18 @@ namespace ETHotfix
             // 菜单按钮
             SceneHelperComponent.Instance.MonoEvent.AddButtonClick(menuBtn.GetComponent<Button>(), () => { _nnLobbyMenu.GameObject.SetActive(true); });
 
-            #endregion
-            
-            
-            Game.Scene.GetComponent<PingComponent>().PingBackCall = () =>
+            niuFriendToggle.GetComponent<Toggle>().onValueChanged.AddListener((niuFriend) =>
             {
-                GameTools.ReLoading("GameCanvas");
-            };
+                _isNiuFriendRoom = niuFriend;
+
+                GetRoomList();
+                _time = 100;
+            });
+
+            #endregion
+
+
+            Game.Scene.GetComponent<PingComponent>().PingBackCall = () => { GameTools.ReLoading("GameCanvas"); };
         }
 
         public void Start()
@@ -134,6 +162,8 @@ namespace ETHotfix
             _nnCreateRoom = Game.Scene.GetComponent<UIComponent>().Get(UIType.NiuNiuCreateRoom);
             _nnJoinRoom = Game.Scene.GetComponent<UIComponent>().Get(UIType.NiuNiuJoinRoom);
             _nnLobbyMenu = Game.Scene.GetComponent<UIComponent>().Get(UIType.NiuNiuLobbyMenu);
+
+            GetRoomList();
         }
 
         private void InitUserInfo(string userName, string diamond)
@@ -142,20 +172,127 @@ namespace ETHotfix
             _diamondText.GetComponent<Text>().text = diamond;
         }
 
+        public async void GetRoomList()
+        {
+            try
+            {
+                if (!_isNiuFriendRoom)
+                {
+                    var roomList = (RoomListResponse) await SceneHelperComponent.Instance.Session.Call(new RoomListRequest() {GameType = "NN"});
+
+                    if (roomList.Error == 0)
+                    {
+                        int countDiff = roomList.Rooms.Count - _roomInfoList.Count;
+                        if (countDiff > 0)
+                        {
+                            for (int i = 0; i < countDiff; i++)
+                            {
+                                var go = UnityEngine.Object.Instantiate(_roomInfoItem, _roomContent.transform);
+                                _roomContent.GetComponent<RectTransform>().sizeDelta += new Vector2(0, 95f);
+                                go.SetActive(false);
+                                _roomInfoList.Add(go);
+                            }
+                        }
+
+                        for (int i = 0; i < roomList.Rooms.Count; i++)
+                        {
+                            var rc = _roomInfoList[i].GetComponent<ReferenceCollector>();
+                            var roomId = rc.Get<GameObject>("RoomId");
+                            var playerMode = rc.Get<GameObject>("PlayerMode");
+                            var score = rc.Get<GameObject>("Score");
+                            var dish = rc.Get<GameObject>("Dish");
+                            var payMode = rc.Get<GameObject>("PayMode");
+                            var playerCount = rc.Get<GameObject>("PlayerCount");
+                            var inviteBtn = rc.Get<GameObject>("InviteBtn"); //TODO
+
+                            var room = roomList.Rooms[i];
+
+                            roomId.GetComponent<Text>().text = room.RoomId.ToString();
+                            playerMode.GetComponent<Text>().text = room.PlayerMode;
+                            score.GetComponent<Text>().text = room.Score;
+                            dish.GetComponent<Text>().text = room.Dish.ToString();
+                            payMode.GetComponent<Text>().text = room.PayMode;
+                            playerCount.GetComponent<Text>().text = room.PlayerCount;
+
+                            SceneHelperComponent.Instance.MonoEvent.AddButtonClick(_roomInfoList[i].GetComponent<Button>(), () => JoinPaiJu(room.RoomId));
+
+                            SceneHelperComponent.Instance.MonoEvent.AddButtonClick(inviteBtn.GetComponent<Button>(), () => GameTools.ShowDialogMessage("邀请好友", "GameCanvas"));
+
+                            _roomInfoList[i].SetActive(true);
+                        }
+
+                        _roomEmptyImg.SetActive(roomList.Rooms.Count == 0);
+                    }
+                    else
+                    {
+                        GameTools.ShowDialogMessage(roomList.Message, "GameCanvas");
+                    }
+                }
+                else
+                {
+                    foreach (var go in _roomInfoList)
+                    {
+                        go.SetActive(false);
+                    }
+
+                    _roomEmptyImg.SetActive(true);
+                }
+            }
+            catch (Exception e)
+            {
+                GameTools.ShowDialogMessage(e.Message, "GameCanvas");
+            }
+        }
+
+        private async void JoinPaiJu(long roomId)
+        {
+            try
+            {
+                var joinRoomResponse = (JoinRoomResponse) await SceneHelperComponent.Instance.Session.Call(
+                    new JoinRoomRequest() {RoomId = roomId});
+
+                if (joinRoomResponse.Error == 0)
+                {
+                    Debug.Log("加入房间成功,跳转至游戏主场景");
+
+                    Game.Scene.GetComponent<UIComponent>().Create(UIType.NiuNiuMain, UiLayer.Bottom, roomId, false);
+                    Game.Scene.GetComponent<UIComponent>().Remove(UIType.NiuNiuLobby);
+                }
+                else
+                {
+                    Debug.Log("加入房间失败: " + joinRoomResponse.Message);
+                    GameTools.ShowDialogMessage("没有这个房间,请重新输入!", "GameCanvas");
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
+
         public void Update()
         {
             MoveBar();
+
+            if (_nnLobby != null && (_nnLobby.activeInHierarchy && _time <= 0))
+            {
+                GetRoomList();
+                _time = 100;
+            }
+
+            _time--;
         }
 
         private void MoveBar()
         {
-            if (_isMoveBar && barTextTransform && posLeftTransform && posRightTransform)
+            if (_isMoveBar && _barTextTransform && _posLeftTransform && _posRightTransform)
             {
-                Vector2 tempVec2 = new Vector2(barTextTransform.anchoredPosition.x - Time.deltaTime * 10 * _barMoveSpeed, barTextTransform.anchoredPosition.y);
-                barTextTransform.anchoredPosition = tempVec2;
-                if (tempVec2.x < posLeftTransform.anchoredPosition.x)
+                Vector2 tempVec2 = new Vector2(_barTextTransform.anchoredPosition.x - Time.deltaTime * 10 * _barMoveSpeed, _barTextTransform.anchoredPosition.y);
+                _barTextTransform.anchoredPosition = tempVec2;
+                if (tempVec2.x < _posLeftTransform.anchoredPosition.x)
                 {
-                    barTextTransform.anchoredPosition = posRightTransform.anchoredPosition;
+                    _barTextTransform.anchoredPosition = _posRightTransform.anchoredPosition;
                 }
             }
         }

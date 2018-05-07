@@ -114,11 +114,9 @@ namespace ETHotfix
 
             if (count < 6)
             {
-                Debug.Log("请输入6位房间号");
+                GameTools.ShowDialogMessage("请输入6位房间号!","GameCanvas");
                 return;
             }
-
-
             Debug.Log("加入房间:" + paijuNumber);
             
             var joinRoomResponse = (JoinRoomResponse) await SceneHelperComponent.Instance.Session.Call(
@@ -134,6 +132,7 @@ namespace ETHotfix
             else
             {
                 Debug.Log("加入房间失败: " + joinRoomResponse.Message);
+                GameTools.ShowDialogMessage("没有这个房间,请重新输入!", "GameCanvas");
             }
         }
 
