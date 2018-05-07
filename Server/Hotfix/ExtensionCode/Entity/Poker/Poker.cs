@@ -5,6 +5,9 @@ using ETModel;
 
 namespace ETHotfix
 {
+    /*
+         * 0: 红桃 1: 方块 2: 黑桃 3: 梅花 4：王
+         */
     public abstract class Poker : Entity
     {
         #region 创建卡牌
@@ -96,6 +99,11 @@ namespace ETHotfix
         }
 
         #endregion
+
+        public virtual int Calculate(int number)
+        {
+            return 0;
+        }
         
         public virtual PokerCard[] CalculateCards(List<PokerCard> cards)
         {

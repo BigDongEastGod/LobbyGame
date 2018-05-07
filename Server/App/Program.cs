@@ -12,19 +12,15 @@ namespace App
 		private static void Main(string[] args)
 		{
 			// 异步方法全部会回掉到主线程
-			
 			OneThreadSynchronizationContext contex = new OneThreadSynchronizationContext();
-			
 			SynchronizationContext.SetSynchronizationContext(contex);
 			
 			try
 			{
 				Game.EventSystem.Add(DLLType.Model, typeof(Game).Assembly);
-				
 				Game.EventSystem.Add(DLLType.Hotfix, DllHelper.GetHotfixAssembly());
 
 				Options options = Game.Scene.AddComponent<OptionComponent, string[]>(args).Options;
-				
 				StartConfig startConfig = Game.Scene.AddComponent<StartConfigComponent, string, int>(options.Config, options.AppId).StartConfig;
 
 				if (!options.AppType.Is(startConfig.AppType))
@@ -76,7 +72,6 @@ namespace App
 						Game.Scene.AddComponent<LocationProxyComponent>();
 						Game.Scene.AddComponent<ActorProxyComponent>();
 						Game.Scene.AddComponent<GateSessionKeyComponent>();
-						Game.Scene.AddComponent<ActorManagerComponent>();
 						Game.Scene.AddComponent<GatePlayerManageComponent>();
 						break;
 					case AppType.Location:
@@ -88,10 +83,7 @@ namespace App
 						Game.Scene.AddComponent<LocationProxyComponent>();
 						Game.Scene.AddComponent<ActorProxyComponent>();
 						Game.Scene.AddComponent<ActorMessageDispatherComponent>();
-						Game.Scene.AddComponent<ActorManagerComponent>();
-						Game.Scene.AddComponent<PlayerManageComponent>();
 						Game.Scene.AddComponent<DBProxyComponent>();
-						Game.Scene.AddComponent<RoomManageComponent>();
 						break;
 					case AppType.AllServer:
 						Game.Scene.AddComponent<ActorProxyComponent>();
@@ -110,7 +102,6 @@ namespace App
 						Game.Scene.AddComponent<GateSessionKeyComponent>();
 						Game.Scene.AddComponent<ConfigComponent>();
 						Game.Scene.AddComponent<ServerFrameComponent>();
-						Game.Scene.AddComponent<ActorManagerComponent>();
 						// Game.Scene.AddComponent<HttpComponent>();
 						break;
 					case AppType.Benchmark:

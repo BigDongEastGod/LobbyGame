@@ -159,7 +159,11 @@ message NNChess
 
 	required bool MaiMaRules = 16;  // 闲家买码
 
-	required int32 PlayerCount = 17;  // 人数	
+	required int32 PlayerCount = 17;  // 人数
+
+	required string PlayerMode = 18;  // 玩法
+
+	required string PayMode = 19; // 支付方式 	
 }
 // 游戏房间规则
 message RoomRulesRequest // IActorRequest
@@ -232,7 +236,12 @@ message RoomInfoAnnunciate // IActorMessage
 	required int32 Message = 2;  
 }
 // 游戏消息通告
-// 提示消息 0:下注 1:下注完成 2:选择庄家 3:发送卡牌
+// 提示消息  
+// 0:玩家接收庄家信息 
+// 1:发送玩家开始下注消息 
+// 2:发送下注消息给其他玩家 
+// 3:给玩家发牌消息 
+// 4:计算玩家手里卡牌、并把结果返回给玩家消息
 message GameInfoAnnunciate // IActorMessage
 {
 	required string UserName = 1;
@@ -261,21 +270,45 @@ message BetGameResponse // IActorResponse
 {
 	
 }
-// 游戏房间
-//message Room
-//{
-	//required int32 RoomId = 1;  // 局数
-
-	//required string PlayingMethod = 2;  // 玩法
-//}
-// 游戏房间信息
-message RoomListRequest // IActorRequest
+// 牛牛游戏接收到卡牌
+message DealPokeRequest // IActorRequest
+{
+	required int64 RoomId = 1;		
+}
+message DealPokeResponse // IActorResponse
 {
 	
+}
+// 牛牛游戏接收到计算卡牌结果
+message CalculateCardRequest // IActorRequest
+{
+	required int64 RoomId = 1;		
+}
+message CalculateCardResponse // IActorResponse
+{
+	
+}
+// 游戏房间信息
+message GameRoomInfo
+{
+	required int64 RoomId = 1;  // 房间ID
 
-	required int32 Dish = 2;  // 局数
+	required string PlayerMode = 2;  // 玩法
+
+	required string Score = 3; // 底分
+
+	required int32 Dish = 4;  // 局数
+
+	required string PayMode = 5; // 支付方式 
+
+	required string PlayerCount = 6; // 人数（格式：当前人数/支持人数）
+}
+// 获取游戏房间列表
+message RoomListRequest // IActorRequest
+{
+	required string GameType = 1;  // 游戏类型
 }
 message RoomListResponse // IActorResponse
 {
-	repeated AccountInfo Players = 3;	
+	repeated GameRoomInfo Rooms = 1;	
 }

@@ -25,6 +25,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ExtensionCode\Base\Gate" />
+    <Folder Include="ExtensionCode\Entity\Game" />
     <Folder Include="ExtensionCode\Helper" />
     <Folder Include="Module\Http\" />
   </ItemGroup>

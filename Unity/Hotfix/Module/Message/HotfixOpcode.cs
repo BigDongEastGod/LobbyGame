@@ -44,7 +44,12 @@ namespace ETModel
 		 public const ushort GameBankerResponse = 10040;
 		 public const ushort BetGameRequest = 10041;
 		 public const ushort BetGameResponse = 10042;
-		 public const ushort RoomListRequest = 10043;
-		 public const ushort RoomListResponse = 10044;
+		 public const ushort DealPokeRequest = 10043;
+		 public const ushort DealPokeResponse = 10044;
+		 public const ushort CalculateCardRequest = 10045;
+		 public const ushort CalculateCardResponse = 10046;
+		 public const ushort GameRoomInfo = 10047;
+		 public const ushort RoomListRequest = 10048;
+		 public const ushort RoomListResponse = 10049;
 	}
 }

@@ -9,6 +9,8 @@ namespace ETModel
 	{
 		// actor的地址
 		public IPEndPoint Address;
+
+		public long ActorId;
 		
 		// 还没发送的消息
 		public Queue<ActorTask> WaitingTasks = new Queue<ActorTask>();
@@ -18,8 +20,8 @@ namespace ETModel
 
 		public TaskCompletionSource<ActorTask> tcs;
 
-		public CancellationTokenSource CancellationTokenSource;
+		public int FailTimes;
 
-		public int failTimes;
+		public int MaxFailTimes;
 	}
 }

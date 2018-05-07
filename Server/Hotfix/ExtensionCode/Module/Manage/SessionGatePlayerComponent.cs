@@ -30,8 +30,6 @@ namespace ETHotfix
                     Game.Scene.GetComponent<ActorProxyComponent>().Remove(player.UnitId);
                 }
                 
-                Game.Scene.GetComponent<ActorManagerComponent>().Remove(session.Id);
-                
                 Game.Scene.GetComponent<NetOuterComponent>().Remove(session.Id);
                 
                 GatePlayerManageComponent.Instance.Remove(session);

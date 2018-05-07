@@ -7,7 +7,7 @@ namespace ETHotfix
     [MessageHandler]
     public class RoomInfoAnnunciateHandler : AMHandler<RoomInfoAnnunciate>
     {
-        public static Action<RoomInfoAnnunciate> RoomAction;
+        public static event Action<RoomInfoAnnunciate> RoomAction;
         
         protected override void Run(Session session, RoomInfoAnnunciate message)
         {

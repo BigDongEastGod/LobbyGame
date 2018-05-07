@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using MongoDB.Bson.Serialization.Attributes;
 namespace ETHotfix
 {
+/// <summary>
+/// 传送unit
+/// </summary>
 	[Message(InnerOpcode.M2M_TrasferUnitRequest)]
 	[ProtoContract]
 	public partial class M2M_TrasferUnitRequest: IRequest
@@ -28,6 +31,9 @@ namespace ETHotfix
 
 		[ProtoMember(92, IsRequired = true)]
 		public string Message { get; set; }
+
+		[ProtoMember(1, IsRequired = true)]
+		public long InstanceId;
 
 	}
 
@@ -297,7 +303,7 @@ namespace ETHotfix
 		public long Key;
 
 		[ProtoMember(2, IsRequired = true)]
-		public int AppId;
+		public long InstanceId;
 
 	}
 
@@ -354,7 +360,7 @@ namespace ETHotfix
 		public long Key;
 
 		[ProtoMember(2, IsRequired = true)]
-		public int LockAppId;
+		public long InstanceId;
 
 		[ProtoMember(3, IsRequired = true)]
 		public int Time;
@@ -387,10 +393,10 @@ namespace ETHotfix
 		public long Key;
 
 		[ProtoMember(2, IsRequired = true)]
-		public int UnLockAppId;
+		public long OldInstanceId;
 
 		[ProtoMember(3, IsRequired = true)]
-		public int AppId;
+		public long InstanceId;
 
 	}
 
@@ -435,7 +441,7 @@ namespace ETHotfix
 		public string Message { get; set; }
 
 		[ProtoMember(1, IsRequired = true)]
-		public int AppId;
+		public long InstanceId;
 
 	}
 
