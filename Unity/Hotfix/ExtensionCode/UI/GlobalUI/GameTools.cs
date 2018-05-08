@@ -39,6 +39,7 @@ namespace ETHotfix
             {
                 return;
             }
+
             _startReloading = true;
             _reloadingCount++;
 
@@ -62,7 +63,7 @@ namespace ETHotfix
             {
                 SceneHelperComponent.Instance.Session.Dispose();
                 SceneHelperComponent.Instance.Session = null;
-                
+
                 var session = SceneHelperComponent.Instance.CreateRealmSession();
 
                 var response = (LoginResponse) await session.Call(
@@ -76,6 +77,7 @@ namespace ETHotfix
                 {
                     session.Dispose();
 
+                    Debug.Log("重连成功");
                     // 连接网关服务器
                     await SceneHelperComponent.Instance.CreateGateSession(response.Address, response.Key);
 
@@ -97,8 +99,34 @@ namespace ETHotfix
                 _startReloading = false;
                 ShowDialogMessage(e.Message, canvasName);
             }
+        }
 
+        /// <summary>
+        /// 断线重连委托注册
+        /// </summary>
+        /// <param name="canvasName">要重连的CanvasName</param>
+        /// <param name="action">载入房间之前状态的函数</param>
+        public static void SetReloadDelegate(string canvasName, Action action)
+        {
+            Game.Scene.GetComponent<PingComponent>().PingBackCall = () =>
+            {
+                ReLoading(canvasName);
+                action.Invoke();
+            };
+        }
 
+        /// <summary>
+        /// 断线重连委托注册
+        /// </summary>
+        /// <param name="canvasName">要重连的CanvasName<</param>
+        public static void SetReloadDelegate(string canvasName)
+        {
+            Game.Scene.GetComponent<PingComponent>().PingBackCall = () => { ReLoading(canvasName); };
+        }
+
+        public static void RemoveReloadDelegate(Action action)
+        {
+            Game.Scene.GetComponent<PingComponent>().PingBackCall -= action;
         }
     }
 }
