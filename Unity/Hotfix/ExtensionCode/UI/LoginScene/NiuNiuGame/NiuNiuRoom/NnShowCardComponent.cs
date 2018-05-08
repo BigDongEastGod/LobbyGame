@@ -183,8 +183,6 @@ namespace ETHotfix
             var BetsTitleImg = rc.Get<GameObject>("BetsTitleImg");
             var BetsTxt = BetsTitleImg.gameObject.transform.GetChild(0);
             var SelectImg = rc.Get<GameObject>("SelectImg");
-            
-            userNameTxt.text = playerInfo.UserName;
         }
         
         //显示庄家头像
