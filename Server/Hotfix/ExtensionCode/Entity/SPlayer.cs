@@ -15,12 +15,15 @@ namespace ETModel
 
         public bool IsActivity;
 
-        public Room CurrentRoom;
+        /// <summary>
+        /// 加入过的房间列表
+        /// </summary>
+        public readonly List<Room> RoomList = new List<Room>();
 
         /// <summary>
         /// 房间记录、存放创建过的房间和加入的房间
         /// </summary>
-        public Dictionary<string, List<GameRoomInfo>> RoomsRecords = new Dictionary<string, List<GameRoomInfo>>();
+        public readonly Dictionary<string, List<GameRoomInfo>> RoomsRecords = new Dictionary<string, List<GameRoomInfo>>();
 
         /// <summary>
         /// 添加浏览房间记录
@@ -39,11 +42,11 @@ namespace ETModel
             
             // 检查是否有当前房间信息
 
-            var gameRoomInfo= RoomsRecords[roomtype].FirstOrDefault(d => d.RoomId == this.Id);
+            var gameRoomInfo = RoomsRecords[roomtype].FirstOrDefault(d => d.RoomId == room.Id);
             
             // 如果有就删除
 
-            if (gameRoomInfo != null) RoomsRecords[roomtype].Remove(roominfo);
+            if (gameRoomInfo != null) RoomsRecords[roomtype].Remove(gameRoomInfo);
             
             // 添加房间信息到玩家浏览房间列表
             
@@ -54,8 +57,8 @@ namespace ETModel
             room.DissolveRoomAction -= DissolveRoomABackCall;
 
             room.DissolveRoomAction += DissolveRoomABackCall;
-
-            CurrentRoom = room;
+            
+            RoomList.Add(room);
         }
 
         /// <summary>
@@ -80,7 +83,9 @@ namespace ETModel
             
             RoomsRecords.Clear();
 
-            CurrentRoom.DissolveRoomAction -= DissolveRoomABackCall;
+            RoomList.ForEach(d => d.DissolveRoomAction -= DissolveRoomABackCall);
+
+            RoomList.Clear();
         }
 
         public ActorProxy GetActorProxy => Game.Scene.GetComponent<ActorProxyComponent>().Get(this.GateSessionId);
