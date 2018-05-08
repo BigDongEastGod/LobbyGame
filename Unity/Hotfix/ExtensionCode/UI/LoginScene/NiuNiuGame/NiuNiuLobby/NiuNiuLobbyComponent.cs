@@ -57,9 +57,11 @@ namespace ETHotfix
 
         private int _time;
 
-        private List<GameObject> _roomInfoList;
-
+        // 房间列表
         private bool _isNiuFriendRoom;
+        private List<GameObject> _roomInfoList;
+        private int _outTime;
+        private bool _startTime;
 
         public async void Awake()
         {
@@ -188,7 +190,7 @@ namespace ETHotfix
                             for (int i = 0; i < countDiff; i++)
                             {
                                 var go = UnityEngine.Object.Instantiate(_roomInfoItem, _roomContent.transform);
-                                _roomContent.GetComponent<RectTransform>().sizeDelta += new Vector2(0, 95f);
+                                _roomContent.GetComponent<RectTransform>().sizeDelta = new Vector2(0, 95f * countDiff);
                                 go.SetActive(false);
                                 _roomInfoList.Add(go);
                             }
@@ -230,16 +232,18 @@ namespace ETHotfix
                 }
                 else
                 {
-                    foreach (var go in _roomInfoList)
-                    {
-                        go.SetActive(false);
-                    }
+                    if (_roomInfoList != null)
+                        foreach (var go in _roomInfoList)
+                        {
+                            go.SetActive(false);
+                        }
 
                     _roomEmptyImg.SetActive(true);
                 }
             }
             catch (Exception e)
             {
+                Debug.Log("???: " + _isNiuFriendRoom);
                 GameTools.ShowDialogMessage(e.Message, "GameCanvas");
             }
         }

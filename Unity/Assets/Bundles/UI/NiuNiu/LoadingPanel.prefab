@@ -22,13 +22,14 @@ GameObject:
   - component: {fileID: 222096545237128672}
   - component: {fileID: 114333689984334650}
   - component: {fileID: 114800547993507396}
+  - component: {fileID: 114188999108348048}
   m_Layer: 5
   m_Name: LoadingPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1774320270726042
 GameObject:
   m_ObjectHideFlags: 0
@@ -96,7 +97,21 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u6B63\u5728\u91CD\u8FDE\u6E38\u620F..."
+  m_Text: 
+--- !u!114 &114188999108348048
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1021553985353716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 502d8cafd6a5a0447ab1db9a24cdcb10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data:
+  - key: Text
+    gameObject: {fileID: 1774320270726042}
 --- !u!114 &114333689984334650
 MonoBehaviour:
   m_ObjectHideFlags: 1
