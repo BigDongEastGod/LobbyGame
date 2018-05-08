@@ -294,62 +294,8 @@ MonoBehaviour:
     gameObject: {fileID: 1256205750799122}
   - key: jokerImg
     gameObject: {fileID: 1450159577288750}
-  - key: 0_10
-    gameObject: {fileID: 21300000, guid: 652b3553db3ce42d6a5512d1be1b971c, type: 3}
-  - key: 0_11
-    gameObject: {fileID: 21300000, guid: 8fb231662b15946f093b57b96455966b, type: 3}
-  - key: 0_12
-    gameObject: {fileID: 21300000, guid: 8d98019bbfae744c1b7d5644a56eb82b, type: 3}
-  - key: 1_10
-    gameObject: {fileID: 21300000, guid: 93a64aa83eb304f72a76ca61561c4909, type: 3}
-  - key: 1_11
-    gameObject: {fileID: 21300000, guid: e452ea4aaadc94d41a3297fb7297cf2c, type: 3}
-  - key: 1_12
-    gameObject: {fileID: 21300000, guid: 22660c778ed5c49a1956857342e7d160, type: 3}
-  - key: 2_10
-    gameObject: {fileID: 21300000, guid: 46f7b1e7566134ac88bda20e723aadf0, type: 3}
-  - key: 2_11
-    gameObject: {fileID: 21300000, guid: 577dddaab0de247e9bb585c9201d8d06, type: 3}
-  - key: 2_12
-    gameObject: {fileID: 21300000, guid: 8007196e324dea34baf90a47d03dc3a0, type: 3}
-  - key: 3_10
-    gameObject: {fileID: 21300000, guid: 85fcb8a45046b44e596712a225239e14, type: 3}
-  - key: 3_11
-    gameObject: {fileID: 21300000, guid: c799901174530405ca2e6b09e2ddcb7a, type: 3}
-  - key: 3_12
-    gameObject: {fileID: 21300000, guid: 49bc291dba59a48ea9bedd3958748b6d, type: 3}
   - key: joker
     gameObject: {fileID: 21300000, guid: 789c1727e555b004892f9826d56387b7, type: 3}
-  - key: k_1
-    gameObject: {fileID: 21300000, guid: b5eff3325aaf9d64c9e358a17eabf0ed, type: 3}
-  - key: k_2
-    gameObject: {fileID: 21300000, guid: 1b29702a499f7464da814f509a003cca, type: 3}
-  - key: num_0
-    gameObject: {fileID: 21300000, guid: 91fb3cb87bc9d9d4a833810146158ef5, type: 3}
-  - key: num_1
-    gameObject: {fileID: 21300000, guid: d9aec5ebd35adde489cf9f7a993345bf, type: 3}
-  - key: num_2
-    gameObject: {fileID: 21300000, guid: 91e02bec526ae2446b8c804f4d21e0a6, type: 3}
-  - key: num_3
-    gameObject: {fileID: 21300000, guid: 6c1aa33a7a6abe3498dc1e9b8be56af8, type: 3}
-  - key: num_4
-    gameObject: {fileID: 21300000, guid: 21f44b25cb6c51b4c9fbb984502d43e0, type: 3}
-  - key: num_5
-    gameObject: {fileID: 21300000, guid: b79c643bb633d034e89387a5eb3f391e, type: 3}
-  - key: num_6
-    gameObject: {fileID: 21300000, guid: ea493c3110047f647bcebd1af499e6c1, type: 3}
-  - key: num_7
-    gameObject: {fileID: 21300000, guid: 67749994e5ce8bb4d83ffd2543474c08, type: 3}
-  - key: num_8
-    gameObject: {fileID: 21300000, guid: c121a9b4fd1fd04448c7ba4baa98cba5, type: 3}
-  - key: num_9
-    gameObject: {fileID: 21300000, guid: 7394b19fd6b2bbe43ae1779b3de69e67, type: 3}
-  - key: num_10
-    gameObject: {fileID: 21300000, guid: c9df7662497ac694784391e2baddcea4, type: 3}
-  - key: num_11
-    gameObject: {fileID: 21300000, guid: 358b28728a646454cad5819351a7754f, type: 3}
-  - key: num_12
-    gameObject: {fileID: 21300000, guid: b268aa18ece726546bc0dd45e395b6a7, type: 3}
   - key: t_0
     gameObject: {fileID: 21300000, guid: f66b17f64fd12c94ba21375c4ae71b96, type: 3}
   - key: t_1
@@ -358,6 +304,60 @@ MonoBehaviour:
     gameObject: {fileID: 21300000, guid: f7d9f172227d7b844b633194dca3d892, type: 3}
   - key: t_3
     gameObject: {fileID: 21300000, guid: dd8b8a3937e02d14899a7ba9a47b51fb, type: 3}
+  - key: num_13
+    gameObject: {fileID: 21300000, guid: b268aa18ece726546bc0dd45e395b6a7, type: 3}
+  - key: num_12
+    gameObject: {fileID: 21300000, guid: 358b28728a646454cad5819351a7754f, type: 3}
+  - key: num_11
+    gameObject: {fileID: 21300000, guid: c9df7662497ac694784391e2baddcea4, type: 3}
+  - key: num_10
+    gameObject: {fileID: 21300000, guid: 7394b19fd6b2bbe43ae1779b3de69e67, type: 3}
+  - key: num_9
+    gameObject: {fileID: 21300000, guid: c121a9b4fd1fd04448c7ba4baa98cba5, type: 3}
+  - key: num_8
+    gameObject: {fileID: 21300000, guid: 67749994e5ce8bb4d83ffd2543474c08, type: 3}
+  - key: num_7
+    gameObject: {fileID: 21300000, guid: ea493c3110047f647bcebd1af499e6c1, type: 3}
+  - key: num_6
+    gameObject: {fileID: 21300000, guid: b79c643bb633d034e89387a5eb3f391e, type: 3}
+  - key: num_5
+    gameObject: {fileID: 21300000, guid: 21f44b25cb6c51b4c9fbb984502d43e0, type: 3}
+  - key: num_4
+    gameObject: {fileID: 21300000, guid: 6c1aa33a7a6abe3498dc1e9b8be56af8, type: 3}
+  - key: num_3
+    gameObject: {fileID: 21300000, guid: 91e02bec526ae2446b8c804f4d21e0a6, type: 3}
+  - key: num_2
+    gameObject: {fileID: 21300000, guid: d9aec5ebd35adde489cf9f7a993345bf, type: 3}
+  - key: num_1
+    gameObject: {fileID: 21300000, guid: 91fb3cb87bc9d9d4a833810146158ef5, type: 3}
+  - key: k_2
+    gameObject: {fileID: 21300000, guid: b5eff3325aaf9d64c9e358a17eabf0ed, type: 3}
+  - key: k_1
+    gameObject: {fileID: 21300000, guid: 1b29702a499f7464da814f509a003cca, type: 3}
+  - key: 3_13
+    gameObject: {fileID: 21300000, guid: 49bc291dba59a48ea9bedd3958748b6d, type: 3}
+  - key: 3_12
+    gameObject: {fileID: 21300000, guid: c799901174530405ca2e6b09e2ddcb7a, type: 3}
+  - key: 3_11
+    gameObject: {fileID: 21300000, guid: 85fcb8a45046b44e596712a225239e14, type: 3}
+  - key: 2_13
+    gameObject: {fileID: 21300000, guid: 8007196e324dea34baf90a47d03dc3a0, type: 3}
+  - key: 2_12
+    gameObject: {fileID: 21300000, guid: 577dddaab0de247e9bb585c9201d8d06, type: 3}
+  - key: 2_11
+    gameObject: {fileID: 21300000, guid: 46f7b1e7566134ac88bda20e723aadf0, type: 3}
+  - key: 1_13
+    gameObject: {fileID: 21300000, guid: 22660c778ed5c49a1956857342e7d160, type: 3}
+  - key: 1_12
+    gameObject: {fileID: 21300000, guid: e452ea4aaadc94d41a3297fb7297cf2c, type: 3}
+  - key: 1_11
+    gameObject: {fileID: 21300000, guid: 93a64aa83eb304f72a76ca61561c4909, type: 3}
+  - key: 0_13
+    gameObject: {fileID: 21300000, guid: 8d98019bbfae744c1b7d5644a56eb82b, type: 3}
+  - key: 0_12
+    gameObject: {fileID: 21300000, guid: 8fb231662b15946f093b57b96455966b, type: 3}
+  - key: 0_11
+    gameObject: {fileID: 21300000, guid: 652b3553db3ce42d6a5512d1be1b971c, type: 3}
 --- !u!114 &114713122286795754
 MonoBehaviour:
   m_ObjectHideFlags: 1
