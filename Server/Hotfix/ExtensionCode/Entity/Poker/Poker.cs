@@ -13,7 +13,7 @@ namespace ETHotfix
         #region 创建卡牌
 
         /// <summary>
-        ///     创建卡牌
+        ///  创建卡牌
         /// </summary>
         /// <param name="batch">几副牌</param>
         /// <param name="isRandom">是否随机排序</param>
@@ -28,7 +28,7 @@ namespace ETHotfix
 
                 for (var i = 0; i < 4; i++)
                 {
-                    for (var j = 1; j <= 13; j++) cardsWarehousing.Add(new PokerCard {CardType = i, CardNumber = j, IsPayout = false});
+                    for (var j = 1; j < 13; j++) cardsWarehousing.Add(new PokerCard {CardType = i, CardNumber = j, IsPayout = false});
                 }
 
                 // 生成大小王
@@ -48,7 +48,7 @@ namespace ETHotfix
         }
 
         /// <summary>
-        ///     随机排序卡牌
+        /// 随机排序卡牌
         /// </summary>
         /// <param name="cards">卡牌数组</param>
         /// <returns></returns>
