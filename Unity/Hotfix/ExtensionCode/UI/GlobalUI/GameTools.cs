@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using UnityEngine;
 
 namespace ETHotfix
@@ -41,7 +42,7 @@ namespace ETHotfix
             _startReloading = true;
             _reloadingCount++;
 
-            if (_reloadingCount > 7)
+            if (_reloadingCount > 5)
             {
                 ShowDialogMessage("重新连接失败!请重新登录再试!", canvasName, true);
                 return;
@@ -59,6 +60,9 @@ namespace ETHotfix
 
             try
             {
+                SceneHelperComponent.Instance.Session.Dispose();
+                SceneHelperComponent.Instance.Session = null;
+                
                 var session = SceneHelperComponent.Instance.CreateRealmSession();
 
                 var response = (LoginResponse) await session.Call(
@@ -77,13 +81,16 @@ namespace ETHotfix
 
                     loadingUI.GameObject.SetActive(false);
                     _reloadingCount = 0;
+                    _startReloading = false;
                 }
                 else
                 {
                     // 重连失败
                     ShowDialogMessage(response.Message, canvasName);
+
+                    await Task.Delay(2000);
+                    ReLoading(canvasName);
                 }
-                _startReloading = false;
             }
             catch (Exception e)
             {
