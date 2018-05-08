@@ -28,7 +28,7 @@ namespace ETHotfix
 
                 for (var i = 0; i < 4; i++)
                 {
-                    for (var j = 1; j < 13; j++) cardsWarehousing.Add(new PokerCard {CardType = i, CardNumber = j, IsPayout = false});
+                    for (var j = 1; j <= 13; j++) cardsWarehousing.Add(new PokerCard {CardType = i, CardNumber = j, IsPayout = false});
                 }
 
                 // 生成大小王
