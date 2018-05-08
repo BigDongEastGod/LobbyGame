@@ -188,11 +188,12 @@ namespace ETHotfix
         }
         
         //显示庄家头像
-        public void ShowZhuangJiaIcon(string userName)
+        public async void ShowZhuangJiaIcon(string userName,long roomId)
         {
             var rc = GetDictValue(_headUiDict, userName);
             var zhuangjiaImg=rc.Get<GameObject>("zhuangjiaImg");
             zhuangjiaImg.SetActive(true);
+            var betsResponse =(GameBankerResponse) await SceneHelperComponent.Instance.Session.Call(new GameBankerRequest(){RoomId = roomId});
         }
     
         //显示下注分数

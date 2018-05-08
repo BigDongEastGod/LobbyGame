@@ -215,6 +215,7 @@ namespace ETHotfix
         //房间游戏回调
         public void GameBack(GameInfoAnnunciate obj)
         {
+            Debug.Log("接收到的回调是/"+obj.Message);
             switch (obj.Message)
             {
                   case  0://玩家接收庄家信息 
@@ -317,7 +318,7 @@ namespace ETHotfix
         private void ShowZhuangJiaIcon(string userName)
         {
             _startGameBt.gameObject.SetActive(false);
-            _showCardUi.GetComponent<NnShowCardComponent>().ShowZhuangJiaIcon(userName);
+            _showCardUi.GetComponent<NnShowCardComponent>().ShowZhuangJiaIcon(userName,_mRoomId);
         }
         
         //发牌
