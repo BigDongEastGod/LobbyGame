@@ -1916,7 +1916,7 @@ MonoBehaviour:
   m_StartCorner: 0
   m_StartAxis: 1
   m_CellSize: {x: 1000, y: 90}
-  m_Spacing: {x: 0, y: 15}
+  m_Spacing: {x: 0, y: 5}
   m_Constraint: 1
   m_ConstraintCount: 1
 --- !u!114 &114412701557929426
@@ -1966,6 +1966,12 @@ MonoBehaviour:
     gameObject: {fileID: 1586214188779072}
   - key: ZhanJiBtn
     gameObject: {fileID: 1944747836344294}
+  - key: NiuNiuLobby
+    gameObject: {fileID: 1577604075783616}
+  - key: FriendToggle
+    gameObject: {fileID: 1224344656339022}
+  - key: NiuFriendToggle
+    gameObject: {fileID: 1620474250406108}
 --- !u!114 &114422932786908446
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2267,7 +2273,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Content: {fileID: 224130139412583506}
-  m_Horizontal: 1
+  m_Horizontal: 0
   m_Vertical: 1
   m_MovementType: 1
   m_Elasticity: 0.1
@@ -2676,7 +2682,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9044118, g: 0.7394896, b: 0.405, a: 1}
+  m_Color: {r: 0.9411765, g: 0.7863589, b: 0.51211077, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2750,7 +2756,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2818,7 +2824,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3539,8 +3545,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.0000044598}
-  m_SizeDelta: {x: 0, y: 404.4}
+  m_AnchoredPosition: {x: 0, y: -0.000013647021}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!224 &224134418106299592
 RectTransform:

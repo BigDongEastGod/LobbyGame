@@ -230,7 +230,7 @@
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
       },
-      "NLog/4.5.0-rc04": {
+      "NLog/4.5.4": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/NLog.dll": {}
@@ -776,7 +776,7 @@
           "MongoDB.Bson": "1.0.0",
           "MongoDB.Driver": "1.0.0",
           "MongoDB.Driver.Core": "1.0.0",
-          "NLog": "4.5.0-rc04",
+          "NLog": "4.5.4",
           "SharpZipLib": "1.0.0-alpha2",
           "protobuf-net": "2.3.4"
         },
@@ -1276,10 +1276,10 @@
         "netstandard.library.nuspec"
       ]
     },
-    "NLog/4.5.0-rc04": {
-      "sha512": "k7tINf79nAQJ90V4PosQw02E8p2g8ZYWxfGpMHQ6AI3nieXpjPHca1ytcgPQF0GEjfwvE92JHEN64PSanQ+QkA==",
+    "NLog/4.5.4": {
+      "sha512": "sYOzep0pdVat2zkOREy6FQwcH4zRCTimGr4c1Esqc0+t9QYvQ5JXDnW/sdqOsVxbxJ28sa/3MRUGSAfXz7eIGw==",
       "type": "package",
-      "path": "nlog/4.5.0-rc04",
+      "path": "nlog/4.5.4",
       "files": [
         "lib/monoandroid44/NLog.dll",
         "lib/monoandroid44/NLog.xml",
@@ -1289,6 +1289,8 @@
         "lib/net40-client/NLog.xml",
         "lib/net45/NLog.dll",
         "lib/net45/NLog.xml",
+        "lib/netstandard1.3/NLog.dll",
+        "lib/netstandard1.3/NLog.xml",
         "lib/netstandard1.5/NLog.dll",
         "lib/netstandard1.5/NLog.xml",
         "lib/netstandard2.0/NLog.dll",
@@ -1297,13 +1299,11 @@
         "lib/sl4/NLog.xml",
         "lib/sl5/NLog.dll",
         "lib/sl5/NLog.xml",
-        "lib/uap10.0/NLog.dll",
-        "lib/uap10.0/NLog.xml",
         "lib/wp8/NLog.dll",
         "lib/wp8/NLog.xml",
         "lib/xamarinios10/NLog.dll",
         "lib/xamarinios10/NLog.xml",
-        "nlog.4.5.0-rc04.nupkg.sha512",
+        "nlog.4.5.4.nupkg.sha512",
         "nlog.nuspec"
       ]
     },
@@ -3279,39 +3279,23 @@
     ]
   },
   "packageFolders": {
-<<<<<<< HEAD
     "/Users/sining/.nuget/packages/": {},
-=======
-    "/Users/zhaolin/.nuget/packages/": {},
->>>>>>> parent of 6052e3b... 1
     "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
       "projectUniqueName": "/Users/sining/Projects/JuAnChess/LobbyGame/Server/Hotfix/Server.Hotfix.csproj",
       "projectName": "Server.Hotfix",
       "projectPath": "/Users/sining/Projects/JuAnChess/LobbyGame/Server/Hotfix/Server.Hotfix.csproj",
       "packagesPath": "/Users/sining/.nuget/packages/",
       "outputPath": "/Users/sining/Projects/JuAnChess/LobbyGame/Server/Hotfix/obj/",
-=======
-      "projectUniqueName": "/MyDocuments/JuAnNetWork/JuAnGame/LobbyGame/Server/Hotfix/Server.Hotfix.csproj",
-      "projectName": "Server.Hotfix",
-      "projectPath": "/MyDocuments/JuAnNetWork/JuAnGame/LobbyGame/Server/Hotfix/Server.Hotfix.csproj",
-      "packagesPath": "/Users/zhaolin/.nuget/packages/",
-      "outputPath": "/MyDocuments/JuAnNetWork/JuAnGame/LobbyGame/Server/Hotfix/obj/",
->>>>>>> parent of 6052e3b... 1
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-<<<<<<< HEAD
         "/Users/sining/.config/NuGet/NuGet.Config"
-=======
-        "/Users/zhaolin/.config/NuGet/NuGet.Config"
->>>>>>> parent of 6052e3b... 1
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
@@ -3322,13 +3306,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-<<<<<<< HEAD
             "/Users/sining/Projects/JuAnChess/LobbyGame/Server/Model/Server.Model.csproj": {
               "projectPath": "/Users/sining/Projects/JuAnChess/LobbyGame/Server/Model/Server.Model.csproj"
-=======
-            "/MyDocuments/JuAnNetWork/JuAnGame/LobbyGame/Server/Model/Server.Model.csproj": {
-              "projectPath": "/MyDocuments/JuAnNetWork/JuAnGame/LobbyGame/Server/Model/Server.Model.csproj"
->>>>>>> parent of 6052e3b... 1
             }
           }
         }

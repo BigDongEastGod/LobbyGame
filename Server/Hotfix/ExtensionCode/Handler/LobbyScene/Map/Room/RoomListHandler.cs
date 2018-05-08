@@ -17,15 +17,14 @@ namespace ETHotfix
             
             try
             {
-
-                if (!player.RoomsRecord.TryGetValue(message.GameType, out var roomInfos))
+                if (!player.RoomsRecords.ContainsKey(message.GameType))
                 {
                     reply(response);
                     
                     return;
                 }
-
-                response.Rooms = roomInfos;
+                
+                response.Rooms = player.RoomsRecords[message.GameType];
             }
             catch (Exception e)
             {

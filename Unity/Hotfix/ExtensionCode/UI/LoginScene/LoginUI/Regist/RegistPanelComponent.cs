@@ -26,6 +26,7 @@ namespace ETHotfix
     public class RegistPanelComponent : Component
     {
         public SessionWrap Session;
+
         private UI _loginPanelUI;
 //        private UI _dialogPanelUI;
 
@@ -78,8 +79,8 @@ namespace ETHotfix
             {
 //                _dialogPanelUI.GameObject.SetActive(true);
 //                _dialogPanelUI.GetComponent<DialogPanelComponent>().ShowDialogBox("帐号或密码不能为空!");
-                  
-                GameTools.ShowDialogMessage("帐号或密码不能为空!","LoginCanvas");
+
+                GameTools.ShowDialogMessage("帐号或密码不能为空!", "LoginCanvas");
                 return;
             }
 
@@ -88,7 +89,7 @@ namespace ETHotfix
                 // 两次密码不一致
 //                _dialogPanelUI.GameObject.SetActive(true);
 //                _dialogPanelUI.GetComponent<DialogPanelComponent>().ShowDialogBox("两次密码输入不一致!");
-                GameTools.ShowDialogMessage("两次密码输入不一致!","LoginCanvas");
+                GameTools.ShowDialogMessage("两次密码输入不一致!", "LoginCanvas");
                 return;
             }
 
@@ -111,19 +112,20 @@ namespace ETHotfix
                 if (response.Error == 0)
                 {
                     // 注册成功,直接登录
-                    _loginPanelUI.GetComponent<LoginPanelComponent>().OnLoginSubmitBtn(registNameText.GetComponent<InputField>().text, registPwdText.GetComponent<InputField>().text);
+                    _loginPanelUI.GetComponent<LoginPanelComponent>().OnLoginSubmitBtn(registNameText.GetComponent<InputField>(),
+                        registPwdText.GetComponent<InputField>());
                 }
                 else if (response.Error == -1)
                 {
                     // 注册失败
 //                    _dialogPanelUI.GetComponent<DialogPanelComponent>().ShowDialogBox(response.Message);
-                    GameTools.ShowDialogMessage(response.Message,"LoginCanvas");
+                    GameTools.ShowDialogMessage(response.Message, "LoginCanvas");
                 }
             }
             catch (Exception e)
             {
 //                _dialogPanelUI.GetComponent<DialogPanelComponent>().ShowDialogBox("网络连接错误!");
-                GameTools.ShowDialogMessage(e.Message,"LoginCanvas");
+                GameTools.ShowDialogMessage(e.Message, "LoginCanvas");
             }
         }
     }

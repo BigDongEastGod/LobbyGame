@@ -1,0 +1,72 @@
+2018-05-07 20:03:30.4006 Manager  001 (Program.cs:39) server start........................ 1 Manager
+2018-05-07 20:03:30.5337 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=2 --appType=Realm --config=../Config/StartConfig/JuAnServer
+2018-05-07 20:03:30.5424 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=3 --appType=DB --config=../Config/StartConfig/JuAnServer
+2018-05-07 20:03:30.5460 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=4 --appType=Gate --config=../Config/StartConfig/JuAnServer
+2018-05-07 20:03:30.5503 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=5 --appType=Location --config=../Config/StartConfig/JuAnServer
+2018-05-07 20:03:30.5541 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=6 --appType=Map --config=../Config/StartConfig/JuAnServer
+2018-05-07 20:57:33.7805 Manager  001 (Program.cs:39) server start........................ 1 Manager
+2018-05-07 20:57:33.9771 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=2 --appType=Realm --config=../Config/StartConfig/JuAnServer
+2018-05-07 20:57:33.9886 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=3 --appType=DB --config=../Config/StartConfig/JuAnServer
+2018-05-07 20:57:33.9972 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=4 --appType=Gate --config=../Config/StartConfig/JuAnServer
+2018-05-07 20:57:34.0027 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=5 --appType=Location --config=../Config/StartConfig/JuAnServer
+2018-05-07 20:57:34.0100 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=6 --appType=Map --config=../Config/StartConfig/JuAnServer
+2018-05-07 20:58:07.4841 Manager  001 (Program.cs:39) server start........................ 1 Manager
+2018-05-07 20:58:07.5970 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=2 --appType=Realm --config=../Config/StartConfig/JuAnServer
+2018-05-07 20:58:07.6064 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=3 --appType=DB --config=../Config/StartConfig/JuAnServer
+2018-05-07 20:58:07.6100 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=4 --appType=Gate --config=../Config/StartConfig/JuAnServer
+2018-05-07 20:58:07.6138 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=5 --appType=Location --config=../Config/StartConfig/JuAnServer
+2018-05-07 20:58:07.6193 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=6 --appType=Map --config=../Config/StartConfig/JuAnServer
+2018-05-07 21:16:41.5585 Manager  001 (Program.cs:39) server start........................ 1 Manager
+2018-05-07 21:16:41.6710 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=2 --appType=Realm --config=../Config/StartConfig/JuAnServer
+2018-05-07 21:16:41.6803 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=3 --appType=DB --config=../Config/StartConfig/JuAnServer
+2018-05-07 21:16:41.6873 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=4 --appType=Gate --config=../Config/StartConfig/JuAnServer
+2018-05-07 21:16:41.6931 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=5 --appType=Location --config=../Config/StartConfig/JuAnServer
+2018-05-07 21:16:41.6981 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=6 --appType=Map --config=../Config/StartConfig/JuAnServer
+2018-05-07 21:18:56.6986 Manager  001 (Program.cs:39) server start........................ 1 Manager
+2018-05-07 21:18:56.8202 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=2 --appType=Realm --config=../Config/StartConfig/JuAnServer
+2018-05-07 21:18:56.8291 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=3 --appType=DB --config=../Config/StartConfig/JuAnServer
+2018-05-07 21:18:56.8356 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=4 --appType=Gate --config=../Config/StartConfig/JuAnServer
+2018-05-07 21:18:56.8410 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=5 --appType=Location --config=../Config/StartConfig/JuAnServer
+2018-05-07 21:18:56.8460 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=6 --appType=Map --config=../Config/StartConfig/JuAnServer
+2018-05-07 21:24:53.6762 Manager  001 (Program.cs:39) server start........................ 1 Manager
+2018-05-07 21:24:53.8003 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=2 --appType=Realm --config=../Config/StartConfig/JuAnServer
+2018-05-07 21:24:53.8090 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=3 --appType=DB --config=../Config/StartConfig/JuAnServer
+2018-05-07 21:24:53.8160 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=4 --appType=Gate --config=../Config/StartConfig/JuAnServer
+2018-05-07 21:24:53.8200 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=5 --appType=Location --config=../Config/StartConfig/JuAnServer
+2018-05-07 21:24:53.8241 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=6 --appType=Map --config=../Config/StartConfig/JuAnServer
+2018-05-07 21:33:13.0937 Manager  001 (Program.cs:39) server start........................ 1 Manager
+2018-05-07 21:33:13.2433 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=2 --appType=Realm --config=../Config/StartConfig/JuAnServer
+2018-05-07 21:33:13.2550 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=3 --appType=DB --config=../Config/StartConfig/JuAnServer
+2018-05-07 21:33:13.2594 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=4 --appType=Gate --config=../Config/StartConfig/JuAnServer
+2018-05-07 21:33:13.2640 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=5 --appType=Location --config=../Config/StartConfig/JuAnServer
+2018-05-07 21:33:13.2715 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=6 --appType=Map --config=../Config/StartConfig/JuAnServer
+2018-05-07 21:40:46.3610 Manager  001 (Program.cs:39) server start........................ 1 Manager
+2018-05-07 21:40:46.4929 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=2 --appType=Realm --config=../Config/StartConfig/JuAnServer
+2018-05-07 21:40:46.5035 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=3 --appType=DB --config=../Config/StartConfig/JuAnServer
+2018-05-07 21:40:46.5075 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=4 --appType=Gate --config=../Config/StartConfig/JuAnServer
+2018-05-07 21:40:46.5114 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=5 --appType=Location --config=../Config/StartConfig/JuAnServer
+2018-05-07 21:40:46.5157 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=6 --appType=Map --config=../Config/StartConfig/JuAnServer
+2018-05-07 21:42:23.0568 Manager  001 (Program.cs:39) server start........................ 1 Manager
+2018-05-07 21:42:23.1708 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=2 --appType=Realm --config=../Config/StartConfig/JuAnServer
+2018-05-07 21:42:23.1809 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=3 --appType=DB --config=../Config/StartConfig/JuAnServer
+2018-05-07 21:42:23.1847 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=4 --appType=Gate --config=../Config/StartConfig/JuAnServer
+2018-05-07 21:42:23.1891 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=5 --appType=Location --config=../Config/StartConfig/JuAnServer
+2018-05-07 21:42:23.1947 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=6 --appType=Map --config=../Config/StartConfig/JuAnServer
+2018-05-07 21:48:13.5696 Manager  001 (Program.cs:39) server start........................ 1 Manager
+2018-05-07 21:48:13.7099 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=2 --appType=Realm --config=../Config/StartConfig/JuAnServer
+2018-05-07 21:48:13.7274 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=3 --appType=DB --config=../Config/StartConfig/JuAnServer
+2018-05-07 21:48:13.7319 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=4 --appType=Gate --config=../Config/StartConfig/JuAnServer
+2018-05-07 21:48:13.7387 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=5 --appType=Location --config=../Config/StartConfig/JuAnServer
+2018-05-07 21:48:13.7452 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=6 --appType=Map --config=../Config/StartConfig/JuAnServer
+2018-05-07 21:55:29.3460 Manager  001 (Program.cs:39) server start........................ 1 Manager
+2018-05-07 21:55:29.4653 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=2 --appType=Realm --config=../Config/StartConfig/JuAnServer
+2018-05-07 21:55:29.4809 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=3 --appType=DB --config=../Config/StartConfig/JuAnServer
+2018-05-07 21:55:29.4858 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=4 --appType=Gate --config=../Config/StartConfig/JuAnServer
+2018-05-07 21:55:29.4902 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=5 --appType=Location --config=../Config/StartConfig/JuAnServer
+2018-05-07 21:55:29.4950 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=6 --appType=Map --config=../Config/StartConfig/JuAnServer
+2018-05-07 22:42:44.1970 Manager  001 (Program.cs:39) server start........................ 1 Manager
+2018-05-07 22:42:44.3750 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=2 --appType=Realm --config=../Config/StartConfig/JuAnServer
+2018-05-07 22:42:44.3929 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=3 --appType=DB --config=../Config/StartConfig/JuAnServer
+2018-05-07 22:42:44.4151 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=4 --appType=Gate --config=../Config/StartConfig/JuAnServer
+2018-05-07 22:42:44.4443 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=5 --appType=Location --config=../Config/StartConfig/JuAnServer
+2018-05-07 22:42:44.4544 Manager  001 (AppManagerComponent.cs:58) dotnet App.dll --appId=6 --appType=Map --config=../Config/StartConfig/JuAnServer

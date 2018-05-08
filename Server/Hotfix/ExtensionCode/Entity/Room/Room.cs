@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace ETModel
 {
@@ -19,6 +20,8 @@ namespace ETModel
         public byte[] Rules;  // 房间规则
 
         public RoomType RoomType;  // 房间类型
+
+        public Action<long, string> DissolveRoomAction; // 解散房间委托
 
         public virtual long PlayerIsInRomm(SPlayer player){return 0;}  // 判断用户是否在该房间中
         

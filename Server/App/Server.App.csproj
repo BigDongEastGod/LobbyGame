@@ -17,7 +17,7 @@
     <OutputPath>..\..\Bin\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="NLog" Version="4.5.0-rc04" />
+    <PackageReference Include="NLog" Version="4.5.4" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Model\Server.Model.csproj" />
