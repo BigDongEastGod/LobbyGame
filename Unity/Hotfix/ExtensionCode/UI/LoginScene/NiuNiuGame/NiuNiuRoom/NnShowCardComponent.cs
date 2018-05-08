@@ -13,11 +13,11 @@ using Text = UnityEngine.UI.Text;
 namespace ETHotfix
 {
     [ObjectSystem]
-    public class NNShowCardComponentAwakeSystem : AwakeSystem<NnShowCardComponent>
+    public class NNShowCardComponentAwakeSystem : AwakeSystem<NnShowCardComponent,object[]>
     {
-        public override void Awake(NnShowCardComponent self)
+        public override void Awake(NnShowCardComponent self,object[] args)
         {
-            self.Awake();
+            self.Awake(args);
         }
     }
     
@@ -54,11 +54,12 @@ namespace ETHotfix
         private Dictionary<string,List<ReferenceCollector>> _pokerObjList;                     //扑克缓存列表
         private bool IsFlop { get; set; }                                                      //是否可以翻牌
         private string CurrentUserName{ get; set; }                                            //当前用户名
+        private NiuNiuMainComponent _niuNiuMainUi;
  
-#endregion
+        #endregion
 
 
-        public async void Awake()
+        public async void Awake(object[] args)
         {
             _sixTableList=new List<Vector2>();
             _eightTableList=new List<Vector2>();
@@ -75,7 +76,7 @@ namespace ETHotfix
             _licensingPos = _rc.Get<GameObject>("LicensingPos").GetComponent<RectTransform>().anchoredPosition;
             _nnCardPrefab= _rc.Get<GameObject>("NiuNIuCard");
             _headUIform=_rc.Get<GameObject>("HeadUIForm");
-            CurrentUserName = "1";
+            _niuNiuMainUi = (NiuNiuMainComponent)args[0];
         }
         
         public void Update()
@@ -112,7 +113,6 @@ namespace ETHotfix
             }
         }
     
-    
         //寻找空闲椅子
         public int FindFreeChair(string userName)
         {
@@ -135,6 +135,7 @@ namespace ETHotfix
             if (chairIndex == -1)
             {
                 headObj.GetComponent<RectTransform>().anchoredPosition = _mainHeadPos.anchoredPosition;
+                CurrentUserName = playerInfo.UserName;
             }
             else
             {
@@ -208,7 +209,15 @@ namespace ETHotfix
                 rc.Get<GameObject>("BetsTitleImg").transform.GetChild(0).GetComponent<Text>().text = score.ToString();
             }
         }
- 
+
+        //翻动自己的牌
+        public void FlopSelfCard()
+        {
+            FlopAniamtion(GetDictValue(_pokerObjList, CurrentUserName));
+            _niuNiuMainUi.SwitchFlopCard(false);
+            _niuNiuMainUi.SwitchTipsCard(true);
+        }
+
         //翻牌动画
         private void FlopAniamtion(IEnumerable<ReferenceCollector> cardList)
         {
@@ -267,8 +276,10 @@ namespace ETHotfix
                 //如果是J Q K
                 else
                 {
-                    flowerColor.sprite = rc.Get<Sprite>(data.CardType +"_" +data.CardNumber);
-                    bigFlowerColor1.sprite = rc.Get<Sprite>(data.CardType +"_" +data.CardNumber);
+                    flowerColor.sprite = rc.Get<Sprite>("t_" + data.CardType);
+                    bigFlowerColor2.sprite = rc.Get<Sprite>(data.CardType +"_" +data.CardNumber);
+                    bigFlowerColor2.gameObject.SetActive(true);
+                    bigFlowerColor1.gameObject.SetActive(false);
                 }
 
                 if (data.CardType > 9) return;
@@ -289,13 +300,14 @@ namespace ETHotfix
             else
             {
                 //获得王的标志
-                cardNumber.sprite = rc.Get<Sprite>("joker");
+                jokerImg.gameObject.SetActive(true);
+                cardNumber.gameObject.SetActive(false);
                 //大小王的颜色设置
-                cardNumber.GetComponent<Image>().color = data.CardNumber == 1 ? Color.red : Color.white;
+                cardNumber.GetComponent<Image>().color = data.CardNumber == 1 ? Color.red : Color.black;
 
                 bigFlowerColor2.gameObject.SetActive(true);
                 bigFlowerColor1.gameObject.SetActive(false);
-                flowerColor.sprite = rc.Get<Sprite>("k_" + data.CardNumber);
+                flowerColor.gameObject.SetActive(false);
                 bigFlowerColor2.sprite = rc.Get<Sprite>("k_" + data.CardNumber);
             }
         }
@@ -352,7 +364,7 @@ namespace ETHotfix
                     if (i == 4)
                     {
                         if (IsFlop)
-                            FlopAniamtion(GetDictValue(_pokerObjList, CurrentUserName));
+                            _niuNiuMainUi.ShowFlopCardButton();
                     }
                 }
                 delay += 0.05f;
