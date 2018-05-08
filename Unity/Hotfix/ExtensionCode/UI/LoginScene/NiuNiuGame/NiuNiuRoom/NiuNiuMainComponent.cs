@@ -131,6 +131,8 @@ namespace ETHotfix
                 roomCountText.text = "1/" + rules.Dish.ToString();
                 //获得房间显示卡牌窗口
                 _showCardUi = Game.Scene.GetComponent<UIComponent>().Create(UIType.NNShowCard, UiLayer.Medium);
+                //保存房间号
+                _showCardUi.GetComponent<NnShowCardComponent>()._roomId = _mRoomId;
                 //设置房间人数
                 _showCardUi.GetComponent<NnShowCardComponent>().RoomPeople = rules.PlayerCount;
             }
@@ -215,6 +217,7 @@ namespace ETHotfix
         //房间游戏回调
         public void GameBack(GameInfoAnnunciate obj)
         {
+            Debug.Log("接收到的回调是/"+obj.Message);
             switch (obj.Message)
             {
                   case  0://玩家接收庄家信息 
@@ -222,7 +225,7 @@ namespace ETHotfix
                       _zhuangJiaName = obj.UserName;
                       break;
                   case 1://发送玩家开始下注消息 
-                      ShowBet(obj.UserName,SerializeHelper.Instance.DeserializeObject<int>(obj.Arg));
+                      ShowBetsButton();
                       break;
                   case 2://发送下注消息给其他玩家
                       ShowBet(obj.UserName,SerializeHelper.Instance.DeserializeObject<int>(obj.Arg));
@@ -284,6 +287,7 @@ namespace ETHotfix
         private void ShowBetsButton()
         {
             string[] scroeStr = _bottomScoreText.text.Split('/');
+            Debug.Log("scroeStr.length/"+scroeStr.Length);
             if (scroeStr.Length > 1)
             {
                 _betsButton1.gameObject.SetActive(true);
@@ -298,18 +302,17 @@ namespace ETHotfix
         //向服务器发送下注请求
         private async void AddBetsEvent(string score)
         {
-            var betsResponse =(BetGameResponse) await SceneHelperComponent.Instance.Session.Call(new BetGameRequest(){Bet=int.Parse(score)});
+            var betsResponse =(BetGameResponse) await SceneHelperComponent.Instance.Session.Call(new BetGameRequest(){Bet=int.Parse(score),RoomId = _mRoomId});
             if (betsResponse.Error != 0) return;
-            Debug.Log("下注成功，底分为:"+score);
             _betsButton1.gameObject.SetActive(false);
             _betsButton2.gameObject.SetActive(false);
             _showCardUi.GetComponent<NnShowCardComponent>().ShowBets(_player.AccountInfo.UserName,int.Parse(score));
-
         }
  
         //显示下注的分数
         private void ShowBet(string userName,int score)
         {
+            Debug.Log("我接收到了下注名是"+userName);
             _showCardUi.GetComponent<NnShowCardComponent>().ShowBets(userName, score);
         }
         
