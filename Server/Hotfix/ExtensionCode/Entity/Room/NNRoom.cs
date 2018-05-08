@@ -38,10 +38,6 @@ namespace ETHotfix
             public List<PokerCard> Cards;
         }
 
-        // 游戏逻辑委托队列
-
-        public Queue<Action<SPlayer, object[]>> GameQueue = new Queue<Action<SPlayer, object[]>>();
-
         /// <summary>
         /// 玩家游戏状态
         /// </summary>
@@ -61,20 +57,6 @@ namespace ETHotfix
             Rules = rules;
             
             ChessRules = ProtobufHelper.FromBytes<NNChess>(rules);
-            
-            // 清空队列
-            
-            GameQueue.Clear();
-            
-            GameQueue.Enqueue(CreateBankerMessage);  // 随机创建一个庄家
-            
-            GameQueue.Enqueue(StartBetMessage);  // 给玩家发送下注消息
-            
-            GameQueue.Enqueue(SendBetMessage);  // 发送下注消息给其他玩家
-            
-            GameQueue.Enqueue(DealPokerMessage);  // 给玩家发牌
-            
-            GameQueue.Enqueue(CalculateCardsMessage);  // 计算玩家手里卡牌
         }
 
         /// <summary>
@@ -149,12 +131,10 @@ namespace ETHotfix
             
             // 发送下注消息给其他玩家
 
-            var response = new GameInfoAnnunciate() {Arg = SerializeHelper.Instance.SerializeObject(args[1]), Message = 2};
+            var response = new GameInfoAnnunciate() {Arg = SerializeHelper.Instance.SerializeObject(args[1]), Message = 2,UserName = player.Account.UserName};
 
             GameStates.Keys.Where(d => d != player).ForEach(d =>
             {
-                response.UserName = d.Account.UserName;
-
                 d.GetActorProxy.Send(response);
             });
         }
@@ -170,7 +150,7 @@ namespace ETHotfix
             
             GameStates.Values.ForEach(d => d.IsReceive = false);
             
-            var poker = GetComponent<Poker>();
+            var poker = GetComponent<NNPoker>();
                             
             // 生成卡牌
 
@@ -396,10 +376,8 @@ namespace ETHotfix
             GameStates.Clear();
 
             Players.Where(d => d.IsActivity).ForEach(d => GameStates.Add(d, new PlayerState()));
-            
-            // 执行栈中的逻辑
 
-            GameQueue.Dequeue()?.Invoke(player, null);
+            CreateBankerMessage(player);
             
             return "StartGame";
         }
@@ -440,28 +418,21 @@ namespace ETHotfix
             {
                     case 0:
                         
-                        GameQueue.Dequeue()?.Invoke(player, args);
+                        StartBetMessage(player, args);
                         
                         break;
                     
                     case 1:
                         
-                        GameQueue.Peek()?.Invoke(player, args);
-                        
-                        if (GameStates.Values.Count(d => d.IsReceive) == GameStates.Count)
-                        {
-                            GameQueue.Dequeue();
-                            
-                            // 给玩家发牌
-                            
-                            GameQueue.Dequeue()?.Invoke(player, args);
-                        }
+                        SendBetMessage(player, args);
+
+                        if (GameStates.Values.Count(d => d.IsReceive) == GameStates.Count) DealPokerMessage(player, args);
                         
                         break;
                     
                     case 2:
                         
-                        GameQueue.Peek()?.Invoke(player, args);
+                        //GameQueue.Peek()?.Invoke(player, args);
                         
                         break;
             }
@@ -497,8 +468,6 @@ namespace ETHotfix
             Guest.Clear();
             
             Cards.Clear();
-            
-            GameQueue.Clear();
             
             GameStates.Clear();
 
