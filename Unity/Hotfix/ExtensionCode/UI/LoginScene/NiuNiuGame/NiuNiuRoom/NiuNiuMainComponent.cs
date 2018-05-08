@@ -117,7 +117,6 @@ namespace ETHotfix
             //获得房间规则信息
             var rules = response.Rules == null ? null : ProtobufHelper.FromBytes<NNChess>(response.Rules);
             //设置房间号
-            Debug.Log("roomId"+roomId);
             _mRoomId = roomId;
             _roomNum.text = roomId.ToString();
             //TODo.....庄位信息
