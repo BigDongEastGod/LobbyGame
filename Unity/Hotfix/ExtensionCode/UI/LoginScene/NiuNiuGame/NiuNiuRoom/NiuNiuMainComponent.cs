@@ -162,8 +162,6 @@ namespace ETHotfix
 
             //开始按钮注册
             SceneHelperComponent.Instance.MonoEvent.AddButtonClick(_startGameBt.GetComponent<Button>(), StartGameOclick);
-            
-
 
             //获取房间准备号玩家的数据
             GetAllReadyInfo();
