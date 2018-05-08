@@ -37,7 +37,8 @@ namespace ETHotfix
         private List<Vector2> _sixTableList;                         //六人桌的位置
         private List<Vector2> _eightTableList;                       //八人桌的位置
         public int RoomPeople;                                       //房间人数
-        
+        public long _roomId { get; set; }                            //房间号
+
         private List<Vector2> _currentTablePosList;                 //当前房间位置
         private Transform _currentTableObj;                         //当前桌子
         private GameObject _nnCardPrefab;                           //卡牌预设
@@ -188,11 +189,12 @@ namespace ETHotfix
         }
         
         //显示庄家头像
-        public void ShowZhuangJiaIcon(string userName)
+        public async void ShowZhuangJiaIcon(string userName)
         {
             var rc = GetDictValue(_headUiDict, userName);
             var zhuangjiaImg=rc.Get<GameObject>("zhuangjiaImg");
             zhuangjiaImg.SetActive(true);
+            var betsResponse =(GameBankerResponse) await SceneHelperComponent.Instance.Session.Call(new GameBankerRequest(){RoomId = _roomId});
         }
     
         //显示下注分数
