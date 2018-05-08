@@ -1557,6 +1557,7 @@
             <e p="EditorResHelper.cs" t="Include" />
             <e p="MongoHelper.cs" t="Include" />
           </e>
+          <e p="LogRedirection.cs" t="Include" />
           <e p="Proto2CsEditor" t="Include">
             <e p="Proto2CSEditor.cs" t="Include" />
           </e>

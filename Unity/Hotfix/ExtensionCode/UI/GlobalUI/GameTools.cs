@@ -38,6 +38,7 @@ namespace ETHotfix
             if (_reloadingCount > 7)
             {
                 ShowDialogMessage("重新连接失败!请重新登录再试!", canvasName, true);
+                return;
             }
 
             var loadingUI = Game.Scene.GetComponent<UIComponent>().Get(UIType.LoadingPanel);
