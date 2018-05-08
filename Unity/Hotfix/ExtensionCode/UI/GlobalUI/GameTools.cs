@@ -6,6 +6,7 @@ namespace ETHotfix
     public static class GameTools
     {
         private static int _reloadingCount = 0;
+        private static bool _startReloading = false;
 
         /// <summary>
         /// 显示提示框
@@ -33,6 +34,11 @@ namespace ETHotfix
         /// <param name="canvasName">当前的画布名称</param>
         public static async void ReLoading(string canvasName)
         {
+            if (_startReloading)
+            {
+                return;
+            }
+            _startReloading = true;
             _reloadingCount++;
 
             if (_reloadingCount > 7)
@@ -77,11 +83,15 @@ namespace ETHotfix
                     // 重连失败
                     ShowDialogMessage(response.Message, canvasName);
                 }
+                _startReloading = false;
             }
             catch (Exception e)
             {
+                _startReloading = false;
                 ShowDialogMessage(e.Message, canvasName);
             }
+
+
         }
     }
 }
