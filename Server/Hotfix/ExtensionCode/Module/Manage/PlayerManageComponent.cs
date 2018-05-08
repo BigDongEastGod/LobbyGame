@@ -129,14 +129,14 @@ namespace ETHotfix
             // 删除Actor相关组件
 
             await RemoveActor(player);
+            
+            // 找到用户所在房间、如果有就退出该房间
+
+            RoomManageComponent.Instance.GetRommByPlayer(player)?.QuitRoom(player);
 
             // 用户管理里删除
 
             RemovePlayer(player);
-
-            // 找到用户所在房间、如果有就退出该房间
-
-            RoomManageComponent.Instance.GetRommByPlayer(player)?.QuitRoom(player);
             
             // Dispose
 
