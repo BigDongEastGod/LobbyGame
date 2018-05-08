@@ -158,7 +158,7 @@ namespace ETHotfix
                             
             // 分发卡牌
 
-            var playerPokers = poker.Deal(Cards, Players.Count, 5, true);
+            var playerPokers = poker.Deal(Cards, GameStates.Count, 5, true);
                             
             // 创建发送协议
 
@@ -174,7 +174,9 @@ namespace ETHotfix
             {
                 response.UserName = activityPlayers.ElementAt(i).Account.UserName;
 
-                response.Arg = SerializeHelper.Instance.SerializeObject(playerPokers[i]);
+                response.Arg = ProtobufHelper.ToBytes(playerPokers[i].ToList());
+
+                Log.Debug("5555555555   " + ProtobufHelper.FromBytes<List<PokerCard>>(response.Arg).Count.ToString());
                                 
                 activityPlayers[i].GetActorProxy.Send(response);
 
