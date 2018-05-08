@@ -1,0 +1,11 @@
+2018-05-07 21:20:10.9015 Realm    002 System.NullReferenceException: Object reference not set to an instance of an object.
+   at ETHotfix.OuterMessageDispatcher.<Dispatch>d__0.MoveNext() in /Users/sining/Projects/JuAnChess/LobbyGame/Server/Hotfix/Module/Message/OuterMessageDispatcher.cs:line 36
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at ETModel.OneThreadSynchronizationContext.<>c__DisplayClass3_0.<Post>b__0() in /Users/sining/Projects/JuAnChess/LobbyGame/Unity/Assets/Scripts/Base/OneThreadSynchronizationContext.cs:line 32
+   at ETModel.OneThreadSynchronizationContext.Update() in /Users/sining/Projects/JuAnChess/LobbyGame/Unity/Assets/Scripts/Base/OneThreadSynchronizationContext.cs:line 26
+   at App.Program.Main(String[] args) in /Users/sining/Projects/JuAnChess/LobbyGame/Server/App/Program.cs:line 120 
+ Main at offset 4418 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Server/App/Program.cs:120:7
+Error at offset 106 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Server/Model/Base/Log.cs:31:4
+Error at offset 102 in file:line:column /Users/sining/Projects/JuAnChess/LobbyGame/Server/Model/Base/Logger/NLogAdapter.cs:35:4
+
