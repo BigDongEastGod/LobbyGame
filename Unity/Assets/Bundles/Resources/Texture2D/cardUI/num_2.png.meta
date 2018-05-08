@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 91e02bec526ae2446b8c804f4d21e0a6
-timeCreated: 1524378427
+guid: d9aec5ebd35adde489cf9f7a993345bf
+timeCreated: 1524378434
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName: {}
@@ -93,5 +93,5 @@ TextureImporter:
     physicsShape: []
   spritePackingTag: 
   userData: 
-  assetBundleName: card3.unity3d
+  assetBundleName: card2.unity3d
   assetBundleVariant: 

@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 85fcb8a45046b44e596712a225239e14
-timeCreated: 1524645593
+guid: 8007196e324dea34baf90a47d03dc3a0
+timeCreated: 1524378427
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName: {}
@@ -76,16 +76,6 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
   - buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -103,5 +93,5 @@ TextureImporter:
     physicsShape: []
   spritePackingTag: 
   userData: 
-  assetBundleName: p11.unity3d
+  assetBundleName: s13.unity3d
   assetBundleVariant: 
