@@ -268,7 +268,7 @@ namespace ETHotfix
         //显示提示牌UI
         public void ShowTipsUi()
         {
-            if (TipsIndex != 0)
+            if (TipsIndex == 0)
             {
                 Debug.Log("没牛!!!!!!");
             }
@@ -282,6 +282,7 @@ namespace ETHotfix
         //加载扑克的数据
         private static void LoadPorkerData(ReferenceCollector rc, PokerCard data)
         {
+            Debug.Log("data.CardNumber/"+data.CardNumber);
             var jokerImg = rc.Get<GameObject>("jokerImg").GetComponent<Image>();
             var cardNumber = rc.Get<GameObject>("cardNumber").GetComponent<Image>();
             var flowerColor = rc.Get<GameObject>("FlowerColor").GetComponent<Image>();
@@ -329,7 +330,7 @@ namespace ETHotfix
                 jokerImg.gameObject.SetActive(true);
                 cardNumber.gameObject.SetActive(false);
                 //大小王的颜色设置
-                cardNumber.GetComponent<Image>().color = data.CardNumber == 1 ? Color.red : Color.black;
+                cardNumber.GetComponent<Image>().color = data.CardNumber == 1 ? Color.black : Color.red;
 
                 bigFlowerColor2.gameObject.SetActive(true);
                 bigFlowerColor1.gameObject.SetActive(false);

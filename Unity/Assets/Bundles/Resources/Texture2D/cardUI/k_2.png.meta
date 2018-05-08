@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 1b29702a499f7464da814f509a003cca
-timeCreated: 1524378418
+guid: b5eff3325aaf9d64c9e358a17eabf0ed
+timeCreated: 1524378430
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName: {}
@@ -93,5 +93,5 @@ TextureImporter:
     physicsShape: []
   spritePackingTag: 
   userData: 
-  assetBundleName: smallking.unity3d
+  assetBundleName: bigking.unity3d
   assetBundleVariant: 
