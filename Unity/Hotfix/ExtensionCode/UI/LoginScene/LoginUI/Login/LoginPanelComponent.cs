@@ -74,6 +74,17 @@ namespace ETHotfix
 
             try
             {
+                var loadingUI = Game.Scene.GetComponent<UIComponent>().Get(UIType.LoadingPanel);
+
+                Transform parent = GameObject.Find("Global/UI/" + "LoginCanvas" + "/TopMost").transform;
+
+                loadingUI.GameObject.transform.SetParent(parent);
+
+                loadingUI.GameObject.SetActive(true);
+
+                loadingUI.GetComponent<LoadingComponent>().SetText("正在登录,请稍候...");
+                
+                
                 var session = _registPanelUI.GetComponent<RegistPanelComponent>().Session ?? SceneHelperComponent.Instance.CreateRealmSession();
 
                 SceneHelperComponent.Instance.MonoEvent.RemoveButtonClick(loginSubmitBtn.GetComponent<Button>());
@@ -97,6 +108,7 @@ namespace ETHotfix
 
                     if (accountResponse.AccountInfo.RoomId == 0)
                     {
+                        loadingUI.GameObject.SetActive(false);
                         Game.Scene.GetComponent<UIComponent>().Create(UIType.Lobby, UiLayer.Bottom);
                         Game.Scene.GetComponent<UIComponent>().Remove(UIType.Login);
                     }
@@ -105,6 +117,7 @@ namespace ETHotfix
                         Debug.Log("重新连接,房间号: " + accountResponse.AccountInfo.RoomId);
                         JoinPaiJu(accountResponse.AccountInfo.RoomId);
                     }
+                    
                 }
                 else if (response.Error == -1)
                 {
