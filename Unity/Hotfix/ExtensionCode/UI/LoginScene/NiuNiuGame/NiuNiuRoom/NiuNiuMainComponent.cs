@@ -287,6 +287,7 @@ namespace ETHotfix
         private void ShowBetsButton()
         {
             string[] scroeStr = _bottomScoreText.text.Split('/');
+            Debug.Log("scroeStr.length/"+scroeStr.Length);
             if (scroeStr.Length > 1)
             {
                 _betsButton1.gameObject.SetActive(true);
@@ -301,18 +302,17 @@ namespace ETHotfix
         //向服务器发送下注请求
         private async void AddBetsEvent(string score)
         {
-            var betsResponse =(BetGameResponse) await SceneHelperComponent.Instance.Session.Call(new BetGameRequest(){Bet=int.Parse(score)});
+            var betsResponse =(BetGameResponse) await SceneHelperComponent.Instance.Session.Call(new BetGameRequest(){Bet=int.Parse(score),RoomId = _mRoomId});
             if (betsResponse.Error != 0) return;
-            Debug.Log("下注成功，底分为:"+score);
             _betsButton1.gameObject.SetActive(false);
             _betsButton2.gameObject.SetActive(false);
             _showCardUi.GetComponent<NnShowCardComponent>().ShowBets(_player.AccountInfo.UserName,int.Parse(score));
-
         }
  
         //显示下注的分数
         private void ShowBet(string userName,int score)
         {
+            Debug.Log("我接收到了下注名是"+userName);
             _showCardUi.GetComponent<NnShowCardComponent>().ShowBets(userName, score);
         }
         
