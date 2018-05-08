@@ -1,5 +1,8 @@
-﻿namespace ETModel
+﻿using System;
+
+namespace ETModel
 {
+    [Serializable]
     public class PokerCard
     {
         public int CardNumber;
