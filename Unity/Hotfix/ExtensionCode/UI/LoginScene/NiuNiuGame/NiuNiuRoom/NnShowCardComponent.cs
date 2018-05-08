@@ -13,11 +13,11 @@ using Text = UnityEngine.UI.Text;
 namespace ETHotfix
 {
     [ObjectSystem]
-    public class NNShowCardComponentAwakeSystem : AwakeSystem<NnShowCardComponent>
+    public class NNShowCardComponentAwakeSystem : AwakeSystem<NnShowCardComponent,object[]>
     {
-        public override void Awake(NnShowCardComponent self)
+        public override void Awake(NnShowCardComponent self,object[] args)
         {
-            self.Awake();
+            self.Awake(args);
         }
     }
     
@@ -37,7 +37,7 @@ namespace ETHotfix
         private List<Vector2> _sixTableList;                         //六人桌的位置
         private List<Vector2> _eightTableList;                       //八人桌的位置
         public int RoomPeople;                                       //房间人数
-        public long _roomId { get; set; }                            //房间号
+        public long RoomId { get; set; }                            //房间号
 
         private List<Vector2> _currentTablePosList;                 //当前房间位置
         private Transform _currentTableObj;                         //当前桌子
@@ -54,16 +54,21 @@ namespace ETHotfix
         private Dictionary<string,List<ReferenceCollector>> _pokerObjList;                     //扑克缓存列表
         private bool IsFlop { get; set; }                                                      //是否可以翻牌
         private string CurrentUserName{ get; set; }                                            //当前用户名
- 
-#endregion
+        private NiuNiuMainComponent _niuNiuMainUi;
+        public List<PokerCard> SortedCardList;
+        public int TipsIndex { get; set; }
 
 
-        public async void Awake()
+        #endregion
+
+
+        public async void Awake(object[] args)
         {
             _sixTableList=new List<Vector2>();
             _eightTableList=new List<Vector2>();
             _headUiDict=new Dictionary<string, ReferenceCollector>();
             _pokerObjList=new Dictionary<string, List<ReferenceCollector>>();
+            SortedCardList=new List<PokerCard>();
             _chairArray=new string[8];
             _cardUiDict=new Dictionary<int, UI>();
             _currentTablePosList=new List<Vector2>();
@@ -75,7 +80,7 @@ namespace ETHotfix
             _licensingPos = _rc.Get<GameObject>("LicensingPos").GetComponent<RectTransform>().anchoredPosition;
             _nnCardPrefab= _rc.Get<GameObject>("NiuNIuCard");
             _headUIform=_rc.Get<GameObject>("HeadUIForm");
-            CurrentUserName = "1";
+            _niuNiuMainUi = (NiuNiuMainComponent)args[0];
         }
         
         public void Update()
@@ -112,7 +117,6 @@ namespace ETHotfix
             }
         }
     
-    
         //寻找空闲椅子
         public int FindFreeChair(string userName)
         {
@@ -135,6 +139,7 @@ namespace ETHotfix
             if (chairIndex == -1)
             {
                 headObj.GetComponent<RectTransform>().anchoredPosition = _mainHeadPos.anchoredPosition;
+                CurrentUserName = playerInfo.UserName;
             }
             else
             {
@@ -194,21 +199,28 @@ namespace ETHotfix
             var rc = GetDictValue(_headUiDict, userName);
             var zhuangjiaImg=rc.Get<GameObject>("zhuangjiaImg");
             zhuangjiaImg.SetActive(true);
-            var betsResponse =(GameBankerResponse) await SceneHelperComponent.Instance.Session.Call(new GameBankerRequest(){RoomId = _roomId});
+            var betsResponse =(GameBankerResponse) await SceneHelperComponent.Instance.Session.Call(new GameBankerRequest(){RoomId = RoomId});
         }
     
         //显示下注分数
         public void ShowBets(string userName,int score)
         {
-            if (_headUiDict.ContainsKey(userName))
-            {
-                ReferenceCollector rc;
-                _headUiDict.TryGetValue(userName, out rc);
-                rc.Get<GameObject>("BetsTitleImg").SetActive(true);
-                rc.Get<GameObject>("BetsTitleImg").transform.GetChild(0).GetComponent<Text>().text = score.ToString();
-            }
+            if (!_headUiDict.ContainsKey(userName)) return;
+            ReferenceCollector rc;
+            _headUiDict.TryGetValue(userName, out rc);
+            if (rc == null) return;
+            rc.Get<GameObject>("BetsTitleImg").SetActive(true);
+            rc.Get<GameObject>("BetsTitleImg").transform.GetChild(0).GetComponent<Text>().text =score.ToString();
         }
- 
+
+        //翻动自己的牌
+        public void FlopSelfCard()
+        {
+            FlopAniamtion(GetDictValue(_pokerObjList, CurrentUserName));
+            _niuNiuMainUi.SwitchFlopCard(false);
+            _niuNiuMainUi.SwitchTipsCard(true);
+        }
+
         //翻牌动画
         private void FlopAniamtion(IEnumerable<ReferenceCollector> cardList)
         {
@@ -243,7 +255,30 @@ namespace ETHotfix
                 _pokerObjList.Add(i == 0 ? CurrentUserName : _chairArray[i-1], tempCardList);
             }
         }
-    
+        
+        //修改卡牌的顺序
+        private void SortCard(List<ReferenceCollector> cardList)
+        {
+            for (var i = 0; i < SortedCardList.Count; i++)
+            {
+                LoadPorkerData(cardList[i], SortedCardList[i]);
+            }
+        }
+        
+        //显示提示牌UI
+        public void ShowTipsUi()
+        {
+            if (TipsIndex != 0)
+            {
+                Debug.Log("没牛!!!!!!");
+            }
+            else
+            {
+                SortCard(GetDictValue(_pokerObjList, CurrentUserName));
+                Debug.Log("牛"+TipsIndex);
+            }
+        }
+
         //加载扑克的数据
         private static void LoadPorkerData(ReferenceCollector rc, PokerCard data)
         {
@@ -267,8 +302,10 @@ namespace ETHotfix
                 //如果是J Q K
                 else
                 {
-                    flowerColor.sprite = rc.Get<Sprite>(data.CardType +"_" +data.CardNumber);
-                    bigFlowerColor1.sprite = rc.Get<Sprite>(data.CardType +"_" +data.CardNumber);
+                    flowerColor.sprite = rc.Get<Sprite>("t_" + data.CardType);
+                    bigFlowerColor2.sprite = rc.Get<Sprite>(data.CardType +"_" +data.CardNumber);
+                    bigFlowerColor2.gameObject.SetActive(true);
+                    bigFlowerColor1.gameObject.SetActive(false);
                 }
 
                 if (data.CardType > 9) return;
@@ -289,13 +326,14 @@ namespace ETHotfix
             else
             {
                 //获得王的标志
-                cardNumber.sprite = rc.Get<Sprite>("joker");
+                jokerImg.gameObject.SetActive(true);
+                cardNumber.gameObject.SetActive(false);
                 //大小王的颜色设置
-                cardNumber.GetComponent<Image>().color = data.CardNumber == 1 ? Color.red : Color.white;
+                cardNumber.GetComponent<Image>().color = data.CardNumber == 1 ? Color.red : Color.black;
 
                 bigFlowerColor2.gameObject.SetActive(true);
                 bigFlowerColor1.gameObject.SetActive(false);
-                flowerColor.sprite = rc.Get<Sprite>("k_" + data.CardNumber);
+                flowerColor.gameObject.SetActive(false);
                 bigFlowerColor2.sprite = rc.Get<Sprite>("k_" + data.CardNumber);
             }
         }
@@ -352,7 +390,7 @@ namespace ETHotfix
                     if (i == 4)
                     {
                         if (IsFlop)
-                            FlopAniamtion(GetDictValue(_pokerObjList, CurrentUserName));
+                            _niuNiuMainUi.ShowFlopCardButton();
                     }
                 }
                 delay += 0.05f;
@@ -397,7 +435,6 @@ namespace ETHotfix
             }
 
         }
-
-    
+        
         }
     }
