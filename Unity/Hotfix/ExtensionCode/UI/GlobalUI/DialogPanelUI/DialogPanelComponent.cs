@@ -16,6 +16,8 @@ namespace ETHotfix
 
     public class DialogPanelComponent : Component
     {
+        public bool IsQuit = false;
+        
         private GameObject _dialogPanel;
         private GameObject _dialogBoxText;
         private GameObject _dialogOkBtn;
@@ -33,6 +35,10 @@ namespace ETHotfix
             SceneHelperComponent.Instance.MonoEvent.AddButtonClick(_dialogOkBtn.GetComponent<Button>(),
                 () =>
                 {
+                    if (IsQuit)
+                    {
+                        Application.Quit();
+                    }
                     _dialogPanel.SetActive(false);
                     _dialogBoxText.GetComponent<Text>().text = "";
                 });

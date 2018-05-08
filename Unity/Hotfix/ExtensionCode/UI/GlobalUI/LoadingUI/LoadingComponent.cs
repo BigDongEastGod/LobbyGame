@@ -1,5 +1,6 @@
 ﻿using ETModel;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace ETHotfix
 {
@@ -12,38 +13,21 @@ namespace ETHotfix
         }
     }
 
-    [ObjectSystem]
-    public class LoadingComponentUpdateSystem : UpdateSystem<LoadingComponent>
-    {
-        public override void Update(LoadingComponent self)
-        {
-            self.Update();
-        }
-    }
-
-
     public class LoadingComponent : Component
     {
-        public bool ReLoadingStart = false;
-//        private int timeCount = 500;
+        private GameObject _text;
 
         public void Awake()
         {
+            var ui = this.GetParent<UI>().GameObject.GetComponent<ReferenceCollector>();
+
+            _text = ui.Get<GameObject>("Text");
         }
 
-        public void Update()
+        public void SetText(string message)
         {
-//            if (timeCount <= 0)
-//            {
-//                GameTools.ShowDialogMessage("重新连接失败,请重新登录!", "LoginCanvas");
-//                ReLoadingStart = false;
-//                timeCount = 500;
-//            }
-//
-//            if (ReLoadingStart)
-//            {
-//                timeCount--;
-//            }
+            _text.GetComponent<Text>().text = message;
         }
+
     }
 }
