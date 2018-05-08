@@ -173,10 +173,33 @@ namespace ETHotfix
             for (var i = 0; i < activityPlayers.Count(); i++)
             {
                 response.UserName = activityPlayers.ElementAt(i).Account.UserName;
+                
+                // 排序卡牌，如果没有牛的情况下返回为空
 
-                response.Arg = ProtobufHelper.ToBytes(playerPokers[i].ToList());
+                var calculateCards = poker.CalculateCards(playerPokers[i]);
+                
+                // 计算牌是牛几
 
-                Log.Debug("5555555555   " + ProtobufHelper.FromBytes<List<PokerCard>>(response.Arg).Count.ToString());
+                var pokernumber = calculateCards == null
+                    ? 0
+                    : poker.Calculate(
+                        (calculateCards[3].CardNumber > 10 ? 10 : calculateCards[3].CardNumber) +
+                        (calculateCards[4].CardNumber > 10 ? 10 : calculateCards[4].CardNumber)
+                    );
+                
+                // 创建数据协议
+
+                var pokercards = new Dictionary<int, List<PokerCard>>
+                {
+                    {-1, playerPokers[i].ToList()},
+                    {pokernumber, calculateCards == null ? new List<PokerCard>() : poker.CalculateCards(playerPokers[i]).ToList()}
+                };
+                
+                Log.Debug("牛"+pokernumber);
+                
+                // 发送协议（打包）
+
+                response.Arg = ProtobufHelper.ToBytes(pokercards);
                                 
                 activityPlayers[i].GetActorProxy.Send(response);
 
