@@ -1962,11 +1962,9 @@
               <e p="TimeHelper.cs" t="Include" />
               <e p="ZipHelper.cs" t="Include" />
             </e>
-            <e p="IL" t="Include">
-              <e p="IAsyncStateMachineAdaptor.cs" t="Include" />
-              <e p="IDisposableAdaptor.cs" t="Include" />
-              <e p="ILAdapterAttribute.cs" t="Include" />
-              <e p="ILBindingAttribute.cs" t="Include" />
+            <e p="LogRedirection.cs" t="Include" />
+            <e p="Proto2CsEditor" t="Include">
+              <e p="Proto2CSEditor.cs" t="Include" />
             </e>
             <e p="Log.cs" t="Include" />
             <e p="LogType.cs" t="Include" />
@@ -2969,6 +2967,6 @@
         <e p="Temp/UnityVS_bin/Debug" t="ExcludeRecursive" />
       </e>
     </e>
-    <e p="$USER_HOME$/Library/Caches/Rider2018.1/resharper-host/local/Transient/ReSharperHost/v12/SolutionCaches/_JuAnLobbyGameSolution.1661154428.00" t="ExcludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/Rider2018.1/resharper-host/local/Transient/ReSharperHost/v12/SolutionCaches/_JuAnLobbyGameSolution.1842623789.00" t="ExcludeRecursive" />
   </component>
 </project>
