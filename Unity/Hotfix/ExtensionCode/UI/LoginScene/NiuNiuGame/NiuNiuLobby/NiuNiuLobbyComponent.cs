@@ -190,7 +190,7 @@ namespace ETHotfix
                             for (int i = 0; i < countDiff; i++)
                             {
                                 var go = UnityEngine.Object.Instantiate(_roomInfoItem, _roomContent.transform);
-                                _roomContent.GetComponent<RectTransform>().sizeDelta += new Vector2(0, 95f);
+                                _roomContent.GetComponent<RectTransform>().sizeDelta = new Vector2(0, 95f * countDiff);
                                 go.SetActive(false);
                                 _roomInfoList.Add(go);
                             }
