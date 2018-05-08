@@ -436,26 +436,34 @@ namespace ETHotfix
 
             GameStates[player].IsReceive = true;
 
-            // 接收玩家下注消息
-            
-            if (Convert.ToInt32(args[0]) == 1)
+            switch (Convert.ToInt32(args[0]))
             {
-                // 发送下注消息给其他玩家
-
-                GameQueue.Peek()?.Invoke(player, args);
-                
-                if (GameStates.Values.Count(d => d.IsReceive) == GameStates.Count)
-                {
-                    GameQueue.Dequeue();
+                    case 0:
                         
-                    GameQueue.Dequeue()?.Invoke(player, args);
-                }
-            }
-            else
-            {
-                // 如果该队列所有玩家都已经接受到消息、移除当前栈中的队列
-                
-                if (GameStates.Values.Count(d => d.IsReceive) == GameStates.Count) GameQueue.Dequeue()?.Invoke(player, args);
+                        GameQueue.Dequeue()?.Invoke(player, args);
+                        
+                        break;
+                    
+                    case 1:
+                        
+                        GameQueue.Peek()?.Invoke(player, args);
+                        
+                        if (GameStates.Values.Count(d => d.IsReceive) == GameStates.Count)
+                        {
+                            GameQueue.Dequeue();
+                            
+                            // 给玩家发牌
+                            
+                            GameQueue.Dequeue()?.Invoke(player, args);
+                        }
+                        
+                        break;
+                    
+                    case 2:
+                        
+                        GameQueue.Peek()?.Invoke(player, args);
+                        
+                        break;
             }
         }
 
