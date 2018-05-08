@@ -37,7 +37,7 @@ namespace ETHotfix
         private List<Vector2> _sixTableList;                         //六人桌的位置
         private List<Vector2> _eightTableList;                       //八人桌的位置
         public int RoomPeople;                                       //房间人数
-        public long _roomId { get; set; }                            //房间号
+        public long RoomId { get; set; }                            //房间号
 
         private List<Vector2> _currentTablePosList;                 //当前房间位置
         private Transform _currentTableObj;                         //当前桌子
@@ -55,7 +55,10 @@ namespace ETHotfix
         private bool IsFlop { get; set; }                                                      //是否可以翻牌
         private string CurrentUserName{ get; set; }                                            //当前用户名
         private NiuNiuMainComponent _niuNiuMainUi;
- 
+        public List<PokerCard> SortedCardList;
+        public int TipsIndex { get; set; }
+
+
         #endregion
 
 
@@ -65,6 +68,7 @@ namespace ETHotfix
             _eightTableList=new List<Vector2>();
             _headUiDict=new Dictionary<string, ReferenceCollector>();
             _pokerObjList=new Dictionary<string, List<ReferenceCollector>>();
+            SortedCardList=new List<PokerCard>();
             _chairArray=new string[8];
             _cardUiDict=new Dictionary<int, UI>();
             _currentTablePosList=new List<Vector2>();
@@ -195,19 +199,18 @@ namespace ETHotfix
             var rc = GetDictValue(_headUiDict, userName);
             var zhuangjiaImg=rc.Get<GameObject>("zhuangjiaImg");
             zhuangjiaImg.SetActive(true);
-            var betsResponse =(GameBankerResponse) await SceneHelperComponent.Instance.Session.Call(new GameBankerRequest(){RoomId = _roomId});
+            var betsResponse =(GameBankerResponse) await SceneHelperComponent.Instance.Session.Call(new GameBankerRequest(){RoomId = RoomId});
         }
     
         //显示下注分数
         public void ShowBets(string userName,int score)
         {
-            if (_headUiDict.ContainsKey(userName))
-            {
-                ReferenceCollector rc;
-                _headUiDict.TryGetValue(userName, out rc);
-                rc.Get<GameObject>("BetsTitleImg").SetActive(true);
-                rc.Get<GameObject>("BetsTitleImg").transform.GetChild(0).GetComponent<Text>().text = score.ToString();
-            }
+            if (!_headUiDict.ContainsKey(userName)) return;
+            ReferenceCollector rc;
+            _headUiDict.TryGetValue(userName, out rc);
+            if (rc == null) return;
+            rc.Get<GameObject>("BetsTitleImg").SetActive(true);
+            rc.Get<GameObject>("BetsTitleImg").transform.GetChild(0).GetComponent<Text>().text =score.ToString();
         }
 
         //翻动自己的牌
@@ -252,7 +255,30 @@ namespace ETHotfix
                 _pokerObjList.Add(i == 0 ? CurrentUserName : _chairArray[i-1], tempCardList);
             }
         }
-    
+        
+        //修改卡牌的顺序
+        private void SortCard(List<ReferenceCollector> cardList)
+        {
+            for (var i = 0; i < SortedCardList.Count; i++)
+            {
+                LoadPorkerData(cardList[i], SortedCardList[i]);
+            }
+        }
+        
+        //显示提示牌UI
+        public void ShowTipsUi()
+        {
+            if (TipsIndex != 0)
+            {
+                Debug.Log("没牛!!!!!!");
+            }
+            else
+            {
+                SortCard(GetDictValue(_pokerObjList, CurrentUserName));
+                Debug.Log("牛"+TipsIndex);
+            }
+        }
+
         //加载扑克的数据
         private static void LoadPorkerData(ReferenceCollector rc, PokerCard data)
         {
@@ -409,7 +435,6 @@ namespace ETHotfix
             }
 
         }
-
-    
+        
         }
     }

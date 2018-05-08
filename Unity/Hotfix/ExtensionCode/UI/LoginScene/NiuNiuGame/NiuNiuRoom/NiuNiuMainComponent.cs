@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using DG.Tweening;
 using ETModel;
 using JetBrains.Annotations;
@@ -39,7 +40,6 @@ namespace ETHotfix
         private Button _invitingFriendsButton;
         private Button _tipsButton;
         private Button _brightButton;
-        
 
         public void Awake(object[] args)
         {
@@ -138,7 +138,7 @@ namespace ETHotfix
                 //获得房间显示卡牌窗口
                 _showCardUi = Game.Scene.GetComponent<UIComponent>().Create(UIType.NNShowCard, UiLayer.Medium,this);
                 //保存房间号
-                _showCardUi.GetComponent<NnShowCardComponent>()._roomId = _mRoomId;
+                _showCardUi.GetComponent<NnShowCardComponent>().RoomId = _mRoomId;
                 //设置房间人数
                 _showCardUi.GetComponent<NnShowCardComponent>().RoomPeople = rules.PlayerCount;
             }
@@ -162,6 +162,13 @@ namespace ETHotfix
 
             //开始按钮注册
             SceneHelperComponent.Instance.MonoEvent.AddButtonClick(_startGameBt.GetComponent<Button>(), StartGameOclick);
+            
+            
+            //开始按钮注册
+            SceneHelperComponent.Instance.MonoEvent.AddButtonClick(_tipsButton.GetComponent<Button>(), () =>
+                {
+                    _showCardUi.GetComponent<NnShowCardComponent>().ShowTipsUi();
+                });
 
             //获取房间准备号玩家的数据
             GetAllReadyInfo();
@@ -233,9 +240,21 @@ namespace ETHotfix
                       ShowBet(obj.UserName,SerializeHelper.Instance.DeserializeObject<int>(obj.Arg));
                       break;
                   case 3://给玩家发牌消息
-//                      var pokerCard= SerializeHelper.Instance.DeserializeObject<List<PokerCard>>(obj.Arg);
-                      var pokerCard = ProtobufHelper.FromBytes<List<PokerCard>>(obj.Arg);
-                      Licensing(pokerCard);
+                      var pokerCard = ProtobufHelper.FromBytes<Dictionary<int, List<PokerCard>>>(obj.Arg);
+                      Licensing(pokerCard[-1]);
+                      //存储好排序好的卡牌
+//                      _showCardUi.GetComponent<NnShowCardComponent>().SortedCardList = 
+//                          pokerCard.LastOrDefault().Equals(default(KeyValuePair<int,List<PokerCard>>)) ? null : 
+//                              pokerCard.LastOrDefault().Value.ToList();
+
+                      if (pokerCard.LastOrDefault().Value != null)
+                      {
+                          _showCardUi.GetComponent<NnShowCardComponent>().SortedCardList =  pokerCard.LastOrDefault().Value.ToList();
+                      }
+
+
+                      //保存提示的索引
+                      _showCardUi.GetComponent<NnShowCardComponent>().TipsIndex= pokerCard.LastOrDefault().Key;
                       break;
                   case 4://计算玩家手里卡牌、并把结果返回给玩家消息
                       break;
