@@ -728,14 +728,54 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "MongoDB.Bson/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "System.Reflection.Emit.Lightweight": "4.3.0"
+        },
+        "compile": {
+          "bin/placeholder/MongoDB.Bson.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MongoDB.Bson.dll": {}
+        }
+      },
+      "MongoDB.Driver/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "MongoDB.Bson": "1.0.0",
+          "MongoDB.Driver.Core": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/MongoDB.Driver.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MongoDB.Driver.dll": {}
+        }
+      },
+      "MongoDB.Driver.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "MongoDB.Bson": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/MongoDB.Driver.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MongoDB.Driver.Core.dll": {}
+        }
+      },
       "Server.Model/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.0",
         "dependencies": {
-          "/Users/juankeji/JuAn/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Bson/MongoDB.Bson.csproj": "1.0.0",
-          "/Users/juankeji/JuAn/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver.Core/MongoDB.Driver.Core.csproj": "1.0.0",
-          "/Users/juankeji/JuAn/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver/MongoDB.Driver.csproj": "1.0.0",
           "CommandLineParser": "2.2.1",
+          "MongoDB.Bson": "1.0.0",
+          "MongoDB.Driver": "1.0.0",
+          "MongoDB.Driver.Core": "1.0.0",
           "NLog": "4.5.4",
           "SharpZipLib": "1.0.0-alpha2",
           "protobuf-net": "2.3.4"
@@ -3211,6 +3251,21 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
+    "MongoDB.Bson/1.0.0": {
+      "type": "project",
+      "path": "../ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Bson/MongoDB.Bson.csproj",
+      "msbuildProject": "../ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Bson/MongoDB.Bson.csproj"
+    },
+    "MongoDB.Driver/1.0.0": {
+      "type": "project",
+      "path": "../ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver/MongoDB.Driver.csproj",
+      "msbuildProject": "../ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver/MongoDB.Driver.csproj"
+    },
+    "MongoDB.Driver.Core/1.0.0": {
+      "type": "project",
+      "path": "../ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver.Core/MongoDB.Driver.Core.csproj",
+      "msbuildProject": "../ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver.Core/MongoDB.Driver.Core.csproj"
+    },
     "Server.Model/1.0.0": {
       "type": "project",
       "path": "../Model/Server.Model.csproj",
@@ -3285,34 +3340,5 @@
         "warn": true
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1105",
-      "level": "Error",
-      "message": "Unable to find project information for '/Users/juankeji/JuAn/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Bson/MongoDB.Bson.csproj'. The project file may be invalid or missing targets required for restore.",
-      "libraryId": "/Users/juankeji/JuAn/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Bson/MongoDB.Bson.csproj",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v2.0"
-      ]
-    },
-    {
-      "code": "NU1105",
-      "level": "Error",
-      "message": "Unable to find project information for '/Users/juankeji/JuAn/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver.Core/MongoDB.Driver.Core.csproj'. The project file may be invalid or missing targets required for restore.",
-      "libraryId": "/Users/juankeji/JuAn/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver.Core/MongoDB.Driver.Core.csproj",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v2.0"
-      ]
-    },
-    {
-      "code": "NU1105",
-      "level": "Error",
-      "message": "Unable to find project information for '/Users/juankeji/JuAn/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver/MongoDB.Driver.csproj'. The project file may be invalid or missing targets required for restore.",
-      "libraryId": "/Users/juankeji/JuAn/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver/MongoDB.Driver.csproj",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v2.0"
-      ]
-    }
-  ]
+  }
 }

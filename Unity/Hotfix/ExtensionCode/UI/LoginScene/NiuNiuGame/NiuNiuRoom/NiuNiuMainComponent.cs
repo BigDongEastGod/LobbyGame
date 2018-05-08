@@ -4,8 +4,10 @@ using DG.Tweening;
 using ETModel;
 using JetBrains.Annotations;
 using UnityEngine;
+using UnityEngine.Experimental.UIElements;
 using UnityEngine.UI;
- 
+using Button = UnityEngine.UI.Button;
+
 namespace ETHotfix
 {
     [ObjectSystem]
@@ -122,13 +124,17 @@ namespace ETHotfix
             //zhuangWeiTxt=rules.
 
             //设置房间底分
-            _bottomScoreText.text = rules.Score.ToString();
-            //设置房间局数
-              roomCountText.text = "1/"+rules.Dish.ToString();
-            //获得房间显示卡牌窗口
-            _showCardUi=Game.Scene.GetComponent<UIComponent>().Create(UIType.NNShowCard, UiLayer.Medium);
-            //设置房间人数
-            _showCardUi.GetComponent<NnShowCardComponent>().RoomPeople =rules.PlayerCount;
+            if (rules != null)
+            {
+                _bottomScoreText.text = rules.Score.ToString();
+                //设置房间局数
+                roomCountText.text = "1/" + rules.Dish.ToString();
+                //获得房间显示卡牌窗口
+                _showCardUi = Game.Scene.GetComponent<UIComponent>().Create(UIType.NNShowCard, UiLayer.Medium);
+                //设置房间人数
+                _showCardUi.GetComponent<NnShowCardComponent>().RoomPeople = rules.PlayerCount;
+            }
+
             //加载所需要的位置信息
             _showCardUi.GetComponent<NnShowCardComponent>().GetCurrentTablePos();
             
@@ -157,22 +163,22 @@ namespace ETHotfix
             RoomInfoAnnunciateHandler.RoomAction += RoomBack;
             GameInfoAnnunciateHandler.GameAction += GameBack;
 
-            #region 短线处理
+            #region 断线线处理
 
-//            //如果是短线重连，判断是否已经坐下
-//            if (isSitDown)
-//            {
-//                SitDown(-1,_player.AccountInfo.UserName);
-//            }
-//            else
-//            {
-//                _sitDownBt.gameObject.SetActive(true);
-//            }
-//
-//            Game.Scene.GetComponent<PingComponent>().PingBackCall = () =>
-//            {
-//                GameTools.ReLoading("GameCanvas");
-//            };
+            //如果是短线重连，判断是否已经坐下
+            if (isSitDown)
+            {
+                SitDown(-1,_player.AccountInfo.UserName);
+            }
+            else
+            {
+                _sitDownBt.gameObject.SetActive(true);
+            }
+
+            Game.Scene.GetComponent<PingComponent>().PingBackCall = () =>
+            {
+                GameTools.ReLoading("GameCanvas");
+            };
 
             #endregion
 
@@ -204,28 +210,29 @@ namespace ETHotfix
             }
         }
         
+        
+     
         //房间游戏回调
         public void GameBack(GameInfoAnnunciate obj)
         {
-            Debug.Log("收到回调"+obj.Message);
             switch (obj.Message)
             {
-                case 0://显示下注按钮
-                    _startGameBt.gameObject.SetActive(false);
-                    ShowBetsButton();
-                    break;
-                case 1://下注完成
-                    ShowBet(obj.UserName,SerializeHelper.Instance.DeserializeObject<int>(obj.Arg));
-                    break;
-                case 2://抢庄
-                    ShowZhuangJiaIcon(obj.UserName);
-                    _zhuangJiaName = obj.UserName;
-                    break;
-                case 3://发牌
-                    var pokerCard= SerializeHelper.Instance.DeserializeObject<List<PokerCard>>(obj.Arg);
-                    Licensing(pokerCard);
-                    break;
-                    
+                  case  0://玩家接收庄家信息 
+                      ShowZhuangJiaIcon(obj.UserName);
+                      _zhuangJiaName = obj.UserName;
+                      break;
+                  case 1://发送玩家开始下注消息 
+                      ShowBet(obj.UserName,SerializeHelper.Instance.DeserializeObject<int>(obj.Arg));
+                      break;
+                  case 2://发送下注消息给其他玩家
+                      ShowBet(obj.UserName,SerializeHelper.Instance.DeserializeObject<int>(obj.Arg));
+                      break;
+                  case 3://给玩家发牌消息
+                      var pokerCard= SerializeHelper.Instance.DeserializeObject<List<PokerCard>>(obj.Arg);
+                      Licensing(pokerCard);
+                      break;
+                  case 4://计算玩家手里卡牌、并把结果返回给玩家消息
+                      break;
             }
         }
         
