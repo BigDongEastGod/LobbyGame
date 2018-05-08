@@ -156,7 +156,11 @@ namespace ETHotfix
             #endregion
 
 
-            Game.Scene.GetComponent<PingComponent>().PingBackCall = () => { GameTools.ReLoading("GameCanvas"); };
+            Game.Scene.GetComponent<PingComponent>().PingBackCall = () =>
+            {
+                GameTools.ReLoading("GameCanvas");
+                GetRoomList();
+            };
         }
 
         public void Start()
