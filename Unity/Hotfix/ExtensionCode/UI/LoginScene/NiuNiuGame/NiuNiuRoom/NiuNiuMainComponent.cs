@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using DG.Tweening;
 using ETModel;
 using JetBrains.Annotations;
@@ -33,6 +34,12 @@ namespace ETHotfix
         private Button _betsButton2;
         private Text _bottomScoreText;                //底分文本
         private string _zhuangJiaName;
+        private Button _shuffleButton;
+        private Button _flopButton;
+        private Button _copyNumButton;
+        private Button _invitingFriendsButton;
+        private Button _tipsButton;
+        private Button _brightButton;
 
         public void Awake(object[] args)
         {
@@ -73,13 +80,13 @@ namespace ETHotfix
             //下注选择按钮2
             _betsButton2=rc.Get<GameObject>("BetsButton2").GetComponent<Button>();
             //复制房间号按钮
-            var copyNumButton = rc.Get<GameObject>("CopyNumButton");
+            _copyNumButton = rc.Get<GameObject>("CopyNumButton").GetComponent<Button>();
             //邀请微信好友按钮
-            var invitingFriendsButton = rc.Get<GameObject>("InvitingFriendsButton");
+            _invitingFriendsButton = rc.Get<GameObject>("InvitingFriendsButton").GetComponent<Button>();
             //搓牌按钮
-            var shuffleButton = rc.Get<GameObject>("ShuffleButton");
+            _shuffleButton = rc.Get<GameObject>("ShuffleButton").GetComponent<Button>();
             //翻牌按钮
-            var flopButton = rc.Get<GameObject>("FlopButton");
+            _flopButton = rc.Get<GameObject>("FlopButton").GetComponent<Button>();
             //准备按钮
             var readyButton = rc.Get<GameObject>("readyButton");
             //表情按钮
@@ -93,9 +100,9 @@ namespace ETHotfix
             //自动翻牌
             var automaticFlopToggle = rc.Get<GameObject>("AutomaticFlopToggle");
             //提示按钮
-            var tipsButton = rc.Get<GameObject>("tipsButton");
+            _tipsButton = rc.Get<GameObject>("tipsButton").GetComponent<Button>();
             //亮牌按钮
-            var brightButton=rc.Get<GameObject>("brightButton");
+            _brightButton=rc.Get<GameObject>("brightCardButton").GetComponent<Button>();
             
             _roomNum = rc.Get<GameObject>("roomNum").GetComponent<Text>();
             //庄位信息
@@ -104,7 +111,7 @@ namespace ETHotfix
             _bottomScoreText  = rc.Get<GameObject>("BottomScoreText").GetComponent<Text>();
             //房间局数
             var roomCountText  = rc.Get<GameObject>("roomCountText").GetComponent<Text>();
-
+            
             #endregion
          
             //获取当前账号
@@ -117,7 +124,6 @@ namespace ETHotfix
             //获得房间规则信息
             var rules = response.Rules == null ? null : ProtobufHelper.FromBytes<NNChess>(response.Rules);
             //设置房间号
-            Debug.Log("roomId"+roomId);
             _mRoomId = roomId;
             _roomNum.text = roomId.ToString();
             //TODo.....庄位信息
@@ -130,9 +136,9 @@ namespace ETHotfix
                 //设置房间局数
                 roomCountText.text = "1/" + rules.Dish.ToString();
                 //获得房间显示卡牌窗口
-                _showCardUi = Game.Scene.GetComponent<UIComponent>().Create(UIType.NNShowCard, UiLayer.Medium);
+                _showCardUi = Game.Scene.GetComponent<UIComponent>().Create(UIType.NNShowCard, UiLayer.Medium,this);
                 //保存房间号
-                _showCardUi.GetComponent<NnShowCardComponent>()._roomId = _mRoomId;
+                _showCardUi.GetComponent<NnShowCardComponent>().RoomId = _mRoomId;
                 //设置房间人数
                 _showCardUi.GetComponent<NnShowCardComponent>().RoomPeople = rules.PlayerCount;
             }
@@ -157,7 +163,12 @@ namespace ETHotfix
             //开始按钮注册
             SceneHelperComponent.Instance.MonoEvent.AddButtonClick(_startGameBt.GetComponent<Button>(), StartGameOclick);
             
-
+            
+            //开始按钮注册
+            SceneHelperComponent.Instance.MonoEvent.AddButtonClick(_tipsButton.GetComponent<Button>(), () =>
+                {
+                    _showCardUi.GetComponent<NnShowCardComponent>().ShowTipsUi();
+                });
 
             //获取房间准备号玩家的数据
             GetAllReadyInfo();
@@ -211,8 +222,6 @@ namespace ETHotfix
                     break;
             }
         }
-        
-        
      
         //房间游戏回调
         public void GameBack(GameInfoAnnunciate obj)
@@ -231,8 +240,21 @@ namespace ETHotfix
                       ShowBet(obj.UserName,SerializeHelper.Instance.DeserializeObject<int>(obj.Arg));
                       break;
                   case 3://给玩家发牌消息
-                      var pokerCard= SerializeHelper.Instance.DeserializeObject<List<PokerCard>>(obj.Arg);
-                      Licensing(pokerCard);
+                      var pokerCard = ProtobufHelper.FromBytes<Dictionary<int, List<PokerCard>>>(obj.Arg);
+                      Licensing(pokerCard[-1]);
+                      //存储好排序好的卡牌
+//                      _showCardUi.GetComponent<NnShowCardComponent>().SortedCardList = 
+//                          pokerCard.LastOrDefault().Equals(default(KeyValuePair<int,List<PokerCard>>)) ? null : 
+//                              pokerCard.LastOrDefault().Value.ToList();
+
+                      if (pokerCard.LastOrDefault().Value != null)
+                      {
+                          _showCardUi.GetComponent<NnShowCardComponent>().SortedCardList =  pokerCard.LastOrDefault().Value.ToList();
+                      }
+
+
+                      //保存提示的索引
+                      _showCardUi.GetComponent<NnShowCardComponent>().TipsIndex= pokerCard.LastOrDefault().Key;
                       break;
                   case 4://计算玩家手里卡牌、并把结果返回给玩家消息
                       break;
@@ -280,6 +302,7 @@ namespace ETHotfix
             else
             {
                 Debug.Log("开始游戏成功!!!");
+                SwitchButton(_copyNumButton,_invitingFriendsButton,false);
             }
         }
         
@@ -326,8 +349,42 @@ namespace ETHotfix
         //发牌
         private void Licensing(List<PokerCard> pokerCards)
         {
+            for (int i = 0; i < pokerCards.Count; i++)
+            {
+                Debug.Log("这张牌是/"+pokerCards[i].CardNumber+"i是"+i);
+            }
             _showCardUi.GetComponent<NnShowCardComponent>().Licensing(pokerCards);
         }
+        
+        //显示翻牌,搓牌按钮
+        public void ShowFlopCardButton()
+        {
+            _shuffleButton.gameObject.SetActive(true);
+            _flopButton.gameObject.SetActive(true);
+//            SceneHelperComponent.Instance.MonoEvent.AddButtonClick(shuffleButton.GetComponent<Button>(), StartGameOclick);
+            SceneHelperComponent.Instance.MonoEvent.AddButtonClick(_flopButton.GetComponent<Button>(),_showCardUi.GetComponent<NnShowCardComponent>().FlopSelfCard);
+            
+        }
+        
+        //按钮开关
+        private void SwitchButton(Button a, Button b,bool isShow)
+        {
+            a.gameObject.SetActive(isShow);
+            b.gameObject.SetActive(isShow);
+        }
+
+        //翻牌和搓牌按钮开关
+        public void SwitchFlopCard(bool isShow)
+        {
+            SwitchButton(_shuffleButton, _flopButton, isShow);
+        }
+        
+        //提示和亮牌开关
+        public void SwitchTipsCard(bool isShow)
+        {
+            SwitchButton(_brightButton, _tipsButton, isShow);
+        }
+
 
 
         private void Test()
