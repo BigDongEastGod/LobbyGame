@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using DG.Tweening;
 using ETModel;
 using JetBrains.Annotations;
@@ -242,31 +243,19 @@ namespace ETHotfix
                       ShowBet(obj.UserName,SerializeHelper.Instance.DeserializeObject<int>(obj.Arg));
                       break;
                   case 3://给玩家发牌消息
-                      var pokerCard = ProtobufHelper.FromBytes<Dictionary<int, List<PokerCard>>>(obj.Arg);
-                      var list= pokerCard[-1];
-                      foreach (var t in list)
-                      {
-                          Debug.Log("T/"+t.CardNumber);
-                      }
-                      
-                      Licensing(pokerCard[-1]);
+                      var pokerCard =ProtobufHelper.FromBytes<List<PlayerPokerCards>>(obj.Arg);
+                      Licensing(pokerCard.ElementAt(0).PokerCards);
                       //存储好排序好的卡牌
-                      _showCardUi.GetComponent<NnShowCardComponent>().SortedCardList = 
-                          pokerCard.LastOrDefault().Equals(default(KeyValuePair<int,List<PokerCard>>)) ? null : 
-                              pokerCard.LastOrDefault().Value.ToList();
-
-//                      if (pokerCard.LastOrDefault().Value != null)
-//                      {
-//                          _showCardUi.GetComponent<NnShowCardComponent>().SortedCardList =  pokerCard.LastOrDefault().Value.ToList();
-//                      }
+                      _showCardUi.GetComponent<NnShowCardComponent>().SortedCardList =
+                          pokerCard.ElementAt(1).CardTypeNumber == 0 ? null : pokerCard.ElementAt(1).PokerCards;
                       //保存提示的索引
-                      _showCardUi.GetComponent<NnShowCardComponent>().TipsIndex= pokerCard.LastOrDefault().Key;
+                      _showCardUi.GetComponent<NnShowCardComponent>().TipsIndex= pokerCard.ElementAt(1).CardTypeNumber;
                       break;
                   case 4://计算玩家手里卡牌、并把结果返回给玩家消息
-                      var otherPokerCard = ProtobufHelper.FromBytes<Dictionary<int, List<PokerCard>>>(obj.Arg);
-                      FlopOtherCard(otherPokerCard,obj.UserName);
+                      var otherPokerCard = ProtobufHelper.FromBytes<PlayerPokerCards>(obj.Arg);
+                      FlopOtherCard(otherPokerCard.PokerCards.ToList(),obj.UserName);
                       
-                      Debug.Log("玩家:"+obj.UserName+"的牌是牛"+otherPokerCard.First().Key);
+                      Debug.Log("玩家:"+obj.UserName+"的牌是牛"+otherPokerCard.CardTypeNumber);
                       break;
             }
         }
@@ -375,9 +364,9 @@ namespace ETHotfix
         }
 
         //显示其他玩家的首牌
-        private void FlopOtherCard(Dictionary<int, List<PokerCard>> pokerDict,string userName)
+        private void FlopOtherCard(List<PokerCard> pokerList,string userName)
         {
-            _showCardUi.GetComponent<NnShowCardComponent>().LoadOtherCard(pokerDict,userName);
+            _showCardUi.GetComponent<NnShowCardComponent>().LoadOtherCard(pokerList,userName);
         }
 
         //按钮开关
