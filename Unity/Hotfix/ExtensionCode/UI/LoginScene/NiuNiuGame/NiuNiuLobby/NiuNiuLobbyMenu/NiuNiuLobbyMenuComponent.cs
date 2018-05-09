@@ -39,7 +39,11 @@ namespace ETHotfix
             var feedbackBtn = rc.Get<GameObject>("FeedbackBtn");
             var ruleBtn = rc.Get<GameObject>("RuleBtn");
 
-            SceneHelperComponent.Instance.MonoEvent.AddButtonClick(ruleBtn.GetComponent<Button>(), () => { _nnRule.GameObject.SetActive(true);});
+            SceneHelperComponent.Instance.MonoEvent.AddButtonClick(ruleBtn.GetComponent<Button>(), () =>
+            {
+                _nnLobbyMenu.SetActive(false);
+                _nnRule.GameObject.SetActive(true);
+            });
             SceneHelperComponent.Instance.MonoEvent.AddButtonClick(_nnLobbyMenu.GetComponent<Button>(), () => { _nnLobbyMenu.SetActive(false); });
             SceneHelperComponent.Instance.MonoEvent.AddButtonClick(backLobbyBtn.GetComponent<Button>(), () =>
             {
