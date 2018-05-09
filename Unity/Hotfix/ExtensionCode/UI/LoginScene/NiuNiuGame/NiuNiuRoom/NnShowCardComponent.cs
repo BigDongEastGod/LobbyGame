@@ -303,52 +303,76 @@ namespace ETHotfix
             var bigFlowerColor1 = rc.Get<GameObject>("bigFlowerColor1").GetComponent<Image>();
             var bigFlowerColor2 = rc.Get<GameObject>("bigFlowerColor2").GetComponent<Image>();
             //如果不是王
-            if (data.CardType != 4)
+            if (data.CardType != 5)
             {
+                if (jokerImg.gameObject.activeInHierarchy)
+                {
+                    jokerImg.gameObject.SetActive(false);
+                    cardNumber.gameObject.SetActive(true);
+                    flowerColor.gameObject.SetActive(true);
+                }
+
                 //获得牌的点数
                 cardNumber.sprite = rc.Get<Sprite>("num_" + data.CardNumber);
+                flowerColor.sprite = rc.Get<Sprite>("t_" + data.CardType);
               
                 //如果不是J Q K
                 if (data.CardNumber < 11)
                 {
-                    flowerColor.sprite = rc.Get<Sprite>("t_" + data.CardType);
+                    if (bigFlowerColor2.gameObject.activeInHierarchy)
+                    {
+                        bigFlowerColor2.gameObject.SetActive(false);
+                        bigFlowerColor1.gameObject.SetActive(true);
+                    }
+
                     bigFlowerColor1.sprite = rc.Get<Sprite>("t_" + data.CardType);
                 }
                 //如果是J Q K
                 else
                 {
-                    flowerColor.sprite = rc.Get<Sprite>("t_" + data.CardType);
+                    if (bigFlowerColor1.gameObject.activeInHierarchy)
+                    {
+                        bigFlowerColor2.gameObject.SetActive(true);
+                        bigFlowerColor1.gameObject.SetActive(false);
+                    }
+
                     bigFlowerColor2.sprite = rc.Get<Sprite>(data.CardType +"_" +data.CardNumber);
-                    bigFlowerColor2.gameObject.SetActive(true);
-                    bigFlowerColor1.gameObject.SetActive(false);
                 }
 
-                if (data.CardNumber <11) return;
+                if (data.CardNumber >11) return;
                 
                 //获得卡牌的颜色
                 switch (data.CardType)
                 {
-                    case 0:
-                    case 1: //红桃 方块
-                        cardNumber.GetComponent<Image>().color = Color.red;
+                    case 1:
+                    case 3: //红桃 方块
+                        cardNumber.GetComponent<Image>().color = Color.black;
                         break;
                     case 2:
-                    case 3: //梅花 黑桃
-                        cardNumber.GetComponent<Image>().color = Color.black;
+                    case 4: //梅花 黑桃
+                        cardNumber.GetComponent<Image>().color = Color.red;
                         break;
                 }
             }
             else
             {
-                //获得王的标志
-                jokerImg.gameObject.SetActive(true);
-                cardNumber.gameObject.SetActive(false);
+                if (cardNumber.gameObject.activeInHierarchy)
+                {
+                    cardNumber.gameObject.SetActive(false);
+                    flowerColor.gameObject.SetActive(false);
+                    //获得王的标志
+                    jokerImg.gameObject.SetActive(true);
+                }
+            
                 //大小王的颜色设置
-                cardNumber.GetComponent<Image>().color = data.CardNumber == 1 ? Color.black : Color.red;
+                jokerImg.GetComponent<Image>().color = data.CardNumber == 1 ? Color.black : Color.red;
 
-                bigFlowerColor2.gameObject.SetActive(true);
-                bigFlowerColor1.gameObject.SetActive(false);
-                flowerColor.gameObject.SetActive(false);
+                if (bigFlowerColor1.gameObject.activeInHierarchy)
+                {
+                    bigFlowerColor1.gameObject.SetActive(false);
+                    bigFlowerColor2.gameObject.SetActive(true);
+                }
+
                 bigFlowerColor2.sprite = rc.Get<Sprite>("k_" + data.CardNumber);
             }
         }

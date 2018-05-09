@@ -243,29 +243,17 @@ namespace ETHotfix
                       break;
                   case 3://给玩家发牌消息
                       var pokerCard = ProtobufHelper.FromBytes<Dictionary<int, List<PokerCard>>>(obj.Arg);
-                      var list= pokerCard[-1];
-                      foreach (var t in list)
-                      {
-                          Debug.Log("T/"+t.CardNumber);
-                      }
-                      
                       Licensing(pokerCard[-1]);
                       //存储好排序好的卡牌
                       _showCardUi.GetComponent<NnShowCardComponent>().SortedCardList = 
                           pokerCard.LastOrDefault().Equals(default(KeyValuePair<int,List<PokerCard>>)) ? null : 
                               pokerCard.LastOrDefault().Value.ToList();
-
-//                      if (pokerCard.LastOrDefault().Value != null)
-//                      {
-//                          _showCardUi.GetComponent<NnShowCardComponent>().SortedCardList =  pokerCard.LastOrDefault().Value.ToList();
-//                      }
                       //保存提示的索引
                       _showCardUi.GetComponent<NnShowCardComponent>().TipsIndex= pokerCard.LastOrDefault().Key;
                       break;
                   case 4://计算玩家手里卡牌、并把结果返回给玩家消息
                       var otherPokerCard = ProtobufHelper.FromBytes<Dictionary<int, List<PokerCard>>>(obj.Arg);
                       FlopOtherCard(otherPokerCard,obj.UserName);
-                      
                       Debug.Log("玩家:"+obj.UserName+"的牌是牛"+otherPokerCard.First().Key);
                       break;
             }

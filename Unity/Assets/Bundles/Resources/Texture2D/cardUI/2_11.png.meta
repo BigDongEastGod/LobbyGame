@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 46f7b1e7566134ac88bda20e723aadf0
-timeCreated: 1524645886
+guid: 652b3553db3ce42d6a5512d1be1b971c
+timeCreated: 1524645593
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName: {}
@@ -103,5 +103,5 @@ TextureImporter:
     physicsShape: []
   spritePackingTag: 
   userData: 
-  assetBundleName: s11.umity3d
+  assetBundleName: h11.unity3d
   assetBundleVariant: 
