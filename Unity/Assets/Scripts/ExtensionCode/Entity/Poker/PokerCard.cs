@@ -24,6 +24,9 @@ namespace ETModel
         public int CardTypeNumber;
         
         [ProtoMember(2, IsRequired = true)]
+        public int GradeCount;
+        
+        [ProtoMember(3, IsRequired = true)]
         public List<PokerCard> PokerCards;
     }
 }
