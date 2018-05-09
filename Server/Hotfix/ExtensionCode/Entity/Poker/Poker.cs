@@ -38,13 +38,13 @@ namespace ETHotfix
             
             // 生成大小王
             
-            var king = new PokerCard {CardType = 5, IsPayout = false, CardNumber = 1, Grade = 51};
+            var king = new PokerCard {CardType = 5, IsPayout = false, CardNumber = 1, Grade = 100};
 
             cardsWarehousing.Add(king);
 
             king.CardNumber = 2;
 
-            king.Grade = 52;
+            king.Grade = 200;
 
             cardsWarehousing.Add(king);
 
