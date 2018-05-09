@@ -17,11 +17,9 @@ namespace ETHotfix
     public class LoginComponent : Component
     {
         private GameObject obj;
-        
+
         public void Awake()
         {
-            
-            
             ReferenceCollector rc = this.GetParent<UI>().GameObject.GetComponent<ReferenceCollector>();
             // 登录注册按钮
             var registBtn = rc.Get<GameObject>("RegistBtn");
@@ -34,6 +32,7 @@ namespace ETHotfix
             // 登录按钮
             SceneHelperComponent.Instance.MonoEvent.AddButtonClick(loginBtn.GetComponent<Button>(),
                 () => { Game.Scene.GetComponent<UIComponent>().Get(UIType.LoginPanel).GameObject.SetActive(true); });
+
         }
     }
 }

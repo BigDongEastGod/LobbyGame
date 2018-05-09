@@ -52,6 +52,7 @@ namespace ETHotfix
             // 登录帐号按钮
             SceneHelperComponent.Instance.MonoEvent.AddButtonClick(loginSubmitBtn.GetComponent<Button>(),
                 () => OnLoginSubmitBtn(loginNameInputField.GetComponent<InputField>(), loginPwdInputField.GetComponent<InputField>()));
+            
         }
 
         public void Start()
@@ -74,6 +75,21 @@ namespace ETHotfix
 
             try
             {
+                var loadingUI = Game.Scene.GetComponent<UIComponent>().Get(UIType.LoadingPanel);
+
+                Transform parent = GameObject.Find("Global/UI/" + "LoginCanvas" + "/TopMost").transform;
+
+                loadingUI.GameObject.transform.SetParent(parent);
+
+                loadingUI.GameObject.SetActive(true);
+
+                loadingUI.GetComponent<LoadingComponent>().SetText("正在登录,请稍候...");
+                
+                
+//                SceneHelperComponent.Instance.Session.Dispose();
+//                SceneHelperComponent.Instance.Session = null;
+                
+                
                 var session = _registPanelUI.GetComponent<RegistPanelComponent>().Session ?? SceneHelperComponent.Instance.CreateRealmSession();
 
                 SceneHelperComponent.Instance.MonoEvent.RemoveButtonClick(loginSubmitBtn.GetComponent<Button>());
@@ -83,8 +99,11 @@ namespace ETHotfix
                         UserName = loginNameText.text,
                         Password = loginPwdText.text
                     });
+                
                 if (response.Error == 0)
                 {
+                    loadingUI.GameObject.SetActive(false);
+                    
                     PlayerPrefs.SetString("username", loginNameText.text);
                     PlayerPrefs.SetString("password", loginPwdText.text);
 
@@ -92,9 +111,10 @@ namespace ETHotfix
 
                     // 连接网关服务器
                     await SceneHelperComponent.Instance.CreateGateSession(response.Address, response.Key);
+                    
                     // 获取用户信息
                     var accountResponse = (GetAccountInfoResponse) await SceneHelperComponent.Instance.Session.Call(new GetAccountInfoRequest());
-
+                    Debug.Log(accountResponse.AccountInfo.RoomId);
                     if (accountResponse.AccountInfo.RoomId == 0)
                     {
                         Game.Scene.GetComponent<UIComponent>().Create(UIType.Lobby, UiLayer.Bottom);
@@ -105,6 +125,7 @@ namespace ETHotfix
                         Debug.Log("重新连接,房间号: " + accountResponse.AccountInfo.RoomId);
                         JoinPaiJu(accountResponse.AccountInfo.RoomId);
                     }
+                    
                 }
                 else if (response.Error == -1)
                 {
