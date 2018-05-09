@@ -206,12 +206,14 @@ namespace ETHotfix
         //房间回调
         public void RoomBack(RoomInfoAnnunciate obj)
         {
+            Debug.Log("obj.username/"+obj.UserName);
             switch (obj.Message)
             {
                 case 0://加入房间
                     break;
                 case 1://准备
                     int chairIndex= _showCardUi.GetComponent<NnShowCardComponent>().FindFreeChair(obj.UserName);
+                    Debug.Log("找到椅子的索引是/"+chairIndex );
                     SitDown(chairIndex, obj.UserName);
                     break;
                 case 2://离开房间
@@ -298,16 +300,12 @@ namespace ETHotfix
             {
                 Debug.Log("当前房间人数不够，不能开始游戏!!!");
             }
-            else
-            {
-                Debug.Log("开始游戏成功!!!");
-                SwitchButton(_copyNumButton,_invitingFriendsButton,false);
-            }
         }
         
         //显示下注按钮
         private void ShowBetsButton()
         {
+            SwitchButton(_copyNumButton,_invitingFriendsButton,false);
             string[] scroeStr = _bottomScoreText.text.Split('/');
             Debug.Log("scroeStr.length/"+scroeStr.Length);
             if (scroeStr.Length > 1)
