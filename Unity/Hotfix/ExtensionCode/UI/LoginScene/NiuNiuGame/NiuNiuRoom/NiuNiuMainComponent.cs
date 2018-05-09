@@ -164,11 +164,18 @@ namespace ETHotfix
             SceneHelperComponent.Instance.MonoEvent.AddButtonClick(_startGameBt.GetComponent<Button>(), StartGameOclick);
             
             
-            //开始按钮注册
+            //提示按钮按钮注册
             SceneHelperComponent.Instance.MonoEvent.AddButtonClick(_tipsButton.GetComponent<Button>(), () =>
                 {
                     _showCardUi.GetComponent<NnShowCardComponent>().ShowTipsUi();
                 });
+            
+            
+            //亮牌按钮注册
+            SceneHelperComponent.Instance.MonoEvent.AddButtonClick(_brightButton.GetComponent<Button>(), () =>
+            {
+               
+            });
 
             //获取房间准备号玩家的数据
             GetAllReadyInfo();
@@ -241,20 +248,24 @@ namespace ETHotfix
                       var pokerCard = ProtobufHelper.FromBytes<Dictionary<int, List<PokerCard>>>(obj.Arg);
                       Licensing(pokerCard[-1]);
                       //存储好排序好的卡牌
-//                      _showCardUi.GetComponent<NnShowCardComponent>().SortedCardList = 
-//                          pokerCard.LastOrDefault().Equals(default(KeyValuePair<int,List<PokerCard>>)) ? null : 
-//                              pokerCard.LastOrDefault().Value.ToList();
+                      _showCardUi.GetComponent<NnShowCardComponent>().SortedCardList = 
+                          pokerCard.LastOrDefault().Equals(default(KeyValuePair<int,List<PokerCard>>)) ? null : 
+                              pokerCard.LastOrDefault().Value.ToList();
 
-                      if (pokerCard.LastOrDefault().Value != null)
-                      {
-                          _showCardUi.GetComponent<NnShowCardComponent>().SortedCardList =  pokerCard.LastOrDefault().Value.ToList();
-                      }
+//                      if (pokerCard.LastOrDefault().Value != null)
+//                      {
+//                          _showCardUi.GetComponent<NnShowCardComponent>().SortedCardList =  pokerCard.LastOrDefault().Value.ToList();
+//                      }
 
 
                       //保存提示的索引
                       _showCardUi.GetComponent<NnShowCardComponent>().TipsIndex= pokerCard.LastOrDefault().Key;
                       break;
                   case 4://计算玩家手里卡牌、并把结果返回给玩家消息
+                      var otherPokerCard = ProtobufHelper.FromBytes<Dictionary<int, List<PokerCard>>>(obj.Arg);
+                      FlopOtherCard(otherPokerCard,obj.UserName);
+                      
+                      Debug.Log("玩家:"+obj.UserName+"的牌是牛"+otherPokerCard.First().Key);
                       break;
             }
         }
@@ -360,10 +371,18 @@ namespace ETHotfix
             _shuffleButton.gameObject.SetActive(true);
             _flopButton.gameObject.SetActive(true);
 //            SceneHelperComponent.Instance.MonoEvent.AddButtonClick(shuffleButton.GetComponent<Button>(), StartGameOclick);
-            SceneHelperComponent.Instance.MonoEvent.AddButtonClick(_flopButton.GetComponent<Button>(),_showCardUi.GetComponent<NnShowCardComponent>().FlopSelfCard);
-            
+            SceneHelperComponent.Instance.MonoEvent.AddButtonClick(_flopButton.GetComponent<Button>(),() =>
+                {
+                    _showCardUi.GetComponent<NnShowCardComponent>().FlopCard(_player.AccountInfo.UserName);
+                });
         }
-        
+
+        //显示其他玩家的首牌
+        private void FlopOtherCard(Dictionary<int, List<PokerCard>> pokerDict,string userName)
+        {
+            _showCardUi.GetComponent<NnShowCardComponent>().LoadOtherCard(pokerDict,userName);
+        }
+
         //按钮开关
         private void SwitchButton(Button a, Button b,bool isShow)
         {
@@ -382,6 +401,17 @@ namespace ETHotfix
         {
             SwitchButton(_brightButton, _tipsButton, isShow);
         }
+        
+        //亮牌按钮事件
+        private async void OnBrightCardButtonClick()
+        {
+            var calculateCardResponse =(CalculateCardResponse) await SceneHelperComponent.Instance.Session.Call(new CalculateCardRequest() {RoomId = _mRoomId});
+            if (calculateCardResponse.Error == 0)
+            {
+                SwitchTipsCard(false);
+            }
+        }
+
 
 
 
