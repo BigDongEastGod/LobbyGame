@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fad9af2b4a9541745b9b43e16760ff7d
+guid: f7d9f172227d7b844b633194dca3d892
 timeCreated: 1524378437
 licenseType: Pro
 TextureImporter:
@@ -93,5 +93,5 @@ TextureImporter:
     physicsShape: []
   spritePackingTag: 
   userData: 
-  assetBundleName: block.unity3d
+  assetBundleName: spade.unity3d
   assetBundleVariant: 

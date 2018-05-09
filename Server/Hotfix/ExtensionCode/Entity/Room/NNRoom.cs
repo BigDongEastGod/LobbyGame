@@ -108,13 +108,9 @@ namespace ETHotfix
             
             GameStates.Values.ForEach(d => d.IsReceive = false);
             
-            var response = new GameInfoAnnunciate {Message = 1, Arg = null};
-            
             GameStates.Keys.ForEach(d =>
             {
-                response.UserName = d.Account.UserName;
-                
-                d.GetActorProxy.Send(response);
+                d.GetActorProxy.Send(new GameInfoAnnunciate {Message = 1, Arg = null,UserName = d.Account.UserName});
             });
         }
 
@@ -160,10 +156,6 @@ namespace ETHotfix
 
             var playerPokers = poker.Deal(Cards, GameStates.Count, 5, true);
                             
-            // 创建发送协议
-
-            var response = new GameInfoAnnunciate() {Message = 3};
-                            
             // 获取所有参展玩家
 
             var activityPlayers = GameStates.Keys.Where(d => d.IsActivity).ToArray();
@@ -172,36 +164,19 @@ namespace ETHotfix
 
             for (var i = 0; i < activityPlayers.Count(); i++)
             {
-                response.UserName = activityPlayers.ElementAt(i).Account.UserName;
-                
-                // 排序卡牌，如果没有牛的情况下返回为空
+                // 发送消息到玩家
 
-                var calculateCards = poker.CalculateCards(playerPokers[i]);
-                
-                // 计算牌是牛几
-
-                var pokernumber = calculateCards == null
-                    ? 0
-                    : poker.Calculate(
-                        (calculateCards[3].CardNumber > 10 ? 10 : calculateCards[3].CardNumber) +
-                        (calculateCards[4].CardNumber > 10 ? 10 : calculateCards[4].CardNumber)
-                    );
-                
-                // 创建数据协议
-
-                var pokercards = new Dictionary<int, List<PokerCard>>
-                {
-                    {-1, playerPokers[i].ToList()},
-                    {pokernumber, calculateCards == null ? new List<PokerCard>() : poker.CalculateCards(playerPokers[i]).ToList()}
-                };
-                
-                Log.Debug("牛"+pokernumber);
-                
-                // 发送协议（打包）
-
-                response.Arg = ProtobufHelper.ToBytes(pokercards);
-                                
-                activityPlayers[i].GetActorProxy.Send(response);
+                activityPlayers.ElementAt(i).GetActorProxy.Send(
+                    new GameInfoAnnunciate()
+                    {
+                        Message = 3,
+                        UserName = activityPlayers.ElementAt(i).Account.UserName,
+                        Arg = ProtobufHelper.ToBytes(new List<PlayerPokerCards>
+                        {
+                            new PlayerPokerCards() {PokerCards = playerPokers[i]},
+                            poker.CalculateCards(playerPokers[i])
+                        })
+                    });
 
                 GameStates[activityPlayers[i]].Cards = playerPokers[i];
             }
@@ -217,32 +192,18 @@ namespace ETHotfix
             // 把玩家接收信息标记为false
             
             GameStates.Values.ForEach(d => d.IsReceive = false);
-            
-            var poker = GetComponent<Poker>();
-            
-            // 计算好牌，并排序（如果有牛的话）
-
-            var pokerStr = 0;
-
-            var cards = poker.CalculateCards(GameStates[player].Cards).ToList();
-
-            if (cards.Count > 0)
-            {
-                GameStates[player].Cards = cards;
-
-                pokerStr = poker.Calculate(
-                    (GameStates[player].Cards.ElementAt(3).CardNumber > 10 ? 10 : GameStates[player].Cards.ElementAt(3).CardNumber) +
-                    (GameStates[player].Cards.ElementAt(4).CardNumber > 10 ? 10 : GameStates[player].Cards.ElementAt(4).CardNumber)
-                );
-            }
 
             // 创建发送协议
 
-            var response = new GameInfoAnnunciate() {Message = 4, Arg = SerializeHelper.Instance.SerializeObject(pokerStr), UserName = player.Account.UserName};
-            
-            GameStates.Keys.ForEach(d =>
+            GameStates.Keys.Where(d => d != player).ForEach(d =>
             {
-                d.GetActorProxy.Send(response);
+                d.GetActorProxy.Send(
+                    new GameInfoAnnunciate()
+                    {
+                        Message = 4,
+                        UserName = player.Account.UserName,
+                        Arg = ProtobufHelper.ToBytes(GetComponent<NNPoker>().CalculateCards(GameStates[player].Cards))
+                    });
             });
         }
 
@@ -457,7 +418,7 @@ namespace ETHotfix
                     
                     case 2:
                         
-                        //GameQueue.Peek()?.Invoke(player, args);
+                        CalculateCardsMessage(player, args);
                         
                         break;
             }

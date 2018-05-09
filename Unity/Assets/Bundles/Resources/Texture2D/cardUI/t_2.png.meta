@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: f7d9f172227d7b844b633194dca3d892
-timeCreated: 1524378437
+guid: f66b17f64fd12c94ba21375c4ae71b96
+timeCreated: 1524378436
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName: {}
@@ -93,5 +93,5 @@ TextureImporter:
     physicsShape: []
   spritePackingTag: 
   userData: 
-  assetBundleName: spade.unity3d
+  assetBundleName: heart.unity3d
   assetBundleVariant: 
