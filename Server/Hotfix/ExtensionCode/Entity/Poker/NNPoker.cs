@@ -124,7 +124,8 @@ namespace ETHotfix
                 {
                     CardTypeNumber =
                         Calculate(
-                            ConvertCard(sortingCards[4].CardNumber) + ConvertCard(sortingCards[5].CardNumber)),
+                            ConvertCard(sortingCards[3].CardNumber) + ConvertCard(sortingCards[4].CardNumber)),
+                    GradeCount = sortingCards.Sum(d => d.Grade),
                     PokerCards = sortingCards.ToList()
                 };
             }
