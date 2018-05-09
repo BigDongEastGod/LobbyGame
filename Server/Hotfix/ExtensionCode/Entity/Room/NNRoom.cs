@@ -36,6 +36,8 @@ namespace ETHotfix
             public int Bet;
 
             public List<PokerCard> Cards;
+            
+            public PlayerPokerCards CalculateCards;
         }
 
         /// <summary>
@@ -166,6 +168,8 @@ namespace ETHotfix
             {
                 // 发送消息到玩家
 
+                var calculateCards = poker.CalculateCards(playerPokers[i]);
+
                 activityPlayers.ElementAt(i).GetActorProxy.Send(
                     new GameInfoAnnunciate()
                     {
@@ -173,12 +177,13 @@ namespace ETHotfix
                         UserName = activityPlayers.ElementAt(i).Account.UserName,
                         Arg = ProtobufHelper.ToBytes(new List<PlayerPokerCards>
                         {
-                            new PlayerPokerCards() {PokerCards = playerPokers[i]},
-                            poker.CalculateCards(playerPokers[i])
+                            new PlayerPokerCards() {PokerCards = playerPokers[i]},calculateCards
                         })
                     });
 
                 GameStates[activityPlayers[i]].Cards = playerPokers[i];
+
+                GameStates[activityPlayers[i]].CalculateCards = calculateCards;
             }
         }
 
@@ -202,9 +207,27 @@ namespace ETHotfix
                     {
                         Message = 4,
                         UserName = player.Account.UserName,
-                        Arg = ProtobufHelper.ToBytes(GetComponent<NNPoker>().CalculateCards(GameStates[player].Cards))
+                        Arg = ProtobufHelper.ToBytes(GameStates[player].CalculateCards)
                     });
             });
+        }
+
+        /// <summary>
+        /// 结算所有玩家卡牌
+        /// </summary>
+        /// <param name="player"></param>
+        /// <param name="args"></param>
+        private void Settlement(SPlayer player, params object[] args)
+        {
+            var players = GameStates.OrderByDescending(d => d.Value.CalculateCards.GradeCount).First();
+
+            GameStates.Keys.ForEach(d => d.GetActorProxy.Send(
+                new GameInfoAnnunciate()
+                {
+                    Message = 5,
+                    UserName = players.Key.Account.UserName,
+                    Arg = ProtobufHelper.ToBytes(players.Value.CalculateCards.GradeCount > 0)
+                }));
         }
 
         #endregion
@@ -391,7 +414,7 @@ namespace ETHotfix
             /*       提示消息
                 0:玩家接收庄家信息
                 1:接收玩家下注消息
-                2:接收玩家发牌消息
+                2:接收玩家亮牌消息                
              */
             
             if (!GameStates.ContainsKey(player)) return;
@@ -419,6 +442,8 @@ namespace ETHotfix
                     case 2:
                         
                         CalculateCardsMessage(player, args);
+                        
+                        if (GameStates.Values.Count(d => d.IsReceive) == GameStates.Count) Settlement(player, args);
                         
                         break;
             }

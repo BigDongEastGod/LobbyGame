@@ -270,15 +270,15 @@ message BetGameResponse // IActorResponse
 {
 	
 }
-// 牛牛游戏接收到卡牌
-message DealPokeRequest // IActorRequest
-{
-	required int64 RoomId = 1;		
-}
-message DealPokeResponse // IActorResponse
-{
+// // 牛牛游戏接收到卡牌
+// message DealPokeRequest // IActorRequest
+// {
+// 	required int64 RoomId = 1;		
+// }
+// message DealPokeResponse // IActorResponse
+// {
 	
-}
+// }
 // 牛牛游戏接收到计算卡牌结果
 message CalculateCardRequest // IActorRequest
 {
