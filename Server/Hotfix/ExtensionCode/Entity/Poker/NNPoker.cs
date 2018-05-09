@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using CSharpx;
 using ETModel;
 
 namespace ETHotfix
@@ -7,7 +8,7 @@ namespace ETHotfix
     public class NNPoker : Poker
     {
         /// <summary>
-        /// 转换卡牌为文字
+        /// 计算牛几
         /// </summary>
         /// <param name="number">数值</param>
         /// <returns>转换成例如：牛1、牛牛等文字</returns>
@@ -39,7 +40,7 @@ namespace ETHotfix
         /// </summary>
         /// <param name="cards">卡牌数组</param>
         /// <returns>计算是否有牛出现、如果没有牛返回为Null</returns>
-        public override PokerCard[] CalculateCards(List<PokerCard> cards)
+        public override PlayerPokerCards CalculateCards(List<PokerCard> cards)
         {
             var cardsCount = cards.Select(d => ConvertCard(d.CardNumber)).Sum();
 
@@ -114,8 +115,92 @@ namespace ETHotfix
 
                 #endregion
             }
+            
+            // 如果有牛、就计算出牛几
 
-            return sortingCards[4]?.CardNumber > 0 ? sortingCards : null;
+            if (sortingCards[4]?.CardNumber > 0)
+            {
+                return new PlayerPokerCards()
+                {
+                    CardTypeNumber =
+                        Calculate(
+                            ConvertCard(sortingCards[4].CardNumber) + ConvertCard(sortingCards[5].CardNumber)),
+                    PokerCards = sortingCards.ToList()
+                };
+            }
+
+            return null;
         }
+        
+        #region 特殊牌型检测
+
+        public PlayerPokerCards SpecialCards(List<PokerCard> cards)
+        {
+            var cardsCount = cards.Select(d => ConvertCard(d.CardNumber)).Sum();
+            
+            var sortingCards = new PokerCard[5];
+            
+            // 五小牛
+
+            if (cardsCount < 10 && cards.GroupBy(d => d.CardNumber < 5).Count() == 1)
+            {
+                return new PlayerPokerCards() {CardTypeNumber = 16, PokerCards = cards.OrderBy(d => d.CardNumber).ToList()};
+            }
+            
+            // 炸弹牛
+
+            var groupCards = cards.GroupBy(d => d.CardNumber).ToList();
+            
+            if (groupCards.Count() == 2 && groupCards.ElementAt(0).Count()==4)
+            {
+                for (var i = 0; i < groupCards.ElementAt(0).Count(); i++) sortingCards[i] = groupCards.ElementAt(0).ElementAt(i);
+                
+                sortingCards[4] = groupCards.ElementAt(1).ElementAt(0);
+
+                return new PlayerPokerCards() {CardTypeNumber = 15, PokerCards = sortingCards.ToList()};
+            }
+            
+            // 葫芦牛
+
+            if (groupCards.Count() == 2 && groupCards.ElementAt(0).Count() == 3)
+            {
+                for (var i = 0; i < groupCards.ElementAt(0).Count(); i++) sortingCards[i] = groupCards.ElementAt(0).ElementAt(i);
+
+                for (var i = 1; i <= groupCards.ElementAt(1).Count(); i++) sortingCards[i + 2] = groupCards.ElementAt(1).ElementAt(i);
+                
+                return new PlayerPokerCards() {CardTypeNumber = 14, PokerCards = sortingCards.ToList()};
+            }
+
+            // 五花牛
+
+            groupCards = cards.GroupBy(d => d.CardType).ToList();
+
+            if (groupCards.Count() == 1 && groupCards.ElementAt(0).Count(d => d.CardNumber > 10) == 5)
+            {
+                return new PlayerPokerCards() {CardTypeNumber = 13, PokerCards = cards.OrderBy(d => d.CardNumber).ToList()};
+            }
+            
+            // 同花牛
+
+            if (groupCards.Count() == 1)
+            {
+                return new PlayerPokerCards() {CardTypeNumber = 12, PokerCards = cards.OrderBy(d => d.CardNumber).ToList()};
+            }
+            
+            // 顺子牛
+
+            var cardnumber = cards.OrderBy(d => d.CardNumber).First().CardNumber;
+
+            for (var i = 0; i < 5; i++) cardnumber += i;
+
+            if (cardsCount == cardnumber)
+            {
+                return new PlayerPokerCards() {CardTypeNumber = 11, PokerCards = cards.OrderBy(d => d.CardNumber).ToList()};
+            }
+
+            return null;
+        }
+
+        #endregion
     }
 }
