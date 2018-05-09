@@ -16,7 +16,7 @@ namespace ETHotfix
             Game.Scene.GetComponent<UIComponent>().Create(UIType.NiuNiuSetting, UiLayer.Top).GameObject.SetActive(false);
             
             ui.AddComponent<NiuNiuLobbyComponent>();
-            
+
             return ui;
         }
 

@@ -67,6 +67,8 @@ namespace ETHotfix
                 Game.Scene.GetComponent<UIComponent>().Remove(UIType.Lobby);
             });
 
+            
+            // 断线重连委托
             Game.Scene.GetComponent<PingComponent>().PingBackCall = () =>
             {
                 GameTools.ReLoading("LobbyCanvas");
