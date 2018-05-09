@@ -156,9 +156,14 @@ namespace ETHotfix
             #endregion
 
 
-            Game.Scene.GetComponent<PingComponent>().PingBackCall = () => { GameTools.ReLoading("GameCanvas"); };
+            // 断线重连委托
+            Game.Scene.GetComponent<PingComponent>().PingBackCall = () =>
+            {
+                GameTools.ReLoading("GameCanvas");
+                GetRoomList();
+            };
         }
-
+        
         public void Start()
         {
             _nnCreateRoom = Game.Scene.GetComponent<UIComponent>().Get(UIType.NiuNiuCreateRoom);
@@ -178,6 +183,8 @@ namespace ETHotfix
         {
             try
             {
+
+                Debug.Log("GetRoomList");
                 if (!_isNiuFriendRoom)
                 {
                     var roomList = (RoomListResponse) await SceneHelperComponent.Instance.Session.Call(new RoomListRequest() {GameType = "NN"});
