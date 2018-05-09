@@ -26,6 +26,7 @@ namespace ETHotfix
     {
         
         private UI _settingPanel;
+        private UI _nnRule;
         private GameObject _nnLobbyMenu;
         
         public void Awake()
@@ -38,6 +39,7 @@ namespace ETHotfix
             var feedbackBtn = rc.Get<GameObject>("FeedbackBtn");
             var ruleBtn = rc.Get<GameObject>("RuleBtn");
 
+            SceneHelperComponent.Instance.MonoEvent.AddButtonClick(ruleBtn.GetComponent<Button>(), () => { _nnRule.GameObject.SetActive(true);});
             SceneHelperComponent.Instance.MonoEvent.AddButtonClick(_nnLobbyMenu.GetComponent<Button>(), () => { _nnLobbyMenu.SetActive(false); });
             SceneHelperComponent.Instance.MonoEvent.AddButtonClick(backLobbyBtn.GetComponent<Button>(), () =>
             {
@@ -51,6 +53,7 @@ namespace ETHotfix
         public void Start()
         {
             _settingPanel = Game.Scene.GetComponent<UIComponent>().Get(UIType.NiuNiuSetting);
+            _nnRule = Game.Scene.GetComponent<UIComponent>().Get(UIType.NiuNiuRulePanel);
         }
 
         private void ShowSettingPanel()
