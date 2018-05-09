@@ -73,9 +73,9 @@ namespace ETHotfix
         /// <param name="cardCount">每个玩家的牌数量</param>
         /// <param name="isRandom">是否随机发牌</param>
         /// <returns>根据玩家数量发给玩家一定数量的卡牌</returns>
-        public Dictionary<int, List<PokerCard>> Deal(List<PokerCard> cards, int players, int cardCount,bool isRandom = false)
+        public List<List<PokerCard>> Deal(List<PokerCard> cards, int players, int cardCount,bool isRandom = false)
         {
-            var playerCards = new Dictionary<int, List<PokerCard>>();
+            var playerCards = new List<List<PokerCard>>();
             
             for (var i = 0; i < players; i++)
             {
@@ -96,7 +96,7 @@ namespace ETHotfix
                     currentCard.IsPayout = true;
                 }
 
-                playerCards.Add(i, card);
+                playerCards.Add(card);
             }
 
             return playerCards;

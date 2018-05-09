@@ -177,7 +177,8 @@ namespace ETHotfix
                         UserName = activityPlayers.ElementAt(i).Account.UserName,
                         Arg = ProtobufHelper.ToBytes(new List<PlayerPokerCards>
                         {
-                            new PlayerPokerCards() {PokerCards = playerPokers[i]},calculateCards
+                            new PlayerPokerCards() {CardTypeNumber = 0, GradeCount = 0, PokerCards = playerPokers[i]},
+                            calculateCards
                         })
                     });
 
