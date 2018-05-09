@@ -213,10 +213,11 @@ namespace ETHotfix
             rc.Get<GameObject>("BetsTitleImg").transform.GetChild(0).GetComponent<Text>().text =score.ToString();
         }
 
-        //翻动自己的牌
-        public void FlopSelfCard()
+        //翻牌
+        public void FlopCard(string userName,bool isShowTipsButton)
         {
-            FlopAniamtion(GetDictValue(_pokerObjList, CurrentUserName));
+            FlopAniamtion(GetDictValue(_pokerObjList, userName));
+            if(! isShowTipsButton) return;
             _niuNiuMainUi.SwitchFlopCard(false);
             _niuNiuMainUi.SwitchTipsCard(true);
         }
@@ -236,6 +237,7 @@ namespace ETHotfix
  
             for (var i = 0; i < _headUiDict.Count; i++)
             {
+                Debug.Log(" _headUiDict.Count/"+ _headUiDict.Count);
                 List<ReferenceCollector> tempCardList=new List<ReferenceCollector>();
                 for (var j = 0; j < 5; j++)
                 {
@@ -256,7 +258,7 @@ namespace ETHotfix
             }
         }
         
-        //修改卡牌的顺序
+        //修改自己卡牌的顺序
         private void SortCard(List<ReferenceCollector> cardList)
         {
             for (var i = 0; i < SortedCardList.Count; i++)
@@ -264,7 +266,20 @@ namespace ETHotfix
                 LoadPorkerData(cardList[i], SortedCardList[i]);
             }
         }
-        
+
+        //显示其他玩家的牌
+        public void LoadOtherCard(Dictionary<int, List<PokerCard>> pokerDict,string userName)
+        {
+             var pokerCard=pokerDict.First().Value;
+            for (var i = 0; i < GetDictValue(_pokerObjList, userName).Count; i++)
+            {
+                LoadPorkerData(GetDictValue(_pokerObjList, userName)[i], pokerCard[i]);
+            }
+
+            FlopCard(userName,false);
+        }
+
+
         //显示提示牌UI
         public void ShowTipsUi()
         {
@@ -282,7 +297,6 @@ namespace ETHotfix
         //加载扑克的数据
         private static void LoadPorkerData(ReferenceCollector rc, PokerCard data)
         {
-            Debug.Log("data.CardNumber/"+data.CardNumber);
             var jokerImg = rc.Get<GameObject>("jokerImg").GetComponent<Image>();
             var cardNumber = rc.Get<GameObject>("cardNumber").GetComponent<Image>();
             var flowerColor = rc.Get<GameObject>("FlowerColor").GetComponent<Image>();
@@ -295,7 +309,7 @@ namespace ETHotfix
                 cardNumber.sprite = rc.Get<Sprite>("num_" + data.CardNumber);
               
                 //如果不是J Q K
-                if (data.CardNumber < 10)
+                if (data.CardNumber < 11)
                 {
                     flowerColor.sprite = rc.Get<Sprite>("t_" + data.CardType);
                     bigFlowerColor1.sprite = rc.Get<Sprite>("t_" + data.CardType);
@@ -309,7 +323,7 @@ namespace ETHotfix
                     bigFlowerColor1.gameObject.SetActive(false);
                 }
 
-                if (data.CardType > 9) return;
+                if (data.CardNumber <11) return;
                 
                 //获得卡牌的颜色
                 switch (data.CardType)
