@@ -6,7 +6,7 @@ using ETModel;
 namespace ETHotfix
 {
     /*
-         * 0: 红桃 1: 方块 2: 黑桃 3: 梅花 4：王
+         * 1: 黑桃 2: 红桃 3: 梅花 4：方块 5:王
          */
     public abstract class Poker : Entity
     {
@@ -17,8 +17,9 @@ namespace ETHotfix
         /// </summary>
         /// <param name="batch">几副牌</param>
         /// <param name="isRandom">是否随机排序</param>
+        /// <param name="isCreateKing">是否生成王</param>
         /// <returns>扑克牌规则是54张</returns>
-        public List<PokerCard> CreateCards(int batch, bool isRandom = false)
+        public List<PokerCard> CreateCards(int batch, bool isRandom = false, bool isCreateKing = true)
         {
             var cardsWarehousing = new List<PokerCard>();
 
@@ -26,23 +27,26 @@ namespace ETHotfix
             {
                 // 生成卡牌
 
-                for (var i = 0; i < 4; i++)
+                for (var i = 1; i <= 4; i++)
                 {
-                    for (var j = 1; j < 13; j++) cardsWarehousing.Add(new PokerCard {CardType = i, CardNumber = j, IsPayout = false});
+                    for (var j = 1; j <= 13; j++)
+                        cardsWarehousing.Add(new PokerCard {CardType = i, CardNumber = j, Grade = j + (i * 10), IsPayout = false});
                 }
-
-                // 生成大小王
-
-                var king = new PokerCard {CardType = 4, IsPayout = false};
-
-                king.CardNumber = 1;
-
-                cardsWarehousing.Add(king);
-                
-                king.CardNumber = 2;
-
-                cardsWarehousing.Add(king);
             }
+
+            if (!isCreateKing) return isRandom ? RandomCards(cardsWarehousing) : cardsWarehousing;
+            
+            // 生成大小王
+            
+            var king = new PokerCard {CardType = 5, IsPayout = false, CardNumber = 1, Grade = 51};
+
+            cardsWarehousing.Add(king);
+
+            king.CardNumber = 2;
+
+            king.Grade = 52;
+
+            cardsWarehousing.Add(king);
 
             return isRandom ? RandomCards(cardsWarehousing) : cardsWarehousing;
         }
@@ -105,7 +109,7 @@ namespace ETHotfix
             return 0;
         }
         
-        public virtual PokerCard[] CalculateCards(List<PokerCard> cards)
+        public virtual PlayerPokerCards CalculateCards(List<PokerCard> cards)
         {
             return null;
         }
