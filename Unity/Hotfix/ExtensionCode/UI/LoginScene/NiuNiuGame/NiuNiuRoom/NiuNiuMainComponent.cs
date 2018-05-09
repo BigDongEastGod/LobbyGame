@@ -243,6 +243,12 @@ namespace ETHotfix
                       break;
                   case 3://给玩家发牌消息
                       var pokerCard = ProtobufHelper.FromBytes<Dictionary<int, List<PokerCard>>>(obj.Arg);
+                      var list= pokerCard[-1];
+                      foreach (var t in list)
+                      {
+                          Debug.Log("T/"+t.CardNumber);
+                      }
+                      
                       Licensing(pokerCard[-1]);
                       //存储好排序好的卡牌
                       _showCardUi.GetComponent<NnShowCardComponent>().SortedCardList = 
@@ -353,10 +359,6 @@ namespace ETHotfix
         //发牌
         private void Licensing(List<PokerCard> pokerCards)
         {
-            for (int i = 0; i < pokerCards.Count; i++)
-            {
-                Debug.Log("这张牌是/"+pokerCards[i].CardNumber+"i是"+i);
-            }
             _showCardUi.GetComponent<NnShowCardComponent>().Licensing(pokerCards);
         }
         
@@ -368,7 +370,7 @@ namespace ETHotfix
 //            SceneHelperComponent.Instance.MonoEvent.AddButtonClick(shuffleButton.GetComponent<Button>(), StartGameOclick);
             SceneHelperComponent.Instance.MonoEvent.AddButtonClick(_flopButton.GetComponent<Button>(),() =>
                 {
-                    _showCardUi.GetComponent<NnShowCardComponent>().FlopCard(_player.AccountInfo.UserName);
+                    _showCardUi.GetComponent<NnShowCardComponent>().FlopCard(_player.AccountInfo.UserName,true);
                 });
         }
 
