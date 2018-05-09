@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: f66b17f64fd12c94ba21375c4ae71b96
-timeCreated: 1524378436
+guid: 93a64aa83eb304f72a76ca61561c4909
+timeCreated: 1524645595
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName: {}
@@ -76,6 +76,16 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   - buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -93,5 +103,5 @@ TextureImporter:
     physicsShape: []
   spritePackingTag: 
   userData: 
-  assetBundleName: heart.unity3d
+  assetBundleName: b11.unity3d
   assetBundleVariant: 
