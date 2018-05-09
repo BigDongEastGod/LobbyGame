@@ -213,10 +213,10 @@ namespace ETHotfix
             rc.Get<GameObject>("BetsTitleImg").transform.GetChild(0).GetComponent<Text>().text =score.ToString();
         }
 
-        //翻动自己的牌
-        public void FlopSelfCard()
+        //翻牌
+        public void FlopCard(string userName)
         {
-            FlopAniamtion(GetDictValue(_pokerObjList, CurrentUserName));
+            FlopAniamtion(GetDictValue(_pokerObjList, userName));
             _niuNiuMainUi.SwitchFlopCard(false);
             _niuNiuMainUi.SwitchTipsCard(true);
         }
@@ -256,7 +256,7 @@ namespace ETHotfix
             }
         }
         
-        //修改卡牌的顺序
+        //修改自己卡牌的顺序
         private void SortCard(List<ReferenceCollector> cardList)
         {
             for (var i = 0; i < SortedCardList.Count; i++)
@@ -264,7 +264,20 @@ namespace ETHotfix
                 LoadPorkerData(cardList[i], SortedCardList[i]);
             }
         }
-        
+
+        //显示其他玩家的牌
+        public void LoadOtherCard(Dictionary<int, List<PokerCard>> pokerDict,string userName)
+        {
+             var pokerCard=pokerDict.First().Value;
+            for (var i = 0; i < GetDictValue(_pokerObjList, userName).Count; i++)
+            {
+                LoadPorkerData(GetDictValue(_pokerObjList, userName)[i], pokerCard[i]);
+            }
+
+            FlopCard(userName);
+        }
+
+
         //显示提示牌UI
         public void ShowTipsUi()
         {
