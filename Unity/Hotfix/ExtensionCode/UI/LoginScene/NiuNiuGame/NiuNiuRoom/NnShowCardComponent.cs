@@ -149,24 +149,9 @@ namespace ETHotfix
             //设置头像信息
             SetHeadUIComponent(headObj, playerInfo);
            
-            if (chairIndex != -1)
-            {
-                SaveOtherPlayerChair(playerInfo.UserName);
-            }
-            
             _headUiDict.Add(playerInfo.UserName,headObj.GetComponent<ReferenceCollector>());
         }
         
-        //保存其他玩家的位置
-        private void SaveOtherPlayerChair(string userName)
-        {
-            for (var i = 0; i < _chairArray.Length; i++)
-            {
-                if (_chairArray[i] != null) continue;
-                _chairArray[i] = userName;
-                return;
-            }
-        }
  
         //获取字典里的值
         private static T2 GetDictValue<T1, T2>(IReadOnlyDictionary<T1, T2> dict,T1 key)
@@ -252,7 +237,9 @@ namespace ETHotfix
                     }
                     tempCardList.Add(cardObj.GetComponent<ReferenceCollector>());
                 }
- 
+
+                var name = i == 0 ? CurrentUserName : _chairArray[i - 1];
+                Debug.Log(" 要添加的名字是/"+ name);
                 _pokerObjList.Add(i == 0 ? CurrentUserName : _chairArray[i-1], tempCardList);
             }
         }
