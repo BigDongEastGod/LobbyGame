@@ -234,7 +234,6 @@ namespace ETHotfix
         //创建卡牌
         private void CreateCard(List<PokerCard> porkerList)
         {
- 
             for (var i = 0; i < _headUiDict.Count; i++)
             {
                 Debug.Log(" _headUiDict.Count/"+ _headUiDict.Count);
@@ -268,14 +267,12 @@ namespace ETHotfix
         }
 
         //显示其他玩家的牌
-        public void LoadOtherCard(Dictionary<int, List<PokerCard>> pokerDict,string userName)
+        public void LoadOtherCard(List<PokerCard> pokerList,string userName)
         {
-             var pokerCard=pokerDict.First().Value;
             for (var i = 0; i < GetDictValue(_pokerObjList, userName).Count; i++)
             {
-                LoadPorkerData(GetDictValue(_pokerObjList, userName)[i], pokerCard[i]);
+                LoadPorkerData(GetDictValue(_pokerObjList, userName)[i], pokerList[i]);
             }
-
             FlopCard(userName,false);
         }
 
