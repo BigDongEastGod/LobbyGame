@@ -172,10 +172,7 @@ namespace ETHotfix
             
             
             //亮牌按钮注册
-            SceneHelperComponent.Instance.MonoEvent.AddButtonClick(_brightButton.GetComponent<Button>(), () =>
-            {
-               
-            });
+            SceneHelperComponent.Instance.MonoEvent.AddButtonClick(_brightButton.GetComponent<Button>(), OnBrightCardButtonClick);
 
             //获取房间准备号玩家的数据
             GetAllReadyInfo();
@@ -256,8 +253,6 @@ namespace ETHotfix
 //                      {
 //                          _showCardUi.GetComponent<NnShowCardComponent>().SortedCardList =  pokerCard.LastOrDefault().Value.ToList();
 //                      }
-
-
                       //保存提示的索引
                       _showCardUi.GetComponent<NnShowCardComponent>().TipsIndex= pokerCard.LastOrDefault().Key;
                       break;
