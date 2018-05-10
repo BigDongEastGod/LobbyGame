@@ -257,7 +257,7 @@ namespace ETHotfix
                       _showCardUi.GetComponent<NnShowCardComponent>().ShowTipsUi(obj.UserName,otherPokerList.CardTypeNumber);
                       break;
                   case 5:
-                      
+                      _showCardUi.GetComponent<NnShowCardComponent>().ShowWinUI(obj.UserName);
                       break;
             }
         }

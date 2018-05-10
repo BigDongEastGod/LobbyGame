@@ -246,6 +246,8 @@ namespace ETHotfix
         //修改自己卡牌的顺序
         private void SortCard(List<ReferenceCollector> cardList)
         {
+            Debug.Log("从服务器返回的牌型数据个数是"+SortedCardList.Count);
+            Debug.Log("传进来饿数组个数是"+cardList.Count);
             for (var i = 0; i < SortedCardList.Count; i++)
             {
                 LoadPorkerData(cardList[i], SortedCardList[i]);
@@ -446,6 +448,12 @@ namespace ETHotfix
             var tempPos = targetPos + new Vector2(-960, 0);
             var pos=new Vector3(tempPos.x,tempPos.y);
             return obj.transform.GetComponent<RectTransform>().DOLocalMove(pos,delay).onComplete;
+        }
+        
+        //显示赢家
+        public void ShowWinUI(string userName)
+        {
+            GetDictValue(_headUiDict,userName).Get<GameObject>("SettlementImage").SetActive(true);
         }
 
         //离开房间
