@@ -50,20 +50,15 @@ namespace ETHotfix
         private RectTransform _posLeftTransform;
         private RectTransform _posRightTransform;
 
+        private GameObject _refreshBtn;
         private GameObject _roomEmptyImg;
         private GameObject _roomContent;
         private GameObject _roomInfoItem;
         private GameObject _nnLobby;
 
-        private int _time;
-
         // 房间列表
         private bool _isNiuFriendRoom;
         private List<GameObject> _roomInfoList;
-        private int _outTime;
-        private bool _startTime;
-
-        private bool _isBreak;
 
         public async void Awake()
         {
@@ -92,13 +87,8 @@ namespace ETHotfix
             _barMoveSpeed = 10f;
             _isMoveBar = true;
 
-            _time = 100;
-
             _roomInfoList = new List<GameObject>();
-
             _isNiuFriendRoom = false;
-
-            _isBreak = false;
 
             // 页面
             var nnLobby = rc.Get<GameObject>("NiuNiuLobby");
@@ -123,6 +113,7 @@ namespace ETHotfix
 //            var mailBtn = rc.Get<GameObject>("MailBtn");
 //            var shareBtn = rc.Get<GameObject>("ShareBtn");
             var menuBtn = rc.Get<GameObject>("MenuBtn");
+            _refreshBtn = rc.Get<GameObject>("RefreshBtn");
 
             // 已创建房间列表
             _roomEmptyImg = rc.Get<GameObject>("RoomEmptyImg"); //没有房间信息时候显示图片
@@ -152,10 +143,10 @@ namespace ETHotfix
             niuFriendToggle.GetComponent<Toggle>().onValueChanged.AddListener((niuFriend) =>
             {
                 _isNiuFriendRoom = niuFriend;
-
                 GetRoomList();
-                _time = 100;
             });
+
+            SceneHelperComponent.Instance.MonoEvent.AddButtonClick(_refreshBtn.GetComponent<Button>(), GetRoomList);
 
             #endregion
 
@@ -163,20 +154,11 @@ namespace ETHotfix
             // 断线重连委托
             Game.Scene.GetComponent<PingComponent>().PingBackCall = () =>
             {
-                if (_roomInfoList != null)
-                    foreach (var go in _roomInfoList)
-                    {
-                        go.SetActive(false);
-                    }
-
-                _roomEmptyImg.SetActive(true);
-                
-                _isBreak = true;
                 GameTools.ReLoading("GameCanvas");
-                _isBreak = false;
+                GetRoomList();
             };
         }
-        
+
         public void Start()
         {
             _nnCreateRoom = Game.Scene.GetComponent<UIComponent>().Get(UIType.NiuNiuCreateRoom);
@@ -194,8 +176,7 @@ namespace ETHotfix
 
         public async void GetRoomList()
         {
-            if(_isBreak)return;
-            
+            _refreshBtn.GetComponent<Image>().material.SetFloat("_Speed",100);
             try
             {
                 if (!_isNiuFriendRoom)
@@ -218,6 +199,7 @@ namespace ETHotfix
                                 _roomInfoList.Add(go);
                             }
                         }
+
                         Debug.Log("房间信息预制体加载完成");
                         for (int i = 0; i < roomList.Rooms.Count; i++)
                         {
@@ -245,6 +227,7 @@ namespace ETHotfix
 
                             _roomInfoList[i].SetActive(true);
                         }
+
                         Debug.Log("房间信息加载完成");
                         _roomEmptyImg.SetActive(roomList.Rooms.Count == 0);
                     }
@@ -271,6 +254,8 @@ namespace ETHotfix
                 Debug.Log("RoomList加载异常： " + e.Message);
                 GameTools.ShowDialogMessage(e.Message, "GameCanvas");
             }
+            
+            _refreshBtn.GetComponent<Image>().material.SetFloat("_Speed",0);
         }
 
         private async void JoinPaiJu(long roomId)
@@ -303,14 +288,6 @@ namespace ETHotfix
         public void Update()
         {
             MoveBar();
-
-//            if (_nnLobby != null && (_nnLobby.activeInHierarchy && _time <= 0) && !_isBreak)
-//            {
-//                GetRoomList();
-//                _time = 100;
-//            }
-//
-//            _time--;
         }
 
         private void MoveBar()
