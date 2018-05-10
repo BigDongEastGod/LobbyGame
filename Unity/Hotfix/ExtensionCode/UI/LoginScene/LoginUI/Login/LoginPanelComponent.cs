@@ -112,7 +112,6 @@ namespace ETHotfix
                     
                     // 获取用户信息
                     var accountResponse = (GetAccountInfoResponse) await SceneHelperComponent.Instance.Session.Call(new GetAccountInfoRequest());
-                    Debug.Log(accountResponse.AccountInfo.RoomId);
                     if (accountResponse.AccountInfo.RoomId == 0)
                     {
                         Game.Scene.GetComponent<UIComponent>().Create(UIType.Lobby, UiLayer.Bottom);
