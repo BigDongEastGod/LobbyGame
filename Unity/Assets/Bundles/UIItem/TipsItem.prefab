@@ -90,6 +90,18 @@ MonoBehaviour:
     gameObject: {fileID: 21300000, guid: fac7c3ffb86cd4fc8ae73b94467e81f7, type: 3}
   - key: nn_niu10
     gameObject: {fileID: 21300000, guid: 62dba494ce8784b2abb205760263f2c5, type: 3}
+  - key: nn_niu11
+    gameObject: {fileID: 21300000, guid: c4434e297ce074547b099d16d21a307a, type: 3}
+  - key: nn_niu12
+    gameObject: {fileID: 21300000, guid: 68004ca75e24b4ad5a460658b659ce32, type: 3}
+  - key: nn_niu13
+    gameObject: {fileID: 21300000, guid: 8e4eee7315a184ac2bd5ccb13f847776, type: 3}
+  - key: nn_niu14
+    gameObject: {fileID: 21300000, guid: 09ce901b4cb5f4ba9a46c0414f2fc0eb, type: 3}
+  - key: nn_niu15
+    gameObject: {fileID: 21300000, guid: cbecb06a167874bf8a16ca3ab0a946fd, type: 3}
+  - key: nn_niu16
+    gameObject: {fileID: 21300000, guid: 50f68769fc87a454197da1c43ab79b36, type: 3}
 --- !u!222 &222674387352269612
 CanvasRenderer:
   m_ObjectHideFlags: 1
