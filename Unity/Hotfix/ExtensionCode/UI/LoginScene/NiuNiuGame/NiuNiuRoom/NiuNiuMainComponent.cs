@@ -256,6 +256,9 @@ namespace ETHotfix
                       FlopOtherCard(otherPokerList.PokerCards.ToList(),obj.UserName);
                       _showCardUi.GetComponent<NnShowCardComponent>().ShowTipsUi(obj.UserName,otherPokerList.CardTypeNumber);
                       break;
+                  case 5:
+                      
+                      break;
             }
         }
         
@@ -295,7 +298,9 @@ namespace ETHotfix
             if (startResponse.Error == -1)
             {
                 Debug.Log("当前房间人数不够，不能开始游戏!!!");
+                return;
             }
+            _startGameBt.gameObject.SetActive(false);
         }
         
         //显示下注按钮
@@ -382,14 +387,10 @@ namespace ETHotfix
         private async void OnBrightCardButtonClick()
         {
             var calculateCardResponse =(CalculateCardResponse) await SceneHelperComponent.Instance.Session.Call(new CalculateCardRequest() {RoomId = _mRoomId});
-            if (calculateCardResponse.Error == 0)
-            {
-                SwitchTipsCard(false);
-            }
+            if (calculateCardResponse.Error != 0) return;
+            _showCardUi.GetComponent<NnShowCardComponent>().ShowTipsUi(_player.AccountInfo.UserName);
+            SwitchTipsCard(false);
         }
-
-
-
 
         private void Test()
         {
@@ -410,7 +411,7 @@ namespace ETHotfix
             List<PokerCard> list=new List<PokerCard>();
             for (var i = 0; i < 5; i++)
             {
-                PokerCard temp = new PokerCard
+                var temp = new PokerCard
                 {
                     CardNumber = i,
                     CardType = 0
