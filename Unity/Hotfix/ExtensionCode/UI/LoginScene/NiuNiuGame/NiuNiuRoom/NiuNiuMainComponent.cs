@@ -168,7 +168,7 @@ namespace ETHotfix
             //提示按钮按钮注册
             SceneHelperComponent.Instance.MonoEvent.AddButtonClick(_tipsButton.GetComponent<Button>(), () =>
                 {
-                    _showCardUi.GetComponent<NnShowCardComponent>().ShowTipsUi();
+                    _showCardUi.GetComponent<NnShowCardComponent>().ShowTipsUi(_player.AccountInfo.UserName);
                 });
             
             
@@ -206,14 +206,12 @@ namespace ETHotfix
         //房间回调
         public void RoomBack(RoomInfoAnnunciate obj)
         {
-            Debug.Log("obj.username/"+obj.UserName);
             switch (obj.Message)
             {
                 case 0://加入房间
                     break;
                 case 1://准备
-                    int chairIndex= _showCardUi.GetComponent<NnShowCardComponent>().FindFreeChair(obj.UserName);
-                    Debug.Log("找到椅子的索引是/"+chairIndex );
+                    var chairIndex= _showCardUi.GetComponent<NnShowCardComponent>().FindFreeChair(obj.UserName);
                     SitDown(chairIndex, obj.UserName);
                     break;
                 case 2://离开房间
@@ -254,10 +252,9 @@ namespace ETHotfix
                       _showCardUi.GetComponent<NnShowCardComponent>().TipsIndex= pokerCard.ElementAt(1).CardTypeNumber;
                       break;
                   case 4://计算玩家手里卡牌、并把结果返回给玩家消息
-                      var otherPokerCard = ProtobufHelper.FromBytes<PlayerPokerCards>(obj.Arg);
-                      FlopOtherCard(otherPokerCard.PokerCards.ToList(),obj.UserName);
-                      
-                      Debug.Log("玩家:"+obj.UserName+"的牌是牛"+otherPokerCard.CardTypeNumber);
+                      var otherPokerList = ProtobufHelper.FromBytes<PlayerPokerCards>(obj.Arg);
+                      FlopOtherCard(otherPokerList.PokerCards.ToList(),obj.UserName);
+                      _showCardUi.GetComponent<NnShowCardComponent>().ShowTipsUi(obj.UserName,otherPokerList.CardTypeNumber);
                       break;
             }
         }
@@ -306,17 +303,14 @@ namespace ETHotfix
         private void ShowBetsButton()
         {
             SwitchButton(_copyNumButton,_invitingFriendsButton,false);
-            string[] scroeStr = _bottomScoreText.text.Split('/');
-            Debug.Log("scroeStr.length/"+scroeStr.Length);
-            if (scroeStr.Length > 1)
-            {
-                _betsButton1.gameObject.SetActive(true);
-                _betsButton2.gameObject.SetActive(true);
-                _betsButton1.transform.GetChild(0).GetComponent<Text>().text = scroeStr[0];
-                _betsButton2.transform.GetChild(0).GetComponent<Text>().text = scroeStr[1];
-                _betsButton1.onClick.AddListener(()=>AddBetsEvent(scroeStr[0]));
-                _betsButton2.onClick.AddListener(()=>AddBetsEvent(scroeStr[1]));
-            }
+            var scroeStr = _bottomScoreText.text.Split('/');
+            if (scroeStr.Length <= 1) return;
+            _betsButton1.gameObject.SetActive(true);
+            _betsButton2.gameObject.SetActive(true);
+            _betsButton1.transform.GetChild(0).GetComponent<Text>().text = scroeStr[0];
+            _betsButton2.transform.GetChild(0).GetComponent<Text>().text = scroeStr[1];
+            _betsButton1.onClick.AddListener(()=>AddBetsEvent(scroeStr[0]));
+            _betsButton2.onClick.AddListener(()=>AddBetsEvent(scroeStr[1]));
         }
  
         //向服务器发送下注请求
@@ -332,7 +326,6 @@ namespace ETHotfix
         //显示下注的分数
         private void ShowBet(string userName,int score)
         {
-            Debug.Log("我接收到了下注名是"+userName);
             _showCardUi.GetComponent<NnShowCardComponent>().ShowBets(userName, score);
         }
         
@@ -368,7 +361,7 @@ namespace ETHotfix
         }
 
         //按钮开关
-        private void SwitchButton(Button a, Button b,bool isShow)
+        private static void SwitchButton(Button a, Button b,bool isShow)
         {
             a.gameObject.SetActive(isShow);
             b.gameObject.SetActive(isShow);
