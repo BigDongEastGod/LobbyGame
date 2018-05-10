@@ -246,8 +246,6 @@ namespace ETHotfix
         //修改自己卡牌的顺序
         private void SortCard(List<ReferenceCollector> cardList)
         {
-            Debug.Log("从服务器返回的牌型数据个数是"+SortedCardList.Count);
-            Debug.Log("传进来饿数组个数是"+cardList.Count);
             for (var i = 0; i < SortedCardList.Count; i++)
             {
                 LoadPorkerData(cardList[i], SortedCardList[i]);
@@ -257,9 +255,10 @@ namespace ETHotfix
         //显示其他玩家的牌
         public void LoadOtherCard(List<PokerCard> pokerList,string userName)
         {
+            var otherList = GetDictValue(_pokerObjList, userName);
             for (var i = 0; i < GetDictValue(_pokerObjList, userName).Count; i++)
             {
-                LoadPorkerData(GetDictValue(_pokerObjList, userName)[i], pokerList[i]);
+                LoadPorkerData(otherList[i], pokerList[i]);
             }
             FlopCard(userName,false);
         }
@@ -275,6 +274,8 @@ namespace ETHotfix
             {
                 tipsItem.GetComponent<RectTransform>().anchoredPosition = _mainTipsPos;
                 tipsItem.sprite = rc.Get<Sprite>("nn_niu" + TipsIndex);
+                if (TipsIndex == 0) return;
+                SortCard(GetDictValue(_pokerObjList, userName));
             }
             else
             {
@@ -283,8 +284,6 @@ namespace ETHotfix
                 tipsItem.transform.localScale=new Vector2(0.5f,0.5f);
                 tipsItem.sprite = rc.Get<Sprite>("nn_niu" + tipsIndex);
             }
-
-            SortCard(GetDictValue(_pokerObjList, userName));
         }
 
         //加载扑克的数据
