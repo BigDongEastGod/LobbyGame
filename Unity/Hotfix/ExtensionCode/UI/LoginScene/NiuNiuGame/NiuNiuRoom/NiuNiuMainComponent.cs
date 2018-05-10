@@ -258,7 +258,11 @@ namespace ETHotfix
                       break;
                   case 4://计算玩家手里卡牌、并把结果返回给玩家消息
                       var otherPokerList = ProtobufHelper.FromBytes<PlayerPokerCards>(obj.Arg);
-                      FlopOtherCard(otherPokerList.PokerCards.ToList(),obj.UserName);
+                      FlopOtherCard(otherPokerList.PokerCards,obj.UserName);
+                      foreach (var t in otherPokerList.PokerCards.ToList())
+                      {
+                          Debug.Log("收到别人亮牌/"+t .CardNumber);
+                      }
                       _showCardUi.GetComponent<NnShowCardComponent>().ShowTipsUi(obj.UserName,otherPokerList.CardTypeNumber);
                       break;
                   case 5:
