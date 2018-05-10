@@ -1466,6 +1466,7 @@
           <e p="Resources" t="Include">
             <e p="Shader" t="Include">
               <e p="LoadingImage.shader" t="Include" />
+              <e p="UiLight.shader" t="Include" />
             </e>
           </e>
         </e>
@@ -2875,6 +2876,10 @@
                     <e p="NiuNiuLobbyMenu" t="Include">
                       <e p="NiuNiuLobbyMenuComponent.cs" t="Include" />
                       <e p="NiuNiuLobbyMenuFactory.cs" t="Include" />
+                    </e>
+                    <e p="NiuNiuRule" t="Include">
+                      <e p="NiuNiuRuleComponent.cs" t="Include" />
+                      <e p="NiuNiuRuleFactory.cs" t="Include" />
                     </e>
                     <e p="NNLobbyTop" t="Include">
                       <e p="NNSettingComponent.cs" t="Include" />

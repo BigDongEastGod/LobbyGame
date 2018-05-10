@@ -837,23 +837,23 @@
     ]
   },
   "packageFolders": {
-    "/Users/sining/.nuget/packages/": {},
+    "/Users/juankeji/.nuget/packages/": {},
     "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/sining/Projects/JuAnChess/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver.Core/MongoDB.Driver.Core.csproj",
+      "projectUniqueName": "/Users/juankeji/JuAn/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver.Core/MongoDB.Driver.Core.csproj",
       "projectName": "MongoDB.Driver.Core",
-      "projectPath": "/Users/sining/Projects/JuAnChess/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver.Core/MongoDB.Driver.Core.csproj",
-      "packagesPath": "/Users/sining/.nuget/packages/",
-      "outputPath": "/Users/sining/Projects/JuAnChess/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver.Core/obj/",
+      "projectPath": "/Users/juankeji/JuAn/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver.Core/MongoDB.Driver.Core.csproj",
+      "packagesPath": "/Users/juankeji/.nuget/packages/",
+      "outputPath": "/Users/juankeji/JuAn/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Driver.Core/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/Users/sining/.config/NuGet/NuGet.Config"
+        "/Users/juankeji/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.0"
@@ -864,8 +864,8 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "/Users/sining/Projects/JuAnChess/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Bson/MongoDB.Bson.csproj": {
-              "projectPath": "/Users/sining/Projects/JuAnChess/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Bson/MongoDB.Bson.csproj"
+            "/Users/juankeji/JuAn/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Bson/MongoDB.Bson.csproj": {
+              "projectPath": "/Users/juankeji/JuAn/LobbyGame/Server/ThirdParty/MongodbDriver/DotNetCoreDriver/MongoDB.Bson/MongoDB.Bson.csproj"
             }
           }
         }
