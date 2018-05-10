@@ -117,7 +117,23 @@ namespace ETHotfix
             }
             return -1;
         }
- 
+        
+        //在椅子座位上添加玩家
+        public void AddSeatInfo(int index,string userName)
+        {
+            _chairArray[index] = userName;
+        }
+
+        //找到这个玩家的椅子位置
+        private int GetChairIndex(string userName)
+        {
+            for (var i = 0; i < _chairArray.Length; i++)
+            {
+                if (userName == _chairArray[i]) return i;
+            }
+            return -1;
+        }
+        
         //创建头像
         public void CreateHead(int chairIndex,AccountInfo playerInfo)
         {
@@ -205,8 +221,12 @@ namespace ETHotfix
         //创建卡牌
         private void CreateCard(IReadOnlyList<PokerCard> porkerList)
         {
+            Debug.Log("  在创建卡牌的时候_headUiDict的长度是"+_headUiDict.Count);
+            Debug.Log("  porkerList的长度是"+porkerList.Count);
+            
             for (var i = 0; i < _headUiDict.Count; i++)
             {
+                
                 var tempCardList=new List<ReferenceCollector>();
                 for (var j = 0; j < 5; j++)
                 {
@@ -224,11 +244,13 @@ namespace ETHotfix
                 }
 
                 _pokerObjList.Add(i == 0 ? CurrentUserName : _chairArray[i-1], tempCardList);
+                var name = i == 0 ? CurrentUserName : _chairArray[i - 1];
+                Debug.Log("  _pokerObjList添加了"+i+"次，添加的key是"+name);
             }
         }
         
         //修改自己卡牌的顺序
-        private void SortCard(IReadOnlyList<ReferenceCollector> cardList)
+        private void SortCard(List<ReferenceCollector> cardList)
         {
             for (var i = 0; i < SortedCardList.Count; i++)
             {
@@ -265,17 +287,11 @@ namespace ETHotfix
                 tipsItem.transform.localScale=new Vector2(0.5f,0.5f);
                 tipsItem.sprite = rc.Get<Sprite>("nn_niu" + tipsIndex);
             }
+
+            SortCard(GetDictValue(_pokerObjList, userName));
         }
         
-        //找到这个玩家的椅子位置
-        private int GetChairIndex(string userName)
-        {
-            for (var i = 0; i < _chairArray.Length; i++)
-            {
-                if (userName == _chairArray[i]) return i;
-            }
-            return -1;
-        }
+       
 
 
         //加载扑克的数据
