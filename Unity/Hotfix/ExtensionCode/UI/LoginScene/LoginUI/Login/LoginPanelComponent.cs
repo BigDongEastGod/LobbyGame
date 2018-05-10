@@ -102,8 +102,6 @@ namespace ETHotfix
                 
                 if (response.Error == 0)
                 {
-                    loadingUI.GameObject.SetActive(false);
-                    
                     PlayerPrefs.SetString("username", loginNameText.text);
                     PlayerPrefs.SetString("password", loginPwdText.text);
 
@@ -114,7 +112,6 @@ namespace ETHotfix
                     
                     // 获取用户信息
                     var accountResponse = (GetAccountInfoResponse) await SceneHelperComponent.Instance.Session.Call(new GetAccountInfoRequest());
-                    Debug.Log(accountResponse.AccountInfo.RoomId);
                     if (accountResponse.AccountInfo.RoomId == 0)
                     {
                         Game.Scene.GetComponent<UIComponent>().Create(UIType.Lobby, UiLayer.Bottom);
@@ -123,9 +120,9 @@ namespace ETHotfix
                     else
                     {
                         Debug.Log("重新连接,房间号: " + accountResponse.AccountInfo.RoomId);
+                        loadingUI.GetComponent<LoadingComponent>().SetText("正在恢复加入的牌局,请稍候...");
                         JoinPaiJu(accountResponse.AccountInfo.RoomId);
                     }
-                    
                 }
                 else if (response.Error == -1)
                 {
@@ -135,6 +132,9 @@ namespace ETHotfix
 
                 SceneHelperComponent.Instance.MonoEvent.AddButtonClick(loginSubmitBtn.GetComponent<Button>(),
                     () => OnLoginSubmitBtn(loginNameText, loginPwdText));
+                
+                loadingUI.GameObject.SetActive(false);
+                
             }
             catch (Exception e)
             {

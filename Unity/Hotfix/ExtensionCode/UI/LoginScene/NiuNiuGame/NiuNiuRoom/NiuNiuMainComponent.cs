@@ -168,7 +168,7 @@ namespace ETHotfix
             //提示按钮按钮注册
             SceneHelperComponent.Instance.MonoEvent.AddButtonClick(_tipsButton.GetComponent<Button>(), () =>
                 {
-                    _showCardUi.GetComponent<NnShowCardComponent>().ShowTipsUi();
+                    _showCardUi.GetComponent<NnShowCardComponent>().ShowTipsUi(_player.AccountInfo.UserName);
                 });
             
             
@@ -206,14 +206,12 @@ namespace ETHotfix
         //房间回调
         public void RoomBack(RoomInfoAnnunciate obj)
         {
-            Debug.Log("obj.username/"+obj.UserName);
             switch (obj.Message)
             {
                 case 0://加入房间
                     break;
                 case 1://准备
-                    int chairIndex= _showCardUi.GetComponent<NnShowCardComponent>().FindFreeChair(obj.UserName);
-                    Debug.Log("找到椅子的索引是/"+chairIndex );
+                    var chairIndex= _showCardUi.GetComponent<NnShowCardComponent>().FindFreeChair(obj.UserName);
                     SitDown(chairIndex, obj.UserName);
                     break;
                 case 2://离开房间
@@ -247,17 +245,28 @@ namespace ETHotfix
                   case 3://给玩家发牌消息
                       var pokerCard =ProtobufHelper.FromBytes<List<PlayerPokerCards>>(obj.Arg);
                       Licensing(pokerCard.ElementAt(0).PokerCards);
-                      //存储好排序好的卡牌
-                      _showCardUi.GetComponent<NnShowCardComponent>().SortedCardList =
-                          pokerCard.ElementAt(1).CardTypeNumber == 0 ? null : pokerCard.ElementAt(1).PokerCards;
-                      //保存提示的索引
-                      _showCardUi.GetComponent<NnShowCardComponent>().TipsIndex= pokerCard.ElementAt(1).CardTypeNumber;
+                      //如果这个不为空代表有牛
+                      if (pokerCard.ElementAt(1) != null)
+                      {
+                          _showCardUi.GetComponent<NnShowCardComponent>().SortedCardList = pokerCard.ElementAt(1).PokerCards;
+                          _showCardUi.GetComponent<NnShowCardComponent>().TipsIndex= pokerCard.ElementAt(1).CardTypeNumber;
+                      }
+                      else//没牛的情况
+                      {
+                          _showCardUi.GetComponent<NnShowCardComponent>().TipsIndex= 0;
+                      }
                       break;
                   case 4://计算玩家手里卡牌、并把结果返回给玩家消息
-                      var otherPokerCard = ProtobufHelper.FromBytes<PlayerPokerCards>(obj.Arg);
-                      FlopOtherCard(otherPokerCard.PokerCards.ToList(),obj.UserName);
-                      
-                      Debug.Log("玩家:"+obj.UserName+"的牌是牛"+otherPokerCard.CardTypeNumber);
+                      var otherPokerList = ProtobufHelper.FromBytes<PlayerPokerCards>(obj.Arg);
+                      FlopOtherCard(otherPokerList.PokerCards,obj.UserName);
+                      foreach (var t in otherPokerList.PokerCards.ToList())
+                      {
+                          Debug.Log("收到别人亮牌/"+t .CardNumber);
+                      }
+                      _showCardUi.GetComponent<NnShowCardComponent>().ShowTipsUi(obj.UserName,otherPokerList.CardTypeNumber);
+                      break;
+                  case 5:
+                      _showCardUi.GetComponent<NnShowCardComponent>().ShowWinUI(obj.UserName);
                       break;
             }
         }
@@ -276,19 +285,18 @@ namespace ETHotfix
         //其他玩家的头像创建
         private void GetAllReadyInfo()
         {
-            for (int i = 0; i < _roomInfo.Players.Count; i++)
+            for (var i = 0; i < _roomInfo.Players.Count; i++)
             {
-                if (_roomInfo.Players[i].UserName != _player.AccountInfo.UserName)
-                {
-                    _showCardUi.GetComponent<NnShowCardComponent>().CreateHead(i,_roomInfo.Players[i]);
-                }
+                if (_roomInfo.Players[i].UserName == _player.AccountInfo.UserName) continue;
+                _showCardUi.GetComponent<NnShowCardComponent>().CreateHead(i,_roomInfo.Players[i]);
+                _showCardUi.GetComponent<NnShowCardComponent>().AddSeatInfo(i,_roomInfo.Players[i].UserName);
             }
         }
  
         //坐下
         private void SitDown(int chairIndex,string username)
         {
-            AccountInfo accountInfo=new AccountInfo(){UserName = username};
+            var accountInfo=new AccountInfo(){UserName = username};
             _showCardUi.GetComponent<NnShowCardComponent>().CreateHead(chairIndex,accountInfo);
         }
         
@@ -299,24 +307,23 @@ namespace ETHotfix
             if (startResponse.Error == -1)
             {
                 Debug.Log("当前房间人数不够，不能开始游戏!!!");
+                return;
             }
+            _startGameBt.gameObject.SetActive(false);
         }
         
         //显示下注按钮
         private void ShowBetsButton()
         {
             SwitchButton(_copyNumButton,_invitingFriendsButton,false);
-            string[] scroeStr = _bottomScoreText.text.Split('/');
-            Debug.Log("scroeStr.length/"+scroeStr.Length);
-            if (scroeStr.Length > 1)
-            {
-                _betsButton1.gameObject.SetActive(true);
-                _betsButton2.gameObject.SetActive(true);
-                _betsButton1.transform.GetChild(0).GetComponent<Text>().text = scroeStr[0];
-                _betsButton2.transform.GetChild(0).GetComponent<Text>().text = scroeStr[1];
-                _betsButton1.onClick.AddListener(()=>AddBetsEvent(scroeStr[0]));
-                _betsButton2.onClick.AddListener(()=>AddBetsEvent(scroeStr[1]));
-            }
+            var scroeStr = _bottomScoreText.text.Split('/');
+            if (scroeStr.Length <= 1) return;
+            _betsButton1.gameObject.SetActive(true);
+            _betsButton2.gameObject.SetActive(true);
+            _betsButton1.transform.GetChild(0).GetComponent<Text>().text = scroeStr[0];
+            _betsButton2.transform.GetChild(0).GetComponent<Text>().text = scroeStr[1];
+            _betsButton1.onClick.AddListener(()=>AddBetsEvent(scroeStr[0]));
+            _betsButton2.onClick.AddListener(()=>AddBetsEvent(scroeStr[1]));
         }
  
         //向服务器发送下注请求
@@ -332,7 +339,6 @@ namespace ETHotfix
         //显示下注的分数
         private void ShowBet(string userName,int score)
         {
-            Debug.Log("我接收到了下注名是"+userName);
             _showCardUi.GetComponent<NnShowCardComponent>().ShowBets(userName, score);
         }
         
@@ -368,7 +374,7 @@ namespace ETHotfix
         }
 
         //按钮开关
-        private void SwitchButton(Button a, Button b,bool isShow)
+        private static void SwitchButton(Button a, Button b,bool isShow)
         {
             a.gameObject.SetActive(isShow);
             b.gameObject.SetActive(isShow);
@@ -390,14 +396,10 @@ namespace ETHotfix
         private async void OnBrightCardButtonClick()
         {
             var calculateCardResponse =(CalculateCardResponse) await SceneHelperComponent.Instance.Session.Call(new CalculateCardRequest() {RoomId = _mRoomId});
-            if (calculateCardResponse.Error == 0)
-            {
-                SwitchTipsCard(false);
-            }
+            if (calculateCardResponse.Error != 0) return;
+            _showCardUi.GetComponent<NnShowCardComponent>().ShowTipsUi(_player.AccountInfo.UserName);
+            SwitchTipsCard(false);
         }
-
-
-
 
         private void Test()
         {
@@ -418,7 +420,7 @@ namespace ETHotfix
             List<PokerCard> list=new List<PokerCard>();
             for (var i = 0; i < 5; i++)
             {
-                PokerCard temp = new PokerCard
+                var temp = new PokerCard
                 {
                     CardNumber = i,
                     CardType = 0
