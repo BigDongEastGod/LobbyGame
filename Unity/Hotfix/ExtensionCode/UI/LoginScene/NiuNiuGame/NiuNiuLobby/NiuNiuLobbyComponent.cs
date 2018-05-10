@@ -51,6 +51,8 @@ namespace ETHotfix
         private RectTransform _posRightTransform;
 
         private GameObject _refreshBtn;
+        private GameObject _refreshImage;
+
         private GameObject _roomEmptyImg;
         private GameObject _roomContent;
         private GameObject _roomInfoItem;
@@ -115,6 +117,8 @@ namespace ETHotfix
             var menuBtn = rc.Get<GameObject>("MenuBtn");
             _refreshBtn = rc.Get<GameObject>("RefreshBtn");
 
+            _refreshImage = rc.Get<GameObject>("RefreshImg");
+
             // 已创建房间列表
             _roomEmptyImg = rc.Get<GameObject>("RoomEmptyImg"); //没有房间信息时候显示图片
             _roomContent = rc.Get<GameObject>("RoomContent"); //房间列表父物体
@@ -157,6 +161,9 @@ namespace ETHotfix
                 GameTools.ReLoading("GameCanvas");
                 GetRoomList();
             };
+
+
+            GetRoomList();
         }
 
         public void Start()
@@ -164,8 +171,6 @@ namespace ETHotfix
             _nnCreateRoom = Game.Scene.GetComponent<UIComponent>().Get(UIType.NiuNiuCreateRoom);
             _nnJoinRoom = Game.Scene.GetComponent<UIComponent>().Get(UIType.NiuNiuJoinRoom);
             _nnLobbyMenu = Game.Scene.GetComponent<UIComponent>().Get(UIType.NiuNiuLobbyMenu);
-
-            GetRoomList();
         }
 
         private void InitUserInfo(string userName, string diamond)
@@ -176,7 +181,12 @@ namespace ETHotfix
 
         public async void GetRoomList()
         {
-            _refreshBtn.GetComponent<Image>().material.SetFloat("_Speed",100);
+            _roomListIsDone = false;
+            _refreshBtn.GetComponent<Button>().interactable = false;
+            _refreshImage.GetComponent<Image>().material.SetFloat("_Speed", 130);
+            _isRotate = true;
+            _rotateTime = 50;
+            
             try
             {
                 if (!_isNiuFriendRoom)
@@ -200,7 +210,6 @@ namespace ETHotfix
                             }
                         }
 
-                        Debug.Log("房间信息预制体加载完成");
                         for (int i = 0; i < roomList.Rooms.Count; i++)
                         {
                             var rc = _roomInfoList[i].GetComponent<ReferenceCollector>();
@@ -233,13 +242,11 @@ namespace ETHotfix
                     }
                     else
                     {
-                        Debug.Log("roomList.Error != 0");
                         GameTools.ShowDialogMessage(roomList.Message, "GameCanvas");
                     }
                 }
                 else
                 {
-                    Debug.Log("牛友群列表");
                     if (_roomInfoList != null)
                         foreach (var go in _roomInfoList)
                         {
@@ -254,10 +261,15 @@ namespace ETHotfix
                 Debug.Log("RoomList加载异常： " + e.Message);
                 GameTools.ShowDialogMessage(e.Message, "GameCanvas");
             }
-            
-            _refreshBtn.GetComponent<Image>().material.SetFloat("_Speed",0);
+
+            _roomListIsDone = true;
+            _refreshBtn.GetComponent<Button>().interactable = true;
         }
 
+        /// <summary>
+        /// 加入牌局
+        /// </summary>
+        /// <param name="roomId"></param>
         private async void JoinPaiJu(long roomId)
         {
             try
@@ -285,9 +297,25 @@ namespace ETHotfix
             }
         }
 
+
+        private int _rotateTime = 50;
+        private bool _isRotate = false;
+        private bool _roomListIsDone = true;
+
         public void Update()
         {
             MoveBar();
+
+            if (_isRotate)
+            {
+                _rotateTime--;
+                if (_rotateTime <= 0 && _roomListIsDone)
+                {
+                    _isRotate = false;
+                    _rotateTime = 50;
+                    _refreshImage.GetComponent<Image>().material.SetFloat("_Speed", 0);
+                }
+            }
         }
 
         private void MoveBar()

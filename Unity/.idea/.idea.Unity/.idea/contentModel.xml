@@ -9,6 +9,7 @@
         <e p="Resources" t="Include">
           <e p="Shader" t="Include">
             <e p="LoadingImage.shader" t="Include" />
+            <e p="UiLight.shader" t="Include" />
           </e>
         </e>
       </e>
@@ -1315,6 +1316,6 @@
       </e>
       <e p="Unity.sln" t="IncludeFlat" />
     </e>
-    <e p="$USER_HOME$/Library/Caches/Rider2018.1/resharper-host/local/Transient/ReSharperHost/v12/SolutionCaches/_Unity.-880402881.00" t="ExcludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/Rider2018.1/resharper-host/local/Transient/ReSharperHost/v12/SolutionCaches/_Unity.-920771506.00" t="ExcludeRecursive" />
   </component>
 </project>
