@@ -29,15 +29,6 @@
               <e p="Gate" t="Include" />
             </e>
             <e p="Entity" t="Include">
-              <e p="Game" t="Include" />
-              <e p="Poker" t="Include">
-                <e p="NNPoker.cs" t="Include" />
-                <e p="Poker.cs" t="Include" />
-              </e>
-              <e p="Room" t="Include">
-                <e p="NNRoom.cs" t="Include" />
-                <e p="Room.cs" t="Include" />
-              </e>
               <e p="SPlayer.cs" t="Include" />
             </e>
             <e p="Handler" t="Include">
@@ -82,15 +73,33 @@
             <e p="Helper" t="Include" />
             <e p="Module" t="Include">
               <e p="Game" t="Include">
-                <e p="RoomManageComponent.cs" t="Include" />
+                <e p="GameProcess" t="Include">
+                  <e p="AutoBankerGameProcessComponent.cs" t="Include" />
+                  <e p="GameProcessComponent.cs" t="Include" />
+                  <e p="TbnnGameProcessComponent.cs" t="Include" />
+                </e>
+                <e p="Poker" t="Include">
+                  <e p="NNPokerComponent.cs" t="Include" />
+                  <e p="PokerComponent.cs" t="Include" />
+                </e>
+                <e p="Room" t="Include">
+                  <e p="NNGameRoomComponent.cs" t="Include" />
+                  <e p="RoomComponent.cs" t="Include" />
+                  <e p="RoomLogicComponent.cs" t="Include" />
+                </e>
               </e>
               <e p="Manage" t="Include">
                 <e p="GatePlayerManageComponent.cs" t="Include" />
                 <e p="PlayerManageComponent.cs" t="Include" />
+                <e p="RoomManageComponent.cs" t="Include" />
                 <e p="SessionGatePlayerComponent.cs" t="Include" />
               </e>
-              <e p="PingComponent.cs" t="Include" />
-              <e p="SessionTKeyComponent.cs" t="Include" />
+              <e p="Net" t="Include">
+                <e p="PingComponent.cs" t="Include" />
+              </e>
+              <e p="Other" t="Include">
+                <e p="SessionTKeyComponent.cs" t="Include" />
+              </e>
             </e>
           </e>
           <e p="Handler" t="Include">

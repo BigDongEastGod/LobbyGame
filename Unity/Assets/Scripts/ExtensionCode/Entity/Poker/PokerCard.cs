@@ -29,4 +29,19 @@ namespace ETModel
         [ProtoMember(3, IsRequired = true)]
         public List<PokerCard> PokerCards;
     }
+    
+    // 游戏状态实体类
+        
+    public class PlayerState
+    {
+        public bool IsBanker;
+            
+        public bool IsReceive;
+
+        public int Bet;
+
+        public List<PokerCard> Cards;
+            
+        public PlayerPokerCards CalculateCards;
+    }
 }
