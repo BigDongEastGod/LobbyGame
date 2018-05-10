@@ -221,12 +221,8 @@ namespace ETHotfix
         //创建卡牌
         private void CreateCard(IReadOnlyList<PokerCard> porkerList)
         {
-            Debug.Log("  在创建卡牌的时候_headUiDict的长度是"+_headUiDict.Count);
-            Debug.Log("  porkerList的长度是"+porkerList.Count);
-            
             for (var i = 0; i < _headUiDict.Count; i++)
             {
-                
                 var tempCardList=new List<ReferenceCollector>();
                 for (var j = 0; j < 5; j++)
                 {
@@ -244,8 +240,6 @@ namespace ETHotfix
                 }
 
                 _pokerObjList.Add(i == 0 ? CurrentUserName : _chairArray[i-1], tempCardList);
-                var name = i == 0 ? CurrentUserName : _chairArray[i - 1];
-                Debug.Log("  _pokerObjList添加了"+i+"次，添加的key是"+name);
             }
         }
         
@@ -290,9 +284,6 @@ namespace ETHotfix
 
             SortCard(GetDictValue(_pokerObjList, userName));
         }
-        
-       
-
 
         //加载扑克的数据
         private static void LoadPorkerData(ReferenceCollector rc, PokerCard data)
@@ -407,7 +398,7 @@ namespace ETHotfix
         //异步发五张牌
         private async void SendFiveCards(bool isSelf,List<ReferenceCollector> rcList,Vector2 tempPos=default(Vector2))
         {
-            float delay = 0.75f;
+            var delay = 0.75f;
             for (var i = 0; i < 5; i++)
             {
                 if (isSelf)
