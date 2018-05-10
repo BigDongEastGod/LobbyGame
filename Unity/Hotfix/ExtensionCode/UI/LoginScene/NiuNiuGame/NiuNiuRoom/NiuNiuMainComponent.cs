@@ -245,11 +245,16 @@ namespace ETHotfix
                   case 3://给玩家发牌消息
                       var pokerCard =ProtobufHelper.FromBytes<List<PlayerPokerCards>>(obj.Arg);
                       Licensing(pokerCard.ElementAt(0).PokerCards);
-                      //存储好排序好的卡牌
-                      _showCardUi.GetComponent<NnShowCardComponent>().SortedCardList =
-                          pokerCard.ElementAt(1).CardTypeNumber == 0 ? null : pokerCard.ElementAt(1).PokerCards;
-                      //保存提示的索引
-                      _showCardUi.GetComponent<NnShowCardComponent>().TipsIndex= pokerCard.ElementAt(1).CardTypeNumber;
+                      //如果这个不为空代表有牛
+                      if (pokerCard.ElementAt(1) != null)
+                      {
+                          _showCardUi.GetComponent<NnShowCardComponent>().SortedCardList = pokerCard.ElementAt(1).PokerCards;
+                          _showCardUi.GetComponent<NnShowCardComponent>().TipsIndex= pokerCard.ElementAt(1).CardTypeNumber;
+                      }
+                      else//没牛的情况
+                      {
+                          _showCardUi.GetComponent<NnShowCardComponent>().TipsIndex= 0;
+                      }
                       break;
                   case 4://计算玩家手里卡牌、并把结果返回给玩家消息
                       var otherPokerList = ProtobufHelper.FromBytes<PlayerPokerCards>(obj.Arg);
