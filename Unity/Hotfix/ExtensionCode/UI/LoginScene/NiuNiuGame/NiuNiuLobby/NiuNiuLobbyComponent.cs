@@ -195,12 +195,9 @@ namespace ETHotfix
 
                     if (roomList.Error == 0)
                     {
-                        Debug.Log("roomList.Error = 0");
                         int countDiff = roomList.Rooms.Count - _roomInfoList.Count;
                         if (countDiff > 0)
                         {
-                            Debug.Log("历史房间数量： " + roomList.Rooms.Count);
-                            Debug.Log("_roomInfoList.count = " + _roomInfoList.Count);
                             for (int i = 0; i < countDiff; i++)
                             {
                                 var go = UnityEngine.Object.Instantiate(_roomInfoItem, _roomContent.transform);
@@ -237,7 +234,7 @@ namespace ETHotfix
                             _roomInfoList[i].SetActive(true);
                         }
 
-                        Debug.Log("房间信息加载完成");
+                        Debug.Log("房间列表加载完成");
                         _roomEmptyImg.SetActive(roomList.Rooms.Count == 0);
                     }
                     else
@@ -263,7 +260,6 @@ namespace ETHotfix
             }
 
             _roomListIsDone = true;
-            _refreshBtn.GetComponent<Button>().interactable = true;
         }
 
         /// <summary>
@@ -311,6 +307,8 @@ namespace ETHotfix
                 _rotateTime--;
                 if (_rotateTime <= 0 && _roomListIsDone)
                 {
+                    
+                    _refreshBtn.GetComponent<Button>().interactable = true;
                     _isRotate = false;
                     _rotateTime = 50;
                     _refreshImage.GetComponent<Image>().material.SetFloat("_Speed", 0);

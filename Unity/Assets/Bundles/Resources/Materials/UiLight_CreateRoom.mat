@@ -63,7 +63,7 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _Interval: 2
+    - _Interval: 3
     - _LoopTime: 0.7
     - _Metallic: 0
     - _Mode: 0
