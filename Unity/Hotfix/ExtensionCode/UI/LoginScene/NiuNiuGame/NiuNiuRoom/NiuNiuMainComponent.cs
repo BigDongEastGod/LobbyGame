@@ -273,19 +273,18 @@ namespace ETHotfix
         //其他玩家的头像创建
         private void GetAllReadyInfo()
         {
-            for (int i = 0; i < _roomInfo.Players.Count; i++)
+            for (var i = 0; i < _roomInfo.Players.Count; i++)
             {
-                if (_roomInfo.Players[i].UserName != _player.AccountInfo.UserName)
-                {
-                    _showCardUi.GetComponent<NnShowCardComponent>().CreateHead(i,_roomInfo.Players[i]);
-                }
+                if (_roomInfo.Players[i].UserName == _player.AccountInfo.UserName) continue;
+                _showCardUi.GetComponent<NnShowCardComponent>().CreateHead(i,_roomInfo.Players[i]);
+                _showCardUi.GetComponent<NnShowCardComponent>().AddSeatInfo(i,_roomInfo.Players[i].UserName);
             }
         }
  
         //坐下
         private void SitDown(int chairIndex,string username)
         {
-            AccountInfo accountInfo=new AccountInfo(){UserName = username};
+            var accountInfo=new AccountInfo(){UserName = username};
             _showCardUi.GetComponent<NnShowCardComponent>().CreateHead(chairIndex,accountInfo);
         }
         
