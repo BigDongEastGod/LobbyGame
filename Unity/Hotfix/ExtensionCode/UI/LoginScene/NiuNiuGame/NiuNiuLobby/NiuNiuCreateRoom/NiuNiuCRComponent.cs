@@ -352,7 +352,8 @@ namespace ETHotfix
             nnChess.Score = _curretNiuNiuRule.Score[score];
             nnChess.Dish = _curretNiuNiuRule.Dish[dish];
             nnChess.RoomRate = _curretNiuNiuRule.RoomRate[roomRate];
-            nnChess.PlayerPush = playerPush == -1 ? -1 : _curretNiuNiuRule.PlayerPush[playerPush];
+            nnChess.PlayerPush = playerPush == -1 ? -1 : _curretNiuNiuRule.PlayerPush[playerPush];    //闲家推注
+            // TODO 最大抢庄
             nnChess.AutoGame = _curretNiuNiuRule.AutoGame[autoGame];
             nnChess.DoubleRules = _curretNiuNiuRule.DoubleRules[doubleRules];
 
