@@ -298,7 +298,9 @@ namespace ETHotfix
             if (startResponse.Error == -1)
             {
                 Debug.Log("当前房间人数不够，不能开始游戏!!!");
+                return;
             }
+            _startGameBt.gameObject.SetActive(false);
         }
         
         //显示下注按钮
