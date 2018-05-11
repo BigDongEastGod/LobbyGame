@@ -227,6 +227,7 @@
     <Compile Include="ExtensionCode\UI\GlobalUI\GameTools.cs" />
     <Compile Include="ExtensionCode\UI\GlobalUI\LoadingUI\LoadingComponent.cs" />
     <Compile Include="ExtensionCode\UI\GlobalUI\LoadingUI\LoadingFactory.cs" />
+    <Compile Include="ExtensionCode\UI\GlobalUI\ObjectPools.cs" />
     <Compile Include="ExtensionCode\UI\InitSceneStart_CreateLoginUI.cs" />
     <Compile Include="ExtensionCode\UI\LoginScene\LobbyUI\LobbyComponent.cs" />
     <Compile Include="ExtensionCode\UI\LoginScene\LobbyUI\LobbyFactory.cs" />

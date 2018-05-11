@@ -1466,6 +1466,7 @@
           <e p="Resources" t="Include">
             <e p="Shader" t="Include">
               <e p="LoadingImage.shader" t="Include" />
+              <e p="Poker.shader.txt" t="Include" />
               <e p="UiLight.shader" t="Include" />
             </e>
           </e>
@@ -2835,6 +2836,7 @@
                   <e p="LoadingComponent.cs" t="Include" />
                   <e p="LoadingFactory.cs" t="Include" />
                 </e>
+                <e p="ObjectPools.cs" t="Include" />
               </e>
               <e p="InitSceneStart_CreateLoginUI.cs" t="Include" />
               <e p="LoginScene" t="Include">
@@ -2966,6 +2968,6 @@
         <e p="Temp/UnityVS_bin/Debug" t="ExcludeRecursive" />
       </e>
     </e>
-    <e p="$USER_HOME$/Library/Caches/Rider2018.1/resharper-host/local/Transient/ReSharperHost/v12/SolutionCaches/_JuAnLobbyGameSolution.1842623789.00" t="ExcludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/Rider2018.1/resharper-host/local/Transient/ReSharperHost/v12/SolutionCaches/_JuAnLobbyGameSolution.1661154428.00" t="ExcludeRecursive" />
   </component>
 </project>
