@@ -154,7 +154,6 @@ namespace ETHotfix
 
             #endregion
 
-
             // 断线重连委托
             Game.Scene.GetComponent<PingComponent>().PingBackCall = () =>
             {
@@ -201,7 +200,7 @@ namespace ETHotfix
                             for (int i = 0; i < countDiff; i++)
                             {
                                 var go = UnityEngine.Object.Instantiate(_roomInfoItem, _roomContent.transform);
-                                _roomContent.GetComponent<RectTransform>().sizeDelta = new Vector2(0, 95f * countDiff);
+                                _roomContent.GetComponent<RectTransform>().sizeDelta = new Vector2(0, 95f * roomList.Rooms.Count);
                                 go.SetActive(false);
                                 _roomInfoList.Add(go);
                             }

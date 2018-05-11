@@ -391,6 +391,7 @@ namespace ETHotfix
             _currentChess.PlayerPush = playerPush == -1 ? -1 : _curretNiuNiuRule.PlayerPush[playerPush]; //闲家推注
             // TODO 最大抢庄
             _currentChess.AutoGame = _curretNiuNiuRule.AutoGame[autoGame];
+            
             _currentChess.DoubleRules = _curretNiuNiuRule.DoubleRules[doubleRules];
 
             _currentChess.PlayerMode = _curretNiuNiuRule.PlayerMode;
@@ -413,21 +414,27 @@ namespace ETHotfix
                 {
                     case 0:
                         _currentChess.ShunZiRules = true;
+                        _currentChess.DoubleRules.Add("11/5");
                         break;
                     case 1:
                         _currentChess.TongHuaRules = true;
+                        _currentChess.DoubleRules.Add("12/5");
                         break;
                     case 2:
                         _currentChess.HuLuRules = true;
+                        _currentChess.DoubleRules.Add("14/6");
                         break;
                     case 3:
                         _currentChess.WuHuaRules = true;
+                        _currentChess.DoubleRules.Add("13/5");
                         break;
                     case 4:
                         _currentChess.ZhaDanRules = true;
+                        _currentChess.DoubleRules.Add("15/6");
                         break;
                     case 5:
                         _currentChess.WuXiaoRules = true;
+                        _currentChess.DoubleRules.Add("16/8");
                         break;
                 }
             }
