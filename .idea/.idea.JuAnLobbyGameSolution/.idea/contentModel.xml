@@ -2856,6 +2856,7 @@
                   <e p="LoadingComponent.cs" t="Include" />
                   <e p="LoadingFactory.cs" t="Include" />
                 </e>
+                <e p="ObjectPools.cs" t="Include" />
               </e>
               <e p="InitSceneStart_CreateLoginUI.cs" t="Include" />
               <e p="LoginScene" t="Include">

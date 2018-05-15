@@ -30,11 +30,12 @@ namespace ETHotfix
         private UI _nnOptionsTspx;
         private UI _nnOptionsGjxx;
 
-        private GameObject _roomPeople6;
         private GameObject _optionsLayout;
         private NiuNiuRule _curretNiuNiuRule;
 
         private GameObject _createRoomBtn;
+
+        private NNChess _currentChess = new NNChess();
 
         public void Awake()
         {
@@ -49,8 +50,9 @@ namespace ETHotfix
             var nncrCloseBtn = rc.Get<GameObject>("NNCR_CloseBtn");
 
             // 房间人数Toggle
-            _roomPeople6 = rc.Get<GameObject>("RoomPeople_6");
-//            var _roomPeople8 = rc.Get<GameObject>("roomPeople_8");
+            var roomPeople6 = rc.Get<GameObject>("RoomPeople_6");
+            var roomPeople8 = rc.Get<GameObject>("RoomPeople_8");
+
             _optionsLayout = rc.Get<GameObject>("OptionsLayout");
             var toggleBtn = rc.Get<GameObject>("ToggleBtn");
             _createRoomBtn = rc.Get<GameObject>("CreateRoomBtn");
@@ -58,6 +60,9 @@ namespace ETHotfix
             #endregion
 
             _curretNiuNiuRule = NiuNiuRuleInstance.NiuNiuShangZhuang;
+
+            roomPeople6.GetComponent<Toggle>().onValueChanged.AddListener((isOn) => { _currentChess.PlayerCount = isOn ? 6 : 0; });
+            roomPeople8.GetComponent<Toggle>().onValueChanged.AddListener((isOn) => { _currentChess.PlayerCount = isOn ? 8 : 0; });
 
             // 返回牛牛大厅按钮
             SceneHelperComponent.Instance.MonoEvent.AddButtonClick(nncrCloseBtn.GetComponent<Button>(), () =>
@@ -86,6 +91,39 @@ namespace ETHotfix
                         break;
                     case "TongBiNiuNiuTg":
                         RegChangeModeBtn(toggle, NiuNiuRuleInstance.TongBiNiuNiu);
+                        break;
+                }
+            }
+
+            foreach (Transform row in _optionsLayout.transform)
+            {
+                int score = 0, dish = 0, roomRate = 0, playerPush = 0, autoGame = 0, doubleRules = 0;
+                switch (row.name)
+                {
+                    case "Row1":
+                        Dropdown scoreDp = row.Find($"{NnDpType.DiFen}/{NnDpType.DiFen}Dp").GetComponent<Dropdown>();
+                        scoreDp.onValueChanged.AddListener((value) => { _currentChess.Score = _curretNiuNiuRule.Score[value]; });
+
+                        Dropdown dishDp = row.Find($"{NnDpType.JuShu}/{NnDpType.JuShu}Dp").GetComponent<Dropdown>();
+                        dishDp.onValueChanged.AddListener((value) => { _currentChess.Dish = _curretNiuNiuRule.Dish[value]; });
+                        break;
+                    case "Row2":
+                        Dropdown roomRateDp = row.Find($"{NnDpType.FangFei}/{NnDpType.FangFei}Dp").GetComponent<Dropdown>();
+                        roomRateDp.onValueChanged.AddListener((value) => { _currentChess.RoomRate = _curretNiuNiuRule.RoomRate[value]; });
+
+                        Dropdown autoGameDp = row.Find($"{NnDpType.ZiDongKaiZhuo}/{NnDpType.ZiDongKaiZhuo}Dp").GetComponent<Dropdown>();
+                        autoGameDp.onValueChanged.AddListener((value) => { _currentChess.AutoGame = _curretNiuNiuRule.AutoGame[value]; });
+                        break;
+                    case "Row3":
+                        Dropdown playerPushDp = row.Find($"{NnDpType.XianJiaTuiZhu}/{NnDpType.XianJiaTuiZhu}Dp").GetComponent<Dropdown>();
+                        playerPushDp.onValueChanged.AddListener((value) =>
+                        {
+                            _currentChess.PlayerPush = row.Find(NnDpType.XianJiaTuiZhu).gameObject.activeInHierarchy ? _curretNiuNiuRule.PlayerPush[value] : 0;
+                        });
+                        break;
+                    case "Row4":
+                        Dropdown doubleRulesDp = row.Find($"{NnDpType.FanBeiGuiZe}/{NnDpType.FanBeiGuiZe}Dp").GetComponent<Dropdown>();
+                        doubleRulesDp.onValueChanged.AddListener((value) => { _currentChess.DoubleRules = _curretNiuNiuRule.DoubleRules[value]; });
                         break;
                 }
             }
@@ -316,8 +354,6 @@ namespace ETHotfix
         /// <returns></returns>
         private NNChess GetCurrentNnChess()
         {
-            NNChess nnChess = new NNChess();
-
             int score = 0, dish = 0, roomRate = 0, playerPush = 0, autoGame = 0, doubleRules = 0;
 
             foreach (Transform row in _optionsLayout.transform)
@@ -349,50 +385,56 @@ namespace ETHotfix
                 }
             }
 
-            nnChess.Score = _curretNiuNiuRule.Score[score];
-            nnChess.Dish = _curretNiuNiuRule.Dish[dish];
-            nnChess.RoomRate = _curretNiuNiuRule.RoomRate[roomRate];
-            nnChess.PlayerPush = playerPush == -1 ? -1 : _curretNiuNiuRule.PlayerPush[playerPush];
-            nnChess.AutoGame = _curretNiuNiuRule.AutoGame[autoGame];
-            nnChess.DoubleRules = _curretNiuNiuRule.DoubleRules[doubleRules];
+            _currentChess.Score = _curretNiuNiuRule.Score[score];
+            _currentChess.Dish = _curretNiuNiuRule.Dish[dish];
+            _currentChess.RoomRate = _curretNiuNiuRule.RoomRate[roomRate];
+            _currentChess.PlayerPush = playerPush == -1 ? -1 : _curretNiuNiuRule.PlayerPush[playerPush]; //闲家推注
+            // TODO 最大抢庄
+            _currentChess.AutoGame = _curretNiuNiuRule.AutoGame[autoGame];
+            
+            _currentChess.DoubleRules = _curretNiuNiuRule.DoubleRules[doubleRules];
 
-            nnChess.PlayerMode = _curretNiuNiuRule.PlayerMode;
-            nnChess.PayMode = roomRate == 0 ? NnDpType.FangZhuPay : NnDpType.AaPay;
+            _currentChess.PlayerMode = _curretNiuNiuRule.PlayerMode;
+            _currentChess.PayMode = roomRate == 0 ? NnDpType.FangZhuPay : NnDpType.AaPay;
 
-            nnChess.ShunZiRules = false;
-            nnChess.TongHuaRules = false;
-            nnChess.HuLuRules = false;
-            nnChess.WuHuaRules = false;
-            nnChess.ZhaDanRules = false;
-            nnChess.WuXiaoRules = false;
-
-            nnChess.ZhongTuJinRuRules = false;
-            nnChess.CuoPaiRules = false;
-            nnChess.WangLaiRules = false;
-
-            nnChess.MaiMaRules = false;
+            _currentChess.ShunZiRules = false;
+            _currentChess.TongHuaRules = false;
+            _currentChess.HuLuRules = false;
+            _currentChess.WuHuaRules = false;
+            _currentChess.ZhaDanRules = false;
+            _currentChess.WuXiaoRules = false;
+            _currentChess.ZhongTuJinRuRules = false;
+            _currentChess.CuoPaiRules = false;
+            _currentChess.WangLaiRules = false;
+            _currentChess.MaiMaRules = false;
 
             foreach (var selected in _nnOptionsTspx.GetComponent<NNTspxComponent>().SelectedOptions)
             {
                 switch (selected)
                 {
                     case 0:
-                        nnChess.ShunZiRules = true;
+                        _currentChess.ShunZiRules = true;
+                        _currentChess.DoubleRules.Add("11/5");
                         break;
                     case 1:
-                        nnChess.TongHuaRules = true;
+                        _currentChess.TongHuaRules = true;
+                        _currentChess.DoubleRules.Add("12/5");
                         break;
                     case 2:
-                        nnChess.HuLuRules = true;
+                        _currentChess.HuLuRules = true;
+                        _currentChess.DoubleRules.Add("14/6");
                         break;
                     case 3:
-                        nnChess.WuHuaRules = true;
+                        _currentChess.WuHuaRules = true;
+                        _currentChess.DoubleRules.Add("13/5");
                         break;
                     case 4:
-                        nnChess.ZhaDanRules = true;
+                        _currentChess.ZhaDanRules = true;
+                        _currentChess.DoubleRules.Add("15/6");
                         break;
                     case 5:
-                        nnChess.WuXiaoRules = true;
+                        _currentChess.WuXiaoRules = true;
+                        _currentChess.DoubleRules.Add("16/8");
                         break;
                 }
             }
@@ -402,23 +444,21 @@ namespace ETHotfix
                 switch (selected)
                 {
                     case 0:
-                        nnChess.ZhongTuJinRuRules = true;
+                        _currentChess.ZhongTuJinRuRules = true;
                         break;
                     case 1:
-                        nnChess.CuoPaiRules = true;
+                        _currentChess.CuoPaiRules = true;
                         break;
                     case 2:
-                        nnChess.WangLaiRules = true;
+                        _currentChess.WangLaiRules = true;
                         break;
                     case 3:
-                        nnChess.MaiMaRules = true;
+                        _currentChess.MaiMaRules = true;
                         break;
                 }
             }
 
-            nnChess.PlayerCount = _roomPeople6.GetComponent<Toggle>().isOn ? 6 : 8;
-
-            return nnChess;
+            return _currentChess;
         }
 
         public void LockCreateBtn()

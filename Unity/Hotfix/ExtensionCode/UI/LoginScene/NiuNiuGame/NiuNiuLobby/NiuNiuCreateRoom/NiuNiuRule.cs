@@ -109,8 +109,8 @@ namespace ETHotfix
             PlayerPush = new List<int>() {0, 5, 10, 20},
             DoubleRules = new List<List<string>>()
             {
-                new List<string>() {"0/4", "9/3", "8/2", "7/2"},
-                new List<string>() {"0/3", "9/2", "8/2"}
+                new List<string>() {"10/4", "9/3", "8/2", "7/2"},
+                new List<string>() {"10/3", "9/2", "8/2"}
             },
             PlayerMode = NnDpType.NiuNiuShangZhuang
         };
@@ -137,8 +137,8 @@ namespace ETHotfix
             PlayerPush = new List<int>() {0, 5, 10, 20},
             DoubleRules = new List<List<string>>()
             {
-                new List<string>() {"0/4", "9/3", "8/2", "7/2"},
-                new List<string>() {"0/3", "9/2", "8/2"}
+                new List<string>() {"10/4", "9/3", "8/2", "7/2"},
+                new List<string>() {"10/3", "9/2", "8/2"}
             },
             PlayerMode = NnDpType.GuDingZhuangJia
         };
@@ -165,8 +165,8 @@ namespace ETHotfix
             PlayerPush = new List<int>() {0, 5, 10, 20},
             DoubleRules = new List<List<string>>()
             {
-                new List<string>() {"0/4", "9/3", "8/2", "7/2"},
-                new List<string>() {"0/3", "9/2", "8/2"}
+                new List<string>() {"10/4", "9/3", "8/2", "7/2"},
+                new List<string>() {"10/3", "9/2", "8/2"}
             },
             PlayerMode = NnDpType.ZiYouQiangZhuang
         };
@@ -193,8 +193,8 @@ namespace ETHotfix
             PlayerPush = new List<int>() {0, 5, 10, 20},
             DoubleRules = new List<List<string>>()
             {
-                new List<string>() {"0/4", "9/3", "8/2", "7/2"},
-                new List<string>() {"0/3", "9/2", "8/2"}
+                new List<string>() {"10/4", "9/3", "8/2", "7/2"},
+                new List<string>() {"10/3", "9/2", "8/2"}
             },
             PlayerMode = NnDpType.MingPaiQiangZhuang
         };
@@ -221,8 +221,8 @@ namespace ETHotfix
             PlayerPush = null,
             DoubleRules = new List<List<string>>()
             {
-                new List<string>() {"0/4", "9/3", "8/2", "7/2"},
-                new List<string>() {"0/3", "9/2", "8/2"}
+                new List<string>() {"10/4", "9/3", "8/2", "7/2"},
+                new List<string>() {"10/3", "9/2", "8/2"}
             },
             PlayerMode = NnDpType.TongBiNiuNiu
         };

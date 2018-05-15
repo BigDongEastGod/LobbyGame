@@ -723,6 +723,7 @@
     <None Include="Assets\Demigiant\DOTween\readme.txt" />
     <None Include="Assets\Res\Config\BuffConfig.txt" />
     <None Include="Assets\Demigiant\DOTween\DOTween43.xml" />
+    <None Include="Assets\Bundles\Resources\Shader\Poker.shader.txt" />
     <None Include="Assets\Bundles\Resources\Shader\UiLight.shader" />
     <None Include="Assets\Bundles\Resources\Shader\LoadingImage.shader" />
     <None Include="Assets\Res\Config\UnitConfig.txt" />
