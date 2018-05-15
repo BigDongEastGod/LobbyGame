@@ -3280,23 +3280,23 @@
     ]
   },
   "packageFolders": {
-    "/Users/juankeji/.nuget/packages/": {},
+    "/Users/sining/.nuget/packages/": {},
     "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/juankeji/JuAn/LobbyGame/Server/App/Server.App.csproj",
+      "projectUniqueName": "/Users/sining/Projects/JuAnChess/LobbyGame/Server/App/Server.App.csproj",
       "projectName": "Server.App",
-      "projectPath": "/Users/juankeji/JuAn/LobbyGame/Server/App/Server.App.csproj",
-      "packagesPath": "/Users/juankeji/.nuget/packages/",
-      "outputPath": "/Users/juankeji/JuAn/LobbyGame/Server/App/obj/",
+      "projectPath": "/Users/sining/Projects/JuAnChess/LobbyGame/Server/App/Server.App.csproj",
+      "packagesPath": "/Users/sining/.nuget/packages/",
+      "outputPath": "/Users/sining/Projects/JuAnChess/LobbyGame/Server/App/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/Users/juankeji/.config/NuGet/NuGet.Config"
+        "/Users/sining/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
@@ -3307,8 +3307,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "/Users/juankeji/JuAn/LobbyGame/Server/Model/Server.Model.csproj": {
-              "projectPath": "/Users/juankeji/JuAn/LobbyGame/Server/Model/Server.Model.csproj"
+            "/Users/sining/Projects/JuAnChess/LobbyGame/Server/Model/Server.Model.csproj": {
+              "projectPath": "/Users/sining/Projects/JuAnChess/LobbyGame/Server/Model/Server.Model.csproj"
             }
           }
         }

@@ -38,6 +38,10 @@ namespace ETModel
             
         public bool IsReceive;
 
+        public bool IsReady;
+
+        public int Score;
+
         public int Bet;
 
         public List<PokerCard> Cards;

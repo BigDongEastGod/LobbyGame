@@ -39,9 +39,14 @@ namespace ETEditor
 
 		private void OnGUI()
 		{
-			if (GUILayout.Button("标记"))
+			if (GUILayout.Button("标记(自动指定包名和依赖关系)"))
 			{
 				SetPackingTagAndAssetBundle();
+			}
+			
+			if (GUILayout.Button("标记(需要手动指定包名)"))
+			{
+				SetPackingTagAndAssetBundleNotAuto();
 			}
 
 			if (GUILayout.Button("清除标记"))
@@ -55,7 +60,7 @@ namespace ETEditor
 			this.buildOptions = (BuildOptions)EditorGUILayout.EnumMaskField("BuildOptions(可多选): ", this.buildOptions);
 			this.buildAssetBundleOptions = (BuildAssetBundleOptions)EditorGUILayout.EnumMaskField("BuildAssetBundleOptions(可多选): ", this.buildAssetBundleOptions);
 
-			if (GUILayout.Button("开始打包"))
+			if (GUILayout.Button("开始打包(开启debug)"))
 			{
 				if (this.platformType == PlatformType.None)
 				{
@@ -64,6 +69,66 @@ namespace ETEditor
 				}
 				BuildHelper.Build(this.platformType, this.buildAssetBundleOptions, this.buildOptions, this.isBuildExe, this.isContainAB);
 			}
+			
+			if (GUILayout.Button("开始打包(关闭debug)"))
+			{
+				if (this.platformType == PlatformType.None)
+				{
+					Log.Error("请选择打包平台!");
+					return;
+				}
+				BuildHelper.Build(this.platformType, this.buildAssetBundleOptions, BuildOptions.None, this.isBuildExe, this.isContainAB);
+			}
+		}
+		
+		private void SetPackingTagAndAssetBundleNotAuto()
+		{
+			foreach (string allAssetBundleName in AssetDatabase.GetAllAssetBundleNames())
+			{
+				foreach (string path in AssetDatabase.GetAssetPathsFromAssetBundle(allAssetBundleName))
+				{
+					AssetImporter importer = AssetImporter.GetAtPath(path);
+
+					importer.assetBundleName = allAssetBundleName;
+
+					SetBundleAndAtlasNoAuto(path, allAssetBundleName);
+				}
+			}
+
+			AssetDatabase.SaveAssets();
+
+			AssetDatabase.Refresh(ImportAssetOptions.ForceSynchronousImport | ImportAssetOptions.ForceUpdate);
+		}
+
+		private static void SetBundleAndAtlasNoAuto(string path, string name)
+		{
+			AssetImporter importer = AssetImporter.GetAtPath(path);
+			if (importer == null)
+			{
+				return;
+			}
+
+			if (name == "")
+			{
+				return;
+			}
+
+			importer.assetBundleName = name;
+
+			TextureImporter textureImporter = importer as TextureImporter;
+			if (textureImporter == null)
+			{
+				return;
+			}
+
+			if (textureImporter.spritePackingTag != "")
+			{
+				return;
+			}
+
+			textureImporter.spritePackingTag = name;
+
+			AssetDatabase.ImportAsset(path, ImportAssetOptions.ForceSynchronousImport | ImportAssetOptions.ForceUpdate);
 		}
 
 		private void SetPackingTagAndAssetBundle()
