@@ -1486,6 +1486,7 @@
             <e p="Resources" t="Include">
               <e p="Shader" t="Include">
                 <e p="LoadingImage.shader" t="Include" />
+                <e p="Poker.shader.txt" t="Include" />
                 <e p="UiLight.shader" t="Include" />
               </e>
             </e>
