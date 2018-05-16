@@ -1,22 +1,19 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "/Users/juankeji/JuAn/LobbyGame/Server/Hotfix/Server.Hotfix.csproj",
+    "projectUniqueName": "/Users/zhandongdong/jakj/LobbyGame/Server/Hotfix/Server.Hotfix.csproj",
     "projectName": "Server.Hotfix",
-    "projectPath": "/Users/juankeji/JuAn/LobbyGame/Server/Hotfix/Server.Hotfix.csproj",
-    "outputPath": "/Users/juankeji/JuAn/LobbyGame/Server/Hotfix/obj/",
+    "projectPath": "/Users/zhandongdong/jakj/LobbyGame/Server/Hotfix/Server.Hotfix.csproj",
+    "outputPath": "/Users/zhandongdong/jakj/LobbyGame/Server/Hotfix/obj/",
     "projectStyle": "PackageReference",
-    "fallbackFolders": [
-      "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
-    ],
     "originalTargetFrameworks": [
       "netcoreapp2.0"
     ],
     "frameworks": {
       "netcoreapp2.0": {
         "projectReferences": {
-          "/Users/juankeji/JuAn/LobbyGame/Server/Model/Server.Model.csproj": {
-            "projectPath": "/Users/juankeji/JuAn/LobbyGame/Server/Model/Server.Model.csproj"
+          "/Users/zhandongdong/jakj/LobbyGame/Server/Model/Server.Model.csproj": {
+            "projectPath": "/Users/zhandongdong/jakj/LobbyGame/Server/Model/Server.Model.csproj"
           }
         }
       }
