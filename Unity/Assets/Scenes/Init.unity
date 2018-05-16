@@ -386,6 +386,16 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 224386668059847374, guid: df5f1b1b4644947078b6ba1fdad2b651,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 132.60938
+      objectReference: {fileID: 0}
+    - target: {fileID: 224341461254862196, guid: df5f1b1b4644947078b6ba1fdad2b651,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 11.5703125
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: df5f1b1b4644947078b6ba1fdad2b651, type: 2}
   m_IsPrefabParent: 0
@@ -1783,7 +1793,7 @@ GameObject:
   - component: {fileID: 569003727}
   m_Layer: 5
   m_Name: GameCanvas
-  m_TagString: Untagged
+  m_TagString: GameCanvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

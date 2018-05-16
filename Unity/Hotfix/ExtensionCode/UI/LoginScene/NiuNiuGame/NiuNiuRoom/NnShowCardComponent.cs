@@ -88,6 +88,8 @@ namespace ETHotfix
             _cardParent=_rc.Get<GameObject>("CardParent");
             _gameCanvas = GameObject.FindGameObjectWithTag("GameCanvas").GetComponent<Canvas>();
             AddCardDrag();
+            _shuffleMask.SetActive(true);
+            _shuffleMask.GetComponent<ReferenceCollector>().Get<GameObject>("CardParent").GetComponent<Animator>().SetTrigger("IsCuoPai");
         }
 
         private void AddCardDrag()
