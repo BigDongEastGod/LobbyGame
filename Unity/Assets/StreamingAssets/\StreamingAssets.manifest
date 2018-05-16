@@ -1,0 +1,209 @@
+ManifestFileVersion: 0
+CRC: 3452638620
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: smallking.unity3d
+      Dependencies: {}
+    Info_1:
+      Name: card5.unity3d
+      Dependencies: {}
+    Info_2:
+      Name: b13.unity3d
+      Dependencies: {}
+    Info_3:
+      Name: card12.unity3d
+      Dependencies: {}
+    Info_4:
+      Name: s11.umity3d
+      Dependencies: {}
+    Info_5:
+      Name: p13.unity3d
+      Dependencies: {}
+    Info_6:
+      Name: s12.unity3d
+      Dependencies: {}
+    Info_7:
+      Name: h11.unity3d
+      Dependencies: {}
+    Info_8:
+      Name: card8.unity3d
+      Dependencies: {}
+    Info_9:
+      Name: card4.unity3d
+      Dependencies: {}
+    Info_10:
+      Name: card10.unity3d
+      Dependencies: {}
+    Info_11:
+      Name: s13.unity3d
+      Dependencies: {}
+    Info_12:
+      Name: p11.unity3d
+      Dependencies: {}
+    Info_13:
+      Name: h13.unity3d
+      Dependencies: {}
+    Info_14:
+      Name: h12.unity3d
+      Dependencies: {}
+    Info_15:
+      Name: card3.unity3d
+      Dependencies: {}
+    Info_16:
+      Name: card1.unity3d
+      Dependencies: {}
+    Info_17:
+      Name: b11.unity3d
+      Dependencies: {}
+    Info_18:
+      Name: card13.unity3d
+      Dependencies: {}
+    Info_19:
+      Name: bigking.unity3d
+      Dependencies: {}
+    Info_20:
+      Name: card6.unity3d
+      Dependencies: {}
+    Info_21:
+      Name: card9.unity3d
+      Dependencies: {}
+    Info_22:
+      Name: p12.unity3d
+      Dependencies: {}
+    Info_23:
+      Name: card11.unity3d
+      Dependencies: {}
+    Info_24:
+      Name: card2.unity3d
+      Dependencies: {}
+    Info_25:
+      Name: plumlossom.unity3d
+      Dependencies: {}
+    Info_26:
+      Name: b12.unity3d
+      Dependencies: {}
+    Info_27:
+      Name: card7.unity3d
+      Dependencies: {}
+    Info_28:
+      Name: heart.unity3d
+      Dependencies: {}
+    Info_29:
+      Name: spade.unity3d
+      Dependencies: {}
+    Info_30:
+      Name: block.unity3d
+      Dependencies: {}
+    Info_31:
+      Name: niuniulobby.unity3d
+      Dependencies: {}
+    Info_32:
+      Name: code.unity3d
+      Dependencies: {}
+    Info_33:
+      Name: config.unity3d
+      Dependencies: {}
+    Info_34:
+      Name: login.unity3d
+      Dependencies: {}
+    Info_35:
+      Name: niuniucreateroom.unity3d
+      Dependencies: {}
+    Info_36:
+      Name: nnroomruleinfouiform.unity3d
+      Dependencies: {}
+    Info_37:
+      Name: niuniulobbymenu.unity3d
+      Dependencies: {}
+    Info_38:
+      Name: unit.unity3d
+      Dependencies: {}
+    Info_39:
+      Name: niuniujoinroom.unity3d
+      Dependencies: {}
+    Info_40:
+      Name: registpanel.unity3d
+      Dependencies: {}
+    Info_41:
+      Name: nnshowcardparent.unity3d
+      Dependencies:
+        Dependency_0: smallking.unity3d
+        Dependency_1: card5.unity3d
+        Dependency_2: b13.unity3d
+        Dependency_3: card12.unity3d
+        Dependency_4: s11.umity3d
+        Dependency_5: p13.unity3d
+        Dependency_6: s12.unity3d
+        Dependency_7: h11.unity3d
+        Dependency_8: card8.unity3d
+        Dependency_9: card4.unity3d
+        Dependency_10: card10.unity3d
+        Dependency_11: s13.unity3d
+        Dependency_12: p11.unity3d
+        Dependency_13: h13.unity3d
+        Dependency_14: h12.unity3d
+        Dependency_15: card3.unity3d
+        Dependency_16: card1.unity3d
+        Dependency_17: b11.unity3d
+        Dependency_18: card13.unity3d
+        Dependency_19: bigking.unity3d
+        Dependency_20: card6.unity3d
+        Dependency_21: card9.unity3d
+        Dependency_22: p12.unity3d
+        Dependency_23: card11.unity3d
+        Dependency_24: card2.unity3d
+        Dependency_25: plumlossom.unity3d
+        Dependency_26: b12.unity3d
+        Dependency_27: card7.unity3d
+        Dependency_28: heart.unity3d
+        Dependency_29: spade.unity3d
+        Dependency_30: block.unity3d
+    Info_42:
+      Name: loginpanel.unity3d
+      Dependencies: {}
+    Info_43:
+      Name: lobby.unity3d
+      Dependencies:
+        Dependency_0: loadingpanel.unity3d
+    Info_44:
+      Name: dialogpanel.unity3d
+      Dependencies: {}
+    Info_45:
+      Name: niuniumain.unity3d
+      Dependencies:
+        Dependency_0: card5.unity3d
+        Dependency_1: card12.unity3d
+        Dependency_2: card8.unity3d
+        Dependency_3: card4.unity3d
+        Dependency_4: card10.unity3d
+        Dependency_5: card3.unity3d
+        Dependency_6: card1.unity3d
+        Dependency_7: card13.unity3d
+        Dependency_8: card6.unity3d
+        Dependency_9: card9.unity3d
+        Dependency_10: card11.unity3d
+        Dependency_11: card2.unity3d
+        Dependency_12: plumlossom.unity3d
+        Dependency_13: card7.unity3d
+        Dependency_14: heart.unity3d
+        Dependency_15: spade.unity3d
+        Dependency_16: block.unity3d
+    Info_46:
+      Name: niuniuroomoperation.unity3d
+      Dependencies: {}
+    Info_47:
+      Name: niuniutspx.unity3d
+      Dependencies: {}
+    Info_48:
+      Name: niuniugjxx.unity3d
+      Dependencies: {}
+    Info_49:
+      Name: niuniusettingpanel.unity3d
+      Dependencies: {}
+    Info_50:
+      Name: loadingpanel.unity3d
+      Dependencies: {}
+    Info_51:
+      Name: niuniurulepanel.unity3d
+      Dependencies: {}

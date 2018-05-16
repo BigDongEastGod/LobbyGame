@@ -1,0 +1,40 @@
+ManifestFileVersion: 0
+CRC: 2037287497
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 02fd80aebb38a3d20f6da37e1346d117
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: c1509515ae4f99cb68c8233f474c18f7
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 90
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 502d8cafd6a5a0447ab1db9a24cdcb10, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 137
+  Script: {instanceID: 0}
+Assets:
+- Assets/Bundles/Unit/Unit.prefab
+Dependencies: []

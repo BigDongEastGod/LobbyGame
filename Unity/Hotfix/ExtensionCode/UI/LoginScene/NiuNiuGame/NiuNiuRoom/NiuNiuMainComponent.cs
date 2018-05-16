@@ -41,6 +41,8 @@ namespace ETHotfix
         private Button _invitingFriendsButton;
         private Button _tipsButton;
         private Button _brightButton;
+        public Button ReadyButtn;                                                        //准备按钮
+        public Vector2 StartPos;
 
         public void Awake(object[] args)
         {
@@ -89,7 +91,7 @@ namespace ETHotfix
             //翻牌按钮
             _flopButton = rc.Get<GameObject>("FlopButton").GetComponent<Button>();
             //准备按钮
-            var readyButton = rc.Get<GameObject>("readyButton");
+            ReadyButtn = rc.Get<GameObject>("readyButton").GetComponent<Button>();
             //表情按钮
             var exitButton = rc.Get<GameObject>("ExitButton");
             //时间
@@ -113,6 +115,8 @@ namespace ETHotfix
             //房间局数
             var roomCountText  = rc.Get<GameObject>("roomCountText").GetComponent<Text>();
             
+            StartPos = rc.Get<GameObject>("startPos").GetComponent<RectTransform>().anchoredPosition;
+            
             #endregion
          
             //获取当前账号
@@ -127,17 +131,17 @@ namespace ETHotfix
             //设置房间号
             _mRoomId = roomId;
             _roomNum.text = roomId.ToString();
-            //TODo.....庄位信息
-            //zhuangWeiTxt=rules.
-
-            //设置房间底分
             if (rules != null)
             {
-                _bottomScoreText.text = rules.Score.ToString();
+                //设置房间规则信息
+                zhuangWeiTxt.text = rules.PayMode;
+                //设置房间底分
+                _bottomScoreText.text = rules.Score;
                 //设置房间局数
-                roomCountText.text = "1/" + rules.Dish.ToString();
+                roomCountText.text = "1/" + rules.Dish;
                 //获得房间显示卡牌窗口
-                _showCardUi = Game.Scene.GetComponent<UIComponent>().Create(UIType.NNShowCard, UiLayer.Medium,this);
+                _showCardUi = Game.Scene.GetComponent<UIComponent>()
+                    .Create(UIType.NNShowCard, UiLayer.Medium, this);
                 //保存房间号
                 _showCardUi.GetComponent<NnShowCardComponent>().RoomId = _mRoomId;
                 //设置房间人数
@@ -157,7 +161,7 @@ namespace ETHotfix
             //下拉按钮注册
             SceneHelperComponent.Instance.MonoEvent.AddButtonClick(selectButton.GetComponent<Button>(), () =>
             {
-                object[] arg = new object[] {_mRoomId,this};
+                var arg = new object[] {_mRoomId,this};
                 Game.Scene.GetComponent<UIComponent>().Create(UIType.NNRoomOperation, UiLayer.Top,arg);
             });
 
@@ -174,7 +178,7 @@ namespace ETHotfix
             
             //亮牌按钮注册
             SceneHelperComponent.Instance.MonoEvent.AddButtonClick(_brightButton.GetComponent<Button>(), OnBrightCardButtonClick);
-
+            
             //获取房间准备号玩家的数据
             GetAllReadyInfo();
 
@@ -259,14 +263,10 @@ namespace ETHotfix
                   case 4://计算玩家手里卡牌、并把结果返回给玩家消息
                       var otherPokerList = ProtobufHelper.FromBytes<PlayerPokerCards>(obj.Arg);
                       FlopOtherCard(otherPokerList.PokerCards,obj.UserName);
-                      foreach (var t in otherPokerList.PokerCards.ToList())
-                      {
-                          Debug.Log("收到别人亮牌/"+t .CardNumber);
-                      }
                       _showCardUi.GetComponent<NnShowCardComponent>().ShowTipsUi(obj.UserName,otherPokerList.CardTypeNumber);
                       break;
                   case 5:
-                      _showCardUi.GetComponent<NnShowCardComponent>().ShowWinUI(obj.UserName);
+                      _showCardUi.GetComponent<NnShowCardComponent>().ShowWinUi(obj.UserName);
                       break;
             }
         }
@@ -360,7 +360,11 @@ namespace ETHotfix
         {
             _shuffleButton.gameObject.SetActive(true);
             _flopButton.gameObject.SetActive(true);
-//            SceneHelperComponent.Instance.MonoEvent.AddButtonClick(shuffleButton.GetComponent<Button>(), StartGameOclick);
+            SceneHelperComponent.Instance.MonoEvent.AddButtonClick(_shuffleButton.GetComponent<Button>(), () =>
+                {
+                    _showCardUi.GetComponent<NnShowCardComponent>().OnShuffleBUtton();
+                });
+            
             SceneHelperComponent.Instance.MonoEvent.AddButtonClick(_flopButton.GetComponent<Button>(),() =>
                 {
                     _showCardUi.GetComponent<NnShowCardComponent>().FlopCard(_player.AccountInfo.UserName,true);
@@ -400,6 +404,8 @@ namespace ETHotfix
             _showCardUi.GetComponent<NnShowCardComponent>().ShowTipsUi(_player.AccountInfo.UserName);
             SwitchTipsCard(false);
         }
+        
+     
 
         private void Test()
         {
