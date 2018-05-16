@@ -1,0 +1,69 @@
+ManifestFileVersion: 0
+CRC: 2151139109
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 3f917d02a31ec5a6371df370afd4f6eb
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: b458dbd1f1e42c31a810d9aa57b05120
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: -113659843, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: 2109663825, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 8347f75bbf20473292de676504ad7398, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 502d8cafd6a5a0447ab1db9a24cdcb10, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 128
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+- Class: 222
+  Script: {instanceID: 0}
+- Class: 224
+  Script: {instanceID: 0}
+Assets:
+- Assets/Bundles/UI/NiuNiu/NiuNiuMain.prefab
+Dependencies:
+- /Users/juankeji/JuAn/LobbyGame/Unity/../Release/Android/StreamingAssets/card5.unity3d
+- /Users/juankeji/JuAn/LobbyGame/Unity/../Release/Android/StreamingAssets/card12.unity3d
+- /Users/juankeji/JuAn/LobbyGame/Unity/../Release/Android/StreamingAssets/card8.unity3d
+- /Users/juankeji/JuAn/LobbyGame/Unity/../Release/Android/StreamingAssets/card4.unity3d
+- /Users/juankeji/JuAn/LobbyGame/Unity/../Release/Android/StreamingAssets/card10.unity3d
+- /Users/juankeji/JuAn/LobbyGame/Unity/../Release/Android/StreamingAssets/card3.unity3d
+- /Users/juankeji/JuAn/LobbyGame/Unity/../Release/Android/StreamingAssets/card1.unity3d
+- /Users/juankeji/JuAn/LobbyGame/Unity/../Release/Android/StreamingAssets/card13.unity3d
+- /Users/juankeji/JuAn/LobbyGame/Unity/../Release/Android/StreamingAssets/card6.unity3d
+- /Users/juankeji/JuAn/LobbyGame/Unity/../Release/Android/StreamingAssets/card9.unity3d
+- /Users/juankeji/JuAn/LobbyGame/Unity/../Release/Android/StreamingAssets/card11.unity3d
+- /Users/juankeji/JuAn/LobbyGame/Unity/../Release/Android/StreamingAssets/card2.unity3d
+- /Users/juankeji/JuAn/LobbyGame/Unity/../Release/Android/StreamingAssets/plumlossom.unity3d
+- /Users/juankeji/JuAn/LobbyGame/Unity/../Release/Android/StreamingAssets/card7.unity3d
+- /Users/juankeji/JuAn/LobbyGame/Unity/../Release/Android/StreamingAssets/heart.unity3d
+- /Users/juankeji/JuAn/LobbyGame/Unity/../Release/Android/StreamingAssets/spade.unity3d
+- /Users/juankeji/JuAn/LobbyGame/Unity/../Release/Android/StreamingAssets/block.unity3d

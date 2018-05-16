@@ -7,6 +7,7 @@ using ETModel;
 using UnityEngine;
 using DG.Tweening;
 using DG;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using Text = UnityEngine.UI.Text;
  
@@ -21,43 +22,53 @@ namespace ETHotfix
         }
     }
 
-    
+    public class NnShowCardComponentUpdateSystem : UpdateSystem<NnShowCardComponent>
+    {
+        public override void Update(NnShowCardComponent self)
+        {
+            self.Update();
+        }
+    }
+
     public class NnShowCardComponent:Component
     {
         #region variable
 
+        public int RoomPeople;                                                             //房间人数
+        public long RoomId;                                                                //房间号
+        public int TipsIndex;                                                              //自己排型的提示
+        private GameObject _nnCardPrefab;                                                  //卡牌预设
+        private GameObject _headUIform;                                                    //头像预设
+        private GameObject _tipsItem;                                                      //提示预设
         private List<Vector2> _sixTableList;                                               //六人桌的位置
         private List<Vector2> _eightTableList;                                             //八人桌的位置
-        public int RoomPeople;                                                             //房间人数
-        public long RoomId { get; set; }                                                   //房间号
-        public int TipsIndex { get; set; }                                                 //自己排型的提示
-        public List<PokerCard> SortedCardList;                                             //自己排序过的卡牌
-
         private List<Vector2> _currentTablePosList;                                        //当前房间位置
         private Transform _currentTableObj;                                                //当前桌子
-        private GameObject _nnCardPrefab;                                                  //卡牌预设
-        private Dictionary<string,ReferenceCollector> _headUiDict;                         //头像位置列表
         private string[] _chairArray;                                                      //椅子管理数组
+        private Dictionary<string,ReferenceCollector> _headUiDict;                         //头像位置列表
         private RectTransform _mainHeadPos;                                                //主头像位置
         private RectTransform _mainCardPos;                                                //主卡牌像位置
         private Vector2 _mainTipsPos;                                                      //主提示位置
         private Vector2 _licensingPos;                                                     //发牌位置 
         private ReferenceCollector _rc;                                                    //当前窗口引用类
-        private GameObject _headUIform;                                                    //头像预设
+        private NiuNiuMainComponent _niuNiuMainUi;                                         //牛牛主场景
+        private string CurrentUserName{ get; set; }                                        //当前用户名
+        //需要变动的容器
+        private Dictionary<string,GameObject> _tipsObjList;                                //提示UI的管理列表
+        public List<PokerCard> SortedCardList;                                             //自己排序过的卡牌
         private Dictionary<string,List<ReferenceCollector>> _pokerObjList;                 //扑克缓存列表
         private bool IsFlop { get; set; }                                                  //是否可以翻牌
-        private string CurrentUserName{ get; set; }                                        //当前用户名
-        private NiuNiuMainComponent _niuNiuMainUi;                                         //牛牛主场景
-        private List<GameObject> _tipsObjList;                                             //提示UI的管理列表
-        private GameObject _tipsItem;                                                      //提示预设
-   
+        private GameObject _shuffleMask;
+        private GameObject _cardParent;
+        private Canvas _gameCanvas;
+
         #endregion
 
         public async void Awake(object[] args)
         {
             _sixTableList=new List<Vector2>();
             _eightTableList=new List<Vector2>();
-            _tipsObjList=new List<GameObject>();
+            _tipsObjList=new Dictionary<string, GameObject>();
             _headUiDict=new Dictionary<string, ReferenceCollector>();
             _pokerObjList=new Dictionary<string, List<ReferenceCollector>>();
             SortedCardList=new List<PokerCard>();
@@ -73,12 +84,46 @@ namespace ETHotfix
             _mainTipsPos=_rc.Get<GameObject>("MainTipsPos").GetComponent<RectTransform>().anchoredPosition;
             _tipsItem=_rc.Get<GameObject>("TipsItem");
             _niuNiuMainUi = (NiuNiuMainComponent)args[0];
+            _shuffleMask = _rc.Get<GameObject>("ShuffleMask");
+            _cardParent=_rc.Get<GameObject>("CardParent");
+            _gameCanvas = GameObject.FindGameObjectWithTag("GameCanvas").GetComponent<Canvas>();
+            AddCardDrag();
+            _shuffleMask.SetActive(true);
+            _shuffleMask.GetComponent<ReferenceCollector>().Get<GameObject>("CardParent").GetComponent<Animator>().SetTrigger("IsCuoPai");
         }
- 
+
+        private void AddCardDrag()
+        {
+            SceneHelperComponent.Instance.MonoEvent.AddEventTrigger(_cardParent.transform.GetChild(0).gameObject,
+                EventTriggerType.Drag,(obj)=> OnDragCard(obj,0));
+//            for (var i = 0; i < _cardParent.transform.childCount; i++)
+//            {
+//                SceneHelperComponent.Instance.MonoEvent.AddEventTrigger(_cardParent.transform.GetChild(i).gameObject,
+//                    EventTriggerType.BeginDrag,(obj)=> OnDragCard(obj,i));
+//            }
+        }
+
+        private void OnDragCard(BaseEventData obj,int index)
+        {
+            Vector2 position;
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(_gameCanvas.transform as RectTransform,
+                Input.mousePosition, null, out position);
+            _cardParent.transform.GetChild(index).localPosition = position;
+        }
+
+
+        public void Update()
+        {
+            Vector2 position;
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(_gameCanvas.transform as RectTransform,
+                Input.mousePosition, null, out position);
+            _cardParent.transform.GetChild(0).localPosition = position;
+        }
+
         //屏幕适配需要获得的位置
         private List<Vector2> GetChildItem(Transform parentObj,List<Vector2> posList)
         {
-            for (int i = 0; i < parentObj.childCount; i++)
+            for (var i = 0; i < parentObj.childCount; i++)
             {
                 posList.Add(parentObj.GetChild(i).GetComponent<RectTransform>().anchoredPosition);
             }
@@ -107,13 +152,11 @@ namespace ETHotfix
         //寻找空闲椅子
         public int FindFreeChair(string userName)
         {
-            for (int i = 0; i < _chairArray.Length; i++)
+            for (var i = 0; i < _chairArray.Length; i++)
             {
-                if (_chairArray[i] == null)
-                {
-                    _chairArray[i] = userName;
-                    return i;
-                }
+                if (_chairArray[i] != null) continue;
+                _chairArray[i] = userName;
+                return i;
             }
             return -1;
         }
@@ -137,7 +180,7 @@ namespace ETHotfix
         //创建头像
         public void CreateHead(int chairIndex,AccountInfo playerInfo)
         {
-            GameObject headObj = UnityEngine.Object.Instantiate(_headUIform, _currentTableObj);
+            var headObj = UnityEngine.Object.Instantiate(_headUIform, _currentTableObj);
             
             if (chairIndex == -1)
             {
@@ -154,7 +197,23 @@ namespace ETHotfix
            
             _headUiDict.Add(playerInfo.UserName,headObj.GetComponent<ReferenceCollector>());
         }
- 
+        
+        //消除准备
+        private void RemoveReady()
+        {
+            foreach (var head in _headUiDict)
+            {
+                head.Value.Get<GameObject>("headMask").SetActive(false);
+            }
+        }
+        
+        //让玩家头像显示准备
+        private void ShowReady(string usserName)
+        {
+            if (!_headUiDict.ContainsKey(usserName)) return;
+            GetDictValue(_headUiDict,usserName).Get<GameObject>("headMask").SetActive(true);
+        }
+
         //获取字典里的值
         private static T2 GetDictValue<T1, T2>(IReadOnlyDictionary<T1, T2> dict,T1 key)
         {
@@ -242,7 +301,22 @@ namespace ETHotfix
                 _pokerObjList.Add(i == 0 ? CurrentUserName : _chairArray[i-1], tempCardList);
             }
         }
-        
+
+        private void CreateCard2(IReadOnlyList<PokerCard> porkerList)
+        {
+            foreach (var poker in _pokerObjList)
+            {
+                for (var i = 0; i < 5; i++)
+                {
+                    if (poker.Key == CurrentUserName)
+                    {
+                        LoadPorkerData(poker.Value[i], porkerList[i]);
+                    }
+                    poker.Value[i].gameObject.SetActive(true);
+                }
+            }
+        }
+
         //修改自己卡牌的顺序
         private void SortCard(List<ReferenceCollector> cardList)
         {
@@ -284,6 +358,8 @@ namespace ETHotfix
                 tipsItem.transform.localScale=new Vector2(0.5f,0.5f);
                 tipsItem.sprite = rc.Get<Sprite>("nn_niu" + tipsIndex);
             }
+            if(_tipsObjList.ContainsKey(userName)) return;
+            _tipsObjList.Add(userName,tipsItem.gameObject);
         }
 
         //加载扑克的数据
@@ -371,30 +447,37 @@ namespace ETHotfix
         
         //发牌
         public void Licensing(List<PokerCard> porkerList)
+        {
+            //如果不是重置游戏
+            if (_pokerObjList.Count == 0)
             {
-                //创建
                 CreateCard(porkerList);
-            
-                for (var i = 0; i < _headUiDict.Count; i++)
+            }
+            else
+            {
+                CreateCard2(porkerList);
+            }
+
+            for (var i = 0; i < _headUiDict.Count; i++)
+            {
+                List<ReferenceCollector> rcList;
+                if (i == 0)
                 {
-                    List<ReferenceCollector> rcList;
-                    if (i == 0)
-                    {
-                        if (!_headUiDict.ContainsKey(CurrentUserName)) continue;
-                        rcList = GetDictValue(_pokerObjList, CurrentUserName);
-                        SendFiveCards(true, rcList);
-                    }
-                    else
-                    {
-                        if (i == _headUiDict.Count - 1) IsFlop = true;
-                        if (!_headUiDict.ContainsKey(_chairArray[i-1])) continue;
-                        rcList = GetDictValue(_pokerObjList, _chairArray[i - 1]);
-                        var targerPos= (GetCardPos(i - 1));
-                        //发五张牌
-                        SendFiveCards(false, rcList,targerPos);
-                    }
+                    if (!_headUiDict.ContainsKey(CurrentUserName)) continue;
+                    rcList = GetDictValue(_pokerObjList, CurrentUserName);
+                    SendFiveCards(true, rcList);
+                }
+                else
+                {
+                    if (i == _headUiDict.Count - 1) IsFlop = true;
+                    if (!_headUiDict.ContainsKey(_chairArray[i-1])) continue;
+                    rcList = GetDictValue(_pokerObjList, _chairArray[i - 1]);
+                    var targerPos= (GetCardPos(i - 1));
+                    //发五张牌
+                    SendFiveCards(false, rcList,targerPos);
                 }
             }
+        }
     
         //异步发五张牌
         private async void SendFiveCards(bool isSelf,List<ReferenceCollector> rcList,Vector2 tempPos=default(Vector2))
@@ -450,10 +533,106 @@ namespace ETHotfix
         }
         
         //显示赢家
-        public void ShowWinUI(string userName)
+        public void ShowWinUi(string userName)
         {
             GetDictValue(_headUiDict,userName).Get<GameObject>("SettlementImage").SetActive(true);
         }
+        
+        //重新开始游戏
+        private void ResetGame()
+        {
+            //清除所有的数据容器数据
+            foreach (var tipsItem in _tipsObjList)
+            {
+                tipsItem.Value.SetActive(false);
+            }
+            
+            SortedCardList.Clear();
+            IsFlop = false;
+            //清除场上的牌
+            ResetPoker();
+            //显示准备按钮
+            _niuNiuMainUi.ReadyButtn.gameObject.SetActive(true);
+            SceneHelperComponent.Instance.MonoEvent.AddButtonClick(_niuNiuMainUi.ReadyButtn, () =>
+            {
+                
+            });
+            
+        }
+        
+        //重置开卡牌数据
+        private void ResetPoker()
+        {
+            foreach (var pokerList in _pokerObjList)
+            {
+                foreach (var poker in pokerList.Value)
+                {
+                    poker.Get<GameObject>("BackImg").SetActive(true);
+                    poker.transform.localScale=new Vector2(0.3f,0.3f);
+                    poker.GetComponent<RectTransform>().anchoredPosition = _licensingPos;
+                    poker.gameObject.SetActive(false);
+                }
+            }
+        }
+
+        #region 搓牌动作
+
+        //点击搓牌按钮
+        public void OnShuffleBUtton()
+        {
+            JointCardAnim(GetDictValue(_pokerObjList, CurrentUserName));
+        }
+
+        //合牌动画并下滑
+        private async void JointCardAnim(List<ReferenceCollector> pokerList)
+        {
+            var targetPos = pokerList[2].GetComponent<RectTransform>().anchoredPosition; //+new Vector2(-960,0);
+            
+            for (var i = 0; i < pokerList.Count; i++)
+            {
+                if(i==2) continue;
+                await MoveCardTask(pokerList[i].gameObject, targetPos);
+                if (i != pokerList.Count-1) continue;
+                await Task.Delay(380);
+                for (var j = 0; j < 5; j++)
+                {
+                    DeclineAnim(pokerList);
+                }
+            }
+
+            await Task.Delay(200);
+            _shuffleMask.SetActive(true);
+            _shuffleMask.GetComponent<ReferenceCollector>().Get<GameObject>("CardParent").GetComponent<Animator>().SetTrigger("IsCuoPai");
+            
+        }
+
+        private async Task<TweenCallback> MoveCardTask(GameObject cardObj, Vector2 targetPos)
+        {
+            await Task.CompletedTask;
+            var tempPos = targetPos + new Vector2(-960, 0);
+            var pos=new Vector3(tempPos.x,tempPos.y);
+            return cardObj.transform.GetComponent<RectTransform>().DOLocalMove(pos,0.4f).onComplete;
+        }
+
+        private async void DeclineAnim(List<ReferenceCollector> pokerList)
+        {
+            for (var i = 0; i < pokerList.Count; i++)   
+            {
+                await DeclineAnimTaask(pokerList[i].gameObject);
+                if(i==pokerList.Count-1) continue;
+            }
+        }
+        
+        private async Task<TweenCallback> DeclineAnimTaask(GameObject cardObj)
+        {
+            await Task.CompletedTask;
+            var pos=new Vector3(_niuNiuMainUi.StartPos.x,_niuNiuMainUi.StartPos.y);
+            pos+=new Vector3(-960, 0,0);
+            return cardObj.transform.GetComponent<RectTransform>().DOLocalMove(pos,1f).onComplete;
+        }
+
+        #endregion
+        
 
         //离开房间
         public void QuitRoom(string userName)
@@ -470,6 +649,7 @@ namespace ETHotfix
             }
 
         }
+        
         
         }
     }

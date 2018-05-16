@@ -1,0 +1,18 @@
+ManifestFileVersion: 0
+CRC: 499277609
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 20eccfbcff32722edf7efd91dd9aaa1d
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 460b4f5d62b6facbccf7c01637df8f00
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+Assets:
+- Assets/Bundles/Resources/Texture2D/cardUI/num_7.png
+Dependencies: []
